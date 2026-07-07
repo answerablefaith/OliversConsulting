@@ -18,9 +18,9 @@ Key proof point:
 - Supplier-file process reduced from 8 hours to 2 minutes with human review and bad rows flagged before publishing.
 
 Important URLs:
-- Homepage: https://oliversconsulting.com/
-- Blog: https://oliversconsulting.com/blog/
-- Sitemap: https://oliversconsulting.com/sitemap.xml
+- Homepage: https://oliversconsulting.co.uk/
+- Blog: https://oliversconsulting.co.uk/blog/
+- Sitemap: https://oliversconsulting.co.uk/sitemap.xml
 
 Editorial focus:
 - Practical automation advice for UK ecommerce and wholesale operators
