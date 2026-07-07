@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why stock sync fails between Shopify, Amazon and eBay</title>
+<meta name="description" content="A practical article for UK ecommerce operators on why Shopify, Amazon and eBay stock sync fails, and how to fix the process before adding more software." />
+<link rel="canonical" href="https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/" />
+<meta property="og:title" content="Why stock sync fails between Shopify, Amazon and eBay" />
+<meta property="og:description" content="Stock sync is not just a software problem. It is usually a rules, timing and exception problem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/shared-header.css" />
+<link rel="stylesheet" href="/assets/oc-site.css" />
+<script defer src="/assets/shared-header.js"></script>
+<style>
+.article-hero{padding:clamp(3.5rem,7vw,6.5rem) 0 2.5rem}.article-wrap{width:min(48rem,calc(100% - 2rem));margin-inline:auto}.article-meta{display:flex;flex-wrap:wrap;gap:.65rem 1rem;margin-top:1rem;color:#8e3515;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.summary-box{margin:2rem 0;padding:1.2rem;border:1px solid var(--line);background:#fffaf1}.summary-box strong{display:block;margin-bottom:.45rem;color:var(--ink)}.article-body{padding-bottom:4rem}.article-body h2{margin-top:2.25rem;font-size:clamp(1.8rem,3vw,2.6rem)}.article-body h3{margin-top:1.5rem}.article-body p,.article-body li{font-size:1.03rem}.article-body ul,.article-body ol{padding-left:1.4rem;color:var(--muted);line-height:1.7}.article-body li+li{margin-top:.45rem}.callout{margin:2rem 0;padding:1.25rem;border-left:4px solid var(--accent);background:rgba(255,250,241,.7)}.faq{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem}.faq h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:800;letter-spacing:0;margin-top:1.2rem}.breadcrumb{font-size:.82rem;color:var(--muted);margin-top:1.4rem}.breadcrumb a{text-underline-offset:.22em}.article-cta{margin-top:2.5rem;padding:1.4rem;background:var(--dark);color:#fffaf1}.article-cta p{color:rgba(255,250,241,.78)}.rule-list{display:grid;gap:.8rem;margin:1.5rem 0}.rule-list div{padding:1rem;border:1px solid var(--line);background:rgba(255,250,241,.75)}.rule-list strong{display:block;color:var(--ink);margin-bottom:.2rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Why stock sync fails between Shopify, Amazon and eBay",
+      "description": "A practical article for UK ecommerce operators on why Shopify, Amazon and eBay stock sync fails, and how to fix the process before adding more software.",
+      "datePublished": "2026-07-07",
+      "dateModified": "2026-07-07",
+      "author": {"@type": "Person", "name": "Henry Oliver"},
+      "publisher": {"@type": "Organization", "name": "Olivers Consulting", "url": "https://oliversconsulting.co.uk/"},
+      "mainEntityOfPage": "https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oliversconsulting.co.uk/"},
+        {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://oliversconsulting.co.uk/articles/"},
+        {"@type": "ListItem", "position": 3, "name": "Why stock sync fails", "item": "https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Why does stock sync fail between Shopify, Amazon and eBay?", "acceptedAnswer": {"@type": "Answer", "text": "It usually fails because each channel has different timing, stock rules, bundles, buffers, returns and exceptions. The software then moves bad assumptions faster."}},
+        {"@type": "Question", "name": "Should one system control all stock?", "acceptedAnswer": {"@type": "Answer", "text": "Most growing businesses need one trusted stock position, but they also need channel-specific rules for buffers, bundles, reserved stock and exceptions."}},
+        {"@type": "Question", "name": "What should be fixed before buying stock-sync software?", "acceptedAnswer": {"@type": "Answer", "text": "Fix SKU structure, source-of-truth rules, timing, channel buffers, bundle logic and exception handling before adding more software."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+  <article>
+    <header class="article-hero">
+      <div class="article-wrap">
+        <p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p>
+        <p class="kicker">Channel operations</p>
+        <h1>Why stock sync fails between Shopify, Amazon and eBay</h1>
+        <p class="lede">Stock sync fails when the business treats it as a plug-in problem. The real work is deciding which stock number is trusted, which channels get protected stock, and what happens when the data does not agree.</p>
+        <div class="article-meta"><span>Published 7 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce & wholesale</span></div>
+      </div>
+    </header>
+
+    <div class="article-wrap article-body">
+      <div class="summary-box">
+        <strong>Quick answer</strong>
+        <p>Stock sync between Shopify, Amazon and eBay fails because the same SKU is being treated as if it behaves the same way on every channel. It does not. Each channel has different order timing, returns, reserved stock, bundles, buffers and listing rules. Fix the operating rules first, then automate the movement.</p>
+      </div>
+
+      <p>A stock-sync problem rarely starts with the stock-sync tool. It starts with a business that has outgrown the way it thinks about inventory.</p>
+
+      <p>At small scale, someone can keep the truth in their head. They know which marketplace lags, which supplier is late, which bundle is risky and which product should never go below three units on Amazon. At 200 SKUs, that might survive. At 20,000 SKUs, it breaks. At 200,000 SKUs across Shopify, Amazon and eBay, it has to become a system.</p>
+
+      <p>I learned that running a multi-channel ecommerce operation. The painful part was not that the channels existed. The painful part was that every channel had a slightly different version of the truth.</p>
+
+      <h2>The stock number is not the stock rule</h2>
+      <p>Most teams begin with the question: “How many do we have?” That is not enough.</p>
+
+      <p>The better question is: “How many are we prepared to sell on this channel right now?”</p>
+
+      <p>Those are different numbers. You may have ten units in the warehouse, but two are already reserved for wholesale, one is damaged, three need to stay protected for Amazon, and a bundle listing can consume the same unit in more than one way. A system that simply pushes “10” everywhere is not synchronising stock. It is distributing risk.</p>
+
+      <h2>Where multi-channel stock goes wrong</h2>
+      <p>These are the failure points I check first:</p>
+
+      <div class="rule-list">
+        <div><strong>Unclear source of truth</strong><p>If Shopify, Amazon, eBay, the warehouse and a spreadsheet can all overrule each other, nobody knows which stock position is real.</p></div>
+        <div><strong>No channel buffer</strong><p>Fast-moving lines need protection. Selling the last unit everywhere at once is how oversells happen.</p></div>
+        <div><strong>Bundle logic missing</strong><p>A pack, kit or multipack may depend on the same stock as a single SKU. If that relationship is not mapped, availability is wrong.</p></div>
+        <div><strong>Timing gaps</strong><p>Orders, cancellations and returns do not hit every system at the same moment. The gap is where errors appear.</p></div>
+        <div><strong>Manual fixes with no audit trail</strong><p>If the team corrects stock by hand but the reason is not recorded, the same problem returns next week.</p></div>
+      </div>
+
+      <h2>Do not add software on top of vague rules</h2>
+      <p>Adding another stock-sync app can make the problem worse if the rules are still unclear. It will move the wrong number faster and make the error look official.</p>
+
+      <p>Before any build, write the rules down. Which system owns stock? Which channels receive buffers? Which SKUs are excluded? How are bundles calculated? What happens when Amazon says one thing and the warehouse says another? Who reviews exceptions before a correction is pushed live?</p>
+
+      <p>That last question matters. The goal is not to remove every human from the process. The goal is to stop humans doing the repetitive movement while keeping them in charge of judgement.</p>
+
+      <div class="callout">
+        <p><strong>The useful test:</strong> if your team cannot explain why a stock number changed, you do not have a stock-sync problem. You have a stock-control problem.</p>
+      </div>
+
+      <h2>The payback is in avoided mistakes</h2>
+      <p>Manual stock checking is expensive, but the obvious time saving is only part of the case. The bigger cost is bad availability.</p>
+
+      <p>An oversell creates customer service work, refund risk, marketplace damage and warehouse noise. An undersell hides available stock from customers and slows cash conversion. A poor sync process causes both: it sells stock you do not have and hides stock you could have sold.</p>
+
+      <p>The calculation is simple enough to start. Count the weekly hours spent checking and correcting stock. Add the number of oversells, cancelled orders and emergency fixes. Then look at the SKUs affected most often. That short list usually tells you where the process is broken.</p>
+
+      <h2>What a better process looks like</h2>
+      <p>A strong stock process has one trusted stock position, channel-specific rules and clear exception handling.</p>
+
+      <p>The automation should pull orders, returns and adjustments into one controlled view. It should apply buffers and bundle logic before sending availability back to Shopify, Amazon and eBay. It should flag conflicts instead of hiding them. It should show what changed, when it changed and why.</p>
+
+      <p>That is the difference between a sync and a control system. A sync moves numbers. A control system protects the business from bad numbers.</p>
+
+      <h2>What to prepare before fixing it</h2>
+      <p>Start with ten problem SKUs. Include a fast mover, a slow mover, a bundle, a marketplace-only product, a wholesale line and any item that has oversold recently.</p>
+
+      <p>For each SKU, trace the full route: purchase order, receipt, warehouse stock, Shopify, Amazon, eBay, wholesale allocation, return and adjustment. Mark every place a person touches the number. Mark every delay. Mark every rule that is currently kept in someone’s head.</p>
+
+      <p>That map is the brief. Once the rules are visible, the build becomes much clearer: collect the data, apply the rules, flag the exceptions, and push only the stock position the business is willing to stand behind.</p>
+
+      <section class="faq">
+        <h2>FAQs</h2>
+        <h3>Why does stock sync fail between Shopify, Amazon and eBay?</h3>
+        <p>It usually fails because each channel has different timing, stock rules, bundles, buffers, returns and exceptions. The software then moves bad assumptions faster.</p>
+
+        <h3>Should one system control all stock?</h3>
+        <p>Most growing businesses need one trusted stock position, but that does not mean one flat number everywhere. You still need channel-specific buffers and rules.</p>
+
+        <h3>What should be fixed before buying stock-sync software?</h3>
+        <p>Fix SKU structure, source-of-truth rules, timing, channel buffers, bundle logic and exception handling before adding more software.</p>
+      </section>
+
+      <section class="article-cta">
+        <p class="kicker">Free process review</p>
+        <h2>Stock problems showing up in more than one channel?</h2>
+        <p>Bring ten problem SKUs and the systems they touch. In 30 minutes, I’ll help you find the process break before you spend more money on another tool.</p>
+        <p><a class="button light" href="/#contact">Book the free review</a></p>
+      </section>
+    </div>
+  </article>
+</main>
+<footer class="footer wrap"><p>Olivers Consulting · Automation for UK ecommerce and wholesale</p><p>© 2026 Henry Oliver</p></footer>
+</body>
+</html>
