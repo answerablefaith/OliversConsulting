@@ -1,14 +1,14 @@
 # Search Console checklist
 
-Use this when `https://oliversconsulting.com/` is live on the intended domain and Google Search Console access is available.
+Use this when `https://oliversconsulting.co.uk/` is live on the intended domain and Google Search Console access is available.
 
 ## One-time Google Search Console setup
 
-1. Add the domain property or URL-prefix property for `https://oliversconsulting.com/`.
+1. Add the domain property or URL-prefix property for `https://oliversconsulting.co.uk/`.
 2. Verify ownership using the method available to the site/domain.
 3. Submit the sitemap URL:
 
-   `https://oliversconsulting.com/sitemap.xml`
+   `https://oliversconsulting.co.uk/sitemap.xml`
 
 4. Check that Google can fetch the sitemap successfully.
 5. Inspect the homepage and `/blog/` URL after deployment.
@@ -23,7 +23,7 @@ Each article run must verify:
 - The article URL exists in the repo.
 - `/blog/` visibly links to the article.
 - `sitemap.xml` includes the article once only.
-- `robots.txt` points to `https://oliversconsulting.com/sitemap.xml`.
+- `robots.txt` points to `https://oliversconsulting.co.uk/sitemap.xml`.
 - `llms.txt` includes the article or topic cluster where useful.
 - `blog/content-plan.json` records the article, search intent, authority value and quality checks.
 
