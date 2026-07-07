@@ -23,9 +23,17 @@ Important URLs:
 - Sitemap: https://oliversconsulting.co.uk/sitemap.xml
 
 Published articles:
+- Why stock sync fails between Shopify, Amazon and eBay: https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/
 - The Monday report your ecommerce team should not be building by hand: https://oliversconsulting.co.uk/articles/monday-report-automation/
 - Before you hire another ecommerce admin, check the process first: https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/
 - How to automate supplier price lists for Shopify, Amazon and wholesale channels: https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/
+
+Topic clusters:
+- Supplier data automation: price lists, catalogues, bad rows, margin rules and publishing checks
+- Reporting automation: Monday packs, stock cover, channel performance and exception reports
+- Channel operations: Shopify, Amazon, eBay, stock sync, bundles, buffers and reconciliation
+- Wholesale and finance admin: Sage, Xero, QuickBooks, PDFs, portals and order-to-invoice work
+- Hiring versus automation: process checks before adding admin headcount
 
 Editorial focus:
 - Practical automation advice for UK ecommerce and wholesale operators
