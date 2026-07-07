@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oliversconsulting.com/sitemap.xml
+Sitemap: https://oliversconsulting.co.uk/sitemap.xml
