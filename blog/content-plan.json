@@ -1,0 +1,39 @@
+{
+  "site": "Olivers Consulting",
+  "domain": "https://oliversconsulting.com",
+  "positioning": "Fixed-price automation for UK ecommerce and wholesale teams, built by an operator who ran a 200,000 SKU multi-channel ecommerce operation.",
+  "cadence_recommendation": {
+    "posts_per_week": 2,
+    "streams": [
+      {
+        "name": "Commercial SEO",
+        "purpose": "Capture problem-aware searches from ecommerce and wholesale teams looking to automate supplier files, reports, stock sync, listings and invoice admin.",
+        "example_topics": [
+          "How to automate supplier price lists for Shopify and Amazon",
+          "What to automate before hiring another ecommerce administrator",
+          "How UK wholesalers can stop re-keying orders into Sage or Xero",
+          "Why your weekly sales report should not be built by hand"
+        ]
+      },
+      {
+        "name": "Founder-led operator notes",
+        "purpose": "Build trust and authority using Henry Oliver's real experience running a 200,000 SKU ecommerce operation.",
+        "example_topics": [
+          "What I learned running 200,000 SKUs across Shopify, Amazon and eBay",
+          "The hidden cost of fixing the spreadsheet every week",
+          "The difference between a software problem and a process problem",
+          "Why ROI maths should come before an automation build"
+        ]
+      }
+    ]
+  },
+  "articles": [],
+  "quality_rules": [
+    "Write for UK ecommerce and wholesale operators first, not search engines.",
+    "No filler, generic automation hype or repeated points.",
+    "Do not invent client results, statistics, dates, prices or case studies.",
+    "Every article must include a clear decision point, operational example or ROI calculation where relevant.",
+    "Avoid template-like card excerpts on the blog index.",
+    "Update sitemap.xml, llms.txt where useful and this content plan after every published article."
+  ]
+}
