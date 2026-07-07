@@ -10,6 +10,17 @@ Prefer one atomic commit per run where the connector supports it. If only file-b
 
 Do not claim a live deploy or Search Console submission unless a real tool confirms it. Always verify repo state after publishing.
 
+## Search discovery and later Google submission
+
+Every successful article run must keep `sitemap.xml`, `robots.txt`, `llms.txt` and `blog/content-plan.json` current.
+
+- `sitemap.xml` must include the homepage, `/blog/` and every published article once only.
+- `robots.txt` must allow crawling and point to `https://oliversconsulting.com/sitemap.xml`.
+- `llms.txt` should summarise the offer, proof points, topic clusters and current article URLs for AI/search discovery.
+- `blog/content-plan.json` must record the article angle, search intent, authority value, quality checks and duplicate-check result.
+
+When Google Search Console access is available later, submit the sitemap URL once: `https://oliversconsulting.com/sitemap.xml`. Do not claim this has been done unless a real Search Console action confirms it. Normal future articles should be discovered through the updated sitemap and robots file.
+
 ## Publishing cadence
 
 There should be two distinct content streams, not two versions of the same SEO post:
@@ -18,6 +29,25 @@ There should be two distinct content streams, not two versions of the same SEO p
 2. **Founder-led operator note** — for trust, authority and experience-led content.
 
 Avoid publishing two posts with the same search intent in the same week.
+
+Quality beats quantity. Two posts per week is a ceiling, not an obligation. If there is not a genuinely useful article to publish, refresh a strong existing article or skip rather than publish thin content.
+
+## Authority-first goal
+
+The goal is to build topical authority for UK ecommerce and wholesale automation, not to spam keywords. Every post should make the site more credible to a human buyer and easier for search engines or AI systems to understand.
+
+Authority means:
+
+- clear operator experience from Henry Oliver
+- specific ecommerce and wholesale workflows
+- honest process judgement
+- realistic ROI maths
+- named systems where relevant, such as Shopify, Amazon, eBay, Sage, Xero and QuickBooks
+- concrete examples of supplier files, stock sync, reporting, listings, invoices and catalogue work
+- useful advice even for a reader who does not buy
+- clear explanation of who is not a fit
+
+Do not publish keyword pages that simply rearrange the same phrases. Do not chase volume with weak posts. Each article needs a distinct point of view, a practical decision framework or a hard-won operational lesson.
 
 ## Positioning
 
@@ -45,8 +75,10 @@ Avoid:
 - over-explaining
 - “ultimate guide” language
 - keyword stuffing
+- repeating the same keyword phrase in headings
+- articles that exist only to target a search term
 
-Every paragraph must add a practical idea, decision point, example or warning. A clear 650-word article is better than a padded 1,200-word article.
+Every paragraph must add a practical idea, decision point, example or warning. A clear 650-word article is better than a padded 1,200-word article. Cut any paragraph that does not help the reader think, decide or act.
 
 ## Article requirements
 
@@ -69,6 +101,17 @@ Each article should include:
 - sitemap.xml update
 - llms.txt update where useful
 - content-plan.json update
+
+## Topic pillars
+
+Build authority across these pillars without repeating the same article:
+
+1. **Supplier data automation** — price lists, catalogues, bad rows, margins, formats, onboarding suppliers.
+2. **Reporting automation** — Monday packs, sales and margin reporting, aged debtors, stock cover, exception reports.
+3. **Channel operations** — Shopify, Amazon, eBay, stock sync, listings, channel drift, reconciliation.
+4. **Wholesale and finance admin** — order-to-invoice, Sage, Xero, QuickBooks, PDFs, portals and re-keying.
+5. **Hiring versus automation** — when an admin hire is a process problem, payback maths, what not to automate.
+6. **Founder/operator lessons** — hard-won views from running a 200,000 SKU operation.
 
 ## Commercial SEO topic examples
 
@@ -107,6 +150,24 @@ Before writing, inspect `/blog/`, `blog/content-plan.json`, `sitemap.xml`, `llms
 
 Keep the blog page human-edited. Do not make every card start with the same phrase pattern such as “A practical guide…” or “A simple guide…”. Each excerpt should have a distinct first word, rhythm and value proposition.
 
+## Authority and quality gate
+
+Before publishing, score the article from 1 to 5 on:
+
+- genuine usefulness to a UK ecommerce or wholesale operator
+- authority added to the site
+- specificity of workflow examples
+- commercial relevance
+- trust and accuracy
+- originality of angle
+- lack of filler and repetition
+- natural keyword use without spam
+- clarity of ROI or decision maths
+- fit with Henry’s real experience
+- strength of CTA without pressure
+
+Publish only if the average is at least 4.3 and no individual score is below 4. If the article fails, revise or skip.
+
 ## Final QA
 
 Publish only when the article is:
@@ -116,6 +177,8 @@ Publish only when the article is:
 - free from filler and repetition
 - accurate about the offer
 - clear on who should and should not buy
+- not keyword spam
+- distinct from existing posts
 - linked from `/blog/`
 - included once in `sitemap.xml`
 - represented in `llms.txt` where useful
