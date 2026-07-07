@@ -19,11 +19,4 @@ Key proof point:
 
 Important URLs:
 - Homepage: https://oliversconsulting.co.uk/
-- Blog: https://oliversconsulting.co.uk/blog/
 - Sitemap: https://oliversconsulting.co.uk/sitemap.xml
-
-Editorial focus:
-- Practical automation advice for UK ecommerce and wholesale operators
-- Commercial SEO articles for problem-aware buyers
-- Founder-led operator notes based on real multi-channel ecommerce experience
-- No generic automation hype, invented case studies or keyword stuffing
