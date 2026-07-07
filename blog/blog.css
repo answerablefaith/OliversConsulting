@@ -15,9 +15,7 @@
 
 * { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -29,78 +27,102 @@ body {
   line-height: 1.6;
 }
 
-a {
-  color: inherit;
-}
+a { color: inherit; }
 
-.page-shell {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
+.site-header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(247, 241, 232, 0.9);
+  border-bottom: 1px solid rgba(22, 19, 15, 0.1);
+  backdrop-filter: blur(18px);
 }
 
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 24px 0;
+  gap: 32px;
+  width: min(1180px, calc(100% - 32px));
+  min-height: 76px;
+  margin: 0 auto;
 }
 
 .brand {
   display: inline-flex;
-  align-items: center;
-  gap: 14px;
+  align-items: baseline;
+  gap: 10px;
   text-decoration: none;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 16px;
-  background: var(--ink);
-  color: var(--paper-strong);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-}
-
-.brand strong,
-.brand em {
-  display: block;
+  white-space: nowrap;
 }
 
 .brand strong {
-  font-size: 0.98rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .brand em {
-  margin-top: 2px;
+  position: relative;
+  padding-left: 12px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.brand em:before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(18px, 2.6vw, 34px);
+  margin-left: auto;
 }
 
 .nav-links a {
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  color: #5a5046;
+  font-size: 0.95rem;
+  font-weight: 500;
   text-decoration: none;
-  color: var(--muted);
-  background: rgba(255, 250, 241, 0.55);
-  backdrop-filter: blur(12px);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
   color: var(--ink);
-  border-color: rgba(22, 19, 15, 0.28);
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #1f1711;
+  color: #fffaf1;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header-cta span {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
 .hero {
@@ -190,9 +212,7 @@ a {
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
-.button:hover {
-  transform: translateY(-1px);
-}
+.button:hover { transform: translateY(-1px); }
 
 .button.primary {
   background: var(--accent);
@@ -416,9 +436,7 @@ a {
   font-size: 0.92rem;
 }
 
-.site-footer p {
-  margin: 0;
-}
+.site-footer p { margin: 0; }
 
 @media (max-width: 920px) {
   .site-header,
@@ -428,43 +446,53 @@ a {
     flex-direction: column;
   }
 
+  .site-header { padding: 16px 0; }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 14px 22px;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .header-cta { margin-top: 2px; }
+
   .hero-grid,
   .section-heading,
   .split {
     grid-template-columns: 1fr;
   }
 
-  .proof-card {
-    max-width: 440px;
-  }
+  .proof-card { max-width: 440px; }
 
   .intro-strip,
   .article-grid {
     grid-template-columns: 1fr;
   }
 
-  .article-card.featured {
-    grid-column: auto;
-  }
+  .article-card.featured { grid-column: auto; }
 }
 
 @media (max-width: 560px) {
-  .page-shell {
+  .page-shell,
+  .site-header {
     width: min(100% - 22px, 1180px);
   }
 
-  .nav-links {
-    width: 100%;
+  .brand {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
-  .nav-links a {
-    flex: 1 1 auto;
-    text-align: center;
+  .brand em {
+    padding-left: 0;
   }
 
-  .hero {
-    border-radius: 24px;
-  }
+  .brand em:before { display: none; }
+
+  .hero { border-radius: 24px; }
 
   .hero h1 {
     font-size: clamp(2.6rem, 14vw, 4rem);
