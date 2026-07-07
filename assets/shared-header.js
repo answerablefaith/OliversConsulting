@@ -1,5 +1,5 @@
 (() => {
-  function ensureSharedHeader() {
+  function addHeader() {
     if (document.getElementById('oc-static-header')) return;
     const current = window.location.pathname.replace(/\/$/, '') || '/';
     const header = document.createElement('header');
@@ -10,25 +10,21 @@
     document.body.insertBefore(header, document.body.firstChild);
   }
 
-  function hideOriginalReactHeader() {
+  function hideOldHeader() {
     const root = document.getElementById('root');
     if (!root) return;
-    const headers = Array.from(root.querySelectorAll('header'));
-    headers.forEach((header) => {
-      header.style.display = 'none';
-      header.setAttribute('aria-hidden', 'true');
-      header.setAttribute('data-oc-hidden-react-header', 'true');
+    Array.from(root.children).forEach((node) => {
+      const text = (node.textContent || '').replace(/\s+/g, ' ');
+      const isOldHeader = text.includes('Olivers Consulting') && text.includes('AUTOMATION') && text.includes('Services') && text.includes('Proof') && text.includes('How it works') && text.includes('Contact') && text.includes('Free review') && !text.includes('Your team is doing');
+      if (isOldHeader) {
+        node.style.display = 'none';
+        node.setAttribute('aria-hidden', 'true');
+      }
     });
   }
 
-  ensureSharedHeader();
-  hideOriginalReactHeader();
-
-  let tries = 0;
-  function tick() {
-    tries += 1;
-    hideOriginalReactHeader();
-    if (tries < 120) window.requestAnimationFrame(tick);
-  }
-  window.requestAnimationFrame(tick);
+  addHeader();
+  hideOldHeader();
+  const root = document.getElementById('root');
+  if (root) new MutationObserver(hideOldHeader).observe(root, { childList: true, subtree: true });
 })();
