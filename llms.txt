@@ -19,4 +19,14 @@ Key proof point:
 
 Important URLs:
 - Homepage: https://oliversconsulting.co.uk/
+- Articles: https://oliversconsulting.co.uk/articles/
 - Sitemap: https://oliversconsulting.co.uk/sitemap.xml
+
+Published articles:
+- How to automate supplier price lists for Shopify, Amazon and wholesale channels: https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/
+
+Editorial focus:
+- Practical automation advice for UK ecommerce and wholesale operators
+- Commercial SEO articles for problem-aware buyers
+- Founder-led operator notes based on real multi-channel ecommerce experience
+- No generic automation hype, invented case studies or keyword stuffing
