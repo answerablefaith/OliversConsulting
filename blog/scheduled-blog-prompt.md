@@ -15,11 +15,11 @@ Do not claim a live deploy or Search Console submission unless a real tool confi
 Every successful article run must keep `sitemap.xml`, `robots.txt`, `llms.txt` and `blog/content-plan.json` current.
 
 - `sitemap.xml` must include the homepage, `/blog/` and every published article once only.
-- `robots.txt` must allow crawling and point to `https://oliversconsulting.com/sitemap.xml`.
+- `robots.txt` must allow crawling and point to `https://oliversconsulting.co.uk/sitemap.xml`.
 - `llms.txt` should summarise the offer, proof points, topic clusters and current article URLs for AI/search discovery.
 - `blog/content-plan.json` must record the article angle, search intent, authority value, quality checks and duplicate-check result.
 
-When Google Search Console access is available later, submit the sitemap URL once: `https://oliversconsulting.com/sitemap.xml`. Do not claim this has been done unless a real Search Console action confirms it. Normal future articles should be discovered through the updated sitemap and robots file.
+When Google Search Console access is available later, submit the sitemap URL once for the `oliversconsulting.co.uk` property: `https://oliversconsulting.co.uk/sitemap.xml`. Do not claim this has been done unless a real Search Console action confirms it. Normal future articles should be discovered through the updated sitemap and robots file.
 
 ## Publishing cadence
 
