@@ -1,11 +1,11 @@
 {
   "site": "Olivers Consulting",
-  "domain": "https://oliversconsulting.com",
+  "domain": "https://oliversconsulting.co.uk",
   "positioning": "Fixed-price automation for UK ecommerce and wholesale teams, built by an operator who ran a 200,000 SKU multi-channel ecommerce operation.",
   "primary_goal": "Build authority for UK ecommerce and wholesale automation through high-quality, specific, operator-led articles. Quality beats quantity; avoid keyword spam and thin SEO pages.",
   "search_console_plan": {
-    "sitemap_url": "https://oliversconsulting.com/sitemap.xml",
-    "status": "Not submitted from this runtime. Submit later in Google Search Console when access is available.",
+    "sitemap_url": "https://oliversconsulting.co.uk/sitemap.xml",
+    "status": "Submit this corrected sitemap in Google Search Console for the oliversconsulting.co.uk property.",
     "future_rule": "Keep sitemap.xml, robots.txt and llms.txt updated after every article. Do not claim Google Search Console submission unless a real Search Console tool confirms it."
   },
   "cadence_recommendation": {
