@@ -1,0 +1,29 @@
+# Olivers Consulting
+
+Olivers Consulting helps UK ecommerce and wholesale businesses automate repetitive data and admin work: supplier files, product listings, stock updates, reporting, invoices, catalogue content and document processing.
+
+Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, formerly PwC and Citi, and built automations first inside his own 200,000 SKU operation across Shopify, Amazon and eBay.
+
+Core offer:
+- Free 30-minute process review
+- Supplier data pipelines
+- Reports that write themselves
+- Channel and stock sync
+- Order-to-invoice admin
+- Catalogue content and document engine
+- Fixed-price builds
+- Optional care plan
+
+Key proof point:
+- Supplier-file process reduced from 8 hours to 2 minutes with human review and bad rows flagged before publishing.
+
+Important URLs:
+- Homepage: https://oliversconsulting.com/
+- Blog: https://oliversconsulting.com/blog/
+- Sitemap: https://oliversconsulting.com/sitemap.xml
+
+Editorial focus:
+- Practical automation advice for UK ecommerce and wholesale operators
+- Commercial SEO articles for problem-aware buyers
+- Founder-led operator notes based on real multi-channel ecommerce experience
+- No generic automation hype, invented case studies or keyword stuffing
