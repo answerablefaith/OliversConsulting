@@ -5,6 +5,25 @@
   "site_structure_note": "The public article hub is /articles/. Future posts should use /articles/ unless instructed otherwise.",
   "articles": [
     {
+      "title": "Why stock sync fails between Shopify, Amazon and eBay",
+      "slug": "why-stock-sync-fails-shopify-amazon-ebay",
+      "url": "https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/",
+      "date_published": "2026-07-07",
+      "date_updated": "2026-07-07",
+      "topic_pillar": "Channel operations",
+      "topic_type": "Commercial SEO and operator-led stock control advice",
+      "primary_search_intent": "A UK ecommerce operator selling across Shopify, Amazon and eBay wants to understand why stock sync keeps failing and what to fix before adding more software.",
+      "authority_value": "Builds the channel operations pillar with practical rules for source of truth, buffers, bundles, timing gaps and exception handling.",
+      "duplicate_check": "Distinct from supplier data, reporting and hire-versus-automation articles; covers multi-channel stock control and stock-sync failure modes.",
+      "quality_checks": {"usefulness": 5, "authority_added": 5, "workflow_specificity": 5, "commercial_relevance": 5, "trust_and_accuracy": 5, "originality_of_angle": 5, "lack_of_filler_and_repetition": 5, "natural_keyword_use_without_spam": 5, "roi_or_decision_maths": 4, "fit_with_henry_experience": 5, "writing_quality": 5, "clarity": 5, "topical_variety": 5},
+      "internal_links": ["/", "/articles/", "/#services", "/#contact"],
+      "schema_types": ["BlogPosting", "BreadcrumbList", "FAQPage"],
+      "sitemap_updated": true,
+      "llms_updated": true,
+      "articles_index_updated": true,
+      "search_console_submission": "Not submitted from this runtime; sitemap updated for later Search Console recrawl."
+    },
+    {
       "title": "The Monday report your ecommerce team should not be building by hand",
       "slug": "monday-report-automation",
       "url": "https://oliversconsulting.co.uk/articles/monday-report-automation/",
