@@ -23,6 +23,7 @@ Important URLs:
 - Sitemap: https://oliversconsulting.co.uk/sitemap.xml
 
 Published articles:
+- The Monday report your ecommerce team should not be building by hand: https://oliversconsulting.co.uk/articles/monday-report-automation/
 - Before you hire another ecommerce admin, check the process first: https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/
 - How to automate supplier price lists for Shopify, Amazon and wholesale channels: https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/
 
