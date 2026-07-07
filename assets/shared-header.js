@@ -12,6 +12,17 @@
     document.body.insertBefore(header, document.body.firstChild);
   }
 
+  function updateCopyright() {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      if (node.nodeValue && node.nodeValue.includes('© 2026 Henry Oliver')) {
+        node.nodeValue = node.nodeValue.replaceAll('© 2026 Henry Oliver', '© 2026 Olivers Consulting');
+      }
+    });
+  }
+
   function hideOldHeader() {
     const root = document.getElementById('root');
     if (!root) return;
@@ -27,6 +38,11 @@
 
   addHeader();
   hideOldHeader();
+  updateCopyright();
   const root = document.getElementById('root');
-  if (root) new MutationObserver(hideOldHeader).observe(root, { childList: true, subtree: true });
+  if (root) new MutationObserver(() => {
+    hideOldHeader();
+    updateCopyright();
+  }).observe(root, { childList: true, subtree: true });
+  new MutationObserver(updateCopyright).observe(document.body, { childList: true, subtree: true });
 })();
