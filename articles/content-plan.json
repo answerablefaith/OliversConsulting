@@ -2,8 +2,27 @@
   "site": "Olivers Consulting",
   "domain": "https://oliversconsulting.co.uk",
   "primary_goal": "Build authority for UK ecommerce and wholesale automation through high-quality, specific, operator-led articles. Quality beats quantity; avoid keyword spam and thin SEO pages.",
-  "site_structure_note": "The user changed the public article hub from /blog/ to /articles/. Future posts should use /articles/ unless instructed otherwise.",
+  "site_structure_note": "The public article hub is /articles/. Future posts should use /articles/ unless instructed otherwise.",
   "articles": [
+    {
+      "title": "The Monday report your ecommerce team should not be building by hand",
+      "slug": "monday-report-automation",
+      "url": "https://oliversconsulting.co.uk/articles/monday-report-automation/",
+      "date_published": "2026-07-07",
+      "date_updated": "2026-07-07",
+      "topic_pillar": "Reporting automation",
+      "topic_type": "Commercial SEO and operator-led reporting advice",
+      "primary_search_intent": "A UK ecommerce or wholesale operator wants to reduce manual weekly reporting and understand what should be automated versus reviewed by a person.",
+      "authority_value": "Builds the reporting automation pillar with practical views on sales, margin, stock cover, channel performance and exception reporting.",
+      "duplicate_check": "Distinct from the supplier data article and the hire-versus-automation article.",
+      "quality_checks": {"usefulness": 5, "authority_added": 5, "workflow_specificity": 5, "commercial_relevance": 5, "trust_and_accuracy": 5, "lack_of_filler_and_repetition": 5, "natural_keyword_use": 5, "fit_with_henry_experience": 5},
+      "internal_links": ["/", "/articles/", "/#contact"],
+      "schema_types": ["BlogPosting", "BreadcrumbList", "FAQPage"],
+      "sitemap_updated": true,
+      "llms_updated": true,
+      "articles_index_updated": true,
+      "search_console_submission": "Not submitted from this runtime; sitemap updated for later Search Console recrawl."
+    },
     {
       "title": "Before you hire another ecommerce admin, check the process first",
       "slug": "before-hiring-ecommerce-admin",
@@ -13,30 +32,11 @@
       "topic_pillar": "Hiring versus automation",
       "topic_type": "Commercial SEO and operator-led decision advice",
       "primary_search_intent": "A UK ecommerce or wholesale owner is considering hiring for admin and wants to know whether recurring data work should be automated first.",
-      "authority_value": "Shows how to separate judgement work from data movement using Henry Oliver's operator experience, without claiming external client results.",
-      "duplicate_check": "Distinct from the supplier price-list article. This article focuses on the hire-versus-automation decision, not the mechanics of supplier-file pipelines.",
-      "quality_checks": {
-        "usefulness": 5,
-        "authority_added": 5,
-        "workflow_specificity": 5,
-        "commercial_relevance": 5,
-        "trust_and_accuracy": 5,
-        "originality_of_angle": 4,
-        "lack_of_filler_and_repetition": 5,
-        "natural_keyword_use": 5,
-        "roi_or_decision_maths": 5,
-        "fit_with_henry_experience": 5
-      },
-      "internal_links": [
-        "/",
-        "/articles/",
-        "/#contact"
-      ],
-      "schema_types": [
-        "BlogPosting",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
+      "authority_value": "Shows how to separate judgement work from data movement using operator experience.",
+      "duplicate_check": "Distinct from the supplier price-list article.",
+      "quality_checks": {"usefulness": 5, "authority_added": 5, "workflow_specificity": 5, "commercial_relevance": 5, "trust_and_accuracy": 5, "lack_of_filler_and_repetition": 5, "natural_keyword_use": 5, "fit_with_henry_experience": 5},
+      "internal_links": ["/", "/articles/", "/#contact"],
+      "schema_types": ["BlogPosting", "BreadcrumbList", "FAQPage"],
       "sitemap_updated": true,
       "llms_updated": true,
       "articles_index_updated": true,
@@ -51,50 +51,25 @@
       "topic_pillar": "Supplier data automation",
       "topic_type": "Commercial SEO",
       "primary_search_intent": "A UK ecommerce or wholesale operator wants to understand how supplier price-list automation should work before buying software, hiring admin or commissioning a build.",
-      "authority_value": "Uses Henry Oliver's operator experience running a 200,000 SKU ecommerce operation and the 8-hour to 2-minute supplier-file proof point without inventing client results.",
-      "duplicate_check": "First published article under /articles/; no prior article content existed in repo at publication time.",
-      "quality_checks": {
-        "usefulness": 5,
-        "authority_added": 5,
-        "workflow_specificity": 5,
-        "commercial_relevance": 5,
-        "trust_and_accuracy": 5,
-        "originality_of_angle": 4,
-        "lack_of_filler_and_repetition": 5,
-        "natural_keyword_use": 5,
-        "roi_or_decision_maths": 5,
-        "fit_with_henry_experience": 5
-      },
-      "internal_links": [
-        "/",
-        "/articles/",
-        "/#contact"
-      ],
-      "schema_types": [
-        "BlogPosting",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
+      "authority_value": "Uses Henry Oliver's operator experience and the 8-hour to 2-minute supplier-file proof point without inventing client results.",
+      "duplicate_check": "First published article under /articles/.",
+      "quality_checks": {"usefulness": 5, "authority_added": 5, "workflow_specificity": 5, "commercial_relevance": 5, "trust_and_accuracy": 5, "lack_of_filler_and_repetition": 5, "natural_keyword_use": 5, "fit_with_henry_experience": 5},
+      "internal_links": ["/", "/articles/", "/#contact"],
+      "schema_types": ["BlogPosting", "BreadcrumbList", "FAQPage"],
       "sitemap_updated": true,
       "llms_updated": true,
       "articles_index_updated": true,
       "search_console_submission": "Not submitted from this runtime; sitemap updated for later Search Console recrawl."
     }
   ],
-  "future_pillars": [
-    "Supplier data automation",
-    "Reporting automation",
-    "Channel operations",
-    "Wholesale and finance admin",
-    "Hiring versus automation",
-    "Founder/operator lessons"
-  ],
+  "future_pillars": ["Supplier data automation", "Reporting automation", "Channel operations", "Wholesale and finance admin", "Hiring versus automation", "Founder/operator lessons"],
   "quality_rules": [
     "Write for UK ecommerce and wholesale operators first, not search engines.",
     "Quality beats quantity; two posts per week is a ceiling, not a quota.",
     "No filler, generic automation hype or repeated points.",
     "No keyword spam or pages that exist only to target a phrase.",
     "Do not invent client results, statistics, dates, prices or case studies.",
-    "Every article must include a clear decision point, operational example or ROI calculation where relevant."
+    "Every article must include a clear decision point, operational example or ROI calculation where relevant.",
+    "After the three starter articles, use scheduled publishing or refreshes rather than adding volume for its own sake."
   ]
 }
