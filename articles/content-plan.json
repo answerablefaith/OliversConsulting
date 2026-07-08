@@ -5,6 +5,29 @@
   "site_structure_note": "The public article hub is /articles/. Future posts should use /articles/ unless instructed otherwise.",
   "articles": [
     {
+      "title": "Ecommerce AI automation: how to prove the ROI first",
+      "slug": "ecommerce-ai-automation-roi",
+      "url": "https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/",
+      "date_published": "2026-07-08",
+      "date_updated": "2026-07-08",
+      "topic_pillar": "Founder/operator lessons",
+      "topic_type": "Trend-aware commercial advice and operator-led automation ROI guidance",
+      "primary_keyword_search_query": "ecommerce AI automation ROI",
+      "related_keyword_family": ["AI automation ecommerce", "ecommerce automation ROI", "AI workflow automation", "what to automate in ecommerce"],
+      "trend_search_signal": "Fresh July 2026 retail coverage is focused on the gap between high AI adoption and measurable return, with poor data visibility and manual decision work named as blockers. Used as editorial direction only; the article does not repeat third-party statistics or chase a broad AI trend.",
+      "primary_search_intent": "A UK ecommerce operator is considering AI automation and wants a practical way to choose a use case, control risk and test the return before buying software or commissioning a build.",
+      "authority_value": "Adds a founder/operator pillar and connects AI interest to Olivers Consulting's core position: map the process, find the payroll leak, keep human review on exceptions and prove payback with simple maths.",
+      "duplicate_check": "Distinct from the hiring article, which asks whether admin headcount is masking repeatable work. This article answers how to select and govern an AI automation use case and test ROI before buying a tool. It does not repeat the stock-sync or supplier-file workflows as its core answer.",
+      "quality_checks": {"usefulness": 5, "authority_added": 5, "workflow_specificity": 5, "commercial_relevance": 5, "trust_and_accuracy": 5, "originality_of_angle": 5, "lack_of_filler_and_repetition": 5, "natural_keyword_use_without_spam": 5, "roi_or_decision_maths": 5, "fit_with_henry_experience": 5, "writing_quality": 5, "clarity": 5, "hemingway_grade_9_or_lower_readability": 5, "trend_search_relevance": 5, "topical_variety": 5},
+      "hemingway_readability_check": "Passed final plain-language editor check for grade 9 or lower: short sentences, active voice, plain words, short paragraphs and no dense stacked clauses.",
+      "internal_links": ["/", "/articles/", "/#services", "/#contact"],
+      "schema_types": ["BlogPosting", "BreadcrumbList", "FAQPage"],
+      "sitemap_updated": true,
+      "llms_updated": true,
+      "articles_index_updated": true,
+      "search_console_submission": "Not submitted from this runtime; sitemap updated for later Search Console recrawl."
+    },
+    {
       "title": "Why stock sync fails between Shopify, Amazon and eBay",
       "slug": "why-stock-sync-fails-shopify-amazon-ebay",
       "url": "https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/",
@@ -85,10 +108,12 @@
   "quality_rules": [
     "Write for UK ecommerce and wholesale operators first, not search engines.",
     "Quality beats quantity; two posts per week is a ceiling, not a quota.",
+    "Every article and supporting copy must read at Hemingway grade 9 or lower.",
+    "Use current trend and keyword signals to choose useful buyer questions where available, but never keyword-stuff.",
     "No filler, generic automation hype or repeated points.",
     "No keyword spam or pages that exist only to target a phrase.",
     "Do not invent client results, statistics, dates, prices or case studies.",
     "Every article must include a clear decision point, operational example or ROI calculation where relevant.",
-    "After the three starter articles, use scheduled publishing or refreshes rather than adding volume for its own sake."
+    "After the starter articles, use scheduled publishing or refreshes rather than adding volume for its own sake."
   ]
 }
