@@ -23,6 +23,7 @@ Important URLs:
 - Sitemap: https://oliversconsulting.co.uk/sitemap.xml
 
 Published articles:
+- Ecommerce AI automation: how to prove the ROI first: https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/
 - Why stock sync fails between Shopify, Amazon and eBay: https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/
 - The Monday report your ecommerce team should not be building by hand: https://oliversconsulting.co.uk/articles/monday-report-automation/
 - Before you hire another ecommerce admin, check the process first: https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/
@@ -34,6 +35,7 @@ Topic clusters:
 - Channel operations: Shopify, Amazon, eBay, stock sync, bundles, buffers and reconciliation
 - Wholesale and finance admin: Sage, Xero, QuickBooks, PDFs, portals and order-to-invoice work
 - Hiring versus automation: process checks before adding admin headcount
+- Founder/operator lessons: ecommerce AI automation, workflow controls, ROI tests and narrow automation use cases
 
 Editorial focus:
 - Practical automation advice for UK ecommerce and wholesale operators
