@@ -42,7 +42,9 @@
         html = html.replace(/<nav style="max-width:1180px;margin:0 auto;padding:26px 40px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #17130b">[\s\S]*?<\/nav>/, header);
         html = html.replace('<section style="background:#17130b;color:#efe8dc">', '<section class="oc-differentiators" style="background:#17130b;color:#efe8dc">');
         html = html.replace('<!-- CHAPTER 06 / TRACK RECORD -->\n  <section style="background:#1e3b2f;color:#eee6d5">', '<!-- CHAPTER 06 / TRACK RECORD -->\n  <section class="oc-track-record" style="background:#1e3b2f;color:#eee6d5">');
-        html = html.replace('hours: s.hours,', 'hours: Math.round(s.hours),');
+        html = html.replace('{{ hours }} HRS', '{{ hoursLabel }} HRS');
+        html = html.replace('{{ hours }}<span style="font-size:22px;margin-left:4px">hrs</span>', '{{ hoursLabel }}<span style="font-size:22px;margin-left:4px">hrs</span>');
+        html = html.replace('hours: s.hours,', 'hours: s.hours, hoursLabel: Math.round(s.hours),');
         if (window.matchMedia('(max-width:900px)').matches) {
           html = html.replace(/(<div style="display:grid;grid-template-columns:repeat\(3,1fr\);gap:20px;animation:[^"]*">\s*)(<div style="border:1px solid rgba\(255,255,255,\.14\);background:rgba\(255,255,255,\.03\);border-radius:12px;padding:26px;display:flex;flex-direction:column">[\s\S]*?Replaced hand-assembled analytics packs[\s\S]*?<\/p>\s*<\/div>\s*)(<div style="border:1px solid rgba\(255,255,255,\.14\);background:rgba\(255,255,255,\.03\);border-radius:12px;padding:26px;display:flex;flex-direction:column">[\s\S]*?Turned high-volume, inconsistent data feeds[\s\S]*?<\/p>\s*<\/div>\s*)(<div style="border:1px solid rgba\(255,255,255,\.14\);background:rgba\(255,255,255,\.03\);border-radius:12px;padding:26px;display:flex;flex-direction:column">[\s\S]*?Then I ran my own ecommerce and wholesale business[\s\S]*?<\/p>\s*<\/div>\s*)/, '$1$4$2$3');
         }
