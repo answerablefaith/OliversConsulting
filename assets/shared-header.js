@@ -2,11 +2,12 @@
   function addHeader() {
     if (document.getElementById('oc-static-header')) return;
     const current = window.location.pathname.replace(/\/$/, '') || '/';
+    const mobileCtaInline = "background:#1e3b2f!important;color:#efe8dc!important;border-color:#1e3b2f!important;padding:13px 16px!important;font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:16px!important;border-radius:8px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;text-align:center!important;line-height:1.15!important;white-space:normal!important;box-shadow:0 8px 18px -10px rgba(30,59,47,.8)!important";
     const header = document.createElement('header');
     header.id = 'oc-static-header';
     header.className = 'oc-site-header';
     header.setAttribute('aria-label', 'Site header');
-    header.innerHTML = '<a class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-header-cta" href="/#book">Book a free call →</a><details class="oc-mobile-menu"><summary>Menu</summary><nav class="oc-mobile-links" aria-label="Mobile navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a><a class="oc-header-cta" href="/#book">Book a free call →</a></nav></details>';
+    header.innerHTML = '<a class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-header-cta" href="/#book">Book a free call →</a><details class="oc-mobile-menu"><summary>Menu</summary><nav class="oc-mobile-links" aria-label="Mobile navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a><a class="oc-header-cta" href="/#book" style="' + mobileCtaInline + '">Book a free call →</a></nav></details>';
     const links = header.querySelectorAll('a');
     links.forEach((link) => {
       const href = link.getAttribute('href');
