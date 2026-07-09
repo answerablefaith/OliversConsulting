@@ -4,11 +4,15 @@
     const current = window.location.pathname.replace(/\/$/, '') || '/';
     const header = document.createElement('header');
     header.id = 'oc-static-header';
-    header.innerHTML = '<a class="oc-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-button" href="/#book">Book a free call →</a>';
-    const home = header.querySelector('a[href="/"]');
-    const articles = header.querySelector('a[href="/articles/"]');
-    if (home && current === '/') home.setAttribute('aria-current', 'page');
-    if (articles && current.startsWith('/articles')) articles.setAttribute('aria-current', 'page');
+    header.className = 'oc-site-header';
+    header.setAttribute('aria-label', 'Site header');
+    header.innerHTML = '<a class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-header-cta" href="/#book">Book a free call →</a><details class="oc-mobile-menu"><summary>Menu</summary><nav class="oc-mobile-links" aria-label="Mobile navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a><a class="oc-header-cta" href="/#book">Book a free call →</a></nav></details>';
+    const links = header.querySelectorAll('a');
+    links.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href === '/' && current === '/') link.setAttribute('aria-current', 'page');
+      if (href === '/articles/' && current.startsWith('/articles')) link.setAttribute('aria-current', 'page');
+    });
     document.body.insertBefore(header, document.body.firstChild);
   }
 
