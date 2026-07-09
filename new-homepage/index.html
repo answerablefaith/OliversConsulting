@@ -28,13 +28,14 @@
         html = html.replaceAll('href="#articles"', 'href="/new-homepage/articles/"');
         html = html.replaceAll('href="https://oliversconsulting.com', 'href="https://oliversconsulting.co.uk');
         html = html.replaceAll('oliversconsulting.com', 'oliversconsulting.co.uk');
-        html = html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g, './Henry Oliver - Professional Photo.png');
+        html = html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g, './image3.png');
+        html = html.replaceAll('./Henry Oliver - Professional Photo.png', './image3.png');
 
         document.open();
         document.write(html);
         document.close();
       } catch (error) {
-        document.body.innerHTML = '<main class="loading"><strong>Preview could not load.</strong><p>Check that Olivers-Consulting-v3.dc.html, support.js and the Henry photo are all in /new-homepage/.</p></main>';
+        document.body.innerHTML = '<main class="loading"><strong>Preview could not load.</strong><p>Check that Olivers-Consulting-v3.dc.html, support.js and image3.png are all in /new-homepage/.</p></main>';
       }
     })();
   </script>
