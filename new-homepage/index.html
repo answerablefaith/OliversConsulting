@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>New homepage preview | Olivers Consulting</title>
+  <style>
+    body{margin:0;background:#efe8dc;color:#17130b;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:grid;place-items:center;min-height:100vh}
+    .loading{max-width:520px;padding:32px;text-align:center}
+    .loading strong{display:block;font-size:22px;margin-bottom:8px}
+    .loading p{margin:0;color:#5b5444;line-height:1.5}
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <strong>Loading homepage preview…</strong>
+    <p>This preview keeps the live homepage unchanged.</p>
+  </div>
+  <script>
+    (async function () {
+      try {
+        const response = await fetch('./Olivers-Consulting-v3.dc.html', { cache: 'no-store' });
+        if (!response.ok) throw new Error('Preview file not found');
+        let html = await response.text();
+
+        html = html.replace('<head>', '<head>\n<meta name="robots" content="noindex, nofollow">\n<title>New homepage preview | Olivers Consulting</title>');
+        html = html.replaceAll('href="#articles"', 'href="/articles/"');
+        html = html.replaceAll('href="https://oliversconsulting.com', 'href="https://oliversconsulting.co.uk');
+        html = html.replaceAll('oliversconsulting.com', 'oliversconsulting.co.uk');
+
+        document.open();
+        document.write(html);
+        document.close();
+      } catch (error) {
+        document.body.innerHTML = '<main class="loading"><strong>Preview could not load.</strong><p>Check that Olivers-Consulting-v3.dc.html and support.js are both in /new-homepage/.</p></main>';
+      }
+    })();
+  </script>
+</body>
+</html>
