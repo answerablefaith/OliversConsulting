@@ -34,18 +34,34 @@
         const mobileAfterToolsCtas = '<div class="oc-mobile-after-tools-ctas"><a href="#book">Book a free call <span>→</span></a><a href="#services">See what I automate</a></div>';
 
         const liveHead = '<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Olivers Consulting — Automation for UK Ecommerce & Wholesale</title>\n<meta name="description" content="Fixed-price automation for UK ecommerce and wholesale teams. Supplier files, listings, stock, reports and invoices, built by an operator who ran a 200,000 SKU business.">\n<meta name="author" content="Henry Oliver">\n<link rel="canonical" href="https://oliversconsulting.co.uk/">\n<meta property="og:title" content="Olivers Consulting — Automation for UK Ecommerce & Wholesale">\n<meta property="og:description" content="8 hours to 2 minutes. Fixed-price automation built by an ecommerce operator, not an agency.">\n<meta property="og:type" content="website">\n<meta property="og:url" content="https://oliversconsulting.co.uk/">\n<meta name="twitter:card" content="summary_large_image">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n<link rel="alternate icon" href="/favicon.ico" type="image/x-icon">\n<link rel="stylesheet" href="/assets/mobile-fixes.css">\n<link rel="stylesheet" href="/assets/shared-header.css">';
-        const finalMobileCss = '<style id="oc-stable-mobile-fixes">.oc-mobile-after-tools-ctas{display:none}@media(max-width:900px){header#top div:has(> a[href="#book"]):has(> a[href="#services"]){display:none!important}.oc-mobile-after-tools-ctas{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin:22px 0 0!important;padding:0!important}.oc-mobile-after-tools-ctas>a{width:100%!important;min-height:46px!important;border-radius:8px!important;font-family:\'Saira Condensed\',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:15px!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important}.oc-mobile-after-tools-ctas>a:first-child{background:#1e3b2f!important;color:#efe8dc!important;border:2px solid #1e3b2f!important;box-shadow:0 8px 18px -10px rgba(30,59,47,.75)!important}.oc-mobile-after-tools-ctas>a:last-child{background:transparent!important;color:#17130b!important;border:1.5px solid #17130b!important}.oc-differentiators>div{padding:58px 22px!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]{display:grid!important;grid-template-columns:1fr!important;gap:34px!important;text-align:left!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]>div{padding:0!important;margin:0!important;border:0!important;text-align:left!important}.oc-differentiators div[style*="height:48px"]{margin-left:0!important;justify-content:flex-start!important}.oc-differentiators h3{font-size:38px!important;line-height:.92!important;margin:0 0 14px!important;text-align:left!important;max-width:10ch!important}.oc-differentiators p{font-size:17px!important;line-height:1.52!important;text-align:left!important;max-width:28ch!important;margin:0!important}.oc-track-record>div{padding:70px 22px!important}.oc-track-record div[style*="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"]{display:flex!important;flex-direction:column!important;gap:20px!important}.oc-track-record div[style*="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"]>div{padding:22px!important;text-align:left!important}.oc-track-record div[style*="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"]>div:first-child>div:nth-child(2){height:auto!important;display:grid!important;grid-template-columns:repeat(10,1fr)!important;grid-template-rows:repeat(2,1fr)!important;gap:8px!important;align-content:center!important;background:#193d30!important;border:1px solid rgba(143,224,175,.12)!important;border-radius:12px!important;padding:13px!important;margin:22px 0 24px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}.oc-track-record div[style*="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"]>div:first-child>div:nth-child(2)>div{display:block!important;min-width:0!important;width:auto!important;height:auto!important;aspect-ratio:1/1!important;border-radius:4px!important}.oc-track-record div[style*="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"]>div:first-child>div:nth-child(2)>div[style*="rgba"]{background:#52665c!important}.oc-track-record div[style*="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"]>div:first-child>div:nth-child(2)>div[style*="#8fe0af"]{background:#8bdca8!important}}</style>';
+        const finalMobileCss = `<style id="oc-stable-mobile-fixes">
+          .oc-mobile-after-tools-ctas{display:none}
+          @media(max-width:900px){
+            .oc-hero-ctas{display:none!important}
+            .oc-mobile-after-tools-ctas{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin:22px 0 0!important;padding:0!important}
+            .oc-mobile-after-tools-ctas>a{width:100%!important;min-height:46px!important;border-radius:8px!important;font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:15px!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important}
+            .oc-mobile-after-tools-ctas>a:first-child{background:#1e3b2f!important;color:#efe8dc!important;border:2px solid #1e3b2f!important;box-shadow:0 8px 18px -10px rgba(30,59,47,.75)!important}
+            .oc-mobile-after-tools-ctas>a:last-child{background:transparent!important;color:#17130b!important;border:1.5px solid #17130b!important}
+            .oc-differentiators>div{padding:58px 22px!important}
+            .oc-differentiators-grid{display:grid!important;grid-template-columns:1fr!important;gap:34px!important;text-align:left!important}
+            .oc-differentiator-card{padding:0!important;margin:0!important;border:0!important;text-align:left!important}
+            .oc-differentiator-card>div:first-child{margin-left:0!important;justify-content:flex-start!important}
+            .oc-differentiator-card h3{font-size:38px!important;line-height:.92!important;margin:0 0 14px!important;text-align:left!important;max-width:10ch!important}
+            .oc-differentiator-card p{font-size:17px!important;line-height:1.52!important;text-align:left!important;max-width:28ch!important;margin:0!important}
+            .oc-track-record>div{padding:70px 22px!important}
+            .oc-track-cards{display:flex!important;flex-direction:column!important;gap:20px!important}
+            .oc-track-card{padding:22px!important;text-align:left!important}
+            .oc-track-card--wwt .oc-wwt-grid{height:auto!important;display:grid!important;grid-template-columns:repeat(10,1fr)!important;grid-template-rows:repeat(2,1fr)!important;gap:8px!important;align-content:center!important;background:#193d30!important;border:1px solid rgba(143,224,175,.12)!important;border-radius:12px!important;padding:13px!important;margin:22px 0 24px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}
+            .oc-track-card--wwt .oc-wwt-grid>div{display:block!important;min-width:0!important;width:auto!important;height:auto!important;aspect-ratio:1/1!important;border-radius:4px!important}
+            .oc-track-card--wwt .oc-wwt-grid>div[style*="rgba"]{background:#52665c!important}
+            .oc-track-card--wwt .oc-wwt-grid>div[style*="#8fe0af"]{background:#8bdca8!important}
+          }
+        </style>`;
 
         html = html.replace('<head>', liveHead);
         html = html.replace('</head>', finalMobileCss + '</head>');
         html = html.replaceAll('src="./support.js"', 'src="/new-homepage/support.js"');
         html = html.replace(/<nav style="max-width:1180px;margin:0 auto;padding:26px 40px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #17130b">[\s\S]*?<\/nav>/, header);
-        html = html.replace('<section style="background:#17130b;color:#efe8dc">', '<section class="oc-differentiators" style="background:#17130b;color:#efe8dc">');
-        html = html.replace('<!-- CHAPTER 06 / TRACK RECORD -->\n  <section style="background:#1e3b2f;color:#eee6d5">', '<!-- CHAPTER 06 / TRACK RECORD -->\n  <section class="oc-track-record" style="background:#1e3b2f;color:#eee6d5">');
-
-        html = html.replace(/(<div style="display:grid;grid-template-columns:repeat\(3,1fr\);gap:20px;animation:[^"]*">\s*)(<div style="border:1px solid rgba\(255,255,255,\.14\);background:rgba\(255,255,255,\.03\);border-radius:12px;padding:26px;display:flex;flex-direction:column">[\s\S]*?Replaced hand-assembled analytics packs[\s\S]*?<\/p>\s*<\/div>\s*)(<div style="border:1px solid rgba\(255,255,255,\.14\);background:rgba\(255,255,255,\.03\);border-radius:12px;padding:26px;display:flex;flex-direction:column">[\s\S]*?Turned high-volume, inconsistent data feeds[\s\S]*?<\/p>\s*<\/div>\s*)(<div style="border:1px solid rgba\(255,255,255,\.14\);background:rgba\(255,255,255,\.03\);border-radius:12px;padding:26px;display:flex;flex-direction:column">[\s\S]*?Then I ran my own ecommerce and wholesale business[\s\S]*?<\/p>\s*<\/div>\s*)/, '$1$4$2$3');
-
-        html = html.replace('<div style="margin-top:52px;padding:16px 0;border-top:1px solid #d6cdba;border-bottom:1px solid #d6cdba;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14.5px;color:#5b5444;font-weight:500">\n      <span style="color:#a49d8b;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px">Built into your tools -</span>\n      <span>Xero · QuickBooks · Shopify · Amazon · eBay · Faire · Etsy · your ERP</span>\n    </div>', '<div style="margin-top:52px;padding:16px 0;border-top:1px solid #d6cdba;border-bottom:1px solid #d6cdba;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14.5px;color:#5b5444;font-weight:500">\n      <span style="color:#a49d8b;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px">Built into your tools -</span>\n      <span>Xero · QuickBooks · Shopify · Amazon · eBay · Faire · Etsy · your ERP</span>\n    </div>' + mobileAfterToolsCtas);
         html = html.replaceAll('◀', '&lt;').replaceAll('▶', '&gt;');
         html = html.replace("playIcon: s.playing ? '❚❚' : '&gt;',", "playIcon: s.playing ? 'Ⅱ' : '▷',");
         html = html.replaceAll('href="#articles"', 'href="/articles/"');
@@ -54,6 +70,51 @@
         html = html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g, '/new-homepage/image3.png');
         html = html.replaceAll('./Henry Oliver - Professional Photo.png', '/new-homepage/image3.png');
         html = html.replaceAll('./image3.png', '/new-homepage/image3.png');
+
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+
+        const hero = doc.querySelector('header#top');
+        if (hero) {
+          const heroCtas = Array.from(hero.querySelectorAll('div')).find(el => el.querySelector('a[href="#book"]') && el.querySelector('a[href="#services"]'));
+          if (heroCtas) heroCtas.classList.add('oc-hero-ctas');
+          const toolsStrip = Array.from(hero.querySelectorAll('div')).find(el => el.textContent.includes('Built into your tools') && el.textContent.includes('Xero'));
+          if (toolsStrip && !toolsStrip.nextElementSibling?.classList?.contains('oc-mobile-after-tools-ctas')) {
+            toolsStrip.insertAdjacentHTML('afterend', mobileAfterToolsCtas);
+          }
+        }
+
+        const differentiators = Array.from(doc.querySelectorAll('section')).find(sec => sec.textContent.includes('Priced upfront') && sec.textContent.includes('Built around your tools') && sec.textContent.includes('One operator'));
+        if (differentiators) {
+          differentiators.classList.add('oc-differentiators');
+          const grid = Array.from(differentiators.querySelectorAll('div')).find(el => el.children.length === 3 && el.textContent.includes('Priced upfront') && el.textContent.includes('Built around your tools'));
+          if (grid) {
+            grid.classList.add('oc-differentiators-grid');
+            Array.from(grid.children).forEach(card => card.classList.add('oc-differentiator-card'));
+          }
+        }
+
+        const track = Array.from(doc.querySelectorAll('section')).find(sec => sec.textContent.includes('Chapter 06 - Track record') && sec.textContent.includes('WWT International') && sec.textContent.includes('Citibank'));
+        if (track) {
+          track.classList.add('oc-track-record');
+          const cardGrid = Array.from(track.querySelectorAll('div')).find(el => el.children.length === 3 && el.textContent.includes('PwC') && el.textContent.includes('Citibank') && el.textContent.includes('WWT International'));
+          if (cardGrid) {
+            cardGrid.classList.add('oc-track-cards');
+            const cards = Array.from(cardGrid.children);
+            const wwt = cards.find(card => card.textContent.includes('WWT International'));
+            const pwc = cards.find(card => card.textContent.includes('PwC'));
+            const citi = cards.find(card => card.textContent.includes('Citibank'));
+            [wwt, pwc, citi].filter(Boolean).forEach(card => cardGrid.appendChild(card));
+            if (wwt) {
+              wwt.classList.add('oc-track-card', 'oc-track-card--wwt');
+              const grid = Array.from(wwt.children).find(el => el.children.length >= 20);
+              if (grid) grid.classList.add('oc-wwt-grid');
+            }
+            if (pwc) pwc.classList.add('oc-track-card', 'oc-track-card--pwc');
+            if (citi) citi.classList.add('oc-track-card', 'oc-track-card--citi');
+          }
+        }
+
+        html = '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
 
         document.open();
         document.write(html);
