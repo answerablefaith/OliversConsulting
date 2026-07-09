@@ -4,11 +4,9 @@
     const current = window.location.pathname.replace(/\/$/, '') || '/';
     const header = document.createElement('header');
     header.id = 'oc-static-header';
-    header.innerHTML = '<a class="oc-brand" href="/">Olivers Consulting</a><nav class="oc-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">Services</a><a href="/#proof">Proof</a><a href="/#how-it-works">How it works</a><a href="/articles/">Articles</a><a href="/#contact">Contact</a></nav><a class="oc-button" href="/#contact">Free review →</a>';
-    const home = header.querySelector('a[href="/"]');
+    header.innerHTML = '<a class="oc-brand" href="/" aria-label="Olivers Consulting home"><span class="oc-mark"><span></span><span></span></span><span class="oc-brand-text"><strong>Olivers</strong><em>Consulting</em></span></a><nav class="oc-nav" aria-label="Primary navigation"><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-button" href="/#book">Book a free call →</a>';
     const articles = header.querySelector('a[href="/articles/"]');
-    if (home && current === '/') home.setAttribute('aria-current', 'page');
-    if (articles && current === '/articles') articles.setAttribute('aria-current', 'page');
+    if (articles && current.startsWith('/articles')) articles.setAttribute('aria-current', 'page');
     document.body.insertBefore(header, document.body.firstChild);
   }
 
