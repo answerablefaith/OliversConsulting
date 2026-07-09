@@ -25,7 +25,7 @@
         let html = await response.text();
 
         html = html.replace('<head>', '<head>\n<meta name="robots" content="noindex, nofollow">\n<title>New homepage preview | Olivers Consulting</title>');
-        html = html.replaceAll('href="#articles"', 'href="/articles/"');
+        html = html.replaceAll('href="#articles"', 'href="/new-homepage/articles/"');
         html = html.replaceAll('href="https://oliversconsulting.com', 'href="https://oliversconsulting.co.uk');
         html = html.replaceAll('oliversconsulting.com', 'oliversconsulting.co.uk');
         html = html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g, './Henry Oliver - Professional Photo.png');
