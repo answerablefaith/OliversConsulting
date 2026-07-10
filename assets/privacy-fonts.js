@@ -49,13 +49,52 @@
     });
   }
 
-  function startContentCleanup(){
+  function cleanEmDashes(){
+    document.title = (document.title || '').replace(/\u2014/g, '-');
+
+    Array.prototype.slice.call(document.querySelectorAll('meta[content]')).forEach(function(meta){
+      var value = meta.getAttribute('content') || '';
+      if (value.indexOf('\u2014') > -1) meta.setAttribute('content', value.replace(/\u2014/g, '-'));
+    });
+
+    if (!document.body) return;
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      if (!node.nodeValue || node.nodeValue.indexOf('\u2014') === -1) continue;
+      var parent = node.parentElement;
+      if (parent && parent.closest('script,style,noscript,textarea')) continue;
+      node.nodeValue = node.nodeValue.replace(/\u2014/g, '-');
+    }
+  }
+
+  function ensureFounderCaption(){
+    var photo = document.querySelector('img[alt="Henry Oliver"]');
+    if (!photo || !photo.parentElement || photo.parentElement.querySelector('.oc-founder-caption')) return;
+
+    var frame = photo.parentElement;
+    if (window.getComputedStyle && window.getComputedStyle(frame).position === 'static') frame.style.position = 'relative';
+
+    var caption = document.createElement('div');
+    caption.className = 'oc-founder-caption';
+    caption.textContent = 'Henry Oliver, founder';
+    caption.style.cssText = "position:absolute;left:14px;bottom:14px;z-index:2;padding:9px 12px;border-radius:7px;background:rgba(23,19,11,.9);color:#efe8dc;font-family:'Saira Condensed','Arial Narrow',sans-serif;font-size:18px;font-weight:800;line-height:1;text-transform:uppercase;letter-spacing:.035em;box-shadow:0 8px 20px -12px rgba(0,0,0,.8);pointer-events:none";
+    frame.appendChild(caption);
+  }
+
+  function runContentCleanup(){
     cleanOldControls();
     cleanHeadingPunctuation();
+    cleanEmDashes();
+    ensureFounderCaption();
+  }
+
+  function startContentCleanup(){
+    runContentCleanup();
 
     if (!document.body || !window.MutationObserver) return;
     var observer = new MutationObserver(function(){
-      cleanHeadingPunctuation();
+      runContentCleanup();
     });
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
