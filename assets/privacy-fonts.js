@@ -82,11 +82,26 @@
     frame.appendChild(caption);
   }
 
+  function bindMobileMenuAutoClose(){
+    if (document.documentElement.getAttribute('data-oc-mobile-menu-close') === '1') return;
+    document.documentElement.setAttribute('data-oc-mobile-menu-close', '1');
+
+    document.addEventListener('click', function(event){
+      var target = event.target;
+      if (!target || !target.closest) return;
+      var link = target.closest('.oc-mobile-links a');
+      if (!link) return;
+      var menu = link.closest('details.oc-mobile-menu');
+      if (menu) menu.removeAttribute('open');
+    });
+  }
+
   function runContentCleanup(){
     cleanOldControls();
     cleanHeadingPunctuation();
     cleanEmDashes();
     ensureFounderCaption();
+    bindMobileMenuAutoClose();
   }
 
   function startContentCleanup(){
