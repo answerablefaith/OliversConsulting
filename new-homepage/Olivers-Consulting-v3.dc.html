@@ -14,6 +14,9 @@
     const res=await fetch('https://raw.githubusercontent.com/answerablefaith/OliversConsulting/e873b7eaba64a3c26d83e5d6a05447bf1a31d01a/new-homepage/Olivers-Consulting-v3.dc.html',{cache:'no-store'});
     if(!res.ok)throw new Error('source unavailable');
     let html=await res.text();
+    html=html.replace(/<link\b[^>]*(?:fonts\.googleapis\.com|fonts\.gstatic\.com)[^>]*>\s*/gi,'');
+    html=html.replace(/<link\b[^>]*href=["']\/assets\/fonts\.css["'][^>]*>\s*/gi,'');
+    html=html.replace('</head>','<script src="/assets/privacy-fonts.js"><\/script></head>');
     html=html.replaceAll('src="./support.js"','src="/new-homepage/support.js"');
     html=html.replace('Then I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.','I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.');
     document.open();
