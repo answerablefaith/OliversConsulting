@@ -28,6 +28,23 @@
     }) || null;
   }
 
+  function findTopHoursLabel(){
+    var hero = document.querySelector('header#top');
+    if (!hero) return null;
+    return Array.prototype.slice.call(hero.querySelectorAll('span')).find(function(span){
+      return span.style.fontSize === '24px' && /HRS/i.test(span.textContent || '');
+    }) || null;
+  }
+
+  function setLeadingText(element, text){
+    if (!element) return;
+    var textNode = Array.prototype.slice.call(element.childNodes || []).find(function(node){
+      return node.nodeType === 3;
+    });
+    if (textNode) textNode.nodeValue = text;
+    else element.insertBefore(document.createTextNode(text), element.firstChild || null);
+  }
+
   function smoothstep(t){
     t = Math.max(0, Math.min(1, t));
     return t * t * (3 - 2 * t);
@@ -55,22 +72,28 @@
     return 'rgb(' + colour[0] + ',' + colour[1] + ',' + colour[2] + ')';
   }
 
-  function applyHourColour(hours){
+  function applyHourPresentation(hours){
+    var rounded = Math.round(hours);
     var number = findByHandNumber();
-    if (!number) return;
-    number.style.setProperty('color', hourColour(hours), 'important');
-    number.style.setProperty('will-change', 'color');
-    var unit = directHoursUnit(number);
-    if (unit) unit.style.setProperty('color', '#b5791f', 'important');
+    if (number) {
+      setLeadingText(number, String(rounded));
+      number.style.setProperty('color', hourColour(hours), 'important');
+      number.style.setProperty('will-change', 'color');
+      var unit = directHoursUnit(number);
+      if (unit) unit.style.setProperty('color', '#b5791f', 'important');
+    }
+
+    var topLabel = findTopHoursLabel();
+    if (topLabel) topLabel.textContent = rounded + ' HRS';
   }
 
-  function queueHourColour(input){
+  function queueHourPresentation(input){
     var hours = parseFloat(input && input.value || '8');
     cancelAnimationFrame(colourRaf);
     cancelAnimationFrame(colourRaf2);
     colourRaf = requestAnimationFrame(function(){
       colourRaf2 = requestAnimationFrame(function(){
-        applyHourColour(hours);
+        applyHourPresentation(hours);
       });
     });
   }
@@ -82,9 +105,9 @@
     if (descriptor && descriptor.set) descriptor.set.call(input, next);
     else input.value = next;
     input.dispatchEvent(new Event('input', { bubbles: true }));
-    if (final) input.dispatchEvent(new Event('change', { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
     programmatic = false;
-    queueHourColour(input);
+    queueHourPresentation(input);
   }
 
   function easeInOutSine(t){
@@ -137,7 +160,7 @@
       input.addEventListener(type, cancel, { once: true, passive: type === 'touchstart' });
     });
     input.addEventListener('input', function(){
-      queueHourColour(input);
+      queueHourPresentation(input);
       if (!programmatic) cancel();
     });
 
