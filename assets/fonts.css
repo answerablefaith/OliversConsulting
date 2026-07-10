@@ -1,0 +1,59 @@
+/* Local font declarations for Olivers Consulting.
+   Font files should live in /assets/fonts/ and be served from this domain. */
+
+@font-face{
+  font-family:'Hanken Grotesk';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/assets/fonts/hanken-grotesk-v8-latin-regular.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Hanken Grotesk';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/assets/fonts/hanken-grotesk-v8-latin-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Hanken Grotesk';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/assets/fonts/hanken-grotesk-v8-latin-600.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Hanken Grotesk';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/assets/fonts/hanken-grotesk-v8-latin-700.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Saira Condensed';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/assets/fonts/saira-condensed-v11-latin-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Saira Condensed';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/assets/fonts/saira-condensed-v11-latin-600.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Saira Condensed';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url('/assets/fonts/saira-condensed-v11-latin-700.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Saira Condensed';
+  font-style:normal;
+  font-weight:800;
+  font-display:swap;
+  src:url('/assets/fonts/saira-condensed-v11-latin-800.woff2') format('woff2');
+}
