@@ -28,23 +28,6 @@
     }) || null;
   }
 
-  function findTopHoursLabel(){
-    var hero = document.querySelector('header#top');
-    if (!hero) return null;
-    return Array.prototype.slice.call(hero.querySelectorAll('span')).find(function(span){
-      return span.style.fontSize === '24px' && /HRS/i.test(span.textContent || '');
-    }) || null;
-  }
-
-  function setLeadingText(element, text){
-    if (!element) return;
-    var textNode = Array.prototype.slice.call(element.childNodes || []).find(function(node){
-      return node.nodeType === 3;
-    });
-    if (textNode) textNode.nodeValue = text;
-    else element.insertBefore(document.createTextNode(text), element.firstChild || null);
-  }
-
   function smoothstep(t){
     t = Math.max(0, Math.min(1, t));
     return t * t * (3 - 2 * t);
@@ -72,42 +55,76 @@
     return 'rgb(' + colour[0] + ',' + colour[1] + ',' + colour[2] + ')';
   }
 
-  function applyHourPresentation(hours){
-    var rounded = Math.round(hours);
+  function applyHourColour(hours){
     var number = findByHandNumber();
-    if (number) {
-      setLeadingText(number, String(rounded));
-      number.style.setProperty('color', hourColour(hours), 'important');
-      number.style.setProperty('will-change', 'color');
-      var unit = directHoursUnit(number);
-      if (unit) unit.style.setProperty('color', '#b5791f', 'important');
-    }
-
-    var topLabel = findTopHoursLabel();
-    if (topLabel) topLabel.textContent = rounded + ' HRS';
+    if (!number) return;
+    number.style.setProperty('color', hourColour(hours), 'important');
+    number.style.setProperty('will-change', 'color');
+    var unit = directHoursUnit(number);
+    if (unit) unit.style.setProperty('color', '#b5791f', 'important');
   }
 
-  function queueHourPresentation(input){
-    var hours = parseFloat(input && input.value || '8');
+  function queueHourColour(hours){
     cancelAnimationFrame(colourRaf);
     cancelAnimationFrame(colourRaf2);
     colourRaf = requestAnimationFrame(function(){
       colourRaf2 = requestAnimationFrame(function(){
-        applyHourPresentation(hours);
+        applyHourColour(hours);
       });
     });
   }
 
-  function setValue(input, value, final){
+  function nativeSetValue(input, value){
     var descriptor = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value');
-    var next = final ? String(Math.round(value)) : Number(value).toFixed(3);
-    programmatic = true;
-    if (descriptor && descriptor.set) descriptor.set.call(input, next);
-    else input.value = next;
+    if (descriptor && descriptor.set) descriptor.set.call(input, String(value));
+    else input.value = String(value);
+  }
+
+  function findReactHandler(input){
+    var keys = Object.keys(input);
+    var propsKey = keys.find(function(key){ return key.indexOf('__reactProps$') === 0; });
+    if (propsKey && input[propsKey]) {
+      return input[propsKey].onInput || input[propsKey].onChange || null;
+    }
+
+    var fiberKey = keys.find(function(key){ return key.indexOf('__reactFiber$') === 0; });
+    var fiber = fiberKey ? input[fiberKey] : null;
+    while (fiber) {
+      var props = fiber.memoizedProps || fiber.pendingProps;
+      if (props && (props.onInput || props.onChange)) return props.onInput || props.onChange;
+      fiber = fiber.return;
+    }
+    return null;
+  }
+
+  function updateThroughReact(input, value){
+    var next = Number(value).toFixed(3);
+    nativeSetValue(input, next);
+
+    var handler = findReactHandler(input);
+    if (handler) {
+      handler({
+        type: 'input',
+        target: input,
+        currentTarget: input,
+        nativeEvent: null,
+        preventDefault: function(){},
+        stopPropagation: function(){},
+        persist: function(){}
+      });
+      return true;
+    }
+
     input.dispatchEvent(new Event('input', { bubbles: true }));
     input.dispatchEvent(new Event('change', { bubbles: true }));
+    return false;
+  }
+
+  function setValue(input, value){
+    programmatic = true;
+    updateThroughReact(input, value);
     programmatic = false;
-    queueHourPresentation(input);
+    queueHourColour(value);
   }
 
   function easeInOutSine(t){
@@ -133,10 +150,10 @@
       if (cancelled) return;
       var progress = Math.min(1, (now - started) / duration);
       var value = from + (to - from) * easeInOutSine(progress);
-      setValue(input, value, false);
+      setValue(input, value);
       if (progress < 1) raf = requestAnimationFrame(tick);
       else {
-        setValue(input, to, false);
+        setValue(input, to);
         if (done) done();
       }
     }
@@ -147,6 +164,13 @@
     timer = setTimeout(function(){
       if (!cancelled) action();
     }, delay);
+  }
+
+  function cancelOldAnimation(input){
+    programmatic = true;
+    nativeSetValue(input, 8);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    programmatic = false;
   }
 
   function run(){
@@ -160,11 +184,12 @@
       input.addEventListener(type, cancel, { once: true, passive: type === 'touchstart' });
     });
     input.addEventListener('input', function(){
-      queueHourPresentation(input);
       if (!programmatic) cancel();
     });
 
-    setValue(input, 8, false);
+    // Cancel the older injected 2-to-8 routine, then let React own all visible values.
+    cancelOldAnimation(input);
+    setValue(input, 8);
 
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       restoreStep(input);
@@ -177,7 +202,7 @@
           animate(input, 5, 16, 2800, function(){
             pauseThen(180, function(){
               animate(input, 16, 8, 1900, function(){
-                setValue(input, 8, true);
+                setValue(input, 8);
                 restoreStep(input);
               });
             });
@@ -190,8 +215,9 @@
   function init(){
     var attempts = 0;
     function tryRun(){
-      if (findSlider()) run();
-      else if (attempts++ < 30) timer = setTimeout(tryRun, 100);
+      var input = findSlider();
+      if (input && findReactHandler(input)) run();
+      else if (attempts++ < 40) timer = setTimeout(tryRun, 100);
     }
     setTimeout(tryRun, 0);
   }
