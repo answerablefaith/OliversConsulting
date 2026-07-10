@@ -1,5 +1,4 @@
-/* Local font declarations for Olivers Consulting.
-   Font files should live in /assets/fonts/ and be served from this domain. */
+/* Local font declarations for Olivers Consulting. */
 
 @font-face{
   font-family:'Hanken Grotesk';
@@ -56,4 +55,47 @@
   font-weight:800;
   font-display:swap;
   src:url('/assets/fonts/saira-condensed-v11-latin-800.woff2') format('woff2');
+}
+
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/assets/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/assets/fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/assets/fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('/assets/fonts/fraunces-v38-latin-regular.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('/assets/fonts/fraunces-v38-latin-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('/assets/fonts/fraunces-v38-latin-600.woff2') format('woff2');
 }
