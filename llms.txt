@@ -23,6 +23,7 @@ Important URLs:
 - Sitemap: https://oliversconsulting.co.uk/sitemap.xml
 
 Published articles:
+- How to stop re-keying wholesale orders into Sage or Xero: https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/
 - Ecommerce AI automation: how to prove the ROI first: https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/
 - Why stock sync fails between Shopify, Amazon and eBay: https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/
 - The Monday report your ecommerce team should not be building by hand: https://oliversconsulting.co.uk/articles/monday-report-automation/
@@ -33,7 +34,7 @@ Topic clusters:
 - Supplier data automation: price lists, catalogues, bad rows, margin rules and publishing checks
 - Reporting automation: Monday packs, stock cover, channel performance and exception reports
 - Channel operations: Shopify, Amazon, eBay, stock sync, bundles, buffers and reconciliation
-- Wholesale and finance admin: Sage, Xero, QuickBooks, PDFs, portals and order-to-invoice work
+- Wholesale and finance admin: wholesale order entry, Sage, Xero, QuickBooks, PDFs, portals, re-keying and order-to-invoice work
 - Hiring versus automation: process checks before adding admin headcount
 - Founder/operator lessons: workflow controls, ROI tests, practical process judgement and AI only where it supports controlled automation
 
