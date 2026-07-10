@@ -1,6 +1,7 @@
 // Loads the last known-good generated DC runtime and runs the Chapter 1 demonstration.
 (function(){
   var raf = 0;
+  var colourRaf = 0;
   var timer = 0;
   var cancelled = false;
   var programmatic = false;
@@ -9,6 +10,56 @@
   function findSlider(){
     return Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).find(function(input){
       return String(input.min) === '2' && String(input.max) === '20';
+    });
+  }
+
+  function findByHandNumber(){
+    var hero = document.querySelector('header#top');
+    if (!hero) return null;
+    return Array.prototype.slice.call(hero.querySelectorAll('span')).find(function(span){
+      var style = span.getAttribute('style') || '';
+      var unit = span.querySelector(':scope > span');
+      return style.indexOf('font-size:64px') !== -1 && unit && /hrs/i.test(unit.textContent || '');
+    }) || null;
+  }
+
+  function smoothstep(t){
+    t = Math.max(0, Math.min(1, t));
+    return t * t * (3 - 2 * t);
+  }
+
+  function mix(a, b, t){
+    return [
+      Math.round(a[0] + (b[0] - a[0]) * t),
+      Math.round(a[1] + (b[1] - a[1]) * t),
+      Math.round(a[2] + (b[2] - a[2]) * t)
+    ];
+  }
+
+  function hourColour(hours){
+    var yellow = [220, 177, 62];
+    var orange = [181, 121, 31];
+    var red = [173, 48, 40];
+    var colour;
+
+    if (hours <= 5) colour = yellow;
+    else if (hours <= 8) colour = mix(yellow, orange, smoothstep((hours - 5) / 3));
+    else if (hours <= 16) colour = mix(orange, red, smoothstep((hours - 8) / 8));
+    else colour = red;
+
+    return 'rgb(' + colour[0] + ',' + colour[1] + ',' + colour[2] + ')';
+  }
+
+  function queueHourColour(input){
+    var hours = parseFloat(input && input.value || '8');
+    cancelAnimationFrame(colourRaf);
+    colourRaf = requestAnimationFrame(function(){
+      var number = findByHandNumber();
+      if (!number) return;
+      number.style.setProperty('color', hourColour(hours), 'important');
+      number.style.setProperty('will-change', 'color');
+      var unit = number.querySelector(':scope > span');
+      if (unit) unit.style.setProperty('color', '#b5791f', 'important');
     });
   }
 
@@ -21,6 +72,7 @@
     input.dispatchEvent(new Event('input', { bubbles: true }));
     if (final) input.dispatchEvent(new Event('change', { bubbles: true }));
     programmatic = false;
+    queueHourColour(input);
   }
 
   function easeInOutSine(t){
@@ -73,6 +125,7 @@
       input.addEventListener(type, cancel, { once: true, passive: type === 'touchstart' });
     });
     input.addEventListener('input', function(){
+      queueHourColour(input);
       if (!programmatic) cancel();
     });
 
