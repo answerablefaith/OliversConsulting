@@ -1,10 +1,4 @@
 (() => {
-  if (!window.OliversPrivacySettings && !document.querySelector('script[src="/assets/privacy-fonts.js"]')) {
-    const privacyScript = document.createElement('script');
-    privacyScript.src = '/assets/privacy-fonts.js';
-    document.head.appendChild(privacyScript);
-  }
-
   let footerTimer = 0;
   const bookingUrl = 'https://cal.eu/henryoliver';
 
@@ -30,7 +24,7 @@
     if (document.getElementById('oc-footer-fix-styles')) return;
     const style = document.createElement('style');
     style.id = 'oc-footer-fix-styles';
-    style.textContent = '#oc-site-footer nav{align-items:start!important;justify-items:start!important;text-align:left!important}#oc-site-footer nav a,#oc-site-footer div>a[href^="mailto:"]{display:block!important;width:auto!important;max-width:100%!important;justify-self:start!important;text-align:left!important;justify-content:flex-start!important;align-items:flex-start!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#17130b!important;font-size:16px!important;line-height:1.35!important}#oc-site-footer a[href="/articles/"],#oc-site-footer a[href="/#book"],#oc-site-footer a[href="' + bookingUrl + '"]{text-align:left!important;justify-self:start!important;width:auto!important;font-size:16px!important}@media(max-width:900px){#oc-site-footer nav{display:grid!important;grid-template-columns:1fr!important;justify-items:start!important;text-align:left!important}#oc-site-footer nav a,#oc-site-footer div>a[href^="mailto:"]{font-size:16px!important;line-height:1.35!important;text-align:left!important;justify-self:start!important;width:auto!important}#oc-site-footer p{font-size:15.5px!important;line-height:1.55!important}#oc-site-footer nav>div:first-child{font-size:17px!important}#oc-site-footer>div:last-child{display:block!important}#oc-site-footer>div:last-child span{display:block!important}#oc-site-footer>div:last-child span+span{margin-top:8px!important}}';
+    style.textContent = '#oc-site-footer nav{align-items:start!important;justify-items:start!important;text-align:left!important}#oc-site-footer nav a,#oc-site-footer div>a[href^="mailto:"]{display:block!important;width:auto!important;max-width:100%!important;justify-self:start!important;text-align:left!important;justify-content:flex-start!important;align-items:flex-start!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#17130b!important;font-size:16px!important;line-height:1.35!important}#oc-site-footer a[href="/articles/"],#oc-site-footer a[href="/#book"],#oc-site-footer a[href="' + bookingUrl + '"]{text-align:left!important;justify-self:start!important;width:auto!important;font-size:16px!important}.article-body .faq h3{font-family:Inter,sans-serif!important;font-size:1rem!important;font-weight:800!important;letter-spacing:0!important;line-height:1.2!important;margin-top:1.2rem!important;text-transform:none!important}.article-body .math-box strong{font-family:Fraunces,Georgia,serif!important;font-size:1.5rem!important;font-weight:500!important;line-height:1.1!important;text-transform:none!important;letter-spacing:0!important}@media(max-width:900px){#oc-site-footer nav{display:grid!important;grid-template-columns:1fr!important;justify-items:start!important;text-align:left!important}#oc-site-footer nav a,#oc-site-footer div>a[href^="mailto:"]{font-size:16px!important;line-height:1.35!important;text-align:left!important;justify-self:start!important;width:auto!important}#oc-site-footer p{font-size:15.5px!important;line-height:1.55!important}#oc-site-footer nav>div:first-child{font-size:17px!important}#oc-site-footer>div:last-child{display:block!important}#oc-site-footer>div:last-child span{display:block!important}#oc-site-footer>div:last-child span+span{margin-top:8px!important}}';
     document.head.appendChild(style);
   }
 
