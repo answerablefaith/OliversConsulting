@@ -76,7 +76,6 @@
       if (!programmatic) cancel();
     });
 
-    // Keep the genuine initial state at 8, while cancelling the old 2-to-8 routine.
     setValue(input, 8, false);
 
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -85,11 +84,11 @@
     }
 
     pauseThen(500, function(){
-      animate(input, 8, 4, 1400, function(){
+      animate(input, 8, 5, 1400, function(){
         pauseThen(180, function(){
-          animate(input, 4, 12, 2400, function(){
+          animate(input, 5, 16, 2800, function(){
             pauseThen(180, function(){
-              animate(input, 12, 8, 1600, function(){
+              animate(input, 16, 8, 1900, function(){
                 setValue(input, 8, true);
                 restoreStep(input);
               });
@@ -106,7 +105,6 @@
       if (findSlider()) run();
       else if (attempts++ < 30) timer = setTimeout(tryRun, 100);
     }
-    // Run after the page's existing Chapter 1 listeners have attached.
     setTimeout(tryRun, 0);
   }
 
