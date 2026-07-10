@@ -1,85 +1,640 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Olivers Consulting — Automation for UK Ecommerce & Wholesale</title>
-  <meta name="description" content="Fixed-price automation for UK ecommerce and wholesale teams. Supplier files, listings, stock, reports and invoices, built by an operator who ran a 200,000 SKU business.">
-  <meta name="author" content="Henry Oliver">
-  <link rel="canonical" href="https://oliversconsulting.co.uk/">
-  <meta property="og:title" content="Olivers Consulting — Automation for UK Ecommerce & Wholesale">
-  <meta property="og:description" content="8 hours to 2 minutes. Fixed-price automation built by an ecommerce operator, not an agency.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://oliversconsulting.co.uk/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/assets/mobile-fixes.css">
-  <style>
-    body{margin:0;background:#efe8dc;color:#17130b;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:grid;place-items:center;min-height:100vh}.loading{max-width:520px;padding:32px;text-align:center}.loading strong{display:block;font-size:22px;margin-bottom:8px}.loading p{margin:0;color:#5b5444;line-height:1.5}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-  <div class="loading"><strong>Loading Olivers Consulting…</strong><p>Automation for UK ecommerce and wholesale teams.</p></div>
-  <script>
-    (async function () {
-      try {
-        const response = await fetch('https://raw.githubusercontent.com/answerablefaith/OliversConsulting/e873b7eaba64a3c26d83e5d6a05447bf1a31d01a/new-homepage/Olivers-Consulting-v3.dc.html', { cache: 'no-store' });
-        if (!response.ok) throw new Error('Homepage file not found');
-        let html = await response.text();
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23efe8dc'/%3E%3Cpath d='M8 8 L16 16 L8 24' stroke='%23c07c1f' stroke-width='4' fill='none' stroke-linecap='square' stroke-linejoin='miter'/%3E%3Cpath d='M17 8 L25 16 L17 24' stroke='%2317130b' stroke-width='4' fill='none' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#efe8dc;color:#17130b;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#1e3b2f;color:#efe8dc}
+  h1,h2,h3{margin:0;font-weight:700}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:7px;border-radius:4px;outline:none;cursor:pointer;width:100%}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#c07c1f;border:3px solid #efe8dc;box-shadow:0 2px 6px rgba(0,0,0,.35);cursor:grab;margin-top:0}
+  input[type=range]::-webkit-slider-thumb:active{cursor:grabbing}
+  input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#c07c1f;border:3px solid #efe8dc;cursor:grab}
+  @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes rowSync{0%,16%{background:#f3ecdf;border-color:#ddd3c0}32%,82%{background:#e7f2ea;border-color:#bcd8c6}95%,100%{background:#f3ecdf;border-color:#ddd3c0}}
+  @keyframes checkOn{0%,16%{opacity:0;transform:scale(.6)}32%,82%{opacity:1;transform:scale(1)}95%,100%{opacity:0;transform:scale(.6)}}
+  @keyframes reportIn{0%,12%{opacity:0;transform:translateY(20px)}34%,86%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(20px)}}
+  @keyframes stampIn{0%,18%{opacity:0;transform:scale(.4) rotate(-12deg)}40%,84%{opacity:1;transform:scale(1) rotate(-7deg)}100%{opacity:0;transform:scale(.4) rotate(-12deg)}}
+  @keyframes revealUp{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes lensScan{0%,100%{transform:translateX(0)}50%{transform:translateX(-58px)}}
+  @keyframes travelDot{0%{left:2px}50%{left:112px}100%{left:2px}}
+  @keyframes checkPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+  @keyframes chevPulse{0%,100%{opacity:.35}50%{opacity:1}}
+</style>
+</helmet>
 
-        html = html.replace(/<link\b[^>]*(?:fonts\.googleapis\.com|fonts\.gstatic\.com)[^>]*>\s*/gi, '');
-        html = html.replace(/<link\b[^>]*href=["']\/assets\/fonts\.css["'][^>]*>\s*/gi, '');
+<div style="font-family:'Hanken Grotesk',sans-serif;position:relative">
+  <div style="position:fixed;top:0;left:0;right:0;height:4px;z-index:70;background:rgba(23,19,11,.06)"><div style="{{ progressBarStyle }}"></div></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.045;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
 
-        const bookingUrl = 'https://cal.eu/henryoliver';
-        const mobileCtaInline = 'background:#1e3b2f!important;color:#efe8dc!important;border-color:#1e3b2f!important;padding:13px 16px!important;font-family:\'Saira Condensed\',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:16px!important;border-radius:8px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;text-align:center!important;line-height:1.15!important;white-space:normal!important;box-shadow:0 8px 18px -10px rgba(30,59,47,.8)!important';
-        const header = '<header class="oc-site-header" aria-label="Site header"><a class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="#services">What we automate</a><a href="#how">How it works</a><a href="#about">About us</a><a href="#book">Contact us</a><a href="/articles/">Articles</a></nav><a class="oc-header-cta" href="' + bookingUrl + '" target="_blank" rel="noopener">Book a free review →</a><details class="oc-mobile-menu"><summary>Menu</summary><nav class="oc-mobile-links" aria-label="Mobile navigation"><a href="/">Home</a><a href="#services">What we automate</a><a href="#how">How it works</a><a href="#about">About us</a><a href="#book">Contact us</a><a href="/articles/">Articles</a><a class="oc-header-cta" href="' + bookingUrl + '" target="_blank" rel="noopener" style="' + mobileCtaInline + '">Book a free review →</a></nav></details></header>';
-        const mobileAfterToolsCtas = '<div class="oc-mobile-after-tools-ctas"><a href="' + bookingUrl + '" target="_blank" rel="noopener">Book a free review <span>→</span></a><a href="#services">What we automate</a></div>';
-        const quickWinsLine = '<p class="oc-quick-wins-line" style="margin:28px 0 0;font-size:18px;line-height:1.55;color:#5b5444;font-style:italic"><strong style="font-weight:800;color:#17130b">Running a smaller team?</strong> Quick-win builds from £400: reports, invoices, stockist orders and listings that handle themselves, live within a week. Same free call.</p>';
-        const siteFooter = '<footer id="oc-site-footer" aria-label="Site footer" style="background:#efe8dc;color:#17130b;margin:0;border-top:2px solid #17130b;font-family:\'Hanken Grotesk\',system-ui,sans-serif;text-align:left">' +
-          '<div class="oc-footer-main" style="max-width:1180px;margin:0 auto;padding:44px 40px 28px;display:grid;grid-template-columns:1.35fr .75fr .75fr .95fr;gap:34px;align-items:start">' +
-            '<div><a href="/" aria-label="Olivers Consulting home" style="display:inline-flex;align-items:center;text-decoration:none;margin-bottom:18px"><img src="/favicon.svg" alt="Olivers Consulting" style="display:block;width:44px;height:44px;max-width:100%"></a><p style="margin:0;color:#5b5444;font-size:15.5px;line-height:1.55;max-width:34ch">Automation for UK ecommerce and wholesale teams.</p></div>' +
-            '<nav aria-label="Footer quick links" style="display:grid;gap:9px;align-items:start;justify-items:start;text-align:left"><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.04em;color:#b5791f;margin-bottom:5px">Quick links</div><a href="/" style="color:#17130b;text-decoration:none">Home</a><a href="/#services" style="color:#17130b;text-decoration:none">What we automate</a><a href="/#how" style="color:#17130b;text-decoration:none">How it works</a><a href="/articles/" style="color:#17130b;text-decoration:none">Articles</a><a href="' + bookingUrl + '" target="_blank" rel="noopener" style="color:#17130b;text-decoration:none">Book a free review</a></nav>' +
-            '<nav aria-label="Legal links" style="display:grid;gap:9px;align-items:start;justify-items:start;text-align:left"><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.04em;color:#b5791f;margin-bottom:5px">Legal</div><a href="/privacy-policy/" style="color:#17130b;text-decoration:none">Privacy Policy</a><a href="/cookie-policy/" style="color:#17130b;text-decoration:none">Cookie Policy</a><a href="/terms-of-service/" style="color:#17130b;text-decoration:none">Terms of Service</a></nav>' +
-            '<div><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.04em;color:#b5791f;margin-bottom:14px">Contact</div><a href="mailto:henry@oliversconsulting.co.uk" style="color:#17130b;text-decoration:none;word-break:break-word">henry@oliversconsulting.co.uk</a><p style="margin:12px 0 0;color:#5b5444;font-size:14px;line-height:1.5">London based</p></div>' +
-          '</div>' +
-          '<div class="oc-footer-bottom" style="max-width:1180px;margin:0 auto;padding:20px 40px 26px;color:#8a8271;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid #d6cdba"><span>© 2026 Olivers Consulting</span><span>Built for practical ecommerce and wholesale automation.</span></div>' +
-          '<style>@media(max-width:900px){#oc-site-footer .oc-footer-main{grid-template-columns:1fr!important;padding:40px 22px 24px!important;gap:26px!important}#oc-site-footer .oc-footer-bottom{padding:18px 22px 24px!important;display:block!important;text-align:left!important}#oc-site-footer .oc-footer-bottom span{display:block!important;line-height:1.45!important}#oc-site-footer .oc-footer-bottom span+span{margin-top:8px!important}#oc-site-footer nav{gap:9px!important}#oc-site-footer nav a,#oc-site-footer a[href^=mailto]{font-size:16px!important;line-height:1.35!important;text-align:left!important}#oc-site-footer img{width:44px!important;height:44px!important}}</style>' +
-        '</footer>';
+  <!-- MASTHEAD -->
+  <nav style="max-width:1180px;margin:0 auto;padding:26px 40px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #17130b">
+    <a href="#top" style="display:flex;align-items:center;gap:16px">
+      <span style="display:flex;align-items:center">
+        <span style="display:inline-block;width:22px;height:22px;border-top:5px solid #c07c1f;border-right:5px solid #c07c1f;transform:rotate(45deg)"></span>
+        <span style="display:inline-block;width:22px;height:22px;border-top:5px solid #17130b;border-right:5px solid #17130b;transform:rotate(45deg);margin-left:-10px"></span>
+      </span>
+      <span style="line-height:.82">
+        <span style="display:block;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:34px;letter-spacing:.02em;text-transform:uppercase">Olivers</span>
+        <span style="display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.34em;color:#5b5444;margin-top:4px">CONSULTING</span>
+      </span>
+    </a>
+    <div style="display:flex;align-items:center;gap:28px">
+      <a href="#services" style="color:#3f3a2d;font-size:15px;font-weight:500">What I automate</a>
+      <a href="#how" style="color:#3f3a2d;font-size:15px;font-weight:500">How it works</a>
+      <a href="#about" style="color:#3f3a2d;font-size:15px;font-weight:500">About us</a>
+      <a href="#articles" style="color:#3f3a2d;font-size:15px;font-weight:500">Articles</a>
+      <a href="#book" style="background:#1e3b2f;color:#efe8dc;padding:10px 18px;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:15px;border-radius:8px;display:inline-flex;align-items:center;gap:7px;box-shadow:0 6px 16px -8px rgba(30,59,47,.7);transition:transform .18s,background .18s" style-hover="background:#122619;transform:translateY(-1px)">Book a free call <span style="font-size:13px">→</span></a>
+    </div>
+  </nav>
 
-        const liveHead = '<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Olivers Consulting — Automation for UK Ecommerce & Wholesale</title>\n<meta name="description" content="Fixed-price automation for UK ecommerce and wholesale teams. Supplier files, listings, stock, reports and invoices, built by an operator who ran a 200,000 SKU business.">\n<meta name="author" content="Henry Oliver">\n<link rel="canonical" href="https://oliversconsulting.co.uk/">\n<meta property="og:title" content="Olivers Consulting — Automation for UK Ecommerce & Wholesale">\n<meta property="og:description" content="8 hours to 2 minutes. Fixed-price automation built by an ecommerce operator, not an agency.">\n<meta property="og:type" content="website">\n<meta property="og:url" content="https://oliversconsulting.co.uk/">\n<meta name="twitter:card" content="summary_large_image">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n<link rel="alternate icon" href="/favicon.ico" type="image/x-icon">\n<script src="/assets/privacy-fonts.js"><\/script>\n<link rel="stylesheet" href="/assets/mobile-fixes.css">\n<link rel="stylesheet" href="/assets/shared-header.css">';
-        const mobileCss = '<style id="oc-stable-mobile-fixes">.oc-mobile-after-tools-ctas{display:none}.oc-wwt-forced-grid{display:none}@media(max-width:900px){header#top div:has(> a[href="#book"]):has(> a[href="#services"]){display:none!important}.oc-mobile-after-tools-ctas{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin:22px 0 0!important;padding:0!important}.oc-mobile-after-tools-ctas>a{width:100%!important;min-height:46px!important;border-radius:8px!important;font-family:\'Saira Condensed\',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:15px!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important}.oc-mobile-after-tools-ctas>a:first-child{background:#1e3b2f!important;color:#efe8dc!important;border:2px solid #1e3b2f!important}.oc-mobile-after-tools-ctas>a:last-child{background:transparent!important;color:#17130b!important;border:1.5px solid #17130b!important}.oc-proof-mobile-card{padding:26px 20px!important;border-radius:12px!important}.oc-proof-mobile-card div[style*="font-size:84px"]{font-size:58px!important}.oc-proof-mobile-card div[style*="font-size:64px"]{font-size:48px!important}.oc-proof-mobile-card div[style*="margin:20px 0"],.oc-proof-mobile-card div[style*="margin:24px 0"]{margin:12px 0!important}.oc-proof-mobile-card div[style*="padding-top:26px"]{padding-top:14px!important}.oc-proof-mobile-card div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;gap:8px!important}.oc-proof-mobile-card div[style*="border-left"]{border-left:0!important}.oc-differentiators{padding-left:40px!important;padding-right:40px!important;box-sizing:border-box!important}.oc-differentiators>div{padding:66px 0!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]{display:grid!important;grid-template-columns:1fr!important;gap:34px!important;text-align:left!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]>div{padding:18px 0!important;margin:0!important;border:0!important;text-align:left!important}.oc-track-record>div{padding:70px 22px!important}.oc-track-grid{display:flex!important;flex-direction:column!important;gap:26px!important}.oc-track-record .oc-track-card{display:block!important;width:100%!important;box-sizing:border-box!important;margin:0!important;padding:22px!important;border:1px solid rgba(255,255,255,.14)!important;border-top:1px solid rgba(255,255,255,.14)!important;border-radius:12px!important;background:rgba(255,255,255,.03)!important;box-shadow:none!important;text-align:left!important;overflow:hidden!important}.oc-track-card--wwt{order:1!important}.oc-track-card--pwc{order:2!important}.oc-track-card--citi{order:3!important}.oc-wwt-forced-grid{display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:5px!important;background:#193d30!important;border:1px solid rgba(143,224,175,.12)!important;border-radius:10px!important;padding:8px!important;margin:14px 0 18px!important;max-width:245px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}.oc-wwt-forced-grid span{display:block!important;aspect-ratio:1/1!important;border-radius:3px!important;background:#52665c!important}.oc-wwt-forced-grid span.is-on{background:#8bdca8!important}}</style>';
-        const byHandColourRamp = '<script>(function(){function clamp(v,min,max){return Math.max(min,Math.min(max,v))}var stops=[{h:2,c:[52,132,85]},{h:3,c:[104,161,72]},{h:6,c:[219,177,62]},{h:8,c:[181,121,31]},{h:9,c:[189,99,41]},{h:10,c:[197,70,47]},{h:11,c:[169,40,36]},{h:20,c:[130,28,24]}];function mix(a,b,t){return [Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),Math.round(a[2]+(b[2]-a[2])*t)]}function rgb(c){return "rgb("+c[0]+","+c[1]+","+c[2]+")"}function base(h){h=clamp(Number(h)||2,2,20);for(var i=0;i<stops.length-1;i++){var a=stops[i],b=stops[i+1];if(h<=b.h){var t=(h-a.h)/(b.h-a.h);t=t*t*(3-2*t);return mix(a.c,b.c,t)}}return stops[stops.length-1].c}function gradient(h){var c=base(h),left=mix(c,[242,199,90],.28),right=mix(c,[72,31,22],.24);return "linear-gradient(90deg,"+rgb(left)+","+rgb(c)+" 54%,"+rgb(right)+")"}function slider(){return Array.prototype.slice.call(document.querySelectorAll("input[type=range]")).find(function(i){return String(i.min)==="2"&&String(i.max)==="20"})}var cached=null;function bar(){if(cached&&cached.isConnected)return cached;var hero=document.querySelector("header#top");if(!hero)return null;var all=Array.prototype.slice.call(hero.querySelectorAll("div"));cached=all.find(function(el){var s=el.getAttribute("style")||"";return s.indexOf("height:26px")>-1&&s.indexOf("border-radius:6px")>-1&&el.children.length===0})||null;if(cached)cached.dataset.ocByHandBar="1";return cached}function paint(){var s=slider(),b=bar();if(!s||!b)return;var h=parseFloat(s.value||"2");b.style.setProperty("background",gradient(h),"important");b.style.setProperty("transition","background 40ms linear","important")}function bind(){var s=slider();if(s&&!s.dataset.ocByHandBound){s.dataset.ocByHandBound="1";s.addEventListener("input",paint);s.addEventListener("change",paint)}paint()}function loop(ms){var start=performance.now();function tick(now){bind();if(now-start<ms)requestAnimationFrame(tick)}requestAnimationFrame(tick)}document.addEventListener("DOMContentLoaded",function(){loop(6500)});window.addEventListener("load",function(){loop(6500)});setTimeout(function(){loop(6500)},200);setInterval(paint,120)})();<\/script>';
-        const mobileEnhancements = '<script>(function(){function mobile(){return window.matchMedia("(max-width:900px)").matches}function imp(e,p,v){if(e)e.style.setProperty(p,v,"important")}function makeWwtStrip(){var grid=document.createElement("div");grid.className="oc-wwt-forced-grid";for(var i=0;i<8;i++){var cell=document.createElement("span");if([1,4,6].indexOf(i)>-1)cell.className="is-on";grid.appendChild(cell)}return grid}function apply(){if(!mobile())return;var hero=document.querySelector("header#top");if(hero){var proof=[].slice.call(hero.querySelectorAll("div")).find(function(d){var st=d.getAttribute("style")||"";return st.indexOf("border:2px solid")>-1&&d.textContent.indexOf("By hand")>-1&&d.textContent.indexOf("Automated")>-1&&d.textContent.indexOf("working weeks")>-1});if(proof){proof.classList.add("oc-proof-mobile-card");imp(proof,"padding","26px 20px");imp(proof,"border-radius","12px")}}var track=[].slice.call(document.querySelectorAll("section")).find(function(s){return s.textContent.indexOf("Chapter 06 - Track record")>-1&&s.textContent.indexOf("WWT International")>-1});if(track){track.classList.add("oc-track-record");var grid=[].slice.call(track.querySelectorAll("div")).find(function(d){var kids=[].slice.call(d.children);return kids.length===3&&d.textContent.indexOf("PwC")>-1&&d.textContent.indexOf("Citibank")>-1&&d.textContent.indexOf("WWT International")>-1});if(grid){grid.classList.add("oc-track-grid");var cards=[].slice.call(grid.children);var wwt=cards.find(function(c){return c.textContent.indexOf("WWT International")>-1});var pwc=cards.find(function(c){return c.textContent.indexOf("PwC")>-1});var citi=cards.find(function(c){return c.textContent.indexOf("Citibank")>-1});[[wwt,"oc-track-card--wwt"],[pwc,"oc-track-card--pwc"],[citi,"oc-track-card--citi"]].forEach(function(pair){if(pair[0])pair[0].classList.add("oc-track-card",pair[1])});if(wwt){var p=wwt.querySelector("p");if(p)p.textContent="I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.";[].slice.call(wwt.children).filter(function(el){return (el.getAttribute("style")||"").indexOf("grid-template-columns:repeat(10,1fr)")>-1}).forEach(function(el){imp(el,"display","none")});if(!wwt.querySelector(".oc-wwt-forced-grid")){var title=[].slice.call(wwt.children).find(function(el){return el.textContent.indexOf("WWT International")>-1&&el.textContent.indexOf("SKU OPERATOR")>-1});var strip=makeWwtStrip();if(title&&title.nextSibling)wwt.insertBefore(strip,title.nextSibling);else if(title)wwt.appendChild(strip)}}}}}document.addEventListener("DOMContentLoaded",apply);window.addEventListener("load",apply);window.addEventListener("resize",apply);setTimeout(apply,80);setTimeout(apply,400);setTimeout(apply,1200)})();<\/script>';
-        const chapterOneAnimation = '<script>(function(){var ran=false,cancel=false,raf=0,animating=false;function setSlider(input,value,final){input.step="0.01";var d=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,"value");var next=final?String(value):Number(value).toFixed(3);if(d&&d.set)d.set.call(input,next);else input.value=next;animating=true;input.dispatchEvent(new Event("input",{bubbles:true}));if(final)input.dispatchEvent(new Event("change",{bubbles:true}));animating=false}function findSlider(){var ranges=[].slice.call(document.querySelectorAll("input[type=range]"));return ranges.find(function(i){return String(i.min)==="2"&&String(i.max)==="20"})||ranges.find(function(i){var box=i.closest("header,section,div");return box&&box.textContent.indexOf("Hours a week lost to admin")>-1})}function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}function start(){if(ran||cancel||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;var input=findSlider();if(!input)return;ran=true;input.step="0.01";setSlider(input,2,false);var startTime=performance.now(),duration=2400,from=2,to=8;function tick(now){if(cancel)return;var t=Math.min(1,(now-startTime)/duration);var eased=ease(t);setSlider(input,from+(to-from)*eased,t>=1);if(t<1)raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick)}function arm(){var input=findSlider();if(!input){setTimeout(arm,160);return}input.step="0.01";input.addEventListener("pointerdown",function(){cancel=true;cancelAnimationFrame(raf)},{once:true});input.addEventListener("touchstart",function(){cancel=true;cancelAnimationFrame(raf)},{once:true,passive:true});input.addEventListener("keydown",function(){cancel=true;cancelAnimationFrame(raf)},{once:true});input.addEventListener("input",function(){if(!animating){cancel=true;cancelAnimationFrame(raf)}});var section=input.closest("header")||input.closest("section")||input.parentElement;if("IntersectionObserver" in window&&section){var io=new IntersectionObserver(function(entries){if(entries.some(function(e){return e.isIntersecting&&e.intersectionRatio>.25})){io.disconnect();setTimeout(start,300)}},{threshold:[.25,.5]});io.observe(section)}else setTimeout(start,800)}document.addEventListener("DOMContentLoaded",arm);window.addEventListener("load",arm);setTimeout(arm,500)})();<\/script>';
+  <!-- HERO / CHAPTER 01 -->
+  <header id="top" style="max-width:1180px;margin:0 auto;padding:46px 40px 22px">
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#b5791f;margin-bottom:26px">Chapter 01 - The cost of doing it by hand</div>
 
-        html = html.replace('<head>', liveHead);
-        html = html.replace('</head>', mobileCss + '</head>');
-        html = html.replaceAll('src="./support.js"', 'src="/new-homepage/support.js?v=20260710-3"');
-        html = html.replace(/<nav style="max-width:1180px;margin:0 auto;padding:26px 40px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #17130b">[\s\S]*?<\/nav>/, header);
-        html = html.replace('<!-- CHAPTER 06 / TRACK RECORD -->\n  <section style="background:#1e3b2f;color:#eee6d5">', '<!-- CHAPTER 06 / TRACK RECORD -->\n  <section class="oc-track-record" style="background:#1e3b2f;color:#eee6d5">');
-        html = html.replace('<!-- WHY ME / DIFFERENTIATORS -->\n  <section style="background:#17130b;color:#efe8dc">', '<!-- WHY ME / DIFFERENTIATORS -->\n  <section class="oc-differentiators" style="background:#17130b;color:#efe8dc">');
-        html = html.replace('Then I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.', 'I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.');
-        html = html.replace('{{ hours }} HRS', '{{ hoursLabel }} HRS');
-        html = html.replace('{{ hours }}<span style="font-size:22px;margin-left:4px">hrs</span>', '{{ hoursLabel }}<span style="font-size:22px;margin-left:4px">hrs</span>');
-        html = html.replace('hours: s.hours,', 'hours: s.hours, hoursLabel: Math.round(s.hours),');
-        html = html.replace('    </div>\n  </section>\n\n  <!-- WHY ME / DIFFERENTIATORS -->', '    </div>\n    ' + quickWinsLine + '\n  </section>\n\n  <!-- WHY ME / DIFFERENTIATORS -->');
-        html = html.replace('<div style="margin-top:52px;padding:16px 0;border-top:1px solid #d6cdba;border-bottom:1px solid #d6cdba;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14.5px;color:#5b5444;font-weight:500">\n      <span style="color:#a49d8b;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px">Built into your tools -</span>\n      <span>Xero · QuickBooks · Shopify · Amazon · eBay · Faire · Etsy · your ERP</span>\n    </div>', '<div style="margin-top:52px;padding:16px 0;border-top:1px solid #d6cdba;border-bottom:1px solid #d6cdba;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14.5px;color:#5b5444;font-weight:500">\n      <span style="color:#a49d8b;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px">Built into your tools -</span>\n      <span>Xero · QuickBooks · Shopify · Amazon · eBay · Faire · Etsy · your ERP</span>\n    </div>' + mobileAfterToolsCtas);
-        html = html.replace('<a href="mailto:henry@oliversconsulting.co.uk" style="background:#efe8dc;color:#1e3b2f;', '<a href="' + bookingUrl + '" target="_blank" rel="noopener" style="background:#efe8dc;color:#1e3b2f;');
-        html = html.replace(/<footer style="max-width:1180px;margin:0 auto;padding:26px 40px;[\s\S]*?<\/footer>/, siteFooter);
-        html = html.replaceAll('Book a free call', 'Book a free review').replaceAll('Book a free 30-minute review', 'Book a free review').replaceAll('Book the free review', 'Book a free review').replaceAll('See what I automate', 'What we automate');
-        html = html.replaceAll('◀', '&lt;').replaceAll('▶', '&gt;').replace("playIcon: s.playing ? '❚❚' : '&gt;'", "playIcon: s.playing ? 'Ⅱ' : '▷'");
-        html = html.replaceAll('href="#articles"', 'href="/articles/"').replaceAll('href="https://oliversconsulting.com', 'href="https://oliversconsulting.co.uk').replaceAll('oliversconsulting.com', 'oliversconsulting.co.uk');
-        html = html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g, '/new-homepage/image3.png').replaceAll('./Henry Oliver - Professional Photo.png', '/new-homepage/image3.png').replaceAll('./image3.png', '/new-homepage/image3.png');
-        html = html.replace('</body>', mobileEnhancements + byHandColourRamp + chapterOneAnimation + '</body>');
+    <div style="display:grid;grid-template-columns:1fr 1.08fr;gap:52px;align-items:center">
+      <div>
+        <h1 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:74px;line-height:.9;letter-spacing:.005em;margin-bottom:24px">Your week,<br>by the hour</h1>
+        <p style="font-size:18px;line-height:1.55;color:#463f31;max-width:40ch;margin-bottom:30px">The manual admin behind a growing ecommerce or wholesale business - supplier files, invoicing, stock, listings and reporting - quietly consumes your week. Drag the slider to see what it's costing you. Automated, the same work is finished in about <strong>two minutes.</strong></p>
 
-        document.open();
-        document.write(html);
-        document.close();
-      } catch (error) {
-        document.body.innerHTML = '<main class="loading"><strong>Homepage could not load.</strong><p>Please try again shortly.</p></main>';
-      }
-    })();
-  </script>
+        <div style="margin-bottom:12px;display:flex;align-items:baseline;justify-content:space-between">
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;color:#7a7361;text-transform:uppercase">Hours a week lost to admin</span>
+          <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:24px;color:#b5791f">{{ hours }} HRS</span>
+        </div>
+        <input type="range" min="2" max="20" step="1" value="{{ hours }}" onInput="{{ onHours }}" style="{{ heroTrackStyle }}">
+        <div style="display:flex;justify-content:space-between;font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:11.5px;color:#a49d8b;margin-top:7px;letter-spacing:.02em">
+          <span>2h</span><span>◀ drag to explore ▶</span><span>20h</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;margin-top:34px">
+          <a href="#book" style="background:#1e3b2f;color:#efe8dc;padding:15px 28px;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:17px;border-radius:9px;display:inline-flex;align-items:center;gap:9px;box-shadow:0 8px 20px -8px rgba(30,59,47,.65);transition:transform .18s,box-shadow .18s,background .18s" style-hover="background:#122619;transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(30,59,47,.75)">Book a free call <span>→</span></a>
+          <a href="#services" style="border:2px solid #17130b;color:#17130b;padding:13px 22px;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:17px;border-radius:9px;transition:background .18s,color .18s" style-hover="background:#c07c1f;border-color:#c07c1f;color:#17130b">See what I automate</a>
+        </div>
+      </div>
+
+      <!-- before/after proof -->
+      <div style="border:2px solid #17130b;border-radius:12px;background:#f5efe4;padding:30px 32px;box-shadow:0 20px 46px -26px rgba(23,19,11,.4)">
+        <!-- BY HAND -->
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:12px">
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a86e1c">By hand</span>
+          <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:64px;line-height:.8;color:#b5791f">{{ hours }}<span style="font-size:22px;margin-left:4px">hrs</span></span>
+        </div>
+        <div style="height:26px;border-radius:5px;background:linear-gradient(90deg,#e3a545,#c07c1f 52%,#9f5f18)"></div>
+
+        <div style="display:flex;align-items:center;gap:12px;margin:20px 0">
+          <div style="flex:1;height:1px;background:#d6cdba"></div>
+          <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;color:#1e3b2f;font-size:22px;transform:rotate(90deg)">→</span>
+          <div style="flex:1;height:1px;background:#d6cdba"></div>
+        </div>
+
+        <!-- AUTOMATED -->
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:12px">
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#2f6f4f">Automated</span>
+          <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:64px;line-height:.8;color:#1e3b2f">2<span style="font-size:22px;margin-left:4px">min</span></span>
+        </div>
+        <div style="height:26px;border-radius:5px;background:#e6ddcb;position:relative;overflow:hidden">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:3%;background:#1e3b2f;border-radius:5px"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;padding-top:22px;border-top:1px solid #d6cdba">
+          <div style="text-align:center;padding:0 8px">
+            <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1;color:#17130b">{{ dispYear }}</div>
+            <div style="font-size:11.5px;color:#7a7361;margin-top:6px;line-height:1.3">hours a year<br>lost to it</div>
+          </div>
+          <div style="text-align:center;padding:0 8px;border-left:1px solid #d6cdba;border-right:1px solid #d6cdba">
+            <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1;color:#17130b">{{ dispWeeks }}</div>
+            <div style="font-size:11.5px;color:#7a7361;margin-top:6px;line-height:1.3">working weeks<br>every year</div>
+          </div>
+          <div style="text-align:center;padding:0 8px">
+            <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1;color:#b5791f">£{{ dispCost }}</div>
+            <div style="font-size:11.5px;color:#7a7361;margin-top:6px;line-height:1.3">a year, at<br>£30 an hour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:52px;padding:16px 0;border-top:1px solid #d6cdba;border-bottom:1px solid #d6cdba;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14.5px;color:#5b5444;font-weight:500">
+      <span style="color:#a49d8b;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px">Built into your tools -</span>
+      <span>Xero · QuickBooks · Shopify · Amazon · eBay · Faire · Etsy · your ERP</span>
+    </div>
+  </header>
+
+  <!-- CHAPTER 02 / THE SWITCH - illustrative pipeline + autoplay -->
+  <section ref="{{ switchRef }}" style="background:#1e3b2f;color:#eee6d5;margin-top:20px;overflow:hidden">
+    <div style="max-width:1180px;margin:0 auto;padding:80px 40px">
+      <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#8fbfa0;margin-bottom:20px">Chapter 02 - The switch</div>
+      <h2 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:56px;line-height:.92;letter-spacing:.005em;margin-bottom:12px;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">Watch one order<br>run itself</h2>
+      <p style="font-size:16px;color:#b6c8b9;max-width:56ch;margin-bottom:14px">It plays as you arrive - or take the handle yourself - running the same 214-line supplier order through every stage, from a manual afternoon to a task that completes itself in minutes.</p>
+
+      <div style="display:flex;align-items:flex-end;gap:24px;margin:36px 0 10px">
+        <div>
+          <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;color:#8fbfa0;text-transform:uppercase;margin-bottom:6px">Time to process</div>
+          <div style="{{ clockStyle }}">{{ dispTime }}</div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#b6c8b9;padding-bottom:10px">{{ doneLabel }}</div>
+      </div>
+
+      <!-- pipeline -->
+      <div style="position:relative;padding:34px 0 6px;margin-bottom:14px">
+        <div style="position:absolute;left:50%;margin-left:-50vw;width:100vw;top:55px;height:3px;background:rgba(255,255,255,.14)"></div>
+        <div style="{{ progressStyle }}"></div>
+        <div style="position:relative;display:flex;justify-content:space-between">
+          <sc-for list="{{ nodes }}" as="n" hint-placeholder-count="5">
+            <div style="width:19%;display:flex;flex-direction:column;align-items:center;text-align:center">
+              <div style="{{ n.dotStyle }}">{{ n.mark }}</div>
+              <div style="{{ n.labelStyle }}">{{ n.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- scrubber -->
+      <div style="border-top:1px solid rgba(255,255,255,.14);padding-top:26px;display:flex;align-items:center;gap:22px">
+        <button onClick="{{ togglePlay }}" style="flex:none;width:52px;height:52px;border-radius:50%;border:2px solid #eee6d5;background:transparent;color:#eee6d5;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s" style-hover="background:#eee6d5;color:#1e3b2f">{{ playIcon }}</button>
+        <div style="flex:1">
+          <input type="range" min="0" max="100" step="1" value="{{ scrub }}" onInput="{{ onScrub }}" style="{{ scrubTrackStyle }}">
+          <div style="display:flex;justify-content:space-between;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:14px;margin-top:10px">
+            <span style="color:#d9a86a">◀ By hand · 3h 40m</span>
+            <span style="color:#8fbfa0">Automated · 2 min ▶</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 03 / MORE AUTOMATIONS -->
+  <section style="max-width:1180px;margin:0 auto;padding:84px 40px 30px">
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#b5791f;margin-bottom:16px">Chapter 03 - More on autopilot</div>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:34px;flex-wrap:wrap">
+      <h2 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:56px;line-height:.9;letter-spacing:.005em;max-width:18ch;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">Set it once<br>It just keeps running</h2>
+      <p style="font-size:15.5px;line-height:1.5;color:#5b5444;max-width:40ch">Built once, each of these runs quietly in the background - no dashboard to monitor, no button to press, nothing to remember.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 24%">
+
+      <!-- stock sync -->
+      <div style="background:#f5efe4;border:2px solid #17130b;border-radius:12px;padding:24px;display:flex;flex-direction:column">
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b5791f;margin-bottom:8px">Channel &amp; stock sync</div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:22px;line-height:1;margin-bottom:20px">Update once,<br>everywhere follows</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;background:#17130b;color:#efe8dc;margin-bottom:14px">
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px">Master stock</span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#8fe0af;animation:dotPulse 1.4s infinite"></span><span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:18px">247</span></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border:1.5px solid #ddd3c0;border-radius:8px;animation:rowSync 3s ease-in-out infinite;animation-delay:0s">
+            <span style="font-weight:600;font-size:14px;color:#3f3a2d">Shopify</span>
+            <span style="color:#2f6f4f;font-weight:600;font-size:14px;animation:checkOn 3s ease-in-out infinite;animation-delay:0s">✓ synced</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border:1.5px solid #ddd3c0;border-radius:8px;animation:rowSync 3s ease-in-out infinite;animation-delay:.45s">
+            <span style="font-weight:600;font-size:14px;color:#3f3a2d">Amazon</span>
+            <span style="color:#2f6f4f;font-weight:600;font-size:14px;animation:checkOn 3s ease-in-out infinite;animation-delay:.45s">✓ synced</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border:1.5px solid #ddd3c0;border-radius:8px;animation:rowSync 3s ease-in-out infinite;animation-delay:.9s">
+            <span style="font-weight:600;font-size:14px;color:#3f3a2d">eBay</span>
+            <span style="color:#2f6f4f;font-weight:600;font-size:14px;animation:checkOn 3s ease-in-out infinite;animation-delay:.9s">✓ synced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- monday report -->
+      <div style="background:#f5efe4;border:2px solid #17130b;border-radius:12px;padding:24px;display:flex;flex-direction:column">
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b5791f;margin-bottom:8px">The Monday Report</div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:22px;line-height:1;margin-bottom:20px">Every Monday,<br>in your inbox</div>
+        <div style="display:flex;gap:6px;margin-bottom:16px">
+          <div style="flex:1;text-align:center;padding:9px 0;border-radius:6px;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:14px;background:#1e3b2f;color:#efe8dc">M</div>
+          <div style="flex:1;text-align:center;padding:9px 0;border-radius:6px;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:14px;background:#ece4d5;color:#a49d8b">T</div>
+          <div style="flex:1;text-align:center;padding:9px 0;border-radius:6px;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:14px;background:#ece4d5;color:#a49d8b">W</div>
+          <div style="flex:1;text-align:center;padding:9px 0;border-radius:6px;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:14px;background:#ece4d5;color:#a49d8b">T</div>
+          <div style="flex:1;text-align:center;padding:9px 0;border-radius:6px;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:14px;background:#ece4d5;color:#a49d8b">F</div>
+        </div>
+        <div style="position:relative;min-height:70px;display:flex;align-items:flex-start">
+          <div style="width:100%;display:flex;align-items:center;justify-content:space-between;border:1.5px solid #bcd8c6;background:#e7f2ea;border-radius:9px;padding:12px 14px;animation:reportIn 4s ease-in-out infinite">
+            <span><span style="display:block;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:16px;color:#17130b">Margin report</span><span style="font-size:12px;color:#5b7566">Mon · 9:00am</span></span>
+            <span style="color:#2f6f4f;font-weight:700;font-size:14px">✓ sent</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- invoice -->
+      <div style="background:#f5efe4;border:2px solid #17130b;border-radius:12px;padding:24px;display:flex;flex-direction:column">
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b5791f;margin-bottom:8px">Invoices on autopilot</div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:22px;line-height:1;margin-bottom:20px">Orders become<br>invoices</div>
+        <div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:120px">
+          <div style="width:100%;border:1.5px solid #ddd3c0;background:#f3ecdf;border-radius:10px;padding:16px 18px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px"><span style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:16px;color:#17130b">Order #1042</span><span style="font-size:12.5px;color:#8a8271">12 lines</span></div>
+            <div style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:34px;line-height:1;color:#17130b">£460.00</div>
+            <div style="font-size:12.5px;color:#5b5444;margin-top:6px">Faire · wholesale</div>
+          </div>
+          <div style="position:absolute;top:-4px;right:-4px;border:2.5px solid #2f6f4f;color:#2f6f4f;background:rgba(231,242,234,.94);border-radius:8px;padding:7px 13px;font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:16px;letter-spacing:.03em;animation:stampIn 3.6s ease-in-out infinite">Invoiced ✓</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 / SERVICES -->
+  <section id="services" style="max-width:1180px;margin:0 auto;padding:84px 40px 30px">
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#b5791f;margin-bottom:16px">Chapter 04 - What I automate</div>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:20px;flex-wrap:wrap">
+      <h2 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:56px;line-height:.9;letter-spacing:.005em;max-width:16ch;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">The work you'll<br>never touch again</h2>
+      <p style="font-size:15.5px;line-height:1.5;color:#5b5444;max-width:40ch">Grouped by the outcome it delivers. Every engagement is priced and agreed before any work begins - where two figures appear, the first is a focused quick win, the second a fuller build.</p>
+    </div>
+
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:230px 1fr;gap:32px;padding:26px 0 8px;border-top:2px solid #17130b;align-items:start">
+        <div style="position:sticky;top:20px">
+          <div style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:26px;line-height:.95;letter-spacing:.01em">{{ g.cat }}</div>
+          <div style="font-size:13.5px;color:#8a8271;margin-top:6px">{{ g.note }}</div>
+        </div>
+        <div>
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:1fr auto;gap:24px;padding:15px 14px 15px 0;border-top:1px solid #ddd3c0;align-items:baseline;border-radius:6px;transition:background .16s" style-hover="background:#f5efe4">
+              <div>
+                <div style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1;letter-spacing:.01em;color:#17130b;margin-bottom:5px">{{ it.name }}</div>
+                <div style="font-size:14.5px;line-height:1.45;color:#5b5444">{{ it.desc }}</div>
+              </div>
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:#17130b;text-align:right;white-space:nowrap">{{ it.price }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="display:grid;grid-template-columns:230px 1fr;gap:32px;padding:26px 0 8px;border-top:2px solid #1e3b2f;align-items:start">
+      <div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:26px;line-height:.95;color:#1e3b2f">Care plan</div>
+        <div style="font-size:13.5px;color:#8a8271;margin-top:6px">Keep it running</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:24px;padding:15px 0;align-items:baseline">
+        <div style="font-size:14.5px;line-height:1.45;color:#5b5444">Monthly monitoring, fixes and small changes - so nothing quietly drifts back to manual.</div>
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:#17130b;text-align:right;white-space:nowrap">£150–250/mo<br><span style="color:#a49d8b;font-size:12.5px">£400–750 main</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME / DIFFERENTIATORS -->
+  <section style="background:#17130b;color:#efe8dc">
+    <div style="max-width:1180px;margin:0 auto;padding:66px 40px;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+        <div style="padding:0 40px 0 0;border-right:1px solid #33301f">
+          <div style="height:48px;display:flex;align-items:center;margin-bottom:20px">
+            <div style="width:54px;height:38px;border:2.5px solid #d9a86a;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#d9a86a;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:22px">£</div>
+          </div>
+          <h3 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;margin-bottom:12px">Priced upfront</h3>
+          <p style="font-size:15px;line-height:1.55;color:#a9a08c">You approve the number before I start - no day rates, no scope creep, no surprise invoice at the end.</p>
+        </div>
+        <div style="padding:0 40px;border-right:1px solid #33301f">
+          <div style="height:48px;display:flex;align-items:center;margin-bottom:20px">
+            <div style="display:flex;align-items:center">
+              <div style="width:16px;height:16px;border-radius:50%;background:#d9a86a"></div>
+              <div style="width:22px;height:3px;background:#4c5b50"></div>
+              <div style="width:16px;height:16px;border-radius:50%;background:#efe8dc"></div>
+              <div style="width:22px;height:3px;background:#4c5b50"></div>
+              <div style="width:16px;height:16px;border-radius:50%;background:#8fe0af"></div>
+            </div>
+          </div>
+          <h3 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;margin-bottom:12px">Built around your tools</h3>
+          <p style="font-size:15px;line-height:1.55;color:#a9a08c">It slots into what you already run - Xero, Shopify, your ERP. Nothing to rip out, nothing new to learn.</p>
+        </div>
+        <div style="padding:0 0 0 40px">
+          <div style="height:48px;display:flex;align-items:center;margin-bottom:20px">
+            <span style="display:inline-block;width:20px;height:20px;border-top:5px solid #d9a86a;border-right:5px solid #d9a86a;transform:rotate(45deg)"></span>
+            <span style="display:inline-block;width:20px;height:20px;border-top:5px solid #efe8dc;border-right:5px solid #efe8dc;transform:rotate(45deg);margin-left:-9px"></span>
+          </div>
+          <h3 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;margin-bottom:12px">One operator, start to finish</h3>
+          <p style="font-size:15px;line-height:1.55;color:#a9a08c">The person who scopes the work is the person who builds it. No handoffs, no juniors, no account managers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 / HOW IT WORKS -->
+  <section id="how" style="max-width:1180px;margin:0 auto;padding:80px 40px">
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#b5791f;margin-bottom:16px">Chapter 05 - How it works</div>
+    <h2 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:56px;line-height:.9;letter-spacing:.005em;margin-bottom:44px;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">Three steps<br>One price, agreed upfront</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+      <div style="padding:0 32px;border-left:2px solid #17130b">
+        <div style="height:56px;display:flex;flex-direction:column;justify-content:center;gap:7px;margin-bottom:22px;position:relative;width:96px">
+          <div style="height:8px;width:74px;border-radius:4px;background:#e0d7c4"></div>
+          <div style="height:8px;width:96px;border-radius:4px;background:#c07c1f"></div>
+          <div style="height:8px;width:58px;border-radius:4px;background:#e0d7c4"></div>
+          <div style="position:absolute;right:-6px;top:-8px;width:28px;height:28px;border:3px solid #17130b;border-radius:50%;background:#efe8dc;animation:lensScan 3s ease-in-out infinite"></div>
+        </div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:44px;color:#b5791f;line-height:1;margin-bottom:12px">01</div>
+        <h3 style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;margin-bottom:14px">We map the manual job</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#5b5444">A short, practical call. I map exactly how the work is done today - and where your hours are quietly disappearing.</p>
+      </div>
+      <div style="padding:0 32px;border-left:2px solid #17130b">
+        <div style="height:56px;display:flex;align-items:center;margin-bottom:22px;width:130px;position:relative">
+          <div style="position:absolute;top:50%;left:2px;width:12px;height:12px;border-radius:50%;background:#2f6f4f;transform:translateY(-50%);box-shadow:0 0 0 4px rgba(47,111,79,.18);animation:travelDot 2.4s ease-in-out infinite"></div>
+          <div style="width:18px;height:18px;border-radius:50%;background:#c07c1f"></div>
+          <div style="flex:1;height:3px;background:#17130b"></div>
+          <div style="width:18px;height:18px;border-radius:50%;background:#17130b"></div>
+          <div style="flex:1;height:3px;background:#17130b"></div>
+          <div style="width:18px;height:18px;border-radius:50%;background:#c07c1f"></div>
+        </div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:44px;color:#b5791f;line-height:1;margin-bottom:12px">02</div>
+        <h3 style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;margin-bottom:14px">I build the automation</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#5b5444">A clear price, agreed before I begin - then a build designed to sit neatly inside the tools you already run.</p>
+      </div>
+      <div style="padding:0 32px;border-left:2px solid #17130b">
+        <div style="height:56px;display:flex;align-items:center;gap:8px;margin-bottom:22px">
+          <div style="width:46px;height:46px;border-radius:50%;border:3px solid #17130b;display:flex;align-items:center;justify-content:center;color:#2f6f4f;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:26px;animation:checkPulse 1.8s ease-in-out infinite">✓</div>
+          <span style="display:inline-block;width:11px;height:11px;border-top:3px solid #c07c1f;border-right:3px solid #c07c1f;transform:rotate(45deg);animation:chevPulse 1.8s ease-in-out infinite"></span>
+          <span style="display:inline-block;width:11px;height:11px;border-top:3px solid #17130b;border-right:3px solid #17130b;transform:rotate(45deg);margin-left:-5px;animation:chevPulse 1.8s ease-in-out infinite;animation-delay:.3s"></span>
+        </div>
+        <div style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:44px;color:#b5791f;line-height:1;margin-bottom:12px">03</div>
+        <h3 style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;margin-bottom:14px">It runs itself</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#5b5444">The output arrives on schedule, without you lifting a finger. An optional care plan keeps it accurate as your business grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 06 / TRACK RECORD -->
+  <section style="background:#1e3b2f;color:#eee6d5">
+    <div style="max-width:1180px;margin:0 auto;padding:80px 40px">
+      <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#8fbfa0;margin-bottom:20px">Chapter 06 - Track record</div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap">
+        <h2 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:56px;line-height:.92;letter-spacing:.005em;max-width:18ch;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">Proven where a wrong<br>number isn't an option</h2>
+        <p style="font-size:16px;line-height:1.5;color:#b6c8b9;max-width:44ch">Before founders, this was my work inside a Big Four firm and a global bank - where reporting and data have to be right, at scale, every single time.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 24%">
+
+        <div style="border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);border-radius:12px;padding:26px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2px">
+            <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:30px;letter-spacing:.01em;color:#efe8dc">PwC</span>
+            <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8fbfa0">Analytics reporting</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:flex-end;gap:8px;margin:20px 0 22px">
+            <div style="width:16px;height:24px;background:#6cc996;border-radius:2px"></div>
+            <div style="width:16px;height:36px;background:#7fd3a3;border-radius:2px"></div>
+            <div style="width:16px;height:48px;background:#8fe0af;border-radius:2px"></div>
+            <div style="width:16px;height:60px;background:#8fe0af;border-radius:2px"></div>
+            <div style="margin-left:6px;align-self:center;color:#8fe0af;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:22px">✓</div>
+          </div>
+          <p style="font-size:14.5px;line-height:1.5;color:#b6c8b9">Replaced hand-assembled analytics packs with reporting that builds itself - handing days of manual work back to the team each cycle.</p>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);border-radius:12px;padding:26px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2px">
+            <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:30px;letter-spacing:.01em;color:#efe8dc">Citibank</span>
+            <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8fbfa0">Data transformation</span>
+          </div>
+          <div style="height:60px;display:flex;align-items:center;gap:14px;margin:20px 0 22px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="height:7px;width:44px;background:#d9a86a;border-radius:2px"></div>
+              <div style="height:7px;width:30px;background:#d9a86a;border-radius:2px"></div>
+              <div style="height:7px;width:52px;background:#d9a86a;border-radius:2px"></div>
+            </div>
+            <span style="color:#8fbfa0;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:22px">→</span>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="height:7px;width:46px;background:#8fe0af;border-radius:2px"></div>
+              <div style="height:7px;width:46px;background:#8fe0af;border-radius:2px"></div>
+              <div style="height:7px;width:46px;background:#8fe0af;border-radius:2px"></div>
+            </div>
+          </div>
+          <p style="font-size:14.5px;line-height:1.5;color:#b6c8b9">Turned high-volume, inconsistent data feeds into clean, unified datasets - pipelines that had to be right, every single time.</p>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);border-radius:12px;padding:26px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:2px">
+            <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:25px;line-height:.95;letter-spacing:.01em;color:#efe8dc">WWT International (Pty) Ltd</span>
+            <span style="flex:none;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8fbfa0">SKU operator</span>
+          </div>
+          <div style="height:60px;display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(2,1fr);gap:5px;align-content:center;margin:20px 0 22px">
+            <div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:#8fe0af"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:#8fe0af"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:#8fe0af"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:#8fe0af"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div><div style="border-radius:2px;background:#8fe0af"></div><div style="border-radius:2px;background:rgba(255,255,255,.2)"></div>
+          </div>
+          <p style="font-size:14.5px;line-height:1.5;color:#b6c8b9">Then I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 07 / ABOUT -->
+  <section id="about" style="max-width:1180px;margin:0 auto;padding:84px 40px 84px;display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center">
+    <div style="position:relative;z-index:6;aspect-ratio:4/5;border-radius:6px;border:2px solid #17130b;overflow:hidden;background:#e2dac9;box-shadow:0 24px 50px -30px rgba(23,19,11,.5)">
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQF5BXKtpmA-rQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722071106804?e=1785369600&v=beta&t=5ZpzIIM_gty9mml4D_5PTPJ4DsK5huKCzpl7FfVlfeQ" alt="Henry Oliver" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+    </div>
+    <div>
+      <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#b5791f;margin-bottom:24px">Chapter 07 - Why an operator, not an agency</div>
+      <blockquote style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:44px;line-height:.98;letter-spacing:.005em;color:#17130b;margin:0 0 24px">“I ran a 200,000-SKU business. I've done the eight-hour supplier upload myself - that's why these fit how the work is actually done.”</blockquote>
+      <p style="font-size:16.5px;line-height:1.6;color:#5b5444;max-width:52ch">No discovery-phase invoices, no jargon, and no revolving team of account managers. One operator with enterprise-grade rigour and first-hand experience of the work - a clear price agreed before anything begins, then a care plan to keep it running.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="book" style="background:#1e3b2f;color:#efe8dc">
+    <div style="max-width:1180px;margin:0 auto;padding:82px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center">
+      <div>
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#8fbfa0;margin-bottom:18px">Chapter 08 - Your move</div>
+        <h2 style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:64px;line-height:.9;letter-spacing:.005em;animation:revealUp .7s ease both;animation-timeline:view();animation-range:entry 0% cover 30%">See where<br>your week is going</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:22px">
+        <p style="font-size:17px;line-height:1.5;color:#b6c8b9;max-width:38ch">A short, no-obligation call. I'll look at the manual work consuming your team's hours and tell you - at a clear, agreed price - exactly what I'd automate first.</p>
+        <a href="mailto:henry@oliversconsulting.co.uk" style="background:#efe8dc;color:#1e3b2f;padding:16px 32px;font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:19px;border-radius:9px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 26px -10px rgba(0,0,0,.5);transition:background .2s,color .2s,transform .18s" style-hover="background:#d9a86a;color:#17130b;transform:translateY(-2px)">Book a free call <span>→</span></a>
+        <a href="mailto:henry@oliversconsulting.co.uk" style="color:#b6c8b9;font-weight:500;font-size:15px;border-bottom:1px solid #4c6355;padding-bottom:2px">henry@oliversconsulting.co.uk</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:1180px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span style="display:flex;align-items:center;gap:11px">
+      <span style="display:flex;align-items:center">
+        <span style="display:inline-block;width:12px;height:12px;border-top:3px solid #c07c1f;border-right:3px solid #c07c1f;transform:rotate(45deg)"></span>
+        <span style="display:inline-block;width:12px;height:12px;border-top:3px solid #17130b;border-right:3px solid #17130b;transform:rotate(45deg);margin-left:-5px"></span>
+      </span>
+      <span style="font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:19px;letter-spacing:.02em">Olivers Consulting</span>
+    </span>
+    <span style="font-size:13px;color:#8a8271;font-weight:500">Automation for UK ecommerce &amp; wholesale · © 2026</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  switchRef = React.createRef();
+  state = { hours: 8, dispYear: 416, dispWeeks: 11.1, dispCost: 12480, scrub: 0, playing: false, scrollPct: 0 };
+
+  componentDidMount() {
+    // autoplay the switch pipeline whenever it scrolls into view
+    this.switchIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { if (!this.switchVisible) { this.switchVisible = true; this.autoRun(); } }
+        else { this.switchVisible = false; }
+      });
+    }, { threshold: 0.45 });
+    if (this.switchRef.current) this.switchIo.observe(this.switchRef.current);
+
+    // scroll-progress bar (manual -> automated journey)
+    this.onScroll = () => {
+      if (this._sraf) return;
+      this._sraf = requestAnimationFrame(() => {
+        this._sraf = null;
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const pct = max > 0 ? ((window.scrollY || h.scrollTop) / max) * 100 : 0;
+        this.setState({ scrollPct: pct });
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    if (this.switchIo) this.switchIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    cancelAnimationFrame(this.raf);
+    cancelAnimationFrame(this._sraf);
+    clearInterval(this.playTimer);
+  }
+
+  onHours = (e) => {
+    const hours = +e.target.value;
+    this.setState({ hours });
+    this.tTargets = { year: hours * 52, weeks: (hours * 52) / 37.5, cost: hours * 52 * 30 };
+    if (!this.tweening) { this.tweening = true; this.raf = requestAnimationFrame(this.tweenCounters); }
+  };
+
+  tweenCounters = () => {
+    this.setState(s => {
+      const t = this.tTargets;
+      const ny = s.dispYear + (t.year - s.dispYear) * 0.2;
+      const nw = s.dispWeeks + (t.weeks - s.dispWeeks) * 0.2;
+      const nc = s.dispCost + (t.cost - s.dispCost) * 0.2;
+      const settled = Math.abs(t.year - ny) < 0.5 && Math.abs(t.cost - nc) < 1;
+      return { dispYear: settled ? t.year : ny, dispWeeks: settled ? t.weeks : nw, dispCost: settled ? t.cost : nc };
+    }, () => {
+      const t = this.tTargets;
+      if (Math.abs(t.year - this.state.dispYear) >= 0.5 || Math.abs(t.cost - this.state.dispCost) >= 1) this.raf = requestAnimationFrame(this.tweenCounters);
+      else this.tweening = false;
+    });
+  };
+
+  onScrub = (e) => { this.setState({ scrub: +e.target.value, playing: false }); clearInterval(this.playTimer); };
+
+  autoRun = () => {
+    this.setState({ playing: true, scrub: 0 });
+    clearInterval(this.playTimer);
+    this.playTimer = setInterval(() => {
+      this.setState(s => {
+        if (s.scrub >= 100) { clearInterval(this.playTimer); return { playing: false }; }
+        return { scrub: Math.min(100, s.scrub + 1.2) };
+      });
+    }, 42);
+  };
+
+  togglePlay = () => {
+    if (this.state.playing) { this.setState({ playing: false }); clearInterval(this.playTimer); return; }
+    this.setState(s => ({ playing: true, scrub: s.scrub >= 100 ? 0 : s.scrub }));
+    clearInterval(this.playTimer);
+    this.playTimer = setInterval(() => {
+      this.setState(s => {
+        if (s.scrub >= 100) { clearInterval(this.playTimer); return { playing: false }; }
+        return { scrub: Math.min(100, s.scrub + 1.4) };
+      });
+    }, 40);
+  };
+
+  renderVals() {
+    const s = this.state;
+    const fmt = (n) => Math.round(n).toLocaleString('en-GB');
+
+    const heroFill = ((s.hours - 2) / 18) * 100;
+    const heroTrackStyle = { background: `linear-gradient(90deg,#c07c1f ${heroFill}%,#d6cdba ${heroFill}%)` };
+    const scrubTrackStyle = { background: `linear-gradient(90deg,#d9a86a ${s.scrub}%,rgba(255,255,255,.18) ${s.scrub}%)` };
+
+    const thresholds = [8, 28, 48, 68, 88];
+    const rawNodes = [
+      { label: 'Read PDF' }, { label: 'Match SKUs' }, { label: 'Invoice' }, { label: 'Sync stock' }, { label: 'Report' },
+    ];
+    const nodes = rawNodes.map((n, i) => {
+      const done = s.scrub >= thresholds[i];
+      return {
+        label: n.label,
+        mark: done ? '✓' : (i + 1),
+        dotStyle: {
+          width: '46px', height: '46px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: "'Saira Condensed', sans-serif", fontWeight: 800, fontSize: '19px',
+          background: done ? '#8fe0af' : '#1e3b2f', color: done ? '#123024' : '#6f8b7c',
+          border: done ? '2px solid #8fe0af' : '2px solid rgba(255,255,255,.28)',
+          boxShadow: done ? '0 0 0 6px rgba(143,224,175,.16)' : 'none',
+          transition: 'all .3s ease',
+        },
+        labelStyle: {
+          marginTop: '12px', fontFamily: "'Saira Condensed', sans-serif", fontWeight: 700, textTransform: 'uppercase',
+          fontSize: '14px', letterSpacing: '.03em', color: done ? '#eee6d5' : '#7f978a', transition: 'color .3s ease',
+        },
+      };
+    });
+    const progressStyle = { position: 'absolute', left: '50%', marginLeft: '-50vw', width: `${s.scrub}vw`, top: '55px', height: '3px', background: '#8fe0af', transition: 'width .12s linear' };
+    const progressBarStyle = { height: '100%', width: `${s.scrollPct}%`, background: 'linear-gradient(90deg,#c07c1f,#2f6f4f)', transition: 'width .08s linear' };
+
+    const doneCount = thresholds.filter(t => s.scrub >= t).length;
+    const remain = 220 - 218 * (s.scrub / 100);
+    let dispTime;
+    if (remain >= 60) dispTime = `${Math.floor(remain / 60)}h ${Math.round(remain % 60)}m`;
+    else if (remain >= 1.5) dispTime = `${Math.round(remain)}m`;
+    else dispTime = `${Math.max(2, Math.round(remain * 60))}s`;
+    if (s.scrub >= 100) dispTime = '2 min';
+    const auto = s.scrub >= 100;
+    const clockStyle = { fontFamily: "'Saira Condensed', sans-serif", fontWeight: 800, fontSize: '84px', lineHeight: '.85', color: auto ? '#8fe0af' : (s.scrub === 0 ? '#d9a86a' : '#eee6d5'), transition: 'color .3s ease' };
+    const doneLabel = `${doneCount} / 5 steps done`;
+
+    const groups = [
+      { cat: 'Reports', note: 'See the numbers', items: [
+        { name: 'The Monday Report', desc: 'Sales, stock & margin - every Monday, automatically.', price: '£400–600 / £1.5–3k' },
+      ] },
+      { cat: 'Data, sorted', note: 'Files in, clean data out', items: [
+        { name: 'Supplier data pipelines', desc: 'Any supplier format in, your format out.', price: '£2.5–5k' },
+        { name: 'Spreadsheet rescue', desc: 'Messy data cleaned once, and kept clean.', price: '£400–700 / £1.5–4k' },
+        { name: 'Catalogue content engine', desc: 'Descriptions & categories at scale, from PDFs.', price: '£2.5–6k' },
+      ] },
+      { cat: 'Money in', note: 'Orders to invoices', items: [
+        { name: 'Invoices on autopilot', desc: 'Orders become Xero/QuickBooks invoices, no typing.', price: '£600–900 / £2–4k' },
+        { name: 'Order-to-invoice admin', desc: 'Wholesale orders into accounting, hands-off.', price: '£2–4k' },
+        { name: 'Stockist orders, straight in', desc: 'Faire, email & PDF orders file themselves.', price: '£600–1k' },
+      ] },
+      { cat: 'Listings & stock', note: 'One update, everywhere', items: [
+        { name: 'Channel & stock sync', desc: 'Update once; every channel follows.', price: '£3–6k' },
+        { name: 'Product upload turbo', desc: 'One sheet → Shopify, Etsy & Faire at once.', price: '£500–800' },
+        { name: 'Price list builder', desc: 'Wholesale sheets & site prices, always in sync.', price: '£500–800' },
+      ] },
+    ];
+
+    const steps = [
+      { n: '01', title: 'We map the manual job', body: 'A short call. I watch how the work happens today and where the hours actually go.' },
+      { n: '02', title: 'I build the automation', body: 'Fixed price, agreed upfront - built to slot into the tools you already run.' },
+      { n: '03', title: 'It runs itself', body: 'You get the output on schedule. A care plan keeps it clean as things change.' },
+    ];
+
+    return {
+      hours: s.hours,
+      dispYear: fmt(s.dispYear),
+      dispWeeks: (Math.round(s.dispWeeks * 10) / 10).toLocaleString('en-GB'),
+      dispCost: fmt(s.dispCost),
+      heroTrackStyle, scrubTrackStyle, scrub: s.scrub,
+      nodes, progressStyle, dispTime, clockStyle, doneLabel,
+      playIcon: s.playing ? '❚❚' : '▶',
+      onHours: this.onHours, onScrub: this.onScrub, togglePlay: this.togglePlay,
+      switchRef: this.switchRef, progressBarStyle,
+      groups, steps,
+    };
+  }
+}
+</script>
 </body>
 </html>
