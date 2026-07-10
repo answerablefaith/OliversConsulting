@@ -12,6 +12,15 @@
     document.head.appendChild(localFonts);
   }
 
+  function ensureMobileCalculator(){
+    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+    if (document.querySelector('script[data-oc-mobile-calculator]')) return;
+    var script = document.createElement('script');
+    script.src = '/assets/mobile-calculator.js?v=20260710-1';
+    script.setAttribute('data-oc-mobile-calculator', '1');
+    document.head.appendChild(script);
+  }
+
   try { localStorage.removeItem('oc_font_privacy_choice'); } catch (e) {}
 
   function cleanOldControls(){
@@ -123,6 +132,7 @@
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
+  ensureMobileCalculator();
   cleanOldControls();
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', startContentCleanup, { once: true });
