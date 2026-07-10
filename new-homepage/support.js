@@ -249,6 +249,7 @@
       '.oc-track-record .oc-track-card--wwt>.oc-wwt-forced-grid span{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1/1!important;border-radius:4px!important;background:#52665c!important;}' +
       '.oc-track-record .oc-track-card--wwt>.oc-wwt-forced-grid span.is-on{background:#8bdca8!important;}' +
       '.oc-track-record .oc-track-card--wwt>p{margin-top:0!important;}' +
+      '.oc-differentiators>div>div[style*="grid-template-columns:repeat(3,1fr)"]>div:nth-child(2),.oc-differentiators>div>div[style*="grid-template-columns:repeat(3,1fr)"]>div:nth-child(3){padding-left:0!important;}' +
       '}';
     document.head.appendChild(style);
   }
