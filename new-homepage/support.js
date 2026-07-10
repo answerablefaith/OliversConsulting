@@ -2,6 +2,7 @@
 (function(){
   var raf = 0;
   var colourRaf = 0;
+  var colourRaf2 = 0;
   var timer = 0;
   var cancelled = false;
   var programmatic = false;
@@ -13,13 +14,17 @@
     });
   }
 
+  function directHoursUnit(span){
+    return Array.prototype.slice.call(span.children || []).find(function(child){
+      return child.tagName === 'SPAN' && /hrs/i.test(child.textContent || '');
+    }) || null;
+  }
+
   function findByHandNumber(){
     var hero = document.querySelector('header#top');
     if (!hero) return null;
     return Array.prototype.slice.call(hero.querySelectorAll('span')).find(function(span){
-      var style = span.getAttribute('style') || '';
-      var unit = span.querySelector(':scope > span');
-      return style.indexOf('font-size:64px') !== -1 && unit && /hrs/i.test(unit.textContent || '');
+      return span.style.fontSize === '64px' && directHoursUnit(span);
     }) || null;
   }
 
@@ -50,16 +55,23 @@
     return 'rgb(' + colour[0] + ',' + colour[1] + ',' + colour[2] + ')';
   }
 
+  function applyHourColour(hours){
+    var number = findByHandNumber();
+    if (!number) return;
+    number.style.setProperty('color', hourColour(hours), 'important');
+    number.style.setProperty('will-change', 'color');
+    var unit = directHoursUnit(number);
+    if (unit) unit.style.setProperty('color', '#b5791f', 'important');
+  }
+
   function queueHourColour(input){
     var hours = parseFloat(input && input.value || '8');
     cancelAnimationFrame(colourRaf);
+    cancelAnimationFrame(colourRaf2);
     colourRaf = requestAnimationFrame(function(){
-      var number = findByHandNumber();
-      if (!number) return;
-      number.style.setProperty('color', hourColour(hours), 'important');
-      number.style.setProperty('will-change', 'color');
-      var unit = number.querySelector(':scope > span');
-      if (unit) unit.style.setProperty('color', '#b5791f', 'important');
+      colourRaf2 = requestAnimationFrame(function(){
+        applyHourColour(hours);
+      });
     });
   }
 
