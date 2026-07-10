@@ -82,6 +82,14 @@
     frame.appendChild(caption);
   }
 
+  function ensureContactLabel(){
+    var email = document.querySelector('#book a[href^="mailto:"]');
+    if (!email) return;
+    var address = (email.getAttribute('href') || '').replace(/^mailto:/i, '').split('?')[0];
+    if (!address) return;
+    email.textContent = 'Contact at: ' + address;
+  }
+
   function bindMobileMenuAutoClose(){
     if (document.documentElement.getAttribute('data-oc-mobile-menu-close') === '1') return;
     document.documentElement.setAttribute('data-oc-mobile-menu-close', '1');
@@ -101,6 +109,7 @@
     cleanHeadingPunctuation();
     cleanEmDashes();
     ensureFounderCaption();
+    ensureContactLabel();
     bindMobileMenuAutoClose();
   }
 
