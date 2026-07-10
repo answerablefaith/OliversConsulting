@@ -1,6 +1,6 @@
 (() => {
   function addHeader() {
-    if (document.getElementById('oc-static-header')) return;
+    if (document.getElementById('oc-static-header') || document.querySelector('.oc-site-header')) return;
     const current = window.location.pathname.replace(/\/$/, '') || '/';
     const mobileCtaInline = "background:#1e3b2f!important;color:#efe8dc!important;border-color:#1e3b2f!important;padding:13px 16px!important;font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:16px!important;border-radius:8px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;text-align:center!important;line-height:1.15!important;white-space:normal!important;box-shadow:0 8px 18px -10px rgba(30,59,47,.8)!important";
     const header = document.createElement('header');
@@ -15,6 +15,17 @@
       if (href === '/articles/' && current.startsWith('/articles')) link.setAttribute('aria-current', 'page');
     });
     document.body.insertBefore(header, document.body.firstChild);
+  }
+
+  function addFooter() {
+    document.querySelectorAll('footer:not(#oc-site-footer)').forEach((footer) => footer.remove());
+    if (document.getElementById('oc-site-footer')) return;
+    const footer = document.createElement('footer');
+    footer.id = 'oc-site-footer';
+    footer.setAttribute('aria-label', 'Site footer');
+    footer.style.cssText = "background:#1e3b2f;color:#efe8dc;margin-top:0;border-top:2px solid #17130b;font-family:'Hanken Grotesk',system-ui,sans-serif";
+    footer.innerHTML = '<div style="max-width:1180px;margin:0 auto;padding:46px 40px 26px;display:grid;grid-template-columns:1.4fr .8fr .8fr .9fr;gap:34px;align-items:start"><div><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1;letter-spacing:.02em;margin-bottom:12px">Olivers Consulting</div><p style="margin:0;color:#b6c8b9;font-size:15px;line-height:1.55;max-width:34ch">Automation for UK ecommerce and wholesale teams.</p></div><nav aria-label="Footer quick links" style="display:grid;gap:9px"><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.04em;color:#8fbfa0;margin-bottom:4px">Quick links</div><a href="/" style="color:#efe8dc;text-decoration:none">Home</a><a href="/#services" style="color:#efe8dc;text-decoration:none">What we automate</a><a href="/#how" style="color:#efe8dc;text-decoration:none">How it works</a><a href="/articles/" style="color:#efe8dc;text-decoration:none">Articles</a><a href="/#book" style="color:#efe8dc;text-decoration:none">Book a free review</a></nav><nav aria-label="Legal links" style="display:grid;gap:9px"><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.04em;color:#8fbfa0;margin-bottom:4px">Legal</div><a href="/privacy-policy/" style="color:#efe8dc;text-decoration:none">Privacy Policy</a><a href="/cookie-policy/" style="color:#efe8dc;text-decoration:none">Cookie Policy</a><a href="/terms-of-service/" style="color:#efe8dc;text-decoration:none">Terms of Service</a></nav><div><div style="font-family:\'Saira Condensed\',sans-serif;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.04em;color:#8fbfa0;margin-bottom:13px">Contact</div><a href="mailto:henry@oliversconsulting.co.uk" style="color:#efe8dc;text-decoration:none;word-break:break-word">henry@oliversconsulting.co.uk</a><p style="margin:12px 0 0;color:#b6c8b9;font-size:14px;line-height:1.5">UK based</p></div></div><div style="max-width:1180px;margin:0 auto;padding:0 40px 26px;color:#b6c8b9;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap"><span>© 2026 Olivers Consulting</span><span>Built for practical ecommerce and wholesale automation.</span></div><style>@media(max-width:900px){#oc-site-footer>div:first-child{grid-template-columns:1fr!important;padding:40px 22px 24px!important;gap:28px!important}#oc-site-footer>div:last-child{padding:0 22px 24px!important;align-items:flex-start!important;flex-direction:column!important}}</style>';
+    document.body.appendChild(footer);
   }
 
   function updateCopyrightAndCtas() {
@@ -50,10 +61,11 @@
   addHeader();
   hideOldHeader();
   updateCopyrightAndCtas();
-  const root = document.getElementById('root');
-  if (root) new MutationObserver(() => {
+  addFooter();
+  const root = document.getElementById('root') || document.getElementById('dc-root') || document.body;
+  new MutationObserver(() => {
     hideOldHeader();
     updateCopyrightAndCtas();
+    addFooter();
   }).observe(root, { childList: true, subtree: true });
-  new MutationObserver(updateCopyrightAndCtas).observe(document.body, { childList: true, subtree: true });
 })();
