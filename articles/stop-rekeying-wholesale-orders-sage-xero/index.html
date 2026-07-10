@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to stop re-keying wholesale orders into Sage or Xero</title>
+<meta name="description" content="A practical guide to automating wholesale order entry into Sage or Xero with clear checks, exception rules and simple payback maths." />
+<link rel="canonical" href="https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/" />
+<meta property="og:title" content="How to stop re-keying wholesale orders into Sage or Xero" />
+<meta property="og:description" content="Turn email, PDF and portal orders into checked order records without losing control of prices, SKUs or exceptions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/assets/shared-header.css" />
+<link rel="stylesheet" href="/assets/oc-site.css" />
+<link rel="stylesheet" href="/assets/mobile-fixes.css" />
+<script defer src="/assets/shared-header.js"></script>
+<style>
+.article-hero{padding:clamp(3rem,6vw,5.5rem) 0 2.5rem}.article-wrap{width:min(48rem,calc(100% - 2rem));margin-inline:auto}.article-meta{display:flex;flex-wrap:wrap;gap:.65rem 1rem;margin-top:1rem;color:#b5791f;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.summary-box{margin:2rem 0;padding:1.25rem;border:2px solid var(--ink);border-radius:12px;background:var(--card)}.summary-box strong{display:block;margin-bottom:.45rem;color:var(--ink);font-family:'Saira Condensed','Arial Narrow',sans-serif;font-size:1.3rem;text-transform:uppercase}.article-body{padding-bottom:4rem}.article-body h2{margin-top:2.5rem;font-size:clamp(2rem,4vw,3rem)}.article-body h3{margin-top:1.5rem}.article-body p,.article-body li{font-size:1.03rem}.article-body ul,.article-body ol{padding-left:1.35rem;color:var(--muted);line-height:1.65}.article-body li+li{margin-top:.45rem}.callout{margin:2rem 0;padding:1.25rem;border-left:5px solid var(--accent);background:var(--card)}.steps{display:grid;gap:.8rem;margin:1.5rem 0}.steps div{padding:1rem 1.1rem;border:2px solid var(--ink);border-radius:10px;background:var(--card)}.steps strong{display:block;color:var(--ink);font-family:'Saira Condensed','Arial Narrow',sans-serif;font-size:1.35rem;text-transform:uppercase}.faq{border-top:2px solid var(--ink);margin-top:2.75rem;padding-top:1rem}.faq h3{font-size:1.55rem;margin-top:1.5rem}.breadcrumb{font-size:.82rem;color:var(--muted);margin:0 0 1.4rem}.breadcrumb a{text-underline-offset:.22em}.article-cta{margin-top:2.75rem;padding:1.5rem;border-radius:12px;background:var(--dark);color:#efe8dc}.article-cta p{color:rgba(255,255,255,.78)}.article-cta .button{margin-top:.5rem;background:#efe8dc;color:var(--dark)}@media(max-width:900px){.article-wrap{width:calc(100% - 2rem)}.article-hero{padding-top:2.6rem}.article-cta .button{width:100%}}@media(max-width:520px){.article-wrap{width:calc(100% - 1.5rem)}.article-hero{padding-top:2.2rem}.article-body h2{font-size:clamp(2rem,11vw,2.8rem)}.article-body h3{font-size:clamp(1.4rem,8vw,2rem)}.summary-box,.article-cta{padding:1rem}.article-meta{flex-direction:column;gap:.3rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"BlogPosting","headline":"How to stop re-keying wholesale orders into Sage or Xero","description":"A practical guide to automating wholesale order entry into Sage or Xero with clear checks, exception rules and simple payback maths.","datePublished":"2026-07-10","dateModified":"2026-07-10","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/"},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oliversconsulting.co.uk/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://oliversconsulting.co.uk/articles/"},{"@type":"ListItem","position":3,"name":"Wholesale order entry automation","item":"https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/"}]},
+    {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can wholesale order entry into Sage or Xero be automated?","acceptedAnswer":{"@type":"Answer","text":"Yes, when the incoming orders use repeatable fields and the customer, SKU and price rules can be checked. Unknown or risky values should stop for review."}},{"@type":"Question","name":"Should every wholesale order post automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Start by preparing checked orders and sending exceptions to a person. Only automate posting when the controls and system route are proven."}},{"@type":"Question","name":"What order entry checks should be automated?","acceptedAnswer":{"@type":"Answer","text":"Useful checks include customer accounts, SKUs, prices, duplicate purchase order numbers, quantities, delivery details and source totals."}},{"@type":"Question","name":"How do I measure the payback from order entry automation?","acceptedAnswer":{"@type":"Answer","text":"Measure weekly order volume, handling time and staff cost. Compare the annual time cost with the build and running cost, then include the value of fewer entry errors where it can be measured."}}]}
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+<article>
+<header class="article-hero">
+<div class="article-wrap">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p>
+<p class="kicker">Wholesale and finance admin</p>
+<h1>How to stop re-keying wholesale orders into Sage or Xero</h1>
+<p class="lede">If someone reads each order and types the same details into the finance system, that person is acting as the integration. Fix the hand-off without removing the checks.</p>
+<div class="article-meta"><span>Published 10 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce &amp; wholesale</span></div>
+</div>
+</header>
+<div class="article-wrap article-body">
+<div class="summary-box"><strong>Quick answer</strong><p>The right order entry automation reads the source order, maps known fields and checks the customer, SKU, price and total. Good orders move forward. Anything unclear stops for review. Start with the re-keying and exception rules before you change the accounting system.</p></div>
+<p>Wholesale orders often arrive by email, PDF or a customer portal. Someone reads each order, finds the customer, checks the SKU, types the lines into Sage or Xero and then checks the totals.</p>
+<p>That is not an order process. It is a person acting as the integration.</p>
+<p>The right automation does not skip control. It reads the order, maps known fields, checks the rules and prepares a clean record. Anything unclear goes to review. Good orders move. Bad ones stop.</p>
+<h2>Start with the re-keying, not the accounting system</h2>
+<p>Teams often assume the finance system is the problem. Usually it is not. Sage, Xero or QuickBooks may be doing the job they were bought to do. The leak sits between the incoming order and the clean sales record.</p>
+<p>Map one order from arrival to entry. Count every place where a person:</p>
+<ul><li>opens an attachment or portal;</li><li>copies a customer reference;</li><li>looks up an account code;</li><li>matches a customer SKU to your SKU;</li><li>types quantity and price;</li><li>checks VAT or delivery details; and</li><li>compares the entered total with the source order.</li></ul>
+<p>Those are mechanical steps. They are strong automation candidates because the output can be checked against the source.</p>
+<h2>Do not start with “post every order automatically”</h2>
+<p>The first version should prepare the order, not hide it.</p>
+<p>A wholesale order can contain an old SKU, a pack-size error, a price that does not match the agreed list or a delivery address that needs review. If your process posts every order because the happy path worked in a demo, the time saved will return as credit notes, calls and corrections.</p>
+<p>Set stop rules before the build. For example:</p>
+<ul><li>unknown customer account;</li><li>unknown SKU;</li><li>price outside an agreed tolerance;</li><li>duplicate purchase order number;</li><li>quantity outside a set rule;</li><li>missing delivery details; or</li><li>order total does not match the source.</li></ul>
+<div class="callout"><p><strong>A stopped order is not a failed automation.</strong> It is a controlled exception.</p></div>
+<h2>The useful workflow is source, checks, draft, review, post</h2>
+<p>I would design the process in five stages.</p>
+<div class="steps"><div><strong>1. Source</strong><p>Collect orders from the agreed inbox, folder, export or portal.</p></div><div><strong>2. Checks</strong><p>Read the customer reference, PO number, order lines, quantities, prices and delivery details. Match them to known records and rules.</p></div><div><strong>3. Draft</strong><p>Create a clean order record in the format needed by the next system. Keep the source document linked to it.</p></div><div><strong>4. Review</strong><p>Send only exceptions to a person. Show the source value, the expected value and the reason for the stop.</p></div><div><strong>5. Post</strong><p>Once the checks pass, create or import the sales order through the safest route the accounting or ERP system supports.</p></div></div>
+<p>This matters because “PDF to Sage” is not one action. It is a chain of small decisions. The build is only safe when those decisions are visible.</p>
+<h2>Use simple payback maths</h2>
+<p>Suppose 80 wholesale orders arrive each week. Each takes six minutes to read, re-key and check. That is eight hours a week.</p>
+<p>At a loaded staff cost of £25 an hour, the direct time cost is £200 a week. Across 48 working weeks, that is £9,600 a year.</p>
+<p>Now assume automation cuts the average handling time to one minute of review. The process falls from eight hours to about 80 minutes a week. That releases more than six and a half hours each week.</p>
+<p>The build still needs a price and running cost. But now you have a real target. You can compare the annual time saved with the build cost and the value of fewer entry errors.</p>
+<p>Do not count every saved minute as cash in the bank. Saved time only matters if the team can use it. If the same person can chase debt, handle customer issues or manage stock instead, the capacity has value.</p>
+<h2>Keep the source and the audit trail</h2>
+<p>Every created order should be traceable to the email, PDF, spreadsheet or portal record that started it.</p>
+<p>Store the source reference. Record what the workflow changed. Keep the exception reason. If a person overrides a price or SKU match, record that too.</p>
+<p>This is not extra admin. It lets you trust the process when a customer questions an order three weeks later.</p>
+<h2>When not to automate order entry</h2>
+<p>Do not automate a process that changes on every order and lives in one person’s memory.</p>
+<p>If prices are agreed by phone, customer codes are inconsistent and nobody knows which delivery rule wins, map the process first. The build will otherwise turn hidden confusion into faster confusion.</p>
+<p>You may also decide not to automate a low-volume process. Ten orders a month may not justify a custom build unless the errors are costly or the orders are unusually complex.</p>
+<p>The best first candidate has volume, repeated rules and a clear cost. That is where payback is easiest to prove.</p>
+<h2>What I would ask for before a build</h2>
+<p>Bring 20 to 50 recent orders, including awkward ones. Bring the current import template or a list of the fields entered into Sage, Xero or QuickBooks. Bring the customer and product reference data used to match codes.</p>
+<p>Then show me the exceptions. Which customers use their own SKU? Which prices can differ? Which orders need approval? Which fields are often missing?</p>
+<p>That is enough to test the process. We can see what is stable, what needs a rule and what should stay with a person. You can also <a href="/#services">see the workflows I automate</a> or read more <a href="/articles/">operator notes on ecommerce automation</a>.</p>
+<section class="faq"><h2>FAQs</h2><h3>Can wholesale order entry into Sage or Xero be automated?</h3><p>Yes, when the incoming orders use repeatable fields and the customer, SKU and price rules can be checked. Unknown or risky values should stop for review.</p><h3>Should every wholesale order post automatically?</h3><p>No. Start by preparing checked orders and sending exceptions to a person. Only automate posting when the controls and system route are proven.</p><h3>What order entry checks should be automated?</h3><p>Useful checks include customer accounts, SKUs, prices, duplicate PO numbers, quantities, delivery details and source totals.</p><h3>How do I measure the payback from order entry automation?</h3><p>Measure weekly order volume, handling time and staff cost. Compare the annual time cost with the build and running cost. Add the value of fewer entry errors where you can measure it.</p></section>
+<section class="article-cta"><p class="kicker">Free process review</p><h2>Still typing wholesale orders into another system?</h2><p>Bring a sample of the orders and show me where they go next. I’ll help you map the checks, exceptions and payback before you build anything.</p><p><a class="button" href="/#book">Book a free review</a></p></section>
+</div>
+</article>
+</main>
+</body>
+</html>
