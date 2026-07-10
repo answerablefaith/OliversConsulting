@@ -11,135 +11,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oliversconsulting.co.uk/articles/monday-report-automation/" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/fonts.css" />
 <link rel="stylesheet" href="/assets/shared-header.css" />
 <link rel="stylesheet" href="/assets/oc-site.css" />
 <script defer src="/assets/shared-header.js"></script>
 <style>
-.article-hero{padding:clamp(3.5rem,7vw,6.5rem) 0 2.5rem}.article-wrap{width:min(48rem,calc(100% - 2rem));margin-inline:auto}.article-meta{display:flex;flex-wrap:wrap;gap:.65rem 1rem;margin-top:1rem;color:#8e3515;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.summary-box{margin:2rem 0;padding:1.2rem;border:1px solid var(--line);background:#fffaf1}.summary-box strong{display:block;margin-bottom:.45rem;color:var(--ink)}.article-body{padding-bottom:4rem}.article-body h2{margin-top:2.25rem;font-size:clamp(1.8rem,3vw,2.6rem)}.article-body h3{margin-top:1.5rem}.article-body p,.article-body li{font-size:1.03rem}.article-body ul,.article-body ol{padding-left:1.4rem;color:var(--muted);line-height:1.7}.article-body li+li{margin-top:.45rem}.callout{margin:2rem 0;padding:1.25rem;border-left:4px solid var(--accent);background:rgba(255,250,241,.7)}.faq{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem}.faq h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:800;letter-spacing:0;margin-top:1.2rem}.breadcrumb{font-size:.82rem;color:var(--muted);margin-top:1.4rem}.breadcrumb a{text-underline-offset:.22em}.article-cta{margin-top:2.5rem;padding:1.4rem;background:var(--dark);color:#fffaf1}.article-cta p{color:rgba(255,250,241,.78)}.metric-list{display:grid;gap:.8rem;margin:1.5rem 0}.metric-list div{padding:1rem;border:1px solid var(--line);background:rgba(255,250,241,.75)}.metric-list strong{display:block;color:var(--ink);margin-bottom:.2rem}
+.article-hero{padding:clamp(3.5rem,7vw,6.5rem) 0 2.5rem}.article-wrap{width:min(48rem,calc(100% - 2rem));margin-inline:auto}.article-meta{display:flex;flex-wrap:wrap;gap:.65rem 1rem;margin-top:1rem;color:#8e3515;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.summary-box{margin:2rem 0;padding:1.2rem;border:1px solid var(--line);background:#fffaf1}.summary-box strong{display:block;margin-bottom:.45rem;color:var(--ink)}.article-body{padding-bottom:4rem}.article-body h2{margin-top:2.25rem;font-size:clamp(1.8rem,3vw,2.6rem)}.article-body h3{margin-top:1.5rem}.article-body p,.article-body li{font-size:1.03rem}.article-body ul,.article-body ol{padding-left:1.4rem;color:var(--muted);line-height:1.7}.article-body li+li{margin-top:.45rem}.callout{margin:2rem 0;padding:1.25rem;border-left:4px solid var(--accent);background:rgba(255,250,241,.7)}.faq{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem}.faq h3{font-family:'Hanken Grotesk',sans-serif;font-size:1rem;font-weight:800;letter-spacing:0;margin-top:1.2rem}.breadcrumb{font-size:.82rem;color:var(--muted);margin-top:1.4rem}.breadcrumb a{text-underline-offset:.22em}.article-cta{margin-top:2.5rem;padding:1.4rem;background:var(--dark);color:#fffaf1}.article-cta p{color:rgba(255,250,241,.78)}.metric-list{display:grid;gap:.8rem;margin:1.5rem 0}.metric-list div{padding:1rem;border:1px solid var(--line);background:rgba(255,250,241,.75)}.metric-list strong{display:block;color:var(--ink);margin-bottom:.2rem}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "The Monday report your ecommerce team should not be building by hand",
-      "description": "A practical article for UK ecommerce and wholesale teams on automating weekly sales, margin, stock and channel reports.",
-      "datePublished": "2026-07-07",
-      "dateModified": "2026-07-07",
-      "author": {"@type": "Person", "name": "Henry Oliver"},
-      "publisher": {"@type": "Organization", "name": "Olivers Consulting", "url": "https://oliversconsulting.co.uk/"},
-      "mainEntityOfPage": "https://oliversconsulting.co.uk/articles/monday-report-automation/"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oliversconsulting.co.uk/"},
-        {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://oliversconsulting.co.uk/articles/"},
-        {"@type": "ListItem", "position": 3, "name": "Monday report automation", "item": "https://oliversconsulting.co.uk/articles/monday-report-automation/"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "What should an ecommerce Monday report include?", "acceptedAnswer": {"@type": "Answer", "text": "It should usually include sales, margin, stock cover, exceptions, channel performance and the few decisions that need attention that week."}},
-        {"@type": "Question", "name": "Should weekly reports be fully automated?", "acceptedAnswer": {"@type": "Answer", "text": "The data collection and formatting should be automated where possible. The judgement should stay with the operator reviewing the report."}},
-        {"@type": "Question", "name": "What is the risk of manual reporting?", "acceptedAnswer": {"@type": "Answer", "text": "Manual reporting can waste hours, introduce copy-paste errors and delay decisions that should be visible at the start of the week."}}
-      ]
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"The Monday report your ecommerce team should not be building by hand","description":"A practical article for UK ecommerce and wholesale teams on automating weekly sales, margin, stock and channel reports.","datePublished":"2026-07-07","dateModified":"2026-07-07","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/monday-report-automation/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oliversconsulting.co.uk/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://oliversconsulting.co.uk/articles/"},{"@type":"ListItem","position":3,"name":"Monday report automation","item":"https://oliversconsulting.co.uk/articles/monday-report-automation/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What should an ecommerce Monday report include?","acceptedAnswer":{"@type":"Answer","text":"It should usually include sales, margin, stock cover, exceptions, channel performance and the few decisions that need attention that week."}},{"@type":"Question","name":"Should weekly reports be fully automated?","acceptedAnswer":{"@type":"Answer","text":"The data collection and formatting should be automated where possible. The judgement should stay with the operator reviewing the report."}},{"@type":"Question","name":"What is the risk of manual reporting?","acceptedAnswer":{"@type":"Answer","text":"Manual reporting can waste hours, introduce copy-paste errors and delay decisions that should be visible at the start of the week."}}]}]}</script>
 </head>
-<body>
-<main>
-  <article>
-    <header class="article-hero">
-      <div class="article-wrap">
-        <p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p>
-        <p class="kicker">Reporting automation</p>
-        <h1>The Monday report your ecommerce team should not be building by hand</h1>
-        <p class="lede">A weekly report should help the business decide what to do next. If Monday morning is spent exporting data, repairing spreadsheets and chasing numbers, the report is arriving too late.</p>
-        <div class="article-meta"><span>Published 7 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce & wholesale</span></div>
-      </div>
-    </header>
-
-    <div class="article-wrap article-body">
-      <div class="summary-box">
-        <strong>Quick answer</strong>
-        <p>Your Monday report should be generated from trusted sources before the week starts. Sales, margin, stock cover, channel performance and exceptions should arrive ready to review. The automation should prepare the facts; the operator should still make the decisions.</p>
-      </div>
-
-      <p>There is a particular kind of report that looks harmless because everyone is used to it. Someone exports Shopify sales, downloads marketplace data, checks stock, copies numbers into a spreadsheet, fixes a formula, adds notes and sends it round the business.</p>
-
-      <p>By the time the report is ready, Monday is half gone. Worse, the person building it has spent their best operating hours preparing the information instead of acting on it.</p>
-
-      <p>I learned this running a multi-channel ecommerce operation with around 200,000 SKUs across Shopify, Amazon and eBay. At that scale, reporting cannot depend on memory, copy-paste or one spreadsheet only one person understands.</p>
-
-      <h2>Separate the report from the thinking</h2>
-      <p>A good weekly report has two parts: mechanical preparation and commercial judgement.</p>
-
-      <p>Mechanical preparation is collecting data, matching dates, formatting columns, calculating totals and producing the same views every week. That part should be automated where the data sources are stable enough.</p>
-
-      <p>Commercial judgement is deciding what the numbers mean. Why did margin drop? Which supplier is causing stock-outs? Which marketplace is growing but not profitable? Which slow-moving stock needs action? That part should stay with the team.</p>
-
-      <div class="callout">
-        <p><strong>The test:</strong> if the same person rebuilds the same report every week before they can start thinking, the process is doing work in the wrong order.</p>
-      </div>
-
-      <h2>What the report should show</h2>
-      <p>The exact report depends on the business, but most ecommerce and wholesale teams need a small number of useful views rather than a giant spreadsheet.</p>
-
-      <div class="metric-list">
-        <div><strong>Sales and margin</strong><p>Revenue is not enough. The report should show gross margin movement and flag categories or channels where margin has dropped.</p></div>
-        <div><strong>Stock cover</strong><p>Which fast-moving products are close to running out? Which lines are tying up cash? Which supplier deliveries are now urgent?</p></div>
-        <div><strong>Channel performance</strong><p>Shopify, Amazon, eBay and wholesale may all tell different stories. The report should make those differences clear.</p></div>
-        <div><strong>Exceptions</strong><p>The best report is often the shortest one: what changed, what looks wrong and what needs a decision.</p></div>
-      </div>
-
-      <h2>Do not automate a bad report</h2>
-      <p>If nobody uses the report to make decisions, automating it will not help. You will just produce an ignored report faster.</p>
-
-      <p>Before building anything, ask which decisions the report supports. Buying more stock, changing pricing, chasing a supplier, pausing a marketplace line, clearing old stock and checking margin are all real decisions. Decorative charts are not.</p>
-
-      <p>It is usually better to automate a tight report with five useful sections than a large dashboard nobody trusts.</p>
-
-      <h2>The payback is not just hours saved</h2>
-      <p>Time saving matters. If a weekly report takes four hours to build, that is roughly 200 hours a year before corrections and follow-up questions. But the stronger value is speed of action.</p>
-
-      <p>If stock risk is visible on Monday morning, the team can do something about it. If margin problems are caught quickly, pricing or supplier issues can be checked. If channel performance is visible by exception, the operator does not have to hunt through three systems to find the problem.</p>
-
-      <h2>What to prepare before automating</h2>
-      <p>Gather the last three reports, the source exports behind them and a list of the decisions made from each report. Mark anything that is manually adjusted. Those manual edits matter because they often reveal hidden business rules.</p>
-
-      <p>Then decide the minimum useful version. Which numbers must appear every week? Which rows should be flagged? Which checks must happen before the report can be trusted?</p>
-
-      <p>That is the brief. Not “build a dashboard”. Build the report that lets the team start Monday with decisions, not spreadsheet maintenance.</p>
-
-      <section class="faq">
-        <h2>FAQs</h2>
-        <h3>What should an ecommerce Monday report include?</h3>
-        <p>It should usually include sales, margin, stock cover, channel performance and exceptions. The best version is focused on decisions, not every possible number.</p>
-
-        <h3>Should weekly reports be fully automated?</h3>
-        <p>The data collection, formatting and checks should be automated where possible. The judgement should stay with the person reviewing the report.</p>
-
-        <h3>What is the risk of manual reporting?</h3>
-        <p>Manual reporting can waste hours, introduce copy-paste errors and delay decisions that should be visible at the start of the week.</p>
-      </section>
-
-      <section class="article-cta">
-        <p class="kicker">Free process review</p>
-        <h2>Still building the same report every week?</h2>
-        <p>Bring the report and the source files. In 30 minutes, I’ll help you work out what can be automated, what still needs judgement and whether the payback is strong enough.</p>
-        <p><a class="button light" href="/#contact">Book the free review</a></p>
-      </section>
-    </div>
-  </article>
-</main>
-<footer class="footer wrap"><p>Olivers Consulting · Automation for UK ecommerce and wholesale</p><p>© 2026 Henry Oliver</p></footer>
-</body>
-</html>
+<body><main><article><header class="article-hero"><div class="article-wrap"><p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p><p class="kicker">Reporting automation</p><h1>The Monday report your ecommerce team should not be building by hand</h1><p class="lede">A weekly report should help the business decide what to do next. If Monday morning is spent exporting data, repairing spreadsheets and chasing numbers, the report is arriving too late.</p><div class="article-meta"><span>Published 7 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce & wholesale</span></div></div></header><div class="article-wrap article-body"><div class="summary-box"><strong>Quick answer</strong><p>Your Monday report should be generated from trusted sources before the week starts. Sales, margin, stock cover, channel performance and exceptions should arrive ready to review. The automation should prepare the facts; the operator should still make the decisions.</p></div><p>There is a particular kind of report that looks harmless because everyone is used to it. Someone exports Shopify sales, downloads marketplace data, checks stock, copies numbers into a spreadsheet, fixes a formula, adds notes and sends it round the business.</p><p>By the time the report is ready, Monday is half gone. Worse, the person building it has spent their best operating hours preparing the information instead of acting on it.</p><p>I learned this running a multi-channel ecommerce operation with around 200,000 SKUs across Shopify, Amazon and eBay. At that scale, reporting cannot depend on memory, copy-paste or one spreadsheet only one person understands.</p><h2>Separate the report from the thinking</h2><p>A good weekly report has two parts: mechanical preparation and commercial judgement.</p><p>Mechanical preparation is collecting data, matching dates, formatting columns, calculating totals and producing the same views every week. That part should be automated where the data sources are stable enough.</p><p>Commercial judgement is deciding what the numbers mean. Why did margin drop? Which supplier is causing stock-outs? Which marketplace is growing but not profitable? Which slow-moving stock needs action? That part should stay with the team.</p><div class="callout"><p><strong>The test:</strong> if the same person rebuilds the same report every week before they can start thinking, the process is doing work in the wrong order.</p></div><h2>What the report should show</h2><p>The exact report depends on the business, but most ecommerce and wholesale teams need a small number of useful views rather than a giant spreadsheet.</p><div class="metric-list"><div><strong>Sales and margin</strong><p>Revenue is not enough. The report should show gross margin movement and flag categories or channels where margin has dropped.</p></div><div><strong>Stock cover</strong><p>Which fast-moving products are close to running out? Which lines are tying up cash? Which supplier deliveries are now urgent?</p></div><div><strong>Channel performance</strong><p>Shopify, Amazon, eBay and wholesale may all tell different stories. The report should make those differences clear.</p></div><div><strong>Exceptions</strong><p>The best report is often the shortest one: what changed, what looks wrong and what needs a decision.</p></div></div><h2>Do not automate a bad report</h2><p>If nobody uses the report to make decisions, automating it will not help. You will just produce an ignored report faster.</p><p>Before building anything, ask which decisions the report supports. Buying more stock, changing pricing, chasing a supplier, pausing a marketplace line, clearing old stock and checking margin are all real decisions. Decorative charts are not.</p><p>It is usually better to automate a tight report with five useful sections than a large dashboard nobody trusts.</p><h2>The payback is not just hours saved</h2><p>Time saving matters. If a weekly report takes four hours to build, that is roughly 200 hours a year before corrections and follow-up questions. But the stronger value is speed of action.</p><p>If stock risk is visible on Monday morning, the team can do something about it. If margin problems are caught quickly, pricing or supplier issues can be checked. If channel performance is visible by exception, the operator does not have to hunt through three systems to find the problem.</p><h2>What to prepare before automating</h2><p>Gather the last three reports, the source exports behind them and a list of the decisions made from each report. Mark anything that is manually adjusted. Those manual edits matter because they often reveal hidden business rules.</p><p>Then decide the minimum useful version. Which numbers must appear every week? Which rows should be flagged? Which checks must happen before the report can be trusted?</p><p>That is the brief. Not “build a dashboard”. Build the report that lets the team start Monday with decisions, not spreadsheet maintenance.</p><section class="faq"><h2>FAQs</h2><h3>What should an ecommerce Monday report include?</h3><p>It should usually include sales, margin, stock cover, channel performance and exceptions. The best version is focused on decisions, not every possible number.</p><h3>Should weekly reports be fully automated?</h3><p>The data collection, formatting and checks should be automated where possible. The judgement should stay with the person reviewing the report.</p><h3>What is the risk of manual reporting?</h3><p>Manual reporting can waste hours, introduce copy-paste errors and delay decisions that should be visible at the start of the week.</p></section><section class="article-cta"><p class="kicker">Free process review</p><h2>Still building the same report every week?</h2><p>Bring the report and the source files. In 30 minutes, I’ll help you work out what can be automated, what still needs judgement and whether the payback is strong enough.</p><p><a class="button light" href="/#book">Book the free review</a></p></section></div></article></main><footer class="footer wrap"><p>Olivers Consulting · Automation for UK ecommerce and wholesale</p><p>© 2026 Henry Oliver</p></footer></body></html>
