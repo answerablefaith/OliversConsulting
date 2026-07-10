@@ -24,7 +24,7 @@
   <script>
     (async function () {
       try {
-        const response = await fetch('/new-homepage/Olivers-Consulting-v3.dc.html', { cache: 'no-store' });
+        const response = await fetch('https://raw.githubusercontent.com/answerablefaith/OliversConsulting/e873b7eaba64a3c26d83e5d6a05447bf1a31d01a/new-homepage/Olivers-Consulting-v3.dc.html', { cache: 'no-store' });
         if (!response.ok) throw new Error('Homepage file not found');
         let html = await response.text();
 
