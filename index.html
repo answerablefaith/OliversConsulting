@@ -67,7 +67,7 @@
         html = html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g, '/new-homepage/image3.png');
         html = html.replaceAll('./Henry Oliver - Professional Photo.png', '/new-homepage/image3.png');
         html = html.replaceAll('./image3.png', '/new-homepage/image3.png');
-        html = html.replace('</body>', mobileEnhancements + chapterOneAnimation + '</body>');
+        html = html.replace('</body>', mobileEnhancements + chapterOneAnimation + '<script defer src="/assets/shared-header.js"><\/script>' + '</body>');
 
         document.open();
         document.write(html);
