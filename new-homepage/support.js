@@ -1,77 +1,18 @@
-// Loads the last known-good generated DC runtime and runs the Chapter 1 demonstration.
+// Loads the last known-good generated DC runtime and runs one Chapter 1 demonstration.
 (function(){
   var raf = 0;
-  var colourRaf = 0;
-  var colourRaf2 = 0;
   var timer = 0;
   var cancelled = false;
   var programmatic = false;
   var originalStep = null;
+  var lastValue = 8;
+
+  function isChapterSlider(input){
+    return input && input.tagName === 'INPUT' && input.type === 'range' && String(input.min) === '2' && String(input.max) === '20';
+  }
 
   function findSlider(){
-    return Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).find(function(input){
-      return String(input.min) === '2' && String(input.max) === '20';
-    });
-  }
-
-  function directHoursUnit(span){
-    return Array.prototype.slice.call(span.children || []).find(function(child){
-      return child.tagName === 'SPAN' && /hrs/i.test(child.textContent || '');
-    }) || null;
-  }
-
-  function findByHandNumber(){
-    var hero = document.querySelector('header#top');
-    if (!hero) return null;
-    return Array.prototype.slice.call(hero.querySelectorAll('span')).find(function(span){
-      return span.style.fontSize === '64px' && directHoursUnit(span);
-    }) || null;
-  }
-
-  function smoothstep(t){
-    t = Math.max(0, Math.min(1, t));
-    return t * t * (3 - 2 * t);
-  }
-
-  function mix(a, b, t){
-    return [
-      Math.round(a[0] + (b[0] - a[0]) * t),
-      Math.round(a[1] + (b[1] - a[1]) * t),
-      Math.round(a[2] + (b[2] - a[2]) * t)
-    ];
-  }
-
-  function hourColour(hours){
-    var yellow = [220, 177, 62];
-    var orange = [181, 121, 31];
-    var red = [173, 48, 40];
-    var colour;
-
-    if (hours <= 5) colour = yellow;
-    else if (hours <= 8) colour = mix(yellow, orange, smoothstep((hours - 5) / 3));
-    else if (hours <= 16) colour = mix(orange, red, smoothstep((hours - 8) / 8));
-    else colour = red;
-
-    return 'rgb(' + colour[0] + ',' + colour[1] + ',' + colour[2] + ')';
-  }
-
-  function applyHourColour(hours){
-    var number = findByHandNumber();
-    if (!number) return;
-    number.style.setProperty('color', hourColour(hours), 'important');
-    number.style.setProperty('will-change', 'color');
-    var unit = directHoursUnit(number);
-    if (unit) unit.style.setProperty('color', '#b5791f', 'important');
-  }
-
-  function queueHourColour(hours){
-    cancelAnimationFrame(colourRaf);
-    cancelAnimationFrame(colourRaf2);
-    colourRaf = requestAnimationFrame(function(){
-      colourRaf2 = requestAnimationFrame(function(){
-        applyHourColour(hours);
-      });
-    });
+    return Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).find(isChapterSlider) || null;
   }
 
   function nativeSetValue(input, value){
@@ -79,6 +20,18 @@
     if (descriptor && descriptor.set) descriptor.set.call(input, String(value));
     else input.value = String(value);
   }
+
+  // The homepage loader still injects an older 2-to-8 animation. Block only its
+  // synthetic events before they reach React, and restore the value controlled here.
+  function blockLegacyAnimation(event){
+    if (!isChapterSlider(event.target) || programmatic || event.isTrusted) return;
+    nativeSetValue(event.target, lastValue);
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }
+
+  document.addEventListener('input', blockLegacyAnimation, true);
+  document.addEventListener('change', blockLegacyAnimation, true);
 
   function findReactHandler(input){
     var keys = Object.keys(input);
@@ -99,32 +52,28 @@
 
   function updateThroughReact(input, value){
     var next = Number(value).toFixed(3);
+    lastValue = Number(next);
     nativeSetValue(input, next);
 
     var handler = findReactHandler(input);
-    if (handler) {
-      handler({
-        type: 'input',
-        target: input,
-        currentTarget: input,
-        nativeEvent: null,
-        preventDefault: function(){},
-        stopPropagation: function(){},
-        persist: function(){}
-      });
-      return true;
-    }
+    if (!handler) return false;
 
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-    input.dispatchEvent(new Event('change', { bubbles: true }));
-    return false;
+    handler({
+      type: 'input',
+      target: input,
+      currentTarget: input,
+      nativeEvent: null,
+      preventDefault: function(){},
+      stopPropagation: function(){},
+      persist: function(){}
+    });
+    return true;
   }
 
   function setValue(input, value){
     programmatic = true;
     updateThroughReact(input, value);
     programmatic = false;
-    queueHourColour(value);
   }
 
   function easeInOutSine(t){
@@ -149,8 +98,7 @@
     function tick(now){
       if (cancelled) return;
       var progress = Math.min(1, (now - started) / duration);
-      var value = from + (to - from) * easeInOutSine(progress);
-      setValue(input, value);
+      setValue(input, from + (to - from) * easeInOutSine(progress));
       if (progress < 1) raf = requestAnimationFrame(tick);
       else {
         setValue(input, to);
@@ -166,11 +114,18 @@
     }, delay);
   }
 
-  function cancelOldAnimation(input){
-    programmatic = true;
-    nativeSetValue(input, 8);
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-    programmatic = false;
+  function clearOldColourOverride(){
+    var hero = document.querySelector('header#top');
+    if (!hero) return;
+    Array.prototype.slice.call(hero.querySelectorAll('span')).forEach(function(span){
+      if (span.style.fontSize === '64px') {
+        span.style.removeProperty('color');
+        span.style.removeProperty('will-change');
+        Array.prototype.slice.call(span.children || []).forEach(function(child){
+          if (/hrs/i.test(child.textContent || '')) child.style.removeProperty('color');
+        });
+      }
+    });
   }
 
   function run(){
@@ -179,16 +134,18 @@
 
     originalStep = input.getAttribute('step');
     input.step = '0.01';
+    clearOldColourOverride();
 
     ['pointerdown','mousedown','touchstart','keydown'].forEach(function(type){
       input.addEventListener(type, cancel, { once: true, passive: type === 'touchstart' });
     });
-    input.addEventListener('input', function(){
-      if (!programmatic) cancel();
+    input.addEventListener('input', function(event){
+      if (!programmatic && event.isTrusted) {
+        lastValue = parseFloat(input.value) || lastValue;
+        cancel();
+      }
     });
 
-    // Cancel the older injected 2-to-8 routine, then let React own all visible values.
-    cancelOldAnimation(input);
     setValue(input, 8);
 
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
