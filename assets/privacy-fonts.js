@@ -23,6 +23,47 @@
     if (style) style.remove();
   }
 
+  function removeTrailingPeriods(element){
+    if (!element) return;
+    var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+
+    for (var index = nodes.length - 1; index >= 0; index--) {
+      var value = nodes[index].nodeValue || '';
+      if (!value.trim()) continue;
+      var cleaned = value.replace(/\.+(\s*)$/, '$1');
+      if (cleaned !== value) nodes[index].nodeValue = cleaned;
+      break;
+    }
+  }
+
+  function cleanHeadingPunctuation(){
+    Array.prototype.slice.call(document.querySelectorAll('h1,h2,h3,h4,h5,h6')).forEach(removeTrailingPeriods);
+
+    Array.prototype.slice.call(document.querySelectorAll('#oc-site-footer p')).forEach(function(paragraph){
+      if ((paragraph.textContent || '').trim() === 'Automation for UK ecommerce and wholesale teams.') {
+        paragraph.textContent = 'Automation for UK ecommerce and wholesale teams';
+      }
+    });
+  }
+
+  function startContentCleanup(){
+    cleanOldControls();
+    cleanHeadingPunctuation();
+
+    if (!document.body || !window.MutationObserver) return;
+    var observer = new MutationObserver(function(){
+      cleanHeadingPunctuation();
+    });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  }
+
   cleanOldControls();
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cleanOldControls);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startContentCleanup, { once: true });
+  } else {
+    startContentCleanup();
+  }
 })();
