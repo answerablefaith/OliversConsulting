@@ -114,15 +114,15 @@
     }, delay);
   }
 
-  function clearOldColourOverride(){
+  function restoreOriginalColour(){
     var hero = document.querySelector('header#top');
     if (!hero) return;
     Array.prototype.slice.call(hero.querySelectorAll('span')).forEach(function(span){
-      if (span.style.fontSize === '64px') {
-        span.style.removeProperty('color');
+      if (span.style.fontSize === '64px' && /hrs/i.test(span.textContent || '')) {
+        span.style.setProperty('color', '#b5791f', 'important');
         span.style.removeProperty('will-change');
         Array.prototype.slice.call(span.children || []).forEach(function(child){
-          if (/hrs/i.test(child.textContent || '')) child.style.removeProperty('color');
+          if (/hrs/i.test(child.textContent || '')) child.style.setProperty('color', '#b5791f', 'important');
         });
       }
     });
@@ -134,7 +134,7 @@
 
     originalStep = input.getAttribute('step');
     input.step = '0.01';
-    clearOldColourOverride();
+    restoreOriginalColour();
 
     ['pointerdown','mousedown','touchstart','keydown'].forEach(function(type){
       input.addEventListener(type, cancel, { once: true, passive: type === 'touchstart' });
