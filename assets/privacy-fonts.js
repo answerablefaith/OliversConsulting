@@ -5,6 +5,10 @@
   var SITE_FONTS = 'https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap';
   var ARTICLE_FONTS = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap';
 
+  function removeLocalFontStyles(){
+    Array.prototype.slice.call(document.querySelectorAll('link[href*="/assets/fonts.css"]')).forEach(function(link){ link.remove(); });
+  }
+
   function readChoice(){
     try { return localStorage.getItem(STORAGE_KEY) || ''; }
     catch (e) { return ''; }
@@ -105,6 +109,7 @@
     else showSettingsButton();
   }
 
+  removeLocalFontStyles();
   if (readChoice() === 'allow-google-fonts') loadGoogleFonts();
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBody);
