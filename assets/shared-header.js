@@ -7,7 +7,7 @@
     header.id = 'oc-static-header';
     header.className = 'oc-site-header';
     header.setAttribute('aria-label', 'Site header');
-    header.innerHTML = '<a class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-header-cta" href="/#book">Book a free call →</a><details class="oc-mobile-menu"><summary>Menu</summary><nav class="oc-mobile-links" aria-label="Mobile navigation"><a href="/">Home</a><a href="/#services">What I automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a><a class="oc-header-cta" href="/#book" style="' + mobileCtaInline + '">Book a free call →</a></nav></details>';
+    header.innerHTML = '<a class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav class="oc-desktop-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/#services">What we automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a></nav><a class="oc-header-cta" href="/#book">Book a free review →</a><details class="oc-mobile-menu"><summary>Menu</summary><nav class="oc-mobile-links" aria-label="Mobile navigation"><a href="/">Home</a><a href="/#services">What we automate</a><a href="/#how">How it works</a><a href="/#about">About us</a><a href="/articles/">Articles</a><a class="oc-header-cta" href="/#book" style="' + mobileCtaInline + '">Book a free review →</a></nav></details>';
     const links = header.querySelectorAll('a');
     links.forEach((link) => {
       const href = link.getAttribute('href');
@@ -17,14 +17,18 @@
     document.body.insertBefore(header, document.body.firstChild);
   }
 
-  function updateCopyright() {
+  function updateCopyrightAndCtas() {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach((node) => {
-      if (node.nodeValue && node.nodeValue.includes('© 2026 Henry Oliver')) {
-        node.nodeValue = node.nodeValue.replaceAll('© 2026 Henry Oliver', '© 2026 Olivers Consulting');
-      }
+      if (!node.nodeValue) return;
+      node.nodeValue = node.nodeValue
+        .replaceAll('© 2026 Henry Oliver', '© 2026 Olivers Consulting')
+        .replaceAll('Book a free 30-minute review', 'Book a free review')
+        .replaceAll('Book the free review', 'Book a free review')
+        .replaceAll('Book a free call', 'Book a free review')
+        .replaceAll('See what I automate', 'What we automate');
     });
   }
 
@@ -43,11 +47,11 @@
 
   addHeader();
   hideOldHeader();
-  updateCopyright();
+  updateCopyrightAndCtas();
   const root = document.getElementById('root');
   if (root) new MutationObserver(() => {
     hideOldHeader();
-    updateCopyright();
+    updateCopyrightAndCtas();
   }).observe(root, { childList: true, subtree: true });
-  new MutationObserver(updateCopyright).observe(document.body, { childList: true, subtree: true });
+  new MutationObserver(updateCopyrightAndCtas).observe(document.body, { childList: true, subtree: true });
 })();
