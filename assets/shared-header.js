@@ -18,6 +18,7 @@
   }
 
   function updateCopyrightAndCtas() {
+    document.title = document.title.replaceAll('—', '-');
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
@@ -28,7 +29,8 @@
         .replaceAll('Book a free 30-minute review', 'Book a free review')
         .replaceAll('Book the free review', 'Book a free review')
         .replaceAll('Book a free call', 'Book a free review')
-        .replaceAll('See what I automate', 'What we automate');
+        .replaceAll('See what I automate', 'What we automate')
+        .replaceAll('—', '-');
     });
   }
 
