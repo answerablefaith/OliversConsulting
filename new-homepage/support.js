@@ -1,6 +1,22 @@
-// Loads the last known-good generated DC runtime and primes Chapter 1 at two hours before its animation attaches.
+// Loads the last known-good generated DC runtime and primes Chapter 1 at two hours without cancelling its animation.
 (function(){
   var observer;
+  var originalAddEventListener = EventTarget.prototype.addEventListener;
+
+  function isChapterSlider(target){
+    return target && target.tagName === 'INPUT' && target.type === 'range' && String(target.min) === '2' && String(target.max) === '20';
+  }
+
+  EventTarget.prototype.addEventListener = function(type, listener, options){
+    if (type === 'input' && isChapterSlider(this) && typeof listener === 'function') {
+      var originalListener = listener;
+      listener = function(event){
+        if (event && event.__ocChapterPrime) return;
+        return originalListener.call(this, event);
+      };
+    }
+    return originalAddEventListener.call(this, type, listener, options);
+  };
 
   function findSlider(){
     return Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).find(function(input){
@@ -16,9 +32,12 @@
     if (descriptor && descriptor.set) descriptor.set.call(input, '2');
     else input.value = '2';
 
-    input.dispatchEvent(new Event('input', { bubbles: true }));
+    var event = new Event('input', { bubbles: true });
+    event.__ocChapterPrime = true;
+    input.dispatchEvent(event);
 
     if (observer) observer.disconnect();
+    EventTarget.prototype.addEventListener = originalAddEventListener;
   }
 
   observer = new MutationObserver(primeOnce);
