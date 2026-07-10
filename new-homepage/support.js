@@ -28,57 +28,71 @@
     return stops[stops.length-1].c;
   }
   function gradient(hours){
-    var c=base(hours);
-    var left=mix(c,[242,199,90],.28);
-    var right=mix(c,[72,31,22],.24);
+    var c=base(hours),left=mix(c,[242,199,90],.28),right=mix(c,[72,31,22],.24);
     return 'linear-gradient(90deg,'+rgb(left)+','+rgb(c)+' 54%,'+rgb(right)+')';
   }
-  function slider(){
-    return Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).find(function(i){
-      return String(i.min)==='2'&&String(i.max)==='20';
+  function hoursSlider(){
+    return Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).find(function(input){
+      return String(input.min)==='2'&&String(input.max)==='20';
     });
+  }
+  function proofCard(){
+    var hero=document.querySelector('header#top');
+    if(!hero)return null;
+    return Array.prototype.slice.call(hero.querySelectorAll('div')).find(function(el){
+      var text=(el.textContent||'').replace(/\s+/g,' ');
+      if(text.indexOf('By hand')<0||text.indexOf('Automated')<0||text.indexOf('working weeks')<0)return false;
+      var cs=getComputedStyle(el);
+      return cs.borderTopWidth==='2px'&&cs.borderTopStyle==='solid';
+    })||null;
   }
   var cachedBar=null;
   function byHandBar(){
     if(cachedBar&&cachedBar.isConnected)return cachedBar;
-    var hero=document.querySelector('header#top');
-    if(!hero)return null;
-    var proof=Array.prototype.slice.call(hero.querySelectorAll('div')).find(function(el){
-      return (el.textContent||'').indexOf('By hand')>-1&&(el.textContent||'').indexOf('Automated')>-1&&(el.getAttribute('style')||'').indexOf('border:2px solid')>-1;
-    });
-    if(!proof)return null;
-    cachedBar=Array.prototype.slice.call(proof.querySelectorAll('div')).find(function(el){
-      var s=el.getAttribute('style')||'';
-      return s.indexOf('height:26px')>-1&&s.indexOf('border-radius:5px')>-1&&s.indexOf('position:relative')===-1&&el.children.length===0;
+    var card=proofCard();
+    if(!card)return null;
+    cachedBar=Array.prototype.slice.call(card.querySelectorAll('div')).find(function(el){
+      if(el.children.length!==0)return false;
+      var cs=getComputedStyle(el);
+      var rect=el.getBoundingClientRect();
+      var bg=cs.backgroundImage||'';
+      return rect.height>=24&&rect.height<=28&&cs.position==='static'&&bg.indexOf('linear-gradient')>-1;
     })||null;
     if(cachedBar)cachedBar.setAttribute('data-oc-by-hand-bar','true');
     return cachedBar;
   }
   function paint(){
-    var s=slider(),b=byHandBar();
+    var s=hoursSlider(),b=byHandBar();
     if(!s||!b)return;
     b.style.setProperty('background',gradient(parseFloat(s.value||'2')),'important');
-    b.style.setProperty('transition','background 40ms linear','important');
+    b.style.setProperty('transition','background 35ms linear','important');
   }
   function bind(){
-    var s=slider();
-    if(s&&!s.dataset.ocByHandColour){
-      s.dataset.ocByHandColour='1';
+    var s=hoursSlider();
+    if(s&&!s.dataset.ocByHandColourBound){
+      s.dataset.ocByHandColourBound='1';
       s.addEventListener('input',paint);
       s.addEventListener('change',paint);
     }
     paint();
   }
-  function loop(duration){
+  function loop(ms){
     var start=performance.now();
     function tick(now){
       bind();
-      if(now-start<duration)requestAnimationFrame(tick);
+      if(now-start<ms)requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){loop(7000);});
-  else loop(7000);
-  window.addEventListener('load',function(){loop(7000);});
-  setInterval(paint,120);
+  function start(){
+    loop(9000);
+    if(!window.__ocByHandObserver){
+      window.__ocByHandObserver=true;
+      new MutationObserver(function(){cachedBar=null;paint();}).observe(document.documentElement,{childList:true,subtree:true});
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);
+  else start();
+  window.addEventListener('load',start);
+  setInterval(paint,100);
 })();
