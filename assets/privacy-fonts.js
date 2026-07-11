@@ -82,6 +82,15 @@
     frame.appendChild(caption);
   }
 
+  function ensureEmailLabel(){
+    var email = document.querySelector('#book a[href^="mailto:"]');
+    if (!email) return;
+    var address = (email.getAttribute('href') || '').replace(/^mailto:/i, '').split('?')[0];
+    if (!address) return;
+    var label = 'Email: ' + address;
+    if ((email.textContent || '').trim() !== label) email.textContent = label;
+  }
+
   function bindMobileMenuAutoClose(){
     if (document.documentElement.getAttribute('data-oc-mobile-menu-close') === '1') return;
     document.documentElement.setAttribute('data-oc-mobile-menu-close', '1');
@@ -101,6 +110,7 @@
     cleanHeadingPunctuation();
     cleanEmDashes();
     ensureFounderCaption();
+    ensureEmailLabel();
     bindMobileMenuAutoClose();
   }
 
