@@ -11,15 +11,15 @@
   <script>
     (async function(){
       try {
-        var response = await fetch('/?oc-parity-source=1', { cache: 'no-store' });
-        if (!response.ok) throw new Error('Could not load the live homepage document');
+        var response = await fetch('https://cdn.jsdelivr.net/gh/answerablefaith/OliversConsulting@12c30841d9130c650135de820756794714795d08/index.html', { cache: 'no-store' });
+        if (!response.ok) throw new Error('Could not load the pinned homepage parity document');
         var html = await response.text();
         html = html.replace(/<head([^>]*)>/i, '<head$1>\n<meta name="robots" content="noindex,nofollow">\n<base href="/">');
         document.open();
         document.write(html);
         document.close();
       } catch (error) {
-        document.body.innerHTML = '<main style="max-width:560px;margin:80px auto;padding:32px;font-family:system-ui,sans-serif;color:#17130b"><strong>Preview could not load</strong><p>' + String(error && error.message ? error.message : error) + '</p></main>';
+        document.body.innerHTML = '<main style="max-width:560px;margin:80px auto;padding:24px;font-family:system-ui,sans-serif;color:#17130b"><strong>Preview could not load</strong><p>' + String(error && error.message ? error.message : error) + '</p></main>';
       }
     })();
   </script>
