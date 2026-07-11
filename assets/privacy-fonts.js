@@ -126,7 +126,7 @@
     if (document.getElementById('oc-wwt-desktop-width-style')) return;
     var style = document.createElement('style');
     style.id = 'oc-wwt-desktop-width-style';
-    style.textContent = '@media(min-width:901px){body .oc-track-record div[style*="grid-template-columns:repeat(3,1fr)"]>div:nth-child(3)>div[style*="grid-template-columns:repeat(10,1fr)"]{width:175px!important;max-width:100%!important;align-self:flex-start!important}}';
+    style.textContent = '@media(min-width:901px){body .oc-track-record div[style*="grid-template-columns:repeat(3,1fr)"]>div:nth-child(3)>div[style*="grid-template-columns:repeat(10,1fr)"]{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:flex-start!important}}';
     document.head.appendChild(style);
   }
 
