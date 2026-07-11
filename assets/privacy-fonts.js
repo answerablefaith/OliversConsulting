@@ -91,6 +91,29 @@
     if ((email.textContent || '').trim() !== label) email.textContent = label;
   }
 
+  function ensureMobileHoursDedup(){
+    var slider = document.querySelector('header#top input[type="range"][min="2"][max="20"]');
+    if (!slider) return;
+
+    var heading = slider.previousElementSibling;
+    if (!heading) return;
+
+    var directSpans = Array.prototype.slice.call(heading.children).filter(function(child){
+      return child.tagName === 'SPAN';
+    });
+    var text = (heading.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    if (directSpans.length < 2 || text.indexOf('hours a week lost to admin') === -1) return;
+
+    heading.classList.add('oc-hours-control-heading');
+
+    if (!document.getElementById('oc-mobile-hours-dedup-style')) {
+      var style = document.createElement('style');
+      style.id = 'oc-mobile-hours-dedup-style';
+      style.textContent = '@media(max-width:900px){.oc-hours-control-heading>span:last-child{display:none!important}}';
+      document.head.appendChild(style);
+    }
+  }
+
   function bindMobileMenuAutoClose(){
     if (document.documentElement.getAttribute('data-oc-mobile-menu-close') === '1') return;
     document.documentElement.setAttribute('data-oc-mobile-menu-close', '1');
@@ -111,6 +134,7 @@
     cleanEmDashes();
     ensureFounderCaption();
     ensureEmailLabel();
+    ensureMobileHoursDedup();
     bindMobileMenuAutoClose();
   }
 
