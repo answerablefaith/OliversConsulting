@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/capture-static-preview.mjs'
+      - 'scripts/test-static-preview.mjs'
+      - 'static-preview/behavior.js'
       - '.github/workflows/build-static-preview.yml'
   workflow_dispatch:
 
@@ -41,8 +43,12 @@ jobs:
         run: |
           test -s static-preview/index.html
           grep -q 'data-oc-static-snapshot="true"' static-preview/index.html
+          grep -q '/static-preview/behavior.js' static-preview/index.html
           ! grep -q "fetch('/?oc-parity-source=1'" static-preview/index.html
           ! grep -q 'Loading the 1:1 homepage preview' static-preview/index.html
+
+      - name: Test static interactions and animations
+        run: node scripts/test-static-preview.mjs
 
       - name: Commit generated preview
         run: |
