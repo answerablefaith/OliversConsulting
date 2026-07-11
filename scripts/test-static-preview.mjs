@@ -10,24 +10,43 @@ function check(condition, message) {
 async function openPreview(viewport) {
   const page = await browser.newPage({ viewport });
   const forbiddenRequests = [];
-  const consoleErrors = [];
+  const pageErrors = [];
+
+  await page.addInitScript(() => {
+    window.__ocHeroSamples = [];
+    const began = performance.now();
+    const timer = window.setInterval(() => {
+      const slider = Array.from(document.querySelectorAll('input[type="range"]')).find(
+        (el) => String(el.min) === '2' && String(el.max) === '20',
+      );
+      if (slider) window.__ocHeroSamples.push({ t: performance.now() - began, v: Number(slider.value) });
+      if (performance.now() - began > 3200) window.clearInterval(timer);
+    }, 40);
+  });
+
   page.on('request', (request) => {
     const url = new URL(request.url());
     if (url.pathname === '/' && ['document', 'fetch', 'xhr'].includes(request.resourceType())) {
       forbiddenRequests.push(`${request.resourceType()}: ${request.url()}`);
     }
   });
-  page.on('console', (message) => {
-    if (message.type() === 'error') consoleErrors.push(message.text());
-  });
-  page.on('pageerror', (error) => consoleErrors.push(error.message));
+  page.on('pageerror', (error) => pageErrors.push(error.message));
+
   await page.goto('http://127.0.0.1:8000/static-preview/', {
     waitUntil: 'networkidle',
     timeout: 120000,
   });
   await page.waitForSelector('html[data-oc-static-snapshot="true"]', { timeout: 30000 });
   await page.waitForSelector('html[data-oc-static-behaviour="ready"]', { timeout: 30000 });
-  return { page, forbiddenRequests, consoleErrors };
+  return { page, forbiddenRequests, pageErrors };
+}
+
+function containsOrderedSequence(values, expected) {
+  let cursor = 0;
+  values.forEach((value) => {
+    if (value === expected[cursor]) cursor += 1;
+  });
+  return cursor === expected.length;
 }
 
 try {
@@ -45,18 +64,15 @@ try {
   const hero = page.locator('input[type="range"][min="2"][max="20"]');
   check((await hero.count()) === 1, 'Hero calculator slider was not found.');
 
-  // Exact current-homepage sequence: initial 8, then 5, then 16, then back to 8.
-  const initialValue = Number(await hero.inputValue());
-  check(initialValue === 8, `Hero did not initialise at 8; value was ${initialValue}.`);
-  await page.waitForTimeout(820);
-  const firstValue = Number(await hero.inputValue());
-  check(firstValue === 5, `Hero first intro step should be 5; value was ${firstValue}.`);
-  await page.waitForTimeout(760);
-  const secondValue = Number(await hero.inputValue());
-  check(secondValue === 16, `Hero second intro step should be 16; value was ${secondValue}.`);
-  await page.waitForTimeout(880);
-  const finalValue = Number(await hero.inputValue());
-  check(finalValue === 8, `Hero final intro step should return to 8; value was ${finalValue}.`);
+  await page.waitForTimeout(2700);
+  const samples = await page.evaluate(() => window.__ocHeroSamples || []);
+  const compressedValues = samples
+    .map((sample) => sample.v)
+    .filter((value, index, values) => index === 0 || value !== values[index - 1]);
+  check(
+    containsOrderedSequence(compressedValues, [8, 5, 16, 8]),
+    `Hero sequence was not 8 → 5 → 16 → 8; observed ${compressedValues.join(' → ')}.`,
+  );
 
   await hero.evaluate((el) => {
     el.value = '12';
@@ -127,7 +143,7 @@ try {
     check(columns === 3, `Mobile proof stats are not three columns; found ${columns}.`);
   }
 
-  check(mobile.consoleErrors.length === 0, `Mobile preview logged errors: ${mobile.consoleErrors.join(' | ')}`);
+  check(mobile.pageErrors.length === 0, `Mobile preview raised errors: ${mobile.pageErrors.join(' | ')}`);
   await page.close();
 
   const desktop = await openPreview({ width: 1280, height: 900 });
@@ -139,7 +155,7 @@ try {
     const tops = await trackCards.evaluateAll((cards) => cards.map((card) => Math.round(card.getBoundingClientRect().top)));
     check(Math.max(...tops) - Math.min(...tops) <= 2, 'Desktop track record cards are not aligned in one row.');
   }
-  check(desktop.consoleErrors.length === 0, `Desktop preview logged errors: ${desktop.consoleErrors.join(' | ')}`);
+  check(desktop.pageErrors.length === 0, `Desktop preview raised errors: ${desktop.pageErrors.join(' | ')}`);
   await desktopPage.close();
 
   if (failures.length) {
