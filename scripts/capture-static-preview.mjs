@@ -12,7 +12,7 @@ try {
 
   await page.waitForSelector('header#top', { timeout: 120000 });
   await page.waitForSelector('#oc-site-footer', { timeout: 120000 });
-  await page.waitForTimeout(3500);
+  await page.waitForTimeout(500);
 
   let html = await page.content();
 
@@ -28,6 +28,13 @@ try {
   html = html.replace(
     /<html([^>]*)>/i,
     '<html$1 data-oc-static-snapshot="true">',
+  );
+
+  // Runtime listeners and timers cannot be serialised by page.content().
+  // Reinitialise every interaction and animation from a dedicated local script.
+  html = html.replace(
+    /<\/body>/i,
+    '<script src="/static-preview/behavior.js" defer></script>\n</body>',
   );
 
   await writeFile('static-preview/index.html', `${html}\n`, 'utf8');
