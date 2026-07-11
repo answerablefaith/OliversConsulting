@@ -1,27 +1,786 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Homepage Parity Preview - Olivers Consulting</title>
-  <style>html,body{margin:0;min-height:100%;background:#efe8dc}</style>
-</head>
-<body>
-  <script>
-    (async function(){
-      try {
-        var response = await fetch('https://cdn.jsdelivr.net/gh/answerablefaith/OliversConsulting@12c30841d9130c650135de820756794714795d08/index.html', { cache: 'no-store' });
-        if (!response.ok) throw new Error('Could not load the pinned homepage parity document');
-        var html = await response.text();
-        html = html.replace(/<head([^>]*)>/i, '<head$1>\n<meta name="robots" content="noindex,nofollow">\n<base href="/">');
-        document.open();
-        document.write(html);
-        document.close();
-      } catch (error) {
-        document.body.innerHTML = '<main style="max-width:560px;margin:80px auto;padding:24px;font-family:system-ui,sans-serif;color:#17130b"><strong>Preview could not load</strong><p>' + String(error && error.message ? error.message : error) + '</p></main>';
+<!DOCTYPE html><html data-oc-mobile-menu-close="1" data-oc-static-snapshot="true"><head>
+<meta name="robots" content="noindex,nofollow">
+<base href="/"><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
       }
-    })();
-  </script>
-</body>
-</html>
+    }
+  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olivers Consulting - Automation for UK Ecommerce &amp; Wholesale</title>
+<meta name="description" content="Fixed-price automation for UK ecommerce and wholesale teams. Supplier files, listings, stock, reports and invoices, built by an operator who ran a 200,000 SKU business.">
+<meta name="author" content="Henry Oliver">
+<link rel="canonical" href="https://oliversconsulting.co.uk/">
+<meta property="og:title" content="Olivers Consulting - Automation for UK Ecommerce &amp; Wholesale">
+<meta property="og:description" content="8 hours to 2 minutes. Fixed-price automation built by an ecommerce operator, not an agency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oliversconsulting.co.uk/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico" type="image/x-icon">
+<script src="/assets/privacy-fonts.js"></script><link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/mobile-fixes.css">
+<link rel="stylesheet" href="/assets/shared-header.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/new-homepage/support.js?v=20260710-3"></script><script src="https://cdn.jsdelivr.net/gh/answerablefaith/OliversConsulting@21d7d9e559c970616638fe9149ee1b63d233c288/new-homepage/support.js"></script><script src="https://cdn.jsdelivr.net/gh/answerablefaith/OliversConsulting@e873b7eaba64a3c26d83e5d6a05447bf1a31d01a/new-homepage/support.js"></script><style>x-dc{display:none!important}</style><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script><script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<style id="oc-stable-mobile-fixes">.oc-mobile-after-tools-ctas{display:none}.oc-wwt-forced-grid{display:none}@media(max-width:900px){header#top div:has(> a[href="#book"]):has(> a[href="#services"]){display:none!important}.oc-mobile-after-tools-ctas{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin:22px 0 0!important;padding:0!important}.oc-mobile-after-tools-ctas>a{width:100%!important;min-height:46px!important;border-radius:8px!important;font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:15px!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important}.oc-mobile-after-tools-ctas>a:first-child{background:#1e3b2f!important;color:#efe8dc!important;border:2px solid #1e3b2f!important}.oc-mobile-after-tools-ctas>a:last-child{background:transparent!important;color:#17130b!important;border:1.5px solid #17130b!important}.oc-proof-mobile-card{padding:26px 20px!important;border-radius:12px!important}.oc-proof-mobile-card div[style*="font-size:84px"]{font-size:58px!important}.oc-proof-mobile-card div[style*="font-size:64px"]{font-size:48px!important}.oc-proof-mobile-card div[style*="margin:20px 0"],.oc-proof-mobile-card div[style*="margin:24px 0"]{margin:12px 0!important}.oc-proof-mobile-card div[style*="padding-top:26px"]{padding-top:14px!important}.oc-proof-mobile-card div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;gap:8px!important}.oc-proof-mobile-card div[style*="border-left"]{border-left:0!important}.oc-differentiators{padding-left:40px!important;padding-right:40px!important;box-sizing:border-box!important}.oc-differentiators>div{padding:66px 0!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]{display:grid!important;grid-template-columns:1fr!important;gap:34px!important;text-align:left!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]>div{padding:18px 0!important;margin:0!important;border:0!important;text-align:left!important}.oc-track-record>div{padding:70px 22px!important}.oc-track-grid{display:flex!important;flex-direction:column!important;gap:26px!important}.oc-track-record .oc-track-card{display:block!important;width:100%!important;box-sizing:border-box!important;margin:0!important;padding:22px!important;border:1px solid rgba(255,255,255,.14)!important;border-top:1px solid rgba(255,255,255,.14)!important;border-radius:12px!important;background:rgba(255,255,255,.03)!important;box-shadow:none!important;text-align:left!important;overflow:hidden!important}.oc-track-card--wwt{order:1!important}.oc-track-card--pwc{order:2!important}.oc-track-card--citi{order:3!important}.oc-wwt-forced-grid{display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:5px!important;background:#193d30!important;border:1px solid rgba(143,224,175,.12)!important;border-radius:10px!important;padding:8px!important;margin:14px 0 18px!important;max-width:245px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}.oc-wwt-forced-grid span{display:block!important;aspect-ratio:1/1!important;border-radius:3px!important;background:#52665c!important}.oc-wwt-forced-grid span.is-on{background:#8bdca8!important}}</style><style id="oc-mobile-hours-dedup-style">@media(max-width:900px){.oc-hours-control-heading>span:last-child{display:none!important}}</style><style id="oc-component-background-style">html body .oc-proof-card,html body .oc-automation-grid>.oc-automation-card{background:#fff!important}@media(max-width:900px){html body .oc-mobile-after-tools-ctas>a:last-child{background:#fff!important}}</style><style id="oc-track-layout-style">@media(min-width:901px){html body section.oc-track-record .oc-track-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}html body section.oc-track-record .oc-track-grid>.oc-track-card{display:flex!important;flex-direction:column!important;width:auto!important;min-width:0!important;margin:0!important}html body section.oc-track-record .oc-track-card--wwt{order:1!important}html body section.oc-track-record .oc-track-card--pwc{order:2!important}html body section.oc-track-record .oc-track-card--citi{order:3!important}html body section.oc-track-record .oc-track-spacer{display:none!important}}</style><style id="oc-wwt-mobile-spacing-style">@media(max-width:900px){body .oc-track-record .oc-track-card--wwt>p,body .oc-track-record .oc-track-card--wwt:has(.oc-wwt-forced-grid)>p{transform:none!important;margin-top:134px!important;margin-bottom:0!important}}</style><style id="oc-wwt-desktop-width-style">@media(min-width:901px){html body section.oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:center!important;justify-self:start!important}}</style><style id="oc-mobile-proof-stats-style">@media(max-width:900px){html body .oc-proof-card .oc-proof-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;gap:0!important;align-items:start!important}html body .oc-proof-card .oc-proof-stat{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important;padding:0 clamp(4px,1.8vw,10px)!important;border-left:0!important;border-right:0!important;text-align:center!important}html body .oc-proof-card .oc-proof-stat+.oc-proof-stat{border-left:1px solid #d6cdba!important}html body .oc-proof-card .oc-proof-stat-value{font-size:clamp(24px,7.8vw,32px)!important;line-height:1!important;white-space:nowrap!important}html body .oc-proof-card .oc-proof-stat-label{font-size:clamp(9.5px,2.8vw,11.5px)!important;line-height:1.25!important;margin-top:6px!important}}@media(max-width:360px){html body .oc-proof-card .oc-proof-stat{padding-left:3px!important;padding-right:3px!important}html body .oc-proof-card .oc-proof-stat-value{font-size:22px!important}html body .oc-proof-card .oc-proof-stat-label{font-size:9px!important}}</style><style></style><style>html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' sc-camel-view-box='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23efe8dc'/%3E%3Cpath d='M8 8 L16 16 L8 24' stroke='%23c07c1f' stroke-width='4' fill='none' stroke-linecap='square' stroke-linejoin='miter'/%3E%3Cpath d='M17 8 L25 16 L17 24' stroke='%2317130b' stroke-width='4' fill='none' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E" data-dc-tpl="1"><style data-dc-tpl="2">
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#efe8dc;color:#17130b;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#1e3b2f;color:#efe8dc}
+  h1,h2,h3{margin:0;font-weight:700}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:7px;border-radius:4px;outline:none;cursor:pointer;width:100%}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#c07c1f;border:3px solid #efe8dc;box-shadow:0 2px 6px rgba(0,0,0,.35);cursor:grab;margin-top:0}
+  input[type=range]::-webkit-slider-thumb:active{cursor:grabbing}
+  input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#c07c1f;border:3px solid #efe8dc;cursor:grab}
+  @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes rowSync{0%,16%{background:#f3ecdf;border-color:#ddd3c0}32%,82%{background:#e7f2ea;border-color:#bcd8c6}95%,100%{background:#f3ecdf;border-color:#ddd3c0}}
+  @keyframes checkOn{0%,16%{opacity:0;transform:scale(.6)}32%,82%{opacity:1;transform:scale(1)}95%,100%{opacity:0;transform:scale(.6)}}
+  @keyframes reportIn{0%,12%{opacity:0;transform:translateY(20px)}34%,86%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(20px)}}
+  @keyframes stampIn{0%,18%{opacity:0;transform:scale(.4) rotate(-12deg)}40%,84%{opacity:1;transform:scale(1) rotate(-7deg)}100%{opacity:0;transform:scale(.4) rotate(-12deg)}}
+  @keyframes revealUp{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes lensScan{0%,100%{transform:translateX(0)}50%{transform:translateX(-58px)}}
+  @keyframes travelDot{0%{left:2px}50%{left:112px}100%{left:2px}}
+  @keyframes checkPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+  @keyframes chevPulse{0%,100%{opacity:.35}50%{opacity:1}}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="3" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; position: relative;">
+  <div data-dc-tpl="4" style="position: fixed; top: 0px; left: 0px; right: 0px; height: 4px; z-index: 70; background: rgba(23, 19, 11, 0.06);"><div data-dc-tpl="5" style="height: 100%; width: 0%; background: linear-gradient(90deg, rgb(192, 124, 31), rgb(47, 111, 79)); transition: width 0.08s linear;"></div></div>
+  <div data-dc-tpl="6" style="position: fixed; inset: 0px; pointer-events: none; z-index: 5; opacity: 0.045; mix-blend-mode: multiply; background: url(&quot;data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 sc-camel-base-frequency=%220.85%22 sc-camel-num-octaves=%222%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E&quot;);"></div>
+
+  
+  <header data-dc-tpl="7" class="oc-site-header" aria-label="Site header"><a data-dc-tpl="8" class="oc-site-brand" href="/" aria-label="Olivers Consulting home"><img data-dc-tpl="9" src="/assets/oc-logo.png" alt="Olivers Consulting"></a><nav data-dc-tpl="10" class="oc-desktop-nav" aria-label="Primary navigation"><a data-dc-tpl="11" href="/">Home</a><a data-dc-tpl="12" href="#services">What we automate</a><a data-dc-tpl="13" href="#how">How it works</a><a data-dc-tpl="14" href="#about">About us</a><a data-dc-tpl="15" href="#book">Contact us</a><a data-dc-tpl="16" href="/articles/">Articles</a></nav><a data-dc-tpl="17" class="oc-header-cta" href="https://cal.eu/henryoliver" target="_blank" rel="noopener">Book a free review →</a><details data-dc-tpl="18" class="oc-mobile-menu"><summary data-dc-tpl="19">Menu</summary><nav data-dc-tpl="20" class="oc-mobile-links" aria-label="Mobile navigation"><a data-dc-tpl="21" href="/">Home</a><a data-dc-tpl="22" href="#services">What we automate</a><a data-dc-tpl="23" href="#how">How it works</a><a data-dc-tpl="24" href="#about">About us</a><a data-dc-tpl="25" href="#book">Contact us</a><a data-dc-tpl="26" href="/articles/">Articles</a><a data-dc-tpl="27" class="oc-header-cta" href="https://cal.eu/henryoliver" target="_blank" rel="noopener">Book a free review →</a></nav></details></header>
+
+  
+  <header data-dc-tpl="28" id="top" style="max-width: 1180px; margin: 0px auto; padding: 46px 40px 22px;">
+    <div data-dc-tpl="29" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 26px;">Chapter 01 - The cost of doing it by hand</div>
+
+    <div data-dc-tpl="30" style="display: grid; grid-template-columns: 1fr 1.08fr; gap: 52px; align-items: center;">
+      <div data-dc-tpl="31">
+        <h1 data-dc-tpl="32" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 74px; line-height: 0.9; letter-spacing: 0.005em; margin-bottom: 24px;">Your week,<br data-dc-tpl="33">by the hour</h1>
+        <p data-dc-tpl="34" style="font-size: 18px; line-height: 1.55; color: rgb(70, 63, 49); max-width: 40ch; margin-bottom: 30px;">The manual admin behind a growing ecommerce or wholesale business - supplier files, invoicing, stock, listings and reporting - quietly consumes your week. Drag the slider to see what it's costing you. Automated, the same work is finished in about <strong data-dc-tpl="35">two minutes.</strong></p>
+
+        <div data-dc-tpl="36" class="oc-hours-control-heading" style="margin-bottom: 12px; display: flex; align-items: baseline; justify-content: space-between;">
+          <span data-dc-tpl="37" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; color: rgb(122, 115, 97); text-transform: uppercase;">Hours a week lost to admin</span>
+          <span data-dc-tpl="38" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 24px; color: rgb(181, 121, 31);"><span class="sc-interp">14</span> HRS</span>
+        </div>
+        <input data-dc-tpl="39" type="range" min="2" max="20" step="0.01" data-oc-by-hand-bound="1" value="13.78" style="background: linear-gradient(90deg, rgb(192, 124, 31) 65.4444%, rgb(214, 205, 186) 65.4444%);">
+        <div data-dc-tpl="40" style="display: flex; justify-content: space-between; font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 500; font-size: 11.5px; color: rgb(164, 157, 139); margin-top: 7px; letter-spacing: 0.02em;">
+          <span data-dc-tpl="41">2h</span><span data-dc-tpl="42">&lt; drag to explore &gt;</span><span data-dc-tpl="43">20h</span>
+        </div>
+
+        <div data-dc-tpl="44" style="display: flex; align-items: center; gap: 16px; margin-top: 34px;">
+          <a data-dc-tpl="45" href="#book" class="scp0" style="background: rgb(30, 59, 47); color: rgb(239, 232, 220); padding: 15px 28px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 17px; border-radius: 9px; display: inline-flex; align-items: center; gap: 9px; box-shadow: rgba(30, 59, 47, 0.65) 0px 8px 20px -8px; transition: transform 0.18s, box-shadow 0.18s, background 0.18s;">Book a free review <span data-dc-tpl="46">→</span></a>
+          <a data-dc-tpl="47" href="#services" class="scp1" style="border: 2px solid rgb(23, 19, 11); color: rgb(23, 19, 11); padding: 13px 22px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 17px; border-radius: 9px; transition: background 0.18s, color 0.18s; background: rgb(255, 255, 255) !important;">What we automate</a>
+        </div>
+      </div>
+
+      
+      <div data-dc-tpl="48" class="oc-proof-card" style="border: 2px solid rgb(23, 19, 11); border-radius: 12px; background: rgb(245, 239, 228); padding: 30px 32px; box-shadow: rgba(23, 19, 11, 0.4) 0px 20px 46px -26px;">
+        
+        <div data-dc-tpl="49" style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 12px;">
+          <span data-dc-tpl="50" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(168, 110, 28);">By hand</span>
+          <span data-dc-tpl="51" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 64px; line-height: 0.8; color: rgb(181, 121, 31) !important;"><span class="sc-interp">14</span><span data-dc-tpl="52" style="font-size: 22px; margin-left: 4px; color: rgb(181, 121, 31) !important;">hrs</span></span>
+        </div>
+        <div data-dc-tpl="53" style="height: 26px; border-radius: 5px; background: linear-gradient(90deg, rgb(227, 165, 69), rgb(192, 124, 31) 52%, rgb(159, 95, 24));"></div>
+
+        <div data-dc-tpl="54" style="display: flex; align-items: center; gap: 12px; margin: 20px 0px;">
+          <div data-dc-tpl="55" style="flex: 1 1 0%; height: 1px; background: rgb(214, 205, 186);"></div>
+          <span data-dc-tpl="56" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; color: rgb(30, 59, 47); font-size: 22px; transform: rotate(90deg);">→</span>
+          <div data-dc-tpl="57" style="flex: 1 1 0%; height: 1px; background: rgb(214, 205, 186);"></div>
+        </div>
+
+        
+        <div data-dc-tpl="58" style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 12px;">
+          <span data-dc-tpl="59" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(47, 111, 79);">Automated</span>
+          <span data-dc-tpl="60" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 64px; line-height: 0.8; color: rgb(30, 59, 47);">2<span data-dc-tpl="61" style="font-size: 22px; margin-left: 4px;">min</span></span>
+        </div>
+        <div data-dc-tpl="62" style="height: 26px; border-radius: 5px; background: rgb(230, 221, 203); position: relative; overflow: hidden;">
+          <div data-dc-tpl="63" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 3%; background: rgb(30, 59, 47); border-radius: 5px;"></div>
+        </div>
+
+        <div data-dc-tpl="64" class="oc-proof-stats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0px; margin-top: 26px; padding-top: 22px; border-top: 1px solid rgb(214, 205, 186);">
+          <div data-dc-tpl="65" class="oc-proof-stat" style="text-align: center; padding: 0px 8px;">
+            <div data-dc-tpl="66" class="oc-proof-stat-value" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; font-size: 30px; line-height: 1; color: rgb(23, 19, 11);"><span class="sc-interp">698</span></div>
+            <div data-dc-tpl="67" class="oc-proof-stat-label" style="font-size: 11.5px; color: rgb(122, 115, 97); margin-top: 6px; line-height: 1.3;">hours a year<br data-dc-tpl="68">lost to it</div>
+          </div>
+          <div data-dc-tpl="69" class="oc-proof-stat" style="text-align: center; padding: 0px 8px; border-left: 1px solid rgb(214, 205, 186); border-right: 1px solid rgb(214, 205, 186);">
+            <div data-dc-tpl="70" class="oc-proof-stat-value" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; font-size: 30px; line-height: 1; color: rgb(23, 19, 11);"><span class="sc-interp">18.6</span></div>
+            <div data-dc-tpl="71" class="oc-proof-stat-label" style="font-size: 11.5px; color: rgb(122, 115, 97); margin-top: 6px; line-height: 1.3;">working weeks<br data-dc-tpl="72">every year</div>
+          </div>
+          <div data-dc-tpl="73" class="oc-proof-stat" style="text-align: center; padding: 0px 8px;">
+            <div data-dc-tpl="74" class="oc-proof-stat-value" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; font-size: 30px; line-height: 1; color: rgb(181, 121, 31);">£<span class="sc-interp">20,949</span></div>
+            <div data-dc-tpl="75" class="oc-proof-stat-label" style="font-size: 11.5px; color: rgb(122, 115, 97); margin-top: 6px; line-height: 1.3;">a year, at<br data-dc-tpl="76">£30 an hour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-dc-tpl="77" style="margin-top: 52px; padding: 16px 0px; border-top: 1px solid rgb(214, 205, 186); border-bottom: 1px solid rgb(214, 205, 186); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 14.5px; color: rgb(91, 84, 68); font-weight: 500;">
+      <span data-dc-tpl="78" style="color: rgb(164, 157, 139); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 12px;">Built into your tools -</span>
+      <span data-dc-tpl="79">Xero · QuickBooks · Shopify · Amazon · eBay · Faire · Etsy · your ERP</span>
+    </div><div data-dc-tpl="80" class="oc-mobile-after-tools-ctas"><a data-dc-tpl="81" href="https://cal.eu/henryoliver" target="_blank" rel="noopener">Book a free review <span data-dc-tpl="82">→</span></a><a data-dc-tpl="83" href="#services">What we automate</a></div>
+  </header>
+
+  
+  <section data-dc-tpl="84" style="background: rgb(30, 59, 47); color: rgb(238, 230, 213); margin-top: 20px; overflow: hidden;">
+    <div data-dc-tpl="85" style="max-width: 1180px; margin: 0px auto; padding: 80px 40px;">
+      <div data-dc-tpl="86" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(143, 191, 160); margin-bottom: 20px;">Chapter 02 - The switch</div>
+      <h2 data-dc-tpl="87" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: 0.92; letter-spacing: 0.005em; margin-bottom: 12px; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">Watch one order<br data-dc-tpl="88">run itself</h2>
+      <p data-dc-tpl="89" style="font-size: 16px; color: rgb(182, 200, 185); max-width: 56ch; margin-bottom: 14px;">It plays as you arrive - or take the handle yourself - running the same 214-line supplier order through every stage, from a manual afternoon to a task that completes itself in minutes.</p>
+
+      <div data-dc-tpl="90" style="display: flex; align-items: flex-end; gap: 24px; margin: 36px 0px 10px;">
+        <div data-dc-tpl="91">
+          <div data-dc-tpl="92" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; color: rgb(143, 191, 160); text-transform: uppercase; margin-bottom: 6px;">Time to process</div>
+          <div data-dc-tpl="93" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 84px; line-height: 0.85; color: rgb(217, 168, 106); transition: color 0.3s;"><span class="sc-interp">3h 40m</span></div>
+        </div>
+        <div data-dc-tpl="94" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-size: 14px; color: rgb(182, 200, 185); padding-bottom: 10px;"><span class="sc-interp">0 / 5 steps done</span></div>
+      </div>
+
+      
+      <div data-dc-tpl="95" style="position: relative; padding: 34px 0px 6px; margin-bottom: 14px;">
+        <div data-dc-tpl="96" style="position: absolute; left: 50%; margin-left: -50vw; width: 100vw; top: 55px; height: 3px; background: rgba(255, 255, 255, 0.14);"></div>
+        <div data-dc-tpl="97" style="position: absolute; left: 50%; margin-left: -50vw; width: 0vw; top: 55px; height: 3px; background: rgb(143, 224, 175); transition: width 0.12s linear;"></div>
+        <div data-dc-tpl="98" style="position: relative; display: flex; justify-content: space-between;">
+          
+            <div data-dc-tpl="100" style="width: 19%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <div data-dc-tpl="101" style="width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 19px; background: rgb(30, 59, 47); color: rgb(111, 139, 124); border: 2px solid rgba(255, 255, 255, 0.28); box-shadow: none; transition: 0.3s;"><span class="sc-interp">1</span></div>
+              <div data-dc-tpl="102" style="margin-top: 12px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 0.03em; color: rgb(127, 151, 138); transition: color 0.3s;"><span class="sc-interp">Read PDF</span></div>
+            </div>
+          
+            <div data-dc-tpl="100" style="width: 19%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <div data-dc-tpl="101" style="width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 19px; background: rgb(30, 59, 47); color: rgb(111, 139, 124); border: 2px solid rgba(255, 255, 255, 0.28); box-shadow: none; transition: 0.3s;"><span class="sc-interp">2</span></div>
+              <div data-dc-tpl="102" style="margin-top: 12px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 0.03em; color: rgb(127, 151, 138); transition: color 0.3s;"><span class="sc-interp">Match SKUs</span></div>
+            </div>
+          
+            <div data-dc-tpl="100" style="width: 19%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <div data-dc-tpl="101" style="width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 19px; background: rgb(30, 59, 47); color: rgb(111, 139, 124); border: 2px solid rgba(255, 255, 255, 0.28); box-shadow: none; transition: 0.3s;"><span class="sc-interp">3</span></div>
+              <div data-dc-tpl="102" style="margin-top: 12px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 0.03em; color: rgb(127, 151, 138); transition: color 0.3s;"><span class="sc-interp">Invoice</span></div>
+            </div>
+          
+            <div data-dc-tpl="100" style="width: 19%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <div data-dc-tpl="101" style="width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 19px; background: rgb(30, 59, 47); color: rgb(111, 139, 124); border: 2px solid rgba(255, 255, 255, 0.28); box-shadow: none; transition: 0.3s;"><span class="sc-interp">4</span></div>
+              <div data-dc-tpl="102" style="margin-top: 12px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 0.03em; color: rgb(127, 151, 138); transition: color 0.3s;"><span class="sc-interp">Sync stock</span></div>
+            </div>
+          
+            <div data-dc-tpl="100" style="width: 19%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <div data-dc-tpl="101" style="width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 19px; background: rgb(30, 59, 47); color: rgb(111, 139, 124); border: 2px solid rgba(255, 255, 255, 0.28); box-shadow: none; transition: 0.3s;"><span class="sc-interp">5</span></div>
+              <div data-dc-tpl="102" style="margin-top: 12px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 0.03em; color: rgb(127, 151, 138); transition: color 0.3s;"><span class="sc-interp">Report</span></div>
+            </div>
+          
+        </div>
+      </div>
+
+      
+      <div data-dc-tpl="103" style="border-top: 1px solid rgba(255, 255, 255, 0.14); padding-top: 26px; display: flex; align-items: center; gap: 22px;">
+        <button data-dc-tpl="104" class="scp2" style="flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgb(238, 230, 213); background: transparent; color: rgb(238, 230, 213); font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s;"><span class="sc-interp">▷</span></button>
+        <div data-dc-tpl="105" style="flex: 1 1 0%;">
+          <input data-dc-tpl="106" type="range" min="0" max="100" step="1" value="0" style="background: linear-gradient(90deg, rgb(217, 168, 106) 0%, rgba(255, 255, 255, 0.18) 0%);">
+          <div data-dc-tpl="107" style="display: flex; justify-content: space-between; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px; margin-top: 10px;">
+            <span data-dc-tpl="108" style="color: rgb(217, 168, 106);">&lt; By hand · 3h 40m</span>
+            <span data-dc-tpl="109" style="color: rgb(143, 191, 160);">Automated · 2 min &gt;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="110" style="max-width: 1180px; margin: 0px auto; padding: 84px 40px 30px;">
+    <div data-dc-tpl="111" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 16px;">Chapter 03 - More on autopilot</div>
+    <div data-dc-tpl="112" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 34px; flex-wrap: wrap;">
+      <h2 data-dc-tpl="113" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: 0.9; letter-spacing: 0.005em; max-width: 18ch; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">Set it once<br data-dc-tpl="114">It just keeps running</h2>
+      <p data-dc-tpl="115" style="font-size: 15.5px; line-height: 1.5; color: rgb(91, 84, 68); max-width: 40ch;">Built once, each of these runs quietly in the background - no dashboard to monitor, no button to press, nothing to remember.</p>
+    </div>
+
+    <div data-dc-tpl="116" class="oc-automation-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 24%;">
+
+      
+      <div data-dc-tpl="117" class="oc-automation-card oc-automation-card--stock" style="background: rgb(245, 239, 228); border: 2px solid rgb(23, 19, 11); border-radius: 12px; padding: 24px; display: flex; flex-direction: column;">
+        <div data-dc-tpl="118" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 8px;">Channel &amp; stock sync</div>
+        <div data-dc-tpl="119" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 22px; line-height: 1; margin-bottom: 20px;">Update once,<br data-dc-tpl="120">everywhere follows</div>
+        <div data-dc-tpl="121" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 8px; background: rgb(23, 19, 11); color: rgb(239, 232, 220); margin-bottom: 14px;">
+          <span data-dc-tpl="122" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 13px;">Master stock</span>
+          <span data-dc-tpl="123" style="display: flex; align-items: center; gap: 8px;"><span data-dc-tpl="124" style="width: 7px; height: 7px; border-radius: 50%; background: rgb(143, 224, 175); animation: 1.4s ease 0s infinite normal none running dotPulse;"></span><span data-dc-tpl="125" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 18px;">247</span></span>
+        </div>
+        <div data-dc-tpl="126" style="display: flex; flex-direction: column; gap: 8px;">
+          <div data-dc-tpl="127" style="display: flex; align-items: center; justify-content: space-between; padding: 9px 13px; border: 1.5px solid rgb(221, 211, 192); border-radius: 8px; animation: 3s ease-in-out 0s infinite normal none running rowSync;">
+            <span data-dc-tpl="128" style="font-weight: 600; font-size: 14px; color: rgb(63, 58, 45);">Shopify</span>
+            <span data-dc-tpl="129" style="color: rgb(47, 111, 79); font-weight: 600; font-size: 14px; animation: 3s ease-in-out 0s infinite normal none running checkOn;">✓ synced</span>
+          </div>
+          <div data-dc-tpl="130" style="display: flex; align-items: center; justify-content: space-between; padding: 9px 13px; border: 1.5px solid rgb(221, 211, 192); border-radius: 8px; animation: 3s ease-in-out 0.45s infinite normal none running rowSync;">
+            <span data-dc-tpl="131" style="font-weight: 600; font-size: 14px; color: rgb(63, 58, 45);">Amazon</span>
+            <span data-dc-tpl="132" style="color: rgb(47, 111, 79); font-weight: 600; font-size: 14px; animation: 3s ease-in-out 0.45s infinite normal none running checkOn;">✓ synced</span>
+          </div>
+          <div data-dc-tpl="133" style="display: flex; align-items: center; justify-content: space-between; padding: 9px 13px; border: 1.5px solid rgb(221, 211, 192); border-radius: 8px; animation: 3s ease-in-out 0.9s infinite normal none running rowSync;">
+            <span data-dc-tpl="134" style="font-weight: 600; font-size: 14px; color: rgb(63, 58, 45);">eBay</span>
+            <span data-dc-tpl="135" style="color: rgb(47, 111, 79); font-weight: 600; font-size: 14px; animation: 3s ease-in-out 0.9s infinite normal none running checkOn;">✓ synced</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div data-dc-tpl="136" class="oc-automation-card oc-automation-card--report" style="background: rgb(245, 239, 228); border: 2px solid rgb(23, 19, 11); border-radius: 12px; padding: 24px; display: flex; flex-direction: column;">
+        <div data-dc-tpl="137" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 8px;">The Monday Report</div>
+        <div data-dc-tpl="138" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 22px; line-height: 1; margin-bottom: 20px;">Every Monday,<br data-dc-tpl="139">in your inbox</div>
+        <div data-dc-tpl="140" style="display: flex; gap: 6px; margin-bottom: 16px;">
+          <div data-dc-tpl="141" style="flex: 1 1 0%; text-align: center; padding: 9px 0px; border-radius: 6px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 14px; background: rgb(30, 59, 47); color: rgb(239, 232, 220);">M</div>
+          <div data-dc-tpl="142" style="flex: 1 1 0%; text-align: center; padding: 9px 0px; border-radius: 6px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 14px; background: rgb(236, 228, 213); color: rgb(164, 157, 139);">T</div>
+          <div data-dc-tpl="143" style="flex: 1 1 0%; text-align: center; padding: 9px 0px; border-radius: 6px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 14px; background: rgb(236, 228, 213); color: rgb(164, 157, 139);">W</div>
+          <div data-dc-tpl="144" style="flex: 1 1 0%; text-align: center; padding: 9px 0px; border-radius: 6px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 14px; background: rgb(236, 228, 213); color: rgb(164, 157, 139);">T</div>
+          <div data-dc-tpl="145" style="flex: 1 1 0%; text-align: center; padding: 9px 0px; border-radius: 6px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 14px; background: rgb(236, 228, 213); color: rgb(164, 157, 139);">F</div>
+        </div>
+        <div data-dc-tpl="146" style="position: relative; min-height: 70px; display: flex; align-items: flex-start;">
+          <div data-dc-tpl="147" style="width: 100%; display: flex; align-items: center; justify-content: space-between; border: 1.5px solid rgb(188, 216, 198); background: rgb(231, 242, 234); border-radius: 9px; padding: 12px 14px; animation: 4s ease-in-out 0s infinite normal none running reportIn;">
+            <span data-dc-tpl="148"><span data-dc-tpl="149" style="display: block; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 16px; color: rgb(23, 19, 11);">Margin report</span><span data-dc-tpl="150" style="font-size: 12px; color: rgb(91, 117, 102);">Mon · 9:00am</span></span>
+            <span data-dc-tpl="151" style="color: rgb(47, 111, 79); font-weight: 700; font-size: 14px;">✓ sent</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div data-dc-tpl="152" class="oc-automation-card oc-automation-card--invoice" style="background: rgb(245, 239, 228); border: 2px solid rgb(23, 19, 11); border-radius: 12px; padding: 24px; display: flex; flex-direction: column;">
+        <div data-dc-tpl="153" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 8px;">Invoices on autopilot</div>
+        <div data-dc-tpl="154" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 22px; line-height: 1; margin-bottom: 20px;">Orders become<br data-dc-tpl="155">invoices</div>
+        <div data-dc-tpl="156" style="position: relative; flex: 1 1 0%; display: flex; align-items: center; justify-content: center; min-height: 120px;">
+          <div data-dc-tpl="157" style="width: 100%; border: 1.5px solid rgb(221, 211, 192); background: rgb(243, 236, 223); border-radius: 10px; padding: 16px 18px;">
+            <div data-dc-tpl="158" style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px;"><span data-dc-tpl="159" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 16px; color: rgb(23, 19, 11);">Order #1042</span><span data-dc-tpl="160" style="font-size: 12.5px; color: rgb(138, 130, 113);">12 lines</span></div>
+            <div data-dc-tpl="161" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; color: rgb(23, 19, 11);">£460.00</div>
+            <div data-dc-tpl="162" style="font-size: 12.5px; color: rgb(91, 84, 68); margin-top: 6px;">Faire · wholesale</div>
+          </div>
+          <div data-dc-tpl="163" style="position: absolute; top: -4px; right: -4px; border: 2.5px solid rgb(47, 111, 79); color: rgb(47, 111, 79); background: rgba(231, 242, 234, 0.94); border-radius: 8px; padding: 7px 13px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 16px; letter-spacing: 0.03em; animation: 3.6s ease-in-out 0s infinite normal none running stampIn;">Invoiced ✓</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="164" id="services" style="max-width: 1180px; margin: 0px auto; padding: 84px 40px 30px;">
+    <div data-dc-tpl="165" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 16px;">Chapter 04 - What I automate</div>
+    <div data-dc-tpl="166" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
+      <h2 data-dc-tpl="167" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: 0.9; letter-spacing: 0.005em; max-width: 16ch; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">The work you'll<br data-dc-tpl="168">never touch again</h2>
+      <p data-dc-tpl="169" style="font-size: 15.5px; line-height: 1.5; color: rgb(91, 84, 68); max-width: 40ch;">Grouped by the outcome it delivers. Every engagement is priced and agreed before any work begins - where two figures appear, the first is a focused quick win, the second a fuller build.</p>
+    </div>
+
+    
+      <div data-dc-tpl="171" style="display: grid; grid-template-columns: 230px 1fr; gap: 32px; padding: 26px 0px 8px; border-top: 2px solid rgb(23, 19, 11); align-items: start;">
+        <div data-dc-tpl="172" style="position: sticky; top: 20px;">
+          <div data-dc-tpl="173" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 26px; line-height: 0.95; letter-spacing: 0.01em;"><span class="sc-interp">Reports</span></div>
+          <div data-dc-tpl="174" style="font-size: 13.5px; color: rgb(138, 130, 113); margin-top: 6px;"><span class="sc-interp">See the numbers</span></div>
+        </div>
+        <div data-dc-tpl="175">
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">The Monday Report</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Sales, stock &amp; margin - every Monday, automatically.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£400–600 / £1.5–3k</span></div>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div data-dc-tpl="171" style="display: grid; grid-template-columns: 230px 1fr; gap: 32px; padding: 26px 0px 8px; border-top: 2px solid rgb(23, 19, 11); align-items: start;">
+        <div data-dc-tpl="172" style="position: sticky; top: 20px;">
+          <div data-dc-tpl="173" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 26px; line-height: 0.95; letter-spacing: 0.01em;"><span class="sc-interp">Data, sorted</span></div>
+          <div data-dc-tpl="174" style="font-size: 13.5px; color: rgb(138, 130, 113); margin-top: 6px;"><span class="sc-interp">Files in, clean data out</span></div>
+        </div>
+        <div data-dc-tpl="175">
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Supplier data pipelines</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Any supplier format in, your format out.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£2.5–5k</span></div>
+            </div>
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Spreadsheet rescue</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Messy data cleaned once, and kept clean.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£400–700 / £1.5–4k</span></div>
+            </div>
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Catalogue content engine</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Descriptions &amp; categories at scale, from PDFs.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£2.5–6k</span></div>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div data-dc-tpl="171" style="display: grid; grid-template-columns: 230px 1fr; gap: 32px; padding: 26px 0px 8px; border-top: 2px solid rgb(23, 19, 11); align-items: start;">
+        <div data-dc-tpl="172" style="position: sticky; top: 20px;">
+          <div data-dc-tpl="173" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 26px; line-height: 0.95; letter-spacing: 0.01em;"><span class="sc-interp">Money in</span></div>
+          <div data-dc-tpl="174" style="font-size: 13.5px; color: rgb(138, 130, 113); margin-top: 6px;"><span class="sc-interp">Orders to invoices</span></div>
+        </div>
+        <div data-dc-tpl="175">
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Invoices on autopilot</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Orders become Xero/QuickBooks invoices, no typing.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£600–900 / £2–4k</span></div>
+            </div>
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Order-to-invoice admin</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Wholesale orders into accounting, hands-off.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£2–4k</span></div>
+            </div>
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Stockist orders, straight in</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Faire, email &amp; PDF orders file themselves.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£600–1k</span></div>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div data-dc-tpl="171" style="display: grid; grid-template-columns: 230px 1fr; gap: 32px; padding: 26px 0px 8px; border-top: 2px solid rgb(23, 19, 11); align-items: start;">
+        <div data-dc-tpl="172" style="position: sticky; top: 20px;">
+          <div data-dc-tpl="173" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 26px; line-height: 0.95; letter-spacing: 0.01em;"><span class="sc-interp">Listings &amp; stock</span></div>
+          <div data-dc-tpl="174" style="font-size: 13.5px; color: rgb(138, 130, 113); margin-top: 6px;"><span class="sc-interp">One update, everywhere</span></div>
+        </div>
+        <div data-dc-tpl="175">
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Channel &amp; stock sync</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Update once; every channel follows.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£3–6k</span></div>
+            </div>
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Product upload turbo</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">One sheet → Shopify, Etsy &amp; Faire at once.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£500–800</span></div>
+            </div>
+          
+            <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
+              <div data-dc-tpl="178">
+                <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Price list builder</span></div>
+                <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Wholesale sheets &amp; site prices, always in sync.</span></div>
+              </div>
+              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£500–800</span></div>
+            </div>
+          
+        </div>
+      </div>
+    
+
+    <div data-dc-tpl="182" style="display: grid; grid-template-columns: 230px 1fr; gap: 32px; padding: 26px 0px 8px; border-top: 2px solid rgb(30, 59, 47); align-items: start;">
+      <div data-dc-tpl="183">
+        <div data-dc-tpl="184" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 26px; line-height: 0.95; color: rgb(30, 59, 47);">Care plan</div>
+        <div data-dc-tpl="185" style="font-size: 13.5px; color: rgb(138, 130, 113); margin-top: 6px;">Keep it running</div>
+      </div>
+      <div data-dc-tpl="186" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 0px; align-items: baseline;">
+        <div data-dc-tpl="187" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);">Monthly monitoring, fixes and small changes - so nothing quietly drifts back to manual.</div>
+        <div data-dc-tpl="188" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;">£150–250/mo<br data-dc-tpl="189"><span data-dc-tpl="190" style="color: rgb(164, 157, 139); font-size: 12.5px;">£400–750 main</span></div>
+      </div>
+    </div>
+    <p data-dc-tpl="191" class="oc-quick-wins-line" style="margin: 28px 0px 0px; font-size: 18px; line-height: 1.55; color: rgb(91, 84, 68); font-style: italic;"><strong data-dc-tpl="192" style="font-weight: 800; color: rgb(23, 19, 11);">Running a smaller team?</strong> Quick-win builds from £400: reports, invoices, stockist orders and listings that handle themselves, live within a week. Same free call.</p>
+  </section>
+
+  
+  <section data-dc-tpl="193" class="oc-differentiators" style="background: rgb(23, 19, 11); color: rgb(239, 232, 220);">
+    <div data-dc-tpl="194" style="max-width: 1180px; margin: 0px auto; padding: 66px 40px; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">
+      <div data-dc-tpl="195" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0px;">
+        <div data-dc-tpl="196" style="padding: 0px 40px 0px 0px; border-right: 1px solid rgb(51, 48, 31);">
+          <div data-dc-tpl="197" style="height: 48px; display: flex; align-items: center; margin-bottom: 20px;">
+            <div data-dc-tpl="198" style="width: 54px; height: 38px; border: 2.5px solid rgb(217, 168, 106); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgb(217, 168, 106); font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 22px;">£</div>
+          </div>
+          <h3 data-dc-tpl="199" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 24px; line-height: 1; letter-spacing: 0.01em; margin-bottom: 12px;">Priced upfront</h3>
+          <p data-dc-tpl="200" style="font-size: 15px; line-height: 1.55; color: rgb(169, 160, 140);">You approve the number before I start - no day rates, no scope creep, no surprise invoice at the end.</p>
+        </div>
+        <div data-dc-tpl="201" style="padding: 0px 40px; border-right: 1px solid rgb(51, 48, 31);">
+          <div data-dc-tpl="202" style="height: 48px; display: flex; align-items: center; margin-bottom: 20px;">
+            <div data-dc-tpl="203" style="display: flex; align-items: center;">
+              <div data-dc-tpl="204" style="width: 16px; height: 16px; border-radius: 50%; background: rgb(217, 168, 106);"></div>
+              <div data-dc-tpl="205" style="width: 22px; height: 3px; background: rgb(76, 91, 80);"></div>
+              <div data-dc-tpl="206" style="width: 16px; height: 16px; border-radius: 50%; background: rgb(239, 232, 220);"></div>
+              <div data-dc-tpl="207" style="width: 22px; height: 3px; background: rgb(76, 91, 80);"></div>
+              <div data-dc-tpl="208" style="width: 16px; height: 16px; border-radius: 50%; background: rgb(143, 224, 175);"></div>
+            </div>
+          </div>
+          <h3 data-dc-tpl="209" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 24px; line-height: 1; letter-spacing: 0.01em; margin-bottom: 12px;">Built around your tools</h3>
+          <p data-dc-tpl="210" style="font-size: 15px; line-height: 1.55; color: rgb(169, 160, 140);">It slots into what you already run - Xero, Shopify, your ERP. Nothing to rip out, nothing new to learn.</p>
+        </div>
+        <div data-dc-tpl="211" style="padding: 0px 0px 0px 40px;">
+          <div data-dc-tpl="212" style="height: 48px; display: flex; align-items: center; margin-bottom: 20px;">
+            <span data-dc-tpl="213" style="display: inline-block; width: 20px; height: 20px; border-top: 5px solid rgb(217, 168, 106); border-right: 5px solid rgb(217, 168, 106); transform: rotate(45deg);"></span>
+            <span data-dc-tpl="214" style="display: inline-block; width: 20px; height: 20px; border-top: 5px solid rgb(239, 232, 220); border-right: 5px solid rgb(239, 232, 220); transform: rotate(45deg); margin-left: -9px;"></span>
+          </div>
+          <h3 data-dc-tpl="215" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 24px; line-height: 1; letter-spacing: 0.01em; margin-bottom: 12px;">One operator, start to finish</h3>
+          <p data-dc-tpl="216" style="font-size: 15px; line-height: 1.55; color: rgb(169, 160, 140);">The person who scopes the work is the person who builds it. No handoffs, no juniors, no account managers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="217" id="how" style="max-width: 1180px; margin: 0px auto; padding: 80px 40px;">
+    <div data-dc-tpl="218" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 16px;">Chapter 05 - How it works</div>
+    <h2 data-dc-tpl="219" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: 0.9; letter-spacing: 0.005em; margin-bottom: 44px; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">Three steps<br data-dc-tpl="220">One price, agreed upfront</h2>
+    <div data-dc-tpl="221" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0px;">
+      <div data-dc-tpl="222" style="padding: 0px 32px; border-left: 2px solid rgb(23, 19, 11);">
+        <div data-dc-tpl="223" style="height: 56px; display: flex; flex-direction: column; justify-content: center; gap: 7px; margin-bottom: 22px; position: relative; width: 96px;">
+          <div data-dc-tpl="224" style="height: 8px; width: 74px; border-radius: 4px; background: rgb(224, 215, 196);"></div>
+          <div data-dc-tpl="225" style="height: 8px; width: 96px; border-radius: 4px; background: rgb(192, 124, 31);"></div>
+          <div data-dc-tpl="226" style="height: 8px; width: 58px; border-radius: 4px; background: rgb(224, 215, 196);"></div>
+          <div data-dc-tpl="227" style="position: absolute; right: -6px; top: -8px; width: 28px; height: 28px; border: 3px solid rgb(23, 19, 11); border-radius: 50%; background: rgb(239, 232, 220); animation: 3s ease-in-out 0s infinite normal none running lensScan;"></div>
+        </div>
+        <div data-dc-tpl="228" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 44px; color: rgb(181, 121, 31); line-height: 1; margin-bottom: 12px;">01</div>
+        <h3 data-dc-tpl="229" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 24px; line-height: 1; letter-spacing: 0.01em; margin-bottom: 14px;">We map the manual job</h3>
+        <p data-dc-tpl="230" style="font-size: 15.5px; line-height: 1.6; color: rgb(91, 84, 68);">A short, practical call. I map exactly how the work is done today - and where your hours are quietly disappearing.</p>
+      </div>
+      <div data-dc-tpl="231" style="padding: 0px 32px; border-left: 2px solid rgb(23, 19, 11);">
+        <div data-dc-tpl="232" style="height: 56px; display: flex; align-items: center; margin-bottom: 22px; width: 130px; position: relative;">
+          <div data-dc-tpl="233" style="position: absolute; top: 50%; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: rgb(47, 111, 79); transform: translateY(-50%); box-shadow: rgba(47, 111, 79, 0.18) 0px 0px 0px 4px; animation: 2.4s ease-in-out 0s infinite normal none running travelDot;"></div>
+          <div data-dc-tpl="234" style="width: 18px; height: 18px; border-radius: 50%; background: rgb(192, 124, 31);"></div>
+          <div data-dc-tpl="235" style="flex: 1 1 0%; height: 3px; background: rgb(23, 19, 11);"></div>
+          <div data-dc-tpl="236" style="width: 18px; height: 18px; border-radius: 50%; background: rgb(23, 19, 11);"></div>
+          <div data-dc-tpl="237" style="flex: 1 1 0%; height: 3px; background: rgb(23, 19, 11);"></div>
+          <div data-dc-tpl="238" style="width: 18px; height: 18px; border-radius: 50%; background: rgb(192, 124, 31);"></div>
+        </div>
+        <div data-dc-tpl="239" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 44px; color: rgb(181, 121, 31); line-height: 1; margin-bottom: 12px;">02</div>
+        <h3 data-dc-tpl="240" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 24px; line-height: 1; letter-spacing: 0.01em; margin-bottom: 14px;">I build the automation</h3>
+        <p data-dc-tpl="241" style="font-size: 15.5px; line-height: 1.6; color: rgb(91, 84, 68);">A clear price, agreed before I begin - then a build designed to sit neatly inside the tools you already run.</p>
+      </div>
+      <div data-dc-tpl="242" style="padding: 0px 32px; border-left: 2px solid rgb(23, 19, 11);">
+        <div data-dc-tpl="243" style="height: 56px; display: flex; align-items: center; gap: 8px; margin-bottom: 22px;">
+          <div data-dc-tpl="244" style="width: 46px; height: 46px; border-radius: 50%; border: 3px solid rgb(23, 19, 11); display: flex; align-items: center; justify-content: center; color: rgb(47, 111, 79); font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 26px; animation: 1.8s ease-in-out 0s infinite normal none running checkPulse;">✓</div>
+          <span data-dc-tpl="245" style="display: inline-block; width: 11px; height: 11px; border-top: 3px solid rgb(192, 124, 31); border-right: 3px solid rgb(192, 124, 31); transform: rotate(45deg); animation: 1.8s ease-in-out 0s infinite normal none running chevPulse;"></span>
+          <span data-dc-tpl="246" style="display: inline-block; width: 11px; height: 11px; border-top: 3px solid rgb(23, 19, 11); border-right: 3px solid rgb(23, 19, 11); transform: rotate(45deg); margin-left: -5px; animation: 1.8s ease-in-out 0.3s infinite normal none running chevPulse;"></span>
+        </div>
+        <div data-dc-tpl="247" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 44px; color: rgb(181, 121, 31); line-height: 1; margin-bottom: 12px;">03</div>
+        <h3 data-dc-tpl="248" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 24px; line-height: 1; letter-spacing: 0.01em; margin-bottom: 14px;">It runs itself</h3>
+        <p data-dc-tpl="249" style="font-size: 15.5px; line-height: 1.6; color: rgb(91, 84, 68);">The output arrives on schedule, without you lifting a finger. An optional care plan keeps it accurate as your business grows.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="250" class="oc-track-record" style="background: rgb(30, 59, 47); color: rgb(238, 230, 213);">
+    <div data-dc-tpl="251" style="max-width: 1180px; margin: 0px auto; padding: 80px 40px;">
+      <div data-dc-tpl="252" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(143, 191, 160); margin-bottom: 20px;">Chapter 06 - Track record</div>
+      <div data-dc-tpl="253" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 40px; flex-wrap: wrap;">
+        <h2 data-dc-tpl="254" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: 0.92; letter-spacing: 0.005em; max-width: 18ch; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">Proven where a wrong<br data-dc-tpl="255">number isn't an option</h2>
+        <p data-dc-tpl="256" style="font-size: 16px; line-height: 1.5; color: rgb(182, 200, 185); max-width: 44ch;">Before founders, this was my work inside a Big Four firm and a global bank - where reporting and data have to be right, at scale, every single time.</p>
+      </div>
+      <div data-dc-tpl="257" class="oc-track-grid" style="grid-template-columns: repeat(3, 1fr); animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 24%;">
+
+        <div data-dc-tpl="258" class="oc-track-card oc-track-card--pwc" style="background: rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 26px; display: flex; flex-direction: column;">
+          <div data-dc-tpl="259" style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2px;">
+            <span data-dc-tpl="260" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.01em; color: rgb(239, 232, 220);">PwC</span>
+            <span data-dc-tpl="261" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(143, 191, 160);">Analytics reporting</span>
+          </div>
+          <div data-dc-tpl="262" style="height: 60px; display: flex; align-items: flex-end; gap: 8px; margin: 20px 0px 22px;">
+            <div data-dc-tpl="263" style="width: 16px; height: 24px; background: rgb(108, 201, 150); border-radius: 2px;"></div>
+            <div data-dc-tpl="264" style="width: 16px; height: 36px; background: rgb(127, 211, 163); border-radius: 2px;"></div>
+            <div data-dc-tpl="265" style="width: 16px; height: 48px; background: rgb(143, 224, 175); border-radius: 2px;"></div>
+            <div data-dc-tpl="266" style="width: 16px; height: 60px; background: rgb(143, 224, 175); border-radius: 2px;"></div>
+            <div data-dc-tpl="267" style="margin-left: 6px; align-self: center; color: rgb(143, 224, 175); font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 22px;">✓</div>
+          </div>
+          <p data-dc-tpl="268" style="font-size: 14.5px; line-height: 1.5; color: rgb(182, 200, 185);">Replaced hand-assembled analytics packs with reporting that builds itself - handing days of manual work back to the team each cycle.</p>
+        </div>
+
+        <div data-dc-tpl="269" class="oc-track-card oc-track-card--citi" style="background: rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 26px; display: flex; flex-direction: column;">
+          <div data-dc-tpl="270" style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2px;">
+            <span data-dc-tpl="271" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.01em; color: rgb(239, 232, 220);">Citibank</span>
+            <span data-dc-tpl="272" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(143, 191, 160);">Data transformation</span>
+          </div>
+          <div data-dc-tpl="273" style="height: 60px; display: flex; align-items: center; gap: 14px; margin: 20px 0px 22px;">
+            <div data-dc-tpl="274" style="display: flex; flex-direction: column; gap: 6px;">
+              <div data-dc-tpl="275" style="height: 7px; width: 44px; background: rgb(217, 168, 106); border-radius: 2px;"></div>
+              <div data-dc-tpl="276" style="height: 7px; width: 30px; background: rgb(217, 168, 106); border-radius: 2px;"></div>
+              <div data-dc-tpl="277" style="height: 7px; width: 52px; background: rgb(217, 168, 106); border-radius: 2px;"></div>
+            </div>
+            <span data-dc-tpl="278" style="color: rgb(143, 191, 160); font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 22px;">→</span>
+            <div data-dc-tpl="279" style="display: flex; flex-direction: column; gap: 6px;">
+              <div data-dc-tpl="280" style="height: 7px; width: 46px; background: rgb(143, 224, 175); border-radius: 2px;"></div>
+              <div data-dc-tpl="281" style="height: 7px; width: 46px; background: rgb(143, 224, 175); border-radius: 2px;"></div>
+              <div data-dc-tpl="282" style="height: 7px; width: 46px; background: rgb(143, 224, 175); border-radius: 2px;"></div>
+            </div>
+          </div>
+          <p data-dc-tpl="283" style="font-size: 14.5px; line-height: 1.5; color: rgb(182, 200, 185);">Turned high-volume, inconsistent data feeds into clean, unified datasets - pipelines that had to be right, every single time.</p>
+        </div>
+
+        <div data-dc-tpl="284" class="oc-track-card oc-track-card--wwt" style="background: rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 26px; display: flex; flex-direction: column;">
+          <div data-dc-tpl="285" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 2px;">
+            <span data-dc-tpl="286" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 25px; line-height: 0.95; letter-spacing: 0.01em; color: rgb(239, 232, 220);">WWT International</span>
+            <span data-dc-tpl="287" style="flex: 0 0 auto; font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(143, 191, 160);">SKU operator</span>
+          </div>
+          <div data-dc-tpl="288" class="oc-wwt-sku-grid" style="height: 60px; display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(2, 1fr); gap: 5px; align-content: center; margin: 20px 0px 22px;">
+            <div data-dc-tpl="289" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="290" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="291" style="border-radius: 2px; background: rgb(143, 224, 175);"></div><div data-dc-tpl="292" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="293" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="294" style="border-radius: 2px; background: rgb(143, 224, 175);"></div><div data-dc-tpl="295" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="296" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="297" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="298" style="border-radius: 2px; background: rgb(143, 224, 175);"></div><div data-dc-tpl="299" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="300" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="301" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="302" style="border-radius: 2px; background: rgb(143, 224, 175);"></div><div data-dc-tpl="303" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="304" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="305" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="306" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div><div data-dc-tpl="307" style="border-radius: 2px; background: rgb(143, 224, 175);"></div><div data-dc-tpl="308" style="border-radius: 2px; background: rgba(255, 255, 255, 0.2);"></div>
+          </div>
+          <p data-dc-tpl="309" style="font-size: 14.5px; line-height: 1.5; color: rgb(182, 200, 185);">I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="310" id="about" style="max-width: 1180px; margin: 0px auto; padding: 84px 40px; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: center;">
+    <div data-dc-tpl="311" style="position: relative; z-index: 6; aspect-ratio: 4 / 5; border-radius: 6px; border: 2px solid rgb(23, 19, 11); overflow: hidden; background: rgb(226, 218, 201); box-shadow: rgba(23, 19, 11, 0.5) 0px 24px 50px -30px;">
+      <img data-dc-tpl="312" src="/new-homepage/image3.png" alt="Henry Oliver" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+    <div data-dc-tpl="313" class="oc-founder-caption" style="position: absolute; left: 14px; bottom: 14px; z-index: 2; padding: 9px 12px; border-radius: 7px; background: rgba(23, 19, 11, 0.9); color: rgb(239, 232, 220); font-family: &quot;Saira Condensed&quot;, &quot;Arial Narrow&quot;, sans-serif; font-size: 18px; font-weight: 800; line-height: 1; text-transform: uppercase; letter-spacing: 0.035em; box-shadow: rgba(0, 0, 0, 0.8) 0px 8px 20px -12px; pointer-events: none;">Henry Oliver, founder</div></div>
+    <div data-dc-tpl="314">
+      <div data-dc-tpl="315" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 24px;">Chapter 07 - Why an operator, not an agency</div>
+      <blockquote data-dc-tpl="316" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 44px; line-height: 0.98; letter-spacing: 0.005em; color: rgb(23, 19, 11); margin: 0px 0px 24px;">“I ran a 200,000-SKU business. I've done the eight-hour supplier upload myself - that's why these fit how the work is actually done.”</blockquote>
+      <p data-dc-tpl="317" style="font-size: 16.5px; line-height: 1.6; color: rgb(91, 84, 68); max-width: 52ch;">No discovery-phase invoices, no jargon, and no revolving team of account managers. One operator with enterprise-grade rigour and first-hand experience of the work - a clear price agreed before anything begins, then a care plan to keep it running.</p>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="318" id="book" style="background: rgb(30, 59, 47); color: rgb(239, 232, 220);">
+    <div data-dc-tpl="319" style="max-width: 1180px; margin: 0px auto; padding: 82px 40px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+      <div data-dc-tpl="320">
+        <div data-dc-tpl="321" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(143, 191, 160); margin-bottom: 18px;">Chapter 08 - Your move</div>
+        <h2 data-dc-tpl="322" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 64px; line-height: 0.9; letter-spacing: 0.005em; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">See where<br data-dc-tpl="323">your week is going</h2>
+      </div>
+      <div data-dc-tpl="324" style="display: flex; flex-direction: column; align-items: flex-start; gap: 22px;">
+        <p data-dc-tpl="325" style="font-size: 17px; line-height: 1.5; color: rgb(182, 200, 185); max-width: 38ch;">A short, no-obligation call. I'll look at the manual work consuming your team's hours and tell you - at a clear, agreed price - exactly what I'd automate first.</p>
+        <a data-dc-tpl="326" href="https://cal.eu/henryoliver" target="_blank" rel="noopener" class="scp4" style="background: rgb(239, 232, 220); color: rgb(30, 59, 47); padding: 16px 32px; font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; font-size: 19px; border-radius: 9px; display: inline-flex; align-items: center; gap: 10px; box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 26px -10px; transition: background 0.2s, color 0.2s, transform 0.18s;">Book a free review <span data-dc-tpl="327">→</span></a>
+        <a data-dc-tpl="328" href="mailto:henry@oliversconsulting.co.uk" style="color: rgb(182, 200, 185); font-weight: 500; font-size: 15px; border-bottom: 1px solid rgb(76, 99, 85); padding-bottom: 2px;">Email: henry@oliversconsulting.co.uk</a>
+      </div>
+    </div>
+  </section>
+
+  <footer data-dc-tpl="329" id="oc-site-footer" aria-label="Site footer" style="background: rgb(239, 232, 220); color: rgb(23, 19, 11); margin: 0px; border-top: 2px solid rgb(23, 19, 11); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; text-align: left;"><div data-dc-tpl="330" class="oc-footer-main" style="max-width: 1180px; margin: 0px auto; padding: 44px 40px 28px; display: grid; grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr; gap: 34px; align-items: start;"><div data-dc-tpl="331"><a data-dc-tpl="332" href="/" aria-label="Olivers Consulting home" style="display: inline-flex; align-items: center; text-decoration: none; margin-bottom: 18px;"><img data-dc-tpl="333" src="/favicon.svg" alt="Olivers Consulting" style="display: block; width: 44px; height: 44px; max-width: 100%;"></a><p data-dc-tpl="334" style="margin: 0px; color: rgb(91, 84, 68); font-size: 15.5px; line-height: 1.55; max-width: 34ch;">Automation for UK ecommerce and wholesale teams</p></div><nav data-dc-tpl="335" aria-label="Footer quick links" style="display: grid; gap: 9px; place-items: start; text-align: left;"><div data-dc-tpl="336" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 17px; letter-spacing: 0.04em; color: rgb(181, 121, 31); margin-bottom: 5px;">Quick links</div><a data-dc-tpl="337" href="/" style="color: rgb(23, 19, 11); text-decoration: none;">Home</a><a data-dc-tpl="338" href="/#services" style="color: rgb(23, 19, 11); text-decoration: none;">What we automate</a><a data-dc-tpl="339" href="/#how" style="color: rgb(23, 19, 11); text-decoration: none;">How it works</a><a data-dc-tpl="340" href="/articles/" style="color: rgb(23, 19, 11); text-decoration: none;">Articles</a><a data-dc-tpl="341" href="https://cal.eu/henryoliver" target="_blank" rel="noopener" style="color: rgb(23, 19, 11); text-decoration: none;">Book a free review</a></nav><nav data-dc-tpl="342" aria-label="Legal links" style="display: grid; gap: 9px; place-items: start; text-align: left;"><div data-dc-tpl="343" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 17px; letter-spacing: 0.04em; color: rgb(181, 121, 31); margin-bottom: 5px;">Legal</div><a data-dc-tpl="344" href="/privacy-policy/" style="color: rgb(23, 19, 11); text-decoration: none;">Privacy Policy</a><a data-dc-tpl="345" href="/cookie-policy/" style="color: rgb(23, 19, 11); text-decoration: none;">Cookie Policy</a><a data-dc-tpl="346" href="/terms-of-service/" style="color: rgb(23, 19, 11); text-decoration: none;">Terms of Service</a></nav><div data-dc-tpl="347"><div data-dc-tpl="348" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 17px; letter-spacing: 0.04em; color: rgb(181, 121, 31); margin-bottom: 14px;">Contact</div><a data-dc-tpl="349" href="mailto:henry@oliversconsulting.co.uk" style="color: rgb(23, 19, 11); text-decoration: none; word-break: break-word;">henry@oliversconsulting.co.uk</a><p data-dc-tpl="350" style="margin: 12px 0px 0px; color: rgb(91, 84, 68); font-size: 14px; line-height: 1.5;">London based</p></div></div><div data-dc-tpl="351" class="oc-footer-bottom" style="max-width: 1180px; margin: 0px auto; padding: 20px 40px 26px; color: rgb(138, 130, 113); font-size: 13px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; border-top: 1px solid rgb(214, 205, 186);"><span data-dc-tpl="352">© 2026 Olivers Consulting</span><span data-dc-tpl="353">Built for practical ecommerce and wholesale automation.</span></div><style data-dc-tpl="354">@media(max-width:900px){#oc-site-footer .oc-footer-main{grid-template-columns:1fr!important;padding:40px 22px 24px!important;gap:26px!important}#oc-site-footer .oc-footer-bottom{padding:18px 22px 24px!important;display:block!important;text-align:left!important}#oc-site-footer .oc-footer-bottom span{display:block!important;line-height:1.45!important}#oc-site-footer .oc-footer-bottom span+span{margin-top:8px!important}#oc-site-footer nav{gap:9px!important}#oc-site-footer nav a,#oc-site-footer a[href^=mailto]{font-size:16px!important;line-height:1.35!important;text-align:left!important}#oc-site-footer img{width:44px!important;height:44px!important}}</style></footer></div></div></div>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  switchRef = React.createRef();
+  state = { hours: 8, dispYear: 416, dispWeeks: 11.1, dispCost: 12480, scrub: 0, playing: false, scrollPct: 0 };
+
+  componentDidMount() {
+    // autoplay the switch pipeline whenever it scrolls into view
+    this.switchIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { if (!this.switchVisible) { this.switchVisible = true; this.autoRun(); } }
+        else { this.switchVisible = false; }
+      });
+    }, { threshold: 0.45 });
+    if (this.switchRef.current) this.switchIo.observe(this.switchRef.current);
+
+    // scroll-progress bar (manual -> automated journey)
+    this.onScroll = () => {
+      if (this._sraf) return;
+      this._sraf = requestAnimationFrame(() => {
+        this._sraf = null;
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const pct = max > 0 ? ((window.scrollY || h.scrollTop) / max) * 100 : 0;
+        this.setState({ scrollPct: pct });
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    if (this.switchIo) this.switchIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    cancelAnimationFrame(this.raf);
+    cancelAnimationFrame(this._sraf);
+    clearInterval(this.playTimer);
+  }
+
+  onHours = (e) => {
+    const hours = +e.target.value;
+    this.setState({ hours });
+    this.tTargets = { year: hours * 52, weeks: (hours * 52) / 37.5, cost: hours * 52 * 30 };
+    if (!this.tweening) { this.tweening = true; this.raf = requestAnimationFrame(this.tweenCounters); }
+  };
+
+  tweenCounters = () => {
+    this.setState(s => {
+      const t = this.tTargets;
+      const ny = s.dispYear + (t.year - s.dispYear) * 0.2;
+      const nw = s.dispWeeks + (t.weeks - s.dispWeeks) * 0.2;
+      const nc = s.dispCost + (t.cost - s.dispCost) * 0.2;
+      const settled = Math.abs(t.year - ny) < 0.5 && Math.abs(t.cost - nc) < 1;
+      return { dispYear: settled ? t.year : ny, dispWeeks: settled ? t.weeks : nw, dispCost: settled ? t.cost : nc };
+    }, () => {
+      const t = this.tTargets;
+      if (Math.abs(t.year - this.state.dispYear) >= 0.5 || Math.abs(t.cost - this.state.dispCost) >= 1) this.raf = requestAnimationFrame(this.tweenCounters);
+      else this.tweening = false;
+    });
+  };
+
+  onScrub = (e) => { this.setState({ scrub: +e.target.value, playing: false }); clearInterval(this.playTimer); };
+
+  autoRun = () => {
+    this.setState({ playing: true, scrub: 0 });
+    clearInterval(this.playTimer);
+    this.playTimer = setInterval(() => {
+      this.setState(s => {
+        if (s.scrub >= 100) { clearInterval(this.playTimer); return { playing: false }; }
+        return { scrub: Math.min(100, s.scrub + 1.2) };
+      });
+    }, 42);
+  };
+
+  togglePlay = () => {
+    if (this.state.playing) { this.setState({ playing: false }); clearInterval(this.playTimer); return; }
+    this.setState(s => ({ playing: true, scrub: s.scrub >= 100 ? 0 : s.scrub }));
+    clearInterval(this.playTimer);
+    this.playTimer = setInterval(() => {
+      this.setState(s => {
+        if (s.scrub >= 100) { clearInterval(this.playTimer); return { playing: false }; }
+        return { scrub: Math.min(100, s.scrub + 1.4) };
+      });
+    }, 40);
+  };
+
+  renderVals() {
+    const s = this.state;
+    const fmt = (n) => Math.round(n).toLocaleString('en-GB');
+
+    const heroFill = ((s.hours - 2) / 18) * 100;
+    const heroTrackStyle = { background: `linear-gradient(90deg,#c07c1f ${heroFill}%,#d6cdba ${heroFill}%)` };
+    const scrubTrackStyle = { background: `linear-gradient(90deg,#d9a86a ${s.scrub}%,rgba(255,255,255,.18) ${s.scrub}%)` };
+
+    const thresholds = [8, 28, 48, 68, 88];
+    const rawNodes = [
+      { label: 'Read PDF' }, { label: 'Match SKUs' }, { label: 'Invoice' }, { label: 'Sync stock' }, { label: 'Report' },
+    ];
+    const nodes = rawNodes.map((n, i) => {
+      const done = s.scrub >= thresholds[i];
+      return {
+        label: n.label,
+        mark: done ? '✓' : (i + 1),
+        dotStyle: {
+          width: '46px', height: '46px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: "'Saira Condensed', sans-serif", fontWeight: 800, fontSize: '19px',
+          background: done ? '#8fe0af' : '#1e3b2f', color: done ? '#123024' : '#6f8b7c',
+          border: done ? '2px solid #8fe0af' : '2px solid rgba(255,255,255,.28)',
+          boxShadow: done ? '0 0 0 6px rgba(143,224,175,.16)' : 'none',
+          transition: 'all .3s ease',
+        },
+        labelStyle: {
+          marginTop: '12px', fontFamily: "'Saira Condensed', sans-serif", fontWeight: 700, textTransform: 'uppercase',
+          fontSize: '14px', letterSpacing: '.03em', color: done ? '#eee6d5' : '#7f978a', transition: 'color .3s ease',
+        },
+      };
+    });
+    const progressStyle = { position: 'absolute', left: '50%', marginLeft: '-50vw', width: `${s.scrub}vw`, top: '55px', height: '3px', background: '#8fe0af', transition: 'width .12s linear' };
+    const progressBarStyle = { height: '100%', width: `${s.scrollPct}%`, background: 'linear-gradient(90deg,#c07c1f,#2f6f4f)', transition: 'width .08s linear' };
+
+    const doneCount = thresholds.filter(t => s.scrub >= t).length;
+    const remain = 220 - 218 * (s.scrub / 100);
+    let dispTime;
+    if (remain >= 60) dispTime = `${Math.floor(remain / 60)}h ${Math.round(remain % 60)}m`;
+    else if (remain >= 1.5) dispTime = `${Math.round(remain)}m`;
+    else dispTime = `${Math.max(2, Math.round(remain * 60))}s`;
+    if (s.scrub >= 100) dispTime = '2 min';
+    const auto = s.scrub >= 100;
+    const clockStyle = { fontFamily: "'Saira Condensed', sans-serif", fontWeight: 800, fontSize: '84px', lineHeight: '.85', color: auto ? '#8fe0af' : (s.scrub === 0 ? '#d9a86a' : '#eee6d5'), transition: 'color .3s ease' };
+    const doneLabel = `${doneCount} / 5 steps done`;
+
+    const groups = [
+      { cat: 'Reports', note: 'See the numbers', items: [
+        { name: 'The Monday Report', desc: 'Sales, stock & margin - every Monday, automatically.', price: '£400–600 / £1.5–3k' },
+      ] },
+      { cat: 'Data, sorted', note: 'Files in, clean data out', items: [
+        { name: 'Supplier data pipelines', desc: 'Any supplier format in, your format out.', price: '£2.5–5k' },
+        { name: 'Spreadsheet rescue', desc: 'Messy data cleaned once, and kept clean.', price: '£400–700 / £1.5–4k' },
+        { name: 'Catalogue content engine', desc: 'Descriptions & categories at scale, from PDFs.', price: '£2.5–6k' },
+      ] },
+      { cat: 'Money in', note: 'Orders to invoices', items: [
+        { name: 'Invoices on autopilot', desc: 'Orders become Xero/QuickBooks invoices, no typing.', price: '£600–900 / £2–4k' },
+        { name: 'Order-to-invoice admin', desc: 'Wholesale orders into accounting, hands-off.', price: '£2–4k' },
+        { name: 'Stockist orders, straight in', desc: 'Faire, email & PDF orders file themselves.', price: '£600–1k' },
+      ] },
+      { cat: 'Listings & stock', note: 'One update, everywhere', items: [
+        { name: 'Channel & stock sync', desc: 'Update once; every channel follows.', price: '£3–6k' },
+        { name: 'Product upload turbo', desc: 'One sheet → Shopify, Etsy & Faire at once.', price: '£500–800' },
+        { name: 'Price list builder', desc: 'Wholesale sheets & site prices, always in sync.', price: '£500–800' },
+      ] },
+    ];
+
+    const steps = [
+      { n: '01', title: 'We map the manual job', body: 'A short call. I watch how the work happens today and where the hours actually go.' },
+      { n: '02', title: 'I build the automation', body: 'Fixed price, agreed upfront - built to slot into the tools you already run.' },
+      { n: '03', title: 'It runs itself', body: 'You get the output on schedule. A care plan keeps it clean as things change.' },
+    ];
+
+    return {
+      hours: s.hours, hoursLabel: Math.round(s.hours),
+      dispYear: fmt(s.dispYear),
+      dispWeeks: (Math.round(s.dispWeeks * 10) / 10).toLocaleString('en-GB'),
+      dispCost: fmt(s.dispCost),
+      heroTrackStyle, scrubTrackStyle, scrub: s.scrub,
+      nodes, progressStyle, dispTime, clockStyle, doneLabel,
+      playIcon: s.playing ? 'Ⅱ' : '▷',
+      onHours: this.onHours, onScrub: this.onScrub, togglePlay: this.togglePlay,
+      switchRef: this.switchRef, progressBarStyle,
+      groups, steps,
+    };
+  }
+}
+</script>
+<script>(function(){function mobile(){return window.matchMedia("(max-width:900px)").matches}function imp(e,p,v){if(e)e.style.setProperty(p,v,"important")}function makeWwtStrip(){var grid=document.createElement("div");grid.className="oc-wwt-forced-grid";for(var i=0;i<8;i++){var cell=document.createElement("span");if([1,4,6].indexOf(i)>-1)cell.className="is-on";grid.appendChild(cell)}return grid}function apply(){if(!mobile())return;var hero=document.querySelector("header#top");if(hero){var proof=[].slice.call(hero.querySelectorAll("div")).find(function(d){var st=d.getAttribute("style")||"";return st.indexOf("border:2px solid")>-1&&d.textContent.indexOf("By hand")>-1&&d.textContent.indexOf("Automated")>-1&&d.textContent.indexOf("working weeks")>-1});if(proof){proof.classList.add("oc-proof-mobile-card");imp(proof,"padding","26px 20px");imp(proof,"border-radius","12px")}}var track=[].slice.call(document.querySelectorAll("section")).find(function(s){return s.textContent.indexOf("Chapter 06 - Track record")>-1&&s.textContent.indexOf("WWT International")>-1});if(track){track.classList.add("oc-track-record");var grid=[].slice.call(track.querySelectorAll("div")).find(function(d){var kids=[].slice.call(d.children);return kids.length===3&&d.textContent.indexOf("PwC")>-1&&d.textContent.indexOf("Citibank")>-1&&d.textContent.indexOf("WWT International")>-1});if(grid){grid.classList.add("oc-track-grid");var cards=[].slice.call(grid.children);var wwt=cards.find(function(c){return c.textContent.indexOf("WWT International")>-1});var pwc=cards.find(function(c){return c.textContent.indexOf("PwC")>-1});var citi=cards.find(function(c){return c.textContent.indexOf("Citibank")>-1});[[wwt,"oc-track-card--wwt"],[pwc,"oc-track-card--pwc"],[citi,"oc-track-card--citi"]].forEach(function(pair){if(pair[0])pair[0].classList.add("oc-track-card",pair[1])});if(wwt){var p=wwt.querySelector("p");if(p)p.textContent="I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.";[].slice.call(wwt.children).filter(function(el){return (el.getAttribute("style")||"").indexOf("grid-template-columns:repeat(10,1fr)")>-1}).forEach(function(el){imp(el,"display","none")});if(!wwt.querySelector(".oc-wwt-forced-grid")){var title=[].slice.call(wwt.children).find(function(el){return el.textContent.indexOf("WWT International")>-1&&el.textContent.indexOf("SKU OPERATOR")>-1});var strip=makeWwtStrip();if(title&&title.nextSibling)wwt.insertBefore(strip,title.nextSibling);else if(title)wwt.appendChild(strip)}}}}}document.addEventListener("DOMContentLoaded",apply);window.addEventListener("load",apply);window.addEventListener("resize",apply);setTimeout(apply,80);setTimeout(apply,400);setTimeout(apply,1200)})();</script><script>(function(){function clamp(v,min,max){return Math.max(min,Math.min(max,v))}var stops=[{h:2,c:[52,132,85]},{h:3,c:[104,161,72]},{h:6,c:[219,177,62]},{h:8,c:[181,121,31]},{h:9,c:[189,99,41]},{h:10,c:[197,70,47]},{h:11,c:[169,40,36]},{h:20,c:[130,28,24]}];function mix(a,b,t){return [Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),Math.round(a[2]+(b[2]-a[2])*t)]}function rgb(c){return "rgb("+c[0]+","+c[1]+","+c[2]+")"}function base(h){h=clamp(Number(h)||2,2,20);for(var i=0;i<stops.length-1;i++){var a=stops[i],b=stops[i+1];if(h<=b.h){var t=(h-a.h)/(b.h-a.h);t=t*t*(3-2*t);return mix(a.c,b.c,t)}}return stops[stops.length-1].c}function gradient(h){var c=base(h),left=mix(c,[242,199,90],.28),right=mix(c,[72,31,22],.24);return "linear-gradient(90deg,"+rgb(left)+","+rgb(c)+" 54%,"+rgb(right)+")"}function slider(){return Array.prototype.slice.call(document.querySelectorAll("input[type=range]")).find(function(i){return String(i.min)==="2"&&String(i.max)==="20"})}var cached=null;function bar(){if(cached&&cached.isConnected)return cached;var hero=document.querySelector("header#top");if(!hero)return null;var all=Array.prototype.slice.call(hero.querySelectorAll("div"));cached=all.find(function(el){var s=el.getAttribute("style")||"";return s.indexOf("height:26px")>-1&&s.indexOf("border-radius:6px")>-1&&el.children.length===0})||null;if(cached)cached.dataset.ocByHandBar="1";return cached}function paint(){var s=slider(),b=bar();if(!s||!b)return;var h=parseFloat(s.value||"2");b.style.setProperty("background",gradient(h),"important");b.style.setProperty("transition","background 40ms linear","important")}function bind(){var s=slider();if(s&&!s.dataset.ocByHandBound){s.dataset.ocByHandBound="1";s.addEventListener("input",paint);s.addEventListener("change",paint)}paint()}function loop(ms){var start=performance.now();function tick(now){bind();if(now-start<ms)requestAnimationFrame(tick)}requestAnimationFrame(tick)}document.addEventListener("DOMContentLoaded",function(){loop(6500)});window.addEventListener("load",function(){loop(6500)});setTimeout(function(){loop(6500)},200);setInterval(paint,120)})();</script><script>(function(){var ran=false,cancel=false,raf=0,animating=false;function setSlider(input,value,final){input.step="0.01";var d=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,"value");var next=final?String(value):Number(value).toFixed(3);if(d&&d.set)d.set.call(input,next);else input.value=next;animating=true;input.dispatchEvent(new Event("input",{bubbles:true}));if(final)input.dispatchEvent(new Event("change",{bubbles:true}));animating=false}function findSlider(){var ranges=[].slice.call(document.querySelectorAll("input[type=range]"));return ranges.find(function(i){return String(i.min)==="2"&&String(i.max)==="20"})||ranges.find(function(i){var box=i.closest("header,section,div");return box&&box.textContent.indexOf("Hours a week lost to admin")>-1})}function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}function start(){if(ran||cancel||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;var input=findSlider();if(!input)return;ran=true;input.step="0.01";setSlider(input,2,false);var startTime=performance.now(),duration=2400,from=2,to=8;function tick(now){if(cancel)return;var t=Math.min(1,(now-startTime)/duration);var eased=ease(t);setSlider(input,from+(to-from)*eased,t>=1);if(t<1)raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick)}function arm(){var input=findSlider();if(!input){setTimeout(arm,160);return}input.step="0.01";input.addEventListener("pointerdown",function(){cancel=true;cancelAnimationFrame(raf)},{once:true});input.addEventListener("touchstart",function(){cancel=true;cancelAnimationFrame(raf)},{once:true,passive:true});input.addEventListener("keydown",function(){cancel=true;cancelAnimationFrame(raf)},{once:true});input.addEventListener("input",function(){if(!animating){cancel=true;cancelAnimationFrame(raf)}});var section=input.closest("header")||input.closest("section")||input.parentElement;if("IntersectionObserver" in window&&section){var io=new IntersectionObserver(function(entries){if(entries.some(function(e){return e.isIntersecting&&e.intersectionRatio>.25})){io.disconnect();setTimeout(start,300)}},{threshold:[.25,.5]});io.observe(section)}else setTimeout(start,800)}document.addEventListener("DOMContentLoaded",arm);window.addEventListener("load",arm);setTimeout(arm,500)})();</script>
+
+</body></html>
