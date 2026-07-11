@@ -156,6 +156,12 @@
       if (card !== citi) card.classList.remove('oc-track-card--citi');
     });
 
+    var wwtTitleRow = wwt.firstElementChild;
+    var wwtTitle = wwtTitleRow && wwtTitleRow.firstElementChild;
+    if (wwtTitle && (wwtTitle.textContent || '').trim() !== 'WWT International') {
+      wwtTitle.textContent = 'WWT International';
+    }
+
     var skuGrid = Array.prototype.slice.call(wwt.querySelectorAll('div')).find(function(candidate){
       var style = candidate.getAttribute('style') || '';
       return candidate.children.length === 20 && style.indexOf('grid-template-columns:repeat(10,1fr)') > -1;
