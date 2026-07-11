@@ -122,6 +122,14 @@
     document.head.appendChild(style);
   }
 
+  function ensureWwtDesktopWidth(){
+    if (document.getElementById('oc-wwt-desktop-width-style')) return;
+    var style = document.createElement('style');
+    style.id = 'oc-wwt-desktop-width-style';
+    style.textContent = '@media(min-width:901px){body .oc-track-record div[style*="grid-template-columns:repeat(3,1fr)"]>div:nth-child(3)>div[style*="grid-template-columns:repeat(10,1fr)"]{width:175px!important;max-width:100%!important;align-self:flex-start!important}}';
+    document.head.appendChild(style);
+  }
+
   function bindMobileMenuAutoClose(){
     if (document.documentElement.getAttribute('data-oc-mobile-menu-close') === '1') return;
     document.documentElement.setAttribute('data-oc-mobile-menu-close', '1');
@@ -144,6 +152,7 @@
     ensureEmailLabel();
     ensureMobileHoursDedup();
     ensureWwtMobileSpacing();
+    ensureWwtDesktopWidth();
     bindMobileMenuAutoClose();
   }
 
