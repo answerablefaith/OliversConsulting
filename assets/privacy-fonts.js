@@ -125,37 +125,50 @@
     if (!track) return;
     track.classList.add('oc-track-record');
 
-    var grid = Array.prototype.slice.call(track.querySelectorAll('div')).find(function(candidate){
-      var children = Array.prototype.slice.call(candidate.children);
-      if (children.length !== 3) return false;
-      var text = candidate.textContent || '';
-      return text.indexOf('WWT International') > -1 && text.indexOf('PwC') > -1 && text.indexOf('Citibank') > -1;
+    var cardCandidates = Array.prototype.slice.call(track.querySelectorAll('div')).filter(function(candidate){
+      var style = candidate.getAttribute('style') || '';
+      return style.indexOf('border:1px solid rgba(255,255,255,.14)') > -1 && style.indexOf('flex-direction:column') > -1;
     });
-    if (!grid) return;
+    var wwt = cardCandidates.find(function(card){ return (card.textContent || '').indexOf('WWT International') > -1; });
+    var pwc = cardCandidates.find(function(card){ return (card.textContent || '').indexOf('PwC') > -1; });
+    var citi = cardCandidates.find(function(card){ return (card.textContent || '').indexOf('Citibank') > -1; });
+    if (!wwt || !pwc || !citi || wwt.parentElement !== pwc.parentElement || wwt.parentElement !== citi.parentElement) return;
+
+    var grid = wwt.parentElement;
+
+    Array.prototype.slice.call(track.querySelectorAll('.oc-track-grid')).forEach(function(element){
+      if (element !== grid) element.classList.remove('oc-track-grid');
+    });
+    Array.prototype.slice.call(track.querySelectorAll('.oc-track-card')).forEach(function(element){
+      if (element !== wwt && element !== pwc && element !== citi) {
+        element.classList.remove('oc-track-card','oc-track-card--wwt','oc-track-card--pwc','oc-track-card--citi');
+      }
+    });
+
     grid.classList.add('oc-track-grid');
+    wwt.classList.add('oc-track-card','oc-track-card--wwt');
+    pwc.classList.add('oc-track-card','oc-track-card--pwc');
+    citi.classList.add('oc-track-card','oc-track-card--citi');
 
-    var cards = Array.prototype.slice.call(grid.children);
-    cards.forEach(function(card){
-      card.classList.add('oc-track-card');
-      var text = card.textContent || '';
-      if (text.indexOf('WWT International') > -1) card.classList.add('oc-track-card--wwt');
-      else if (text.indexOf('PwC') > -1) card.classList.add('oc-track-card--pwc');
-      else if (text.indexOf('Citibank') > -1) card.classList.add('oc-track-card--citi');
+    [wwt,pwc,citi].forEach(function(card){
+      if (card !== wwt) card.classList.remove('oc-track-card--wwt');
+      if (card !== pwc) card.classList.remove('oc-track-card--pwc');
+      if (card !== citi) card.classList.remove('oc-track-card--citi');
     });
 
-    var wwt = grid.querySelector('.oc-track-card--wwt');
-    if (wwt) {
-      var skuGrid = Array.prototype.slice.call(wwt.querySelectorAll('div')).find(function(candidate){
-        var style = candidate.getAttribute('style') || '';
-        return candidate.children.length === 20 && style.indexOf('grid-template-columns:repeat(10,1fr)') > -1;
-      });
-      if (skuGrid) skuGrid.classList.add('oc-wwt-sku-grid');
-    }
+    var skuGrid = Array.prototype.slice.call(wwt.querySelectorAll('div')).find(function(candidate){
+      var style = candidate.getAttribute('style') || '';
+      return candidate.children.length === 20 && style.indexOf('grid-template-columns:repeat(10,1fr)') > -1;
+    });
+    Array.prototype.slice.call(track.querySelectorAll('.oc-wwt-sku-grid')).forEach(function(element){
+      if (element !== skuGrid) element.classList.remove('oc-wwt-sku-grid');
+    });
+    if (skuGrid) skuGrid.classList.add('oc-wwt-sku-grid');
 
     if (!document.getElementById('oc-track-layout-style')) {
       var style = document.createElement('style');
       style.id = 'oc-track-layout-style';
-      style.textContent = '@media(min-width:901px){body .oc-track-record .oc-track-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}body .oc-track-record .oc-track-grid>.oc-track-card{display:flex!important;flex-direction:column!important;width:auto!important;min-width:0!important;margin:0!important;order:initial!important}body .oc-track-record .oc-track-card--wwt{order:1!important}body .oc-track-record .oc-track-card--pwc{order:2!important}body .oc-track-record .oc-track-card--citi{order:3!important}body .oc-track-record .oc-track-spacer{display:none!important}}';
+      style.textContent = '@media(min-width:901px){html body section.oc-track-record .oc-track-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}html body section.oc-track-record .oc-track-grid>.oc-track-card{display:flex!important;flex-direction:column!important;width:auto!important;min-width:0!important;margin:0!important}html body section.oc-track-record .oc-track-card--wwt{order:1!important}html body section.oc-track-record .oc-track-card--pwc{order:2!important}html body section.oc-track-record .oc-track-card--citi{order:3!important}html body section.oc-track-record .oc-track-spacer{display:none!important}}';
       document.head.appendChild(style);
     }
   }
@@ -172,7 +185,7 @@
     if (document.getElementById('oc-wwt-desktop-width-style')) return;
     var style = document.createElement('style');
     style.id = 'oc-wwt-desktop-width-style';
-    style.textContent = '@media(min-width:901px){body .oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:flex-start!important}}';
+    style.textContent = '@media(min-width:901px){html body section.oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:flex-start!important}}';
     document.head.appendChild(style);
   }
 
