@@ -118,7 +118,7 @@
     if (document.getElementById('oc-wwt-mobile-spacing-style')) return;
     var style = document.createElement('style');
     style.id = 'oc-wwt-mobile-spacing-style';
-    style.textContent = '@media(max-width:900px){body .oc-track-record .oc-track-card--wwt>p{transform:translateY(-72px)!important;margin-bottom:-72px!important}}';
+    style.textContent = '@media(max-width:900px){body .oc-track-record .oc-track-card--wwt>p,body .oc-track-record .oc-track-card--wwt:has(.oc-wwt-forced-grid)>p{transform:none!important;margin-top:134px!important;margin-bottom:0!important}}';
     document.head.appendChild(style);
   }
 
