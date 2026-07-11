@@ -14,6 +14,22 @@ try {
   await page.waitForSelector('#oc-site-footer', { timeout: 120000 });
   await page.waitForTimeout(500);
 
+  // Keep the rendered live-page markup and CSS, but remove scripts whose state and
+  // listeners cannot be serialised or which would compete with the static runtime.
+  await page.evaluate(() => {
+    document.querySelectorAll('script').forEach((script) => {
+      const source = script.textContent || '';
+      const isComponentRuntime = script.type === 'text/x-dc' || source.includes('class Component extends DCLogic');
+      const isCapturedHeroColourRuntime = source.includes('ocByHandBound') ||
+        (source.includes('function gradient(h)') && source.includes('setInterval(paint'));
+      const isCapturedHeroIntroRuntime = source.includes('var ran=false,cancel=false') ||
+        (source.includes('duration=2400') && source.includes('from=2,to=8'));
+      if (isComponentRuntime || isCapturedHeroColourRuntime || isCapturedHeroIntroRuntime) {
+        script.remove();
+      }
+    });
+  });
+
   let html = await page.content();
 
   html = html.replace(
@@ -28,7 +44,7 @@ try {
 
   html = html.replace(
     /<\/body>/i,
-    '<script src="/static-preview/behavior.js" defer></script>\n<script src="/static-preview/intro-animation.js" defer></script>\n</body>',
+    '<script src="/static-preview/behavior.js" defer></script>\n</body>',
   );
 
   await writeFile('static-preview/index.html', `${html}\n`, 'utf8');
