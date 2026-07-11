@@ -7,7 +7,6 @@ on:
       - 'scripts/capture-static-preview.mjs'
       - 'scripts/test-static-preview.mjs'
       - 'static-preview/behavior.js'
-      - 'static-preview/intro-animation.js'
       - '.github/workflows/build-static-preview.yml'
   workflow_dispatch:
 
@@ -40,14 +39,15 @@ jobs:
       - name: Capture rendered homepage
         run: node scripts/capture-static-preview.mjs
 
-      - name: Verify loader was removed
+      - name: Verify loader and competing runtimes were removed
         run: |
           test -s static-preview/index.html
           grep -q 'data-oc-static-snapshot="true"' static-preview/index.html
           grep -q '/static-preview/behavior.js' static-preview/index.html
-          grep -q '/static-preview/intro-animation.js' static-preview/index.html
+          ! grep -q '/static-preview/intro-animation.js' static-preview/index.html
           ! grep -q "fetch('/?oc-parity-source=1'" static-preview/index.html
           ! grep -q 'Loading the 1:1 homepage preview' static-preview/index.html
+          ! grep -q 'class Component extends DCLogic' static-preview/index.html
 
       - name: Test static interactions and animations
         run: node scripts/test-static-preview.mjs
