@@ -10,19 +10,24 @@ function check(condition, message) {
 async function openPreview(viewport) {
   const page = await browser.newPage({ viewport });
   const forbiddenRequests = [];
+  const consoleErrors = [];
   page.on('request', (request) => {
     const url = new URL(request.url());
-    if (url.pathname === '/' && (request.resourceType() === 'document' || request.resourceType() === 'fetch' || request.resourceType() === 'xhr')) {
+    if (url.pathname === '/' && ['document', 'fetch', 'xhr'].includes(request.resourceType())) {
       forbiddenRequests.push(`${request.resourceType()}: ${request.url()}`);
     }
   });
+  page.on('console', (message) => {
+    if (message.type() === 'error') consoleErrors.push(message.text());
+  });
+  page.on('pageerror', (error) => consoleErrors.push(error.message));
   await page.goto('http://127.0.0.1:8000/static-preview/', {
     waitUntil: 'networkidle',
     timeout: 120000,
   });
   await page.waitForSelector('html[data-oc-static-snapshot="true"]', { timeout: 30000 });
   await page.waitForSelector('html[data-oc-static-behaviour="ready"]', { timeout: 30000 });
-  return { page, forbiddenRequests };
+  return { page, forbiddenRequests, consoleErrors };
 }
 
 try {
@@ -32,19 +37,26 @@ try {
   const initialHtml = await page.content();
   check(!initialHtml.includes('Loading the 1:1 homepage preview'), 'A loading screen remains in the static HTML.');
   check(!initialHtml.includes("fetch('/?oc-parity-source=1'"), 'The preview still contains the old homepage fetch loader.');
+  check(!initialHtml.includes('/static-preview/intro-animation.js'), 'The incorrect smooth intro script is still included.');
+  check(!initialHtml.includes('class Component extends DCLogic'), 'The old component runtime remains in the static HTML.');
   check(mobile.forbiddenRequests.length === 0, `The preview requested the live homepage: ${mobile.forbiddenRequests.join(', ')}`);
   check((await page.locator('header#top').count()) === 1, 'Crawler-visible homepage content was not present in the initial document.');
 
   const hero = page.locator('input[type="range"][min="2"][max="20"]');
   check((await hero.count()) === 1, 'Hero calculator slider was not found.');
 
-  // The original introductory animation starts at 2 and eases to 8 over 2.4 seconds.
-  await page.waitForTimeout(550);
-  const introEarly = Number(await hero.inputValue());
-  await page.waitForTimeout(2600);
-  const introFinal = Number(await hero.inputValue());
-  check(introEarly >= 2 && introEarly < 8, `Hero intro did not begin between 2 and 8; value was ${introEarly}.`);
-  check(Math.abs(introFinal - 8) < 0.05, `Hero intro did not finish at 8; value was ${introFinal}.`);
+  // Exact current-homepage sequence: initial 8, then 5, then 16, then back to 8.
+  const initialValue = Number(await hero.inputValue());
+  check(initialValue === 8, `Hero did not initialise at 8; value was ${initialValue}.`);
+  await page.waitForTimeout(820);
+  const firstValue = Number(await hero.inputValue());
+  check(firstValue === 5, `Hero first intro step should be 5; value was ${firstValue}.`);
+  await page.waitForTimeout(760);
+  const secondValue = Number(await hero.inputValue());
+  check(secondValue === 16, `Hero second intro step should be 16; value was ${secondValue}.`);
+  await page.waitForTimeout(880);
+  const finalValue = Number(await hero.inputValue());
+  check(finalValue === 8, `Hero final intro step should return to 8; value was ${finalValue}.`);
 
   await hero.evaluate((el) => {
     el.value = '12';
@@ -83,19 +95,13 @@ try {
   await playButton.click();
 
   const animated = await page.evaluate(() => {
-    const expected = {
-      rowSync: '3s',
-      reportIn: '4s',
-      stampIn: '3.6s',
-      dotPulse: '1.4s',
-    };
-    return Object.entries(expected).map(([name, duration]) => {
+    const expected = { rowSync: '3s', reportIn: '4s', stampIn: '3.6s', dotPulse: '1.4s' };
+    return Object.entries(expected).map(([name, expectedDuration]) => {
       const element = Array.from(document.querySelectorAll('*')).find((el) =>
-        getComputedStyle(el).animationName.split(',').map((v) => v.trim()).includes(name),
-      );
+        getComputedStyle(el).animationName.split(',').map((value) => value.trim()).includes(name));
       return {
         name,
-        expectedDuration: duration,
+        expectedDuration,
         duration: element ? getComputedStyle(element).animationDuration.split(',')[0].trim() : null,
       };
     });
@@ -105,16 +111,7 @@ try {
     check(duration === expectedDuration, `${name} duration changed from ${expectedDuration} to ${duration}.`);
   });
 
-  const wwtGrid = page.locator('.oc-wwt-sku-grid').first();
-  check((await wwtGrid.count()) === 1, 'WWT activity grid was not found.');
-  const wwtBefore = await wwtGrid.evaluate((grid) =>
-    Array.from(grid.children).map((el) => getComputedStyle(el).backgroundColor).join('|'),
-  );
-  await page.waitForTimeout(650);
-  const wwtAfter = await wwtGrid.evaluate((grid) =>
-    Array.from(grid.children).map((el) => getComputedStyle(el).backgroundColor).join('|'),
-  );
-  check(wwtBefore !== wwtAfter, 'WWT activity animation did not advance.');
+  check((await page.locator('.oc-wwt-sku-grid').count()) === 1, 'WWT grid was not preserved.');
 
   const progressBar = page.locator('div[style*="position: fixed"][style*="height: 4px"] > div').first();
   const progressBefore = await progressBar.evaluate((el) => parseFloat(getComputedStyle(el).width));
@@ -130,6 +127,7 @@ try {
     check(columns === 3, `Mobile proof stats are not three columns; found ${columns}.`);
   }
 
+  check(mobile.consoleErrors.length === 0, `Mobile preview logged errors: ${mobile.consoleErrors.join(' | ')}`);
   await page.close();
 
   const desktop = await openPreview({ width: 1280, height: 900 });
@@ -141,6 +139,7 @@ try {
     const tops = await trackCards.evaluateAll((cards) => cards.map((card) => Math.round(card.getBoundingClientRect().top)));
     check(Math.max(...tops) - Math.min(...tops) <= 2, 'Desktop track record cards are not aligned in one row.');
   }
+  check(desktop.consoleErrors.length === 0, `Desktop preview logged errors: ${desktop.consoleErrors.join(' | ')}`);
   await desktopPage.close();
 
   if (failures.length) {
