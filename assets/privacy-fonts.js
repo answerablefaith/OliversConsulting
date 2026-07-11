@@ -114,6 +114,52 @@
     }
   }
 
+  function ensureTrackRecordStructure(){
+    var track = document.querySelector('.oc-track-record');
+    if (!track) {
+      track = Array.prototype.slice.call(document.querySelectorAll('section')).find(function(section){
+        var text = section.textContent || '';
+        return text.indexOf('Chapter 06 - Track record') > -1 && text.indexOf('WWT International') > -1 && text.indexOf('PwC') > -1 && text.indexOf('Citibank') > -1;
+      });
+    }
+    if (!track) return;
+    track.classList.add('oc-track-record');
+
+    var grid = Array.prototype.slice.call(track.querySelectorAll('div')).find(function(candidate){
+      var children = Array.prototype.slice.call(candidate.children);
+      if (children.length !== 3) return false;
+      var text = candidate.textContent || '';
+      return text.indexOf('WWT International') > -1 && text.indexOf('PwC') > -1 && text.indexOf('Citibank') > -1;
+    });
+    if (!grid) return;
+    grid.classList.add('oc-track-grid');
+
+    var cards = Array.prototype.slice.call(grid.children);
+    cards.forEach(function(card){
+      card.classList.add('oc-track-card');
+      var text = card.textContent || '';
+      if (text.indexOf('WWT International') > -1) card.classList.add('oc-track-card--wwt');
+      else if (text.indexOf('PwC') > -1) card.classList.add('oc-track-card--pwc');
+      else if (text.indexOf('Citibank') > -1) card.classList.add('oc-track-card--citi');
+    });
+
+    var wwt = grid.querySelector('.oc-track-card--wwt');
+    if (wwt) {
+      var skuGrid = Array.prototype.slice.call(wwt.querySelectorAll('div')).find(function(candidate){
+        var style = candidate.getAttribute('style') || '';
+        return candidate.children.length === 20 && style.indexOf('grid-template-columns:repeat(10,1fr)') > -1;
+      });
+      if (skuGrid) skuGrid.classList.add('oc-wwt-sku-grid');
+    }
+
+    if (!document.getElementById('oc-track-layout-style')) {
+      var style = document.createElement('style');
+      style.id = 'oc-track-layout-style';
+      style.textContent = '@media(min-width:901px){body .oc-track-record .oc-track-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}body .oc-track-record .oc-track-grid>.oc-track-card{display:flex!important;flex-direction:column!important;width:auto!important;min-width:0!important;margin:0!important;order:initial!important}body .oc-track-record .oc-track-card--wwt{order:1!important}body .oc-track-record .oc-track-card--pwc{order:2!important}body .oc-track-record .oc-track-card--citi{order:3!important}body .oc-track-record .oc-track-spacer{display:none!important}}';
+      document.head.appendChild(style);
+    }
+  }
+
   function ensureWwtMobileSpacing(){
     if (document.getElementById('oc-wwt-mobile-spacing-style')) return;
     var style = document.createElement('style');
@@ -126,7 +172,7 @@
     if (document.getElementById('oc-wwt-desktop-width-style')) return;
     var style = document.createElement('style');
     style.id = 'oc-wwt-desktop-width-style';
-    style.textContent = '@media(min-width:901px){body .oc-track-record div[style*="grid-template-columns:repeat(3,1fr)"]>div:nth-child(3)>div[style*="grid-template-columns:repeat(10,1fr)"]{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:flex-start!important}}';
+    style.textContent = '@media(min-width:901px){body .oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:flex-start!important}}';
     document.head.appendChild(style);
   }
 
@@ -151,6 +197,7 @@
     ensureFounderCaption();
     ensureEmailLabel();
     ensureMobileHoursDedup();
+    ensureTrackRecordStructure();
     ensureWwtMobileSpacing();
     ensureWwtDesktopWidth();
     bindMobileMenuAutoClose();
