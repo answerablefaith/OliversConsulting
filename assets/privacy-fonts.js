@@ -191,7 +191,7 @@
     if (document.getElementById('oc-wwt-desktop-width-style')) return;
     var style = document.createElement('style');
     style.id = 'oc-wwt-desktop-width-style';
-    style.textContent = '@media(min-width:901px){html body section.oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:flex-start!important}}';
+    style.textContent = '@media(min-width:901px){html body section.oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:center!important;justify-self:start!important}}';
     document.head.appendChild(style);
   }
 
