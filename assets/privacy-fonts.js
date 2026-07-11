@@ -114,6 +114,14 @@
     }
   }
 
+  function ensureWwtMobileSpacing(){
+    if (document.getElementById('oc-wwt-mobile-spacing-style')) return;
+    var style = document.createElement('style');
+    style.id = 'oc-wwt-mobile-spacing-style';
+    style.textContent = '@media(max-width:900px){body .oc-track-record .oc-track-card--wwt>p{transform:translateY(-72px)!important;margin-bottom:-72px!important}}';
+    document.head.appendChild(style);
+  }
+
   function bindMobileMenuAutoClose(){
     if (document.documentElement.getAttribute('data-oc-mobile-menu-close') === '1') return;
     document.documentElement.setAttribute('data-oc-mobile-menu-close', '1');
@@ -135,6 +143,7 @@
     ensureFounderCaption();
     ensureEmailLabel();
     ensureMobileHoursDedup();
+    ensureWwtMobileSpacing();
     bindMobileMenuAutoClose();
   }
 
