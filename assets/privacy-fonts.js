@@ -114,6 +114,50 @@
     }
   }
 
+  function ensureComponentBackgroundHooks(){
+    var hero = document.querySelector('header#top');
+    if (hero) {
+      var proof = Array.prototype.slice.call(hero.querySelectorAll('div')).find(function(candidate){
+        var style = candidate.getAttribute('style') || '';
+        var text = candidate.textContent || '';
+        return style.indexOf('border:2px solid #17130b') > -1 && text.indexOf('By hand') > -1 && text.indexOf('Automated') > -1 && text.indexOf('working weeks') > -1;
+      });
+      if (proof) proof.classList.add('oc-proof-card');
+    }
+
+    var automationSection = Array.prototype.slice.call(document.querySelectorAll('section')).find(function(section){
+      var text = section.textContent || '';
+      return text.indexOf('Chapter 03 - More on autopilot') > -1 && text.indexOf('Channel & stock sync') > -1 && text.indexOf('The Monday Report') > -1 && text.indexOf('Invoices on autopilot') > -1;
+    });
+
+    if (automationSection) {
+      var automationGrid = Array.prototype.slice.call(automationSection.querySelectorAll('div')).find(function(candidate){
+        var children = Array.prototype.slice.call(candidate.children);
+        if (children.length !== 3) return false;
+        var text = candidate.textContent || '';
+        return text.indexOf('Channel & stock sync') > -1 && text.indexOf('The Monday Report') > -1 && text.indexOf('Invoices on autopilot') > -1;
+      });
+
+      if (automationGrid) {
+        automationGrid.classList.add('oc-automation-grid');
+        Array.prototype.slice.call(automationGrid.children).forEach(function(card){
+          card.classList.add('oc-automation-card');
+          var text = card.textContent || '';
+          if (text.indexOf('Channel & stock sync') > -1) card.classList.add('oc-automation-card--stock');
+          else if (text.indexOf('The Monday Report') > -1) card.classList.add('oc-automation-card--report');
+          else if (text.indexOf('Invoices on autopilot') > -1) card.classList.add('oc-automation-card--invoice');
+        });
+      }
+    }
+
+    if (!document.getElementById('oc-component-background-style')) {
+      var style = document.createElement('style');
+      style.id = 'oc-component-background-style';
+      style.textContent = 'html body .oc-proof-card,html body .oc-automation-grid>.oc-automation-card{background:#fff!important}@media(max-width:900px){html body .oc-mobile-after-tools-ctas>a:last-child{background:#fff!important}}';
+      document.head.appendChild(style);
+    }
+  }
+
   function ensureTrackRecordStructure(){
     var track = document.querySelector('.oc-track-record');
     if (!track) {
@@ -216,6 +260,7 @@
     ensureFounderCaption();
     ensureEmailLabel();
     ensureMobileHoursDedup();
+    ensureComponentBackgroundHooks();
     ensureTrackRecordStructure();
     ensureWwtMobileSpacing();
     ensureWwtDesktopWidth();
