@@ -1,0 +1,57 @@
+name: Build static homepage preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/capture-static-preview.mjs'
+      - '.github/workflows/build-static-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 8000 >/tmp/oc-static-preview-server.log 2>&1 &
+          echo $! > /tmp/oc-static-preview-server.pid
+          sleep 2
+
+      - name: Capture rendered homepage
+        run: node scripts/capture-static-preview.mjs
+
+      - name: Verify loader was removed
+        run: |
+          test -s static-preview/index.html
+          grep -q 'data-oc-static-snapshot="true"' static-preview/index.html
+          ! grep -q "fetch('/?oc-parity-source=1'" static-preview/index.html
+          ! grep -q 'Loading the 1:1 homepage preview' static-preview/index.html
+
+      - name: Commit generated preview
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add static-preview/index.html
+          if git diff --cached --quiet; then
+            echo 'Static preview already up to date.'
+          else
+            git commit -m 'Generate standalone static homepage preview'
+            git push
+          fi
