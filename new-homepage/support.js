@@ -59,3 +59,33 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
   window.addEventListener('load', function(){ schedule(0); });
   window.addEventListener('resize', function(){ schedule(0); });
 })();
+
+// Desktop/laptop-only background repair for the original hero secondary CTA.
+// This targets only the #top link to the services section and leaves all other
+// button styling and the separate mobile CTA unchanged.
+(function(){
+  function applyDesktopServicesButtonBackground(){
+    if (!window.matchMedia || !window.matchMedia('(min-width:901px)').matches) return;
+    var hero = document.querySelector('header#top');
+    if (!hero) return;
+    var button = hero.querySelector('a[href="#services"],a[href="/#services"]');
+    if (!button) return;
+    button.style.setProperty('background', '#fff', 'important');
+  }
+
+  function start(){
+    applyDesktopServicesButtonBackground();
+    [80, 300, 800, 1600, 3000].forEach(function(delay){
+      setTimeout(applyDesktopServicesButtonBackground, delay);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+
+  window.addEventListener('load', applyDesktopServicesButtonBackground);
+  window.addEventListener('resize', applyDesktopServicesButtonBackground);
+})();
