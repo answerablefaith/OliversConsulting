@@ -89,3 +89,59 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
   window.addEventListener('load', applyDesktopServicesButtonBackground);
   window.addEventListener('resize', applyDesktopServicesButtonBackground);
 })();
+
+// Mobile-only three-column layout for the calculator's annual summary metrics.
+// Stable classes are added to the exact stats row so no other grid is affected.
+(function(){
+  function ensureStyle(){
+    if (document.getElementById('oc-mobile-proof-stats-style')) return;
+    var style = document.createElement('style');
+    style.id = 'oc-mobile-proof-stats-style';
+    style.textContent = '@media(max-width:900px){html body .oc-proof-card .oc-proof-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;gap:0!important;align-items:start!important}html body .oc-proof-card .oc-proof-stat{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important;padding:0 clamp(4px,1.8vw,10px)!important;border-left:0!important;border-right:0!important;text-align:center!important}html body .oc-proof-card .oc-proof-stat+.oc-proof-stat{border-left:1px solid #d6cdba!important}html body .oc-proof-card .oc-proof-stat-value{font-size:clamp(24px,7.8vw,32px)!important;line-height:1!important;white-space:nowrap!important}html body .oc-proof-card .oc-proof-stat-label{font-size:clamp(9.5px,2.8vw,11.5px)!important;line-height:1.25!important;margin-top:6px!important}}@media(max-width:360px){html body .oc-proof-card .oc-proof-stat{padding-left:3px!important;padding-right:3px!important}html body .oc-proof-card .oc-proof-stat-value{font-size:22px!important}html body .oc-proof-card .oc-proof-stat-label{font-size:9px!important}}';
+    document.head.appendChild(style);
+  }
+
+  function apply(){
+    ensureStyle();
+    var hero = document.querySelector('header#top');
+    if (!hero) return;
+
+    var proof = hero.querySelector('.oc-proof-card') || Array.prototype.slice.call(hero.querySelectorAll('div')).find(function(candidate){
+      var text = candidate.textContent || '';
+      return text.indexOf('By hand') > -1 && text.indexOf('Automated') > -1 && text.indexOf('working weeks') > -1 && (candidate.getAttribute('style') || '').indexOf('border:2px solid #17130b') > -1;
+    });
+    if (!proof) return;
+    proof.classList.add('oc-proof-card');
+
+    var stats = Array.prototype.slice.call(proof.querySelectorAll('div')).find(function(candidate){
+      if (candidate.children.length !== 3) return false;
+      var text = candidate.textContent || '';
+      var style = candidate.getAttribute('style') || '';
+      return text.indexOf('hours a year') > -1 && text.indexOf('working weeks') > -1 && text.indexOf('£') > -1 && style.indexOf('grid-template-columns:repeat(3,1fr)') > -1;
+    });
+    if (!stats) return;
+
+    stats.classList.add('oc-proof-stats');
+    Array.prototype.slice.call(stats.children).forEach(function(stat){
+      stat.classList.add('oc-proof-stat');
+      if (stat.firstElementChild) stat.firstElementChild.classList.add('oc-proof-stat-value');
+      if (stat.lastElementChild && stat.lastElementChild !== stat.firstElementChild) stat.lastElementChild.classList.add('oc-proof-stat-label');
+    });
+  }
+
+  function start(){
+    apply();
+    [80, 300, 800, 1600, 3000].forEach(function(delay){
+      setTimeout(apply, delay);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+
+  window.addEventListener('load', apply);
+  window.addEventListener('resize', apply);
+})();
