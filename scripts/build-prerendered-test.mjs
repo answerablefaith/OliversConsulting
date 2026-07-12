@@ -6,14 +6,15 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 
 try {
   await page.addInitScript(() => {
-    const originalWrite = Document.prototype.write;
     window.__ocCapturedHomepageHtml = '';
     Document.prototype.write = function (...parts) {
       const html = parts.join('');
       if (html.includes('<!DOCTYPE html') || html.includes('<html')) {
         window.__ocCapturedHomepageHtml = html;
       }
-      return originalWrite.apply(this, parts);
+      // Do not replace this capture document. The generated HTML is saved and
+      // loaded separately by the parity test, preserving the captured value.
+      return undefined;
     };
   });
 
