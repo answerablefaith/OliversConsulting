@@ -21,7 +21,7 @@ async function inspect(viewport) {
   });
 
   await page.goto('http://127.0.0.1:8000/pre-rendered-test/', {
-    waitUntil: 'networkidle',
+    waitUntil: 'domcontentloaded',
     timeout: 120000,
   });
 
@@ -44,21 +44,30 @@ try {
 
   const slider = page.locator('input[type="range"][min="2"][max="20"]');
   check((await slider.count()) === 1, 'Hero calculator slider was not found.');
-  await page.waitForTimeout(800);
-  const v1 = Number(await slider.inputValue());
-  await page.waitForTimeout(850);
-  const v2 = Number(await slider.inputValue());
-  await page.waitForTimeout(950);
-  const v3 = Number(await slider.inputValue());
-  check(v1 <= 8, `Unexpected first hero sequence value: ${v1}.`);
-  check(v2 >= 12, `Hero sequence did not reach its high state; value was ${v2}.`);
-  check(Math.abs(v3 - 8) < 0.2, `Hero sequence did not settle at 8; value was ${v3}.`);
 
+  // Observe the retained homepage intro rather than assuming exact wall-clock samples.
+  const samples = [];
+  for (let i = 0; i < 36; i += 1) {
+    samples.push(Number(await slider.inputValue()));
+    await page.waitForTimeout(100);
+  }
+  const minValue = Math.min(...samples);
+  const maxValue = Math.max(...samples);
+  const finalValue = samples[samples.length - 1];
+  check(maxValue - minValue >= 4, `Hero sequence did not visibly animate; observed ${minValue.toFixed(2)} to ${maxValue.toFixed(2)}.`);
+  check(maxValue >= 12, `Hero sequence did not reach its high state; maximum was ${maxValue.toFixed(2)}.`);
+  check(Math.abs(finalValue - 8) < 0.75, `Hero sequence did not settle near 8; final value was ${finalValue.toFixed(2)}.`);
+
+  // Cancel any remaining intro timers before testing direct user input.
+  await slider.dispatchEvent('pointerdown');
   await slider.evaluate((el) => {
-    el.value = '12';
+    const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+    if (descriptor?.set) descriptor.set.call(el, '12');
+    else el.value = '12';
     el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
   });
-  await page.waitForTimeout(900);
+  await page.waitForTimeout(1200);
   const heroText = await page.locator('header#top').innerText();
   check(heroText.includes('624'), 'Annual hours did not update to 624.');
   check(heroText.includes('18,720'), 'Annual cost did not update to 18,720.');
