@@ -1,41 +1,66 @@
 import { chromium } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 
+let capturedHtml = '';
+
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 
 try {
+  await page.exposeFunction('__ocCaptureHomepageHtml', (html) => {
+    if (typeof html === 'string' && (html.includes('<!DOCTYPE html') || html.includes('<html'))) {
+      capturedHtml = html;
+    }
+  });
+
   await page.addInitScript(() => {
-    window.__ocCapturedHomepageHtml = '';
+    const originalOpen = Document.prototype.open;
+    const originalWrite = Document.prototype.write;
+    const originalClose = Document.prototype.close;
+
+    Document.prototype.open = function (...args) {
+      if (window.__ocCaptureMode) return this;
+      return originalOpen.apply(this, args);
+    };
+
     Document.prototype.write = function (...parts) {
       const html = parts.join('');
       if (html.includes('<!DOCTYPE html') || html.includes('<html')) {
-        window.__ocCapturedHomepageHtml = html;
+        window.__ocCaptureMode = true;
+        void window.__ocCaptureHomepageHtml(html);
+        return;
       }
-      // Do not replace this capture document. The generated HTML is saved and
-      // loaded separately by the parity test, preserving the captured value.
-      return undefined;
+      if (window.__ocCaptureMode) return;
+      return originalWrite.apply(this, parts);
+    };
+
+    Document.prototype.close = function (...args) {
+      if (window.__ocCaptureMode) return;
+      return originalClose.apply(this, args);
     };
   });
 
   await page.goto('http://127.0.0.1:8000/', {
-    waitUntil: 'networkidle',
+    waitUntil: 'domcontentloaded',
     timeout: 120000,
   });
 
-  await page.waitForFunction(() => Boolean(window.__ocCapturedHomepageHtml), null, {
-    timeout: 120000,
-  });
+  const deadline = Date.now() + 120000;
+  while (!capturedHtml && Date.now() < deadline) {
+    await page.waitForTimeout(100);
+  }
 
-  let html = await page.evaluate(() => window.__ocCapturedHomepageHtml);
+  if (!capturedHtml) {
+    throw new Error('The homepage loader did not provide transformed HTML within 120 seconds.');
+  }
 
-  // Keep the test route out of search indexes while preserving the homepage canonical.
+  let html = capturedHtml;
+
   html = html.replace(
     /<head>/i,
     '<head>\n<meta name="robots" content="noindex,nofollow">\n<base href="/">',
   );
 
-  // Mark the route for automated verification.
   html = html.replace(
     /<html([^>]*)>/i,
     '<html$1 data-oc-prerendered-test="true">',
