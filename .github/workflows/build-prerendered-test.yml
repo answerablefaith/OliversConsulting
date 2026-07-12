@@ -38,18 +38,19 @@ jobs:
           echo $! > /tmp/oc-prerendered-server.pid
           sleep 2
 
-      - name: Build exact pre-rendered page
+      - name: Build crawler shell with exact runtime
         run: node scripts/build-prerendered-test.mjs
 
-      - name: Verify initial HTML
+      - name: Verify initial crawler HTML
         run: |
           test -s pre-rendered-test/index.html
-          grep -q 'data-oc-prerendered-test="true"' pre-rendered-test/index.html
+          grep -q 'data-oc-prerendered-shell="true"' pre-rendered-test/index.html
+          grep -q 'id="oc-runtime-handoff"' pre-rendered-test/index.html
           grep -q '<header id="top"' pre-rendered-test/index.html
+          grep -q 'What we automate' pre-rendered-test/index.html
           ! grep -q 'Loading Olivers Consulting' pre-rendered-test/index.html
-          ! grep -q 'document.write(html)' pre-rendered-test/index.html
 
-      - name: Test retained behaviour
+      - name: Test exact runtime handoff
         run: node scripts/test-prerendered-test.mjs
 
       - name: Commit generated test page
@@ -60,6 +61,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Pre-rendered test already up to date.'
           else
-            git commit -m 'Generate exact pre-rendered homepage test'
+            git commit -m 'Generate crawler-ready homepage test'
             git push
           fi
