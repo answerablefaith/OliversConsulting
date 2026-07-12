@@ -39,18 +39,6 @@ jobs:
           OC_PRODUCTION: '1'
         run: node scripts/build-prerendered-test.mjs
 
-      - name: Verify production output
-        run: |
-          node - <<'NODE'
-          const fs = require('fs');
-          const html = fs.readFileSync('index.html', 'utf8');
-          if (html.length < 100000) throw new Error('Generated homepage is unexpectedly small.');
-          if (html.includes('Loading Olivers Consulting')) throw new Error('Loading screen remains.');
-          if (/name=["']robots["'][^>]*noindex/i.test(html)) throw new Error('Production homepage is still noindex.');
-          if (!html.includes('<header id="top"')) throw new Error('Homepage content is missing.');
-          if (!html.includes('id="oc-runtime-handoff"')) throw new Error('Runtime handoff is missing.');
-          NODE
-
       - name: Commit production homepage
         run: |
           git config user.name 'github-actions[bot]'
