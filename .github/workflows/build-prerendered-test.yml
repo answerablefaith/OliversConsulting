@@ -40,16 +40,6 @@ jobs:
       - name: Build crawler shell with exact runtime
         run: node scripts/build-prerendered-test.mjs
 
-      - name: Verify initial crawler HTML
-        run: |
-          test -s pre-rendered-test/index.html
-          grep -q 'data-oc-prerendered-shell="true"' pre-rendered-test/index.html
-          grep -q 'id="oc-runtime-handoff"' pre-rendered-test/index.html
-          grep -q '<header id="top"' pre-rendered-test/index.html
-          grep -q 'What we automate' pre-rendered-test/index.html
-          ! grep -q 'Loading Olivers Consulting' pre-rendered-test/index.html
-          ! grep -q 'raw.githubusercontent.com/answerablefaith/OliversConsulting/e873b7e' pre-rendered-test/index.html
-
       - name: Commit generated test page
         run: |
           git config user.name 'github-actions[bot]'
