@@ -1,6 +1,9 @@
 import { chromium } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 
+const production = process.env.OC_PRODUCTION === '1';
+const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
 let capturedHtml = '';
 
 const browser = await chromium.launch({ headless: true });
@@ -81,21 +84,29 @@ try {
   let crawlerHtml = await renderedPage.content();
   await renderedPage.close();
 
-  // The runtime document is the exact live transformed source, with test-only metadata.
+  // The runtime document is the exact live transformed source.
   let runtimeHtml = capturedHtml;
-  runtimeHtml = injectIntoHead(
-    runtimeHtml,
-    '<meta name="robots" content="noindex,nofollow">\n<base href="/">',
-  );
-  runtimeHtml = markHtml(runtimeHtml, 'data-oc-prerendered-runtime="true"');
+  if (!production) {
+    runtimeHtml = injectIntoHead(
+      runtimeHtml,
+      '<meta name="robots" content="noindex,nofollow">\n<base href="/">',
+    );
+    runtimeHtml = markHtml(runtimeHtml, 'data-oc-prerendered-runtime="true"');
+  }
 
   // The initial response contains real rendered content but no active scripts.
   crawlerHtml = stripScripts(crawlerHtml);
-  crawlerHtml = injectIntoHead(
-    crawlerHtml,
-    '<meta name="robots" content="noindex,nofollow">\n<base href="/">',
-  );
-  crawlerHtml = markHtml(crawlerHtml, 'data-oc-prerendered-shell="true"');
+  if (production) {
+    // Preserve the production canonical and indexability from the rendered homepage.
+    crawlerHtml = crawlerHtml.replace(/<meta\s+name=["']robots["'][^>]*>/gi, '');
+    crawlerHtml = crawlerHtml.replace(/\sdata-oc-prerendered-(?:shell|runtime)=["'][^"']*["']/gi, '');
+  } else {
+    crawlerHtml = injectIntoHead(
+      crawlerHtml,
+      '<meta name="robots" content="noindex,nofollow">\n<base href="/">',
+    );
+    crawlerHtml = markHtml(crawlerHtml, 'data-oc-prerendered-shell="true"');
+  }
 
   const encodedRuntime = Buffer.from(runtimeHtml, 'utf8').toString('base64');
   const handoff = `<script id="oc-runtime-handoff">(function(){var b='${encodedRuntime}';var a=atob(b);var u=new Uint8Array(a.length);for(var i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var h=new TextDecoder().decode(u);document.open();document.write(h);document.close()})();<\/script>`;
@@ -103,8 +114,10 @@ try {
   // Put the handoff first in body so visitors never see the crawler snapshot flash.
   const output = crawlerHtml.replace(/<body([^>]*)>/i, `<body$1>${handoff}`);
 
-  await mkdir('pre-rendered-test', { recursive: true });
-  await writeFile('pre-rendered-test/index.html', `${output}\n`, 'utf8');
+  const outputDir = dirname(outputPath);
+  if (outputDir !== '.') await mkdir(outputDir, { recursive: true });
+  await writeFile(outputPath, `${output}\n`, 'utf8');
+  console.log(`Generated ${production ? 'production homepage' : 'test homepage'} at ${outputPath}`);
 } finally {
   await browser.close();
 }
