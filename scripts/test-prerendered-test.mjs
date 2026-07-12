@@ -27,6 +27,13 @@ async function openPage(path, viewport, forbidRootRequests = false) {
   });
   await page.waitForSelector('header#top', { timeout: 120000 });
   await page.waitForSelector('input[type="range"][min="2"][max="20"]', { timeout: 30000 });
+
+  // Measure both documents only after their web fonts and late layout repairs have settled.
+  await page.evaluate(async () => {
+    if (document.fonts?.ready) await document.fonts.ready;
+  });
+  await page.waitForTimeout(700);
+
   return { page, consoleErrors, forbidden };
 }
 
@@ -52,15 +59,13 @@ function summarise(values) {
 
 async function setHeroToTwelve(page) {
   const slider = page.locator('input[type="range"][min="2"][max="20"]');
-  await slider.evaluate((el) => {
-    el.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
-    const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
-    if (descriptor?.set) descriptor.set.call(el, '12');
-    else el.value = '12';
-    el.dispatchEvent(new Event('input', { bubbles: true }));
-    el.dispatchEvent(new Event('change', { bubbles: true }));
-  });
-  await page.waitForTimeout(1400);
+
+  // A real keyboard interaction cancels the intro exactly as a visitor action does.
+  await slider.focus();
+  await slider.press('ArrowRight');
+  await slider.fill('12');
+  await page.waitForTimeout(1800);
+
   return page.locator('header#top').innerText();
 }
 
@@ -137,8 +142,8 @@ try {
     setHeroToTwelve(live.page),
     setHeroToTwelve(test.page),
   ]);
-  check(testHeroText.includes('624'), 'Pre-rendered annual hours did not update to 624 after manual input.');
-  check(testHeroText.includes('18,720'), 'Pre-rendered annual cost did not update to 18,720 after manual input.');
+  check(testHeroText.includes('624'), 'Pre-rendered annual hours did not update to 624 after real manual input.');
+  check(testHeroText.includes('18,720'), 'Pre-rendered annual cost did not update to 18,720 after real manual input.');
   check(liveHeroText.includes('624') === testHeroText.includes('624'), 'Annual-hours behaviour differs from live.');
   check(liveHeroText.includes('18,720') === testHeroText.includes('18,720'), 'Annual-cost behaviour differs from live.');
 
@@ -164,6 +169,17 @@ try {
   const desktopViewport = { width: 1280, height: 900 };
   const liveDesktop = await openPage('/', desktopViewport, false);
   const testDesktop = await openPage('/pre-rendered-test/', desktopViewport, true);
+
+  // Reconfirm fonts immediately before geometry capture on both documents.
+  await Promise.all([
+    liveDesktop.page.evaluate(async () => { if (document.fonts?.ready) await document.fonts.ready; }),
+    testDesktop.page.evaluate(async () => { if (document.fonts?.ready) await document.fonts.ready; }),
+  ]);
+  await Promise.all([
+    liveDesktop.page.waitForTimeout(800),
+    testDesktop.page.waitForTimeout(800),
+  ]);
+
   const [liveCards, testCards] = await Promise.all([
     trackRecordGeometry(liveDesktop.page),
     trackRecordGeometry(testDesktop.page),
@@ -181,7 +197,7 @@ try {
       check(Math.abs(testCard.width - liveCard.width) <= 4,
         `Desktop card ${index + 1} width differs from live: live ${liveCard.width}px, test ${testCard.width}px.`);
       check(Math.abs(testCard.height - liveCard.height) <= 6,
-        `Desktop card ${index + 1} height differs from live: live ${liveCard.height}px, test ${testCard.height}px.`);
+        `Desktop card ${index + 1} height differs from live after fonts settled: live ${liveCard.height}px, test ${testCard.height}px.`);
     });
   }
 
