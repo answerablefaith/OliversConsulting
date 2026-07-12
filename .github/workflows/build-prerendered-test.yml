@@ -1,0 +1,65 @@
+name: Build pre-rendered homepage test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'scripts/build-prerendered-test.mjs'
+      - 'scripts/test-prerendered-test.mjs'
+      - '.github/workflows/build-prerendered-test.yml'
+      - 'assets/**'
+      - 'new-homepage/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 8000 >/tmp/oc-prerendered-server.log 2>&1 &
+          echo $! > /tmp/oc-prerendered-server.pid
+          sleep 2
+
+      - name: Build exact pre-rendered page
+        run: node scripts/build-prerendered-test.mjs
+
+      - name: Verify initial HTML
+        run: |
+          test -s pre-rendered-test/index.html
+          grep -q 'data-oc-prerendered-test="true"' pre-rendered-test/index.html
+          grep -q '<header id="top"' pre-rendered-test/index.html
+          ! grep -q 'Loading Olivers Consulting' pre-rendered-test/index.html
+          ! grep -q 'document.write(html)' pre-rendered-test/index.html
+
+      - name: Test retained behaviour
+        run: node scripts/test-prerendered-test.mjs
+
+      - name: Commit generated test page
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add pre-rendered-test/index.html
+          if git diff --cached --quiet; then
+            echo 'Pre-rendered test already up to date.'
+          else
+            git commit -m 'Generate exact pre-rendered homepage test'
+            git push
+          fi
