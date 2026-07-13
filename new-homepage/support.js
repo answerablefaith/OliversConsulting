@@ -205,3 +205,50 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
   }
   window.addEventListener('load', clean, { once: true });
 })();
+
+// Give the hero hours slider a stable accessible name without changing its
+// appearance, value, event handlers, animation, or calculator behaviour.
+(function(){
+  function apply(){
+    var hero = document.querySelector('header#top');
+    if (!hero) return;
+    var slider = hero.querySelector('input[type="range"]');
+    if (!slider) return;
+
+    var id = 'oc-hours-slider';
+    slider.id = id;
+    slider.setAttribute('aria-label', 'Hours a week lost to manual admin');
+
+    var label = document.getElementById('oc-hours-slider-label');
+    if (!label) {
+      label = document.createElement('label');
+      label.id = 'oc-hours-slider-label';
+      label.htmlFor = id;
+      label.textContent = 'Hours a week lost to manual admin';
+      label.style.position = 'absolute';
+      label.style.width = '1px';
+      label.style.height = '1px';
+      label.style.padding = '0';
+      label.style.margin = '-1px';
+      label.style.overflow = 'hidden';
+      label.style.clip = 'rect(0, 0, 0, 0)';
+      label.style.whiteSpace = 'nowrap';
+      label.style.border = '0';
+      slider.parentNode.insertBefore(label, slider);
+    }
+  }
+
+  function start(){
+    apply();
+    [50, 150, 400, 1000, 2500].forEach(function(delay){
+      setTimeout(apply, delay);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+  window.addEventListener('load', apply, { once: true });
+})();
