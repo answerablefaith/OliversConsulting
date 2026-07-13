@@ -7,6 +7,14 @@ const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
 const cleanLoaderUrl = 'https://raw.githubusercontent.com/answerablefaith/OliversConsulting/backup-before-no-loader-homepage-20260712/index.html';
 const cleanSourcePath = '__oc-clean-homepage-source/index.html';
 const cleanSourceUrl = 'http://127.0.0.1:8000/__oc-clean-homepage-source/';
+const requiredPatchIds = [
+  'oc-component-background-style',
+  'oc-mobile-proof-stats-style',
+  'oc-wwt-mobile-spacing-style',
+  'oc-track-layout-style',
+  'oc-wwt-desktop-width-style',
+  'oc-mobile-hours-dedup-style',
+];
 let capturedHtml = '';
 
 function injectIntoHead(html, markup) {
@@ -20,7 +28,7 @@ function markHtml(html, attribute) {
 function addHtmlClass(html, className) {
   return html.replace(/<html([^>]*)>/i, (_match, attrs) => {
     if (/\bclass\s*=/.test(attrs)) {
-      return `<html${attrs.replace(/\bclass\s*=(['"])(.*?)\1/i, (_m, quote, classes) => `class=${quote}${classes} ${className}${quote}`)}>`;
+      return `<html${attrs.replace(/\bclass\s*=(["'])(.*?)\1/i, (_m, quote, classes) => `class=${quote}${classes} ${className}${quote}`)}>`;
     }
     return `<html${attrs} class="${className}">`;
   });
@@ -28,6 +36,12 @@ function addHtmlClass(html, className) {
 
 function stripScripts(html) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+}
+
+function extractStyleById(html, id) {
+  const escaped = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = html.match(new RegExp(`<style\\b[^>]*\\bid=["']${escaped}["'][^>]*>[\\s\\S]*?<\\/style>`, 'i'));
+  return match ? match[0] : '';
 }
 
 // Always build from the clean pre-promotion loader, never from the generated
@@ -93,8 +107,8 @@ try {
     throw new Error('The clean homepage loader did not provide transformed HTML within 120 seconds.');
   }
 
-  // Render the clean source fully so crawler HTML includes every late repair:
-  // white cards, three-across mobile stats, WWT spacing/sizing, and desktop row fixes.
+  // Render the clean source fully so we can preserve every late repair in both
+  // the crawler layer and the interactive runtime visitors actually see.
   const renderedPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   await renderedPage.goto(cleanSourceUrl, {
     waitUntil: 'networkidle',
@@ -105,10 +119,25 @@ try {
     if (document.fonts?.ready) await document.fonts.ready;
   });
   await renderedPage.waitForTimeout(1200);
-  let crawlerHtml = stripScripts(await renderedPage.content());
+  const renderedHtml = await renderedPage.content();
   await renderedPage.close();
 
+  const finalPatchStyles = requiredPatchIds.map((id) => {
+    const style = extractStyleById(renderedHtml, id);
+    if (!style) throw new Error(`Required responsive patch was not produced by the clean homepage: ${id}`);
+    return style;
+  }).join('\n');
+
+  // The runtime capture happens before some late repair scripts inject their styles.
+  // Add those exact final styles to the runtime so it matches the known-good page.
   let runtimeHtml = capturedHtml;
+  for (const id of requiredPatchIds) {
+    const duplicatePattern = new RegExp(`<style\\b[^>]*\\bid=["']${id}["'][^>]*>[\\s\\S]*?<\\/style>`, 'gi');
+    runtimeHtml = runtimeHtml.replace(duplicatePattern, '');
+  }
+  runtimeHtml = injectIntoHead(runtimeHtml, finalPatchStyles);
+
+  let crawlerHtml = stripScripts(renderedHtml);
 
   if (!production) {
     runtimeHtml = injectIntoHead(
@@ -145,10 +174,19 @@ try {
   // the parser to append after document.write, so the homepage cannot repeat.
   const output = crawlerHtml.replace(/<\/body>/i, `${handoff}</body>`);
 
+  for (const id of requiredPatchIds) {
+    if (!runtimeHtml.includes(`id="${id}"`) && !runtimeHtml.includes(`id='${id}'`)) {
+      throw new Error(`Interactive runtime is missing required responsive patch: ${id}`);
+    }
+    if (!crawlerHtml.includes(`id="${id}"`) && !crawlerHtml.includes(`id='${id}'`)) {
+      throw new Error(`Crawler layer is missing required responsive patch: ${id}`);
+    }
+  }
+
   const outputDir = dirname(outputPath);
   if (outputDir !== '.') await mkdir(outputDir, { recursive: true });
   await writeFile(outputPath, `${output}\n`, 'utf8');
-  console.log(`Generated ${production ? 'production homepage' : 'test homepage'} at ${outputPath}`);
+  console.log(`Generated ${production ? 'production homepage' : 'test homepage'} with final responsive patches at ${outputPath}`);
 } finally {
   await browser.close();
 }
