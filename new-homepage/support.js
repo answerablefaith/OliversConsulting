@@ -86,7 +86,7 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
       return text.indexOf('SKU') !== -1 || text.indexOf('ECOMMERCE') !== -1 || text.indexOf('WHOLESALE') !== -1;
     });
     if (description) {
-      description.textContent = 'Founded, owned and operated WWT International, a multi-channel ecommerce and wholesale business, before selling it.';
+      description.textContent = 'Founded, owned and operated WWT International, a multi-channel ecommerce and wholesale business, developing many of the automation systems we now implement for clients before selling the company.';
     }
   }
 
