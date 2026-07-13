@@ -125,3 +125,40 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
   }
   window.addEventListener('load', apply, { once: true });
 })();
+
+// Correct the two copy targets that use different live markup than the generic
+// section matcher above. Only textContent is changed.
+(function(){
+  function normalise(value){
+    return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
+  }
+
+  function apply(){
+    var chapterFiveHeading = Array.prototype.slice.call(document.querySelectorAll('h1,h2,h3,h4,div')).find(function(element){
+      return normalise(element.textContent) === 'THREE STEPS ONE PRICE, AGREED UPFRONT';
+    });
+    if (chapterFiveHeading) {
+      chapterFiveHeading.textContent = 'YOUR BEST PEOPLE SHOULD BE DOING THEIR BEST WORK.';
+    }
+
+    var chapterEightParagraph = Array.prototype.slice.call(document.querySelectorAll('p')).find(function(element){
+      var text = normalise(element.textContent);
+      return text.indexOf('A SHORT, NO-OBLIGATION CALL.') === 0 && text.indexOf('WHAT I\'D AUTOMATE FIRST') !== -1;
+    });
+    if (chapterEightParagraph) {
+      chapterEightParagraph.textContent = 'Find out what your team could get back.';
+    }
+  }
+
+  function start(){
+    apply();
+    [50, 150, 400, 1000, 2500].forEach(function(delay){ setTimeout(apply, delay); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+  window.addEventListener('load', apply, { once: true });
+})();
