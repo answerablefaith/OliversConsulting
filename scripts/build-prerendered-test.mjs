@@ -16,6 +16,15 @@ function markHtml(html, attribute) {
   return html.replace(/<html([^>]*)>/i, `<html$1 ${attribute}>`);
 }
 
+function addHtmlClass(html, className) {
+  return html.replace(/<html([^>]*)>/i, (match, attrs) => {
+    if (/\bclass\s*=/.test(attrs)) {
+      return `<html${attrs.replace(/\bclass\s*=(['"])(.*?)\1/i, (_m, quote, classes) => `class=${quote}${classes} ${className}${quote}`)}>`;
+    }
+    return `<html${attrs} class="${className}">`;
+  });
+}
+
 function stripScripts(html) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 }
@@ -67,52 +76,48 @@ try {
   await capturePage.close();
 
   if (!capturedHtml) {
-    throw new Error('The homepage loader did not provide transformed HTML within 120 seconds.');
+    throw new Error('The homepage runtime did not provide transformed HTML within 120 seconds.');
   }
 
-  // Capture a fully rendered DOM snapshot for crawlers and no-JS clients.
-  const renderedPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-  await renderedPage.goto('http://127.0.0.1:8000/', {
-    waitUntil: 'networkidle',
-    timeout: 120000,
-  });
-  await renderedPage.waitForSelector('header#top', { timeout: 120000 });
-  await renderedPage.evaluate(async () => {
-    if (document.fonts?.ready) await document.fonts.ready;
-  });
-  await renderedPage.waitForTimeout(500);
-  let crawlerHtml = await renderedPage.content();
-  await renderedPage.close();
-
-  // The runtime document is the exact live transformed source.
+  // Use the single transformed source for both layers. Do not snapshot the current
+  // rendered production page, because that could capture an existing duplicate DOM.
   let runtimeHtml = capturedHtml;
+  let crawlerHtml = stripScripts(capturedHtml);
+
   if (!production) {
     runtimeHtml = injectIntoHead(
       runtimeHtml,
       '<meta name="robots" content="noindex,nofollow">\n<base href="/">',
     );
     runtimeHtml = markHtml(runtimeHtml, 'data-oc-prerendered-runtime="true"');
-  }
 
-  // The initial response contains real rendered content but no active scripts.
-  crawlerHtml = stripScripts(crawlerHtml);
-  if (production) {
-    // Preserve the production canonical and indexability from the rendered homepage.
-    crawlerHtml = crawlerHtml.replace(/<meta\s+name=["']robots["'][^>]*>/gi, '');
-    crawlerHtml = crawlerHtml.replace(/\sdata-oc-prerendered-(?:shell|runtime)=["'][^"']*["']/gi, '');
-  } else {
     crawlerHtml = injectIntoHead(
       crawlerHtml,
       '<meta name="robots" content="noindex,nofollow">\n<base href="/">',
     );
     crawlerHtml = markHtml(crawlerHtml, 'data-oc-prerendered-shell="true"');
+  } else {
+    crawlerHtml = crawlerHtml.replace(/<meta\s+name=["']robots["'][^>]*>/gi, '');
+    crawlerHtml = crawlerHtml.replace(/\sdata-oc-prerendered-(?:shell|runtime)=["'][^"']*["']/gi, '');
   }
 
-  const encodedRuntime = Buffer.from(runtimeHtml, 'utf8').toString('base64');
-  const handoff = `<script id="oc-runtime-handoff">(function(){var b='${encodedRuntime}';var a=atob(b);var u=new Uint8Array(a.length);for(var i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var h=new TextDecoder().decode(u);document.open();document.write(h);document.close()})();<\/script>`;
+  // Hide the crawler copy while JavaScript swaps in the exact interactive runtime.
+  // No-JS visitors see the crawler copy, and a two-second fallback reveals it if
+  // the handoff cannot complete.
+  crawlerHtml = addHtmlClass(crawlerHtml, 'oc-runtime-pending');
+  crawlerHtml = injectIntoHead(
+    crawlerHtml,
+    '<style id="oc-runtime-pending-style">html.oc-runtime-pending body{visibility:hidden!important}</style>\n' +
+      '<noscript><style>html.oc-runtime-pending body{visibility:visible!important}</style></noscript>\n' +
+      '<script id="oc-runtime-fallback">setTimeout(function(){document.documentElement.classList.remove("oc-runtime-pending")},2000);<\/script>',
+  );
 
-  // Put the handoff first in body so visitors never see the crawler snapshot flash.
-  const output = crawlerHtml.replace(/<body([^>]*)>/i, `<body$1>${handoff}`);
+  const encodedRuntime = Buffer.from(runtimeHtml, 'utf8').toString('base64');
+  const handoff = `<script id="oc-runtime-handoff">(function(){try{var b='${encodedRuntime}';var a=atob(b);var u=new Uint8Array(a.length);for(var i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var h=new TextDecoder().decode(u);document.open();document.write(h);document.close()}catch(e){document.documentElement.classList.remove('oc-runtime-pending');throw e}})();<\/script>`;
+
+  // Run only after the crawler document has finished parsing. Nothing remains for
+  // the parser to append after document.write, so the homepage cannot repeat.
+  const output = crawlerHtml.replace(/<\/body>/i, `${handoff}</body>`);
 
   const outputDir = dirname(outputPath);
   if (outputDir !== '.') await mkdir(outputDir, { recursive: true });
