@@ -4,9 +4,10 @@ import { dirname } from 'node:path';
 
 const production = process.env.OC_PRODUCTION === '1';
 const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
+const cleanLoaderUrl = 'https://raw.githubusercontent.com/answerablefaith/OliversConsulting/backup-before-no-loader-homepage-20260712/index.html';
+const cleanSourcePath = '__oc-clean-homepage-source/index.html';
+const cleanSourceUrl = 'http://127.0.0.1:8000/__oc-clean-homepage-source/';
 let capturedHtml = '';
-
-const browser = await chromium.launch({ headless: true });
 
 function injectIntoHead(html, markup) {
   return html.replace(/<head>/i, `<head>\n${markup}`);
@@ -17,7 +18,7 @@ function markHtml(html, attribute) {
 }
 
 function addHtmlClass(html, className) {
-  return html.replace(/<html([^>]*)>/i, (match, attrs) => {
+  return html.replace(/<html([^>]*)>/i, (_match, attrs) => {
     if (/\bclass\s*=/.test(attrs)) {
       return `<html${attrs.replace(/\bclass\s*=(['"])(.*?)\1/i, (_m, quote, classes) => `class=${quote}${classes} ${className}${quote}`)}>`;
     }
@@ -29,8 +30,21 @@ function stripScripts(html) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 }
 
+// Always build from the clean pre-promotion loader, never from the generated
+// production homepage. This prevents recursive captures and preserves every
+// existing mobile/desktop repair performed by the original loader.
+const cleanResponse = await fetch(cleanLoaderUrl, { cache: 'no-store' });
+if (!cleanResponse.ok) {
+  throw new Error(`Could not fetch clean homepage loader: ${cleanResponse.status}`);
+}
+const cleanLoaderHtml = await cleanResponse.text();
+await mkdir(dirname(cleanSourcePath), { recursive: true });
+await writeFile(cleanSourcePath, cleanLoaderHtml, 'utf8');
+
+const browser = await chromium.launch({ headless: true });
+
 try {
-  // Capture the exact transformed source that the live loader passes to document.write.
+  // Capture the exact transformed source that the clean loader passes to document.write.
   const capturePage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   await capturePage.exposeFunction('__ocCaptureHomepageHtml', (html) => {
     if (typeof html === 'string' && (html.includes('<!DOCTYPE html') || html.includes('<html'))) {
@@ -64,7 +78,7 @@ try {
     };
   });
 
-  await capturePage.goto('http://127.0.0.1:8000/', {
+  await capturePage.goto(cleanSourceUrl, {
     waitUntil: 'domcontentloaded',
     timeout: 120000,
   });
@@ -76,13 +90,25 @@ try {
   await capturePage.close();
 
   if (!capturedHtml) {
-    throw new Error('The homepage runtime did not provide transformed HTML within 120 seconds.');
+    throw new Error('The clean homepage loader did not provide transformed HTML within 120 seconds.');
   }
 
-  // Use the single transformed source for both layers. Do not snapshot the current
-  // rendered production page, because that could capture an existing duplicate DOM.
+  // Render the clean source fully so crawler HTML includes every late repair:
+  // white cards, three-across mobile stats, WWT spacing/sizing, and desktop row fixes.
+  const renderedPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  await renderedPage.goto(cleanSourceUrl, {
+    waitUntil: 'networkidle',
+    timeout: 120000,
+  });
+  await renderedPage.waitForSelector('header#top', { timeout: 120000 });
+  await renderedPage.evaluate(async () => {
+    if (document.fonts?.ready) await document.fonts.ready;
+  });
+  await renderedPage.waitForTimeout(1200);
+  let crawlerHtml = stripScripts(await renderedPage.content());
+  await renderedPage.close();
+
   let runtimeHtml = capturedHtml;
-  let crawlerHtml = stripScripts(capturedHtml);
 
   if (!production) {
     runtimeHtml = injectIntoHead(
