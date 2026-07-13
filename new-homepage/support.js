@@ -145,3 +145,63 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
   window.addEventListener('load', apply);
   window.addEventListener('resize', apply);
 })();
+
+// Keep the first complete homepage exactly as rendered and remove only later
+// repeated copies. This deliberately does not remove or hide runtime roots.
+(function(){
+  var queued = false;
+
+  function restoreNaturalHeight(){
+    document.documentElement.style.setProperty('height', 'auto', 'important');
+    if (document.body) document.body.style.setProperty('height', 'auto', 'important');
+    Array.prototype.slice.call(document.querySelectorAll('#dc-root,#dc-root>.sc-host')).forEach(function(root){
+      root.style.setProperty('height', 'auto', 'important');
+      root.style.removeProperty('min-height');
+    });
+  }
+
+  function removeCopyFrom(header){
+    var node = header;
+    while (node) {
+      var next = node.nextElementSibling;
+      var isFooter = node.matches && node.matches('footer,#oc-site-footer');
+      if (node.parentNode) node.parentNode.removeChild(node);
+      if (isFooter) break;
+      node = next;
+    }
+  }
+
+  function clean(){
+    var headers = Array.prototype.slice.call(document.querySelectorAll('header#top'));
+    if (headers.length > 1) {
+      headers.slice(1).forEach(removeCopyFrom);
+    }
+    restoreNaturalHeight();
+  }
+
+  function queueClean(){
+    if (queued) return;
+    queued = true;
+    queueMicrotask(function(){
+      queued = false;
+      clean();
+    });
+  }
+
+  function start(){
+    clean();
+    if (document.body) {
+      new MutationObserver(queueClean).observe(document.body, { childList: true, subtree: true });
+    }
+    [50, 150, 400, 1000, 2500].forEach(function(delay){
+      setTimeout(clean, delay);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+  window.addEventListener('load', clean, { once: true });
+})();
