@@ -126,3 +126,62 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
   }
   window.addEventListener('load', apply, { once: true });
 })();
+
+// Strengthen the homepage message around operational outcomes while keeping
+// the existing elements, design and animations intact. New copy avoids em dashes.
+(function(){
+  function normalise(value){
+    return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
+  }
+
+  function smallestMatch(selector, test){
+    return Array.prototype.slice.call(document.querySelectorAll(selector)).filter(function(element){
+      return test(normalise(element.textContent));
+    }).sort(function(a,b){
+      return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
+    })[0];
+  }
+
+  function replaceText(selector, test, replacement){
+    var element = smallestMatch(selector, test);
+    if (element && normalise(element.textContent) !== normalise(replacement)) {
+      element.textContent = replacement;
+    }
+  }
+
+  function apply(){
+    replaceText('header#top p,header#top div', function(text){
+      return text.indexOf('THE MANUAL ADMIN BEHIND A GROWING ECOMMERCE') !== -1 && text.indexOf('DRAG THE SLIDER') !== -1;
+    }, 'Supplier files, invoicing, stock, listings and reporting quietly consume hours, introduce mistakes and slow your business down. Drag the slider to see what manual work is really costing you. Automated, the same work is completed in minutes, more accurately, more consistently and on time.');
+
+    replaceText('p,div', function(text){
+      return text.indexOf('SALESPEOPLE SHOULD BE SELLING') !== -1 && text.indexOf('AUTOMATION HANDLES THE REPETITIVE ADMIN') !== -1;
+    }, 'Fits the way your business already works. No replacing systems. No changing how your team operates. Just less manual work.');
+
+    replaceText('p,div', function(text){
+      return text.indexOf('THE OUTPUT ARRIVES ON SCHEDULE') !== -1 && text.indexOf('AN OPTIONAL CARE PLAN') !== -1;
+    }, 'The output arrives on schedule, accurately and consistently, without you lifting a finger. An optional care plan keeps everything running as your business grows.');
+
+    var operatorParagraph = smallestMatch('p,div', function(text){
+      return text.indexOf('NO DISCOVERY-PHASE INVOICES') !== -1 && text.indexOf('ONE OPERATOR WITH ENTERPRISE-GRADE RIGOUR') !== -1;
+    });
+    if (operatorParagraph) {
+      var sentence = 'The systems I build today are the same kind I first built for my own business.';
+      if (normalise(operatorParagraph.textContent).indexOf(normalise(sentence)) === -1) {
+        operatorParagraph.textContent = String(operatorParagraph.textContent || '').replace(/\s+$/,'') + ' ' + sentence;
+      }
+    }
+  }
+
+  function start(){
+    apply();
+    [50,150,400,1000,2500].forEach(function(delay){ setTimeout(apply, delay); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+  window.addEventListener('load', apply, { once: true });
+})();
