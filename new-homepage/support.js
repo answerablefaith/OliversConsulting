@@ -1,176 +1,30 @@
 // Preserve the complete previously deployed homepage support behaviour exactly.
-document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/OliversConsulting@59addd5b6716b1e6e78ad2407c53000569dfa234/new-homepage/support.js"><\/script>');
+document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/OliversConsulting@888d75a7bd1c5db803aee71b95dad0c58d3d1aca/new-homepage/support.js"><\/script>');
 
-// Mobile-only: Chapters 06 onward use additional one-time opacity/transform
-// reveals. Let them play once, then keep their completed state while preserving
-// all infinite/continuous animations.
+// Keep only the final "SEE WHERE YOUR WEEK IS GOING" heading white.
 (function(){
-  function isMobile(){
-    return !window.matchMedia || window.matchMedia('(max-width:900px)').matches;
-  }
-
   function normalise(value){
     return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
   }
 
   function ensureStyle(){
-    if (document.getElementById('oc-mobile-late-chapters-stable-style')) return;
+    if (document.getElementById('oc-final-cta-white-style')) return;
     var style = document.createElement('style');
-    style.id = 'oc-mobile-late-chapters-stable-style';
-    style.textContent = '@media(max-width:900px){.oc-mobile-late-reveal-complete{opacity:1!important;transform:none!important;visibility:visible!important}}';
+    style.id = 'oc-final-cta-white-style';
+    style.textContent = '.oc-final-cta-white,.oc-final-cta-white *{color:#fff!important}';
     document.head.appendChild(style);
   }
 
-  function findLateSections(){
-    var markers = Array.prototype.slice.call(document.querySelectorAll('h1,h2,h3,h4,div,p,span')).filter(function(element){
-      var text = normalise(element.textContent);
-      return /^CHAPTER\s*0[6-8]\b/.test(text);
-    });
-
-    return markers.map(function(marker){
-      return marker.closest('section') || marker.parentElement;
-    }).filter(function(section, index, all){
-      return section && all.indexOf(section) === index;
-    });
-  }
-
-  function isFiniteReveal(element){
-    var style = window.getComputedStyle(element);
-    var names = String(style.animationName || '').split(',').map(function(name){ return name.trim().toLowerCase(); });
-    var iterations = String(style.animationIterationCount || '').split(',').map(function(value){ return value.trim().toLowerCase(); });
-
-    if (names.some(function(name){ return name && name !== 'none'; })) {
-      var hasInfinite = iterations.some(function(value){ return value === 'infinite'; });
-      if (hasInfinite) return false;
-    }
-
-    var opacity = parseFloat(style.opacity || '1');
-    var rect = element.getBoundingClientRect();
-    if (rect.height <= 0 || rect.width <= 0 || opacity < 0.95) return false;
-
-    var transitionProperties = String(style.transitionProperty || '').toLowerCase();
-    var hasRevealTransition = transitionProperties.indexOf('opacity') !== -1 || transitionProperties.indexOf('transform') !== -1 || transitionProperties === 'all';
-    var hasFiniteAnimation = names.some(function(name){ return name && name !== 'none'; });
-    return hasFiniteAnimation || hasRevealTransition;
-  }
-
-  function lockCompleted(section){
-    if (!section) return;
-    Array.prototype.slice.call(section.querySelectorAll('*')).forEach(function(element){
-      if (isFiniteReveal(element)) element.classList.add('oc-mobile-late-reveal-complete');
-    });
-  }
-
-  function observe(){
-    if (!isMobile()) return;
+  function apply(){
     ensureStyle();
-
-    var sections = findLateSections();
-    if (!sections.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      sections.forEach(function(section){ setTimeout(function(){ lockCompleted(section); }, 1200); });
-      return;
-    }
-
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (!entry.isIntersecting) return;
-        var section = entry.target;
-        [500, 1000, 1800].forEach(function(delay){
-          setTimeout(function(){ lockCompleted(section); }, delay);
-        });
-        observer.unobserve(section);
-      });
-    }, { threshold: 0.08 });
-
-    sections.forEach(function(section){ observer.observe(section); });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', observe, { once: true });
-  } else {
-    observe();
-  }
-})();
-
-// Replace the Chapter 01 hero heading while preserving its existing element,
-// typography, animation, spacing and responsive behaviour.
-(function(){
-  function normalise(value){
-    return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
-  }
-
-  function apply(){
-    var candidates = Array.prototype.slice.call(document.querySelectorAll('header#top h1,header#top h2,header#top h3,header#top div'));
+    var candidates = Array.prototype.slice.call(document.querySelectorAll('h1,h2,h3,h4,div,p,span'));
     var heading = candidates.filter(function(element){
-      var text = normalise(element.textContent);
-      return text.indexOf('YOUR WEEK') !== -1 && text.indexOf('BY THE HOUR') !== -1;
+      return normalise(element.textContent) === 'SEE WHERE YOUR WEEK IS GOING';
     }).sort(function(a,b){
       return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
     })[0];
 
-    if (!heading) return;
-    heading.textContent = 'WHAT MANUAL WORK IS COSTING YOU';
-  }
-
-  function start(){
-    apply();
-    [50,150,400,1000,2500].forEach(function(delay){ setTimeout(apply, delay); });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start, { once: true });
-  } else {
-    start();
-  }
-  window.addEventListener('load', apply, { once: true });
-})();
-
-// Strengthen the homepage message around operational outcomes while keeping
-// the existing elements, design and animations intact. New copy avoids em dashes.
-(function(){
-  function normalise(value){
-    return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
-  }
-
-  function smallestMatch(selector, test){
-    return Array.prototype.slice.call(document.querySelectorAll(selector)).filter(function(element){
-      return test(normalise(element.textContent));
-    }).sort(function(a,b){
-      return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
-    })[0];
-  }
-
-  function replaceText(selector, test, replacement){
-    var element = smallestMatch(selector, test);
-    if (element && normalise(element.textContent) !== normalise(replacement)) {
-      element.textContent = replacement;
-    }
-  }
-
-  function apply(){
-    replaceText('header#top p,header#top div', function(text){
-      return text.indexOf('THE MANUAL ADMIN BEHIND A GROWING ECOMMERCE') !== -1 && text.indexOf('DRAG THE SLIDER') !== -1;
-    }, 'Supplier files, invoicing, stock, listings and reporting quietly consume hours, introduce mistakes and slow your business down. Drag the slider to see what manual work is really costing you. Automated, the same work is completed in minutes, more accurately, more consistently and on time.');
-
-    replaceText('p,div', function(text){
-      return text.indexOf('SALESPEOPLE SHOULD BE SELLING') !== -1 && text.indexOf('AUTOMATION HANDLES THE REPETITIVE ADMIN') !== -1;
-    }, 'Fits the way your business already works. No replacing systems. No changing how your team operates. Just less manual work.');
-
-    replaceText('p,div', function(text){
-      return text.indexOf('THE OUTPUT ARRIVES ON SCHEDULE') !== -1 && text.indexOf('AN OPTIONAL CARE PLAN') !== -1;
-    }, 'The output arrives on schedule, accurately and consistently, without you lifting a finger. An optional care plan keeps everything running as your business grows.');
-
-    var operatorParagraph = smallestMatch('p,div', function(text){
-      return text.indexOf('NO DISCOVERY-PHASE INVOICES') !== -1 && text.indexOf('ONE OPERATOR WITH ENTERPRISE-GRADE RIGOUR') !== -1;
-    });
-    if (operatorParagraph) {
-      var sentence = 'The systems I build today are the same kind I first built for my own business.';
-      if (normalise(operatorParagraph.textContent).indexOf(normalise(sentence)) === -1) {
-        operatorParagraph.textContent = String(operatorParagraph.textContent || '').replace(/\s+$/,'') + ' ' + sentence;
-      }
-    }
+    if (heading) heading.classList.add('oc-final-cta-white');
   }
 
   function start(){
