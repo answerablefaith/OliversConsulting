@@ -4,7 +4,8 @@ Olivers Consulting helps UK ecommerce and wholesale businesses automate repetiti
 
 Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, formerly PwC and Citi, and built automations first inside his own 200,000 SKU operation across Shopify, Amazon and eBay.
 
-Core offer:
+## Core offer
+
 - Free 30-minute process review
 - Supplier data pipelines
 - Reports that write themselves
@@ -14,23 +15,27 @@ Core offer:
 - Fixed-price builds
 - Optional care plan
 
-Key proof point:
+## Key proof point
+
 - Supplier-file process reduced from 8 hours to 2 minutes with human review and bad rows flagged before publishing.
 
-Important URLs:
-- Homepage: https://oliversconsulting.co.uk/
-- Articles: https://oliversconsulting.co.uk/articles/
-- Sitemap: https://oliversconsulting.co.uk/sitemap.xml
+## Important URLs
 
-Published articles:
-- How to stop re-keying wholesale orders into Sage or Xero: https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/
-- Ecommerce AI automation: how to prove the ROI first: https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/
-- Why stock sync fails between Shopify, Amazon and eBay: https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/
-- The Monday report your ecommerce team should not be building by hand: https://oliversconsulting.co.uk/articles/monday-report-automation/
-- Before you hire another ecommerce admin, check the process first: https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/
-- How to automate supplier price lists for Shopify, Amazon and wholesale channels: https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/
+- [Homepage](https://oliversconsulting.co.uk/)
+- [Articles](https://oliversconsulting.co.uk/articles/)
+- [Sitemap](https://oliversconsulting.co.uk/sitemap.xml)
 
-Topic clusters:
+## Published articles
+
+- [How to stop re-keying wholesale orders into Sage or Xero](https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/)
+- [Ecommerce AI automation: how to prove the ROI first](https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/)
+- [Why stock sync fails between Shopify, Amazon and eBay](https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/)
+- [The Monday report your ecommerce team should not be building by hand](https://oliversconsulting.co.uk/articles/monday-report-automation/)
+- [Before you hire another ecommerce admin, check the process first](https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/)
+- [How to automate supplier price lists for Shopify, Amazon and wholesale channels](https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/)
+
+## Topic clusters
+
 - Supplier data automation: price lists, catalogues, bad rows, margin rules and publishing checks
 - Reporting automation: Monday packs, stock cover, channel performance and exception reports
 - Channel operations: Shopify, Amazon, eBay, stock sync, bundles, buffers and reconciliation
@@ -38,7 +43,8 @@ Topic clusters:
 - Hiring versus automation: process checks before adding admin headcount
 - Founder/operator lessons: workflow controls, ROI tests, practical process judgement and AI only where it supports controlled automation
 
-Editorial focus:
+## Editorial focus
+
 - Practical automation advice for UK ecommerce and wholesale operators
 - Commercial SEO articles for problem-aware buyers
 - Founder-led operator notes based on real multi-channel ecommerce experience
