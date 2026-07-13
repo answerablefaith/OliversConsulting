@@ -93,3 +93,36 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
     observe();
   }
 })();
+
+// Replace the Chapter 01 hero heading while preserving its existing element,
+// typography, animation, spacing and responsive behaviour.
+(function(){
+  function normalise(value){
+    return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
+  }
+
+  function apply(){
+    var candidates = Array.prototype.slice.call(document.querySelectorAll('header#top h1,header#top h2,header#top h3,header#top div'));
+    var heading = candidates.filter(function(element){
+      var text = normalise(element.textContent);
+      return text.indexOf('YOUR WEEK') !== -1 && text.indexOf('BY THE HOUR') !== -1;
+    }).sort(function(a,b){
+      return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
+    })[0];
+
+    if (!heading) return;
+    heading.textContent = 'WHAT MANUAL WORK IS COSTING YOU';
+  }
+
+  function start(){
+    apply();
+    [50,150,400,1000,2500].forEach(function(delay){ setTimeout(apply, delay); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+  window.addEventListener('load', apply, { once: true });
+})();
