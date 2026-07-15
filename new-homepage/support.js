@@ -20,7 +20,7 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
       return normalise(element.textContent) === 'SEE WHERE YOUR WEEK IS GOING';
     }).sort(function(a,b){
       return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
-    }).slice(0,1).forEach(function(element){
+    }).forEach(function(element){
       element.style.setProperty('color', '#fff', 'important');
     });
 
