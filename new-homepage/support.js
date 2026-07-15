@@ -16,6 +16,14 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
       }
     });
 
+    Array.prototype.slice.call(document.querySelectorAll('h1,h2,h3,p,div,span')).filter(function(element){
+      return normalise(element.textContent) === 'SEE WHERE YOUR WEEK IS GOING';
+    }).sort(function(a,b){
+      return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
+    }).slice(0,1).forEach(function(element){
+      element.style.setProperty('color', '#fff', 'important');
+    });
+
     Array.prototype.slice.call(document.querySelectorAll('p,div,span')).filter(function(element){
       var text = normalise(element.textContent);
       return text.indexOf('FOUNDED, OWNED AND OPERATED WWT INTERNATIONAL') !== -1 &&
