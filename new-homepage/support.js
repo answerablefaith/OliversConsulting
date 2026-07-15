@@ -33,6 +33,15 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
     }).slice(0,1).forEach(function(element){
       element.textContent = String(element.textContent || '').replace(/\bwe now implement for clients\b/i, 'I now implement for clients');
     });
+
+    Array.prototype.slice.call(document.querySelectorAll('footer, footer *')).forEach(function(element){
+      if (element.childElementCount === 0) {
+        element.textContent = String(element.textContent || '').replace(
+          /©\s*2026\s+Olivers consulting/gi,
+          '© 2026 OliversConsulting.co.uk'
+        );
+      }
+    });
   }
 
   function start(){
