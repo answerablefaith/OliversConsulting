@@ -62,7 +62,7 @@
     nodes.forEach((node) => {
       if (!node.nodeValue) return;
       node.nodeValue = node.nodeValue
-        .replaceAll('© 2026 Henry Oliver', '© 2026 Olivers Consulting')
+        .replaceAll('© 2026 Henry Oliver', '© 2026 OliversConsulting.co.uk')
         .replaceAll('Book a free 30-minute review', 'Book a free review')
         .replaceAll('Book the free review', 'Book a free review')
         .replaceAll('Book a free call', 'Book a free review')
