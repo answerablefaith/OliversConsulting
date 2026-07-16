@@ -9,7 +9,17 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
     return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
   }
 
+  function ensureWeekHeadingStyle(){
+    if (document.getElementById('oc-week-heading-white')) return;
+    var style = document.createElement('style');
+    style.id = 'oc-week-heading-white';
+    style.textContent = '.oc-week-heading-white,.oc-week-heading-white *{color:#fff!important;-webkit-text-fill-color:#fff!important}';
+    (document.head || document.documentElement).appendChild(style);
+  }
+
   function apply(){
+    ensureWeekHeadingStyle();
+
     Array.prototype.slice.call(document.querySelectorAll('a,button,nav span,nav div,footer a')).forEach(function(element){
       if (normalise(element.textContent) === 'ABOUT US') {
         element.textContent = 'About';
@@ -21,7 +31,13 @@ document.write('<script src="https://cdn.jsdelivr.net/gh/answerablefaith/Olivers
     }).sort(function(a,b){
       return a.querySelectorAll('*').length - b.querySelectorAll('*').length;
     }).forEach(function(element){
+      element.classList.add('oc-week-heading-white');
       element.style.setProperty('color', '#fff', 'important');
+      element.style.setProperty('-webkit-text-fill-color', '#fff', 'important');
+      Array.prototype.slice.call(element.querySelectorAll('*')).forEach(function(child){
+        child.style.setProperty('color', '#fff', 'important');
+        child.style.setProperty('-webkit-text-fill-color', '#fff', 'important');
+      });
     });
 
     Array.prototype.slice.call(document.querySelectorAll('p,div,span')).filter(function(element){
