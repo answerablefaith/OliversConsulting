@@ -27,6 +27,7 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 
 ## Published articles
 
+- [How to catch product data errors before listings go live](https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/)
 - [How to stop re-keying wholesale orders into Sage or Xero](https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/)
 - [Ecommerce AI automation: how to prove the ROI first](https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/)
 - [Why stock sync fails between Shopify, Amazon and eBay](https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/)
@@ -37,6 +38,7 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 ## Topic clusters
 
 - Supplier data automation: price lists, catalogues, bad rows, margin rules and publishing checks
+- Product data operations: identifiers, prices, variants, listing requirements, validation gates and exception queues
 - Reporting automation: Monday packs, stock cover, channel performance and exception reports
 - Channel operations: Shopify, Amazon, eBay, stock sync, bundles, buffers and reconciliation
 - Wholesale and finance admin: wholesale order entry, Sage, Xero, QuickBooks, PDFs, portals, re-keying and order-to-invoice work
