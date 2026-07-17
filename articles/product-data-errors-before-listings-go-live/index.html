@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to catch product data errors before listings go live</title>
+<meta name="description" content="A practical guide for UK ecommerce teams on checking product data before it reaches Shopify, Amazon or eBay, with rules, exceptions and payback maths." />
+<link rel="canonical" href="https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/" />
+<meta property="og:title" content="How to catch product data errors before listings go live" />
+<meta property="og:description" content="Build a controlled product-data check before bad titles, prices, barcodes and attributes reach live channels." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/assets/fonts.css" />
+<link rel="stylesheet" href="/assets/shared-header.css" />
+<link rel="stylesheet" href="/assets/oc-site.css" />
+<link rel="stylesheet" href="/assets/mobile-fixes.css" />
+<script defer src="/assets/shared-header.js"></script>
+<style>
+.article-hero{padding:clamp(3.5rem,7vw,6.5rem) 0 2.5rem}.article-wrap{width:min(48rem,calc(100% - 2rem));margin-inline:auto}.article-meta{display:flex;flex-wrap:wrap;gap:.65rem 1rem;margin-top:1rem;color:#8e3515;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.summary-box{margin:2rem 0;padding:1.2rem;border:1px solid var(--line);background:#fffaf1}.summary-box strong{display:block;margin-bottom:.45rem;color:var(--ink)}.article-body{padding-bottom:4rem}.article-body h2{margin-top:2.25rem;font-size:clamp(1.8rem,3vw,2.6rem)}.article-body p,.article-body li{font-size:1.03rem}.article-body ul,.article-body ol{padding-left:1.4rem;color:var(--muted);line-height:1.7}.article-body li+li{margin-top:.45rem}.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.5rem 0}.check-grid div{padding:1rem;border:1px solid var(--line);background:rgba(255,250,241,.75)}.check-grid strong{display:block;color:var(--ink);margin-bottom:.25rem}.callout{margin:2rem 0;padding:1.25rem;border-left:4px solid var(--accent);background:rgba(255,250,241,.7)}.faq{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem}.faq h3{font-family:'Hanken Grotesk',sans-serif;font-size:1rem;font-weight:800;letter-spacing:0;margin-top:1.2rem}.breadcrumb{font-size:.82rem;color:var(--muted);margin-top:1.4rem}.breadcrumb a{text-underline-offset:.22em}.article-cta{margin-top:2.5rem;padding:1.4rem;background:var(--dark);color:#fffaf1}.article-cta p{color:rgba(255,250,241,.78)}@media(max-width:620px){.check-grid{grid-template-columns:1fr}.article-cta .button{width:100%;white-space:normal;text-align:center}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"How to catch product data errors before listings go live","description":"A practical guide for UK ecommerce teams on checking product data before it reaches Shopify, Amazon or eBay, with rules, exceptions and payback maths.","datePublished":"2026-07-17","dateModified":"2026-07-17","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oliversconsulting.co.uk/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://oliversconsulting.co.uk/articles/"},{"@type":"ListItem","position":3,"name":"Catch product data errors","item":"https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What product data should be checked before publishing?","acceptedAnswer":{"@type":"Answer","text":"Check identifiers, titles, prices, costs, tax rules, stock status, images, required attributes, variants and channel-specific fields before publishing."}},{"@type":"Question","name":"Should every product data error stop the whole file?","acceptedAnswer":{"@type":"Answer","text":"No. Stop only the affected rows where possible. Publish valid records and send failed rows to a clear exception queue for review."}},{"@type":"Question","name":"How do you automate product data quality checks?","acceptedAnswer":{"@type":"Answer","text":"Turn known business rules into checks, separate warnings from hard stops, keep an audit trail and require human review for unclear exceptions."}}]}]}
+</script>
+</head>
+<body>
+<main><article>
+<header class="article-hero"><div class="article-wrap"><p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p><p class="kicker">Product data operations</p><h1>How to catch product data errors before listings go live</h1><p class="lede">The best time to find a bad barcode, price or variant is before a channel rejects it or a customer sees it. A simple control layer can stop weak rows without slowing down the whole catalogue.</p><div class="article-meta"><span>Published 17 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce & wholesale</span></div></div></header>
+<div class="article-wrap article-body">
+<div class="summary-box"><strong>Quick answer</strong><p>Check product data against clear business and channel rules before publishing. Separate hard stops from warnings. Send failed rows to an exception queue with a reason, owner and next action. Valid rows should keep moving.</p></div>
+<p>Product data errors are expensive because they rarely stay inside a spreadsheet. A missing barcode can block a listing. A wrong cost can damage margin. A broken variant link can split reviews or show the wrong size. A weak title can make a good product hard to find.</p>
+<p>The answer is not another final check by someone who already spent hours cleaning the file. The answer is a controlled gate between source data and live channels.</p>
+<h2>Start with the failures that cost money</h2>
+<p>Do not begin with a list of every field in the catalogue. Start with the errors that create lost sales, channel blocks, refunds or manual repair work.</p>
+<div class="check-grid"><div><strong>Identity checks</strong><p>SKU, EAN or UPC, brand and manufacturer must agree. Duplicate or reused identifiers should stop the row.</p></div><div><strong>Commercial checks</strong><p>Price, cost, VAT and margin rules need limits. A price below cost should never pass without review.</p></div><div><strong>Listing checks</strong><p>Required titles, images, categories and attributes must exist in the format each channel expects.</p></div><div><strong>Variant checks</strong><p>Parent-child links, size, colour and pack quantity must be complete and consistent.</p></div></div>
+<p>These checks reflect real catalogue failure points. Amazon listing errors often come from missing or conflicting information, while catalogue conflicts can block updates when brand, title or product ID data does not match the existing record.</p>
+<h2>Use three outcomes, not one</h2>
+<p>A weak process treats every issue the same. One bad row then holds up the whole file, or the team ignores errors so the upload can finish.</p>
+<p>A better process gives each row one of three outcomes:</p>
+<ol><li><strong>Pass:</strong> the row meets all hard rules and can move to the next stage.</li><li><strong>Warning:</strong> the row can move, but a person should review a non-critical issue such as a short description.</li><li><strong>Stop:</strong> the row cannot publish because the error could block the channel, harm margin or mislead a customer.</li></ol>
+<p>This keeps valid products moving while giving risky rows the attention they need.</p>
+<h2>Make every exception useful</h2>
+<p>“Invalid data” is not a useful message. The person fixing the row needs to know what failed, why it matters and what to do next.</p>
+<p>A good exception record should show the SKU, source file, failed field, current value, rule, severity and owner. It should also say whether the source needs correcting or whether the channel mapping is wrong.</p>
+<div class="callout"><p><strong>Operational rule:</strong> never ask the team to search through a failed upload for the cause. Put the cause beside the row.</p></div>
+<h2>Test the process on a hard sample</h2>
+<p>Do not test only clean products. Use a sample that includes a missing barcode, duplicate SKU, low margin, broken image URL, incomplete variant, unusual pack size and channel-specific category.</p>
+<p>Run those records through the proposed checks. Confirm that valid rows pass, risky rows stop and warnings stay visible. Then test the corrected rows again. The aim is not to prove the workflow works once. It is to prove that errors can be found, fixed and replayed without rebuilding the file.</p>
+<h2>Work out the payback</h2>
+<p>Count the hours spent each week finding rejected listings, fixing bad uploads and checking products by hand. Add the cost of delayed launches and margin errors where you can prove them.</p>
+<p>For example, if two people spend five hours a week on catalogue repairs at a loaded cost of £25 an hour, that is £250 a week. A controlled check that removes four of those hours saves £200 a week before counting faster launches or fewer customer issues. A £4,000 build would repay in about 20 weeks.</p>
+<p>Use your own numbers. The point is to compare the build with the cost of the current failure loop.</p>
+<h2>What the finished workflow should do</h2>
+<p>The workflow should collect source files, map fields, apply checks, separate warnings from hard stops and create a review queue. It should publish only approved rows and keep a record of what changed.</p>
+<p>Human judgement still matters. A person should decide how to handle a new brand conflict, a strange supplier value or a channel rule that has changed. Automation should remove repeated checking, not hide uncertainty.</p>
+<p>This sits between <a href="/articles/automate-supplier-price-lists/">supplier-file automation</a> and <a href="/articles/why-stock-sync-fails-shopify-amazon-ebay/">channel operations</a>. The first gets data into shape. The control gate proves it is safe enough to publish.</p>
+<section class="faq"><h2>FAQs</h2><h3>What product data should be checked before publishing?</h3><p>Check identifiers, titles, prices, costs, tax rules, stock status, images, required attributes, variants and channel-specific fields.</p><h3>Should every error stop the whole file?</h3><p>No. Stop only the affected rows where possible. Valid records should continue while failed rows move to a clear exception queue.</p><h3>How do you automate product data quality checks?</h3><p>Turn known business rules into checks, separate warnings from hard stops, keep an audit trail and require human review for unclear exceptions.</p></section>
+<section class="article-cta"><p class="kicker">Free process review</p><h2>Finding product errors after they reach the channel?</h2><p>Bring one recent supplier file and a sample of the failed rows. I’ll help you map the checks, stop rules and review process before you buy another tool.</p><p><a class="button light" href="/#book">Book the free review</a></p></section>
+</div></article></main>
+<footer class="footer wrap"><p>Olivers Consulting · Automation for UK ecommerce and wholesale</p><p>© 2026 Henry Oliver</p></footer>
+</body>
+</html>
