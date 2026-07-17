@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>How to stop re-keying wholesale orders into Sage or Xero</title>
-<meta name="description" content="A practical 1,000-word guide to automating wholesale order entry into Sage or Xero with rules, checks, exception handling and payback maths." />
+<meta name="description" content="Automate wholesale order entry into Sage or Xero with mapping rules, price and SKU checks, exception handling, audit trails and clear payback maths." />
 <link rel="canonical" href="https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/" />
 <meta property="og:title" content="How to stop re-keying wholesale orders into Sage or Xero" />
-<meta property="og:description" content="Remove repeated order entry while keeping customer, SKU, price, quantity and delivery checks under control." />
+<meta property="og:description" content="Remove repeated wholesale order entry while keeping customer, SKU, price, quantity and delivery checks under control." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -23,9 +23,9 @@
 {
   "@context":"https://schema.org",
   "@graph":[
-    {"@type":"BlogPosting","headline":"How to stop re-keying wholesale orders into Sage or Xero","description":"A practical guide to automating wholesale order entry into Sage or Xero with rules, checks, exception handling and payback maths.","datePublished":"2026-07-10","dateModified":"2026-07-17","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/"},
+    {"@type":"BlogPosting","headline":"How to stop re-keying wholesale orders into Sage or Xero","description":"Automate wholesale order entry into Sage or Xero with mapping rules, price and SKU checks, exception handling, audit trails and clear payback maths.","datePublished":"2026-07-10","dateModified":"2026-07-17","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/"},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oliversconsulting.co.uk/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://oliversconsulting.co.uk/articles/"},{"@type":"ListItem","position":3,"name":"Wholesale order entry automation","item":"https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/"}]},
-    {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can wholesale order entry into Sage or Xero be automated?","acceptedAnswer":{"@type":"Answer","text":"Yes, when customer, SKU and price rules can be checked. Unknown or risky values should stop for review."}},{"@type":"Question","name":"Should every wholesale order post automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Start with checked drafts. Allow automatic posting only after controls and exception handling work with real orders."}},{"@type":"Question","name":"What should be checked automatically?","acceptedAnswer":{"@type":"Answer","text":"Check customer accounts, product codes, prices, pack sizes, duplicate orders, delivery details and source totals."}},{"@type":"Question","name":"How should I judge the payback?","acceptedAnswer":{"@type":"Answer","text":"Measure volume, handling time, staff cost, pass rate and corrections. Compare the annual capacity released with the build and running cost."}}]}
+    {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can wholesale order entry into Sage or Xero be automated?","acceptedAnswer":{"@type":"Answer","text":"Yes, when customer, product, price and quantity rules can be checked. Unknown or risky values should stop for review instead of being posted automatically."}},{"@type":"Question","name":"Do PDF orders need AI to be read?","acceptedAnswer":{"@type":"Answer","text":"No. Text-based PDFs can often be parsed with field rules or templates. Scanned documents may need OCR, followed by the same checks and human review for uncertain values."}},{"@type":"Question","name":"Should every wholesale order post automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Start with checked drafts and an exception queue. Allow automatic posting only for proven order types where the cost of an error is understood."}},{"@type":"Question","name":"How should I judge the payback?","acceptedAnswer":{"@type":"Answer","text":"Measure order volume, handling time, staff cost, pass rate, exceptions and corrections. Compare the annual capacity released with the build and running cost."}}]}
   ]
 }
 </script>
@@ -43,104 +43,86 @@
 </div>
 </header>
 <div class="article-wrap article-body">
-<div class="summary-box"><strong>Quick answer</strong><p>Automate the hand-off, not the judgement. Read each order, map the customer and product codes, check prices, quantities, delivery details and totals, then create a draft record. Orders that pass can move forward. Anything unclear should stop with a reason and the source beside it.</p></div>
+<div class="summary-box"><strong>Quick answer</strong><p>Wholesale order entry into Sage or Xero can be automated when customer, product, price and quantity rules are clear. Extract the order data, match it against controlled records, create a checked draft and send exceptions to a person. Start with draft creation; only post automatically after real orders prove the controls.</p></div>
 
-<p>Wholesale orders arrive by email, PDF, spreadsheet or portal. Someone finds the account, matches the customer’s product code to the internal SKU, types each line into Sage or Xero, and checks the total.</p>
+<p>Wholesale orders arrive by email, PDF, spreadsheet or customer portal. Someone finds the account, matches the customer’s product code to the internal SKU, types each line into Sage or Xero, and checks the total.</p>
 
-<p>That person is acting as the integration. Re-keying also creates errors: a wrong pack size, old address, duplicate purchase order or price from the wrong list. A useful workflow removes the typing but keeps the checks.</p>
+<p>That person is acting as the integration. A useful workflow removes repeated entry while keeping commercial judgement with the team.</p>
 
-<h2>Start with one real order</h2>
+<h2>Start wholesale order entry automation with one real order</h2>
 
-<p>Follow a recent order from arrival to the final sales record. Write down each decision a person makes.</p>
+<p>Follow a recent order from arrival to the final record. Write down each decision: customer account, product-code match, price rule, pack size, delivery address, duplicate purchase order and source total.</p>
 
-<ul>
-<li>Which customer account does this order belong to?</li>
-<li>Does the customer use your SKU or their own product code?</li>
-<li>Which price list or discount rule applies?</li>
-<li>Is the quantity valid for the pack size?</li>
-<li>Does the delivery address match an approved location?</li>
-<li>Has this purchase order already been entered?</li>
-<li>Does the final total agree with the source?</li>
-</ul>
+<p>This is the real specification. If two experienced staff members would answer differently, fix the rule before automating it. Software cannot resolve an argument the business has never settled.</p>
 
-<p>This is the real specification. If two people would answer the same question differently, fix the rule before automating it.</p>
+<h2>How should the workflow read email, PDF and spreadsheet orders?</h2>
 
-<h2>Use a rules sheet before a build</h2>
+<p>Name the mechanism. A text PDF can be parsed with field rules or a customer template. A scanned document may need optical character recognition, usually called OCR. A spreadsheet can use a fixed column map. Portal orders may arrive through an export, attachment or another supported connection.</p>
 
-<p>For each important field, record the source, check, action and stop condition. A simple rules sheet is more useful than a long automation brief.</p>
+<p>Then check each value. Use a lookup table to translate customer product codes to internal SKUs. Use account data for approved addresses. Use a tolerance check for prices. Use the customer and purchase order number together to find duplicates.</p>
+
+<div class="callout"><p><strong>Reading a value is not the same as trusting it.</strong> The workflow should show where the value came from and why it passed.</p></div>
+
+<h2>Build a rules sheet before you commission the work</h2>
+
+<p>For each field, record the source, check, action and stop condition. A short rules sheet gives a developer something testable and gives the operations team something they can challenge.</p>
 
 <div class="steps">
-<div><strong>Customer</strong><p>Match the name, account number or email domain to one approved account. Stop if there is no confident match.</p></div>
-<div><strong>Product</strong><p>Translate customer product codes to internal SKUs with a controlled mapping table. Stop unknown or retired codes.</p></div>
-<div><strong>Price</strong><p>Compare the order price with the agreed list or customer rule. Stop differences outside the approved tolerance.</p></div>
-<div><strong>Quantity</strong><p>Check units, cases and pack sizes. Do not silently turn twelve cases into twelve units.</p></div>
-<div><strong>Duplicate</strong><p>Check the customer and purchase order number before creating another record.</p></div>
+<div><strong>Customer</strong><p>Match one approved account. Stop if the name, number or sender is unclear.</p></div>
+<div><strong>Product</strong><p>Translate customer codes with a controlled mapping table. Stop unknown or retired codes.</p></div>
+<div><strong>Price</strong><p>Compare against the agreed customer rule. Stop differences outside the approved tolerance.</p></div>
+<div><strong>Quantity</strong><p>Check units, cases and pack sizes. Never silently turn twelve cases into twelve units.</p></div>
+<div><strong>Duplicate</strong><p>Check the customer and purchase order number before creating another draft.</p></div>
 </div>
 
-<p>The rules sheet becomes the test plan and keeps the logic visible.</p>
+<p>Give every exception an owner. “Finance checks price differences” is better than sending all failures to a shared inbox.</p>
 
-<h2>Draft first, post later</h2>
+<h2>Use three stages: extract, draft, then post</h2>
 
-<p>The safest first version prepares an order for review. It extracts the fields, applies the checks and creates a clean draft for the next system.</p>
+<p>The safest first version extracts the order and prepares a review screen. The second creates a checked draft or import-ready record for the current Sage or Xero process. The third allows proven order types to move without review.</p>
 
-<p>Do not post every order automatically. Demos show the happy path; live orders contain exceptions. The value comes from handling them well.</p>
+<p>Do not jump straight to automatic posting. Live orders contain old codes, special prices, split deliveries and last-minute notes. Demos rarely do.</p>
 
-<div class="callout"><p><strong>A stopped order is not a failed automation.</strong> It is proof that the control worked.</p></div>
+<p>An exception queue should show the source, failed field, value read, expected value and reason. “Ordered £8.40; expected £8.75 under customer price list A” is useful. “Validation error” is not.</p>
 
-<p>Show the source value, expected value and reason for each stop. “Price mismatch: ordered £8.40, expected £8.75” is useful. “Validation error” is not.</p>
+<p>During a pilot, review every order. Separate bad source data, missing rules and extraction errors. Each needs a different fix.</p>
 
-<p>When drafts are reliable, decide which orders can move without review. Use the pass rate, exception types and cost of a bad order.</p>
+<h2>How do you calculate the payback?</h2>
 
-<h2>Measure more than time saved</h2>
+<p>Suppose 65 orders arrive each week and each takes seven minutes to read, enter and check. That is about 7.6 hours. At a loaded staff cost of £27 an hour, the direct handling cost is about £205 a week, or £9,828 across 48 working weeks.</p>
 
-<p>Suppose 80 orders arrive each week and each takes six minutes to read, enter and check. That is eight hours a week. At a loaded staff cost of £25 an hour, the direct cost is £200 a week, or £9,600 across 48 working weeks.</p>
+<p>If a checked draft reduces average handling to 75 seconds, weekly effort falls to about 81 minutes. The team releases roughly 6.2 hours each week.</p>
 
-<p>If the workflow cuts average handling to one minute of review, effort falls to about 80 minutes. That releases more than six and a half hours each week.</p>
+<p>Do not treat every saved minute as cash. Decide what the capacity will do: chase debt, answer customers, correct catalogue data or absorb growth without another admin hire. Then compare the annual capacity value with the build and running cost.</p>
 
-<p>Saved time only has value when it is used. It may help the same person chase debt, resolve customer issues or absorb growth without another admin hire.</p>
+<p>Track handling time, pass rate, exception types and corrections. These measures tell you whether to expand, change the rules or stop. See <a href="/articles/ecommerce-ai-automation-roi/">how to prove ecommerce automation ROI before buying tools</a> for a wider test.</p>
 
-<p>Track four measures during a pilot:</p>
+<h2>Keep the source, audit trail and pause control</h2>
 
-<ul>
-<li>average handling time per order;</li>
-<li>percentage of orders that pass without changes;</li>
-<li>number and type of exceptions caught; and</li>
-<li>corrections, credits or queries caused by entry errors.</li>
-</ul>
+<p>Every created record should link to the email, PDF, spreadsheet or portal record that started it. Store the values read, rules applied and any override made by a person.</p>
 
-<p>These numbers tell you whether to expand, change the rules or stop. They are more useful than claiming the workflow is “fully automated”.</p>
+<p>Keep a clear pause control. When a customer changes its layout or sends a new format, the safe response is to stop and review, not guess.</p>
 
-<h2>Keep an audit trail</h2>
+<h2>When should wholesale order entry stay manual?</h2>
 
-<p>Every created order should link to the email, PDF, spreadsheet or portal record that started it. Store the source reference, values read, checks applied and any changes made by a person.</p>
+<p>Do not automate a process that changes on every order and lives in one person’s memory. If prices are agreed by phone, product codes are inconsistent and nobody knows which delivery rule wins, map the process first.</p>
 
-<p>When a customer questions an order weeks later, you should be able to see what arrived, why it stopped or passed, and who approved an override.</p>
+<p>Low volume can also make a custom build hard to justify. Ten simple orders a month may be better handled with a clean template and checklist. Start with a repeat customer that has a stable format and clear rules.</p>
 
-<p>Limit access to the inboxes, folders and systems needed. Test before live posting, and keep a clear way to pause the workflow when a source format changes.</p>
+<h2>What should you bring to a process review?</h2>
 
-<h2>Know when not to automate</h2>
+<p>Bring 20 to 50 recent orders, including awkward examples. Bring the current Sage or Xero fields, plus the customer, product and price data used for matching. Mark special prices, split deliveries and approvals.</p>
 
-<p>Do not automate a process that changes on every order and lives in one person’s memory. If prices are agreed by phone, customer codes are inconsistent and delivery rules are unclear, automation will turn hidden confusion into faster confusion.</p>
-
-<p>Low volume can make a custom build hard to justify. Ten simple orders a month may be better handled with a clean template and checklist. Automation is stronger when volume is steady, rules repeat or errors are costly.</p>
-
-<h2>What to bring to a process review</h2>
-
-<p>Bring 20 to 50 recent orders, including awkward examples. Bring the import template or list of fields entered into Sage or Xero, plus the customer, product and price data used for matching.</p>
-
-<p>Mark the exceptions: customer product codes, old SKUs, special prices, split deliveries, missing fields and orders that need approval.</p>
-
-<p>That is enough to test stability, estimate payback and decide what stays with a person. The goal is a controlled hand-off that removes repeated typing without weakening commercial checks.</p>
+<p>That is enough to test stability, estimate payback and decide what stays with a person. Review the <a href="/#services">workflows Olivers Consulting automates</a> or browse more <a href="/articles/">operator articles on practical automation</a>.</p>
 
 <section class="faq"><h2>FAQs</h2>
-<h3>Can wholesale order entry into Sage or Xero be automated?</h3><p>Yes, when customer, SKU and price rules can be checked. Unknown or risky values should stop for review.</p>
-<h3>Should every wholesale order post automatically?</h3><p>No. Start with checked drafts. Allow automatic posting only after controls and exception handling work with real orders.</p>
-<h3>What should be checked automatically?</h3><p>Check customer accounts, product codes, prices, pack sizes, duplicate orders, delivery details and source totals.</p>
-<h3>How should I judge the payback?</h3><p>Measure volume, handling time, staff cost, pass rate and corrections. Compare the annual capacity released with the build and running cost.</p>
+<h3>Can wholesale order entry into Sage or Xero be automated?</h3><p>Yes, when customer, product, price and quantity rules can be checked. Unknown or risky values should stop for review instead of being posted automatically.</p>
+<h3>Do PDF orders need AI to be read?</h3><p>No. Text PDFs can often be parsed with field rules or templates. Scanned documents may need OCR, followed by the same checks and review for uncertain values.</p>
+<h3>Should every wholesale order post automatically?</h3><p>No. Start with checked drafts and an exception queue. Allow automatic posting only for proven order types where the cost of an error is understood.</p>
+<h3>How should I judge the payback?</h3><p>Measure order volume, handling time, staff cost, pass rate, exceptions and corrections. Compare the annual capacity released with the build and running cost.</p>
 </section>
 
-<section class="article-cta"><p class="kicker">Free process review</p><h2>Still typing wholesale orders into another system?</h2><p>Bring sample orders and show me where they go next. I’ll help you map the checks, exceptions and payback before you build anything.</p><p><a class="button" href="/#book">Book a free review</a></p></section>
-
+<section class="article-cta"><p class="kicker">Free process review</p><h2>Still typing wholesale orders into another system?</h2><p>Bring sample orders and show me where they go next. I’ll help you map the checks, exceptions and payback before you commission a build.</p><p><a class="button" href="/#book">Book a free review</a></p></section>
 </div>
 </article>
 </main>
