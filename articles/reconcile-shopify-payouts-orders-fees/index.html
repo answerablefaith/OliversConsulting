@@ -27,70 +27,112 @@
 <main><article>
 <header class="article-hero"><div class="article-wrap"><p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p><p class="kicker">Wholesale and finance admin</p><h1>How to reconcile Shopify payouts, orders and fees</h1><p class="lede">Shopify payout reconciliation should explain every bank deposit without treating the deposit as sales. The process must separate trading activity, payment activity and cash settlement.</p><div class="article-meta"><span>Published 20 July 2026</span><span>Updated 20 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce &amp; wholesale</span></div></div></header>
 <div class="article-wrap article-body">
-<div class="summary-box"><strong>Quick answer</strong><p>Match each bank deposit to a Shopify Payments payout, then break that payout into charges, refunds, fees and adjustments. Check that the transaction net total equals the payout and that the payout equals the bank line. Post only against agreed accounting mappings, while unclear differences go to a named reviewer.</p></div>
-<p>A Shopify deposit rarely matches the sales shown for the same date. An order may be placed on Friday, captured later and paid out after the weekend. Refunds, disputes and fees can reduce the amount received. Third-party gateways may settle on a different timetable.</p>
-<p>The figures can all be correct while the comparison is wrong. The fix is to reconcile the right records in the right order.</p>
+<div class="summary-box"><strong>Quick answer</strong><p>Match each bank deposit to one Shopify Payments payout, then split that payout into charges, refunds, fees and adjustments. Check that transaction net totals equal the payout and that the payout equals the bank line. Apply only agreed accounting mappings. Send unclear differences to a named reviewer with the source beside them.</p></div>
+
+<p>A Shopify deposit rarely matches the sales shown for the same date. Orders settle later, while refunds, disputes and fees reduce the cash received. Third-party gateways may follow another timetable.</p>
+
+<p>The figures can all be correct while the comparison is wrong. Reconcile trading activity, payment activity and cash settlement as separate records.</p>
+
 <h2>What does Shopify payout reconciliation compare?</h2>
-<p>Keep four records separate. Each answers a different question.</p>
+
+<p>Keep four records separate because each answers a different question.</p>
+
 <div class="check-grid">
 <div><strong>Trading activity</strong><p>Orders, discounts, shipping, VAT, returns and refunds explain what was sold or reversed.</p></div>
 <div><strong>Payment activity</strong><p>Charges, fees, disputes and adjustments explain how money moved through Shopify Payments.</p></div>
 <div><strong>Bank activity</strong><p>The deposit confirms that a payout reached the bank account.</p></div>
 <div><strong>Accounting entries</strong><p>Sales, VAT, fees and clearing balances record the commercial meaning of those movements.</p></div>
 </div>
-<p>Shopify says its <a href="https://help.shopify.com/en/manual/payments/shopify-payments/payouts/payout-reconciliation-report">payout reconciliation report</a> explains Shopify Payments balance activity, transactions, fees and payouts. It is not a revenue statement. It also excludes third-party processors and payment methods, so those need their own source and settlement check.</p>
+
+<p>Shopify says its <a href="https://help.shopify.com/en/manual/payments/shopify-payments/payouts/payout-reconciliation-report">payout reconciliation report</a> explains Shopify Payments balance activity, transactions, fees and payouts. It is not a revenue statement. It also excludes third-party processors and payment methods, so PayPal, Klarna and other gateways need their own settlement check.</p>
+
 <h2>Which source files and fields should the workflow use?</h2>
-<p>For individual payout detail, export the Shopify Payments balance transactions CSV. Use the payout reconciliation report for the wider balance movement across a date range. Pull the matching bank statement lines from the accounting system or bank feed.</p>
-<p>Keep one row per balance transaction. Store these fields:</p>
+
+<p>Use the Shopify Payments transaction export for payout detail, the reconciliation report for balance movement, and the accounting system or bank feed for matching deposits.</p>
+
+<p>Keep one row per balance transaction:</p>
+
 <ul>
-<li><strong>Payout:</strong> payout ID, payout date, currency, status and transfer reference.</li>
-<li><strong>Transaction:</strong> transaction date, type, order or refund reference and gateway.</li>
+<li><strong>Payout data:</strong> payout ID, payout date, currency, status and transfer reference.</li>
+<li><strong>Transaction data:</strong> transaction date, type, order or refund reference and gateway.</li>
 <li><strong>Amounts:</strong> gross amount, fee and net amount.</li>
 <li><strong>Controls:</strong> source file, import time, match result, exception reason and reviewer.</li>
 </ul>
-<p>The payout ID is the grouping key. A parsing rule reads the exported columns. A lookup table maps transaction types and gateways to approved accounting codes. A duplicate fingerprint can combine payout ID, transaction type, order reference and net amount so the same file is not posted twice.</p>
+
+<p>Use the payout ID as the grouping key. A parsing rule reads the export, a lookup table maps transaction types to accounting codes, and a duplicate fingerprint blocks the same file from being posted twice.</p>
+
+<p>Keep this control separate from the management pack. The same source data may feed <a href="/articles/monday-report-automation/">an automated weekly ecommerce report</a>, but payout reconciliation must still prove the bank movement at transaction level.</p>
+
 <h2>Which checks prove that a payout is complete?</h2>
-<p>Run two checks, not one.</p>
+
+<p>Run two checks.</p>
+
 <ol>
 <li><strong>Payout check:</strong> add the net amount of all transactions linked to the payout ID. The result should equal the stated payout total.</li>
 <li><strong>Bank check:</strong> match the payout amount, currency and transfer reference to one bank deposit.</li>
 </ol>
-<p>Use a small rounding tolerance where the agreed currency rules require it. Do not use a broad tolerance to hide missing transactions. A difference should have a named cause, such as an incomplete export, reserve movement, dispute, currency issue or bank timing gap.</p>
-<div class="callout"><p><strong>Control rule:</strong> the bank deposit clears the payment balance. It should not be used as the sales figure.</p></div>
+
+<p>Use a small rounding tolerance only where currency rules require it. A broad tolerance can hide a missing refund or fee. Every difference needs a named cause.</p>
+
+<div class="callout"><p><strong>Control rule:</strong> the bank deposit clears the payment balance. It is not the sales figure.</p></div>
+
 <h2>How should exceptions be handled?</h2>
+
 <p>Give every payout one result.</p>
+
 <ul>
 <li><strong>Pass:</strong> transaction totals equal the payout, and the payout matches one bank line.</li>
 <li><strong>Review:</strong> the amounts match, but the gateway, tax code or account mapping is new.</li>
 <li><strong>Stop:</strong> the payout is duplicated, incomplete, in an unexpected currency or cannot be tied to the bank.</li>
 </ul>
-<p>The exception queue should show the payout ID, difference, likely cause, source link, owner and next action. “Does not match” sends the investigation back to the finance team. “£43.20 short; two refund transactions missing from the import” gives someone a real job to complete.</p>
-<p>Keep normal timing differences out of the queue once they are explained. Weekends, bank holidays and transactions still pending at the report cut-off are not faults. They need a status and an expected clearing date.</p>
+
+<p>The exception queue should show the payout ID, difference, likely cause, source link, owner and next action. “Does not match” sends the investigation back to finance. “£43.20 short; two refund transactions are missing from the import” gives someone a clear job.</p>
+
+<p>Assign ownership before the pilot. Finance owns the accounting map, operations confirms order and refund references, and the workflow owner fixes import failures. Explained timing gaps need a status and expected clearing date, not repeated investigation.</p>
+
 <h2>How should Shopify payouts reach Xero?</h2>
+
 <p>Agree the posting design with the accountant before building it. A common pattern uses a Shopify Payments clearing account. Sales and VAT are recorded from trading activity. Refunds reverse the agreed values. Fees go to the selected expense account. The bank deposit transfers the payout balance into the bank account.</p>
-<p>The <a href="https://www.xero.com/uk/partnerships/shopify/">Shopify integration by Xero</a> can sync daily summaries or individual sales and match payouts to bank deposits. That may be enough for a simple store. Test the native route before paying for a custom build.</p>
-<p>A custom workflow becomes more useful when several stores, entities, currencies, gateways or approval rules must be joined. It may also help when the finance team needs one exception queue across Shopify Payments, PayPal and other providers.</p>
+
+<p>The <a href="https://www.xero.com/uk/partnerships/shopify/">Shopify integration by Xero</a> can sync daily summaries or individual sales and match payouts to bank deposits. That may be enough for a simple store, so test the native route before paying for a custom build.</p>
+
+<p>A custom workflow becomes useful when several stores, entities, currencies, gateways or approval rules must be joined into one exception process.</p>
+
 <h2>What does the payback look like?</h2>
-<p>Measure the present workload before approving a build. Include report exports, bank matching, fee checks, refund investigation, journal repair and review.</p>
-<p>Suppose the team handles 85 payouts each month. The average payout takes nine minutes, including exceptions. That is 12.75 hours. At a loaded staff cost of £31 an hour, the monthly handling cost is about £395.</p>
-<p>If the workflow reduces average review to three minutes, the task falls to 4.25 hours. The team gets back 8.5 hours a month, worth about £264. A £3,200 build has a time-only payback of just over 12 months.</p>
-<p>Use your own figures. Do not add the value of fewer errors unless the business can measure the cost those errors caused.</p>
+
+<p>Measure report exports, bank matching, fee checks, refund investigation, journal repair and review before approving a build.</p>
+
+<p>Suppose the team handles 85 payouts each month. At nine minutes per payout, the task takes 12.75 hours. At a loaded staff cost of £31 an hour, that is about £395 a month.</p>
+
+<p>If controlled matching reduces review to three minutes, the task falls to 4.25 hours. The team gets back 8.5 hours a month, worth about £264. A £3,200 build has a time-only payback of just over 12 months.</p>
+
+<p>Use your own figures and test the assumptions. The wider <a href="/articles/ecommerce-ai-automation-roi/">ecommerce automation ROI framework</a> explains how to value released capacity without pretending every saved minute becomes cash.</p>
+
 <h2>How should a pilot be run?</h2>
-<p>Start with one complete month and include awkward cases: refunds, a dispute, a bank holiday, more than one currency and at least one third-party gateway. Run the workflow in parallel with the current process.</p>
-<p>Track the percentage of payouts that pass without changes, the reason for every exception, review time and any correction made after posting. A high exception rate may mean the mappings are weak, not that more automation is needed.</p>
-<p>Only allow automatic posting after the same rules have worked across real payout cycles. Keep a pause control for changed exports, new transaction types or new gateways.</p>
+
+<p>Start with one complete month, including refunds, a dispute, a bank holiday, more than one currency and a third-party gateway. Run the workflow beside the current process.</p>
+
+<p>Track pass rate, exception reasons, review time and post-entry corrections. Allow automatic posting only after the rules work across real payout cycles, and keep a pause control for changed exports or new transaction types.</p>
+
 <h2>When is a custom workflow not worth building?</h2>
-<p>Use the native integration or a clear checklist when there is one store, one entity, one currency, stable gateways and low volume. The finance team may save more time by improving the month-end checklist than by maintaining a custom process.</p>
-<p>Do not automate unsettled accounting policy. If staff disagree about gift cards, VAT, fees or refunds, settle the treatment first. Software can apply a rule quickly, but it cannot decide which rule is correct.</p>
+
+<p>Use the native integration or a checklist when there is one store, one entity, one currency, stable gateways and low volume. A better month-end process may save more time than custom software.</p>
+
+<p>Do not automate unsettled accounting policy. If staff disagree about gift cards, VAT, fees or refunds, settle the treatment first. The same process check applies <a href="/articles/before-hiring-ecommerce-admin/">before adding ecommerce admin headcount</a>: fix the rules before adding cost.</p>
+
 <h2>What should the finished workflow deliver?</h2>
-<p>The finished process should collect Shopify Payments and bank data, block duplicate imports, group transactions by payout ID, run the payout and bank checks, apply approved mappings and create a short exception queue. Every posting should retain the source reference and reviewer history.</p>
-<p>This sits beside <a href="/articles/stop-rekeying-wholesale-orders-sage-xero/">wholesale order-entry automation</a> and the wider <a href="/#services">ecommerce finance and admin workflows from Olivers Consulting</a>. Browse the <a href="/articles/">practical ecommerce automation articles</a> for related controls and ROI tests.</p>
+
+<p>The finished process should collect payment and bank data, block duplicate imports, group transactions by payout ID, run both checks, apply approved mappings and create a short exception queue. Every posting should retain its source and reviewer history.</p>
+
+<p>This work sits beside <a href="/articles/stop-rekeying-wholesale-orders-sage-xero/">wholesale order-entry automation for Sage or Xero</a> and the wider <a href="/#services">ecommerce finance and admin workflows from Olivers Consulting</a>. The aim is not to remove review. It is to make the review small, specific and traceable.</p>
+
 <section class="faq"><h2>FAQs</h2>
 <h3>Why does a Shopify payout not equal sales for the same day?</h3><p>Order dates, payment dates and payout dates are different events. A payout can also include refunds, fees, adjustments and activity from several days, so it should be matched to the Shopify Payments ledger rather than a same-day sales total.</p>
 <h3>What data is needed for Shopify payout reconciliation?</h3><p>Keep the payout ID, transaction date, transaction type, order or refund reference, gross amount, fee, net amount, currency, gateway and bank reference. These fields support both the payout-total check and the bank-deposit check.</p>
 <h3>Should Shopify payouts be posted as revenue?</h3><p>A Shopify payout is a transfer of funds, not a clean revenue figure. Sales, VAT, refunds, fees and payment-clearing movements should follow the accounting treatment agreed with your accountant.</p>
 <h3>When is a custom Shopify payout workflow unnecessary?</h3><p>Use the native integration or a checklist when the store has one entity, one currency, stable gateways and low exception volume. Fix unclear tax, refund, gift-card or fee rules before automating any posting.</p>
 </section>
+
 <section class="article-cta"><p class="kicker">Free process review</p><h2>Still rebuilding Shopify payout reconciliations by hand?</h2><p>Bring one payout export, the matching bank line and your current journal. I’ll help map the source data, checks, exceptions and payback before you commission a build.</p><p><a class="button light" href="/#book">Book the free process review</a></p></section>
 </div></article></main>
 <footer class="footer wrap"><p>Olivers Consulting · Automation for UK ecommerce and wholesale</p><p>© 2026 Henry Oliver</p></footer>
