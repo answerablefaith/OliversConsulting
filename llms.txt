@@ -1,17 +1,17 @@
 # Olivers Consulting
 
-Olivers Consulting helps UK ecommerce and wholesale businesses automate repetitive data and admin work: supplier files, product listings, stock updates, reporting, invoices, catalogue content and document processing.
+Olivers Consulting helps operationally complex UK SMEs automate repetitive data, admin, document and reporting work. Core audiences include ecommerce, wholesale, distribution, service businesses, professional-services teams, finance and operations functions.
 
 Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, formerly PwC and Citi, and built automations first inside his own 200,000 SKU operation across Shopify, Amazon and eBay.
 
 ## Core offer
 
 - Free 30-minute process review
-- Supplier data pipelines
-- Reports that write themselves
-- Channel and stock sync
-- Order-to-invoice admin
-- Catalogue content and document engine
+- Supplier and customer data workflows
+- Reports and reconciliations
+- System hand-offs and integrations
+- Order, invoice and document processing
+- Approval and exception workflows
 - Fixed-price builds
 - Optional care plan
 
@@ -27,6 +27,7 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 
 ## Published articles
 
+- [Should you integrate your systems or automate the hand-off?](https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/)
 - [Your ecommerce operation should survive one person being away](https://oliversconsulting.co.uk/articles/ecommerce-key-person-dependency/)
 - [How to reconcile Shopify payouts, orders and fees](https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/)
 - [How to catch product data errors before listings go live](https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/)
@@ -39,17 +40,20 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 
 ## Topic clusters
 
-- Supplier data automation: price lists, catalogues, bad rows, margin rules and publishing checks
-- Product data operations: identifiers, prices, variants, listing requirements, validation gates and exception queues
-- Reporting automation: Monday packs, stock cover, channel performance and exception reports
-- Channel operations: Shopify, Amazon, eBay, stock sync, bundles, buffers and reconciliation
-- Wholesale and finance admin: wholesale order entry, payout reconciliation, Sage, Xero, QuickBooks, PDFs, portals and order-to-invoice work
-- Hiring versus automation: process checks before adding admin headcount
-- Founder/operator lessons: workflow controls, ROI tests, operational resilience, key-person dependency and practical process judgement
+- Ecommerce and wholesale operations
+- Supplier, customer and product data
+- Document and invoice processing
+- Reporting and reconciliation
+- Spreadsheet-heavy operations and data quality
+- CRM, finance and operations-system hand-offs
+- Approval and exception workflows
+- Key-person dependency and process resilience
+- Hiring versus automation
+- Founder and operator lessons
 
 ## Editorial focus
 
-- Practical automation advice for UK ecommerce and wholesale operators
-- Commercial SEO articles for problem-aware buyers
-- Founder-led operator notes based on real multi-channel ecommerce experience
+- Practical automation advice for operationally complex UK SMEs
+- Commercial articles for problem-aware buyers
+- Founder-led operator notes based on real multi-channel ecommerce, data and control experience
 - No generic automation hype, invented case studies or keyword stuffing
