@@ -20,18 +20,20 @@
 .article-hero{padding:clamp(3.5rem,7vw,6.5rem) 0 2.5rem}.article-wrap{width:min(48rem,calc(100% - 2rem));margin-inline:auto}.article-meta{display:flex;flex-wrap:wrap;gap:.65rem 1rem;margin-top:1rem;color:#8e3515;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.summary-box{margin:2rem 0;padding:1.2rem;border:1px solid var(--line);background:#fffaf1}.summary-box strong{display:block;margin-bottom:.45rem;color:var(--ink)}.article-body{padding-bottom:4rem}.article-body h2{margin-top:2.25rem;font-size:clamp(1.8rem,3vw,2.6rem)}.article-body p,.article-body li{font-size:1.03rem}.article-body ul,.article-body ol{padding-left:1.4rem;color:var(--muted);line-height:1.7}.article-body li+li{margin-top:.45rem}.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.5rem 0}.check-grid div{padding:1rem;border:1px solid var(--line);background:rgba(255,250,241,.75)}.check-grid strong{display:block;color:var(--ink);margin-bottom:.25rem}.callout{margin:2rem 0;padding:1.25rem;border-left:4px solid var(--accent);background:rgba(255,250,241,.7)}.faq{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem}.faq h3{font-family:'Hanken Grotesk',sans-serif;font-size:1rem;font-weight:800;letter-spacing:0;margin-top:1.2rem}.breadcrumb{font-size:.82rem;color:var(--muted);margin-top:1.4rem}.breadcrumb a{text-underline-offset:.22em}.article-cta{margin-top:2.5rem;padding:1.4rem;background:var(--dark);color:#fffaf1}.article-cta p{color:rgba(255,250,241,.78)}@media(max-width:620px){.check-grid{grid-template-columns:1fr}.article-cta .button{width:100%;white-space:normal;text-align:center}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"How to reconcile Shopify payouts, orders and fees","description":"Use a controlled Shopify payout reconciliation process to match orders, refunds, fees and bank deposits without posting the payout as revenue.","datePublished":"2026-07-20","dateModified":"2026-07-20","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oliversconsulting.co.uk/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://oliversconsulting.co.uk/articles/"},{"@type":"ListItem","position":3,"name":"Reconcile Shopify payouts","item":"https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does a Shopify payout not equal sales for the same day?","acceptedAnswer":{"@type":"Answer","text":"Order dates, payment dates and payout dates are different events. A payout can also include refunds, fees, adjustments and activity from several days, so it should be matched to the Shopify Payments ledger rather than a same-day sales total."}},{"@type":"Question","name":"What data is needed for Shopify payout reconciliation?","acceptedAnswer":{"@type":"Answer","text":"Keep the payout ID, transaction date, transaction type, order or refund reference, gross amount, fee, net amount, currency, gateway and bank reference. These fields support both the payout-total check and the bank-deposit check."}},{"@type":"Question","name":"Should Shopify payouts be posted as revenue?","acceptedAnswer":{"@type":"Answer","text":"A Shopify payout is a transfer of funds, not a clean revenue figure. Sales, VAT, refunds, fees and payment-clearing movements should follow the accounting treatment agreed with your accountant."}},{"@type":"Question","name":"When is a custom Shopify payout workflow unnecessary?","acceptedAnswer":{"@type":"Answer","text":"Use the native integration or a checklist when the store has one entity, one currency, stable gateways and low exception volume. Fix unclear tax, refund, gift-card or fee rules before automating any posting."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"How to reconcile Shopify payouts, orders and fees","description":"Use a controlled Shopify payout reconciliation process to match orders, refunds, fees and bank deposits without posting the payout as revenue.","datePublished":"2026-07-20","dateModified":"2026-07-26","author":{"@type":"Person","name":"Henry Oliver"},"publisher":{"@type":"Organization","name":"Olivers Consulting","url":"https://oliversconsulting.co.uk/"},"mainEntityOfPage":"https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oliversconsulting.co.uk/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://oliversconsulting.co.uk/articles/"},{"@type":"ListItem","position":3,"name":"Reconcile Shopify payouts","item":"https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does a Shopify payout not equal sales for the same day?","acceptedAnswer":{"@type":"Answer","text":"Order dates, payment dates and payout dates are different events. A payout can also include refunds, fees, adjustments and activity from several days, so it should be matched to the Shopify Payments ledger rather than a same-day sales total."}},{"@type":"Question","name":"What data is needed for Shopify payout reconciliation?","acceptedAnswer":{"@type":"Answer","text":"Keep the payout ID, transaction date, transaction type, order or refund reference, gross amount, fee, net amount, currency, gateway and bank reference. These fields support both the payout-total check and the bank-deposit check."}},{"@type":"Question","name":"Should Shopify payouts be posted as revenue?","acceptedAnswer":{"@type":"Answer","text":"A Shopify payout is a transfer of funds, not a clean revenue figure. Sales, VAT, refunds, fees and payment-clearing movements should follow the accounting treatment agreed with your accountant."}},{"@type":"Question","name":"When is a custom Shopify payout workflow unnecessary?","acceptedAnswer":{"@type":"Answer","text":"Use the native integration or a checklist when the store has one entity, one currency, stable gateways and low exception volume. Fix unclear tax, refund, gift-card or fee rules before automating any posting."}}]}]}
 </script>
 </head>
 <body>
 <main><article>
-<header class="article-hero"><div class="article-wrap"><p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p><p class="kicker">Wholesale and finance admin</p><h1>How to reconcile Shopify payouts, orders and fees</h1><p class="lede">Shopify payout reconciliation should explain every bank deposit without treating the deposit as sales. The process must separate trading activity, payment activity and cash settlement.</p><div class="article-meta"><span>Published 20 July 2026</span><span>Updated 20 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce &amp; wholesale</span></div></div></header>
+<header class="article-hero"><div class="article-wrap"><p class="breadcrumb"><a href="/">Home</a> / <a href="/articles/">Articles</a></p><p class="kicker">Wholesale and finance admin</p><h1>How to reconcile Shopify payouts, orders and fees</h1><p class="lede">Shopify payout reconciliation should explain every bank deposit without treating the deposit as sales. The process must separate trading activity, payment activity and cash settlement.</p><div class="article-meta"><span>Published 20 July 2026</span><span>Updated 26 July 2026</span><span>By Henry Oliver</span><span>UK ecommerce &amp; wholesale</span></div></div></header>
 <div class="article-wrap article-body">
 <div class="summary-box"><strong>Quick answer</strong><p>Match each bank deposit to one Shopify Payments payout, then split that payout into charges, refunds, fees and adjustments. Check that transaction net totals equal the payout and that the payout equals the bank line. Apply only agreed accounting mappings. Send unclear differences to a named reviewer with the source beside them.</p></div>
 
 <p>A Shopify deposit rarely matches the sales shown for the same date. Orders settle later, while refunds, disputes and fees reduce the cash received. Third-party gateways may follow another timetable.</p>
 
 <p>The figures can all be correct while the comparison is wrong. Reconcile trading activity, payment activity and cash settlement as separate records.</p>
+
+<p>My view is that payout reconciliation is not primarily a bookkeeping task. It is an operating control that connects what the customer bought, what the payment provider settled and what finance eventually records. When those three views are separated properly, month-end becomes faster and management information becomes more trustworthy.</p>
 
 <h2>What does Shopify payout reconciliation compare?</h2>
 
@@ -45,6 +47,8 @@
 </div>
 
 <p>Shopify says its <a href="https://help.shopify.com/en/manual/payments/shopify-payments/payouts/payout-reconciliation-report">payout reconciliation report</a> explains Shopify Payments balance activity, transactions, fees and payouts. It is not a revenue statement. It also excludes third-party processors and payment methods, so PayPal, Klarna and other gateways need their own settlement check.</p>
+
+<p>This distinction matters because a single payout may combine several days of orders, refunds from an earlier period and fees that never appear as a separate bank movement. Treating the deposit as sales can distort revenue, VAT, fees and clearing balances in one step.</p>
 
 <h2>Which source files and fields should the workflow use?</h2>
 
@@ -63,6 +67,8 @@
 
 <p>Keep this control separate from the management pack. The same source data may feed <a href="/articles/monday-report-automation/">an automated weekly ecommerce report</a>, but payout reconciliation must still prove the bank movement at transaction level.</p>
 
+<p>I think this is where many finance automations become fragile. They start by copying data into accounting software instead of proving the relationship between the source records. The better sequence is evidence first, accounting entry second.</p>
+
 <h2>Which checks prove that a payout is complete?</h2>
 
 <p>Run two checks.</p>
@@ -75,6 +81,8 @@
 <p>Use a small rounding tolerance only where currency rules require it. A broad tolerance can hide a missing refund or fee. Every difference needs a named cause.</p>
 
 <div class="callout"><p><strong>Control rule:</strong> the bank deposit clears the payment balance. It is not the sales figure.</p></div>
+
+<p>For larger stores, add a completeness check across the whole period. Confirm that every successful payout in Shopify appears once in the bank and that every Shopify Payments bank deposit links back to one payout. This catches missing imports and duplicated postings that can pass an individual amount check.</p>
 
 <h2>How should exceptions be handled?</h2>
 
@@ -90,13 +98,17 @@
 
 <p>Assign ownership before the pilot. Finance owns the accounting map, operations confirms order and refund references, and the workflow owner fixes import failures. Explained timing gaps need a status and expected clearing date, not repeated investigation.</p>
 
+<p>My preference is to make exception messages specific enough that a reviewer can act without rebuilding the analysis. An automated process has not really saved time if every failure still requires someone to reopen three reports and discover the cause from scratch.</p>
+
 <h2>How should Shopify payouts reach Xero?</h2>
 
 <p>Agree the posting design with the accountant before building it. A common pattern uses a Shopify Payments clearing account. Sales and VAT are recorded from trading activity. Refunds reverse the agreed values. Fees go to the selected expense account. The bank deposit transfers the payout balance into the bank account.</p>
 
 <p>The <a href="https://www.xero.com/uk/partnerships/shopify/">Shopify integration by Xero</a> can sync daily summaries or individual sales and match payouts to bank deposits. That may be enough for a simple store, so test the native route before paying for a custom build.</p>
 
-<p>A custom workflow becomes useful when several stores, entities, currencies, gateways or approval rules must be joined into one exception process.</p>
+<p>A custom workflow becomes useful when several stores, entities, currencies, gateways or approval rules must be joined into one exception process. It can also help where finance needs a controlled import rather than direct posting, or where payout data must be enriched with internal product, channel or entity information.</p>
+
+<p>The same design principle applies to <a href="/articles/stop-rekeying-wholesale-orders-sage-xero/">automating wholesale order entry into Sage or Xero</a>: create a checked record first, preserve the source and make risky exceptions visible before anything posts.</p>
 
 <h2>What does the payback look like?</h2>
 
@@ -108,17 +120,25 @@
 
 <p>Use your own figures and test the assumptions. The wider <a href="/articles/ecommerce-ai-automation-roi/">ecommerce automation ROI framework</a> explains how to value released capacity without pretending every saved minute becomes cash.</p>
 
+<p>Also count avoidable corrections. One duplicated journal, misclassified fee or unexplained clearing balance can consume more finance time than several routine payouts. A sensible business case includes both capacity released and the reduction in recurring investigation.</p>
+
+<p>I prefer conservative ROI cases. If the project only pays back when every payout passes automatically and no maintenance is required, the assumptions are too optimistic. A stronger case still works when exceptions remain and the workflow is valued mainly for making them faster to resolve.</p>
+
 <h2>How should a pilot be run?</h2>
 
 <p>Start with one complete month, including refunds, a dispute, a bank holiday, more than one currency and a third-party gateway. Run the workflow beside the current process.</p>
 
 <p>Track pass rate, exception reasons, review time and post-entry corrections. Allow automatic posting only after the rules work across real payout cycles, and keep a pause control for changed exports or new transaction types.</p>
 
+<p>Before expanding, review the exceptions by category. If most failures come from one gateway or one new transaction type, fix that cause before adding more stores. This is the same controlled sequencing I recommend when deciding <a href="/articles/why-stock-sync-fails-shopify-amazon-ebay/">how to stabilise multi-channel stock rules</a>.</p>
+
 <h2>When is a custom workflow not worth building?</h2>
 
 <p>Use the native integration or a checklist when there is one store, one entity, one currency, stable gateways and low volume. A better month-end process may save more time than custom software.</p>
 
 <p>Do not automate unsettled accounting policy. If staff disagree about gift cards, VAT, fees or refunds, settle the treatment first. The same process check applies <a href="/articles/before-hiring-ecommerce-admin/">before adding ecommerce admin headcount</a>: fix the rules before adding cost.</p>
+
+<p>My prediction is that ecommerce finance teams will move away from broad monthly reconciliations towards smaller continuous controls. The close will become less about discovering unexplained balances and more about confirming that already-monitored exceptions were resolved correctly.</p>
 
 <h2>What should the finished workflow deliver?</h2>
 
@@ -133,8 +153,8 @@
 <h3>When is a custom Shopify payout workflow unnecessary?</h3><p>Use the native integration or a checklist when the store has one entity, one currency, stable gateways and low exception volume. Fix unclear tax, refund, gift-card or fee rules before automating any posting.</p>
 </section>
 
-<section class="article-cta"><p class="kicker">Free process review</p><h2>Still rebuilding Shopify payout reconciliations by hand?</h2><p>Bring one payout export, the matching bank line and your current journal. I’ll help map the source data, checks, exceptions and payback before you commission a build.</p><p><a class="button light" href="/#book">Book the free process review</a></p></section>
-</div></article></main>
-<footer class="footer wrap"><p>Olivers Consulting · Automation for UK ecommerce and wholesale</p><p>© 2026 Henry Oliver</p></footer>
+<section class="article-cta"><p class="kicker">Free process review</p><h2>Still reconciling Shopify payouts line by line?</h2><p>Bring one month of payout, bank and accounting data. I’ll help you identify the checks, exceptions and most practical route before you commission a custom build.</p><p><a class="button" href="/#book">Book a free review</a></p></section>
+</div>
+</article></main>
 </body>
 </html>
