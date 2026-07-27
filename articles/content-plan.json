@@ -1,1 +1,223 @@
-{"site":"Olivers Consulting","domain":"https://oliversconsulting.co.uk","primary_goal":"Build authority for operational automation across UK SMEs while retaining ecommerce and wholesale as the strongest proof base.","site_structure_note":"The public article hub is /articles/.","ai_mention_rule":"AI may be covered only when it supports controlled workflows, clear review rules and ROI proof.","articles":[{"title":"Should you integrate your systems or automate the hand-off?","slug":"integrate-systems-or-automate-hand-off","url":"https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/","date_published":"2026-07-24","date_updated":"2026-07-24","created_new_article":true,"scheduled_day":"Friday","editorial_role":"Durable comparison and commercial decision","article_format":"Commercial comparison with decision matrix","topic_pillar":"CRM, finance and operations-system hand-offs","target_client_type":"Operationally complex UK SMEs using two or more systems with repeated data movement between them","industry_or_operating_context":"Broader SME operations across ecommerce, wholesale, service and professional-services teams","portfolio_classification":"broader SME-led","rolling_12_portfolio_mix_after_publication":{"ecommerce_wholesale_distribution_led":9,"broader_sme_led":1,"note":"Current published history remains heavily ecommerce-led; this article begins the planned shift towards an 8 broader / 4 core balance over future rolling windows."},"primary_buyer_problem":"A team is repeatedly copying, cleaning or reconciling data between systems and does not know whether it needs a full integration, a lighter automation or a process fix.","primary_search_intent":"Compare system integration with workflow automation and decide which approach is appropriate.","buyer_stage":"Solution aware","primary_query":"integrate systems or automate workflow","related_query_family":["system integration vs automation","should I integrate my business systems","automate data transfer between systems","API integration or workflow automation","manual process vs automation"],"trend_or_durable_demand":"Durable commercial demand. The decision recurs wherever SMEs use multiple operational systems and repeated exports, uploads, emails or reconciliations connect them.","evidence_source_and_date":"Current repository article gap audit completed 24 July 2026; no external trend was claimed because no dated external research was required for this durable decision topic.","what_changed_or_matters":"The site previously focused on specific ecommerce workflows. It lacked a broader decision page explaining when full integration is justified and when a controlled hand-off is safer and more economical.","henry_distinct_contribution":"A process and control perspective: choose the lightest safe solution after separating stable data transfer from human judgement, with stop rules and proof of payback.","rolling_12_article_audit":{"status":"Passed","meaningfully_different_dimensions":["reader problem","search intent","main conclusion","operating context","article format","original asset","CTA angle"],"overlaps_considered":["Why stock sync fails between Shopify, Amazon and eBay","How to stop re-keying wholesale orders into Sage or Xero","Ecommerce AI automation: how to prove the ROI first","Your ecommerce operation should survive one person being away"],"why_distinct":"The article compares three solution architectures across broader UK SME operations. It does not diagnose one channel workflow, explain one finance task, focus on AI ROI or address key-person risk."},"original_editorial_asset":"Five-row integration decision matrix comparing full integration, controlled automation and an improved manual process across frequency, input stability, failure cost, transformation need and likely fit.","first_hand_contribution_or_limits":"Uses Henry's proven process-design, data, control and ecommerce operating perspective. It does not claim first-hand experience in sectors beyond those stated.","proof_points_used_recently":"The 200,000-SKU and eight-hours-to-two-minutes proof points were deliberately not reused.","previous_two_formats":["Founder/operator viewpoint with diagnostic scorecard","Operational finance reconciliation guide"],"quality_scores":{"usefulness":5,"originality":4,"distinct_search_intent":5,"authority_added":4,"first_hand_or_expert_value":4,"credibility_for_selected_client_type":4,"workflow_specificity":5,"commercial_relevance":5,"accuracy_and_sourcing":4,"original_asset_quality":5,"lack_of_overlap_with_previous_12":5,"portfolio_balance":5,"lack_of_filler_and_repeated_reasoning":4,"natural_keyword_use":4,"writing_quality":4,"readability":4,"format_variety":5,"trend_or_durable_demand_evidence":4,"fit_with_henry_experience":4,"visual_consistency":5,"mobile_usability":5,"conversion_relevance":5},"quality_average":4.55,"publication_decision":"Published","rejection_reason":null,"readability_check":"Passed by editorial review: short sentences, active voice and plain British English; designed to remain at or below grade 9.","mobile_check":"Passed conceptual checks at about 390px and 768px. The decision matrix collapses to labelled single-column rows; the article width and CTA remain fluid.","ai_mention_check":"Passed. AI is not used as a claim or selling point.","internal_links":["/","/articles/","/#services","/#book","/articles/why-stock-sync-fails-shopify-amazon-ebay/","/articles/stop-rekeying-wholesale-orders-sage-xero/","/articles/ecommerce-ai-automation-roi/"],"schema":["BlogPosting","BreadcrumbList"],"discovery_file_updates":["articles/index.html","sitemap.xml","robots.txt verified unchanged","llms.txt","articles/content-plan.json"]},{"title":"Your ecommerce operation should survive one person being away","slug":"ecommerce-key-person-dependency","url":"https://oliversconsulting.co.uk/articles/ecommerce-key-person-dependency/","date_published":"2026-07-22","date_updated":"2026-07-22","created_new_article":true,"scheduled_day":"Wednesday","editorial_role":"Operator view or first-hand lesson","article_format":"Founder/operator viewpoint with diagnostic scorecard","topic_pillar":"Founder/operator lessons"},{"title":"How to reconcile Shopify payouts, orders and fees","slug":"reconcile-shopify-payouts-orders-fees","url":"https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/","date_published":"2026-07-20","topic_pillar":"Wholesale and finance admin"},{"title":"How to catch product data errors before listings go live","slug":"product-data-errors-before-listings-go-live","url":"https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/","date_published":"2026-07-17","topic_pillar":"Product data operations"},{"title":"How to stop re-keying wholesale orders into Sage or Xero","slug":"stop-rekeying-wholesale-orders-sage-xero","url":"https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/","date_published":"2026-07-10","topic_pillar":"Wholesale and finance admin"},{"title":"Ecommerce AI automation: how to prove the ROI first","slug":"ecommerce-ai-automation-roi","url":"https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/","date_published":"2026-07-08","topic_pillar":"Founder/operator lessons"},{"title":"Why stock sync fails between Shopify, Amazon and eBay","slug":"why-stock-sync-fails-shopify-amazon-ebay","url":"https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/","date_published":"2026-07-07","topic_pillar":"Channel operations"},{"title":"The Monday report your ecommerce team should not be building by hand","slug":"monday-report-automation","url":"https://oliversconsulting.co.uk/articles/monday-report-automation/","date_published":"2026-07-07","topic_pillar":"Reporting automation"},{"title":"Before you hire another ecommerce admin, check the process first","slug":"before-hiring-ecommerce-admin","url":"https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/","date_published":"2026-07-07","topic_pillar":"Hiring versus automation"},{"title":"How to automate supplier price lists for Shopify, Amazon and wholesale channels","slug":"automate-supplier-price-lists","url":"https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/","date_published":"2026-07-07","topic_pillar":"Supplier data automation"}],"future_pillars":["Ecommerce and wholesale operations","Supplier, customer and product data","Document and invoice processing","Reporting and reconciliation","Spreadsheet-heavy operations and data quality","CRM, finance and operations-system hand-offs","Approval and exception workflows","Key-person dependency and process resilience","Hiring versus automation","Founder/operator lessons"],"quality_rules":["Write for operationally complex UK SMEs while retaining ecommerce and wholesale as the strongest proof base.","Every article must read at Hemingway grade 9 or lower.","Do not invent results, statistics, dates, names or testimonials.","Every article needs distinct intent and at least one original editorial asset.","AI is one controlled tool, never the offer or a replacement for judgement."]}
+{
+  "site": "Olivers Consulting",
+  "domain": "https://oliversconsulting.co.uk",
+  "primary_goal": "Build authority for operational automation across UK SMEs while retaining ecommerce and wholesale as the strongest proof base.",
+  "site_structure_note": "The public article hub is /articles/.",
+  "ai_mention_rule": "AI may be covered only when it supports controlled workflows, clear review rules and ROI proof.",
+  "articles": [
+    {
+      "title": "How to automate invoice processing without losing approval control",
+      "slug": "automate-invoice-processing-approval-control",
+      "url": "https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/",
+      "date_published": "2026-07-27",
+      "date_updated": "2026-07-27",
+      "created_new_article": true,
+      "scheduled_day": "Monday",
+      "editorial_role": "High-intent buyer problem",
+      "article_format": "Operational buyer guide with pass, review and stop control map",
+      "topic_pillar": "Document and invoice processing",
+      "target_client_type": "Operationally complex UK SMEs with repeated supplier invoice entry, matching and approval work",
+      "industry_or_operating_context": "Broader UK SME finance and operations teams across ecommerce, wholesale, distribution, service and professional-services businesses",
+      "portfolio_classification": "broader SME-led",
+      "rolling_12_portfolio_mix_after_publication": {
+        "ecommerce_wholesale_distribution_led": 9,
+        "broader_sme_led": 2,
+        "note": "The published history remains ecommerce-led. This article continues the planned shift towards a 4 core / 8 broader balance in future rolling windows."
+      },
+      "primary_buyer_problem": "Invoices arrive through email or uploads and staff repeatedly extract fields, check suppliers, match purchase orders, chase approvals and handle exceptions.",
+      "primary_search_intent": "Learn how to automate invoice processing while retaining financial approval and exception controls.",
+      "buyer_stage": "Problem aware to solution aware",
+      "primary_query": "automate invoice processing",
+      "related_query_family": [
+        "invoice processing automation for small business",
+        "automate invoice approval workflow",
+        "invoice OCR and approval controls",
+        "accounts payable automation UK SME",
+        "how to automate supplier invoices"
+      ],
+      "trend_or_durable_demand": "Current regulatory and durable operational demand. UK policy is moving towards mandatory VAT e-invoicing from 2029, while current HMRC guidance already requires VAT records and specified digital links across software used for VAT records.",
+      "evidence_source_and_date": "HMRC and Department for Business and Trade e-invoicing consultation response, updated 26 November 2025; HMRC VAT record-keeping guidance checked 27 July 2026; HMRC Making Tax Digital for Income Tax guidance updated 16 July 2026.",
+      "what_changed_or_matters": "UK businesses have time before mandatory VAT e-invoicing, but invoice data, approvals, supplier checks and digital records need to be controlled before a mandate or software purchase forces a rushed process redesign.",
+      "existing_article_gap": "The site covered Shopify payout reconciliation, wholesale order entry and system hand-offs, but did not explain supplier invoice capture, purchase-order matching, approval limits and bank-detail exceptions as one controlled process.",
+      "henry_distinct_contribution": "A process and control view: automate evidence collection and repeatable checks before automating approval, and force uncertain invoices into a reason-coded review queue.",
+      "rolling_12_article_audit": {
+        "status": "Passed",
+        "meaningfully_different_dimensions": [
+          "primary reader problem",
+          "primary search intent",
+          "workflow mechanism",
+          "operating context",
+          "original editorial asset",
+          "article format",
+          "CTA angle"
+        ],
+        "overlaps_considered": [
+          "How to reconcile Shopify payouts, orders and fees",
+          "How to stop re-keying wholesale orders into Sage or Xero",
+          "Should you integrate your systems or automate the hand-off?",
+          "How to catch product data errors before listings go live"
+        ],
+        "why_distinct": "The article addresses supplier invoice intake, OCR or parsing, duplicate tests, supplier verification, purchase-order matching, approval limits and bank-detail controls. It does not reconcile sales payouts, enter customer orders, compare system architecture or validate product listings."
+      },
+      "original_editorial_asset": "A five-row invoice pass, review and stop control map covering supplier status, duplicate invoice numbers, purchase-order matching, bank-detail changes and approval limits.",
+      "first_hand_contribution_or_limits": "Uses Henry Oliver's proven process-design, data and control perspective. It does not claim first-hand accounts-payable experience in industries not stated.",
+      "proof_points_used_recently": "The 200,000-SKU and eight-hours-to-two-minutes proof points were not reused.",
+      "previous_two_formats": [
+        "Commercial comparison with decision matrix",
+        "Founder/operator viewpoint with diagnostic scorecard"
+      ],
+      "quality_scores": {
+        "usefulness": 5,
+        "originality": 4,
+        "distinct_search_intent": 5,
+        "authority_added": 4,
+        "first_hand_or_expert_value": 4,
+        "credibility_for_selected_client_type": 4,
+        "workflow_specificity": 5,
+        "commercial_relevance": 5,
+        "accuracy_and_sourcing": 5,
+        "original_asset_quality": 5,
+        "lack_of_overlap_with_previous_12": 5,
+        "portfolio_balance": 5,
+        "lack_of_filler_and_repeated_reasoning": 4,
+        "natural_keyword_use": 4,
+        "writing_quality": 4,
+        "readability": 4,
+        "format_variety": 4,
+        "trend_or_durable_demand_evidence": 5,
+        "fit_with_henry_experience": 4,
+        "visual_consistency": 5,
+        "mobile_usability": 5,
+        "conversion_relevance": 5
+      },
+      "quality_average": 4.59,
+      "publication_decision": "Published",
+      "rejection_reason": null,
+      "readability_check": "Passed editorial review for short sentences, active voice, plain British English and an intended Hemingway grade of 9 or lower.",
+      "mobile_check": "Passed conceptual checks at about 390px and 768px. The control table collapses into labelled single-column rows and the CTA remains fluid.",
+      "ai_mention_check": "Passed. AI is not presented as the offer. OCR is named only as one extraction mechanism.",
+      "internal_links": [
+        "/",
+        "/articles/",
+        "/#services",
+        "/#book",
+        "/articles/ecommerce-ai-automation-roi/",
+        "/articles/integrate-systems-or-automate-hand-off/"
+      ],
+      "external_sources": [
+        "https://www.gov.uk/charge-reclaim-record-vat/keeping-vat-records",
+        "https://www.gov.uk/guidance/record-keeping-for-vat-notice-70021"
+      ],
+      "schema": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "discovery_file_updates": [
+        "articles/index.html",
+        "sitemap.xml",
+        "robots.txt verified unchanged",
+        "llms.txt",
+        "articles/content-plan.json"
+      ]
+    },
+    {
+      "title": "Should you integrate your systems or automate the hand-off?",
+      "slug": "integrate-systems-or-automate-hand-off",
+      "url": "https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/",
+      "date_published": "2026-07-24",
+      "date_updated": "2026-07-26",
+      "created_new_article": true,
+      "scheduled_day": "Friday",
+      "article_format": "Commercial comparison with decision matrix",
+      "topic_pillar": "CRM, finance and operations-system hand-offs",
+      "portfolio_classification": "broader SME-led",
+      "primary_query": "integrate systems or automate workflow"
+    },
+    {
+      "title": "Your ecommerce operation should survive one person being away",
+      "slug": "ecommerce-key-person-dependency",
+      "url": "https://oliversconsulting.co.uk/articles/ecommerce-key-person-dependency/",
+      "date_published": "2026-07-22",
+      "created_new_article": true,
+      "scheduled_day": "Wednesday",
+      "article_format": "Founder/operator viewpoint with diagnostic scorecard",
+      "topic_pillar": "Founder/operator lessons"
+    },
+    {
+      "title": "How to reconcile Shopify payouts, orders and fees",
+      "slug": "reconcile-shopify-payouts-orders-fees",
+      "url": "https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/",
+      "date_published": "2026-07-20",
+      "topic_pillar": "Wholesale and finance admin"
+    },
+    {
+      "title": "How to catch product data errors before listings go live",
+      "slug": "product-data-errors-before-listings-go-live",
+      "url": "https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/",
+      "date_published": "2026-07-17",
+      "topic_pillar": "Product data operations"
+    },
+    {
+      "title": "How to stop re-keying wholesale orders into Sage or Xero",
+      "slug": "stop-rekeying-wholesale-orders-sage-xero",
+      "url": "https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/",
+      "date_published": "2026-07-10",
+      "topic_pillar": "Wholesale and finance admin"
+    },
+    {
+      "title": "Ecommerce AI automation: how to prove the ROI first",
+      "slug": "ecommerce-ai-automation-roi",
+      "url": "https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/",
+      "date_published": "2026-07-08",
+      "topic_pillar": "Founder/operator lessons"
+    },
+    {
+      "title": "Why stock sync fails between Shopify, Amazon and eBay",
+      "slug": "why-stock-sync-fails-shopify-amazon-ebay",
+      "url": "https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/",
+      "date_published": "2026-07-07",
+      "topic_pillar": "Channel operations"
+    },
+    {
+      "title": "The Monday report your ecommerce team should not be building by hand",
+      "slug": "monday-report-automation",
+      "url": "https://oliversconsulting.co.uk/articles/monday-report-automation/",
+      "date_published": "2026-07-07",
+      "topic_pillar": "Reporting automation"
+    },
+    {
+      "title": "Before you hire another ecommerce admin, check the process first",
+      "slug": "before-hiring-ecommerce-admin",
+      "url": "https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/",
+      "date_published": "2026-07-07",
+      "topic_pillar": "Hiring versus automation"
+    },
+    {
+      "title": "How to automate supplier price lists for Shopify, Amazon and wholesale channels",
+      "slug": "automate-supplier-price-lists",
+      "url": "https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/",
+      "date_published": "2026-07-07",
+      "topic_pillar": "Supplier data automation"
+    }
+  ],
+  "future_pillars": [
+    "Ecommerce and wholesale operations",
+    "Supplier, customer and product data",
+    "Document and invoice processing",
+    "Reporting and reconciliation",
+    "Spreadsheet-heavy operations and data quality",
+    "CRM, finance and operations-system hand-offs",
+    "Approval and exception workflows",
+    "Key-person dependency and process resilience",
+    "Hiring versus automation",
+    "Founder/operator lessons"
+  ],
+  "quality_rules": [
+    "Write for operationally complex UK SMEs while retaining ecommerce and wholesale as the strongest proof base.",
+    "Every article must read at Hemingway grade 9 or lower.",
+    "Do not invent results, statistics, dates, names or testimonials.",
+    "Every article needs distinct intent and at least one original editorial asset.",
+    "AI is one controlled tool, never the offer or a replacement for judgement."
+  ]
+}
