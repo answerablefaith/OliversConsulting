@@ -27,6 +27,7 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 
 ## Published articles
 
+- [Your spreadsheet is not the problem. The missing operating rules are.](https://oliversconsulting.co.uk/articles/spreadsheet-not-the-problem-operating-rules/)
 - [How to automate invoice processing without losing approval control](https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/)
 - [Should you integrate your systems or automate the hand-off?](https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/)
 - [Your ecommerce operation should survive one person being away](https://oliversconsulting.co.uk/articles/ecommerce-key-person-dependency/)
