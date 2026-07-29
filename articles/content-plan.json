@@ -6,65 +6,67 @@
   "ai_mention_rule": "AI may be covered only when it supports controlled workflows, clear review rules and ROI proof.",
   "articles": [
     {
-      "title": "How to automate invoice processing without losing approval control",
-      "slug": "automate-invoice-processing-approval-control",
-      "url": "https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/",
-      "date_published": "2026-07-27",
-      "date_updated": "2026-07-27",
+      "title": "Your spreadsheet is not the problem. The missing operating rules are.",
+      "slug": "spreadsheet-not-the-problem-operating-rules",
+      "url": "https://oliversconsulting.co.uk/articles/spreadsheet-not-the-problem-operating-rules/",
+      "date_published": "2026-07-29",
+      "date_updated": "2026-07-29",
       "created_new_article": true,
-      "scheduled_day": "Monday",
-      "editorial_role": "High-intent buyer problem",
-      "article_format": "Operational buyer guide with pass, review and stop control map",
-      "topic_pillar": "Document and invoice processing",
-      "target_client_type": "Operationally complex UK SMEs with repeated supplier invoice entry, matching and approval work",
-      "industry_or_operating_context": "Broader UK SME finance and operations teams across ecommerce, wholesale, distribution, service and professional-services businesses",
+      "scheduled_day": "Wednesday",
+      "editorial_role": "Operator view or first-hand lesson",
+      "article_format": "Opinionated operator viewpoint with four operating contracts framework",
+      "topic_pillar": "Spreadsheet-heavy operations and data quality",
+      "target_client_type": "Operationally complex UK SMEs whose teams depend on shared spreadsheets for orders, finance, reporting or operational decisions",
+      "industry_or_operating_context": "Broader UK SME operations across service, professional-services, ecommerce, wholesale, distribution, finance and administration teams",
       "portfolio_classification": "broader SME-led",
       "rolling_12_portfolio_mix_after_publication": {
         "ecommerce_wholesale_distribution_led": 9,
-        "broader_sme_led": 2,
-        "note": "The published history remains ecommerce-led. This article continues the planned shift towards a 4 core / 8 broader balance in future rolling windows."
+        "broader_sme_led": 3,
+        "note": "The current rolling 12 remains core-market heavy because of the initial publication history. This broader-SME article continues the planned shift towards a 4 core / 8 broader balance as older articles leave the window."
       },
-      "primary_buyer_problem": "Invoices arrive through email or uploads and staff repeatedly extract fields, check suppliers, match purchase orders, chase approvals and handle exceptions.",
-      "primary_search_intent": "Learn how to automate invoice processing while retaining financial approval and exception controls.",
-      "buyer_stage": "Problem aware to solution aware",
-      "primary_query": "automate invoice processing",
+      "primary_buyer_problem": "A shared spreadsheet is blamed for errors and delays, but the process lacks agreed ownership, definitions, decision rights and change controls.",
+      "primary_search_intent": "Understand why a business spreadsheet keeps failing and what operating rules to fix before replacing or automating it.",
+      "buyer_stage": "Problem aware",
+      "primary_query": "why business spreadsheets fail",
       "related_query_family": [
-        "invoice processing automation for small business",
-        "automate invoice approval workflow",
-        "invoice OCR and approval controls",
-        "accounts payable automation UK SME",
-        "how to automate supplier invoices"
+        "spreadsheet process problems",
+        "replace spreadsheet with workflow",
+        "spreadsheet data ownership",
+        "business spreadsheet controls",
+        "when to stop using Excel for operations"
       ],
-      "trend_or_durable_demand": "Current regulatory and durable operational demand. UK policy is moving towards mandatory VAT e-invoicing from 2029, while current HMRC guidance already requires VAT records and specified digital links across software used for VAT records.",
-      "evidence_source_and_date": "HMRC and Department for Business and Trade e-invoicing consultation response, updated 26 November 2025; HMRC VAT record-keeping guidance checked 27 July 2026; HMRC Making Tax Digital for Income Tax guidance updated 16 July 2026.",
-      "what_changed_or_matters": "UK businesses have time before mandatory VAT e-invoicing, but invoice data, approvals, supplier checks and digital records need to be controlled before a mandate or software purchase forces a rushed process redesign.",
-      "existing_article_gap": "The site covered Shopify payout reconciliation, wholesale order entry and system hand-offs, but did not explain supplier invoice capture, purchase-order matching, approval limits and bank-detail exceptions as one controlled process.",
-      "henry_distinct_contribution": "A process and control view: automate evidence collection and repeatable checks before automating approval, and force uncertain invoices into a reason-coded review queue.",
+      "trend_or_durable_demand": "Durable operational demand supported by current UK government data-quality guidance. The issue recurs wherever shared files carry business-critical definitions, changes and decisions.",
+      "evidence_source_and_date": "GOV.UK Data quality issues framework, updated 16 April 2026 and checked 29 July 2026; GOV.UK Creating and sharing spreadsheets guidance, updated 5 October 2023 and checked 29 July 2026.",
+      "what_changed_or_matters": "Current data-quality guidance emphasises rules, targets, impact and ownership. For SMEs, this reinforces that software replacement should follow clear operating definitions rather than attempt to create them.",
+      "existing_article_gap": "The site covered product-data checks, key-person risk, system integration and invoice controls, but did not address the mistaken belief that replacing a spreadsheet will resolve unclear operating ownership and decision rights.",
+      "henry_distinct_contribution": "A direct operating and data-control view: spreadsheets often expose unresolved management decisions, and the business should define purpose, ownership, definitions and change rights before buying a replacement.",
       "rolling_12_article_audit": {
         "status": "Passed",
         "meaningfully_different_dimensions": [
           "primary reader problem",
           "primary search intent",
+          "main conclusion",
           "workflow mechanism",
           "operating context",
-          "original editorial asset",
+          "H2 themes",
           "article format",
+          "original editorial asset",
           "CTA angle"
         ],
         "overlaps_considered": [
-          "How to reconcile Shopify payouts, orders and fees",
-          "How to stop re-keying wholesale orders into Sage or Xero",
+          "Your ecommerce operation should survive one person being away",
+          "How to catch product data errors before listings go live",
           "Should you integrate your systems or automate the hand-off?",
-          "How to catch product data errors before listings go live"
+          "Before you hire another ecommerce admin, check the process first"
         ],
-        "why_distinct": "The article addresses supplier invoice intake, OCR or parsing, duplicate tests, supplier verification, purchase-order matching, approval limits and bank-detail controls. It does not reconcile sales payouts, enter customer orders, compare system architecture or validate product listings."
+        "why_distinct": "This article is about decision ownership and operating definitions inside shared spreadsheet processes. It does not diagnose absence risk, validate product records, compare technical architectures or make a hiring-versus-automation case. Its conclusion is to settle four operating contracts before selecting technology."
       },
-      "original_editorial_asset": "A five-row invoice pass, review and stop control map covering supplier status, duplicate invoice numbers, purchase-order matching, bank-detail changes and approval limits.",
-      "first_hand_contribution_or_limits": "Uses Henry Oliver's proven process-design, data and control perspective. It does not claim first-hand accounts-payable experience in industries not stated.",
+      "original_editorial_asset": "The four operating contracts framework: purpose, ownership, definitions and change rights, each with a practical test for spreadsheet-heavy processes.",
+      "first_hand_contribution_or_limits": "Uses Henry Oliver's direct ecommerce operating experience and PwC/Citi data-control perspective. It does not claim first-hand experience inside unrelated client industries.",
       "proof_points_used_recently": "The 200,000-SKU and eight-hours-to-two-minutes proof points were not reused.",
       "previous_two_formats": [
-        "Commercial comparison with decision matrix",
-        "Founder/operator viewpoint with diagnostic scorecard"
+        "Operational buyer guide with pass, review and stop control map",
+        "Commercial comparison with decision matrix"
       ],
       "quality_scores": {
         "usefulness": 5,
@@ -72,9 +74,9 @@
         "distinct_search_intent": 5,
         "authority_added": 4,
         "first_hand_or_expert_value": 4,
-        "credibility_for_selected_client_type": 4,
-        "workflow_specificity": 5,
-        "commercial_relevance": 5,
+        "credibility_for_selected_client_type": 5,
+        "workflow_specificity": 4,
+        "commercial_relevance": 4,
         "accuracy_and_sourcing": 5,
         "original_asset_quality": 5,
         "lack_of_overlap_with_previous_12": 5,
@@ -82,51 +84,60 @@
         "lack_of_filler_and_repeated_reasoning": 4,
         "natural_keyword_use": 4,
         "writing_quality": 4,
-        "readability": 4,
-        "format_variety": 4,
-        "trend_or_durable_demand_evidence": 5,
-        "fit_with_henry_experience": 4,
+        "readability": 5,
+        "format_variety": 5,
+        "trend_or_durable_demand_evidence": 4,
+        "fit_with_henry_experience": 5,
         "visual_consistency": 5,
         "mobile_usability": 5,
-        "conversion_relevance": 5
+        "conversion_relevance": 4
       },
-      "quality_average": 4.59,
+      "quality_average": 4.55,
       "publication_decision": "Published",
       "rejection_reason": null,
       "readability_check": "Passed editorial review for short sentences, active voice, plain British English and an intended Hemingway grade of 9 or lower.",
-      "mobile_check": "Passed conceptual checks at about 390px and 768px. The control table collapses into labelled single-column rows and the CTA remains fluid.",
-      "ai_mention_check": "Passed. AI is not presented as the offer. OCR is named only as one extraction mechanism.",
+      "mobile_check": "Passed conceptual checks at about 390px and 768px. The two-column framework collapses to one column, headings use clamp sizing, content widths are fluid and the CTA permits multiple lines.",
+      "ai_mention_check": "Passed. AI is not mentioned because it does not improve this argument.",
       "internal_links": [
         "/",
         "/articles/",
         "/#services",
         "/#book",
-        "/articles/ecommerce-ai-automation-roi/",
         "/articles/integrate-systems-or-automate-hand-off/"
       ],
       "external_sources": [
-        "https://www.gov.uk/charge-reclaim-record-vat/keeping-vat-records",
-        "https://www.gov.uk/guidance/record-keeping-for-vat-notice-70021"
+        "https://www.gov.uk/government/publications/implement-a-data-quality-action-plan/data-quality-issues-framework",
+        "https://www.gov.uk/guidance/creating-and-sharing-spreadsheets"
       ],
       "schema": [
         "BlogPosting",
-        "BreadcrumbList",
-        "FAQPage"
+        "BreadcrumbList"
       ],
       "discovery_file_updates": [
         "articles/index.html",
         "sitemap.xml",
-        "robots.txt verified unchanged",
+        "robots.txt",
         "llms.txt",
         "articles/content-plan.json"
       ]
+    },
+    {
+      "title": "How to automate invoice processing without losing approval control",
+      "slug": "automate-invoice-processing-approval-control",
+      "url": "https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/",
+      "date_published": "2026-07-27",
+      "created_new_article": true,
+      "scheduled_day": "Monday",
+      "article_format": "Operational buyer guide with pass, review and stop control map",
+      "topic_pillar": "Document and invoice processing",
+      "portfolio_classification": "broader SME-led",
+      "primary_query": "automate invoice processing"
     },
     {
       "title": "Should you integrate your systems or automate the hand-off?",
       "slug": "integrate-systems-or-automate-hand-off",
       "url": "https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/",
       "date_published": "2026-07-24",
-      "date_updated": "2026-07-26",
       "created_new_article": true,
       "scheduled_day": "Friday",
       "article_format": "Commercial comparison with decision matrix",
