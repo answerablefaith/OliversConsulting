@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://oliversconsulting.co.uk/</loc><lastmod>2026-07-08</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://oliversconsulting.co.uk/articles/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oliversconsulting.co.uk/articles/</loc><lastmod>2026-07-31</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oliversconsulting.co.uk/privacy-policy/</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://oliversconsulting.co.uk/cookie-policy/</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://oliversconsulting.co.uk/terms-of-service/</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://oliversconsulting.co.uk/articles/email-attachments-shared-folders-or-forms/</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://oliversconsulting.co.uk/articles/spreadsheet-not-the-problem-operating-rules/</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
