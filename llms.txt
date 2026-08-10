@@ -27,6 +27,7 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 
 ## Published articles
 
+- [How to automate supplier statement reconciliation without hiding exceptions](https://oliversconsulting.co.uk/articles/automate-supplier-statement-reconciliation/)
 - [Shopify returns: what should be automatic and what should stay in review?](https://oliversconsulting.co.uk/articles/shopify-returns-automation-review-rules/)
 - [How to automate CRM updates after sales calls without bad data](https://oliversconsulting.co.uk/articles/automate-crm-updates-after-sales-calls/)
 - [Email attachments, shared folders or forms: which should your business use?](https://oliversconsulting.co.uk/articles/email-attachments-shared-folders-or-forms/)
