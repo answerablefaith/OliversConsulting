@@ -63,6 +63,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>x-dc{display:none!important}</style>
+<style id="oc-pricing-conversion-style">
+  .oc-pricing-bands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:30px 0 16px;align-items:stretch}
+  .oc-pricing-band{position:relative;display:flex;flex-direction:column;min-height:190px;padding:23px;border:2px solid #17130b;border-radius:12px;background:#f5efe4;box-shadow:0 16px 30px -26px rgba(23,19,11,.55)}
+  .oc-pricing-band--featured{background:#1e3b2f;color:#efe8dc;border-color:#1e3b2f;box-shadow:0 18px 36px -24px rgba(30,59,47,.8)}
+  .oc-pricing-band-badge{position:absolute;right:16px;top:15px;padding:5px 8px;border-radius:999px;background:#d9a86a;color:#17130b;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+  .oc-pricing-band-name{font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b5791f}
+  .oc-pricing-band--featured .oc-pricing-band-name{color:#8fe0af}
+  .oc-pricing-band-price{margin-top:12px;font-family:'Saira Condensed',sans-serif;font-size:36px;font-weight:800;line-height:.95;text-transform:uppercase}
+  .oc-pricing-band-copy{margin-top:14px;font-size:14px;line-height:1.45;color:#5b5444}
+  .oc-pricing-band--featured .oc-pricing-band-copy{color:#b6c8b9}
+  .oc-pricing-assurance{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 0 28px;padding:14px 16px;border:1px solid #d6cdba;border-radius:9px;background:#e9e0cf}
+  .oc-pricing-assurance p{font-size:13.5px;line-height:1.45;color:#5b5444}
+  .oc-pricing-cta{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:8px;background:#17130b;color:#efe8dc;font-family:'Saira Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:.035em;text-transform:uppercase}
+  .oc-service-tier{display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;border:1px solid #c8bda8;border-radius:999px;background:#f5efe4;color:#5b5444;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+  @media(max-width:900px){
+    .oc-pricing-bands{grid-template-columns:1fr;gap:10px;margin-top:24px}
+    .oc-pricing-band{min-height:0;padding:19px}
+    .oc-pricing-band-price{font-size:32px}
+    .oc-pricing-assurance{display:grid;grid-template-columns:1fr;margin-bottom:24px}
+    .oc-pricing-cta{width:100%;padding:11px 14px;text-align:center}
+    .oc-service-tier{font-size:10px;padding:5px 8px;white-space:nowrap}
+  }
+</style>
 <style id="oc-stable-mobile-fixes">.oc-mobile-after-tools-ctas{display:none}.oc-wwt-forced-grid{display:none}@media(max-width:900px){header#top div:has(> a[href="#book"]):has(> a[href="#services"]){display:none!important}.oc-mobile-after-tools-ctas{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin:22px 0 0!important;padding:0!important}.oc-mobile-after-tools-ctas>a{width:100%!important;min-height:46px!important;border-radius:8px!important;font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:.04em!important;font-size:15px!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important}.oc-mobile-after-tools-ctas>a:first-child{background:#1e3b2f!important;color:#efe8dc!important;border:2px solid #1e3b2f!important}.oc-mobile-after-tools-ctas>a:last-child{background:transparent!important;color:#17130b!important;border:1.5px solid #17130b!important}.oc-proof-mobile-card{padding:26px 20px!important;border-radius:12px!important}.oc-proof-mobile-card div[style*="font-size:84px"]{font-size:58px!important}.oc-proof-mobile-card div[style*="font-size:64px"]{font-size:48px!important}.oc-proof-mobile-card div[style*="margin:20px 0"],.oc-proof-mobile-card div[style*="margin:24px 0"]{margin:12px 0!important}.oc-proof-mobile-card div[style*="padding-top:26px"]{padding-top:14px!important}.oc-proof-mobile-card div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;gap:8px!important}.oc-proof-mobile-card div[style*="border-left"]{border-left:0!important}.oc-differentiators{padding-left:40px!important;padding-right:40px!important;box-sizing:border-box!important}.oc-differentiators>div{padding:66px 0!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]{display:grid!important;grid-template-columns:1fr!important;gap:34px!important;text-align:left!important}.oc-differentiators div[style*="grid-template-columns:repeat(3,1fr)"]>div{padding:18px 0!important;margin:0!important;border:0!important;text-align:left!important}.oc-track-record>div{padding:70px 22px!important}.oc-track-grid{display:flex!important;flex-direction:column!important;gap:26px!important}.oc-track-record .oc-track-card{display:block!important;width:100%!important;box-sizing:border-box!important;margin:0!important;padding:22px!important;border:1px solid rgba(255,255,255,.14)!important;border-top:1px solid rgba(255,255,255,.14)!important;border-radius:12px!important;background:rgba(255,255,255,.03)!important;box-shadow:none!important;text-align:left!important;overflow:hidden!important}.oc-track-card--wwt{order:1!important}.oc-track-card--pwc{order:2!important}.oc-track-card--citi{order:3!important}.oc-wwt-forced-grid{display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:5px!important;background:#193d30!important;border:1px solid rgba(143,224,175,.12)!important;border-radius:10px!important;padding:8px!important;margin:14px 0 18px!important;max-width:245px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}.oc-wwt-forced-grid span{display:block!important;aspect-ratio:1/1!important;border-radius:3px!important;background:#52665c!important}.oc-wwt-forced-grid span.is-on{background:#8bdca8!important}}</style><style id="oc-mobile-hours-dedup-style">@media(max-width:900px){.oc-hours-control-heading>span:last-child{display:none!important}}</style><style id="oc-component-background-style">html body .oc-proof-card,html body .oc-automation-grid>.oc-automation-card{background:#fff!important}@media(max-width:900px){html body .oc-mobile-after-tools-ctas>a:last-child{background:#fff!important}}</style><style id="oc-track-layout-style">@media(min-width:901px){html body section.oc-track-record .oc-track-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}html body section.oc-track-record .oc-track-grid>.oc-track-card{display:flex!important;flex-direction:column!important;width:auto!important;min-width:0!important;margin:0!important}html body section.oc-track-record .oc-track-card--wwt{order:1!important}html body section.oc-track-record .oc-track-card--pwc{order:2!important}html body section.oc-track-record .oc-track-card--citi{order:3!important}html body section.oc-track-record .oc-track-spacer{display:none!important}}</style><style id="oc-wwt-mobile-spacing-style">@media(max-width:900px){body .oc-track-record .oc-track-card--wwt>p,body .oc-track-record .oc-track-card--wwt:has(.oc-wwt-forced-grid)>p{transform:none!important;margin-top:134px!important;margin-bottom:0!important}}</style><style id="oc-wwt-desktop-width-style">@media(min-width:901px){html body section.oc-track-record .oc-track-card--wwt>.oc-wwt-sku-grid{width:213.333px!important;height:40px!important;max-width:100%!important;align-self:center!important;justify-self:start!important}}</style><style id="oc-mobile-proof-stats-style">@media(max-width:900px){html body .oc-proof-card .oc-proof-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;gap:0!important;align-items:start!important}html body .oc-proof-card .oc-proof-stat{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important;padding:0 clamp(4px,1.8vw,10px)!important;border-left:0!important;border-right:0!important;text-align:center!important}html body .oc-proof-card .oc-proof-stat+.oc-proof-stat{border-left:1px solid #d6cdba!important}html body .oc-proof-card .oc-proof-stat-value{font-size:clamp(24px,7.8vw,32px)!important;line-height:1!important;white-space:nowrap!important}html body .oc-proof-card .oc-proof-stat-label{font-size:clamp(9.5px,2.8vw,11.5px)!important;line-height:1.25!important;margin-top:6px!important}}@media(max-width:360px){html body .oc-proof-card .oc-proof-stat{padding-left:3px!important;padding-right:3px!important}html body .oc-proof-card .oc-proof-stat-value{font-size:22px!important}html body .oc-proof-card .oc-proof-stat-label{font-size:9px!important}}</style><style></style><style>html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' sc-camel-view-box='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23efe8dc'/%3E%3Cpath d='M8 8 L16 16 L8 24' stroke='%23c07c1f' stroke-width='4' fill='none' stroke-linecap='square' stroke-linejoin='miter'/%3E%3Cpath d='M17 8 L25 16 L17 24' stroke='%2317130b' stroke-width='4' fill='none' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E" data-dc-tpl="1"><style data-dc-tpl="2">
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -304,7 +327,30 @@
     <div data-dc-tpl="165" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(181, 121, 31); margin-bottom: 16px;">Chapter 04 - What I automate</div>
     <div data-dc-tpl="166" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
       <h2 data-dc-tpl="167" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: 0.9; letter-spacing: 0.005em; max-width: 16ch; animation-duration: 0.7s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: revealUp; animation-timeline: view(); animation-range: entry cover 30%;">The work you'll<br data-dc-tpl="168">never touch again</h2>
-      <p data-dc-tpl="169" style="font-size: 15.5px; line-height: 1.5; color: rgb(91, 84, 68); max-width: 40ch;">Grouped by the outcome it delivers. Every engagement is priced and agreed before any work begins - where two figures appear, the first is a focused quick win, the second a fuller build.</p>
+      <p data-dc-tpl="169" style="font-size: 15.5px; line-height: 1.5; color: rgb(91, 84, 68); max-width: 40ch;">Choose the outcome first. After the free review, you get one fixed price in writing - no day rates, no scope creep and no surprise extras.</p>
+    </div>
+
+    <div class="oc-pricing-bands" aria-label="Fixed-price engagement options">
+      <article class="oc-pricing-band">
+        <div class="oc-pricing-band-name">Quick win</div>
+        <div class="oc-pricing-band-price">From £395</div>
+        <p class="oc-pricing-band-copy">One focused workflow that removes a repetitive job, usually live within a week.</p>
+      </article>
+      <article class="oc-pricing-band oc-pricing-band--featured">
+        <span class="oc-pricing-band-badge">Most popular</span>
+        <div class="oc-pricing-band-name">Core automation</div>
+        <div class="oc-pricing-band-price">£1,495–£2,995</div>
+        <p class="oc-pricing-band-copy">A complete recurring process, built around your tools and handed over ready to run.</p>
+      </article>
+      <article class="oc-pricing-band">
+        <div class="oc-pricing-band-name">Multi-system build</div>
+        <div class="oc-pricing-band-price">From £2,995</div>
+        <p class="oc-pricing-band-copy">Connected workflows spanning multiple tools, data sources or teams.</p>
+      </article>
+    </div>
+    <div class="oc-pricing-assurance">
+      <p><strong>Every build includes:</strong> written scope, fixed price, testing, handover and ownership of everything I build.</p>
+      <a class="oc-pricing-cta" href="#book">Find your best starting point →</a>
     </div>
 
     
@@ -320,7 +366,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">The Monday Report</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Sales, stock &amp; margin - every Monday, automatically.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£219–£329 / £795–£1,695</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Quick win</span></div>
             </div>
           
         </div>
@@ -338,7 +384,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Supplier data pipelines</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Any supplier format in, your format out.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£1,395–£2,795</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Core automation</span></div>
             </div>
           
             <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
@@ -346,7 +392,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Spreadsheet rescue</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Messy data cleaned once, and kept clean.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£219–£389 / £795–£2,195</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Quick win</span></div>
             </div>
           
             <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
@@ -354,7 +400,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Catalogue content engine</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Descriptions &amp; categories at scale, from PDFs.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£1,395–£3,295</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Core automation</span></div>
             </div>
           
         </div>
@@ -372,7 +418,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Invoices on autopilot</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Orders become Xero/QuickBooks invoices, no typing.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£329–£499 / £1,095–£2,195</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Quick win</span></div>
             </div>
           
             <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
@@ -380,7 +426,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Order-to-invoice admin</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Wholesale orders into accounting, hands-off.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£1,095–£2,195</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Core automation</span></div>
             </div>
           
             <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
@@ -388,7 +434,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Stockist orders, straight in</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Faire, email &amp; PDF orders file themselves.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£329–£549</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Quick win</span></div>
             </div>
           
         </div>
@@ -406,7 +452,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Channel &amp; stock sync</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Update once; every channel follows.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£1,695–£3,295</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Multi-system build</span></div>
             </div>
           
             <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
@@ -414,7 +460,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Product upload turbo</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">One sheet → Shopify, Etsy &amp; Faire at once.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£279–£449</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Quick win</span></div>
             </div>
           
             <div data-dc-tpl="177" class="scp3" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 14px 15px 0px; border-top: 1px solid rgb(221, 211, 192); align-items: baseline; border-radius: 6px; transition: background 0.16s;">
@@ -422,7 +468,7 @@
                 <div data-dc-tpl="179" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: rgb(23, 19, 11); margin-bottom: 5px;"><span class="sc-interp">Price list builder</span></div>
                 <div data-dc-tpl="180" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);"><span class="sc-interp">Wholesale sheets &amp; site prices, always in sync.</span></div>
               </div>
-              <div data-dc-tpl="181" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;"><span class="sc-interp">£279–£449</span></div>
+              <div data-dc-tpl="181"><span class="oc-service-tier">Quick win</span></div>
             </div>
           
         </div>
@@ -436,10 +482,10 @@
       </div>
       <div data-dc-tpl="186" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 15px 0px; align-items: baseline;">
         <div data-dc-tpl="187" style="font-size: 14.5px; line-height: 1.45; color: rgb(91, 84, 68);">Monthly monitoring, fixes and small changes - so nothing quietly drifts back to manual.</div>
-        <div data-dc-tpl="188" style="font-family: &quot;Hanken Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; color: rgb(23, 19, 11); text-align: right; white-space: nowrap;">£89–£139/mo<br data-dc-tpl="189"><span data-dc-tpl="190" style="color: rgb(164, 157, 139); font-size: 12.5px;">£219–£399 main</span></div>
+        <div data-dc-tpl="188" style="font-family: &quot;Saira Condensed&quot;, sans-serif; font-weight: 800; font-size: 22px; color: rgb(30, 59, 47); text-align: right; white-space: nowrap;">From £195/mo</div>
       </div>
     </div>
-    <p data-dc-tpl="191" class="oc-quick-wins-line" style="margin: 28px 0px 0px; font-size: 18px; line-height: 1.55; color: rgb(91, 84, 68); font-style: italic;"><strong data-dc-tpl="192" style="font-weight: 800; color: rgb(23, 19, 11);">Running a smaller team?</strong> Quick-win builds from £219: reports, invoices, stockist orders and listings that handle themselves, live within a week. Same free call.</p>
+    <p data-dc-tpl="191" class="oc-quick-wins-line" style="margin: 28px 0px 0px; font-size: 18px; line-height: 1.55; color: rgb(91, 84, 68); font-style: italic;"><strong data-dc-tpl="192" style="font-weight: 800; color: rgb(23, 19, 11);">Running a smaller team?</strong> Quick-win builds start at £395: reports, invoices, stockist orders and listings that handle themselves, live within a week. Same free call.</p>
   </section>
 
   
