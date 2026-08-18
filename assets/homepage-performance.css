@@ -1,0 +1,53 @@
+/* Keep decorative effects compositor-friendly and stop off-screen work. */
+.oc-grain {
+  mix-blend-mode: normal !important;
+  opacity: .025 !important;
+}
+
+.oc-animation-paused,
+.oc-animation-paused * {
+  animation-play-state: paused !important;
+}
+
+html.oc-page-hidden *,
+html.oc-page-hidden *::before,
+html.oc-page-hidden *::after {
+  animation-play-state: paused !important;
+}
+
+/* The original animation changed `left`, forcing layout on every frame. */
+@keyframes travelDot {
+  0%, 100% {
+    left: 2px;
+    transform: translate(0, -50%);
+  }
+  50% {
+    left: 2px;
+    transform: translate(110px, -50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .oc-grain {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: .001ms !important;
+  }
+
+  [style*="animation-name: revealUp"],
+  [style*="animation: revealUp"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
