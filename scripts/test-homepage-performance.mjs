@@ -17,7 +17,10 @@ check(
   html.includes('src="/assets/homepage.js?v=20260818-safe-calculator"'),
   'Optimized homepage behaviour is not loaded with the repaired cache key.',
 );
-check(html.includes('href="/assets/homepage-performance.css"'), 'Performance stylesheet is not loaded.');
+check(
+  html.includes('href="/assets/homepage-performance.css?v=20260818-mobile-alignment"'),
+  'Performance stylesheet is not loaded with the mobile-alignment cache key.',
+);
 check(html.includes('class="oc-grain"'), 'The grain overlay is not marked for mobile removal.');
 check(/image3\.png[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not lazy-loaded.');
 check(!behaviour.includes('MutationObserver'), 'Homepage behaviour contains a broad mutation observer.');
@@ -38,6 +41,14 @@ check(behaviour.includes('requestAnimationFrame(tick)'), 'Pipeline animation is 
 check(behaviour.includes("entry.target.classList.toggle('oc-animation-paused'"), 'Off-screen animations are not paused.');
 check(styles.includes('@media (prefers-reduced-motion: reduce)'), 'Reduced-motion fallback is missing.');
 check(styles.includes('transform: translate(110px, -50%)'), 'Layout-triggering travel-dot animation was not replaced.');
+check(
+  styles.includes('.oc-differentiators > div > div > div:nth-child(2)'),
+  'Second mobile differentiator is not aligned to the first card.',
+);
+check(
+  styles.includes('.oc-differentiators > div > div > div:nth-child(3)'),
+  'Third mobile differentiator is not aligned to the first card.',
+);
 
 if (failures.length) {
   throw new Error(`Homepage performance checks failed:\n- ${failures.join('\n- ')}`);
