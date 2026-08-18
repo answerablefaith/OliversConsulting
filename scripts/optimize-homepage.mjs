@@ -25,14 +25,17 @@ html = html.replace(
   '<img$1 loading="lazy" decoding="async" fetchpriority="low">',
 );
 
-html = html.replace(/\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/homepage-performance\.css["']\s*\/?>(?:\s*)/gi, '');
+html = html.replace(
+  /\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/homepage-performance\.css(?:\?[^"']*)?["']\s*\/?>(?:\s*)/gi,
+  '',
+);
 html = html.replace(
   /\s*<script\s+src=["']\/assets\/homepage\.js(?:\?[^"']*)?["'][^>]*><\/script>(?:\s*)/gi,
   '',
 );
 html = html.replace(
   /<\/head>/i,
-  '<link rel="stylesheet" href="/assets/homepage-performance.css">\n</head>',
+  '<link rel="stylesheet" href="/assets/homepage-performance.css?v=20260818-mobile-alignment">\n</head>',
 );
 html = html.replace(
   /<\/body>/i,
