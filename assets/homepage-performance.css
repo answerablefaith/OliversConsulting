@@ -15,41 +15,58 @@ html.oc-page-hidden *::after {
   animation-play-state: paused !important;
 }
 
-/* Make the whole service offering row the pricing link without showing a separate price label. */
+/* Keep the service rows clean while allowing the visible price preview link to sit beside the tier. */
 .scp3 {
   position: relative;
-  cursor: pointer;
 }
 
-.scp3:hover {
-  background: rgba(181, 121, 31, .055);
+.scp3 .oc-service-tier-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
 }
 
 .scp3 .oc-service-price-preview {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 5 !important;
-  display: block !important;
+  position: static !important;
+  inset: auto !important;
+  z-index: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
   width: auto !important;
   height: auto !important;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 4px 0 3px !important;
   border: 0 !important;
-  color: transparent !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
+  border-bottom: 1px solid rgba(30, 59, 47, .35) !important;
+  color: #1e3b2f !important;
+  font-family: 'Saira Condensed', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
   text-decoration: none !important;
+  white-space: nowrap !important;
 }
 
 .scp3 .oc-service-price-preview::after {
-  content: none !important;
-  display: none !important;
+  content: '→' !important;
+  display: inline !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.scp3 .oc-service-price-preview:hover,
+.scp3 .oc-service-price-preview:focus-visible {
+  color: #b5791f !important;
+  border-bottom-color: #b5791f !important;
 }
 
 .scp3 .oc-service-price-preview:focus-visible {
   outline: 2px solid #b5791f !important;
-  outline-offset: 3px !important;
-  border-radius: 6px !important;
+  outline-offset: 4px !important;
+  border-radius: 2px !important;
 }
 
 /* The original animation changed `left`, forcing layout on every frame. */
@@ -69,7 +86,13 @@ html.oc-page-hidden *::after {
     display: none !important;
   }
 
+  .scp3 .oc-service-tier-wrap {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+
   .scp3 .oc-service-price-preview {
+    font-size: 15px !important;
     touch-action: manipulation;
   }
 
