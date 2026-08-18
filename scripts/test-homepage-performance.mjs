@@ -14,8 +14,8 @@ check(!html.includes('id="oc-runtime-handoff"'), 'Legacy document.write runtime 
 check(!html.includes('cdn.jsdelivr.net'), 'Homepage still loads chained historical support scripts.');
 check(!html.includes('unpkg.com/react'), 'Homepage still loads React for static markup.');
 check(
-  html.includes('src="/assets/homepage.js?v=20260818-safe-calculator"'),
-  'Optimized homepage behaviour is not loaded with the repaired cache key.',
+  html.includes('src="/assets/homepage.js?v=20260818-smooth-hours"'),
+  'Optimized homepage behaviour is not loaded with the smooth-hours cache key.',
 );
 check(
   html.includes('href="/assets/homepage-performance.css?v=20260818-mobile-alignment"'),
@@ -37,6 +37,11 @@ check(
   !behaviour.includes("all('span,div', hero).find"),
   'Hero calculator still uses a broad text selector that can erase its content column.',
 );
+check(behaviour.includes('easeInOutSine'), 'Hero hours demonstration is not eased.');
+check(behaviour.includes('animateHours(8, 5, 1400'), 'Hero demonstration does not animate from 8 to 5.');
+check(behaviour.includes('animateHours(5, 16, 2800'), 'Hero demonstration does not animate from 5 to 16.');
+check(behaviour.includes('animateHours(16, 8, 1900'), 'Hero demonstration does not animate back to 8.');
+check(!behaviour.includes('[[5, 700]'), 'Hero demonstration still jumps between timed values.');
 check(behaviour.includes('requestAnimationFrame(tick)'), 'Pipeline animation is not frame-synchronised.');
 check(behaviour.includes("entry.target.classList.toggle('oc-animation-paused'"), 'Off-screen animations are not paused.');
 check(styles.includes('@media (prefers-reduced-motion: reduce)'), 'Reduced-motion fallback is missing.');

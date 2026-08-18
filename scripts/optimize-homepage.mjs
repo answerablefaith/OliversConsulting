@@ -39,7 +39,7 @@ html = html.replace(
 );
 html = html.replace(
   /<\/body>/i,
-  '<script src="/assets/homepage.js?v=20260818-safe-calculator" defer></script>\n</body>',
+  '<script src="/assets/homepage.js?v=20260818-smooth-hours" defer></script>\n</body>',
 );
 
 await writeFile(path, html, 'utf8');

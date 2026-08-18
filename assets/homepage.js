@@ -27,10 +27,12 @@
     const hero = slider.closest('header#top') || slider.closest('header') || document;
     const proof = hero.querySelector('.oc-proof-card');
     const hoursLabel = hero.querySelector('.oc-hours-control-heading > span:last-child');
+    const hoursNumber = hoursLabel?.firstElementChild || null;
     const byHandRow = proof?.firstElementChild;
     const byHandLabel = byHandRow && text(byHandRow.firstElementChild) === 'By hand'
       ? byHandRow.lastElementChild
       : null;
+    const byHandNumber = byHandLabel?.firstElementChild || null;
     const stats = proof?.querySelector('.oc-proof-stats');
     const statValues = stats ? all('.oc-proof-stat-value', stats) : [];
     const handBar = byHandRow?.nextElementSibling || null;
@@ -41,7 +43,10 @@
       cost: Number((statValues[2]?.textContent || '12480').replace(/[^0-9.]/g, '')) || 12480,
     };
     let tweenFrame = 0;
-    let introCancelled = reduceMotion;
+    let demoFrame = 0;
+    let demoTimer = 0;
+    let demoCancelled = reduceMotion;
+    let lastRoundedHours = null;
 
     const colourStops = [
       [2, [52, 132, 85]], [3, [104, 161, 72]], [6, [219, 177, 62]],
@@ -79,9 +84,12 @@
       const roundedHours = Math.round(hours);
       const fill = ((hours - 2) / 18) * 100;
       slider.style.background = `linear-gradient(90deg,#c07c1f ${fill}%,#d6cdba ${fill}%)`;
-      if (hoursLabel) hoursLabel.textContent = `${roundedHours} HRS`;
-      if (byHandLabel) {
-        byHandLabel.innerHTML = `${roundedHours}<span style="font-size:22px;margin-left:4px">hrs</span>`;
+      if (roundedHours !== lastRoundedHours) {
+        if (hoursNumber) hoursNumber.textContent = String(roundedHours);
+        else if (hoursLabel) hoursLabel.textContent = `${roundedHours} HRS`;
+        if (byHandNumber) byHandNumber.textContent = String(roundedHours);
+        else if (byHandLabel) byHandLabel.firstChild.textContent = String(roundedHours);
+        lastRoundedHours = roundedHours;
       }
       setBarColour(hours);
 
@@ -117,25 +125,62 @@
       step();
     }
 
-    const cancelIntro = () => { introCancelled = true; };
-    slider.addEventListener('pointerdown', cancelIntro, { once: true });
-    slider.addEventListener('touchstart', cancelIntro, { once: true, passive: true });
-    slider.addEventListener('keydown', cancelIntro, { once: true });
+    const cancelDemo = () => {
+      demoCancelled = true;
+      window.clearTimeout(demoTimer);
+      cancelAnimationFrame(demoFrame);
+    };
+    slider.addEventListener('pointerdown', cancelDemo, { once: true });
+    slider.addEventListener('touchstart', cancelDemo, { once: true, passive: true });
+    slider.addEventListener('keydown', cancelDemo, { once: true });
     slider.addEventListener('input', (event) => {
-      if (event.isTrusted) introCancelled = true;
+      if (event.isTrusted) cancelDemo();
       render(Number(slider.value), true);
     });
+
+    const easeInOutSine = (progress) => -(Math.cos(Math.PI * progress) - 1) / 2;
+    const animateHours = (from, to, duration, done) => {
+      const started = performance.now();
+      const tick = (now) => {
+        if (demoCancelled) return;
+        if (document.hidden) {
+          demoCancelled = true;
+          slider.value = '8';
+          render(8, false);
+          return;
+        }
+        const progress = Math.min(1, (now - started) / duration);
+        const value = from + (to - from) * easeInOutSine(progress);
+        slider.value = value.toFixed(3);
+        render(value, false);
+        if (progress < 1) demoFrame = requestAnimationFrame(tick);
+        else if (done) done();
+      };
+      demoFrame = requestAnimationFrame(tick);
+    };
+    const pauseThen = (delay, action) => {
+      demoTimer = window.setTimeout(() => {
+        if (!demoCancelled) action();
+      }, delay);
+    };
 
     slider.value = '8';
     render(8, false);
 
     if (!reduceMotion) {
-      [[5, 700], [16, 1450], [8, 2300]].forEach(([value, delay]) => {
-        window.setTimeout(() => {
-          if (introCancelled || document.hidden) return;
-          slider.value = String(value);
-          render(value, true);
-        }, delay);
+      pauseThen(500, () => {
+        animateHours(8, 5, 1400, () => {
+          pauseThen(180, () => {
+            animateHours(5, 16, 2800, () => {
+              pauseThen(180, () => {
+                animateHours(16, 8, 1900, () => {
+                  slider.value = '8';
+                  render(8, false);
+                });
+              });
+            });
+          });
+        });
       });
     }
   }
