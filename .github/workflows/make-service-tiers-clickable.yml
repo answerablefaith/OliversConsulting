@@ -1,3 +1,4 @@
+# trigger after workflow exists on main
 name: Make service tiers clickable
 
 on:
@@ -92,7 +93,6 @@ jobs:
 
 ''' + css[next_marker:]
 
-          # Remove any leftover mobile rules for the deleted price-preview UI.
           css = re.sub(r'\n\s*\.scp3 \.oc-service-tier-wrap \{[^}]*\}\n', '\n', css)
           css = re.sub(r'\n\s*\.scp3 \.oc-service-price-preview \{[^}]*\}\n', '\n', css)
           css_path.write_text(css, encoding='utf-8')
