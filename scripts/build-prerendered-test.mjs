@@ -4,6 +4,7 @@ import { dirname } from 'node:path';
 
 const production = process.env.OC_PRODUCTION === '1';
 const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
+const sourceUrl = 'http://127.0.0.1:8000/new-homepage/';
 let capturedHtml = '';
 
 const browser = await chromium.launch({ headless: true });
@@ -18,6 +19,31 @@ function markHtml(html, attribute) {
 
 function stripScripts(html) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+}
+
+function prepareStaticProduction(html) {
+  let output = html.replace(/<html([^>]*)>/i, (match, attributes) => {
+    const withoutMarker = attributes.replace(/\sdata-oc-static-production=["'][^"']*["']/gi, '');
+    const language = /\slang=/.test(withoutMarker) ? '' : ' lang="en-GB"';
+    return `<html${withoutMarker}${language} data-oc-static-production="true">`;
+  });
+
+  output = output.replace(
+    /(<div\b[^>]*style=["'][^"']*position:\s*fixed;\s*inset:\s*0px;[^"']*mix-blend-mode:\s*multiply;[^"']*["'])/i,
+    '$1 class="oc-grain"',
+  );
+  output = output.replace(
+    /<img([^>]*src=["']\/new-homepage\/image3\.png["'][^>]*)>/i,
+    '<img$1 loading="lazy" decoding="async" fetchpriority="low">',
+  );
+  output = output.replace(
+    /<\/head>/i,
+    '<link rel="stylesheet" href="/assets/homepage-performance.css">\n</head>',
+  );
+  return output.replace(
+    /<\/body>/i,
+    '<script src="/assets/homepage.js" defer></script>\n</body>',
+  );
 }
 
 try {
@@ -40,7 +66,8 @@ try {
 
     Document.prototype.write = function (...parts) {
       const html = parts.join('');
-      if (html.includes('<!DOCTYPE html') || html.includes('<html')) {
+      const isHomepageRuntime = html.includes('<x-dc') || html.includes('data-dc-script');
+      if (isHomepageRuntime) {
         window.__ocCaptureMode = true;
         void window.__ocCaptureHomepageHtml(html);
         return;
@@ -55,7 +82,7 @@ try {
     };
   });
 
-  await capturePage.goto('http://127.0.0.1:8000/', {
+  await capturePage.goto(sourceUrl, {
     waitUntil: 'domcontentloaded',
     timeout: 120000,
   });
@@ -72,7 +99,7 @@ try {
 
   // Capture a fully rendered DOM snapshot for crawlers and no-JS clients.
   const renderedPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-  await renderedPage.goto('http://127.0.0.1:8000/', {
+  await renderedPage.goto(sourceUrl, {
     waitUntil: 'networkidle',
     timeout: 120000,
   });
@@ -108,11 +135,18 @@ try {
     crawlerHtml = markHtml(crawlerHtml, 'data-oc-prerendered-shell="true"');
   }
 
-  const encodedRuntime = Buffer.from(runtimeHtml, 'utf8').toString('base64');
-  const handoff = `<script id="oc-runtime-handoff">(function(){var b='${encodedRuntime}';var a=atob(b);var u=new Uint8Array(a.length);for(var i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var h=new TextDecoder().decode(u);document.open();document.write(h);document.close()})();<\/script>`;
+  let output;
+  if (production) {
+    // Production uses the rendered static DOM and a small, purpose-built behaviour
+    // layer. It must not restore the React runtime or the historical support chain.
+    output = prepareStaticProduction(crawlerHtml);
+  } else {
+    const encodedRuntime = Buffer.from(runtimeHtml, 'utf8').toString('base64');
+    const handoff = `<script id="oc-runtime-handoff">(function(){var b='${encodedRuntime}';var a=atob(b);var u=new Uint8Array(a.length);for(var i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var h=new TextDecoder().decode(u);document.open();document.write(h);document.close()})();<\/script>`;
 
-  // Put the handoff first in body so visitors never see the crawler snapshot flash.
-  const output = crawlerHtml.replace(/<body([^>]*)>/i, `<body$1>${handoff}`);
+    // Keep the exact runtime handoff only on the noindex parity test page.
+    output = crawlerHtml.replace(/<body([^>]*)>/i, `<body$1>${handoff}`);
+  }
 
   const outputDir = dirname(outputPath);
   if (outputDir !== '.') await mkdir(outputDir, { recursive: true });
