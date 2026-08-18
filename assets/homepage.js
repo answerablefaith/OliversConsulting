@@ -25,27 +25,15 @@
     slider.dataset.ocHomepageBound = '1';
 
     const hero = slider.closest('header#top') || slider.closest('header') || document;
-    const proof = all('div', hero).find((element) => {
-      const value = text(element);
-      return value.includes('By hand') && value.includes('Automated') && value.includes('hours a year');
-    });
-    const hoursLabel = all('span,div', hero).find(
-      (element) => /\bHRS\b/.test(text(element)) && !text(element).includes('By hand'),
-    );
-    const byHandLabel = proof
-      ? all('span,div', proof).find((element) => /hrs$/i.test(text(element)) && /^\d/.test(text(element)))
+    const proof = hero.querySelector('.oc-proof-card');
+    const hoursLabel = hero.querySelector('.oc-hours-control-heading > span:last-child');
+    const byHandRow = proof?.firstElementChild;
+    const byHandLabel = byHandRow && text(byHandRow.firstElementChild) === 'By hand'
+      ? byHandRow.lastElementChild
       : null;
-    const stats = proof
-      ? all('div', proof).find((element) =>
-          element.children.length === 3 && text(element).includes('working weeks'))
-      : null;
-    const statValues = stats ? Array.from(stats.children).map((item) => item.firstElementChild) : [];
-    const handBar = proof
-      ? all('div', proof).find((element) => {
-          const style = element.getAttribute('style') || '';
-          return style.includes('height: 26px') && !style.includes('position: relative');
-        })
-      : null;
+    const stats = proof?.querySelector('.oc-proof-stats');
+    const statValues = stats ? all('.oc-proof-stat-value', stats) : [];
+    const handBar = byHandRow?.nextElementSibling || null;
 
     let displayed = {
       year: Number((statValues[0]?.textContent || '416').replace(/,/g, '')) || 416,

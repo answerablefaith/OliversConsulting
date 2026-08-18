@@ -19,6 +19,18 @@ check(html.includes('class="oc-grain"'), 'The grain overlay is not marked for mo
 check(/image3\.png[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not lazy-loaded.');
 check(!behaviour.includes('MutationObserver'), 'Homepage behaviour contains a broad mutation observer.');
 check(!behaviour.includes('setInterval'), 'Homepage behaviour contains a perpetual interval.');
+check(
+  behaviour.includes("hero.querySelector('.oc-hours-control-heading > span:last-child')"),
+  'Hero calculator does not target the hours value leaf element.',
+);
+check(
+  behaviour.includes("hero.querySelector('.oc-proof-card')"),
+  'Hero calculator does not target the proof card explicitly.',
+);
+check(
+  !behaviour.includes("all('span,div', hero).find"),
+  'Hero calculator still uses a broad text selector that can erase its content column.',
+);
 check(behaviour.includes('requestAnimationFrame(tick)'), 'Pipeline animation is not frame-synchronised.');
 check(behaviour.includes("entry.target.classList.toggle('oc-animation-paused'"), 'Off-screen animations are not paused.');
 check(styles.includes('@media (prefers-reduced-motion: reduce)'), 'Reduced-motion fallback is missing.');
