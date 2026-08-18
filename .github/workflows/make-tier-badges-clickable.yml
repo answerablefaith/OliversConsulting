@@ -1,0 +1,130 @@
+name: Make service tier badges clickable
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/make-tier-badges-clickable.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Replace price previews with clickable tier badges
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          js_path = Path('assets/homepage.js')
+          js = js_path.read_text(encoding='utf-8')
+
+          start = js.find('  function initServicePricePreviews() {')
+          if start == -1:
+              start = js.find('  function initServicePricingLinks() {')
+          end = js.find('  function boot() {', start)
+          if start == -1 or end == -1:
+              raise SystemExit('Could not find service pricing helper in assets/homepage.js')
+
+          replacement = '''  function initServiceTierLinks() {
+    const targets = {
+      'Quick win': 'pricing-quick-win',
+      'Core automation': 'pricing-core-automation',
+      'Multi-system build': 'pricing-multi-system-build',
+    };
+
+    all('.oc-pricing-band').forEach((card) => {
+      const name = text(card.querySelector('.oc-pricing-band-name'));
+      const target = targets[name];
+      if (!target) return;
+      card.id = target;
+      card.style.scrollMarginTop = '110px';
+    });
+
+    all('.oc-service-price-preview').forEach((preview) => preview.remove());
+
+    if (!document.getElementById('oc-service-tier-link-style')) {
+      const style = document.createElement('style');
+      style.id = 'oc-service-tier-link-style';
+      style.textContent = `
+        a.oc-service-tier{cursor:pointer;text-decoration:none;transition:background .16s,border-color .16s,color .16s,transform .16s}
+        a.oc-service-tier:hover{background:#e9e0cf;border-color:#b5791f;color:#17130b;transform:translateY(-1px)}
+        a.oc-service-tier:focus-visible{outline:2px solid #b5791f;outline-offset:3px}
+        @media(max-width:900px){a.oc-service-tier{touch-action:manipulation}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    all('.oc-service-tier').forEach((tier) => {
+      const name = text(tier);
+      const target = targets[name];
+      if (!target) return;
+
+      if (tier.tagName === 'A') {
+        tier.href = `#${target}`;
+        tier.setAttribute('aria-label', `${name} — view pricing`);
+        return;
+      }
+
+      const link = document.createElement('a');
+      link.className = tier.className;
+      link.href = `#${target}`;
+      link.textContent = name;
+      link.setAttribute('aria-label', `${name} — view pricing`);
+      tier.replaceWith(link);
+    });
+  }
+
+'''
+
+          js = js[:start] + replacement + js[end:]
+          js = js.replace('    initServicePricePreviews();', '    initServiceTierLinks();')
+          js = js.replace('    initServicePricingLinks();', '    initServiceTierLinks();')
+          js_path.write_text(js, encoding='utf-8')
+
+          # Remove obsolete price-preview-specific CSS. The normal .oc-service-tier styling stays.
+          css_path = Path('assets/homepage-performance.css')
+          css = css_path.read_text(encoding='utf-8')
+          css = re.sub(
+              r'/\* Keep the service rows clean while allowing the visible price preview link to sit beside the tier\. \*/[\s\S]*?(?=/\* The original animation changed)',
+              '',
+              css,
+              count=1,
+          )
+          css = re.sub(
+              r'\n?/\* Visible service price previews v5 \*/[\s\S]*?(?=\n/\*|\Z)',
+              '\n',
+              css,
+              count=1,
+          )
+          css_path.write_text(css, encoding='utf-8')
+
+          version = '20260818-tier-links-v7'
+          for name in ('index.html', 'scripts/optimize-homepage.mjs'):
+              path = Path(name)
+              source = path.read_text(encoding='utf-8')
+              source, count = re.subn(
+                  r'/assets/homepage\.js\?v=[^"\']+',
+                  f'/assets/homepage.js?v={version}',
+                  source,
+              )
+              if count == 0:
+                  raise SystemExit(f'Homepage JS asset reference not found in {name}')
+              path.write_text(source, encoding='utf-8')
+
+          Path('.github/workflows/make-tier-badges-clickable.yml').unlink()
+          PY
+
+      - name: Commit finished change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Make service tier badges open matching pricing'
+          git push
