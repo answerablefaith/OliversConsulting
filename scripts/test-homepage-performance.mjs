@@ -13,7 +13,10 @@ check(html.includes('data-oc-static-production="true"'), 'Static production mark
 check(!html.includes('id="oc-runtime-handoff"'), 'Legacy document.write runtime handoff remains.');
 check(!html.includes('cdn.jsdelivr.net'), 'Homepage still loads chained historical support scripts.');
 check(!html.includes('unpkg.com/react'), 'Homepage still loads React for static markup.');
-check(html.includes('src="/assets/homepage.js"'), 'Optimized homepage behaviour is not loaded.');
+check(
+  html.includes('src="/assets/homepage.js?v=20260818-safe-calculator"'),
+  'Optimized homepage behaviour is not loaded with the repaired cache key.',
+);
 check(html.includes('href="/assets/homepage-performance.css"'), 'Performance stylesheet is not loaded.');
 check(html.includes('class="oc-grain"'), 'The grain overlay is not marked for mobile removal.');
 check(/image3\.png[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not lazy-loaded.');

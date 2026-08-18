@@ -26,14 +26,17 @@ html = html.replace(
 );
 
 html = html.replace(/\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/homepage-performance\.css["']\s*\/?>(?:\s*)/gi, '');
-html = html.replace(/\s*<script\s+src=["']\/assets\/homepage\.js["'][^>]*><\/script>(?:\s*)/gi, '');
+html = html.replace(
+  /\s*<script\s+src=["']\/assets\/homepage\.js(?:\?[^"']*)?["'][^>]*><\/script>(?:\s*)/gi,
+  '',
+);
 html = html.replace(
   /<\/head>/i,
   '<link rel="stylesheet" href="/assets/homepage-performance.css">\n</head>',
 );
 html = html.replace(
   /<\/body>/i,
-  '<script src="/assets/homepage.js" defer></script>\n</body>',
+  '<script src="/assets/homepage.js?v=20260818-safe-calculator" defer></script>\n</body>',
 );
 
 await writeFile(path, html, 'utf8');
