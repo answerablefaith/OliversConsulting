@@ -1,3 +1,4 @@
+# Triggered after creation so the workflow is already present on main.
 name: Make service rows clickable
 
 on:
