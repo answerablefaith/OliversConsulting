@@ -357,12 +357,66 @@
     update();
   }
 
+  function initServicePricePreviews() {
+    const pricing = {
+      'Quick win': { price: 'From £395', target: 'pricing-quick-win' },
+      'Core automation': { price: 'From £1,495', target: 'pricing-core-automation' },
+      'Multi-system build': { price: 'From £2,995', target: 'pricing-multi-system-build' },
+    };
+
+    all('.oc-pricing-band').forEach((card) => {
+      const name = text(card.querySelector('.oc-pricing-band-name'));
+      const option = pricing[name];
+      if (!option) return;
+      card.id = option.target;
+      card.style.scrollMarginTop = '110px';
+    });
+
+    if (!document.getElementById('oc-service-price-preview-style')) {
+      const style = document.createElement('style');
+      style.id = 'oc-service-price-preview-style';
+      style.textContent = `
+        .oc-service-tier-wrap{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+        .oc-service-price-preview{display:inline-flex;align-items:center;gap:5px;color:#1e3b2f;font-family:'Saira Condensed',sans-serif;font-size:16px;font-weight:800;line-height:1;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(30,59,47,.35);padding:4px 0 3px;transition:color .16s,border-color .16s,transform .16s}
+        .oc-service-price-preview::after{content:'→';font-size:14px;line-height:1;transition:transform .16s}
+        .oc-service-price-preview:hover,.oc-service-price-preview:focus-visible{color:#b5791f;border-color:#b5791f}
+        .oc-service-price-preview:hover::after,.oc-service-price-preview:focus-visible::after{transform:translateX(2px)}
+        .oc-service-price-preview:focus-visible{outline:2px solid #b5791f;outline-offset:4px;border-radius:2px}
+        @media(max-width:900px){
+          .oc-service-tier-wrap{justify-content:flex-start!important;gap:12px!important}
+          .oc-service-price-preview{font-size:15px}
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    all('.oc-service-tier').forEach((tier) => {
+      if (tier.dataset.ocPricePreviewBound) return;
+      const name = text(tier);
+      const option = pricing[name];
+      if (!option) return;
+      tier.dataset.ocPricePreviewBound = '1';
+
+      const wrapper = tier.parentElement;
+      if (!wrapper) return;
+      wrapper.classList.add('oc-service-tier-wrap');
+
+      const link = document.createElement('a');
+      link.className = 'oc-service-price-preview';
+      link.href = `#${option.target}`;
+      link.textContent = option.price;
+      link.setAttribute('aria-label', `${option.price} — view ${name} pricing`);
+      wrapper.appendChild(link);
+    });
+  }
+
   function boot() {
     initHeroCalculator();
     initSwitchPipeline();
     initScrollProgress();
     initAnimationVisibility();
     initPageVisibility();
+    initServicePricePreviews();
     document.documentElement.dataset.ocHomepage = 'ready';
   }
 
