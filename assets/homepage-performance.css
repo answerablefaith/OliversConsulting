@@ -31,6 +31,12 @@ html.oc-page-hidden *::after {
   .oc-grain {
     display: none !important;
   }
+
+  /* Match cards two and three to the first differentiator's mobile gutter. */
+  .oc-differentiators > div > div > div:nth-child(2),
+  .oc-differentiators > div > div > div:nth-child(3) {
+    padding-left: 0 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
