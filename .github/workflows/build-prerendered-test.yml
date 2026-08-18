@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'scripts/build-prerendered-test.mjs'
+      - 'scripts/test-homepage-performance.mjs'
+      - 'assets/homepage.js'
+      - 'assets/homepage-performance.css'
       - '.github/workflows/build-prerendered-test.yml'
   workflow_dispatch:
 
@@ -38,6 +41,9 @@ jobs:
         env:
           OC_PRODUCTION: '1'
         run: node scripts/build-prerendered-test.mjs
+
+      - name: Test homepage performance safeguards
+        run: node scripts/test-homepage-performance.mjs
 
       - name: Commit production homepage
         run: |
