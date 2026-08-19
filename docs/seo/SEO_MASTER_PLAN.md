@@ -78,6 +78,8 @@ Milestone 8.3 meaningfully updated the four reporting, investment and resilience
 
 Milestone 8.4 meaningfully updated the four process-design and hand-off articles while preserving their architecture-choice, intake-route, spreadsheet-governance and interruption-cost boundaries. Each page now gives a direct answer, practical selection criteria, current primary-source support and an explicit boundary between operational capacity estimates and individual financial or tax advice. Metadata, schema, images, internal links and genuine modification dates are aligned. Static checks cover all 16 completed articles, and GitHub Actions rendered all 32 mobile/desktop page combinations successfully.
 
+Milestone 8.5 meaningfully updated the four onboarding, CRM and returns articles while preserving their separate CIS-compliance, duplicate-free client onboarding, post-call CRM update and Shopify returns-control intents. Each page now gives a direct answer, practical key takeaways, current primary GOV.UK, ICO or Shopify support and an explicit boundary between operational guidance and individual tax, legal or data-protection advice. Metadata, schema, images, links and genuine modification dates are aligned. Static checks cover all 20 articles, and GitHub Actions rendered all 40 mobile/desktop page combinations successfully.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -103,12 +105,12 @@ The existing static homepage performance guard failed at baseline because the ex
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
 | 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
 | 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 article intents, five clusters, overlap controls, competitor evidence and deterministic checks pass |
-| 8 | Article optimisation batches | IN_PROGRESS | Four of five four-article batches are DONE_VERIFIED |
+| 8 | Article optimisation batches | DONE_VERIFIED | All five four-article batches are DONE_VERIFIED |
 | 8.1 | Supplier, product and inventory operations | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.2 | Orders, finance and reconciliation | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.3 | Reporting, investment and resilience | DONE_VERIFIED | Four articles updated; static checks and 24 browser renders pass |
 | 8.4 | Process design and controlled hand-offs | DONE_VERIFIED | Four articles updated; static checks and 32 browser renders pass |
-| 8.5 | Onboarding, CRM and returns | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.5 | Onboarding, CRM and returns | DONE_VERIFIED | Four articles updated; static checks and 40 browser renders pass |
 | 9 | Internal linking, hubs and navigation | NOT_STARTED | |
 | 10 | Trust, authorship and conversion quality | NOT_STARTED | |
 | 11 | Performance, Core Web Vitals and accessibility | NOT_STARTED | |
@@ -245,6 +247,39 @@ The existing static homepage performance guard failed at baseline because the ex
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 - Exact next checkpoint: Milestone 8.5 — onboarding, CRM and returns
+
+## Milestone 8.5 acceptance criteria
+
+- [x] All four articles retain a unique, documented search intent, intended reader and overlap guard in `article-ledger.csv`.
+- [x] Titles, descriptions and H1s align separately to CIS onboarding controls, duplicate-free client onboarding, post-call CRM updates and Shopify returns review rules.
+- [x] Each article opens with a direct answer and adds concise key takeaways, steps, control points or decision rules where useful.
+- [x] Material CIS, data-protection, AI-processing, Shopify and consumer-rights claims use current primary GOV.UK, ICO or Shopify guidance.
+- [x] CIS tax and employment-status, privacy and consumer-law content is framed as general operational information, not individual tax or legal advice.
+- [x] Contextual article links and canonical Services and Contact routes work without redirected homepage fragments.
+- [x] Responsive images retain contextual alt text, explicit dimensions and principal-image loading treatment; HTML, social metadata, schema, assignments and the manifest agree.
+- [x] Verified publication dates remain unchanged; meaningful revisions use 2026-08-19 consistently for visible updates, Article schema and sitemap `lastmod`.
+- [x] The dependency-free indexation, metadata, schema, image, core-page, content-map, batch and homepage checks pass across the branch.
+- [x] GitHub Actions renders all 20 articles at 390×844 and 1280×900 without overflow, missing images, hidden CTAs or browser errors.
+
+### Milestone 8.5 decisions
+
+- Preserve the four intent boundaries: CIS verification and deductions, client master-data intake, post-call CRM updates and returns eligibility/review remain separate operational decisions.
+- Treat CIS guidance as general operational information and retain HMRC verification, deduction, status and record-keeping controls rather than implying individual tax or legal advice.
+- Ground client-onboarding and CRM data handling in ICO data-minimisation, accuracy and AI-processing guidance without claiming legal compliance.
+- State that Shopify return rules support operational consistency but do not replace applicable UK consumer rights.
+- Replace redirected homepage-fragment links with canonical `/services/` and `/contact/` routes and retain useful contextual article links.
+- Preserve verified publication dates and set `dateModified` and sitemap `lastmod` to 2026-08-19 only for meaningfully revised pages.
+- Reuse the four relevant, optimised article images and align their contextual alt text rather than producing unnecessary new derivatives.
+- Mark Milestone 8 complete only after all five batches and all 40 responsive article renders pass; do not begin Milestone 9 in this checkpoint.
+
+### Milestone 8.5 GitHub record
+
+- Implementation commit: `31df632bc9913544a06f0e368112dfeffcf8708e`
+- Successful GitHub Actions run: https://github.com/answerablefaith/OliversConsulting/actions/runs/32303091220 — all static checks and `ARTICLE_RENDER_CHECK_OK|articles=20|viewports=2|pages=40` passed.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+- Exact next checkpoint: Milestone 9 — internal linking, hubs and navigation
 
 ## Milestone 1 acceptance criteria
 
@@ -497,4 +532,4 @@ These questions did not block Milestone 6 because the implementation preserved e
 
 ## Next milestone
 
-Milestone 8.5 — Onboarding, CRM and returns article batch.
+Milestone 9 — Internal linking, hubs and navigation.

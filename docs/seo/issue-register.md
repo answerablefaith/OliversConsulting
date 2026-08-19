@@ -72,7 +72,8 @@ None confirmed during the baseline audit.
 - Milestone 8.2 action: Preserved the separate sales-order, supplier-invoice, supplier-statement and Shopify-settlement intents; added contextual cross-links without collapsing those boundaries; and expanded the validator to recheck all completed batches.
 - Milestone 8.3 action: Preserved the weekly-reporting, automation-ROI, key-person-resilience and hire-versus-process boundaries; added canonical service/contact links and expanded static and browser coverage to all 12 completed articles. A fresh GitHub runner passed the 24 responsive render checks after the initial runner stalled during Chromium installation.
 - Milestone 8.4 action: Preserved the architecture-choice, intake-route, spreadsheet-governance and interruption-cost boundaries; added primary GOV.UK, NCSC, ICO and HSE support, canonical service/contact routes and static plus browser coverage for all 16 completed articles. The final workflow uses the hosted runner's stable Chrome channel and passed 32 responsive renders.
-- Remaining work: Preserve the boundaries through Batch 8.5, then implement useful cluster navigation and commercial pathways in Milestone 9.
+- Milestone 8.5 action: Preserved the CIS-compliance, duplicate-free client-onboarding, post-call CRM-update and Shopify returns-control boundaries; added primary GOV.UK, ICO and Shopify support, canonical service/contact routes and static plus browser coverage for all 20 articles. GitHub Actions passed 40 responsive renders.
+- Remaining work: Implement useful cluster navigation and commercial pathways in Milestone 9 while preserving the completed article intent boundaries.
 
 ## P3 — optional refinement or measurement gap
 
