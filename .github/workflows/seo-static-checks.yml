@@ -79,6 +79,9 @@ jobs:
       - name: Check internal linking, hubs and navigation
         run: node scripts/check-seo-internal-linking.mjs
 
+      - name: Check trust, authorship and conversion quality
+        run: node scripts/check-seo-trust.mjs
+
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs
 
@@ -99,3 +102,8 @@ jobs:
         env:
           PLAYWRIGHT_CHANNEL: chrome
         run: node scripts/test-seo-navigation.mjs
+
+      - name: Check trust pages and conversion routes
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/test-seo-trust.mjs

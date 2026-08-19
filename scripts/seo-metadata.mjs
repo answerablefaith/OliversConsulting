@@ -34,11 +34,11 @@ export const siteMetadata = {
     },
     '/privacy-policy/': {
       title: 'Privacy Policy | Olivers Consulting',
-      description: 'How Olivers Consulting collects, uses and protects personal information when you visit the website or contact the business.',
+      description: 'How Olivers Consulting handles personal information from enquiries, bookings and client work, including retention, rights and service providers.',
     },
     '/cookie-policy/': {
       title: 'Cookie Policy | Olivers Consulting',
-      description: 'How Olivers Consulting uses essential browser storage, external services and privacy-friendly website functionality.',
+      description: "How oliversconsulting.co.uk handles cookies and browser storage, including the site's no-tracking setup and the separate Cal.eu booking page.",
     },
     '/terms-of-service/': {
       title: 'Terms of Service | Olivers Consulting',
