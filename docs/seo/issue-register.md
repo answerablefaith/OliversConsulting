@@ -121,3 +121,13 @@ No production issues were closed. Milestone 1 was deliberately audit-only.
 ## Closed during Milestone 5
 
 SEO-003 and SEO-004 were closed with the responsive image pipeline, complete manifest, article assignments, social metadata and primary-image schema described above.
+
+## Closed during Milestone 6
+
+### SEO-013 — Core commercial intents were confined to homepage fragments
+
+- Status: DONE_VERIFIED
+- Milestone: 6
+- Evidence: The homepage used a vague H1 and Services, About and Contact existed only as sections, limiting each purpose to a fragment rather than a dedicated canonical route.
+- Risk: Search engines and prospective customers had no focused service, trust or transactional landing page, and the homepage opening did not state the offer directly.
+- Resolution: Rewrote the homepage opening and added dedicated Services, About and Contact routes with unique metadata, one clear H1, valid entity schema, useful internal links and functioning calls to action. A dedicated validator covers the four distinct intents.

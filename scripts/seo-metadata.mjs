@@ -15,6 +15,19 @@ export const siteMetadata = {
   overrides: {
     '/': {
       title: 'Ecommerce & Wholesale Automation | Olivers Consulting',
+      description: 'Fixed-price automation for growing UK ecommerce and wholesale teams. Reduce repetitive work across supplier data, orders, invoices, stock, listings and reports.',
+    },
+    '/services/': {
+      title: 'Ecommerce Automation Services | Olivers Consulting',
+      description: 'Fixed-price ecommerce and wholesale automation services for supplier data, orders, invoicing, stock, listings and reporting.',
+    },
+    '/about/': {
+      title: 'About Olivers Consulting | Ecommerce Automation',
+      description: 'Meet Henry Oliver, founder of Olivers Consulting, and learn the operator-led approach to ecommerce and wholesale automation.',
+    },
+    '/contact/': {
+      title: 'Contact Olivers Consulting | Book an Automation Review',
+      description: 'Book a free automation review or email Henry Oliver to discuss repetitive ecommerce and wholesale admin.',
     },
     '/articles/': {
       title: 'Automation Articles for UK SMEs | Olivers Consulting',

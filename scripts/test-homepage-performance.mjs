@@ -26,7 +26,7 @@ check(
   'Performance stylesheet is not loaded with the mobile-alignment cache key.',
 );
 check(html.includes('class="oc-grain"'), 'The grain overlay is not marked for mobile removal.');
-check(/image3\.png[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not lazy-loaded.');
+check(/henry-oliver-founder-746\.jpg[^>]*width="746"[^>]*height="952"[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not dimensioned and lazy-loaded.');
 check(!behaviour.includes('MutationObserver'), 'Homepage behaviour contains a broad mutation observer.');
 check(!behaviour.includes('setInterval'), 'Homepage behaviour contains a perpetual interval.');
 check(

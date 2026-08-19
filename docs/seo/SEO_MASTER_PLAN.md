@@ -66,6 +66,8 @@ Milestone 4 replaced the partial, manually duplicated JSON-LD with one determini
 
 Milestone 5 accounted for all 49 raw originals and assigned 20 distinct, relevant photographs to the 20 articles. The published set contains 40 responsive WebP derivatives and 20 JPEG fallbacks/social cards (2,572,568 bytes total), while the 8,869,841-byte assigned source set remains unchanged. Each article now has a crawlable picture element, contextual alt text, explicit dimensions, page-specific social metadata and a matching primary ImageObject.
 
+Milestone 6 clarified the homepage proposition and added dedicated Services, About and Contact pages with distinct commercial, trust and transactional intents. The branch now has 28 indexable routes, complete metadata and schema, clear calls to action and direct internal links. The existing founder PNG remains preserved; three stripped responsive derivatives reduce published transfer size while retaining explicit dimensions and contextual alt text.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -89,7 +91,7 @@ The existing static homepage performance guard failed at baseline because the ex
 | 3 | Metadata and social presentation | DONE_VERIFIED | 25 unique titles/descriptions; complete Open Graph, Twitter and favicon metadata; deterministic checks pass |
 | 4 | Structured data and entity clarity | DONE_VERIFIED | 25 valid managed graphs; 20 Article/Person/Breadcrumb graphs; visible-only FAQ markup; deterministic checks pass |
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
-| 6 | Core commercial pages | NOT_STARTED | Next checkpoint |
+| 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
 | 7 | Search-intent and content architecture map | NOT_STARTED | |
 | 8 | Article optimisation batches | NOT_STARTED | Batches will be defined by Milestone 7 |
 | 9 | Internal linking, hubs and navigation | NOT_STARTED | |
@@ -239,6 +241,32 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 
+## Milestone 6 acceptance criteria
+
+- [x] Homepage clearly states the offer and genuine target customer in crawlable HTML.
+- [x] Services, About and Contact have dedicated canonical routes and distinct search intents.
+- [x] Core copy, pricing and background claims remain within facts already published by the business.
+- [x] Services explain problems solved, engagement options, delivery steps and relevant next actions.
+- [x] Contact routes work, explain what to bring and what happens after the review.
+- [x] Core pages have complete unique metadata, valid schema and useful internal links.
+- [x] The founder image uses responsive, stripped derivatives with explicit dimensions and contextual alt text; the original remains unchanged.
+- [x] Static indexation, metadata, schema, image, homepage and core-page checks pass.
+
+### Milestone 6 decisions
+
+- Keep the existing static architecture and add three small static routes rather than changing framework or deployment.
+- Use the site-owned default 1200×630 social card for core pages; the portrait is not a suitable landscape social card.
+- Preserve existing published facts and prices without extending them into new qualifications, results or guarantees.
+- Add visible contact FAQs for real follow-up questions but omit FAQ schema because it is unnecessary for the commercial page.
+- Record new and materially revised core routes with the genuine implementation date, 2026-08-19; article dates remain unchanged.
+
+### Milestone 6 GitHub record
+
+- Implementation commit: PENDING_COMMIT
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
@@ -254,6 +282,7 @@ The repository has no single build command. Use the checks relevant to each mile
 - node scripts/update-image-manifest.mjs
 - node scripts/apply-seo-images.mjs
 - node scripts/check-seo-images.mjs
+- node scripts/check-seo-core-pages.mjs
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -280,16 +309,16 @@ The live site currently states or implies the following. Preserve existing wordi
 - Published service prices and delivery-time statements.
 - Specific process-time and savings examples.
 
-These questions do not block Milestone 5.
+These questions did not block Milestone 6 because the implementation preserved existing published wording and did not add new credentials or outcome claims.
 
 ## Known risks
 
 - Raw originals remain tracked at their pre-existing repository paths to preserve the only uploaded copies. No production HTML references them; 20 articles use optimised derivatives instead.
-- Core and legal pages retain the branded default social card. Their page imagery will be reviewed with the core-page work rather than assigning irrelevant stock photographs.
+- Core and legal pages retain the branded default social card; no irrelevant stock photograph is forced into their social metadata.
 - Production preview/test routes add avoidable crawl surface even though they are noindex.
 - No field Core Web Vitals data was available in this audit.
 - The new custom 404 will not replace GitHub Pages' default error document until this draft branch is approved and deployed.
 
 ## Next milestone
 
-Milestone 6 — Core commercial pages.
+Milestone 7 — Search-intent and content architecture map.

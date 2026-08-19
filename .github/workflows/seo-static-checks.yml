@@ -8,6 +8,8 @@ on:
       - 'sitemap.xml'
       - 'assets/og-default.jpg'
       - 'assets/images/articles/**'
+      - 'assets/images/core/**'
+      - 'assets/core-pages.css'
       - 'assets/seo-images.css'
       - 'docs/seo/image-manifest.csv'
       - 'scripts/image-assignments.mjs'
@@ -25,6 +27,8 @@ on:
       - 'sitemap.xml'
       - 'assets/og-default.jpg'
       - 'assets/images/articles/**'
+      - 'assets/images/core/**'
+      - 'assets/core-pages.css'
       - 'assets/seo-images.css'
       - 'docs/seo/image-manifest.csv'
       - 'scripts/image-assignments.mjs'
@@ -60,6 +64,9 @@ jobs:
 
       - name: Check image inventory and published derivatives
         run: node scripts/check-seo-images.mjs
+
+      - name: Check core commercial pages
+        run: node scripts/check-seo-core-pages.mjs
 
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs

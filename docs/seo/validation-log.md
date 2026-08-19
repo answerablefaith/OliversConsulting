@@ -290,3 +290,38 @@
 - Published Milestone 5 implementation commit 09a3e4d79c03323cc2d0031ff82e219ad25da69b to seo/organic-ai-discoverability.
 - Reused and updated draft pull request #26 targeting main.
 - No merge or deployment performed.
+
+## 2026-08-19 — Milestone 6 core commercial pages
+
+### Starting state
+
+- Confirmed repository answerablefaith/OliversConsulting and clean working branch seo/organic-ai-discoverability.
+- Reverified Milestones 1–5 and selected Milestone 6 as the earliest NOT_STARTED checkpoint.
+- Confirmed the live site returned 200 for the homepage and all 25 existing sitemap routes; canonical host, robots, sitemap and 404 checks passed before branch-only routes were added.
+- Confirmed the free-review calendar resolves successfully and the published email link is retained.
+
+### Implemented core-page work
+
+- Replaced the vague homepage H1 and opening paragraph with a direct description of fixed-price ecommerce and wholesale automation.
+- Added canonical Services, About and Contact pages with distinct commercial, trust and transactional intents.
+- Preserved existing service prices, Henry Oliver attribution, PwC/Citibank background, 200,000-SKU experience and London base without adding unsupported claims.
+- Added practical service groupings, delivery steps, contact preparation, genuine follow-up questions, contextual article links and working calls to action.
+- Added complete metadata and managed Organization, WebSite and WebPage graphs for all three new routes.
+- Generated 480×613 and 746×952 WebP founder images plus a 746×952 JPEG fallback; stripped metadata, explicit dimensions and responsive loading are enforced while the source PNG remains preserved.
+- Added deterministic core-page validation and included it in the GitHub Actions workflow.
+
+### Validation results
+
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=28|organizations=28|websites=28|webpages=28|articles=20|persons=20|breadcrumbs=20|faqs=18|images=48`.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-core-pages.mjs` — PASS: `CORE_PAGE_CHECK_OK|pages=4|distinct_intents=4|contact_methods=2|founder_derivatives=3|mobile_css=1`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- Founder JPEG visual inspection — PASS: crop, clarity and colour are suitable; no obvious quality loss was found.
+- Browser-rendered mobile QA — NOT RUN: Chromium is unavailable in this environment. Responsive CSS, semantic markup, intrinsic dimensions and mobile layout rules pass static checks.
+
+### Deployment boundary
+
+- The live site retains the pre-Milestone-6 page set until this draft branch is approved and deployed.
+- No merge or deployment performed.
