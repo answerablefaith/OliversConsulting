@@ -31,6 +31,8 @@ check(!fonts.includes('font-display:swap'), 'Local fonts still allow a late font
 check((fonts.match(/font-display:optional/g) ?? []).length >= 10, 'Expected self-hosted fonts are not configured for stable optional display.');
 
 check(homepageJs.includes('initAccessibilityStructure'), 'Homepage does not initialise its semantic/accessibility structure.');
+check(homepageJs.includes("landmark.setAttribute('role', 'main')"), 'Homepage does not expose the existing content container as the main landmark.');
+check(!homepageJs.includes('main.appendChild('), 'Homepage accessibility setup must not re-parent the content tree and trigger avoidable layout work.');
 check(homepageJs.includes("skip.textContent = 'Skip to content'"), 'Homepage skip link is missing.');
 check(homepageJs.includes("slider.setAttribute('aria-labelledby'"), 'Homepage hours range has no programmatic label.');
 check(homepageJs.includes("scrubber.setAttribute('aria-label', 'Order automation progress')"), 'Homepage automation scrubber has no programmatic label.');
@@ -64,4 +66,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('ACCESSIBILITY_STATIC_CHECK_OK|font_display=optional|homepage_labels=3|skip_navigation=2|image_reservation=1|contrast_pairs=5|reduced_motion=1');
+console.log('ACCESSIBILITY_STATIC_CHECK_OK|font_display=optional|homepage_labels=3|skip_navigation=2|image_reservation=1|contrast_pairs=5|reduced_motion=1|lightweight_landmark=1');
