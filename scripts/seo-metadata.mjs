@@ -82,6 +82,7 @@ export const siteMetadata = {
     },
     '/articles/ecommerce-key-person-dependency/': {
       title: 'Reduce Ecommerce Key-Person Dependency | Olivers Consulting',
+      description: 'Use a five-day absence test to expose hidden knowledge, document inputs and exceptions, assign backup ownership and automate stable ecommerce work safely.',
     },
     '/articles/reconcile-shopify-payouts-orders-fees/': {
       title: 'Shopify Payout Reconciliation Guide | Olivers Consulting',
@@ -96,17 +97,20 @@ export const siteMetadata = {
       description: 'Capture wholesale orders from email, PDF or spreadsheets, validate customer and product data, and create controlled Sage or Xero records without re-keying.',
     },
     '/articles/ecommerce-ai-automation-roi/': {
-      title: 'Ecommerce AI Automation ROI | Olivers Consulting',
+      title: 'Ecommerce AI Automation ROI Guide | Olivers Consulting',
+      description: 'Calculate ecommerce automation ROI using labour, review, error, delay, build and running costs, then test the case with a controlled pilot before expanding.',
     },
     '/articles/why-stock-sync-fails-shopify-amazon-ebay/': {
       title: 'Why Multichannel Stock Sync Fails | Olivers Consulting',
       description: 'Fix stock sync across Shopify, Amazon and eBay by defining a trusted inventory position, channel buffers, bundle rules, timing and exception handling.',
     },
     '/articles/monday-report-automation/': {
-      title: 'Automate Your Ecommerce Monday Report | Olivers Consulting',
+      title: 'Ecommerce Monday Report Automation | Olivers Consulting',
+      description: 'Build a weekly ecommerce report that combines trusted sales, margin, stock and channel data, checks quality and sends decision-ready exceptions before Monday.',
     },
     '/articles/before-hiring-ecommerce-admin/': {
-      title: 'Before Hiring Ecommerce Admin, Fix the Process | Olivers Consulting',
+      title: 'Hire or Automate Ecommerce Admin Work? | Olivers Consulting',
+      description: 'Decide whether ecommerce admin pressure needs another hire, a better process or controlled automation by separating judgement from repeatable data movement.',
     },
     '/articles/automate-supplier-price-lists/': {
       title: 'Supplier Price List Automation for Ecommerce | Olivers Consulting',

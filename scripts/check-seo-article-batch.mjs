@@ -22,6 +22,15 @@ const batches = [
       { route: '/articles/reconcile-shopify-payouts-orders-fees/', title: 'Shopify Payout Reconciliation Guide | Olivers Consulting', h1: 'How to reconcile Shopify payouts, orders, refunds and fees', sources: ['help.shopify.com', 'developer.xero.com'] },
     ],
   },
+  {
+    id: '8.3',
+    articles: [
+      { route: '/articles/monday-report-automation/', title: 'Ecommerce Monday Report Automation | Olivers Consulting', h1: 'How to automate an ecommerce Monday report that drives decisions', sources: ['help.shopify.com', 'www.gov.uk', 'analysisfunction.civilservice.gov.uk'] },
+      { route: '/articles/ecommerce-ai-automation-roi/', title: 'Ecommerce AI Automation ROI Guide | Olivers Consulting', h1: 'How to calculate and prove ecommerce AI automation ROI', sources: ['www.gov.uk', 'www.ncsc.gov.uk'] },
+      { route: '/articles/ecommerce-key-person-dependency/', title: 'Reduce Ecommerce Key-Person Dependency | Olivers Consulting', h1: 'How to reduce key-person dependency in ecommerce operations', sources: ['www.gov.uk', 'www.icaew.com'] },
+      { route: '/articles/before-hiring-ecommerce-admin/', title: 'Hire or Automate Ecommerce Admin Work? | Olivers Consulting', h1: 'Should you hire ecommerce admin or fix the process first?', sources: ['www.acas.org.uk', 'engineering.homeoffice.gov.uk'] },
+    ],
+  },
 ];
 
 const failures = [];

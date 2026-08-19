@@ -9,6 +9,10 @@ const routes = [
   '/articles/automate-invoice-processing-approval-control/',
   '/articles/automate-supplier-statement-reconciliation/',
   '/articles/reconcile-shopify-payouts-orders-fees/',
+  '/articles/monday-report-automation/',
+  '/articles/ecommerce-ai-automation-roi/',
+  '/articles/ecommerce-key-person-dependency/',
+  '/articles/before-hiring-ecommerce-admin/',
 ];
 const viewports = [
   { name: 'mobile', width: 390, height: 844 },

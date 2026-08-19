@@ -12,14 +12,14 @@ const entries = [
   ['/articles/spreadsheet-not-the-problem-operating-rules/', 'Images/federica-galli-_xhZcNsqPhQ-unsplash.jpg', 'spreadsheet-operating-rules', 'Spreadsheet displayed on a laptop at a clear workspace'],
   ['/articles/automate-invoice-processing-approval-control/', 'Images/kelly-sikkema-zN49qkBMmOA-unsplash.jpg', 'invoice-processing-documents', 'Business documents arranged on a desk for processing'],
   ['/articles/integrate-systems-or-automate-hand-off/', 'Images/myriam-jessier-eveI7MOcSmw-unsplash.jpg', 'system-integration-dashboard', 'Business dashboard displayed on a laptop'],
-  ['/articles/ecommerce-key-person-dependency/', 'Images/jakub-zerdzicki-TB7aNN4blTQ-unsplash.jpg', 'repeatable-process-checklist', 'Handwritten checklist used to document repeatable work'],
+  ['/articles/ecommerce-key-person-dependency/', 'Images/jakub-zerdzicki-TB7aNN4blTQ-unsplash.jpg', 'repeatable-process-checklist', 'Handwritten process checklist used to document ecommerce handover steps'],
   ['/articles/reconcile-shopify-payouts-orders-fees/', 'Images/towfiqu-barbhuiya-xkArbdUcUeE-unsplash.jpg', 'shopify-payout-reconciliation', 'Phone and payment receipt used for transaction checking'],
   ['/articles/product-data-errors-before-listings-go-live/', 'Images/lukas-blazek-mcSDtbWXUZU-unsplash.jpg', 'product-data-dashboard', 'Analytics dashboard open on a laptop'],
   ['/articles/stop-rekeying-wholesale-orders-sage-xero/', 'Images/cytonn-photography-GJao3ZTX9gU-unsplash.jpg', 'wholesale-order-form', 'Person completing a business order form on paper'],
-  ['/articles/ecommerce-ai-automation-roi/', 'Images/luke-chesser-JKUTrJ4vK00-unsplash.jpg', 'ecommerce-ai-roi-dashboard', 'Performance dashboard showing charts and operational metrics'],
+  ['/articles/ecommerce-ai-automation-roi/', 'Images/luke-chesser-JKUTrJ4vK00-unsplash.jpg', 'ecommerce-ai-roi-dashboard', 'Ecommerce automation ROI dashboard with cost and performance charts'],
   ['/articles/why-stock-sync-fails-shopify-amazon-ebay/', 'Images/compagnons-j8C0xOCuX0U-unsplash.jpg', 'warehouse-stock-inventory', 'Stock held on shelving in a warehouse'],
-  ['/articles/monday-report-automation/', 'Images/swello-YR7r3kB8Z54-unsplash.jpg', 'ecommerce-monday-report', 'Business charts being reviewed on a laptop'],
-  ['/articles/before-hiring-ecommerce-admin/', 'Images/scott-graham-5fNmWej4tAA-unsplash.jpg', 'business-process-review', 'Colleagues reviewing business notes beside a laptop'],
+  ['/articles/monday-report-automation/', 'Images/swello-YR7r3kB8Z54-unsplash.jpg', 'ecommerce-monday-report', 'Weekly ecommerce sales, margin and stock charts reviewed on a laptop'],
+  ['/articles/before-hiring-ecommerce-admin/', 'Images/scott-graham-5fNmWej4tAA-unsplash.jpg', 'business-process-review', 'Colleagues comparing an ecommerce process and staffing plan beside a laptop'],
   ['/articles/automate-supplier-price-lists/', 'Images/bluestonex-iDqNlr1Y1_w-unsplash.jpg', 'supplier-price-list-spreadsheet', 'Product spreadsheet open on a laptop'],
 ];
 
@@ -51,4 +51,3 @@ export function articleImageForRoute(route) {
     alt: assignment.alt,
   };
 }
-
