@@ -52,10 +52,17 @@ None confirmed.
 ### SEO-015 — Trust and policy wording did not fully match current implementation
 - Status: DONE_VERIFIED
 - Milestone: 10
-- Evidence before fix: About lacked visible editorial/corrections information; Services said ownership was included without stating the existing final-payment condition; Contact did not explain the separate Cal.eu step; Privacy contained the unsupported placeholder `ICO Registration in Progress`, simplified retention/rights/transfer wording, and Cookie/Terms navigation used older homepage fragments.
-- Risk: users could receive inconsistent business, authorship, service-boundary or privacy information, weakening trust and creating avoidable compliance ambiguity.
-- Resolution: About now identifies the operator and explains authorship, primary-source use and corrections; Services aligns ownership with Terms and states the professional-advice/no-guarantee boundary; Contact exposes direct email plus separate Cal.eu/privacy context; Privacy/Cookie/Terms were materially updated against current implementation and primary ICO/GOV.UK guidance; the unsupported ICO placeholder was removed without inventing a number; canonical legal navigation and legal `lastmod` dates were updated.
+- Resolution: About identifies the operator and explains authorship, primary-source use and corrections; Services aligns ownership with Terms and states the professional-advice/no-guarantee boundary; Contact exposes direct email plus separate Cal.eu/privacy context; Privacy/Cookie/Terms match the checked implementation; unsupported ICO-registration wording was removed; canonical legal navigation and legal `lastmod` dates were updated.
 - Verification: `TRUST_CHECK_OK|core_pages=3|legal_pages=3|contact_methods=2|forms=0|tracking_writes=0|legal_lastmod=2026-08-19`; `TRUST_RENDER_CHECK_OK|routes=4|viewports=2|pages=8`.
+
+### SEO-016 — Measured layout instability and accessibility gaps on representative pages
+- Status: DONE_VERIFIED
+- Milestone: 11
+- Evidence before fix: synthetic baseline run `32313005214` recorded mobile representative-article CLS `0.1688`, desktop article-hub CLS `0.1089`, desktop representative-article CLS `0.1085`; homepage had no main landmark, two unnamed range controls, two UI images without reserved dimensions and one tested mobile focus-indicator miss.
+- Risk: avoidable visual movement and incomplete keyboard/screen-reader affordances could harm usability and weaken page-experience quality.
+- Resolution: added a reproducible synthetic performance/a11y audit; stable optional font loading; header/logo layout reservation; lightweight main/skip navigation; programmatic labels for both sliders and play/pause/replay; stronger focus visibility; small-text contrast tokens; article/index skip navigation and dimensions; deterministic a11y guard.
+- Repair evidence: an initial `font-display: swap` change was rejected after run `32313787934` worsened CLS; the accepted optional-font and lightweight-landmark implementation removed that regression.
+- Final verification: run `32314495534` passed. Synthetic mobile max LCP `1208 ms`, max CLS `0.0972`; desktop max LCP `332 ms`, max CLS `0.0766`; no tested unnamed controls, focus misses, missing alt attributes, missing tested image dimensions, heading skips, reduced-motion animation leaks, overflow or browser errors.
 
 ## P3 — optional refinement or measurement gap
 
@@ -72,9 +79,10 @@ None confirmed.
 
 ### SEO-009 — Core Web Vitals field baseline unavailable
 - Status: OPEN
-- Milestone: 11
-- Evidence: no connected field-data source has yet been recorded. Prior network timings were explicitly not CWV.
-- Risk: performance prioritisation lacks real-user LCP/INP/CLS evidence.
+- Milestone: 11 / measurement handoff at 13
+- Evidence: Milestone 11 now has a controlled synthetic Playwright before/after baseline, but no connected CrUX/Search Console/RUM or other real-user field-data source has been recorded.
+- Risk: real-user LCP/INP/CLS remain unknown; synthetic results cannot establish field Core Web Vitals status.
+- Current handling: do not claim field CWV or INP. Use the synthetic audit only for controlled regression evidence until owner/platform field data is available.
 
 ### SEO-010 — No site-owned custom 404
 - Status: DONE_VERIFIED
@@ -98,4 +106,4 @@ None confirmed.
 
 ## Current next issue focus
 
-Milestone 11 should measure representative performance/accessibility before changing it. Do not treat laboratory results as field data and do not claim INP if no real-user field source is available.
+Milestone 12 should audit AI/answer-engine discoverability and current crawler guidance without turning synthetic performance results into field claims or introducing crawler-only content.
