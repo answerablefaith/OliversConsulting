@@ -80,6 +80,7 @@ jobs:
         run: node scripts/test-homepage-performance.mjs
 
       - name: Install browser for article rendering checks
+        timeout-minutes: 15
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
