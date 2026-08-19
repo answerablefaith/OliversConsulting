@@ -499,10 +499,12 @@
 - `node scripts/test-homepage-performance.mjs` and `git diff --check` — PASS.
 - Local Playwright execution was unavailable because no Chromium executable is installed; no local browser result is claimed.
 - GitHub Actions run 32295623270 passed every dependency-free step, then remained in the Chromium installation step for more than 25 minutes; the 24 mobile/desktop render checks did not start during this run.
+- GitHub Actions run 32298248763 — PASS on a fresh runner: all static steps plus `ARTICLE_RENDER_CHECK_OK|articles=12|viewports=2|pages=24` at 390×844 and 1280×900.
 
 ### Deployment and GitHub state
 
 - Published implementation commit `0f5625b2b3b088373df0c9a6a57bed28ce13a420` to the existing SEO branch and draft pull request #26.
 - No merge or deployment was performed; the live site remains on the pre-draft release.
-- Top-level progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 has 2 of 5 batches `DONE_VERIFIED` and Batch 8.3 `IN_PROGRESS`.
-- Exact next checkpoint: Milestone 8.3 — complete mobile and desktop browser verification.
+- Top-level progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 has 3 of 5 batches `DONE_VERIFIED` (60%).
+- Batch 8.3 is `DONE_VERIFIED`; the first stalled runner is retained in the record as external CI evidence, not reported as a page failure.
+- Exact next checkpoint: Milestone 8.4 — process design and controlled hand-offs.

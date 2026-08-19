@@ -26,7 +26,7 @@ const batches = [
   },
   {
     id: '8.3',
-    status: 'IN_PROGRESS',
+    status: 'DONE_VERIFIED',
     articles: [
       { route: '/articles/monday-report-automation/', title: 'Ecommerce Monday Report Automation | Olivers Consulting', h1: 'How to automate an ecommerce Monday report that drives decisions', sources: ['help.shopify.com', 'www.gov.uk', 'analysisfunction.civilservice.gov.uk'] },
       { route: '/articles/ecommerce-ai-automation-roi/', title: 'Ecommerce AI Automation ROI Guide | Olivers Consulting', h1: 'How to calculate and prove ecommerce AI automation ROI', sources: ['www.gov.uk', 'www.ncsc.gov.uk'] },

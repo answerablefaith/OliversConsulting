@@ -70,8 +70,8 @@ None confirmed during the baseline audit.
 - Milestone 7 action: Assigned a unique principal intent, audience and overlap guard to every article; defined five four-page optimisation batches; and selected the existing article index as the first hub to improve rather than creating thin new pages.
 - Milestone 8.1 action: Preserved the four supplier/product/inventory overlap guards while adding contextual cross-links and canonical service/contact pathways; the dedicated batch validator checks ledger completion and minimum contextual links.
 - Milestone 8.2 action: Preserved the separate sales-order, supplier-invoice, supplier-statement and Shopify-settlement intents; added contextual cross-links without collapsing those boundaries; and expanded the validator to recheck all completed batches.
-- Milestone 8.3 action: Preserved the weekly-reporting, automation-ROI, key-person-resilience and hire-versus-process boundaries; added canonical service/contact links and expanded static and browser coverage to all 12 implemented articles. Browser acceptance remains pending because the GitHub runner stalled during Chromium installation.
-- Remaining work: Complete Batch 8.3 browser verification, preserve the boundaries through Batches 8.4–8.5, then implement useful cluster navigation and commercial pathways in Milestone 9.
+- Milestone 8.3 action: Preserved the weekly-reporting, automation-ROI, key-person-resilience and hire-versus-process boundaries; added canonical service/contact links and expanded static and browser coverage to all 12 completed articles. A fresh GitHub runner passed the 24 responsive render checks after the initial runner stalled during Chromium installation.
+- Remaining work: Preserve the boundaries through Batches 8.4–8.5, then implement useful cluster navigation and commercial pathways in Milestone 9.
 
 ## P3 — optional refinement or measurement gap
 
