@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
+import { applyMetadataToHtml, metadataForRoute } from './seo-metadata.mjs';
 
 const production = process.env.OC_PRODUCTION === '1';
 const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
@@ -140,6 +141,7 @@ try {
     // Production uses the rendered static DOM and a small, purpose-built behaviour
     // layer. It must not restore the React runtime or the historical support chain.
     output = prepareStaticProduction(crawlerHtml);
+    output = applyMetadataToHtml(output, metadataForRoute('/', output));
   } else {
     const encodedRuntime = Buffer.from(runtimeHtml, 'utf8').toString('base64');
     const handoff = `<script id="oc-runtime-handoff">(function(){var b='${encodedRuntime}';var a=atob(b);var u=new Uint8Array(a.length);for(var i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var h=new TextDecoder().decode(u);document.open();document.write(h);document.close()})();<\/script>`;

@@ -23,10 +23,11 @@ None confirmed during the baseline audit.
 
 ### SEO-002 — Social metadata is incomplete
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 3
 - Evidence: All 25 indexable pages lack og:image; 24 lack twitter:card. The article index and three legal pages also lack the main Open Graph title, description and URL fields.
 - Risk: Weak or inconsistent link previews and an incomplete social metadata system.
+- Resolution: All 25 indexable pages now have deterministic Open Graph and Twitter metadata using absolute canonical URLs and a site-owned 1200×630 default social card. Titles and descriptions remain unique, legal descriptions are useful, and the validator prevents duplicate or incomplete tags.
 
 ### SEO-003 — Articles have no content images
 
@@ -94,3 +95,12 @@ No production issues were closed. Milestone 1 was deliberately audit-only.
 - Milestone: 2
 - Baseline evidence: A missing live URL returned HTTP 404 using GitHub Pages' generic error document because the repository had no 404.html.
 - Resolution: Added a branded, accessible 404.html with noindex, useful recovery links and no misleading homepage canonical. Static checks pass; live rendering awaits an approved deployment.
+
+## Closed during Milestone 3
+
+### SEO-011 — Metadata generation was inconsistent and manually duplicated
+
+- Status: DONE_VERIFIED
+- Milestone: 3
+- Baseline evidence: Metadata coverage varied between the homepage, articles, article index and legal pages; the generated homepage also contained duplicate charset, viewport and favicon declarations.
+- Resolution: Added a central configuration, idempotent applicator and strict validator. The production homepage build now reuses the same metadata function, and all 25 indexable pages pass deterministic head-markup checks.

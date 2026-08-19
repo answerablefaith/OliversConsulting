@@ -60,6 +60,8 @@ Last audited: 2026-08-19
 - Twenty article pages and the article index contain JSON-LD; all 21 blocks parse.
 - The homepage has no Organization, WebSite or WebPage JSON-LD.
 
+Milestone 3 replaced the inconsistent page-by-page metadata with a deterministic system. All 25 indexable pages now have unique configured titles and descriptions, matching Open Graph and Twitter fields, absolute social-image URLs, consistent SVG/ICO favicon links and one self-referencing canonical. A 1200×630 site-owned default social card is used until Milestone 5 assigns relevant page imagery.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -80,8 +82,8 @@ The existing static homepage performance guard failed at baseline because the ex
 |---:|---|---|---|
 | 1 | Baseline audit and inventory | DONE_VERIFIED | Page and image inventories, issue register and validation log created |
 | 2 | Crawlability, indexation and URL integrity | DONE_VERIFIED | Static and live indexation checks pass; sitemap dates, 404 handling and release guard corrected |
-| 3 | Metadata and social presentation | NOT_STARTED | Next checkpoint |
-| 4 | Structured data and entity clarity | NOT_STARTED | |
+| 3 | Metadata and social presentation | DONE_VERIFIED | 25 unique titles/descriptions; complete Open Graph, Twitter and favicon metadata; deterministic checks pass |
+| 4 | Structured data and entity clarity | NOT_STARTED | Next checkpoint |
 | 5 | Image inventory and optimisation pipeline | NOT_STARTED | |
 | 6 | Core commercial pages | NOT_STARTED | |
 | 7 | Search-intent and content architecture map | NOT_STARTED | |
@@ -145,6 +147,28 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 
+## Milestone 3 acceptance criteria
+
+- [x] All 25 indexable pages have exactly one configured title, meta description, canonical and H1.
+- [x] Titles and descriptions are unique across all indexable pages.
+- [x] Long or inconsistent titles were replaced with concise, human-readable page-intent titles.
+- [x] Thin legal-page descriptions were replaced with useful summaries of the visible policy purpose.
+- [x] All 25 pages have complete Open Graph metadata with absolute canonical URLs.
+- [x] All 25 pages have complete summary-large-image Twitter metadata.
+- [x] Homepage and article metadata use the appropriate website or article Open Graph type.
+- [x] A site-owned 1200×630 JPEG social card exists and is referenced absolutely.
+- [x] Every indexable page exposes the SVG favicon and ICO fallback.
+- [x] Metadata generation is idempotent and the production homepage builder uses the same implementation.
+- [x] Metadata, indexation and homepage regression checks pass.
+
+### Milestone 3 decisions
+
+- Use one branded default social card during Milestone 3. Milestone 5 may safely override it with page-relevant optimised images through the central configuration.
+- Do not add unverified Twitter/X account metadata.
+- Keep page H1 copy distinct from shorter search-result titles where a concise title improves clarity.
+- Generate and validate metadata with dependency-free Node scripts rather than introducing a framework or large package.
+- Run the static SEO checks automatically for relevant pushes and pull requests.
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
@@ -152,6 +176,8 @@ The repository has no single build command. Use the checks relevant to each mile
 - node scripts/test-homepage-performance.mjs
 - node scripts/check-seo-indexation.mjs
 - node scripts/check-seo-indexation.mjs --live
+- node scripts/apply-seo-metadata.mjs
+- node scripts/check-seo-metadata.mjs
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -182,12 +208,12 @@ These questions do not block Milestone 2.
 
 ## Known risks
 
-- Social sharing images are absent sitewide.
 - Raw images are publicly deployed but not yet optimised or assigned.
+- The default social card is intentionally sitewide until Milestone 5 creates and assigns page-relevant derivatives.
 - Production preview/test routes add avoidable crawl surface even though they are noindex.
 - No field Core Web Vitals data was available in this audit.
 - The new custom 404 will not replace GitHub Pages' default error document until this draft branch is approved and deployed.
 
 ## Next milestone
 
-Milestone 3 — Metadata and social presentation.
+Milestone 4 — Structured data and entity clarity.

@@ -140,3 +140,54 @@
 - Published Milestone 2 implementation commit a4ae72af5963dbea0887332c7a80c693ec15c43a to seo/organic-ai-discoverability.
 - Reused draft pull request #26 targeting main.
 - No merge or deployment performed.
+
+## 2026-08-19 — Milestone 3 metadata and social presentation
+
+### Starting state
+
+- Confirmed repository answerablefaith/OliversConsulting.
+- Confirmed clean working branch seo/organic-ai-discoverability at 2012309 before implementation.
+- Confirmed draft pull request #26 targets main.
+- Reverified Milestones 1 and 2 and selected Milestone 3 as the earliest NOT_STARTED checkpoint.
+- Current live audit: 25 successful indexable pages; 0 with og:image; 1 with twitter:card.
+- Repository baseline: titles and descriptions were unique and every indexable page had one H1, but social fields, favicon handling and title style were inconsistent.
+
+### Implemented metadata system
+
+- Added scripts/seo-metadata.mjs as the central configuration and safe override mechanism.
+- Added scripts/apply-seo-metadata.mjs as an idempotent applicator for sitemap pages.
+- Added scripts/check-seo-metadata.mjs for deterministic title, description, H1, language, canonical, favicon, Open Graph and Twitter checks.
+- Updated scripts/build-prerendered-test.mjs so future production homepage builds reuse the same metadata function.
+- Added a dependency-free GitHub Actions workflow for indexation, metadata and homepage checks.
+- Applied the system to all 25 indexable HTML pages.
+- Replaced all 25 page titles with consistent, intent-led titles; retained distinct H1 copy.
+- Replaced the three thin legal descriptions with useful policy summaries.
+- Removed duplicate homepage charset, viewport and favicon declarations.
+
+### Social presentation
+
+- Added assets/og-default.jpg as a site-owned 1200×630 JPEG fallback card.
+- Image inspection: 1200×630, JPEG, 42,406 bytes after metadata stripping.
+- Added absolute Open Graph and Twitter image references, dimensions, media type and alternative text to all 25 indexable pages.
+- Added og:site_name and og:locale consistently.
+- Set article pages to og:type article; other indexable pages use website.
+- Did not invent a social account or add unverified account identifiers.
+
+### Validation results
+
+- `node scripts/apply-seo-metadata.mjs` — PASS: first run changed 25 pages; second run changed 0, confirming idempotence.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=25|titles=25|descriptions=25|og=25|twitter=25|h1=25`.
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=25|indexable=25|noindex=9|internal_targets=25|custom_404=1`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- Metadata scope comparison — PASS: `METADATA_SCOPE_OK|pages=25|bodies_unchanged=25`.
+- `node --check` for the metadata modules and production homepage builder — PASS.
+- PyYAML parse of .github/workflows/seo-static-checks.yml — PASS.
+- Page-inventory reconciliation — PASS: 35 rows; all 25 indexable titles match their HTML documents.
+- `identify assets/og-default.jpg` — PASS: JPEG, 1200×630, 42,406 bytes.
+- `git diff --check` — PASS.
+- Social card visual inspection completed; logo, brand colours and strapline render clearly at the required aspect ratio.
+
+### Deployment boundary
+
+- The live site retains its baseline metadata until this draft branch is approved and deployed.
+- No merge or deployment performed.

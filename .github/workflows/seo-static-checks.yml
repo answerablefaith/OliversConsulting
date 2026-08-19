@@ -1,0 +1,49 @@
+name: SEO static checks
+
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'assets/og-default.jpg'
+      - 'scripts/*seo*.mjs'
+      - 'scripts/test-homepage-performance.mjs'
+      - '.github/workflows/seo-static-checks.yml'
+  push:
+    branches:
+      - main
+      - seo/organic-ai-discoverability
+    paths:
+      - '**/*.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'assets/og-default.jpg'
+      - 'scripts/*seo*.mjs'
+      - 'scripts/test-homepage-performance.mjs'
+      - '.github/workflows/seo-static-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check crawlability and indexation
+        run: node scripts/check-seo-indexation.mjs
+
+      - name: Check metadata and social presentation
+        run: node scripts/check-seo-metadata.mjs
+
+      - name: Check homepage safeguards
+        run: node scripts/test-homepage-performance.mjs
