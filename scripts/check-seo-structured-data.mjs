@@ -36,15 +36,14 @@ for (const route of routes) {
     }
   }
 
-  const logos = byType('ImageObject');
+  const imageObjects = byType('ImageObject');
   const organizations = byType('Organization');
   const websites = byType('WebSite');
   const pages = byType('WebPage');
-  check(logos.length === 1, `${file} must define one ImageObject logo.`);
   check(organizations.length === 1, `${file} must define one Organization.`);
   check(websites.length === 1, `${file} must define one WebSite.`);
   check(pages.length === 1, `${file} must define one WebPage.`);
-  const logo = logos[0] ?? {};
+  const logo = imageObjects.find((node) => node['@id'] === `${siteMetadata.origin}/#logo`) ?? {};
   check(logo.url === `${siteMetadata.origin}/assets/oc-logo.png` && logo.contentUrl === logo.url, `${file} logo URLs must be absolute and canonical.`);
   check(logo.width === 930 && logo.height === 264, `${file} logo dimensions are incorrect.`);
   const organization = organizations[0] ?? {};
@@ -61,17 +60,20 @@ for (const route of routes) {
   const breadcrumbs = byType('BreadcrumbList');
   const faqs = byType('FAQPage');
   if (!isArticle) {
+    check(imageObjects.length === 1, `${file} must define only the shared logo ImageObject.`);
     check(articles.length === 0 && people.length === 0 && breadcrumbs.length === 0 && faqs.length === 0, `${file} has article-only markup.`);
     continue;
   }
 
   check(articles.length === 1, `${file} must define one Article.`);
+  check(imageObjects.length === 2, `${file} must define the logo and one primary ImageObject.`);
   check(people.length === 1, `${file} must define one Person author.`);
   check(breadcrumbs.length === 1, `${file} must define one BreadcrumbList.`);
   const facts = articleFacts(html);
   const h1 = visibleText(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '');
   const article = articles[0] ?? {};
   const author = people[0] ?? {};
+  const primaryImage = imageObjects.find((node) => node['@id'] === `${metadata.canonical}#primaryimage`) ?? {};
   check(article.headline === h1 && article.headline === facts.headline, `${file} Article headline must match the visible H1.`);
   check(article.description === metadata.description, `${file} Article description must match the meta description.`);
   check(article.datePublished === facts.datePublished && /^\d{4}-\d{2}-\d{2}$/.test(article.datePublished), `${file} datePublished is missing or inconsistent.`);
@@ -84,6 +86,9 @@ for (const route of routes) {
   check(article.publisher?.['@id'] === organization['@id'], `${file} Article is not tied to the Organization publisher.`);
   check(article.mainEntityOfPage?.['@id'] === page['@id'] && page.mainEntity?.['@id'] === article['@id'], `${file} Article and WebPage are not mutually linked.`);
   check(article.articleSection === facts.section && Boolean(facts.section), `${file} Article section does not match the visible metadata.`);
+  check(primaryImage.url === metadata.image.url && primaryImage.contentUrl === metadata.image.url, `${file} primary image URL does not match social metadata.`);
+  check(primaryImage.width === 1200 && primaryImage.height === 630 && primaryImage.caption === metadata.image.alt, `${file} primary image dimensions or caption are incorrect.`);
+  check(page.primaryImageOfPage?.['@id'] === primaryImage['@id'] && article.image?.['@id'] === primaryImage['@id'], `${file} primary image is not tied to WebPage and Article.`);
 
   const items = breadcrumbs[0]?.itemListElement ?? [];
   check(items.length === 3, `${file} breadcrumb trail must contain Home, Articles and the current page.`);
@@ -105,7 +110,7 @@ for (const route of routes) {
 }
 
 check(counts.Article === 20 && counts.Person === 20 && counts.BreadcrumbList === 20, 'All 20 articles must have Article, Person and BreadcrumbList markup.');
-check(counts.Organization === routes.length && counts.WebSite === routes.length && counts.WebPage === routes.length && counts.ImageObject === routes.length, 'Every indexable page must have the shared entity graph.');
+check(counts.Organization === routes.length && counts.WebSite === routes.length && counts.WebPage === routes.length && counts.ImageObject === routes.length + 20, 'Every indexable page must have the shared entity graph and each article must have a primary image.');
 const hostileJson = safeJsonLd({ value: '</script><tag>&\u2028\u2029' });
 check(!hostileJson.includes('</script>') && !hostileJson.includes('<tag>') && !hostileJson.includes('&'), 'JSON-LD serialization does not escape script-breaking characters.');
 if (failures.length) throw new Error(`Structured-data checks failed:\n- ${failures.join('\n- ')}`);

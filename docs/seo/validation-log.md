@@ -241,3 +241,46 @@
 - Published Milestone 4 implementation commit 158101a54c629e0c3efb044f40d97ba314316eb3 to seo/organic-ai-discoverability.
 - Reused and updated draft pull request #26 targeting main.
 - No merge or deployment performed.
+
+## 2026-08-19 — Milestone 5 image inventory and optimisation pipeline
+
+### Starting state
+
+- Confirmed repository answerablefaith/OliversConsulting and working branch seo/organic-ai-discoverability.
+- Reverified Milestones 1–4 and selected Milestone 5 as the earliest NOT_STARTED checkpoint.
+- Recounted 49 raw JPEG files totalling 28,996,890 bytes; all 49 decode, all checksums are unique and every filename contains one of the user-reported Unsplash IDs.
+- Confirmed all 20 article pages lacked content images and used the generic social card.
+- Reviewed current Google Search Central image guidance, web.dev responsive-image guidance and the Unsplash licence page.
+
+### Implemented image pipeline
+
+- Added a central 20-route assignment map using 20 distinct, contextually suitable photographs and no implied endorsement.
+- Added deterministic ImageMagick generation for 640×336 WebP, 1200×630 WebP and 1200×630 JPEG derivatives with orientation normalisation and metadata stripping.
+- Added responsive picture markup, page-specific contextual alt text, explicit 1200×630 dimensions and principal-image loading priority to all 20 articles.
+- Added a shared aspect-ratio stylesheet and page-specific Open Graph/Twitter images.
+- Added a primary ImageObject to every article graph and tied it to both WebPage and Article.
+- Updated all 49 manifest rows and fully populated published-output fields for the 20 assignments.
+- Added deterministic image validation to the GitHub Actions static workflow.
+- Preserved all raw originals and all existing article dates and sitemap lastmod values.
+
+### Validation results
+
+- `node scripts/optimize-seo-images.mjs` — PASS: `SEO_IMAGES_OPTIMIZED|sources=20|outputs=60|bytes=2572568|raw_unchanged=20`.
+- `node scripts/update-image-manifest.mjs` — PASS: `IMAGE_MANIFEST_UPDATED|rows=49|assigned=20`.
+- `node scripts/apply-seo-images.mjs` — PASS: final run changed 0 pages.
+- `node scripts/apply-seo-metadata.mjs` — PASS: final run changed 0 pages.
+- `node scripts/apply-seo-structured-data.mjs` — PASS: final run changed 0 pages.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=25|organizations=25|websites=25|webpages=25|articles=20|persons=20|breadcrumbs=20|faqs=18|images=45`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=25|titles=25|descriptions=25|og=25|twitter=25|h1=25`.
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=25|indexable=25|noindex=9|internal_targets=25|custom_404=1`.
+- `node scripts/check-seo-indexation.mjs --live` — PASS: `LIVE_INDEXATION_CHECK_OK|sitemap=25|canonical_hosts=3|missing_status=404`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- `git diff --check` — PASS.
+- Contact-sheet inspection of all 20 JPEG fallbacks — PASS: crops are coherent and no obvious quality loss, text overlay or misleading brand endorsement was found.
+- Playwright mobile rendering — NOT RUN: the library exists, but its Chromium binary is absent; an isolated download attempt failed because the browser CDN returned an invalid/502 response. Static responsive-markup, intrinsic-dimension and CSS checks pass; browser-rendered QA remains a post-environment/deployment check.
+
+### Deployment boundary
+
+- The live site retains its pre-Milestone-5 images and metadata until this draft branch is approved and deployed.
+- No merge or deployment performed.

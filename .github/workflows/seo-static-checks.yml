@@ -7,7 +7,12 @@ on:
       - 'robots.txt'
       - 'sitemap.xml'
       - 'assets/og-default.jpg'
+      - 'assets/images/articles/**'
+      - 'assets/seo-images.css'
+      - 'docs/seo/image-manifest.csv'
+      - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
+      - 'scripts/*image*.mjs'
       - 'scripts/test-homepage-performance.mjs'
       - '.github/workflows/seo-static-checks.yml'
   push:
@@ -19,7 +24,12 @@ on:
       - 'robots.txt'
       - 'sitemap.xml'
       - 'assets/og-default.jpg'
+      - 'assets/images/articles/**'
+      - 'assets/seo-images.css'
+      - 'docs/seo/image-manifest.csv'
+      - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
+      - 'scripts/*image*.mjs'
       - 'scripts/test-homepage-performance.mjs'
       - '.github/workflows/seo-static-checks.yml'
   workflow_dispatch:
@@ -47,6 +57,9 @@ jobs:
 
       - name: Check structured data and entity clarity
         run: node scripts/check-seo-structured-data.mjs
+
+      - name: Check image inventory and published derivatives
+        run: node scripts/check-seo-images.mjs
 
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs

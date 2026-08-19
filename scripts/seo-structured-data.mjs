@@ -112,6 +112,7 @@ export function structuredDataForRoute(route, html) {
   const pageId = `${metadata.canonical}#webpage`;
   const isArticle = route.startsWith('/articles/') && route !== '/articles/';
   const graph = [logo(), organization(), website()];
+  const primaryImageId = `${metadata.canonical}#primaryimage`;
   const webPage = {
     '@type': 'WebPage',
     '@id': pageId,
@@ -128,7 +129,16 @@ export function structuredDataForRoute(route, html) {
     const articleId = `${metadata.canonical}#article`;
     const faqItems = visibleFaqs(html);
     webPage.mainEntity = { '@id': articleId };
-    graph.push(webPage, person(), {
+    webPage.primaryImageOfPage = { '@id': primaryImageId };
+    graph.push({
+      '@type': 'ImageObject',
+      '@id': primaryImageId,
+      url: metadata.image.url,
+      contentUrl: metadata.image.url,
+      width: metadata.image.width,
+      height: metadata.image.height,
+      caption: metadata.image.alt,
+    }, webPage, person(), {
       '@type': 'Article',
       '@id': articleId,
       headline: facts.headline,
@@ -138,6 +148,7 @@ export function structuredDataForRoute(route, html) {
       articleSection: facts.section,
       author: { '@id': ids.author },
       publisher: { '@id': ids.organization },
+      image: { '@id': primaryImageId },
       mainEntityOfPage: { '@id': pageId },
       inLanguage: siteMetadata.language,
     }, {
@@ -190,4 +201,3 @@ export function applyStructuredDataToHtml(html, data) {
   ].join('\n');
   return html.replace(headMatch[1], `${cleanHead}\n${managed}\n`);
 }
-

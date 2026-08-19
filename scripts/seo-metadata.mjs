@@ -1,3 +1,5 @@
+import { articleImageForRoute } from './image-assignments.mjs';
+
 export const siteMetadata = {
   origin: 'https://oliversconsulting.co.uk',
   siteName: 'Olivers Consulting',
@@ -130,12 +132,13 @@ export function metadataForRoute(route, html) {
   const current = currentMetadata(html);
   const override = siteMetadata.overrides[route] ?? {};
   const isArticle = route.startsWith('/articles/') && route !== '/articles/';
+  const assignedImage = articleImageForRoute(route);
   return {
     title: override.title ?? current.title,
     description: override.description ?? current.description,
     canonical: `${siteMetadata.origin}${route}`,
     type: override.type ?? (isArticle ? 'article' : 'website'),
-    image: { ...siteMetadata.defaultImage, ...(override.image ?? {}) },
+    image: { ...siteMetadata.defaultImage, ...(assignedImage ?? {}), ...(override.image ?? {}) },
   };
 }
 

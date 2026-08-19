@@ -64,6 +64,8 @@ Milestone 3 replaced the inconsistent page-by-page metadata with a deterministic
 
 Milestone 4 replaced the partial, manually duplicated JSON-LD with one deterministic graph on every indexable page. All 25 graphs define consistent Organization, WebSite, WebPage and logo ImageObject entities. The 20 article graphs also define the visible Person author, Article, canonical breadcrumb trail and only those FAQ questions and answers that can be extracted verbatim from a visible FAQ section.
 
+Milestone 5 accounted for all 49 raw originals and assigned 20 distinct, relevant photographs to the 20 articles. The published set contains 40 responsive WebP derivatives and 20 JPEG fallbacks/social cards (2,572,568 bytes total), while the 8,869,841-byte assigned source set remains unchanged. Each article now has a crawlable picture element, contextual alt text, explicit dimensions, page-specific social metadata and a matching primary ImageObject.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -86,8 +88,8 @@ The existing static homepage performance guard failed at baseline because the ex
 | 2 | Crawlability, indexation and URL integrity | DONE_VERIFIED | Static and live indexation checks pass; sitemap dates, 404 handling and release guard corrected |
 | 3 | Metadata and social presentation | DONE_VERIFIED | 25 unique titles/descriptions; complete Open Graph, Twitter and favicon metadata; deterministic checks pass |
 | 4 | Structured data and entity clarity | DONE_VERIFIED | 25 valid managed graphs; 20 Article/Person/Breadcrumb graphs; visible-only FAQ markup; deterministic checks pass |
-| 5 | Image inventory and optimisation pipeline | NOT_STARTED | Next checkpoint |
-| 6 | Core commercial pages | NOT_STARTED | |
+| 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
+| 6 | Core commercial pages | NOT_STARTED | Next checkpoint |
 | 7 | Search-intent and content architecture map | NOT_STARTED | |
 | 8 | Article optimisation batches | NOT_STARTED | Batches will be defined by Milestone 7 |
 | 9 | Internal linking, hubs and navigation | NOT_STARTED | |
@@ -207,6 +209,36 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 
+## Milestone 5 acceptance criteria
+
+- [x] All 49 uploaded files are represented in the image manifest with their SHA-256, format, dimensions, orientation, size, subject and user-reported source status.
+- [x] All originals remain byte-for-byte unchanged; no exact duplicate or corrupt file was found.
+- [x] Twenty distinct, relevant originals are assigned to the 20 article pages; the remaining 29 are intentionally unassigned rather than forced into irrelevant placements.
+- [x] Descriptive lowercase filenames identify the purpose of every published derivative.
+- [x] Each assignment has 640×336 and 1200×630 WebP candidates plus a 1200×630 JPEG fallback/social image, all stripped of EXIF metadata.
+- [x] The 60 published derivatives total 2,572,568 bytes, 71.0% less than the 8,869,841 bytes of their 20 raw sources, without obvious quality loss in contact-sheet inspection.
+- [x] Every article uses a responsive picture element, a crawlable JPEG fallback, explicit dimensions, contextual alt text and CSS that preserves the 40:21 aspect ratio.
+- [x] The article image is the principal above-the-fold image, so it is eager-loaded and marked high priority; no below-the-fold content image is incorrectly prioritised.
+- [x] Every article's Open Graph and Twitter image points to its relevant 1200×630 JPEG, and its WebPage/Article graph points to the matching primary ImageObject.
+- [x] The image generator, applicator, manifest updater and validator are deterministic; final applicator runs make zero changes.
+- [x] Static image, structured-data, metadata, indexation, internal-link and homepage safeguards pass.
+
+### Milestone 5 decisions
+
+- Use WebP for responsive delivery with a JPEG fallback because the current static architecture supports both without a runtime dependency. AVIF is deferred; adding it would increase output count and complexity without being necessary for this milestone.
+- Assign one distinct photograph to every article and leave 29 originals unassigned. Relevance takes precedence over using the whole library.
+- Treat provenance as user-reported Unsplash origin supported by the ID in each filename. Do not infer or fabricate authorship beyond that evidence.
+- Preserve raw originals at their existing tracked paths because they are the only uploaded copies. Production HTML never references those files; only the optimised derivatives are used. Removing or relocating the sole source collection would be destructive.
+- Do not change visible publication/update dates or sitemap lastmod values. Adding image presentation and metadata does not justify presenting the written articles as freshly revised.
+- Use the principal article image as the page-specific social image and structured-data primary image, following current Google image guidance on representative imagery, standard HTML, fallbacks and consistent metadata.
+
+### Milestone 5 GitHub record
+
+- Implementation commit: pending GitHub publication
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
@@ -218,6 +250,10 @@ The repository has no single build command. Use the checks relevant to each mile
 - node scripts/check-seo-metadata.mjs
 - node scripts/apply-seo-structured-data.mjs
 - node scripts/check-seo-structured-data.mjs
+- node scripts/optimize-seo-images.mjs
+- node scripts/update-image-manifest.mjs
+- node scripts/apply-seo-images.mjs
+- node scripts/check-seo-images.mjs
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -248,12 +284,12 @@ These questions do not block Milestone 5.
 
 ## Known risks
 
-- Raw images are publicly deployed but not yet optimised or assigned.
-- The default social card is intentionally sitewide until Milestone 5 creates and assigns page-relevant derivatives.
+- Raw originals remain tracked at their pre-existing repository paths to preserve the only uploaded copies. No production HTML references them; 20 articles use optimised derivatives instead.
+- Core and legal pages retain the branded default social card. Their page imagery will be reviewed with the core-page work rather than assigning irrelevant stock photographs.
 - Production preview/test routes add avoidable crawl surface even though they are noindex.
 - No field Core Web Vitals data was available in this audit.
 - The new custom 404 will not replace GitHub Pages' default error document until this draft branch is approved and deployed.
 
 ## Next milestone
 
-Milestone 5 — Image inventory and optimisation pipeline.
+Milestone 6 — Core commercial pages.

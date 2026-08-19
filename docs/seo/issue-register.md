@@ -31,17 +31,19 @@ None confirmed during the baseline audit.
 
 ### SEO-003 — Articles have no content images
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 5 and 8
 - Evidence: All 20 primary article HTML files contain zero img elements.
 - Risk: Articles lack visual context, shareable imagery and image-search opportunities.
+- Resolution: Each of the 20 articles now uses a distinct, relevant responsive image with contextual alt text, explicit dimensions, a JPEG fallback, page-specific social metadata and matching primary-image structured data. The deterministic image validator covers all assignments and references.
 
 ### SEO-004 — Raw image collection is unoptimised and publicly deployed
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 5
 - Evidence: Images contains 49 JPEGs totalling 28,996,890 bytes. There are no generated WebP/AVIF variants, page assignments or contextual alt texts.
 - Risk: Direct use would create unnecessary transfer weight and layout/performance risk.
+- Resolution: Generated 60 stripped derivatives for 20 selected originals: two WebP sizes and one JPEG fallback/social card per article. Published derivatives total 2,572,568 bytes versus 8,869,841 bytes for their raw sources, a 71.0% reduction. The sole raw copies remain preserved and are never referenced by production HTML.
 
 ### SEO-005 — Homepage entity schema is absent
 
@@ -115,3 +117,7 @@ No production issues were closed. Milestone 1 was deliberately audit-only.
 - Evidence: The branch began with 21 manually embedded JSON-LD blocks: one Blog and 20 BlogPosting graphs. The homepage and legal pages had no entity graph, no page defined WebSite or WebPage, and some FAQ payloads paraphrased visible FAQ wording.
 - Risk: Entity identity and page relationships were inconsistent, and manually duplicated FAQ data could drift away from visible content.
 - Resolution: Added a central structured-data generator, idempotent applicator and strict validator. All 25 indexable pages now expose one valid graph; FAQ markup is generated only from exact visible questions and answers.
+
+## Closed during Milestone 5
+
+SEO-003 and SEO-004 were closed with the responsive image pipeline, complete manifest, article assignments, social metadata and primary-image schema described above.
