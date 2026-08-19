@@ -27,6 +27,7 @@ Founder: Henry Oliver. Henry has 11 years running multi-channel ecommerce, forme
 
 ## Published articles
 
+- [How to automate CIS subcontractor onboarding without losing control](https://oliversconsulting.co.uk/articles/automate-cis-subcontractor-onboarding/)
 - [How to automate client onboarding without copying the same details five times](https://oliversconsulting.co.uk/articles/automate-client-onboarding-no-duplicate-data/)
 - [When should you automate purchase orders?](https://oliversconsulting.co.uk/articles/automate-purchase-orders-reorder-rules/)
 - [Manual admin costs more than the minutes you count](https://oliversconsulting.co.uk/articles/manual-admin-interruption-cost/)
