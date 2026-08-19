@@ -58,7 +58,8 @@ export const siteMetadata = {
       title: 'The Hidden Cost of Manual Admin | Olivers Consulting',
     },
     '/articles/automate-supplier-statement-reconciliation/': {
-      title: 'Automate Supplier Statement Reconciliation | Olivers Consulting',
+      title: 'Supplier Statement Reconciliation Automation | Olivers Consulting',
+      description: 'Match supplier statements to invoices, credits and payments, isolate missing documents and disputed balances, and keep every exception visible for review.',
     },
     '/articles/shopify-returns-automation-review-rules/': {
       title: 'Shopify Returns Automation: What to Review | Olivers Consulting',
@@ -73,7 +74,8 @@ export const siteMetadata = {
       title: 'Why Business Spreadsheets Fail | Olivers Consulting',
     },
     '/articles/automate-invoice-processing-approval-control/': {
-      title: 'Automate Invoice Processing with Approval Control | Olivers Consulting',
+      title: 'Supplier Invoice Processing Automation | Olivers Consulting',
+      description: 'Automate supplier invoice capture, duplicate checks, coding and approval routing while keeping uncertain costs, VAT and payment decisions under human control.',
     },
     '/articles/integrate-systems-or-automate-hand-off/': {
       title: 'System Integration vs Automated Hand-offs | Olivers Consulting',
@@ -82,14 +84,16 @@ export const siteMetadata = {
       title: 'Reduce Ecommerce Key-Person Dependency | Olivers Consulting',
     },
     '/articles/reconcile-shopify-payouts-orders-fees/': {
-      title: 'Reconcile Shopify Payouts, Orders and Fees | Olivers Consulting',
+      title: 'Shopify Payout Reconciliation Guide | Olivers Consulting',
+      description: 'Reconcile Shopify Payments payouts to orders, refunds, fees, disputes and bank deposits with a repeatable control process and clear exception handling.',
     },
     '/articles/product-data-errors-before-listings-go-live/': {
       title: 'Ecommerce Product Data Quality Checks | Olivers Consulting',
       description: 'Build product data quality checks for GTINs, prices, variants and required attributes so risky ecommerce listings stop before publication.',
     },
     '/articles/stop-rekeying-wholesale-orders-sage-xero/': {
-      title: 'Stop Re-keying Wholesale Orders into Sage or Xero | Olivers Consulting',
+      title: 'Wholesale Order Entry Automation for Sage and Xero | Olivers Consulting',
+      description: 'Capture wholesale orders from email, PDF or spreadsheets, validate customer and product data, and create controlled Sage or Xero records without re-keying.',
     },
     '/articles/ecommerce-ai-automation-roi/': {
       title: 'Ecommerce AI Automation ROI | Olivers Consulting',

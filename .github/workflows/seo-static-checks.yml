@@ -73,7 +73,7 @@ jobs:
       - name: Check content architecture and article ledger
         run: node scripts/check-seo-content-map.mjs
 
-      - name: Check article optimisation batch 8.1
+      - name: Check completed article optimisation batches
         run: node scripts/check-seo-article-batch.mjs
 
       - name: Check homepage safeguards

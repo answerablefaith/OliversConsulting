@@ -5,6 +5,10 @@ const routes = [
   '/articles/product-data-errors-before-listings-go-live/',
   '/articles/why-stock-sync-fails-shopify-amazon-ebay/',
   '/articles/automate-purchase-orders-reorder-rules/',
+  '/articles/stop-rekeying-wholesale-orders-sage-xero/',
+  '/articles/automate-invoice-processing-approval-control/',
+  '/articles/automate-supplier-statement-reconciliation/',
+  '/articles/reconcile-shopify-payouts-orders-fees/',
 ];
 const viewports = [
   { name: 'mobile', width: 390, height: 844 },
