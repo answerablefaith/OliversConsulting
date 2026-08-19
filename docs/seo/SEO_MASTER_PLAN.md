@@ -80,6 +80,8 @@ Milestone 8.4 meaningfully updated the four process-design and hand-off articles
 
 Milestone 8.5 meaningfully updated the four onboarding, CRM and returns articles while preserving their separate CIS-compliance, duplicate-free client onboarding, post-call CRM update and Shopify returns-control intents. Each page now gives a direct answer, practical key takeaways, current primary GOV.UK, ICO or Shopify support and an explicit boundary between operational guidance and individual tax, legal or data-protection advice. Metadata, schema, images, links and genuine modification dates are aligned. Static checks cover all 20 articles, and GitHub Actions rendered all 40 mobile/desktop page combinations successfully.
 
+Milestone 9 replaced the flat chronological article index with one task-led hub organised around the five established four-article clusters. All 20 article routes are linked from the appropriate visible cluster, the latest article remains featured without becoming the primary architecture, and each cluster provides a natural Services or Contact pathway. The hub now has five keyboard-focusable topic jumps plus complete desktop and keyboard-operable mobile navigation to canonical Home, Services, About, Contact and Articles routes. All 20 article breadcrumbs remain visible and agree with BreadcrumbList schema, and every article retains at least two contextual article links plus a canonical commercial path. Static and browser checks cover the hub, all 20 articles and mobile/desktop navigation.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -111,7 +113,7 @@ The existing static homepage performance guard failed at baseline because the ex
 | 8.3 | Reporting, investment and resilience | DONE_VERIFIED | Four articles updated; static checks and 24 browser renders pass |
 | 8.4 | Process design and controlled hand-offs | DONE_VERIFIED | Four articles updated; static checks and 32 browser renders pass |
 | 8.5 | Onboarding, CRM and returns | DONE_VERIFIED | Four articles updated; static checks and 40 browser renders pass |
-| 9 | Internal linking, hubs and navigation | NOT_STARTED | |
+| 9 | Internal linking, hubs and navigation | DONE_VERIFIED | Five-cluster hub exposes all 20 articles; breadcrumbs, commercial paths and responsive keyboard navigation pass deterministic and browser checks |
 | 10 | Trust, authorship and conversion quality | NOT_STARTED | |
 | 11 | Performance, Core Web Vitals and accessibility | NOT_STARTED | |
 | 12 | AI and answer-engine discoverability | NOT_STARTED | |
@@ -280,6 +282,40 @@ The existing static homepage performance guard failed at baseline because the ex
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 - Exact next checkpoint: Milestone 9 — internal linking, hubs and navigation
+
+## Milestone 9 acceptance criteria
+
+- [x] `/articles/` acts as the hub and exposes all 20 article routes without introducing thin new pillar URLs.
+- [x] The hub contains five visible task-led sections matching the five four-article clusters in `article-ledger.csv`; every article appears in its correct cluster.
+- [x] All 20 articles retain visible Home → Articles breadcrumb navigation and matching BreadcrumbList schema.
+- [x] Every article retains at least two contextual links to other articles plus a canonical `/services/` or `/contact/` commercial pathway.
+- [x] The article hub contains descriptive canonical links to Services, About, Contact and Articles rather than redirected homepage fragments.
+- [x] Five topic-jump links are keyboard focusable and provide direct navigation to the five cluster sections.
+- [x] Mobile navigation can be opened with the keyboard, the Articles route remains available, and the hub has no horizontal overflow at 390×844.
+- [x] Desktop primary navigation remains visible and the hub has no horizontal overflow at 1280×900.
+- [x] The existing indexation, metadata, schema, image, core-page, content-map, article-batch and homepage checks all remain green.
+- [x] GitHub Actions renders all 20 articles at both existing viewports and separately verifies the hub plus a representative article at mobile and desktop viewports.
+
+### Milestone 9 decisions
+
+- Improve the existing `/articles/` route as the principal task-led hub instead of creating five thin indexable pillar pages.
+- Preserve the five Milestone 7 cluster boundaries and all Milestone 8 article overlap guards; the hub groups related intent without merging distinct workflows.
+- Keep the newest CIS article visibly featured, but organise the primary discovery architecture around operational problems rather than publication date.
+- Add canonical Services, About and Contact links directly to the static article-index navigation; do not rely on homepage fragments for the hub's core navigation.
+- Do not change article publication dates, `dateModified` or sitemap `lastmod` in Milestone 9 because article written content was not meaningfully revised.
+- Add a dependency-free internal-linking validator and a focused Playwright navigation test to prevent hub, breadcrumb, commercial-path and mobile-menu regressions.
+- Treat the first navigation-browser failure as a test-selector defect: `.first()` selected the hidden desktop Services/Contact links on mobile even though the visible main-page links were present. The corrected assertions target visible links inside `main`; the next workflow passed unchanged page markup.
+
+### Milestone 9 GitHub record
+
+- Implementation commit: `4683974118317cfcffc0970530965e3054ec1148`
+- Navigation-test correction: `eff4a690c3ca0d837af5da584537789ef2329bfb`
+- Initial GitHub Actions run: https://github.com/answerablefaith/OliversConsulting/actions/runs/32304313294 — all dependency-free checks and all 40 article renders passed; the new navigation check failed only because its mobile locator selected hidden desktop links.
+- Successful GitHub Actions run: https://github.com/answerablefaith/OliversConsulting/actions/runs/32304496847 — all static checks, `ARTICLE_RENDER_CHECK_OK|articles=20|viewports=2|pages=40` and `NAVIGATION_RENDER_CHECK_OK|routes=2|viewports=2|pages=4|clusters=5|articles=20` passed.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+- Exact next checkpoint: Milestone 10 — trust, authorship and conversion quality
 
 ## Milestone 1 acceptance criteria
 
@@ -493,6 +529,10 @@ The repository has no single build command. Use the checks relevant to each mile
 - node scripts/check-seo-images.mjs
 - node scripts/check-seo-core-pages.mjs
 - node scripts/check-seo-content-map.mjs
+- node scripts/check-seo-article-batch.mjs
+- node scripts/check-seo-internal-linking.mjs
+- node scripts/test-seo-article-batch.mjs after Playwright is installed
+- node scripts/test-seo-navigation.mjs after Playwright is installed
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -528,8 +568,8 @@ These questions did not block Milestone 6 because the implementation preserved e
 - Production preview/test routes add avoidable crawl surface even though they are noindex.
 - No field Core Web Vitals data was available in this audit.
 - The new custom 404 will not replace GitHub Pages' default error document until this draft branch is approved and deployed.
-- The current article index is chronological rather than clustered; this is deliberately deferred to Milestone 9 so Milestone 7 remains a research and architecture checkpoint.
+- Milestone 9's task-led article hub is branch-only until the draft pull request is approved and deployed; the live article index therefore remains on the pre-draft release.
 
 ## Next milestone
 
-Milestone 9 — Internal linking, hubs and navigation.
+Milestone 10 — Trust, authorship and conversion quality.
