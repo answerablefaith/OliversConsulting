@@ -267,7 +267,7 @@ for (const profile of profiles) {
     `median_lcp_ms=${round(median(set.map((item) => item.lcp)))}`,
     `max_lcp_ms=${round(Math.max(...set.map((item) => item.lcp)))}`,
     `max_cls=${round(Math.max(...set.map((item) => item.cls)), 4)}`,
-    `median_bytes=${round(median(set.map((item) => item.bytes))}`,
+    `median_bytes=${round(median(set.map((item) => item.bytes)))}`,
     `total_focus_missing=${set.reduce((total, item) => total + item.focusMissing, 0)}`,
     `total_unnamed=${set.reduce((total, item) => total + item.unnamed, 0)}`,
     `total_small_targets=${set.reduce((total, item) => total + item.smallTargets, 0)}`,
