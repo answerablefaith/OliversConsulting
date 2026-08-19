@@ -79,11 +79,8 @@ jobs:
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs
 
-      - name: Install browser for article rendering checks
-        timeout-minutes: 15
-        run: |
-          npm install --no-save playwright
-          npx playwright install --with-deps chromium
+      - name: Install browser test library
+        run: npm install --no-save playwright
 
       - name: Start local site
         run: |
@@ -91,4 +88,6 @@ jobs:
           sleep 2
 
       - name: Check article rendering on mobile and desktop
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
         run: node scripts/test-seo-article-batch.mjs

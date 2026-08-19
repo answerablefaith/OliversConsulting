@@ -23,7 +23,10 @@ const viewports = [
   { name: 'desktop', width: 1280, height: 900 },
 ];
 const failures = [];
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({
+  headless: true,
+  channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
+});
 
 try {
   for (const viewport of viewports) {
