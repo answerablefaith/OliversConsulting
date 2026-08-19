@@ -508,3 +508,44 @@
 - Top-level progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 has 3 of 5 batches `DONE_VERIFIED` (60%).
 - Batch 8.3 is `DONE_VERIFIED`; the first stalled runner is retained in the record as external CI evidence, not reported as a page failure.
 - Exact next checkpoint: Milestone 8.4 — process design and controlled hand-offs.
+
+## 2026-08-19 — Milestone 8.4 process design and controlled hand-offs
+
+### Starting state
+
+- Confirmed repository `answerablefaith/OliversConsulting`, branch `seo/organic-ai-discoverability` and open draft pull request #26 targeting `main`.
+- Confirmed a clean starting worktree and reverified Milestones 1–7 plus Batches 8.1–8.3 against the implementation and persistent records.
+- Selected Batch 8.4 as the earliest unfinished checkpoint because its four article-ledger rows were `NOT_STARTED` while all preceding checkpoints were `DONE_VERIFIED`.
+- Confirmed the homepage, article index and all four live article routes returned HTTP 200; the live pages remain on the pre-draft content because no merge or deployment was authorised.
+- Rechecked current primary GOV.UK, NCSC, ICO and HSE guidance before revising material factual claims.
+
+### Implemented article batch
+
+- Meaningfully revised the system-integration choice, data-intake route, spreadsheet operating-rules and manual-admin interruption articles while preserving their distinct search intents.
+- Improved titles, descriptions and H1s; added answer-first copy, practical key takeaways, current primary-source citations and clear operational-capacity versus financial/tax-advice boundaries where relevant.
+- Replaced redirected homepage-fragment links with canonical Services and Contact routes, retained useful contextual article links and aligned image alt text across HTML, social metadata, schema, assignments and the manifest.
+- Preserved verified authors and publication dates; changed visible update dates, Article `dateModified` and sitemap `lastmod` to 2026-08-19 only for the four meaningfully revised pages.
+- Expanded deterministic and browser coverage from 12 to 16 completed-batch articles.
+- Replaced the repeatedly stalled Playwright browser download with the stable Chrome channel already supplied on GitHub's hosted Ubuntu runner; the rendered-page assertions are unchanged.
+
+### Validation results
+
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=28|organizations=28|websites=28|webpages=28|articles=20|persons=20|breadcrumbs=20|faqs=18|images=48`.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-core-pages.mjs` — PASS: `CORE_PAGE_CHECK_OK|pages=4|distinct_intents=4|contact_methods=2|founder_derivatives=3|mobile_css=1`.
+- `node scripts/check-seo-content-map.mjs` — PASS: `CONTENT_MAP_CHECK_OK|articles=20|clusters=5|batches=5|max_batch=4|research_links=13`.
+- `node scripts/check-seo-article-batch.mjs` — PASS: `ARTICLE_BATCH_CHECK_OK|verified_batches=4|in_progress_batches=0|articles=16|date_modified=2026-08-19`.
+- `node scripts/test-homepage-performance.mjs`, `node --check scripts/check-seo-article-batch.mjs`, `node --check scripts/test-seo-article-batch.mjs` and `git diff --check` — PASS.
+- All six new external primary-source URLs returned HTTP 200 during the implementation check.
+- Local Playwright execution was unavailable because no browser executable is installed; no local browser result is claimed.
+- GitHub Actions run 32301838762 — PASS: all static steps plus `ARTICLE_RENDER_CHECK_OK|articles=16|viewports=2|pages=32` at 390×844 and 1280×900.
+
+### Deployment and GitHub state
+
+- Published implementation commit `9e7359cc252db721cf0ba4772874e5236177b2be` and CI reliability commit `44f74007f06985407f8a1913e9edc405d9fcc9bc` to the existing SEO branch and draft pull request #26.
+- No merge or deployment was performed; the live site remains on the pre-draft release.
+- Top-level progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 has 4 of 5 batches `DONE_VERIFIED` (80%).
+- Batch 8.4 is `DONE_VERIFIED`.
+- Exact next checkpoint: Milestone 8.5 — onboarding, CRM and returns.

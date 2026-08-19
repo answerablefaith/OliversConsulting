@@ -76,6 +76,8 @@ Milestone 8.2 meaningfully updated the four orders, finance and reconciliation a
 
 Milestone 8.3 meaningfully updated the four reporting, investment and resilience articles while preserving their weekly-reporting, automation-ROI, key-person-risk and hire-versus-process boundaries. Static validation passes across all 12 completed-batch articles. After the first GitHub runner stalled during Chromium installation, a fresh run completed successfully and rendered all 24 page/viewport combinations.
 
+Milestone 8.4 meaningfully updated the four process-design and hand-off articles while preserving their architecture-choice, intake-route, spreadsheet-governance and interruption-cost boundaries. Each page now gives a direct answer, practical selection criteria, current primary-source support and an explicit boundary between operational capacity estimates and individual financial or tax advice. Metadata, schema, images, internal links and genuine modification dates are aligned. Static checks cover all 16 completed articles, and GitHub Actions rendered all 32 mobile/desktop page combinations successfully.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -101,11 +103,11 @@ The existing static homepage performance guard failed at baseline because the ex
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
 | 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
 | 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 article intents, five clusters, overlap controls, competitor evidence and deterministic checks pass |
-| 8 | Article optimisation batches | IN_PROGRESS | Three of five four-article batches are DONE_VERIFIED |
+| 8 | Article optimisation batches | IN_PROGRESS | Four of five four-article batches are DONE_VERIFIED |
 | 8.1 | Supplier, product and inventory operations | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.2 | Orders, finance and reconciliation | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.3 | Reporting, investment and resilience | DONE_VERIFIED | Four articles updated; static checks and 24 browser renders pass |
-| 8.4 | Process design and controlled hand-offs | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.4 | Process design and controlled hand-offs | DONE_VERIFIED | Four articles updated; static checks and 32 browser renders pass |
 | 8.5 | Onboarding, CRM and returns | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 9 | Internal linking, hubs and navigation | NOT_STARTED | |
 | 10 | Trust, authorship and conversion quality | NOT_STARTED | |
@@ -210,6 +212,39 @@ The existing static homepage performance guard failed at baseline because the ex
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 - Exact next checkpoint: Milestone 8.4 — process design and controlled hand-offs
+
+## Milestone 8.4 acceptance criteria
+
+- [x] All four articles retain a unique, documented search intent, intended reader and overlap guard in `article-ledger.csv`.
+- [x] Titles, descriptions and H1s align separately to integration architecture, intake-route selection, spreadsheet operating rules and interruption-cost measurement.
+- [x] Each article opens with a direct answer and adds concise key takeaways, decision criteria, examples or checklists where useful.
+- [x] Factual data-handling, spreadsheet, quality and workload claims use current primary GOV.UK, NCSC, ICO or HSE guidance as applicable.
+- [x] Illustrative time and cost calculations are framed as capacity estimates, not guaranteed savings or individual financial or tax advice.
+- [x] Contextual article links and canonical Services and Contact routes work without redirected homepage fragments.
+- [x] Responsive images retain contextual alt text, explicit dimensions and principal-image loading treatment; HTML, social metadata, schema, assignments and the manifest agree.
+- [x] Visible publication dates remain unchanged; meaningful revisions use 2026-08-19 consistently for visible updates, Article schema and sitemap `lastmod`.
+- [x] The dependency-free indexation, metadata, schema, image, core-page, content-map, batch and homepage checks pass across the branch.
+- [x] GitHub Actions renders all 16 completed-batch articles at 390×844 and 1280×900 without overflow, missing images, hidden CTAs or browser errors.
+
+### Milestone 8.4 decisions
+
+- Preserve the four intent boundaries: architecture choice, data-intake route, spreadsheet governance and interruption measurement remain separate decisions.
+- Use operational capacity language for time released and require real cost evidence before describing cash savings.
+- Support material factual claims with current primary public guidance while retaining useful first-person operator examples.
+- Replace redirected homepage-fragment links with canonical `/services/` and `/contact/` routes.
+- Set visible modification dates, Article `dateModified` and sitemap `lastmod` to 2026-08-19 only for the four meaningfully revised pages.
+- Reuse the four already-assigned, optimised and relevant article images; align their contextual alt text instead of creating unnecessary derivatives.
+- Use the stable Chrome channel preinstalled on GitHub's hosted Ubuntu runner for Playwright checks. This removes the repeated browser-download bottleneck while retaining the same rendered-page assertions.
+
+### Milestone 8.4 GitHub record
+
+- Implementation commit: `9e7359cc252db721cf0ba4772874e5236177b2be`
+- CI reliability commit: `44f74007f06985407f8a1913e9edc405d9fcc9bc`
+- Successful GitHub Actions run: https://github.com/answerablefaith/OliversConsulting/actions/runs/32301838762 — all static checks and `ARTICLE_RENDER_CHECK_OK|articles=16|viewports=2|pages=32` passed.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+- Exact next checkpoint: Milestone 8.5 — onboarding, CRM and returns
 
 ## Milestone 1 acceptance criteria
 
@@ -462,4 +497,4 @@ These questions did not block Milestone 6 because the implementation preserved e
 
 ## Next milestone
 
-Milestone 8.4 — Process design and controlled hand-offs article batch.
+Milestone 8.5 — Onboarding, CRM and returns article batch.
