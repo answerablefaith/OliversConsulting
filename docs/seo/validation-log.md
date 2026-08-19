@@ -134,3 +134,9 @@
 - The live site still serves GitHub Pages' generic 404 because this draft branch has not been merged or deployed.
 - No production deployment was performed.
 - Post-deployment inspection of the custom 404 remains an owner release-check action, not a Milestone 2 code blocker.
+
+### GitHub handoff
+
+- Published Milestone 2 implementation commit a4ae72af5963dbea0887332c7a80c693ec15c43a to seo/organic-ai-discoverability.
+- Reused draft pull request #26 targeting main.
+- No merge or deployment performed.

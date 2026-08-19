@@ -138,6 +138,13 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Add a dependency-free validator at scripts/check-seo-indexation.mjs so sitemap, canonical, robots, internal-link and noindex regressions can be checked together.
 - The custom 404 cannot be verified on the live host before deployment. Its static requirements pass, and the current live host correctly returns HTTP 404 for a missing URL.
 
+### Milestone 2 GitHub record
+
+- Implementation commit: `a4ae72af5963dbea0887332c7a80c693ec15c43a`
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
