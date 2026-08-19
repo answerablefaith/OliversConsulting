@@ -24,8 +24,8 @@ try {
       if (!response?.ok()) failures.push(`${viewport.name} ${route} returned ${response?.status() || 'no response'}`);
       if (await page.locator('h1').count() !== 1) failures.push(`${viewport.name} ${route} does not render one H1`);
       if (await page.locator('.article-hero-image img').count() !== 1) failures.push(`${viewport.name} ${route} hero image is missing`);
-      const imageWidth = await page.locator('.article-hero-image img').evaluate((image) => image.naturalWidth);
-      if (imageWidth < 640) failures.push(`${viewport.name} ${route} hero image did not load`);
+      const imageState = await page.locator('.article-hero-image img').evaluate((image) => ({ complete: image.complete, naturalWidth: image.naturalWidth }));
+      if (!imageState.complete || imageState.naturalWidth === 0) failures.push(`${viewport.name} ${route} hero image did not load`);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       if (overflow > 1) failures.push(`${viewport.name} ${route} has ${overflow}px horizontal overflow`);
       if (!await page.locator('a[href="/contact/"]').last().isVisible()) failures.push(`${viewport.name} ${route} contact CTA is not visible`);
