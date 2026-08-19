@@ -169,6 +169,13 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Generate and validate metadata with dependency-free Node scripts rather than introducing a framework or large package.
 - Run the static SEO checks automatically for relevant pushes and pull requests.
 
+### Milestone 3 GitHub record
+
+- Implementation commit: `3129490884c0efd42c3b13831c013f9bf17700a1`
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:

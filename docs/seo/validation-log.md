@@ -191,3 +191,9 @@
 
 - The live site retains its baseline metadata until this draft branch is approved and deployed.
 - No merge or deployment performed.
+
+### GitHub handoff
+
+- Published Milestone 3 implementation commit 3129490884c0efd42c3b13831c013f9bf17700a1 to seo/organic-ai-discoverability.
+- Reused and updated draft pull request #26 targeting main.
+- No merge or deployment performed.
