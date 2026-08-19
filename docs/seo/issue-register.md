@@ -14,11 +14,12 @@ None confirmed during the baseline audit.
 
 ### SEO-001 — Sitemap modification dates disagree with article schema
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 2
 - Evidence: Seven article URLs have sitemap lastmod dates older than their BlogPosting dateModified values.
 - Affected articles: reconcile Shopify payouts; product data errors; re-keying wholesale orders; ecommerce AI ROI; stock sync; Monday report; before hiring ecommerce admin.
 - Risk: Search engines receive inconsistent freshness signals.
+- Resolution: All seven sitemap entries now use the existing visible dateModified value, 2026-07-26. The indexation validator checks every Article/BlogPosting lastmod pair.
 
 ### SEO-002 — Social metadata is incomplete
 
@@ -50,10 +51,11 @@ None confirmed during the baseline audit.
 
 ### SEO-006 — Existing homepage performance guard fails
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 2 or 11
 - Evidence: node scripts/test-homepage-performance.mjs fails because index.html loads homepage.js with the 20260818-price-previews-v2 key while the test expects 20260818-smooth-hours.
 - Risk: The release safeguard cannot currently distinguish regressions from a stale assertion.
+- Resolution: The guard now extracts the cache key from index.html and verifies that it matches scripts/optimize-homepage.mjs. The test passes without weakening the underlying performance assertions.
 
 ## P3 — optional refinement or measurement gap
 
@@ -63,13 +65,15 @@ None confirmed during the baseline audit.
 - Milestone: 2
 - Evidence: Nine preview/test routes return 200. They are excluded from the sitemap and contain noindex.
 - Risk: Unnecessary crawl surface and public exposure of internal previews, though canonical indexation is currently protected.
+- Milestone 2 decision: Retain these workflow-dependent routes; the new validator enforces their noindex treatment and sitemap exclusion. Reassess removal during final release readiness.
 
 ### SEO-008 — robots.txt has minor formatting debt
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 2
 - Evidence: The audit comment is appended directly after the sitemap line without a final separating newline in the repository file.
 - Risk: Low; directives were parsed and the file returns 200.
+- Resolution: Removed the transient audit comment and retained only the wildcard allow rule and canonical sitemap declaration. Static and live checks pass.
 
 ### SEO-009 — Core Web Vitals baseline is not available
 
@@ -81,3 +85,12 @@ None confirmed during the baseline audit.
 ## Closed during Milestone 1
 
 No production issues were closed. Milestone 1 was deliberately audit-only.
+
+## Closed during Milestone 2
+
+### SEO-010 — No site-owned custom 404 document
+
+- Status: DONE_VERIFIED
+- Milestone: 2
+- Baseline evidence: A missing live URL returned HTTP 404 using GitHub Pages' generic error document because the repository had no 404.html.
+- Resolution: Added a branded, accessible 404.html with noindex, useful recovery links and no misleading homepage canonical. Static checks pass; live rendering awaits an approved deployment.

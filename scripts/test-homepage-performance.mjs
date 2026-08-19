@@ -13,9 +13,13 @@ check(html.includes('data-oc-static-production="true"'), 'Static production mark
 check(!html.includes('id="oc-runtime-handoff"'), 'Legacy document.write runtime handoff remains.');
 check(!html.includes('cdn.jsdelivr.net'), 'Homepage still loads chained historical support scripts.');
 check(!html.includes('unpkg.com/react'), 'Homepage still loads React for static markup.');
+const homepageScriptVersion = html.match(/src="\/assets\/homepage\.js\?v=([^"]+)"/)?.[1];
+const optimizerScriptVersion = (await readFile('scripts/optimize-homepage.mjs', 'utf8'))
+  .match(/\/assets\/homepage\.js\?v=([^"']+)/)?.[1];
+check(Boolean(homepageScriptVersion), 'Optimized homepage behaviour is not loaded with a cache key.');
 check(
-  html.includes('src="/assets/homepage.js?v=20260818-smooth-hours"'),
-  'Optimized homepage behaviour is not loaded with the smooth-hours cache key.',
+  homepageScriptVersion === optimizerScriptVersion,
+  'Homepage behaviour cache key does not match scripts/optimize-homepage.mjs.',
 );
 check(
   html.includes('href="/assets/homepage-performance.css?v=20260818-mobile-alignment"'),

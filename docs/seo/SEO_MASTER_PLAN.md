@@ -24,7 +24,7 @@ Last audited: 2026-08-19
 | Sitemap URLs | 25 | sitemap.xml |
 | Live indexable routes in repository inventory | 25 | All return 200; all have a canonical, title, description and one H1 |
 | Preview/test routes | 9 | All return 200 and carry noindex |
-| Total repository HTML routes | 34 | Recursive index.html inventory |
+| Repository HTML documents on SEO branch | 35 | 34 directory index routes plus the custom 404.html added in Milestone 2 |
 | Raw uploaded images | 49 | Images directory and image-manifest.csv |
 | Raw image formats | 49 JPEG | ImageMagick and Pillow inspection |
 | Raw image total size | 28,996,890 bytes | Filesystem inventory |
@@ -46,7 +46,8 @@ Last audited: 2026-08-19
 - All 20 primary article URLs appear in the sitemap and return 200.
 - Nine deployed preview/test routes are deliberately excluded from the sitemap and contain noindex.
 - No broken or redirecting internal link target was found among the 34 unique internal targets inspected.
-- Seven article sitemap lastmod values do not agree with their visible BlogPosting dateModified values. This is queued for Milestone 2.
+- Seven article sitemap lastmod values disagreed with visible BlogPosting dateModified values at baseline. Milestone 2 aligned all seven with the existing meaningful modification date of 2026-07-26.
+- The SEO branch contains a branded, noindex custom 404 document. The live site continues to serve GitHub Pages' default 404 until this draft PR is approved and deployed.
 
 ## Metadata and structured-data baseline
 
@@ -71,15 +72,15 @@ A single curl observation from this workspace, which is network-dependent and no
 | Article index | 200 | 2.605 s | 2.606 s | 13,006 |
 | CIS onboarding article | 200 | 2.382 s | 2.382 s | 18,103 |
 
-The existing static homepage performance guard currently fails because the expected homepage.js cache key does not match index.html. This is a pre-existing release-check failure and is recorded as SEO-006.
+The existing static homepage performance guard failed at baseline because the expected homepage.js cache key did not match index.html. Milestone 2 replaced that stale hard-coded expectation with a consistency check against the optimiser source; the guard now passes.
 
 ## Milestone status
 
 | ID | Milestone | Status | Verification |
 |---:|---|---|---|
 | 1 | Baseline audit and inventory | DONE_VERIFIED | Page and image inventories, issue register and validation log created |
-| 2 | Crawlability, indexation and URL integrity | NOT_STARTED | Next checkpoint |
-| 3 | Metadata and social presentation | NOT_STARTED | |
+| 2 | Crawlability, indexation and URL integrity | DONE_VERIFIED | Static and live indexation checks pass; sitemap dates, 404 handling and release guard corrected |
+| 3 | Metadata and social presentation | NOT_STARTED | Next checkpoint |
 | 4 | Structured data and entity clarity | NOT_STARTED | |
 | 5 | Image inventory and optimisation pipeline | NOT_STARTED | |
 | 6 | Core commercial pages | NOT_STARTED | |
@@ -115,11 +116,35 @@ The existing static homepage performance guard currently fails because the expec
 
 This tracker-only follow-up records the immutable implementation commit and pull-request link after GitHub created them.
 
+## Milestone 2 acceptance criteria
+
+- [x] All 25 intended canonical URLs are represented once in the sitemap.
+- [x] All 25 sitemap URLs have one matching absolute canonical and no noindex directive.
+- [x] All 25 current live sitemap URLs return 200 without redirecting.
+- [x] HTTP and www variants resolve to the HTTPS non-www homepage.
+- [x] The non-trailing-slash article index redirects to its trailing-slash canonical.
+- [x] Internal links from indexable pages resolve to repository routes and avoid index.html duplicates.
+- [x] Nine preview/test routes remain outside the sitemap and explicitly noindex.
+- [x] robots.txt permits intended crawling and declares the canonical sitemap URL.
+- [x] Sitemap lastmod values agree with visible Article dateModified values.
+- [x] A branded, noindex GitHub Pages 404 document exists without a soft-404 homepage canonical.
+- [x] The technical indexation checker, XML parser and homepage release guard pass.
+
+### Milestone 2 decisions
+
+- Keep GitHub Pages' automatic trailing-slash redirect and canonical tags rather than attempting unsupported server-level rewrite rules.
+- Keep the nine workflow-dependent preview/test routes in place. They remain excluded from the sitemap and noindex; deleting them would disrupt current preview tooling and is not required for canonical indexation.
+- Retain accurate lastmod values and do not replace them with build time.
+- Add a dependency-free validator at scripts/check-seo-indexation.mjs so sitemap, canonical, robots, internal-link and noindex regressions can be checked together.
+- The custom 404 cannot be verified on the live host before deployment. Its static requirements pass, and the current live host correctly returns HTTP 404 for a missing URL.
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
 
 - node scripts/test-homepage-performance.mjs
+- node scripts/check-seo-indexation.mjs
+- node scripts/check-seo-indexation.mjs --live
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -150,13 +175,12 @@ These questions do not block Milestone 2.
 
 ## Known risks
 
-- The current homepage performance guard is failing.
-- Sitemap lastmod values and Article dateModified values disagree on seven articles.
 - Social sharing images are absent sitewide.
 - Raw images are publicly deployed but not yet optimised or assigned.
 - Production preview/test routes add avoidable crawl surface even though they are noindex.
 - No field Core Web Vitals data was available in this audit.
+- The new custom 404 will not replace GitHub Pages' default error document until this draft branch is approved and deployed.
 
 ## Next milestone
 
-Milestone 2 — Crawlability, indexation and URL integrity.
+Milestone 3 — Metadata and social presentation.
