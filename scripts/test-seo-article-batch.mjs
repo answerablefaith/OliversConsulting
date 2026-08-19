@@ -17,6 +17,10 @@ const routes = [
   '/articles/email-attachments-shared-folders-or-forms/',
   '/articles/spreadsheet-not-the-problem-operating-rules/',
   '/articles/manual-admin-interruption-cost/',
+  '/articles/automate-cis-subcontractor-onboarding/',
+  '/articles/automate-client-onboarding-no-duplicate-data/',
+  '/articles/automate-crm-updates-after-sales-calls/',
+  '/articles/shopify-returns-automation-review-rules/',
 ];
 const viewports = [
   { name: 'mobile', width: 390, height: 844 },

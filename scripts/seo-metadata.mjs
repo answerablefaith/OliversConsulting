@@ -45,10 +45,12 @@ export const siteMetadata = {
       description: 'The website and service terms that apply when using Olivers Consulting content, enquiries and automation services.',
     },
     '/articles/automate-cis-subcontractor-onboarding/': {
-      title: 'Automate CIS Subcontractor Onboarding | Olivers Consulting',
+      title: 'CIS Subcontractor Onboarding Automation | Olivers Consulting',
+      description: 'Automate CIS subcontractor onboarding around HMRC verification, deduction treatment, record keeping and visible employment-status controls.',
     },
     '/articles/automate-client-onboarding-no-duplicate-data/': {
-      title: 'Automate Client Onboarding Without Duplicate Data | Olivers Consulting',
+      title: 'Client Onboarding Without Duplicate Data | Olivers Consulting',
+      description: 'Build one trusted client onboarding record, validate it once and route only the required fields to CRM, finance, storage and delivery tools.',
     },
     '/articles/automate-purchase-orders-reorder-rules/': {
       title: 'Purchase Order Automation and Reorder Rules | Olivers Consulting',
@@ -63,10 +65,12 @@ export const siteMetadata = {
       description: 'Match supplier statements to invoices, credits and payments, isolate missing documents and disputed balances, and keep every exception visible for review.',
     },
     '/articles/shopify-returns-automation-review-rules/': {
-      title: 'Shopify Returns Automation: What to Review | Olivers Consulting',
+      title: 'Shopify Returns Automation and Review Rules | Olivers Consulting',
+      description: 'Decide which Shopify return checks to automate and which eligibility, inspection, refund and policy exceptions need human review.',
     },
     '/articles/automate-crm-updates-after-sales-calls/': {
-      title: 'Automate CRM Updates After Sales Calls | Olivers Consulting',
+      title: 'CRM Updates After Sales Calls: Automation Guide | Olivers Consulting',
+      description: 'Automate CRM updates after sales calls using clear field rules, evidence, review points and reliable next actions without spreading bad data.',
     },
     '/articles/email-attachments-shared-folders-or-forms/': {
       title: 'Email, Shared Folder or Form for Data Intake? | Olivers Consulting',

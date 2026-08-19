@@ -44,6 +44,16 @@ const batches = [
       { route: '/articles/manual-admin-interruption-cost/', title: 'Measure the True Cost of Manual Admin | Olivers Consulting', h1: 'How to measure the true cost of manual admin', sources: ['www.hse.gov.uk'] },
     ],
   },
+  {
+    id: '8.5',
+    status: 'DONE_VERIFIED',
+    articles: [
+      { route: '/articles/automate-cis-subcontractor-onboarding/', title: 'CIS Subcontractor Onboarding Automation | Olivers Consulting', h1: 'CIS subcontractor onboarding: automate the admin, keep the controls', sources: ['www.gov.uk'] },
+      { route: '/articles/automate-client-onboarding-no-duplicate-data/', title: 'Client Onboarding Without Duplicate Data | Olivers Consulting', h1: 'Automate client onboarding without creating duplicate data', sources: ['ico.org.uk'] },
+      { route: '/articles/automate-crm-updates-after-sales-calls/', title: 'CRM Updates After Sales Calls: Automation Guide | Olivers Consulting', h1: 'Automate CRM updates after sales calls without spreading bad data', sources: ['ico.org.uk'] },
+      { route: '/articles/shopify-returns-automation-review-rules/', title: 'Shopify Returns Automation and Review Rules | Olivers Consulting', h1: 'Shopify returns automation: what to automate and what to review', sources: ['help.shopify.com', 'www.gov.uk'] },
+    ],
+  },
 ];
 
 const failures = [];

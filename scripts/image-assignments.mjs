@@ -1,13 +1,13 @@
 const siteOrigin = 'https://oliversconsulting.co.uk';
 
 const entries = [
-  ['/articles/automate-cis-subcontractor-onboarding/', 'Images/mesh-BI3nPD34ECs-unsplash.jpg', 'cis-subcontractor-onboarding-form', 'Hand completing a business form for a controlled onboarding process'],
-  ['/articles/automate-client-onboarding-no-duplicate-data/', 'Images/van-tay-media-Kab_-4M4I74-unsplash.jpg', 'client-onboarding-document-handover', 'Two people handing over a business document'],
+  ['/articles/automate-cis-subcontractor-onboarding/', 'Images/mesh-BI3nPD34ECs-unsplash.jpg', 'cis-subcontractor-onboarding-form', 'Hand completing a subcontractor onboarding form beside verification documents'],
+  ['/articles/automate-client-onboarding-no-duplicate-data/', 'Images/van-tay-media-Kab_-4M4I74-unsplash.jpg', 'client-onboarding-document-handover', 'Business documents handed over during a controlled client onboarding process'],
   ['/articles/automate-purchase-orders-reorder-rules/', 'Images/reproductive-health-supplies-coalition-2mH3hbrYMac-unsplash.jpg', 'purchase-order-inventory-packages', 'Packages and paperwork prepared for an inventory order'],
   ['/articles/manual-admin-interruption-cost/', 'Images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg', 'manual-admin-task-list', 'Operator recording recurring manual admin tasks in a notebook'],
   ['/articles/automate-supplier-statement-reconciliation/', 'Images/kelly-sikkema-0oZpRxG5Hkk-unsplash.jpg', 'supplier-statement-reconciliation-documents', 'Invoices, calculator and laptop arranged for reconciliation'],
-  ['/articles/shopify-returns-automation-review-rules/', 'Images/sticker-mule-N7iUbPxU5NY-unsplash.jpg', 'shopify-returns-parcel-packing', 'Person packing a cardboard parcel for return'],
-  ['/articles/automate-crm-updates-after-sales-calls/', 'Images/matus-gocman-QTM8FvTWX-4-unsplash.jpg', 'crm-sales-call-notes', 'Notes application open on a phone beside a workstation'],
+  ['/articles/shopify-returns-automation-review-rules/', 'Images/sticker-mule-N7iUbPxU5NY-unsplash.jpg', 'shopify-returns-parcel-packing', 'Person packing a cardboard parcel as part of an ecommerce returns process'],
+  ['/articles/automate-crm-updates-after-sales-calls/', 'Images/matus-gocman-QTM8FvTWX-4-unsplash.jpg', 'crm-sales-call-notes', 'Notes application beside a workstation used to capture sales-call actions'],
   ['/articles/email-attachments-shared-folders-or-forms/', 'Images/maksym-kaharlytskyi-Q9y3LRuuxmg-unsplash.jpg', 'business-file-organisation', 'Labelled files organised for a controlled document intake process'],
   ['/articles/spreadsheet-not-the-problem-operating-rules/', 'Images/federica-galli-_xhZcNsqPhQ-unsplash.jpg', 'spreadsheet-operating-rules', 'Operational spreadsheet reviewed on a laptop at a clear workspace'],
   ['/articles/automate-invoice-processing-approval-control/', 'Images/kelly-sikkema-zN49qkBMmOA-unsplash.jpg', 'invoice-processing-documents', 'Business documents arranged on a desk for processing'],
