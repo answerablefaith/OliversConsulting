@@ -70,6 +70,8 @@ Milestone 6 clarified the homepage proposition and added dedicated Services, Abo
 
 Milestone 7 assigned one documented principal intent and intended reader to every article, grouped the 20 articles into five four-page clusters and recorded explicit overlap guards. Current search results and competing pages were reviewed without inventing keyword volume. The resulting article ledger defines five Milestone 8 batches and identifies the article index as the first hub to improve before creating any new pillar URL.
 
+Milestone 8.1 meaningfully updated the four supplier, product and inventory articles. Each now has distinct answer-first copy, key takeaways, current primary-source citations, contextual article and service links, a direct Contact call to action, aligned metadata and Article schema, and a genuine 2026-08-19 modification date. A dedicated validator and Playwright run protect the batch across static, 390px mobile and desktop rendering checks.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -95,8 +97,8 @@ The existing static homepage performance guard failed at baseline because the ex
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
 | 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
 | 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 article intents, five clusters, overlap controls, competitor evidence and deterministic checks pass |
-| 8 | Article optimisation batches | NOT_STARTED | Batches will be defined by Milestone 7 |
-| 8.1 | Supplier, product and inventory operations | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8 | Article optimisation batches | IN_PROGRESS | One of five four-article batches is DONE_VERIFIED |
+| 8.1 | Supplier, product and inventory operations | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.2 | Orders, finance and reconciliation | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 8.3 | Reporting, investment and resilience | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 8.4 | Process design and controlled hand-offs | NOT_STARTED | Four articles defined in article-ledger.csv |
@@ -107,6 +109,38 @@ The existing static homepage performance guard failed at baseline because the ex
 | 12 | AI and answer-engine discoverability | NOT_STARTED | |
 | 13 | Search-platform and measurement handoff | NOT_STARTED | |
 | 14 | Final audit and release readiness | NOT_STARTED | |
+
+## Milestone 8.1 acceptance criteria
+
+- [x] All four articles retain one unique, documented search intent and audience in `article-ledger.csv`.
+- [x] Titles, descriptions and H1s were improved without collapsing the four pages into the same broad intent.
+- [x] Each article begins with a direct answer and includes practical key takeaways, controls, examples or checklists.
+- [x] Current factual platform claims are supported by primary Shopify, Google Merchant Center, GS1 UK, Amazon or eBay documentation as applicable.
+- [x] Internal links connect the four related subjects without blurring their supplier-ingestion, product-quality, channel-availability or purchasing boundaries.
+- [x] Each page links to the canonical Services route and a functioning Contact call to action.
+- [x] Existing optimised responsive images retain contextual alt text, explicit dimensions and correct eager/high-priority treatment as the principal image.
+- [x] Visible author and publication dates remain accurate; `dateModified` and sitemap `lastmod` changed only after this meaningful update.
+- [x] Article, WebPage, Breadcrumb and visible FAQ schema parse and agree with visible content and metadata.
+- [x] Static checks pass for crawlability, metadata, schema, images, internal links, intent records and the four-page batch contract.
+- [x] GitHub Actions renders all four pages at 390×844 and 1280×900 without horizontal overflow, missing images, invisible CTAs or browser errors.
+
+### Milestone 8.1 decisions
+
+- Preserve the established first-person operator voice and substantiated experience; improve clarity and sourcing rather than inflating article length.
+- Keep each page's overlap guard from Milestone 7: supplier ingestion, pre-publication data quality, channel availability and upstream replenishment remain separate intents.
+- Use official primary sources for platform and identifier behaviour; remove the sign-in-only Amazon Seller Central citation in favour of public Amazon developer documentation.
+- Replace homepage-fragment service and booking links in the batch with the dedicated `/services/` and `/contact/` canonical routes created in Milestone 6.
+- Set the visible modification date and sitemap lastmod to 2026-08-19 because the written content, sources, metadata and headings were meaningfully revised.
+- Treat the first failed browser workflow as a test defect: responsive images loaded correctly, but the assertion incorrectly required a 640-CSS-pixel natural width on mobile. The corrected check verifies complete, non-zero image loading and the subsequent run passed.
+
+### Milestone 8.1 GitHub record
+
+- Implementation commit: `82b2b1f55e0d1ea98b3f72fb3f656d01997b3f75`
+- Browser assertion correction: `e838bd223aff0ed89b13211b4d4d42b1515a21ae`
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+- Exact next checkpoint: Milestone 8.2 — orders, finance and reconciliation
 
 ## Milestone 1 acceptance criteria
 
@@ -359,4 +393,4 @@ These questions did not block Milestone 6 because the implementation preserved e
 
 ## Next milestone
 
-Milestone 8.1 — Supplier, product and inventory operations article batch.
+Milestone 8.2 — Orders, finance and reconciliation article batch.

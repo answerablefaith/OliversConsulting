@@ -113,7 +113,7 @@ const requiredArchitectureText = [
   '## Content-gap decisions',
   '## Milestone 8 batch plan',
   'No search volume, ranking, traffic or conversion estimate is asserted.',
-  'The exact next checkpoint is Milestone 8.1.'
+  'The exact next checkpoint is Milestone 8.2;'
 ];
 
 for (const expected of requiredArchitectureText) {

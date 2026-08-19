@@ -68,7 +68,8 @@ None confirmed during the baseline audit.
 - Evidence: All 20 articles are discoverable from the sitemap and `/articles/`, but the index presents one chronological card stream. Five coherent topic clusters and several adjacent-intent risks are documented in `content-architecture.md` and `article-ledger.csv`.
 - Risk: Readers and crawlers receive weak signals about topic relationships, and adjacent articles could drift towards the same generic automation intent during optimisation.
 - Milestone 7 action: Assigned a unique principal intent, audience and overlap guard to every article; defined five four-page optimisation batches; and selected the existing article index as the first hub to improve rather than creating thin new pages.
-- Remaining work: Preserve the boundaries during Milestone 8, then implement useful cluster navigation and commercial pathways in Milestone 9.
+- Milestone 8.1 action: Preserved the four supplier/product/inventory overlap guards while adding contextual cross-links and canonical service/contact pathways; the dedicated batch validator checks ledger completion and minimum contextual links.
+- Remaining work: Preserve the boundaries through Batches 8.2–8.5, then implement useful cluster navigation and commercial pathways in Milestone 9.
 
 ## P3 — optional refinement or measurement gap
 

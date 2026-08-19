@@ -156,4 +156,4 @@ Each batch contains four articles. The order prioritises direct ecommerce/wholes
 3. `/articles/automate-crm-updates-after-sales-calls/`
 4. `/articles/shopify-returns-automation-review-rules/`
 
-The exact next checkpoint is Milestone 8.1. No production article copy or sitemap modification date changes belong to Milestone 7.
+Milestone 8.1 is DONE_VERIFIED. The exact next checkpoint is Milestone 8.2; its four routes remain `NOT_STARTED` in the article ledger.

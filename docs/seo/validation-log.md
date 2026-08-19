@@ -374,3 +374,51 @@
 - Milestone 7 implementation commit: `4a889408a44f5e93cd28b793015a77c1bd338644`.
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
 - Overall milestone progress after this checkpoint: 7 of 14 milestones, 50%.
+
+## 2026-08-19 — Milestone 8.1 supplier, product and inventory articles
+
+### Starting state
+
+- Confirmed repository `answerablefaith/OliversConsulting`, branch `seo/organic-ai-discoverability` and open draft pull request #26.
+- Confirmed a clean starting worktree at commit `64721f106f8b4c7538b8cb33079ae93d87f7a848`.
+- Reverified Milestones 1–7 and selected Milestone 8.1 as the earliest unfinished checkpoint.
+- Confirmed Batch 8.1 contains exactly four articles and that all four ledger rows were `NOT_STARTED`.
+- Rechecked current official Shopify, Google Merchant Center, GS1 UK, Amazon and eBay documentation before revising platform claims.
+
+### Implemented article batch
+
+- Meaningfully revised the supplier price-list, product-data quality, multichannel stock-sync and purchase-order automation articles while preserving their distinct search intents.
+- Improved all four titles, descriptions and H1s; strengthened answer-first summaries and key takeaways.
+- Added primary-source citations for Shopify CSV/import and inventory behaviour, Google product data and identifiers, GS1 GTINs, Amazon FBA inventory states and eBay availability fields.
+- Added clearer control steps, an inspectable purchase-order calculation, contextual related-article links, canonical Services links and Contact calls to action.
+- Retained the verified visible author and publication dates; changed the visible modification date, Article `dateModified` and sitemap `lastmod` to 2026-08-19 only for these four meaningfully updated pages.
+- Corrected the structured-data generator so a new visible update date takes precedence over previously generated JSON-LD while unchanged articles retain their existing date.
+- Added a dependency-free batch validator and Playwright mobile/desktop rendering check to the SEO GitHub Actions workflow.
+
+### Validation results
+
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=28|organizations=28|websites=28|webpages=28|articles=20|persons=20|breadcrumbs=20|faqs=18|images=48`.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-core-pages.mjs` — PASS: `CORE_PAGE_CHECK_OK|pages=4|distinct_intents=4|contact_methods=2|founder_derivatives=3|mobile_css=1`.
+- `node scripts/check-seo-content-map.mjs` — PASS: `CONTENT_MAP_CHECK_OK|articles=20|clusters=5|batches=5|max_batch=4|research_links=13`.
+- `node scripts/check-seo-article-batch.mjs` — PASS: `ARTICLE_BATCH_CHECK_OK|batch=8.1|articles=4|date_modified=2026-08-19`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- Metadata and structured-data applicators — PASS/IDEMPOTENT: zero changes on the final rerun.
+- `git diff --check` — PASS.
+- GitHub Actions run 32291687727 — PASS: static suite plus `ARTICLE_RENDER_CHECK_OK|articles=4|viewports=2|pages=8` at 390×844 and 1280×900.
+- The preceding browser run 32291488476 failed only because the test required a 640-CSS-pixel natural width for responsive mobile images. The images were complete; the corrected non-zero load assertion passed in the subsequent run.
+
+### Deployment boundary
+
+- The live site remains on the pre-draft release until the owner approves the pull request; this batch has not been merged or deployed.
+- No ranking, traffic, field performance or AI-citation outcome is claimed.
+
+### GitHub handoff
+
+- Implementation commit: `82b2b1f55e0d1ea98b3f72fb3f656d01997b3f75`.
+- Browser assertion correction: `e838bd223aff0ed89b13211b4d4d42b1515a21ae`.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
+- Top-level milestone progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 is `IN_PROGRESS` with 1 of 5 article batches complete (20%).
+- Exact next checkpoint: Milestone 8.2 — orders, finance and reconciliation.
