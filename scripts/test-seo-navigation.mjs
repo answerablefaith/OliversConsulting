@@ -60,8 +60,8 @@ try {
           if (tabIndex < 0) failures.push(`${viewport.name} article hub topic link ${i + 1} is not keyboard focusable`);
         }
 
-        if (!await page.locator('a[href="/services/"]').first().isVisible()) failures.push(`${viewport.name} article hub Services path is not visible`);
-        if (!await page.locator('a[href="/contact/"]').first().isVisible()) failures.push(`${viewport.name} article hub Contact path is not visible`);
+        if (!await page.locator('main a[href="/services/"]').first().isVisible()) failures.push(`${viewport.name} article hub Services path is not visible`);
+        if (!await page.locator('main a[href="/contact/"]').first().isVisible()) failures.push(`${viewport.name} article hub Contact path is not visible`);
       }
 
       if (errors.length) failures.push(`${viewport.name} ${route} browser errors: ${errors.join(' | ')}`);
