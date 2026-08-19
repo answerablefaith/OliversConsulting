@@ -325,3 +325,9 @@
 
 - The live site retains the pre-Milestone-6 page set until this draft branch is approved and deployed.
 - No merge or deployment performed.
+
+### GitHub handoff
+
+- Milestone 6 implementation commit: `fafcf5aff10c33a65c630c9cd1f8908b0bbc9b45`.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
+- Overall milestone progress after this checkpoint: 6 of 14 milestones, 43%.
