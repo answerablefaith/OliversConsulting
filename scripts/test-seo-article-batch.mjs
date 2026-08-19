@@ -13,6 +13,10 @@ const routes = [
   '/articles/ecommerce-ai-automation-roi/',
   '/articles/ecommerce-key-person-dependency/',
   '/articles/before-hiring-ecommerce-admin/',
+  '/articles/integrate-systems-or-automate-hand-off/',
+  '/articles/email-attachments-shared-folders-or-forms/',
+  '/articles/spreadsheet-not-the-problem-operating-rules/',
+  '/articles/manual-admin-interruption-cost/',
 ];
 const viewports = [
   { name: 'mobile', width: 390, height: 844 },

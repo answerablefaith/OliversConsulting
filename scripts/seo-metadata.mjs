@@ -55,7 +55,8 @@ export const siteMetadata = {
       description: 'Learn when to automate purchase-order preparation, how to calculate explainable reorder proposals and which buying decisions should stay in review.',
     },
     '/articles/manual-admin-interruption-cost/': {
-      title: 'The Hidden Cost of Manual Admin | Olivers Consulting',
+      title: 'Measure the True Cost of Manual Admin | Olivers Consulting',
+      description: 'Measure manual admin using task, setup, restart and delay time, then identify which repeated steps to batch, improve or automate first.',
     },
     '/articles/automate-supplier-statement-reconciliation/': {
       title: 'Supplier Statement Reconciliation Automation | Olivers Consulting',
@@ -68,17 +69,20 @@ export const siteMetadata = {
       title: 'Automate CRM Updates After Sales Calls | Olivers Consulting',
     },
     '/articles/email-attachments-shared-folders-or-forms/': {
-      title: 'Email Attachments vs Shared Folders vs Forms | Olivers Consulting',
+      title: 'Email, Shared Folder or Form for Data Intake? | Olivers Consulting',
+      description: 'Choose email, a shared folder or a structured form for business data intake using volume, variation, access, evidence and validation needs.',
     },
     '/articles/spreadsheet-not-the-problem-operating-rules/': {
-      title: 'Why Business Spreadsheets Fail | Olivers Consulting',
+      title: 'Spreadsheet Operating Rules for Reliable Processes | Olivers Consulting',
+      description: 'Fix spreadsheet-backed processes by defining purpose, ownership, data definitions and change rights before buying software or automating the workflow.',
     },
     '/articles/automate-invoice-processing-approval-control/': {
       title: 'Supplier Invoice Processing Automation | Olivers Consulting',
       description: 'Automate supplier invoice capture, duplicate checks, coding and approval routing while keeping uncertain costs, VAT and payment decisions under human control.',
     },
     '/articles/integrate-systems-or-automate-hand-off/': {
-      title: 'System Integration vs Automated Hand-offs | Olivers Consulting',
+      title: 'Full Integration or Automated Hand-off? | Olivers Consulting',
+      description: 'Choose between full system integration, a controlled automated hand-off and an improved manual process using frequency, stability, risk and cost.',
     },
     '/articles/ecommerce-key-person-dependency/': {
       title: 'Reduce Ecommerce Key-Person Dependency | Olivers Consulting',

@@ -34,6 +34,16 @@ const batches = [
       { route: '/articles/before-hiring-ecommerce-admin/', title: 'Hire or Automate Ecommerce Admin Work? | Olivers Consulting', h1: 'Should you hire ecommerce admin or fix the process first?', sources: ['www.acas.org.uk', 'engineering.homeoffice.gov.uk'] },
     ],
   },
+  {
+    id: '8.4',
+    status: 'DONE_VERIFIED',
+    articles: [
+      { route: '/articles/integrate-systems-or-automate-hand-off/', title: 'Full Integration or Automated Hand-off? | Olivers Consulting', h1: 'Full system integration or automated hand-off: which fits?', sources: ['www.gov.uk', 'ico.org.uk'] },
+      { route: '/articles/email-attachments-shared-folders-or-forms/', title: 'Email, Shared Folder or Form for Data Intake? | Olivers Consulting', h1: 'Email, shared folder or form: choose the right intake route', sources: ['www.ncsc.gov.uk', 'ico.org.uk'] },
+      { route: '/articles/spreadsheet-not-the-problem-operating-rules/', title: 'Spreadsheet Operating Rules for Reliable Processes | Olivers Consulting', h1: 'Fix the operating rules before replacing your spreadsheet', sources: ['www.gov.uk'] },
+      { route: '/articles/manual-admin-interruption-cost/', title: 'Measure the True Cost of Manual Admin | Olivers Consulting', h1: 'How to measure the true cost of manual admin', sources: ['www.hse.gov.uk'] },
+    ],
+  },
 ];
 
 const failures = [];
