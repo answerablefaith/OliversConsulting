@@ -19,25 +19,15 @@
 
   function initAccessibilityStructure() {
     const hero = document.querySelector('header#top');
-    const parent = hero?.parentElement || null;
-    const footer = parent?.querySelector('#oc-site-footer') || null;
-
-    if (hero && parent && !hero.closest('main')) {
-      const main = document.createElement('main');
-      main.id = 'main';
-      main.className = 'oc-home-main';
-      parent.insertBefore(main, hero);
-      let node = hero;
-      while (node && node !== footer) {
-        const next = node.nextSibling;
-        main.appendChild(node);
-        node = next;
-      }
-    } else if (hero?.closest('main') && !hero.closest('main').id) {
-      hero.closest('main').id = 'main';
+    const landmark = hero?.parentElement || null;
+    if (landmark) {
+      landmark.id = 'main';
+      landmark.setAttribute('role', 'main');
+      landmark.setAttribute('aria-label', 'Main content');
+      landmark.setAttribute('tabindex', '-1');
     }
 
-    if (!document.querySelector('.oc-skip-link')) {
+    if (!document.querySelector('.oc-skip-link') && landmark) {
       const skip = document.createElement('a');
       skip.className = 'oc-skip-link';
       skip.href = '#main';
