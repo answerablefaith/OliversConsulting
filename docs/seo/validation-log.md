@@ -589,3 +589,51 @@
 - Top-level progress is 8 of 14 `DONE_VERIFIED` (57.1%); Milestone 8 has 5 of 5 batches `DONE_VERIFIED` (100%).
 - Batch 8.5 and top-level Milestone 8 are `DONE_VERIFIED`.
 - Exact next checkpoint: Milestone 9 — internal linking, hubs and navigation.
+
+## 2026-08-19 — Milestone 9 internal linking, hubs and navigation
+
+### Starting state
+
+- Confirmed repository `answerablefaith/OliversConsulting`, working branch `seo/organic-ai-discoverability` and open draft pull request #26 targeting `main`.
+- Inspected the branch head, latest commits, AGENTS.md, deployment workflows, SEO master plan, article ledger, issue register and representative article implementation before accepting prior milestone status.
+- Reverified Milestones 1–8 and selected Milestone 9 as the earliest unfinished checkpoint because the master plan marked Milestones 1–8 `DONE_VERIFIED` and Milestone 9 `NOT_STARTED`.
+- Inspected the current live article index and confirmed it still represents the pre-draft release; no merge or deployment was authorised in this run.
+- Confirmed the branch article index was a flat chronological card stream even though Milestone 7 had already defined five coherent four-article topic clusters.
+
+### Implemented internal-linking and hub work
+
+- Rebuilt `/articles/` as the existing site's task-led article hub rather than creating thin new pillar URLs.
+- Added five visible cluster sections matching the article ledger: supplier/product/inventory; orders/finance/reconciliation; reporting/investment/resilience; process design/hand-offs; onboarding/CRM/returns.
+- Linked all 20 article routes from their correct cluster while retaining the latest CIS article as a featured entry.
+- Added five descriptive, keyboard-focusable topic jumps plus natural cluster-level Services or Contact pathways.
+- Added complete static desktop and mobile navigation on the article index using canonical `/services/`, `/about/`, `/contact/` and `/articles/` routes; the mobile menu uses native `details`/`summary` keyboard behaviour.
+- Preserved all 20 article bodies, publication dates, modification dates, metadata and intent boundaries; no artificial freshness update was made.
+- Added `scripts/check-seo-internal-linking.mjs` to verify the 20-route hub, five cluster assignments, visible/schema breadcrumb agreement, canonical commercial paths and minimum contextual article linking.
+- Added `scripts/test-seo-navigation.mjs` to verify the hub and a representative article on 390×844 and 1280×900 viewports, including keyboard mobile-menu opening, topic-link focusability, one H1 and no horizontal overflow.
+- Added both new checks to the existing SEO static GitHub Actions workflow.
+
+### Validation results
+
+- `node scripts/check-seo-indexation.mjs` — PASS in GitHub Actions: `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=28|organizations=28|websites=28|webpages=28|articles=20|persons=20|breadcrumbs=20|faqs=18|images=48`.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-core-pages.mjs` — PASS: `CORE_PAGE_CHECK_OK|pages=4|distinct_intents=4|contact_methods=2|founder_derivatives=3|mobile_css=1`.
+- `node scripts/check-seo-content-map.mjs` — PASS: `CONTENT_MAP_CHECK_OK|articles=20|clusters=5|batches=5|max_batch=4|research_links=13`.
+- `node scripts/check-seo-article-batch.mjs` — PASS: `ARTICLE_BATCH_CHECK_OK|verified_batches=5|in_progress_batches=0|articles=20|date_modified=2026-08-19`.
+- `node scripts/check-seo-internal-linking.mjs` — PASS: `INTERNAL_LINKING_CHECK_OK|articles=20|clusters=5|hub_routes=20|breadcrumbs=20|commercial_paths=20|related_articles=20`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- Existing rendered-article suite — PASS: `ARTICLE_RENDER_CHECK_OK|articles=20|viewports=2|pages=40`.
+- New hub/navigation suite — PASS: `NAVIGATION_RENDER_CHECK_OK|routes=2|viewports=2|pages=4|clusters=5|articles=20`.
+- Initial GitHub Actions run 32304313294 passed every dependency-free check and all 40 existing article renders, then failed only because the new mobile visibility assertion used `.first()` and selected the hidden desktop Services/Contact links. Page markup was not changed for this failure.
+- Corrected the test selector to inspect visible links inside `main` in commit `eff4a690c3ca0d837af5da584537789ef2329bfb`.
+- GitHub Actions run 32304496847 — PASS: every static, article-render and navigation-render step completed successfully.
+
+### Deployment and GitHub state
+
+- Published implementation commit `4683974118317cfcffc0970530965e3054ec1148` and test-correction commit `eff4a690c3ca0d837af5da584537789ef2329bfb` to the existing SEO branch and draft pull request #26.
+- Updated the persistent issue register, master plan and this validation log after successful CI.
+- No merge or deployment was performed; the live site remains on the pre-draft release.
+- Top-level progress is 9 of 14 `DONE_VERIFIED` (64.3%).
+- Milestone 9 is `DONE_VERIFIED`.
+- Exact next checkpoint: Milestone 10 — trust, authorship and conversion quality.
