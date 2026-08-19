@@ -45,10 +45,11 @@ None confirmed during the baseline audit.
 
 ### SEO-005 — Homepage entity schema is absent
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 4
 - Evidence: The homepage contains zero JSON-LD blocks. Article JSON-LD exists and parses.
 - Risk: The site does not provide a consolidated machine-readable Organization, WebSite or WebPage entity definition.
+- Resolution: Every indexable page now has one managed graph with consistent Organization, WebSite, WebPage and logo ImageObject entities. Article graphs also connect the visible author, Article, page and publisher through canonical identifiers.
 
 ### SEO-006 — Existing homepage performance guard fails
 
@@ -104,3 +105,13 @@ No production issues were closed. Milestone 1 was deliberately audit-only.
 - Milestone: 3
 - Baseline evidence: Metadata coverage varied between the homepage, articles, article index and legal pages; the generated homepage also contained duplicate charset, viewport and favicon declarations.
 - Resolution: Added a central configuration, idempotent applicator and strict validator. The production homepage build now reuses the same metadata function, and all 25 indexable pages pass deterministic head-markup checks.
+
+## Closed during Milestone 4
+
+### SEO-012 — Structured data is partial and manually duplicated
+
+- Status: DONE_VERIFIED
+- Milestone: 4
+- Evidence: The branch began with 21 manually embedded JSON-LD blocks: one Blog and 20 BlogPosting graphs. The homepage and legal pages had no entity graph, no page defined WebSite or WebPage, and some FAQ payloads paraphrased visible FAQ wording.
+- Risk: Entity identity and page relationships were inconsistent, and manually duplicated FAQ data could drift away from visible content.
+- Resolution: Added a central structured-data generator, idempotent applicator and strict validator. All 25 indexable pages now expose one valid graph; FAQ markup is generated only from exact visible questions and answers.

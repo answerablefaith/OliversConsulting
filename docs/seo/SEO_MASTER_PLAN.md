@@ -62,6 +62,8 @@ Last audited: 2026-08-19
 
 Milestone 3 replaced the inconsistent page-by-page metadata with a deterministic system. All 25 indexable pages now have unique configured titles and descriptions, matching Open Graph and Twitter fields, absolute social-image URLs, consistent SVG/ICO favicon links and one self-referencing canonical. A 1200×630 site-owned default social card is used until Milestone 5 assigns relevant page imagery.
 
+Milestone 4 replaced the partial, manually duplicated JSON-LD with one deterministic graph on every indexable page. All 25 graphs define consistent Organization, WebSite, WebPage and logo ImageObject entities. The 20 article graphs also define the visible Person author, Article, canonical breadcrumb trail and only those FAQ questions and answers that can be extracted verbatim from a visible FAQ section.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -83,8 +85,8 @@ The existing static homepage performance guard failed at baseline because the ex
 | 1 | Baseline audit and inventory | DONE_VERIFIED | Page and image inventories, issue register and validation log created |
 | 2 | Crawlability, indexation and URL integrity | DONE_VERIFIED | Static and live indexation checks pass; sitemap dates, 404 handling and release guard corrected |
 | 3 | Metadata and social presentation | DONE_VERIFIED | 25 unique titles/descriptions; complete Open Graph, Twitter and favicon metadata; deterministic checks pass |
-| 4 | Structured data and entity clarity | NOT_STARTED | Next checkpoint |
-| 5 | Image inventory and optimisation pipeline | NOT_STARTED | |
+| 4 | Structured data and entity clarity | DONE_VERIFIED | 25 valid managed graphs; 20 Article/Person/Breadcrumb graphs; visible-only FAQ markup; deterministic checks pass |
+| 5 | Image inventory and optimisation pipeline | NOT_STARTED | Next checkpoint |
 | 6 | Core commercial pages | NOT_STARTED | |
 | 7 | Search-intent and content architecture map | NOT_STARTED | |
 | 8 | Article optimisation batches | NOT_STARTED | Batches will be defined by Milestone 7 |
@@ -176,6 +178,35 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 
+## Milestone 4 acceptance criteria
+
+- [x] Every indexable page has exactly one parseable, managed JSON-LD graph.
+- [x] All 25 pages define consistent Organization, WebSite and WebPage entities with absolute canonical identifiers.
+- [x] The Organization graph contains the verified site name, canonical URL and measured logo dimensions, without unverified addresses, ratings, reviews, prices or social profiles.
+- [x] All 20 articles define an Article tied to the correct WebPage, Organization publisher and visible Person author.
+- [x] Article headlines, descriptions, publication dates, modification dates and sections agree with the visible page and existing meaningful date record.
+- [x] All 20 breadcrumb graphs use Home, Articles and the current H1/canonical, agreeing with visible navigation and page identity.
+- [x] FAQPage markup is emitted only for an extractable visible FAQ section; every marked-up question and answer matches the visible wording exactly.
+- [x] JSON-LD serialization escapes script-breaking characters and the applicator is idempotent.
+- [x] The production homepage builder and GitHub Actions static checks use the same generator and validator.
+- [x] Structured-data, metadata, indexation, homepage and source-scope checks pass.
+
+### Milestone 4 decisions
+
+- Use Organization rather than LocalBusiness or ProfessionalService because a physical address and other local-business details have not been independently verified.
+- Do not add sameAs, ratings, reviews, prices, credentials or service-area claims without authoritative business evidence.
+- Identify Henry Oliver only as the visible article author and link the Person entity to the existing About section; do not expand the biography or credentials.
+- Preserve existing Article dateModified values. The schema migration does not change article copy and therefore does not manufacture freshness.
+- Use the verified logo as ImageObject. Article-specific representative images remain Milestone 5 work; the generic social card is not misrepresented as an article content image.
+- Generate FAQPage data from visible h3-and-paragraph pairs rather than retaining paraphrased schema-only answers.
+
+### Milestone 4 GitHub record
+
+- Implementation commit: pending publication
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
@@ -185,6 +216,8 @@ The repository has no single build command. Use the checks relevant to each mile
 - node scripts/check-seo-indexation.mjs --live
 - node scripts/apply-seo-metadata.mjs
 - node scripts/check-seo-metadata.mjs
+- node scripts/apply-seo-structured-data.mjs
+- node scripts/check-seo-structured-data.mjs
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -211,7 +244,7 @@ The live site currently states or implies the following. Preserve existing wordi
 - Published service prices and delivery-time statements.
 - Specific process-time and savings examples.
 
-These questions do not block Milestone 2.
+These questions do not block Milestone 5.
 
 ## Known risks
 
@@ -223,4 +256,4 @@ These questions do not block Milestone 2.
 
 ## Next milestone
 
-Milestone 4 — Structured data and entity clarity.
+Milestone 5 — Image inventory and optimisation pipeline.

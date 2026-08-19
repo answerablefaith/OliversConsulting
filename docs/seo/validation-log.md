@@ -197,3 +197,41 @@
 - Published Milestone 3 implementation commit 3129490884c0efd42c3b13831c013f9bf17700a1 to seo/organic-ai-discoverability.
 - Reused and updated draft pull request #26 targeting main.
 - No merge or deployment performed.
+
+## 2026-08-19 — Milestone 4 structured data and entity clarity
+
+### Starting state
+
+- Confirmed repository answerablefaith/OliversConsulting.
+- Confirmed clean working branch seo/organic-ai-discoverability at 4d46e62 before implementation.
+- Confirmed draft pull request #26 targets main.
+- Reverified Milestones 1–3 and selected Milestone 4 as the earliest NOT_STARTED checkpoint.
+- Audited 21 existing JSON-LD blocks: all parsed, but only the article index and 20 articles had markup; no page defined WebSite or WebPage, and the homepage had no Organization entity.
+- Compared Article author, headline and dates with visible page facts and reviewed current Google Search Central and Schema.org type guidance.
+
+### Implemented structured-data system
+
+- Added scripts/seo-structured-data.mjs with a deterministic Organization, WebSite, WebPage, ImageObject, Person, Article, BreadcrumbList and visible-only FAQPage graph.
+- Added scripts/apply-seo-structured-data.mjs as an idempotent applicator for all sitemap pages.
+- Added scripts/check-seo-structured-data.mjs to validate syntax, entity counts, canonical identifiers, visible-field agreement, author/publisher ties, breadcrumbs, FAQ parity and prohibited unsupported claims.
+- Updated scripts/build-prerendered-test.mjs so future production homepage builds reuse the same graph generator.
+- Added the structured-data check to .github/workflows/seo-static-checks.yml.
+- Applied exactly one managed JSON-LD graph to all 25 indexable pages.
+- Preserved all existing Article dateModified values; no article body or sitemap freshness date changed.
+- Omitted LocalBusiness, ProfessionalService, addresses, sameAs, ratings, reviews, prices and unverified business claims.
+
+### Validation results
+
+- `node scripts/apply-seo-structured-data.mjs` — PASS: first run changed 25 pages; second run changed 0, confirming idempotence.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=25|organizations=25|websites=25|webpages=25|articles=20|persons=20|breadcrumbs=20|faqs=18|images=25`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=25|titles=25|descriptions=25|og=25|twitter=25|h1=25`.
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=25|indexable=25|noindex=9|internal_targets=25|custom_404=1`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- Body scope comparison — PASS: `BODY_SCOPE_OK|pages=25|changed=0`.
+- `node --check` for all new structured-data modules and the production homepage builder — PASS.
+- `git diff --check` — PASS.
+
+### Deployment boundary
+
+- The live site retains its baseline structured data until this draft branch is approved and deployed.
+- No merge or deployment performed.
