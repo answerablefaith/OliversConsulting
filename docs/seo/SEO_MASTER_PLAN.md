@@ -202,7 +202,7 @@ This tracker-only follow-up records the immutable implementation commit and pull
 
 ### Milestone 4 GitHub record
 
-- Implementation commit: pending publication
+- Implementation commit: `158101a54c629e0c3efb044f40d97ba314316eb3`
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
