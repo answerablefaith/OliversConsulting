@@ -76,6 +76,9 @@ jobs:
       - name: Check completed article optimisation batches
         run: node scripts/check-seo-article-batch.mjs
 
+      - name: Check internal linking, hubs and navigation
+        run: node scripts/check-seo-internal-linking.mjs
+
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs
 
@@ -91,3 +94,8 @@ jobs:
         env:
           PLAYWRIGHT_CHANNEL: chrome
         run: node scripts/test-seo-article-batch.mjs
+
+      - name: Check article hub and navigation rendering
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/test-seo-navigation.mjs
