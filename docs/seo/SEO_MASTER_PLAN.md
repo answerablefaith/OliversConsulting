@@ -72,6 +72,8 @@ Milestone 7 assigned one documented principal intent and intended reader to ever
 
 Milestone 8.1 meaningfully updated the four supplier, product and inventory articles. Each now has distinct answer-first copy, key takeaways, current primary-source citations, contextual article and service links, a direct Contact call to action, aligned metadata and Article schema, and a genuine 2026-08-19 modification date. A dedicated validator and Playwright run protect the batch across static, 390px mobile and desktop rendering checks.
 
+Milestone 8.2 meaningfully updated the four orders, finance and reconciliation articles. Each retains a separate sales-order, supplier-invoice, supplier-statement or Shopify-settlement intent, now with stronger answer-first guidance, primary GOV.UK, Sage, Xero or Shopify citations, visible operational-versus-financial-advice boundaries, canonical service/contact routes and aligned metadata, schema and modification dates. The batch validator now protects all eight completed articles and GitHub Actions renders all 16 mobile/desktop combinations.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -97,9 +99,9 @@ The existing static homepage performance guard failed at baseline because the ex
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
 | 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
 | 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 article intents, five clusters, overlap controls, competitor evidence and deterministic checks pass |
-| 8 | Article optimisation batches | IN_PROGRESS | One of five four-article batches is DONE_VERIFIED |
+| 8 | Article optimisation batches | IN_PROGRESS | Two of five four-article batches are DONE_VERIFIED |
 | 8.1 | Supplier, product and inventory operations | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
-| 8.2 | Orders, finance and reconciliation | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.2 | Orders, finance and reconciliation | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.3 | Reporting, investment and resilience | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 8.4 | Process design and controlled hand-offs | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 8.5 | Onboarding, CRM and returns | NOT_STARTED | Four articles defined in article-ledger.csv |
@@ -141,6 +143,39 @@ The existing static homepage performance guard failed at baseline because the ex
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 - Exact next checkpoint: Milestone 8.2 — orders, finance and reconciliation
+
+## Milestone 8.2 acceptance criteria
+
+- [x] All four articles retain a unique, documented search intent, intended reader and overlap guard in `article-ledger.csv`.
+- [x] Titles, descriptions and H1s are distinct and aligned to sales-order entry, supplier-invoice processing, supplier-statement matching or Shopify payout settlement.
+- [x] Each article begins with a direct answer and includes practical key takeaways, controls, worked examples, tables or checklists where useful.
+- [x] Platform, invoice and VAT-record claims are supported by current primary GOV.UK, Sage, Xero or Shopify documentation.
+- [x] Finance-focused pages distinguish operational workflow guidance from accounting, tax and financial advice.
+- [x] Contextual links preserve the four intent boundaries while connecting related articles and the canonical Services and Contact routes.
+- [x] Existing optimised responsive images retain contextual alt text, explicit dimensions and correct eager/high-priority principal-image treatment.
+- [x] Visible author and publication dates remain accurate; `dateModified` and sitemap `lastmod` changed only after the meaningful article updates.
+- [x] Article, WebPage, Breadcrumb and visible FAQ schema parse and agree with visible copy and metadata.
+- [x] The dependency-free suite passes for all eight completed-batch articles.
+- [x] GitHub Actions renders all eight completed articles at 390×844 and 1280×900 without horizontal overflow, missing images, invisible CTAs or browser errors.
+
+### Milestone 8.2 decisions
+
+- Preserve the first-person operator voice and existing useful examples while tightening claims and source attribution rather than targeting an arbitrary length.
+- Keep sales-order capture separate from accounts payable, supplier-statement reconciliation separate from invoice intake, and Shopify settlement separate from both.
+- Replace marketing or sign-in-dependent platform citations with public primary developer/help documentation where practical.
+- Describe Xero and Sage records conservatively because the exact product version, enabled endpoints and permissions must be confirmed before implementation.
+- Replace redirected homepage fragment CTAs with the canonical `/services/` and `/contact/` routes.
+- Set visible modification dates, Article `dateModified` and sitemap `lastmod` to 2026-08-19 only for the four meaningfully revised pages.
+- Generalise the article validator and browser test to recheck every completed batch, preventing later work from regressing Batch 8.1.
+
+### Milestone 8.2 GitHub record
+
+- Implementation commit: `d64ddb46d0b5df3dea352dc9af9afc6fafd6f674`
+- GitHub Actions run: https://github.com/answerablefaith/OliversConsulting/actions/runs/32293260603
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+- Exact next checkpoint: Milestone 8.3 — reporting, investment and resilience
 
 ## Milestone 1 acceptance criteria
 
@@ -393,4 +428,4 @@ These questions did not block Milestone 6 because the implementation preserved e
 
 ## Next milestone
 
-Milestone 8.2 — Orders, finance and reconciliation article batch.
+Milestone 8.3 — Reporting, investment and resilience article batch.

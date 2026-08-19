@@ -422,3 +422,50 @@
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
 - Top-level milestone progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 is `IN_PROGRESS` with 1 of 5 article batches complete (20%).
 - Exact next checkpoint: Milestone 8.2 — orders, finance and reconciliation.
+
+## 2026-08-19 — Milestone 8.2 orders, finance and reconciliation articles
+
+### Starting state
+
+- Confirmed repository `answerablefaith/OliversConsulting`, branch `seo/organic-ai-discoverability` and open draft pull request #26.
+- Confirmed a clean starting worktree at local checkpoint commit `4469427dc34fa518058059281a146c08ee1b2423`; the aligned remote branch head was `651184049e54934012e9de662591248480528b7e`.
+- Reverified Milestones 1–7 and Batch 8.1, then selected Batch 8.2 as the earliest unfinished checkpoint.
+- Confirmed Batch 8.2 contains exactly four articles and that all four ledger rows were `NOT_STARTED`.
+- Rechecked current primary GOV.UK/HMRC, Sage, Xero and Shopify documentation before revising factual platform, invoice and record-keeping claims.
+
+### Implemented article batch
+
+- Meaningfully revised the wholesale-order entry, supplier-invoice processing, supplier-statement reconciliation and Shopify payout reconciliation articles while preserving their four separate search intents.
+- Improved all four titles and descriptions, refined the Shopify H1, retained the three already-aligned H1s, and added concise key takeaways to every page.
+- Added or improved current primary-source citations for UK invoice/VAT records, Sage and Xero accounting record types and APIs, Shopify payout reports and exported transactions.
+- Added clear operational-versus-accounting/tax/financial-advice boundaries to the finance-focused pages.
+- Replaced redirected homepage-fragment links with canonical Services and Contact routes; retained relevant contextual article links and distinct calls to action.
+- Retained the verified visible authors and publication dates; changed the visible modification date, Article `dateModified` and sitemap `lastmod` to 2026-08-19 only for these four meaningfully updated pages.
+- Generalised the article static and Playwright validators so all eight completed-batch articles are rechecked on every applicable workflow run.
+
+### Validation results
+
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=28|organizations=28|websites=28|webpages=28|articles=20|persons=20|breadcrumbs=20|faqs=18|images=48`.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-core-pages.mjs` — PASS: `CORE_PAGE_CHECK_OK|pages=4|distinct_intents=4|contact_methods=2|founder_derivatives=3|mobile_css=1`.
+- `node scripts/check-seo-content-map.mjs` — PASS before checkpoint advancement: `CONTENT_MAP_CHECK_OK|articles=20|clusters=5|batches=5|max_batch=4|research_links=13`.
+- `node scripts/check-seo-article-batch.mjs` — PASS: `ARTICLE_BATCH_CHECK_OK|batches=2|articles=8|date_modified=2026-08-19`.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- Metadata and structured-data applicators — PASS/IDEMPOTENT: zero changes on the final rerun.
+- `git diff --check` — PASS.
+- Local Playwright execution was unavailable because the transient workspace has no installed `playwright` package; no local browser result is claimed.
+- GitHub Actions run 32293260603 — PASS: all static checks plus `ARTICLE_RENDER_CHECK_OK|articles=8|viewports=2|pages=16` at 390×844 and 1280×900.
+
+### Deployment boundary
+
+- The live site remains on the pre-draft release until the owner approves the pull request; this batch has not been merged or deployed.
+- No ranking, traffic, field performance or AI-citation outcome is claimed.
+
+### GitHub handoff
+
+- Implementation commit: `d64ddb46d0b5df3dea352dc9af9afc6fafd6f674`.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
+- Top-level milestone progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 is `IN_PROGRESS` with 2 of 5 article batches complete (40%).
+- Exact next checkpoint: Milestone 8.3 — reporting, investment and resilience.
