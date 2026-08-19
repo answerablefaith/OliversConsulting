@@ -284,3 +284,9 @@
 
 - The live site retains its pre-Milestone-5 images and metadata until this draft branch is approved and deployed.
 - No merge or deployment performed.
+
+### GitHub handoff
+
+- Published Milestone 5 implementation commit 09a3e4d79c03323cc2d0031ff82e219ad25da69b to seo/organic-ai-discoverability.
+- Reused and updated draft pull request #26 targeting main.
+- No merge or deployment performed.
