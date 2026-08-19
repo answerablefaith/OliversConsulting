@@ -82,6 +82,9 @@ jobs:
       - name: Check trust, authorship and conversion quality
         run: node scripts/check-seo-trust.mjs
 
+      - name: Check performance and accessibility safeguards
+        run: node scripts/check-seo-accessibility.mjs
+
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs
 
