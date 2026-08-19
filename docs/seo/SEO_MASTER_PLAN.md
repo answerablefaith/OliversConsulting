@@ -105,7 +105,15 @@ The existing static homepage performance guard currently fails because the expec
 - [x] Hosting and generation architecture recorded.
 - [x] Next milestone identified.
 
-The Milestone 1 commit is the branch HEAD that first adds these files. A Git commit cannot safely contain its own final hash; the hash is reported in the pull request and will be copied into this log on the next checkpoint.
+## GitHub record
+
+- Working branch: `seo/organic-ai-discoverability`
+- Milestone 1 implementation commit: `1058ff736bd91eca25cf216ad4f326cc75e7c609`
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
+This tracker-only follow-up records the immutable implementation commit and pull-request link after GitHub created them.
 
 ## Validation commands
 

@@ -6,8 +6,8 @@
 
 - Confirmed repository answerablefaith/OliversConsulting.
 - Confirmed baseline main commit 7f087a1.
-- Confirmed no pre-existing seo/organic-ai-discoverability branch or open matching pull request.
-- Created local branch seo/organic-ai-discoverability.
+- Confirmed the pre-existing remote seo/organic-ai-discoverability branch pointed to baseline main commit 7f087a1 and had no open matching pull request.
+- Reused seo/organic-ai-discoverability as the working branch.
 - Confirmed static GitHub Pages delivery from response headers and CNAME.
 - Confirmed no package.json and no single repository build command.
 
@@ -85,3 +85,10 @@
 - page-inventory.csv rows: 34 data rows plus header.
 - image-manifest.csv rows: 49 data rows plus header.
 - All Milestone 1 acceptance criteria met.
+
+### GitHub handoff
+
+- Published the six Milestone 1 files in commit 1058ff736bd91eca25cf216ad4f326cc75e7c609.
+- Opened draft pull request #26: https://github.com/answerablefaith/OliversConsulting/pull/26.
+- Pull-request base is main; head is seo/organic-ai-discoverability.
+- No merge or deployment performed.
