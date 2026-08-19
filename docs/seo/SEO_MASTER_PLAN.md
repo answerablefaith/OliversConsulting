@@ -298,7 +298,7 @@ This tracker-only follow-up records the immutable implementation commit and pull
 
 ### Milestone 7 GitHub record
 
-- Implementation commit: pending checkpoint commit
+- Implementation commit: `4a889408a44f5e93cd28b793015a77c1bd338644`
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed

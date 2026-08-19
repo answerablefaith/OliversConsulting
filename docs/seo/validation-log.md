@@ -371,6 +371,6 @@
 
 ### GitHub handoff
 
-- Milestone 7 implementation commit: pending checkpoint commit.
+- Milestone 7 implementation commit: `4a889408a44f5e93cd28b793015a77c1bd338644`.
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
 - Overall milestone progress after this checkpoint: 7 of 14 milestones, 50%.
