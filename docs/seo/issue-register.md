@@ -63,17 +63,13 @@ None confirmed during the baseline audit.
 
 ### SEO-014 — Article architecture is chronological rather than task-led
 
-- Status: OPEN
+- Status: DONE_VERIFIED
 - Milestone: 8 and 9
-- Evidence: All 20 articles are discoverable from the sitemap and `/articles/`, but the index presents one chronological card stream. Five coherent topic clusters and several adjacent-intent risks are documented in `content-architecture.md` and `article-ledger.csv`.
-- Risk: Readers and crawlers receive weak signals about topic relationships, and adjacent articles could drift towards the same generic automation intent during optimisation.
+- Baseline evidence: All 20 articles were discoverable from the sitemap and `/articles/`, but the index presented one chronological card stream. Five coherent topic clusters and several adjacent-intent risks were documented in `content-architecture.md` and `article-ledger.csv`.
+- Risk: Readers and crawlers received weak signals about topic relationships, and adjacent articles could drift towards the same generic automation intent during optimisation.
 - Milestone 7 action: Assigned a unique principal intent, audience and overlap guard to every article; defined five four-page optimisation batches; and selected the existing article index as the first hub to improve rather than creating thin new pages.
-- Milestone 8.1 action: Preserved the four supplier/product/inventory overlap guards while adding contextual cross-links and canonical service/contact pathways; the dedicated batch validator checks ledger completion and minimum contextual links.
-- Milestone 8.2 action: Preserved the separate sales-order, supplier-invoice, supplier-statement and Shopify-settlement intents; added contextual cross-links without collapsing those boundaries; and expanded the validator to recheck all completed batches.
-- Milestone 8.3 action: Preserved the weekly-reporting, automation-ROI, key-person-resilience and hire-versus-process boundaries; added canonical service/contact links and expanded static and browser coverage to all 12 completed articles. A fresh GitHub runner passed the 24 responsive render checks after the initial runner stalled during Chromium installation.
-- Milestone 8.4 action: Preserved the architecture-choice, intake-route, spreadsheet-governance and interruption-cost boundaries; added primary GOV.UK, NCSC, ICO and HSE support, canonical service/contact routes and static plus browser coverage for all 16 completed articles. The final workflow uses the hosted runner's stable Chrome channel and passed 32 responsive renders.
-- Milestone 8.5 action: Preserved the CIS-compliance, duplicate-free client-onboarding, post-call CRM-update and Shopify returns-control boundaries; added primary GOV.UK, ICO and Shopify support, canonical service/contact routes and static plus browser coverage for all 20 articles. GitHub Actions passed 40 responsive renders.
-- Remaining work: Implement useful cluster navigation and commercial pathways in Milestone 9 while preserving the completed article intent boundaries.
+- Milestone 8 action: Preserved the five cluster boundaries while all 20 articles gained contextual related-article links and canonical service/contact pathways.
+- Milestone 9 resolution: Rebuilt `/articles/` as a task-led hub with five visible cluster sections matching the article ledger, all 20 article routes linked from their correct cluster, five keyboard-focusable topic jumps, canonical Services/About/Contact navigation and a keyboard-operable mobile menu. The deterministic internal-linking check confirms all 20 visible/schema breadcrumbs, commercial paths and minimum related-article links; GitHub Actions also verifies the hub and representative article at mobile and desktop viewports.
 
 ## P3 — optional refinement or measurement gap
 
