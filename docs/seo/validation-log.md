@@ -469,3 +469,40 @@
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
 - Top-level milestone progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 is `IN_PROGRESS` with 2 of 5 article batches complete (40%).
 - Exact next checkpoint: Milestone 8.3 — reporting, investment and resilience.
+
+## 2026-08-19 — Milestone 8.3 reporting, investment and resilience implementation
+
+### Starting state
+
+- Confirmed repository `answerablefaith/OliversConsulting`, branch `seo/organic-ai-discoverability` and open draft pull request #26 targeting `main`.
+- Confirmed a clean starting worktree and reverified Milestones 1–7 plus Batches 8.1 and 8.2 with the full dependency-free suite.
+- Selected Batch 8.3 as the earliest unfinished checkpoint because its four article-ledger rows were `NOT_STARTED`.
+- Rechecked current primary Shopify, GOV.UK, NCSC, ICAEW, Home Office and Acas guidance before revising factual claims.
+
+### Implemented article batch
+
+- Meaningfully revised the weekly-reporting, ecommerce automation ROI, key-person dependency and hire-versus-process articles while preserving their distinct search intents.
+- Improved titles, descriptions and H1s; added answer-first key takeaways, current primary-source citations and clearer financial/tax or employment/legal advice boundaries where relevant.
+- Replaced redirected homepage-fragment CTAs with canonical Services and Contact links, retained useful contextual article links and aligned image alt text across HTML, metadata, schema, assignments and the manifest.
+- Kept verified authors and publication dates; changed visible update dates, Article `dateModified` and sitemap `lastmod` to 2026-08-19 only for the four meaningfully revised pages.
+- Expanded deterministic and Playwright coverage from eight to 12 implemented-batch articles.
+
+### Validation results
+
+- `node scripts/check-seo-indexation.mjs` — PASS: `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`.
+- `node scripts/check-seo-metadata.mjs` — PASS: `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`.
+- `node scripts/check-seo-structured-data.mjs` — PASS: `STRUCTURED_DATA_CHECK_OK|pages=28|organizations=28|websites=28|webpages=28|articles=20|persons=20|breadcrumbs=20|faqs=18|images=48`.
+- `node scripts/check-seo-images.mjs` — PASS: `IMAGE_CHECK_OK|raw=49|assigned=20|outputs=60|webp=40|jpeg=20|bytes=2572568|duplicates=0|corrupt=0`.
+- `node scripts/check-seo-core-pages.mjs` — PASS: `CORE_PAGE_CHECK_OK|pages=4|distinct_intents=4|contact_methods=2|founder_derivatives=3|mobile_css=1`.
+- `node scripts/check-seo-content-map.mjs` — PASS: `CONTENT_MAP_CHECK_OK|articles=20|clusters=5|batches=5|max_batch=4|research_links=13`.
+- `node scripts/check-seo-article-batch.mjs` — PASS for the implemented content contract; Batch 8.3 remains `IN_PROGRESS` until browser verification.
+- `node scripts/test-homepage-performance.mjs` and `git diff --check` — PASS.
+- Local Playwright execution was unavailable because no Chromium executable is installed; no local browser result is claimed.
+- GitHub Actions run 32295623270 passed every dependency-free step, then remained in the Chromium installation step for more than 25 minutes; the 24 mobile/desktop render checks did not start during this run.
+
+### Deployment and GitHub state
+
+- Published implementation commit `0f5625b2b3b088373df0c9a6a57bed28ce13a420` to the existing SEO branch and draft pull request #26.
+- No merge or deployment was performed; the live site remains on the pre-draft release.
+- Top-level progress remains 7 of 14 `DONE_VERIFIED` (50%); Milestone 8 has 2 of 5 batches `DONE_VERIFIED` and Batch 8.3 `IN_PROGRESS`.
+- Exact next checkpoint: Milestone 8.3 — complete mobile and desktop browser verification.

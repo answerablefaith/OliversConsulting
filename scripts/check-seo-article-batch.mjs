@@ -6,6 +6,7 @@ const updatedDate = '2026-08-19';
 const batches = [
   {
     id: '8.1',
+    status: 'DONE_VERIFIED',
     articles: [
       { route: '/articles/automate-supplier-price-lists/', title: 'Supplier Price List Automation for Ecommerce | Olivers Consulting', h1: 'How to automate supplier price lists without risking live listings', sources: ['help.shopify.com', 'support.google.com', 'www.gov.uk'] },
       { route: '/articles/product-data-errors-before-listings-go-live/', title: 'Ecommerce Product Data Quality Checks | Olivers Consulting', h1: 'How to prevent product data errors before listings go live', sources: ['www.gs1uk.org', 'support.google.com'] },
@@ -15,6 +16,7 @@ const batches = [
   },
   {
     id: '8.2',
+    status: 'DONE_VERIFIED',
     articles: [
       { route: '/articles/stop-rekeying-wholesale-orders-sage-xero/', title: 'Wholesale Order Entry Automation for Sage and Xero | Olivers Consulting', h1: 'How to stop re-keying wholesale orders into Sage or Xero', sources: ['developer.xero.com', 'developer.sage.com'] },
       { route: '/articles/automate-invoice-processing-approval-control/', title: 'Supplier Invoice Processing Automation | Olivers Consulting', h1: 'How to automate invoice processing without losing approval control', sources: ['www.gov.uk', 'developer.xero.com'] },
@@ -24,6 +26,7 @@ const batches = [
   },
   {
     id: '8.3',
+    status: 'IN_PROGRESS',
     articles: [
       { route: '/articles/monday-report-automation/', title: 'Ecommerce Monday Report Automation | Olivers Consulting', h1: 'How to automate an ecommerce Monday report that drives decisions', sources: ['help.shopify.com', 'www.gov.uk', 'analysisfunction.civilservice.gov.uk'] },
       { route: '/articles/ecommerce-ai-automation-roi/', title: 'Ecommerce AI Automation ROI Guide | Olivers Consulting', h1: 'How to calculate and prove ecommerce AI automation ROI', sources: ['www.gov.uk', 'www.ncsc.gov.uk'] },
@@ -81,7 +84,7 @@ for (const batch of batches) {
 
     check(sitemap.includes(`<loc>https://oliversconsulting.co.uk${article.route}</loc><lastmod>${updatedDate}</lastmod>`), `${article.route} sitemap lastmod is not ${updatedDate}`);
     const ledgerLine = ledger.split('\n').find((line) => line.startsWith(`"${article.route}"`)) || '';
-    check(ledgerLine.includes(`"${article.title}"`) && ledgerLine.endsWith(`"${batch.id}","DONE_VERIFIED"`), `${article.route} ledger entry is not complete for batch ${batch.id}`);
+    check(ledgerLine.includes(`"${article.title}"`) && ledgerLine.endsWith(`"${batch.id}","${batch.status}"`), `${article.route} ledger entry does not match ${batch.status} for batch ${batch.id}`);
     titles.add(title);
     descriptions.add(description);
   }
@@ -96,4 +99,6 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`ARTICLE_BATCH_CHECK_OK|batches=${batches.length}|articles=${articleCount}|date_modified=${updatedDate}`);
+const verifiedBatches = batches.filter((batch) => batch.status === 'DONE_VERIFIED').length;
+const inProgressBatches = batches.filter((batch) => batch.status === 'IN_PROGRESS').length;
+console.log(`ARTICLE_BATCH_CHECK_OK|verified_batches=${verifiedBatches}|in_progress_batches=${inProgressBatches}|articles=${articleCount}|date_modified=${updatedDate}`);

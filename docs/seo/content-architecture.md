@@ -156,4 +156,4 @@ Each batch contains four articles. The order prioritises direct ecommerce/wholes
 3. `/articles/automate-crm-updates-after-sales-calls/`
 4. `/articles/shopify-returns-automation-review-rules/`
 
-Milestones 8.1 and 8.2 are DONE_VERIFIED. The exact next checkpoint is Milestone 8.3; its four routes remain `NOT_STARTED` in the article ledger.
+Milestones 8.1 and 8.2 are `DONE_VERIFIED`. Milestone 8.3 is implemented and its four ledger rows are `IN_PROGRESS` while GitHub browser verification is pending. The exact next checkpoint is Milestone 8.3; complete its mobile and desktop render checks before starting Batch 8.4.

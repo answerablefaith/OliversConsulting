@@ -74,6 +74,8 @@ Milestone 8.1 meaningfully updated the four supplier, product and inventory arti
 
 Milestone 8.2 meaningfully updated the four orders, finance and reconciliation articles. Each retains a separate sales-order, supplier-invoice, supplier-statement or Shopify-settlement intent, now with stronger answer-first guidance, primary GOV.UK, Sage, Xero or Shopify citations, visible operational-versus-financial-advice boundaries, canonical service/contact routes and aligned metadata, schema and modification dates. The batch validator now protects all eight completed articles and GitHub Actions renders all 16 mobile/desktop combinations.
 
+Milestone 8.3 implementation meaningfully updated the four reporting, investment and resilience articles while preserving their weekly-reporting, automation-ROI, key-person-risk and hire-versus-process boundaries. Static validation passes across all 12 implemented-batch articles. Browser verification remains open because GitHub Actions run 32295623270 stalled while installing Chromium and never reached the 24 responsive render checks; the batch therefore remains `IN_PROGRESS`, not `DONE_VERIFIED`.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -99,10 +101,10 @@ The existing static homepage performance guard failed at baseline because the ex
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
 | 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
 | 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 article intents, five clusters, overlap controls, competitor evidence and deterministic checks pass |
-| 8 | Article optimisation batches | IN_PROGRESS | Two of five four-article batches are DONE_VERIFIED |
+| 8 | Article optimisation batches | IN_PROGRESS | Two batches are DONE_VERIFIED; Batch 8.3 is implemented with browser verification pending |
 | 8.1 | Supplier, product and inventory operations | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
 | 8.2 | Orders, finance and reconciliation | DONE_VERIFIED | Four articles updated; static and browser-rendered checks pass |
-| 8.3 | Reporting, investment and resilience | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.3 | Reporting, investment and resilience | IN_PROGRESS | Four articles updated; static checks pass; GitHub browser-install step remains in progress |
 | 8.4 | Process design and controlled hand-offs | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 8.5 | Onboarding, CRM and returns | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 9 | Internal linking, hubs and navigation | NOT_STARTED | |
@@ -176,6 +178,37 @@ The existing static homepage performance guard failed at baseline because the ex
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 - Exact next checkpoint: Milestone 8.3 — reporting, investment and resilience
+
+## Milestone 8.3 acceptance criteria
+
+- [x] All four articles retain a unique, documented search intent, intended reader and overlap guard in `article-ledger.csv`.
+- [x] Titles, descriptions and H1s align separately to weekly reporting, automation ROI, key-person resilience and hire-versus-process decisions.
+- [x] Each article begins with a direct answer and includes concise, practical key takeaways.
+- [x] Factual reporting, AI-assurance, continuity and recruitment claims use current primary Shopify, GOV.UK, NCSC, ICAEW, Home Office or Acas sources as applicable.
+- [x] ROI and recruitment pages distinguish general operational guidance from individual financial, tax, employment or legal advice.
+- [x] Contextual article links and canonical Services and Contact routes work without redirected homepage fragments.
+- [x] Responsive images retain contextual alt text, explicit dimensions and principal-image loading treatment; the manifest and assignments agree.
+- [x] Visible publication dates remain unchanged; meaningful revisions use 2026-08-19 consistently for visible updates, Article schema and sitemap `lastmod`.
+- [x] The dependency-free indexation, metadata, schema, image, core-page, content-map, batch and homepage checks pass.
+- [ ] GitHub Actions renders all 12 implemented-batch articles at 390×844 and 1280×900 without overflow, missing images, hidden CTAs or browser errors.
+
+### Milestone 8.3 decisions
+
+- Preserve the four intent boundaries and the useful first-person operator examples rather than pursuing an arbitrary word count.
+- Add primary platform and public-sector guidance only where it supports a factual claim; do not turn the pages into citation lists.
+- Treat released time as capacity unless a real cash outcome can be evidenced, and state that illustrative ROI figures are not individual financial or tax advice.
+- Treat the hiring comparison as process guidance, not employment or legal advice, and direct readers to current Acas guidance.
+- Replace redirected homepage-fragment CTAs with `/services/` and `/contact/`, and update image alt text consistently in HTML, social metadata, schema, assignments and the manifest.
+- Keep the batch `IN_PROGRESS` because the external GitHub runner has not completed browser acceptance testing.
+
+### Milestone 8.3 GitHub record
+
+- Implementation commit: `0f5625b2b3b088373df0c9a6a57bed28ce13a420`
+- GitHub Actions run: https://github.com/answerablefaith/OliversConsulting/actions/runs/32295623270 — static steps passed; Chromium installation remained in progress and render checks did not start during this run.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+- Exact next checkpoint: Milestone 8.3 — complete mobile and desktop browser verification
 
 ## Milestone 1 acceptance criteria
 
@@ -428,4 +461,4 @@ These questions did not block Milestone 6 because the implementation preserved e
 
 ## Next milestone
 
-Milestone 8.3 — Reporting, investment and resilience article batch.
+Milestone 8.3 — Complete mobile and desktop browser verification for the reporting, investment and resilience article batch.
