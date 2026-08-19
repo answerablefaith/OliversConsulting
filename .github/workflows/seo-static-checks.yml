@@ -12,6 +12,7 @@ on:
       - 'assets/core-pages.css'
       - 'assets/seo-images.css'
       - 'docs/seo/image-manifest.csv'
+      - 'docs/seo/article-ledger.csv'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
@@ -31,6 +32,7 @@ on:
       - 'assets/core-pages.css'
       - 'assets/seo-images.css'
       - 'docs/seo/image-manifest.csv'
+      - 'docs/seo/article-ledger.csv'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
@@ -68,5 +70,24 @@ jobs:
       - name: Check core commercial pages
         run: node scripts/check-seo-core-pages.mjs
 
+      - name: Check content architecture and article ledger
+        run: node scripts/check-seo-content-map.mjs
+
+      - name: Check article optimisation batch 8.1
+        run: node scripts/check-seo-article-batch.mjs
+
       - name: Check homepage safeguards
         run: node scripts/test-homepage-performance.mjs
+
+      - name: Install browser for article rendering checks
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 8000 >/tmp/oc-seo-server.log 2>&1 &
+          sleep 2
+
+      - name: Check article rendering on mobile and desktop
+        run: node scripts/test-seo-article-batch.mjs

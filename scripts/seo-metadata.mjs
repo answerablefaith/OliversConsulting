@@ -51,7 +51,8 @@ export const siteMetadata = {
       title: 'Automate Client Onboarding Without Duplicate Data | Olivers Consulting',
     },
     '/articles/automate-purchase-orders-reorder-rules/': {
-      title: 'When to Automate Purchase Orders | Olivers Consulting',
+      title: 'Purchase Order Automation and Reorder Rules | Olivers Consulting',
+      description: 'Learn when to automate purchase-order preparation, how to calculate explainable reorder proposals and which buying decisions should stay in review.',
     },
     '/articles/manual-admin-interruption-cost/': {
       title: 'The Hidden Cost of Manual Admin | Olivers Consulting',
@@ -84,7 +85,8 @@ export const siteMetadata = {
       title: 'Reconcile Shopify Payouts, Orders and Fees | Olivers Consulting',
     },
     '/articles/product-data-errors-before-listings-go-live/': {
-      title: 'Prevent Product Data Errors Before Listings Go Live | Olivers Consulting',
+      title: 'Ecommerce Product Data Quality Checks | Olivers Consulting',
+      description: 'Build product data quality checks for GTINs, prices, variants and required attributes so risky ecommerce listings stop before publication.',
     },
     '/articles/stop-rekeying-wholesale-orders-sage-xero/': {
       title: 'Stop Re-keying Wholesale Orders into Sage or Xero | Olivers Consulting',
@@ -93,7 +95,8 @@ export const siteMetadata = {
       title: 'Ecommerce AI Automation ROI | Olivers Consulting',
     },
     '/articles/why-stock-sync-fails-shopify-amazon-ebay/': {
-      title: 'Why Stock Sync Fails Across Ecommerce Channels | Olivers Consulting',
+      title: 'Why Multichannel Stock Sync Fails | Olivers Consulting',
+      description: 'Fix stock sync across Shopify, Amazon and eBay by defining a trusted inventory position, channel buffers, bundle rules, timing and exception handling.',
     },
     '/articles/monday-report-automation/': {
       title: 'Automate Your Ecommerce Monday Report | Olivers Consulting',
@@ -102,7 +105,8 @@ export const siteMetadata = {
       title: 'Before Hiring Ecommerce Admin, Fix the Process | Olivers Consulting',
     },
     '/articles/automate-supplier-price-lists/': {
-      title: 'Automate Supplier Price Lists | Olivers Consulting',
+      title: 'Supplier Price List Automation for Ecommerce | Olivers Consulting',
+      description: 'Learn how to automate supplier price lists with field mapping, price and margin checks, exception handling and controlled updates across sales channels.',
     },
   },
 };

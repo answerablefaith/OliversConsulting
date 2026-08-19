@@ -61,7 +61,7 @@ export function articleFacts(html) {
     author,
     section,
     datePublished: isoDateFromVisible(publishedVisible) || previous?.datePublished || '',
-    dateModified: previous?.dateModified || isoDateFromVisible(updatedVisible) || isoDateFromVisible(publishedVisible),
+    dateModified: isoDateFromVisible(updatedVisible) || previous?.dateModified || isoDateFromVisible(publishedVisible),
     updatedVisible: isoDateFromVisible(updatedVisible),
   };
 }
