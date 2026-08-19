@@ -93,6 +93,11 @@ jobs:
           python3 -m http.server 8000 >/tmp/oc-seo-server.log 2>&1 &
           sleep 2
 
+      - name: Measure representative performance and accessibility
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/audit-seo-performance-a11y.mjs
+
       - name: Check article rendering on mobile and desktop
         env:
           PLAYWRIGHT_CHANNEL: chrome
