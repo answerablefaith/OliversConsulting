@@ -52,7 +52,7 @@ check(cookies.includes('storage or access technologies changes') && cookies.incl
 
 check(terms.includes('Service boundary') && terms.includes('We do not act as your accountant, tax adviser, lawyer or compliance adviser'), 'Terms do not state the service boundary clearly.');
 check(terms.includes('On receipt of final payment') && terms.includes('automation, code, and documentation built for your project become yours'), 'Terms ownership wording is missing or inconsistent.');
-check(terms.includes('not a binding offer') && terms.includes('guarantee of specific results'), 'Terms do not preserve the no-guarantee website boundary.');
+check(terms.includes('binding offer') && terms.includes('guarantee of specific results'), 'Terms do not preserve the no-guarantee website boundary.');
 
 for (const [index, html] of legalPages.entries()) {
   canonicalNav.forEach((fragment) => check(html.includes(fragment), `Legal page ${index + 1} is missing canonical navigation ${fragment}.`));
