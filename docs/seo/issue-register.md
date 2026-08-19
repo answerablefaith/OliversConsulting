@@ -61,6 +61,15 @@ None confirmed during the baseline audit.
 - Risk: The release safeguard cannot currently distinguish regressions from a stale assertion.
 - Resolution: The guard now extracts the cache key from index.html and verifies that it matches scripts/optimize-homepage.mjs. The test passes without weakening the underlying performance assertions.
 
+### SEO-014 — Article architecture is chronological rather than task-led
+
+- Status: OPEN
+- Milestone: 8 and 9
+- Evidence: All 20 articles are discoverable from the sitemap and `/articles/`, but the index presents one chronological card stream. Five coherent topic clusters and several adjacent-intent risks are documented in `content-architecture.md` and `article-ledger.csv`.
+- Risk: Readers and crawlers receive weak signals about topic relationships, and adjacent articles could drift towards the same generic automation intent during optimisation.
+- Milestone 7 action: Assigned a unique principal intent, audience and overlap guard to every article; defined five four-page optimisation batches; and selected the existing article index as the first hub to improve rather than creating thin new pages.
+- Remaining work: Preserve the boundaries during Milestone 8, then implement useful cluster navigation and commercial pathways in Milestone 9.
+
 ## P3 — optional refinement or measurement gap
 
 ### SEO-007 — Preview and test routes remain publicly accessible

@@ -331,3 +331,46 @@
 - Milestone 6 implementation commit: `fafcf5aff10c33a65c630c9cd1f8908b0bbc9b45`.
 - Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
 - Overall milestone progress after this checkpoint: 6 of 14 milestones, 43%.
+
+## 2026-08-19 — Milestone 7 search-intent and content architecture map
+
+### Starting state
+
+- Confirmed repository answerablefaith/OliversConsulting and clean working branch seo/organic-ai-discoverability.
+- Confirmed draft pull request #26 remains open and targets main.
+- Reverified Milestones 1–6 and selected Milestone 7 as the earliest NOT_STARTED checkpoint.
+- Recounted 20 repository article routes and confirmed the live homepage, article index and representative article return 200; `/services/` remains branch-only and returns 404 until deployment.
+- Inspected every article's title, description, H1, H2 structure, internal links and approximate body length.
+- Reviewed current search results and representative competitor or primary-source pages across consulting, supplier data, stock sync, orders, finance, CIS, returns, CRM, ROI and resilience topics.
+
+### Implemented content architecture
+
+- Added an article ledger covering all 20 routes with intended reader, principal search intent, intent type, cluster, overlap guard, commercial destination, batch and status.
+- Defined five topic clusters and five four-article Milestone 8 batches.
+- Recorded important core-page roles, current result formats, competitor evidence, customer questions, meaningful entities, cannibalisation controls and unsupported topics.
+- Distinguished existing-page optimisation and hub-first work from two genuine new-content candidates and explicitly rejected generic tool directories and location variants.
+- Selected Milestone 8.1 — supplier, product and inventory operations — as the next checkpoint.
+- Added a deterministic content-map validator. No production page, metadata, schema, image or sitemap date was changed.
+
+### Validation results
+
+- `node scripts/check-seo-content-map.mjs` — PASS: 20 articles, five clusters and five four-article batches; current research links and next checkpoint present.
+- `node scripts/check-seo-indexation.mjs` — PASS: 28 sitemap URLs, 28 indexable routes, nine noindex routes, 28 internal targets and one custom 404.
+- `node scripts/check-seo-indexation.mjs --live` — EXPECTED DEPLOYMENT DRIFT: the current live host still returns 404 for branch-only `/services/`, `/about/` and `/contact/`; all other live checks completed without a reported failure. This draft-branch mismatch does not block the research-only milestone and must be rechecked after owner-approved deployment.
+- `node scripts/check-seo-metadata.mjs` — PASS: 28 unique titles and descriptions with complete Open Graph, Twitter and H1 coverage.
+- `node scripts/check-seo-structured-data.mjs` — PASS: 28 page graphs, 20 articles, 20 persons, 20 breadcrumbs, 18 visible FAQ graphs and 48 images.
+- `node scripts/check-seo-images.mjs` — PASS: 49 originals, 20 assignments and 60 optimised outputs; no duplicate or corrupt source.
+- `node scripts/check-seo-core-pages.mjs` — PASS: four distinct core intents, two contact methods, three founder derivatives and mobile CSS coverage.
+- `node scripts/test-homepage-performance.mjs` — PASS.
+- `git diff --check` — PASS.
+
+### Deployment boundary
+
+- This milestone changes durable research records and validation only. It does not change the live website.
+- No merge or deployment performed.
+
+### GitHub handoff
+
+- Milestone 7 implementation commit: pending checkpoint commit.
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26 targeting `main`.
+- Overall milestone progress after this checkpoint: 7 of 14 milestones, 50%.

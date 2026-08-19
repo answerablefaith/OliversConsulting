@@ -68,6 +68,8 @@ Milestone 5 accounted for all 49 raw originals and assigned 20 distinct, relevan
 
 Milestone 6 clarified the homepage proposition and added dedicated Services, About and Contact pages with distinct commercial, trust and transactional intents. The branch now has 28 indexable routes, complete metadata and schema, clear calls to action and direct internal links. The existing founder PNG remains preserved; three stripped responsive derivatives reduce published transfer size while retaining explicit dimensions and contextual alt text.
 
+Milestone 7 assigned one documented principal intent and intended reader to every article, grouped the 20 articles into five four-page clusters and recorded explicit overlap guards. Current search results and competing pages were reviewed without inventing keyword volume. The resulting article ledger defines five Milestone 8 batches and identifies the article index as the first hub to improve before creating any new pillar URL.
+
 ## Performance baseline
 
 No Chromium or Lighthouse executable is installed in the local environment, so this milestone does not claim laboratory or field Core Web Vitals.
@@ -92,8 +94,13 @@ The existing static homepage performance guard failed at baseline because the ex
 | 4 | Structured data and entity clarity | DONE_VERIFIED | 25 valid managed graphs; 20 Article/Person/Breadcrumb graphs; visible-only FAQ markup; deterministic checks pass |
 | 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals accounted for; 60 optimised outputs; 20 article assignments; deterministic image checks pass |
 | 6 | Core commercial pages | DONE_VERIFIED | Four distinct core-page intents; clear copy, working CTAs, responsive founder imagery and deterministic checks pass |
-| 7 | Search-intent and content architecture map | NOT_STARTED | |
+| 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 article intents, five clusters, overlap controls, competitor evidence and deterministic checks pass |
 | 8 | Article optimisation batches | NOT_STARTED | Batches will be defined by Milestone 7 |
+| 8.1 | Supplier, product and inventory operations | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.2 | Orders, finance and reconciliation | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.3 | Reporting, investment and resilience | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.4 | Process design and controlled hand-offs | NOT_STARTED | Four articles defined in article-ledger.csv |
+| 8.5 | Onboarding, CRM and returns | NOT_STARTED | Four articles defined in article-ledger.csv |
 | 9 | Internal linking, hubs and navigation | NOT_STARTED | |
 | 10 | Trust, authorship and conversion quality | NOT_STARTED | |
 | 11 | Performance, Core Web Vitals and accessibility | NOT_STARTED | |
@@ -267,6 +274,35 @@ This tracker-only follow-up records the immutable implementation commit and pull
 - Pull-request target: `main`
 - Merge/deployment status: not merged or deployed
 
+## Milestone 7 acceptance criteria
+
+- [x] Every existing article has one documented audience, principal search intent, intent type and commercial destination.
+- [x] The five important core routes have distinct informational, commercial, transactional or navigational roles.
+- [x] Current service topics and all 20 article bodies, headings, metadata and internal links were analysed.
+- [x] Current competitor pages and search-result formats were reviewed across the principal topic clusters without asserting search volume.
+- [x] Cannibalisation risks have explicit page-level boundaries for supplier/product/inventory, finance, operational-pressure, process-design and onboarding topics.
+- [x] No article is a technical crawl orphan; the flat chronological index and weak commercial pathways are recorded for Milestone 9.
+- [x] Five useful topic clusters and their hub treatment are documented without creating thin or duplicative production pages.
+- [x] Existing-page optimisation, hub-first opportunities, genuine new-content candidates and rejected spam-like variants are distinguished.
+- [x] Five Milestone 8 batches contain exactly four articles each.
+- [x] The content-map validator and all existing static SEO checks pass.
+
+### Milestone 7 decisions
+
+- Prioritise supplier, product and inventory operations as Batch 8.1 because it has the closest verified relationship to the ecommerce/wholesale service offer and a coherent reader journey from supplier input to replenishment.
+- Use `/articles/` as the first cluster hub in Milestone 9. Do not create five thin pillar pages simply to introduce more indexable URLs.
+- Preserve separate intents for adjacent workflows: supplier ingestion, product validation, channel stock, purchasing, sales orders, invoices, supplier statements and ecommerce payouts.
+- Keep CIS onboarding and CRM call updates as clearly scoped secondary topics. Do not extend them into unsupported industry or service claims.
+- Treat new-content ideas as a backlog only. Existing articles and internal architecture must be improved before any new route is approved.
+- Make no production copy, metadata, schema, image or sitemap date changes in this research milestone.
+
+### Milestone 7 GitHub record
+
+- Implementation commit: pending checkpoint commit
+- Draft pull request: https://github.com/answerablefaith/OliversConsulting/pull/26
+- Pull-request target: `main`
+- Merge/deployment status: not merged or deployed
+
 ## Validation commands
 
 The repository has no single build command. Use the checks relevant to each milestone:
@@ -283,6 +319,7 @@ The repository has no single build command. Use the checks relevant to each mile
 - node scripts/apply-seo-images.mjs
 - node scripts/check-seo-images.mjs
 - node scripts/check-seo-core-pages.mjs
+- node scripts/check-seo-content-map.mjs
 - python3 -m http.server 8000
 - node scripts/test-prerendered-test.mjs after Playwright is installed
 - node scripts/test-static-preview.mjs after Playwright is installed
@@ -318,7 +355,8 @@ These questions did not block Milestone 6 because the implementation preserved e
 - Production preview/test routes add avoidable crawl surface even though they are noindex.
 - No field Core Web Vitals data was available in this audit.
 - The new custom 404 will not replace GitHub Pages' default error document until this draft branch is approved and deployed.
+- The current article index is chronological rather than clustered; this is deliberately deferred to Milestone 9 so Milestone 7 remains a research and architecture checkpoint.
 
 ## Next milestone
 
-Milestone 7 — Search-intent and content architecture map.
+Milestone 8.1 — Supplier, product and inventory operations article batch.
