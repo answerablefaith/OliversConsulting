@@ -25,8 +25,10 @@ try {
       if (await page.locator('h1').count() !== 1) failures.push(`${viewport.name} ${route.path} does not render one H1`);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       if (overflow > 1) failures.push(`${viewport.name} ${route.path} has ${overflow}px horizontal overflow`);
-      const body = (await page.locator('body').innerText()).replace(/\s+/g, ' ');
-      for (const required of route.required) if (!body.includes(required)) failures.push(`${viewport.name} ${route.path} is missing visible trust text: ${required}`);
+      for (const required of route.required) {
+        const match = page.getByText(required, { exact: false }).first();
+        if (!await match.isVisible().catch(() => false)) failures.push(`${viewport.name} ${route.path} is missing visible trust text: ${required}`);
+      }
       if (route.path === '/contact/') {
         if (!await page.locator('a[href="https://cal.eu/henryoliver"]').first().isVisible()) failures.push(`${viewport.name} contact booking link is not visible`);
         if (!await page.locator('a[href^="mailto:henry@oliversconsulting.co.uk"]').first().isVisible()) failures.push(`${viewport.name} direct email link is not visible`);
@@ -36,7 +38,7 @@ try {
         if (await menu.count()) {
           await menu.locator('summary').focus();
           await page.keyboard.press('Enter');
-          if (!await menu.getAttribute('open')) failures.push('mobile privacy policy menu did not open from the keyboard');
+          if (!await menu.evaluate((element) => element.open)) failures.push('mobile privacy policy menu did not open from the keyboard');
         }
       }
       if (errors.length) failures.push(`${viewport.name} ${route.path} browser errors: ${errors.join(' | ')}`);
