@@ -27,7 +27,8 @@ const contrast = (foreground, background) => {
 };
 
 check(!fonts.includes('font-display:block'), 'Local fonts still use blocking font-display.');
-check((fonts.match(/font-display:swap/g) ?? []).length >= 10, 'Expected self-hosted fonts are not configured for non-blocking display.');
+check(!fonts.includes('font-display:swap'), 'Local fonts still allow a late font swap that can move laid-out content.');
+check((fonts.match(/font-display:optional/g) ?? []).length >= 10, 'Expected self-hosted fonts are not configured for stable optional display.');
 
 check(homepageJs.includes('initAccessibilityStructure'), 'Homepage does not initialise its semantic/accessibility structure.');
 check(homepageJs.includes("skip.textContent = 'Skip to content'"), 'Homepage skip link is missing.');
@@ -63,4 +64,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('ACCESSIBILITY_STATIC_CHECK_OK|font_display=swap|homepage_labels=3|skip_navigation=2|image_reservation=1|contrast_pairs=5|reduced_motion=1');
+console.log('ACCESSIBILITY_STATIC_CHECK_OK|font_display=optional|homepage_labels=3|skip_navigation=2|image_reservation=1|contrast_pairs=5|reduced_motion=1');
