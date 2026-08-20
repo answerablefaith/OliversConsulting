@@ -40,3 +40,4 @@ Allow: /
 
 Sitemap: https://oliversconsulting.co.uk/sitemap.xml
 Sitemap: https://oliversconsulting.co.uk/feed.xml
+# Article discovery checked 2026-08-20
