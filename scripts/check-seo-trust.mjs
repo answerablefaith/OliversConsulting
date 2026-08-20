@@ -4,7 +4,7 @@ const failures = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const read = (file) => readFile(file, 'utf8');
 
-const [about, services, contact, privacy, cookies, terms, sitemap, homepage, homepageJs, privacyJs, bundleJs] = await Promise.all([
+const [about, services, contact, privacy, cookies, terms, sitemap, homepage, homepageJs, privacyJs, bundleJs, sharedHeaderJs] = await Promise.all([
   read('about/index.html'),
   read('services/index.html'),
   read('contact/index.html'),
@@ -16,6 +16,7 @@ const [about, services, contact, privacy, cookies, terms, sitemap, homepage, hom
   read('assets/homepage.js'),
   read('assets/privacy-fonts.js'),
   read('assets/index-U6yPkWpv.js'),
+  read('assets/shared-header.js'),
 ]);
 
 const legalPages = [privacy, cookies, terms];
@@ -61,7 +62,12 @@ for (const [index, html] of legalPages.entries()) {
 }
 
 for (const [index, html] of corePages.entries()) {
-  ['/privacy-policy/', '/cookie-policy/', '/terms-of-service/'].forEach((route) => check(html.includes(`href="${route}"`), `Core page ${index + 1} does not expose ${route}.`));
+  const usesSharedFooter = html.includes('src="/assets/shared-header.js"');
+  ['/privacy-policy/', '/cookie-policy/', '/terms-of-service/'].forEach((route) => {
+    const exposedDirectly = html.includes(`href="${route}"`);
+    const exposedViaSharedFooter = usesSharedFooter && sharedHeaderJs.includes(`href="${route}"`);
+    check(exposedDirectly || exposedViaSharedFooter, `Core page ${index + 1} does not expose ${route}.`);
+  });
 }
 
 for (const route of ['/privacy-policy/', '/cookie-policy/', '/terms-of-service/']) {
