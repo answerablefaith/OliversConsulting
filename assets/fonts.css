@@ -100,9 +100,6 @@
   src:url('/assets/fonts/fraunces-v38-latin-600.woff2') format('woff2');
 }
 
-@media(max-width:900px){
-  header#top div:has(> a[href="#book"]):has(> a[href="#services"]),
-  header#top div:has(> a[href="#book"]):has(> a[href="/#services"]){
-    display:none!important;
-  }
+header#top [data-dc-tpl="44"]{
+  display:none!important;
 }
