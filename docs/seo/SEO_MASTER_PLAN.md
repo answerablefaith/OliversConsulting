@@ -2,7 +2,7 @@
 
 Last audited: 2026-08-20
 
-> Detailed records through Milestone 9 are preserved in `docs/seo/history/SEO_MASTER_PLAN-through-m9.md`. Milestones 10–11 have detailed evidence in `docs/seo/validation-log.md`.
+> Detailed records through Milestone 9 are preserved in `docs/seo/history/SEO_MASTER_PLAN-through-m9.md`. Detailed Milestone 10–12 validation history is recorded in `docs/seo/validation-log.md`; earlier M10–M11 detail remains in Git history before the M12 checkpoint.
 
 ## Confirmed project facts
 
@@ -20,6 +20,7 @@ Last audited: 2026-08-20
 - Raw uploaded images: 49 JPEG files; 0 exact duplicates; 0 corrupt files
 - Published article image derivatives: 60 (40 WebP, 20 JPEG)
 - User-reported Unsplash provenance is retained in `image-manifest.csv`; expected ID `EeyPwy7x2Fo` was not present in the uploaded set
+- Article discovery on the SEO branch now includes the task-led `/articles/` hub, canonical XML sitemap and a generated 20-entry Atom feed at `/feed.xml`
 
 ## Current implementation summary
 
@@ -29,7 +30,8 @@ Last audited: 2026-08-20
 - Milestone 8: five verified four-article optimisation batches with answer-first copy, primary citations where required, internal links, responsive images and verified Article schema.
 - Milestone 9: task-led five-cluster article hub, breadcrumbs, commercial pathways and responsive keyboard navigation.
 - Milestone 10: verifiable trust/authorship/service-boundary/policy improvements with no unsupported E-E-A-T signals.
-- Milestone 11: reproducible synthetic performance/accessibility audit, measured CLS repairs, stable font strategy, landmark/skip navigation, accessible control names, focus visibility, contrast and intrinsic image sizing, preserved reduced-motion handling and CI regression guards. No field Core Web Vitals or INP result is claimed.
+- Milestone 11: reproducible synthetic performance/accessibility audit, measured CLS repairs, stable font strategy, landmarks/skip navigation, accessible controls, focus/contrast improvements and CI guards. No field CWV or INP result is claimed.
+- Milestone 12: raw-HTML answer visibility and authorship were reverified; a deterministic Atom feed and AI-discoverability checker were added; crawler roles are documented and selectively controlled; the pre-existing `llms.txt` was reduced to a non-authoritative experimental index rather than a crawler-only source of claims.
 
 ## Milestone status
 
@@ -51,87 +53,51 @@ Last audited: 2026-08-20
 | 9 | Internal linking, hubs and navigation | DONE_VERIFIED | five-cluster hub, 20 routes, breadcrumbs, mobile/keyboard navigation |
 | 10 | Trust, authorship and conversion quality | DONE_VERIFIED | trust static contract plus 8 trust-page renders |
 | 11 | Performance, Core Web Vitals and accessibility | DONE_VERIFIED | before/after synthetic audit, deterministic a11y guard and full browser regressions pass |
-| 12 | AI and answer-engine discoverability | NOT_STARTED | |
+| 12 | AI and answer-engine discoverability | DONE_VERIFIED | 20-entry Atom feed, raw-HTML/entity/authorship checks, documented crawler policy and full CI regression pass |
 | 13 | Search-platform and measurement handoff | NOT_STARTED | |
 | 14 | Final audit and release readiness | NOT_STARTED | |
 
-## Milestone 11 measurement method
+## Milestone 12 acceptance criteria
 
-Synthetic GitHub Actions/Playwright laboratory audit; not CrUX or field data.
+- [x] Important answers remain in normal crawlable HTML; all 20 article files expose `<main>`, `<article>`, H1, substantial visible text, canonical URL, visible author and genuine visible publication/update dates without depending entirely on client-side execution.
+- [x] The task-led article hub exposes all 20 canonical article routes in raw HTML.
+- [x] About visibly identifies Henry Oliver and explains article authorship, sourcing and corrections; Services visibly explains the service scope.
+- [x] Managed structured data still ties all 20 articles to the visible Henry Oliver `Person` author and canonical `Article`/`WebPage` entities.
+- [x] A deterministic Atom 1.0 feed at `/feed.xml` exposes all 20 canonical article URLs using existing managed titles and genuine `dateModified` values; no artificial freshness dates were introduced.
+- [x] `robots.txt` distinguishes conventional indexing, answer/search discovery, user-requested retrieval, mixed-use Google-Extended and separable training crawlers.
+- [x] `Googlebot`, `Bingbot`, `OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `ChatGPT-User` and `Claude-User` are allowed.
+- [x] `GPTBot` and `ClaudeBot` are disallowed while their providers' separate search/user-retrieval paths remain allowed.
+- [x] `Google-Extended` remains allowed because Google's current token combines Gemini grounding and future Gemini training; this preserves the pre-M12 wildcard-open posture and its trade-off is explicitly documented.
+- [x] Other REP-compliant public crawlers retain the pre-existing wildcard Allow posture.
+- [x] The crawler choices and their implications are documented in `docs/seo/ai-crawler-policy.md` against current provider guidance.
+- [x] The pre-existing `llms.txt` is retained only as an experimental convenience index, is explicitly non-authoritative/non-ranking, and no longer duplicates biography/proof claims or all individual article URLs.
+- [x] No crawler-only or AI-only factual claim is intentionally served.
+- [x] Existing metadata, schema, article dates and page copy were not rewritten simply to attract AI systems.
+- [x] Full static, performance/accessibility and browser regression suites pass.
 
-Representative routes:
-- `/`
-- `/services/`
-- `/articles/`
-- `/articles/automate-cis-subcontractor-onboarding/`
+## Milestone 12 crawler decisions
 
-Profiles:
-- Mobile: 390×844, 150 ms latency, approximately 1.6 Mbps down / 0.75 Mbps up, 4× CPU throttling.
-- Desktop: 1280×900, 40 ms latency, approximately 10 Mbps down / 5 Mbps up, no extra CPU throttle.
+- OpenAI: allow `OAI-SearchBot` and `ChatGPT-User`; disallow the separately controlled `GPTBot` training crawler.
+- Anthropic: allow `Claude-SearchBot` and `Claude-User`; disallow the separately controlled `ClaudeBot` training crawler.
+- Google: allow `Googlebot`. Explicitly allow `Google-Extended`; Google documents it as one robots token controlling both Gemini grounding and future Gemini training, while ordinary Google Search inclusion/ranking is unaffected by the token. Because grounding and future training are not separately controllable through that token, an owner preference to block future Gemini training would also reduce the documented grounding use and should be an explicit future policy decision.
+- Microsoft/Bing: allow `Bingbot` for conventional search discovery.
+- Perplexity: allow `PerplexityBot`; current Perplexity guidance describes it as a robots-respecting search/index crawler rather than foundation-model pre-training.
+- `llms.txt`: retain experimentally because it already existed, but do not treat it as a ranking or Google AI visibility mechanism. Current Google guidance says it is not used by Google Search and neither helps nor hurts rankings/visibility.
+- Feed: use standards-based Atom discovery because Google documents RSS/Atom feeds as supported sitemap formats; feed submission/discovery is a hint, not an indexing guarantee.
 
-Measured: synthetic LCP, CLS, FCP/load, encoded resource transfer, long tasks, main/H1/heading structure, accessible names, image alt/dimensions, focus, reduced-motion state, horizontal overflow and browser errors.
+## Milestone 12 validation sequence
 
-No connected real-user field-data source exists, therefore **INP is not measured or claimed**. SEO-009 remains an explicit P3 measurement gap for Milestone 13/platform handoff.
-
-## Milestone 11 before-and-after evidence
-
-True pre-optimisation baseline: run `32313005214`.
-Accepted page implementation was first fully guarded in run `32314495534`; after adding broader workflow path triggers, run `32314910241` repeated the complete suite successfully.
-
-| Synthetic summary | Before | Latest repeated after |
-|---|---:|---:|
-| Mobile median LCP | 1,014 ms | 716 ms |
-| Mobile max LCP | 1,844 ms | 1,132 ms |
-| Mobile max CLS | 0.1688 | 0.0972 |
-| Desktop median LCP | 298 ms | 238 ms |
-| Desktop max LCP | 408 ms | 288 ms |
-| Desktop max CLS | 0.1089 | 0.0766 |
-| Mobile median encoded resource bytes | 176,516 | 178,944 |
-| Desktop median encoded resource bytes | 183,414 | 185,842 |
-| Mobile tested unnamed controls | 2 | 0 |
-| Mobile tested focus-indicator misses | 1 | 0 |
-
-Notable route-level baseline → latest repeated after:
-- Mobile homepage: LCP `1844 → 1132 ms`; CLS `0.0755 → 0`; main landmarks `0 → 1`; unnamed controls `2 → 0`; missing tested intrinsic UI-image dimensions `2 → 0`; focus misses `1 → 0`; long-task total `299 → 230 ms`.
-- Mobile representative article: CLS `0.1688 → 0.0972`.
-- Desktop article hub: CLS `0.1089 → 0`.
-- Desktop representative article: CLS `0.1085 → 0.0766`.
-- Latest run: all eight route/profile combinations had one main landmark, one H1, zero heading skips, zero unnamed controls, zero missing tested alt/dimensions, zero focus misses, zero reduced-motion animation leaks, zero horizontal overflow and zero browser errors.
-
-Transfer increased slightly because of the added safeguards; no extra third-party runtime was introduced and existing optimised article images were not enlarged. No byte-saving claim is made.
-
-## Milestone 11 acceptance criteria
-
-- [x] Reproducible baseline measured before page optimisation.
-- [x] Same mobile/desktop route matrix measured after optimisation.
-- [x] Final/repeated synthetic LCP below the project 2.5-second goal on all eight combinations.
-- [x] Final/repeated synthetic CLS at or below 0.1 on all eight combinations.
-- [x] No field INP or field-CWV result invented.
-- [x] Self-hosted fonts avoid both long blocking display and late `swap`; `font-display: optional` enforced after measured swap regression.
-- [x] Dynamic header/logo space reserved to reduce layout shift.
-- [x] Homepage has lightweight main landmark + skip link without content-tree re-parenting.
-- [x] Both homepage sliders and play/pause/replay control have accessible names/state.
-- [x] Article/index runtime supplies skip navigation and stable logo dimensions.
-- [x] Focus-visible treatment strengthened across page families.
-- [x] Five revised small-text colour pairs statically check at ≥4.5:1.
-- [x] Reduced-motion handling remains active; browser audit reports zero tested active animations when reduced motion is requested.
-- [x] Representative H1/heading order, alt/dimensions, overflow and browser-console checks pass.
-- [x] No contact form exists; existing trust validator still fails if an unreviewed form appears.
-- [x] Full existing SEO and browser regression suite passes.
-- [x] Workflow path filters now trigger performance/a11y guards for future changes to fonts, homepage runtime/CSS, shared header/runtime, mobile CSS and core site CSS.
-
-## Milestone 11 decisions and repair history
-
-- Baseline identified CLS as the clearest CWV-style issue; mobile representative article CLS was `0.1688`.
-- Initial `font-display: swap` was rejected after run `32313787934` worsened CLS, including desktop article-hub CLS `0.4476`.
-- Accepted strategy uses `font-display: optional` so constrained first visits do not receive a late layout-changing webfont swap.
-- A first homepage semantic approach physically re-parented the content tree and increased synthetic long-task cost; it was replaced with a lightweight `role="main"` on the existing content container. The validator prevents that heavy pattern returning.
-- Existing article LCP image strategy remains: explicit 1200×630 dimensions, contextual alt, eager/high priority, not lazy-loaded.
-- Raw target-size counts remain diagnostic only because the audit does not model all WCAG 2.2 inline/spacing/equivalent exceptions; no universal target-size conformance claim is made.
+1. Implementation commit `0512056884be6b603921bff03143ac5813ed5f33` — run `32338937145`:
+   - all pre-existing dependency-free SEO checks passed;
+   - `ATOM_FEED_CHECK_OK|entries=20|updated=2026-08-19` passed;
+   - the new AI checker failed because it incorrectly assumed `llms.txt` was absent.
+2. Repository inspection then confirmed a pre-existing `llms.txt` (blob `dd33c51b0ef40c35b95d92df6f4160c341c67c43`) that the earlier code search had missed. It contained duplicated biography/proof/article material.
+3. Correction commit `9cb56f9d800f5dbbbd2dd443fa00ee5621b70a87` preserved the file but reduced it to an experimental canonical index and adjusted the policy/checker accordingly.
+4. Final GitHub Actions run `32339126934`: PASS.
 
 ## Latest validation
 
-GitHub Actions run `32314910241` — PASS.
+GitHub Actions run `32339126934` — PASS.
 
 - `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`
 - `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`
@@ -142,10 +108,12 @@ GitHub Actions run `32314910241` — PASS.
 - `ARTICLE_BATCH_CHECK_OK|verified_batches=5|in_progress_batches=0|articles=20|date_modified=2026-08-19`
 - `INTERNAL_LINKING_CHECK_OK|articles=20|clusters=5|hub_routes=20|breadcrumbs=20|commercial_paths=20|related_articles=20`
 - `TRUST_CHECK_OK|core_pages=3|legal_pages=3|contact_methods=2|forms=0|tracking_writes=0|legal_lastmod=2026-08-19`
+- `ATOM_FEED_CHECK_OK|entries=20|updated=2026-08-19`
+- `AI_DISCOVERABILITY_CHECK_OK|articles=20|feed_entries=20|feed_updated=2026-08-19|indexing_agents=5|user_fetch_agents=2|mixed_google=1|training_agents_blocked=2|raw_html_routes=23|llms_txt=experimental_index`
 - `ACCESSIBILITY_STATIC_CHECK_OK|font_display=optional|homepage_labels=3|skip_navigation=2|image_reservation=1|contrast_pairs=5|reduced_motion=1|lightweight_landmark=1`
-- homepage safeguards — PASS
-- mobile audit: `PERF_A11Y_SUMMARY|mobile|routes=4|median_lcp_ms=716|max_lcp_ms=1132|max_cls=0.0972|median_bytes=178944|total_focus_missing=0|total_unnamed=0|total_small_targets=46`
-- desktop audit: `PERF_A11Y_SUMMARY|desktop|routes=4|median_lcp_ms=238|max_lcp_ms=288|max_cls=0.0766|median_bytes=185842|total_focus_missing=0|total_unnamed=0|total_small_targets=51`
+- Homepage performance safeguards — PASS
+- mobile synthetic regression summary: `PERF_A11Y_SUMMARY|mobile|routes=4|median_lcp_ms=722|max_lcp_ms=1128|max_cls=0.0972|median_bytes=178944|total_focus_missing=0|total_unnamed=0|total_small_targets=46`
+- desktop synthetic regression summary: `PERF_A11Y_SUMMARY|desktop|routes=4|median_lcp_ms=242|max_lcp_ms=296|max_cls=0.0766|median_bytes=185842|total_focus_missing=0|total_unnamed=0|total_small_targets=51`
 - `ARTICLE_RENDER_CHECK_OK|articles=20|viewports=2|pages=40`
 - `NAVIGATION_RENDER_CHECK_OK|routes=2|viewports=2|pages=4|clusters=5|articles=20`
 - `TRUST_RENDER_CHECK_OK|routes=4|viewports=2|pages=8`
@@ -167,7 +135,8 @@ GitHub Actions run `32314910241` — PASS.
 - M8.5 `31df632bc9913544a06f0e368112dfeffcf8708e`
 - M9 implementation `4683974118317cfcffc0970530965e3054ec1148`
 - M10 implementation `996048ef80cc96a283c58b29a664bfbc8d723393`
-- M11 baseline audit `923b9b9bd35b968b4174e1b37d59c03f91c82f03`; audit syntax repair `ac245da10d594ee57f07eda3d361100bbc3d8679`; main implementation `4c6c7596f76c5f43134f735c711d3fb4ed2c1b0f`; stable font repair `905fd0795f053f7992a5a4be5915d513c4058c6a`; optional-font guard `20d67fc78c53fb469307e339efb0fac330d65f4c`; lightweight landmark `8246c06959be2479320b594bcaa34339be1bfbd1`; landmark guard `0875da463f919c76a360eb2c820a0d5d4fcd678b`; record commit `9e33ce4a25a06003299e2739ca4ee77c887809a3`; CI trigger coverage `f41fe489481598e6a29e5bceb2e1e4207bb867b9`
+- M11 final recorded head before M12: `48e53bdbaaafc8cd54a4b88b988d755f8652c37a`
+- M12 implementation `0512056884be6b603921bff03143ac5813ed5f33`; existing-`llms.txt` policy correction `9cb56f9d800f5dbbbd2dd443fa00ee5621b70a87`
 - Draft PR #26: target `main`, still draft, unmerged and undeployed.
 
 ## Business facts requiring confirmation before expansion
@@ -183,14 +152,15 @@ No unverified qualification, membership, award, testimonial, client endorsement,
 
 ## Known risks and regressions
 
-- Live production remains on the pre-draft release until PR #26 is approved and deployed.
+- Live production remains on the pre-draft release until PR #26 is approved and deployed; the new robots/feed/AI-discovery policy is not claimed as live.
+- Crawler names and provider policies can change; `docs/seo/ai-crawler-policy.md` records a review date and primary sources and should be rechecked before future policy changes.
+- `Google-Extended` is intentionally allowed, which preserves Gemini grounding but also permits the future-training use covered by the same Google token. Those uses cannot currently be separated through Google-Extended.
+- `llms.txt` remains experimental and is not treated as a ranking signal, Google Search requirement or substitute for canonical HTML/feed/sitemap discovery.
 - Nine preview/test routes remain public but `noindex`; reassess at Milestone 14.
-- No field Core Web Vitals dataset is connected. Synthetic results are regression evidence, not real-user CWV; INP remains unknown.
-- `font-display: optional` prioritises layout stability on constrained first visits; fallback typography may remain for that page view rather than swapping late.
-- Raw target-size diagnostics do not model all WCAG exceptions and are not treated as proof of conformance/non-conformance.
+- No field Core Web Vitals dataset is connected. Synthetic results are regression evidence, not real-user CWV; INP remains unknown and is a Milestone 13 handoff item.
 - Raw image originals remain tracked because they are the only uploaded copies; production HTML uses derivatives.
-- Local Git checkout was unavailable; remote branch/commit/PR state plus GitHub Actions checkout/test evidence are authoritative. No clean local `git status` is claimed.
+- Local Git checkout was unavailable in this environment; remote branch/commit/PR state plus GitHub Actions checkout/test evidence are authoritative. No clean local `git status` is claimed.
 
 ## Exact next milestone
 
-Milestone 12 — AI and answer-engine discoverability.
+Milestone 13 — Search-platform and measurement handoff.

@@ -59,10 +59,17 @@ None confirmed.
 - Status: DONE_VERIFIED
 - Milestone: 11
 - Evidence before fix: synthetic baseline run `32313005214` recorded mobile representative-article CLS `0.1688`, desktop article-hub CLS `0.1089`, desktop representative-article CLS `0.1085`; homepage had no main landmark, two unnamed range controls, two UI images without reserved dimensions and one tested mobile focus-indicator miss.
-- Risk: avoidable visual movement and incomplete keyboard/screen-reader affordances could harm usability and weaken page-experience quality.
-- Resolution: added a reproducible synthetic performance/a11y audit; stable optional font loading; header/logo layout reservation; lightweight main/skip navigation; programmatic labels for both sliders and play/pause/replay; stronger focus visibility; small-text contrast tokens; article/index skip navigation and dimensions; deterministic a11y guard.
-- Repair evidence: an initial `font-display: swap` change was rejected after run `32313787934` worsened CLS; the accepted optional-font and lightweight-landmark implementation removed that regression.
-- Final verification: run `32314495534` passed. Synthetic mobile max LCP `1208 ms`, max CLS `0.0972`; desktop max LCP `332 ms`, max CLS `0.0766`; no tested unnamed controls, focus misses, missing alt attributes, missing tested image dimensions, heading skips, reduced-motion animation leaks, overflow or browser errors.
+- Resolution: reproducible synthetic performance/a11y audit; stable optional font loading; header/logo layout reservation; lightweight main/skip navigation; programmatic control labels; stronger focus visibility; contrast tokens; article/index skip navigation/dimensions; deterministic a11y guard.
+- Repair evidence: initial `font-display: swap` was rejected after run `32313787934` worsened CLS.
+- Final verification: repeated M11/M12 regression runs remain within synthetic LCP/CLS goals and the accessibility guard remains green.
+
+### SEO-017 — AI/search crawler roles and article-feed discovery were not documented or tested
+- Status: DONE_VERIFIED
+- Milestone: 12
+- Evidence before fix: `robots.txt` contained only a wildcard `Allow: /` plus the XML sitemap; no RSS/Atom feed existed; there was no durable record distinguishing conventional indexing crawlers, answer/search crawlers, user-requested retrieval agents, mixed-use crawler tokens and model-training crawlers. A pre-existing `llms.txt` duplicated biography/proof/article material without clearly stating its experimental/non-authoritative status.
+- Risk: crawler permissions could be changed later without understanding search-vs-training trade-offs; article discovery relied only on the hub/XML sitemap; the auxiliary `llms.txt` could drift from human-visible canonical content.
+- Resolution: added `docs/seo/ai-crawler-policy.md`; explicitly allowed Googlebot/Bingbot/OAI-SearchBot/Claude-SearchBot/PerplexityBot plus ChatGPT-User/Claude-User; retained `Google-Extended` Allow with its documented grounding/future-training trade-off; disallowed separable training crawlers GPTBot and ClaudeBot; preserved wildcard public crawling; added a deterministic 20-entry Atom feed; reduced the pre-existing `llms.txt` to an experimental canonical index; added deterministic feed/raw-HTML/crawler-policy checks.
+- Verification: `ATOM_FEED_CHECK_OK|entries=20|updated=2026-08-19`; `AI_DISCOVERABILITY_CHECK_OK|articles=20|feed_entries=20|feed_updated=2026-08-19|indexing_agents=5|user_fetch_agents=2|mixed_google=1|training_agents_blocked=2|raw_html_routes=23|llms_txt=experimental_index`; full GitHub Actions run `32339126934` passed.
 
 ## P3 — optional refinement or measurement gap
 
@@ -75,12 +82,12 @@ None confirmed.
 ### SEO-008 — robots.txt formatting debt
 - Status: DONE_VERIFIED
 - Milestone: 2
-- Resolution: transient audit comment removed; canonical allow/sitemap directives retained.
+- Resolution: canonical crawler/sitemap directives are now explicit and deterministic checks cover them.
 
 ### SEO-009 — Core Web Vitals field baseline unavailable
 - Status: OPEN
 - Milestone: 11 / measurement handoff at 13
-- Evidence: Milestone 11 now has a controlled synthetic Playwright before/after baseline, but no connected CrUX/Search Console/RUM or other real-user field-data source has been recorded.
+- Evidence: Milestone 11 has a controlled synthetic Playwright before/after baseline, but no connected CrUX/Search Console/RUM or other real-user field-data source has been recorded.
 - Risk: real-user LCP/INP/CLS remain unknown; synthetic results cannot establish field Core Web Vitals status.
 - Current handling: do not claim field CWV or INP. Use the synthetic audit only for controlled regression evidence until owner/platform field data is available.
 
@@ -106,4 +113,4 @@ None confirmed.
 
 ## Current next issue focus
 
-Milestone 12 should audit AI/answer-engine discoverability and current crawler guidance without turning synthetic performance results into field claims or introducing crawler-only content.
+Milestone 13 should prepare Search Console/Bing submission and measurement handoff, including owner-only verification actions and the unresolved field-CWV measurement gap, without adding fake verification tokens or trackers.
