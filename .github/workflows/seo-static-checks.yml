@@ -21,14 +21,17 @@ on:
       - 'assets/oc-site.css'
       - 'assets/core-pages.css'
       - 'assets/seo-images.css'
+      - 'docs/seo/*.md'
       - 'docs/seo/image-manifest.csv'
       - 'docs/seo/article-ledger.csv'
-      - 'docs/seo/ai-crawler-policy.md'
-      - 'docs/seo/search-platform-handoff.md'
+      - 'docs/seo/page-inventory.csv'
+      - 'scripts/build-prerendered-test.mjs'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
       - 'scripts/test-homepage-performance.mjs'
+      - '.github/workflows/build-prerendered-test.yml'
+      - '.github/workflows/build-static-preview.yml'
       - '.github/workflows/seo-static-checks.yml'
   push:
     branches:
@@ -53,14 +56,17 @@ on:
       - 'assets/oc-site.css'
       - 'assets/core-pages.css'
       - 'assets/seo-images.css'
+      - 'docs/seo/*.md'
       - 'docs/seo/image-manifest.csv'
       - 'docs/seo/article-ledger.csv'
-      - 'docs/seo/ai-crawler-policy.md'
-      - 'docs/seo/search-platform-handoff.md'
+      - 'docs/seo/page-inventory.csv'
+      - 'scripts/build-prerendered-test.mjs'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
       - 'scripts/test-homepage-performance.mjs'
+      - '.github/workflows/build-prerendered-test.yml'
+      - '.github/workflows/build-static-preview.yml'
       - '.github/workflows/seo-static-checks.yml'
   workflow_dispatch:
 
@@ -77,7 +83,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Check crawlability and indexation
         run: node scripts/check-seo-indexation.mjs
@@ -115,6 +121,9 @@ jobs:
       - name: Check search-platform handoff and live sitemap
         run: node scripts/check-seo-platform-handoff.mjs --live
 
+      - name: Run final static, external-link and live release audit
+        run: node scripts/check-seo-final-audit.mjs --external --live
+
       - name: Check performance and accessibility safeguards
         run: node scripts/check-seo-accessibility.mjs
 
@@ -128,6 +137,9 @@ jobs:
         run: |
           python3 -m http.server 8000 >/tmp/oc-seo-server.log 2>&1 &
           sleep 2
+
+      - name: Check all local release routes
+        run: node scripts/check-seo-final-audit.mjs --local
 
       - name: Measure representative performance and accessibility
         env:
@@ -148,3 +160,15 @@ jobs:
         env:
           PLAYWRIGHT_CHANNEL: chrome
         run: node scripts/test-seo-trust.mjs
+
+      - name: Verify production homepage generation is deterministic
+        env:
+          OC_PRODUCTION: '1'
+          PLAYWRIGHT_CHANNEL: chrome
+        run: |
+          node scripts/build-prerendered-test.mjs
+          node scripts/test-homepage-performance.mjs
+          node scripts/check-seo-metadata.mjs
+          node scripts/check-seo-structured-data.mjs
+          node scripts/check-seo-final-audit.mjs --local
+          git diff --exit-code -- index.html

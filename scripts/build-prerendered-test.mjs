@@ -9,7 +9,9 @@ const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
 const sourceUrl = 'http://127.0.0.1:8000/new-homepage/';
 let capturedHtml = '';
 
-const browser = await chromium.launch({ headless: true });
+const launchOptions = { headless: true };
+if (process.env.PLAYWRIGHT_CHANNEL) launchOptions.channel = process.env.PLAYWRIGHT_CHANNEL;
+const browser = await chromium.launch(launchOptions);
 
 function injectIntoHead(html, markup) {
   return html.replace(/<head>/i, `<head>\n${markup}`);
