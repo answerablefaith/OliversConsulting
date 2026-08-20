@@ -121,6 +121,9 @@ jobs:
       - name: Check search-platform handoff and live sitemap
         run: node scripts/check-seo-platform-handoff.mjs --live
 
+      - name: Check release workflow safety
+        run: node scripts/check-seo-release-workflows.mjs
+
       - name: Run final static, external-link and live release audit
         run: node scripts/check-seo-final-audit.mjs --external --live
 
@@ -161,12 +164,8 @@ jobs:
           PLAYWRIGHT_CHANNEL: chrome
         run: node scripts/test-seo-trust.mjs
 
-      - name: Verify generated production homepage release contract
-        env:
-          OC_PRODUCTION: '1'
-          PLAYWRIGHT_CHANNEL: chrome
+      - name: Verify checked-in production homepage release contract
         run: |
-          node scripts/build-prerendered-test.mjs
           node scripts/test-homepage-performance.mjs
           node scripts/check-seo-metadata.mjs
           node scripts/check-seo-structured-data.mjs
