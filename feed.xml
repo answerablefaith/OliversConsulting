@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Olivers Consulting automation articles</title>
+  <id>https://oliversconsulting.co.uk/articles/</id>
+  <link rel="alternate" href="https://oliversconsulting.co.uk/articles/"/>
+  <link rel="self" href="https://oliversconsulting.co.uk/feed.xml" type="application/atom+xml"/>
+  <updated>2026-08-19T00:00:00Z</updated>
+  <author>
+    <name>Henry Oliver</name>
+    <uri>https://oliversconsulting.co.uk/about/</uri>
+  </author>
+  <entry>
+    <title>CIS Subcontractor Onboarding Automation | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-cis-subcontractor-onboarding/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-cis-subcontractor-onboarding/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Client Onboarding Without Duplicate Data | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-client-onboarding-no-duplicate-data/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-client-onboarding-no-duplicate-data/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>CRM Updates After Sales Calls: Automation Guide | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-crm-updates-after-sales-calls/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-crm-updates-after-sales-calls/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Supplier Invoice Processing Automation | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-invoice-processing-approval-control/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Purchase Order Automation and Reorder Rules | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-purchase-orders-reorder-rules/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-purchase-orders-reorder-rules/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Supplier Price List Automation for Ecommerce | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-supplier-price-lists/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Supplier Statement Reconciliation Automation | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/automate-supplier-statement-reconciliation/</id>
+    <link href="https://oliversconsulting.co.uk/articles/automate-supplier-statement-reconciliation/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Hire or Automate Ecommerce Admin Work? | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/</id>
+    <link href="https://oliversconsulting.co.uk/articles/before-hiring-ecommerce-admin/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Ecommerce AI Automation ROI Guide | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/</id>
+    <link href="https://oliversconsulting.co.uk/articles/ecommerce-ai-automation-roi/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Reduce Ecommerce Key-Person Dependency | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/ecommerce-key-person-dependency/</id>
+    <link href="https://oliversconsulting.co.uk/articles/ecommerce-key-person-dependency/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Email, Shared Folder or Form for Data Intake? | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/email-attachments-shared-folders-or-forms/</id>
+    <link href="https://oliversconsulting.co.uk/articles/email-attachments-shared-folders-or-forms/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Full Integration or Automated Hand-off? | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/</id>
+    <link href="https://oliversconsulting.co.uk/articles/integrate-systems-or-automate-hand-off/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Measure the True Cost of Manual Admin | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/manual-admin-interruption-cost/</id>
+    <link href="https://oliversconsulting.co.uk/articles/manual-admin-interruption-cost/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Ecommerce Monday Report Automation | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/monday-report-automation/</id>
+    <link href="https://oliversconsulting.co.uk/articles/monday-report-automation/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Ecommerce Product Data Quality Checks | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/</id>
+    <link href="https://oliversconsulting.co.uk/articles/product-data-errors-before-listings-go-live/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Shopify Payout Reconciliation Guide | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/</id>
+    <link href="https://oliversconsulting.co.uk/articles/reconcile-shopify-payouts-orders-fees/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Shopify Returns Automation and Review Rules | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/shopify-returns-automation-review-rules/</id>
+    <link href="https://oliversconsulting.co.uk/articles/shopify-returns-automation-review-rules/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Spreadsheet Operating Rules for Reliable Processes | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/spreadsheet-not-the-problem-operating-rules/</id>
+    <link href="https://oliversconsulting.co.uk/articles/spreadsheet-not-the-problem-operating-rules/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Wholesale Order Entry Automation for Sage and Xero | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/</id>
+    <link href="https://oliversconsulting.co.uk/articles/stop-rekeying-wholesale-orders-sage-xero/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Why Multichannel Stock Sync Fails | Olivers Consulting</title>
+    <id>https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/</id>
+    <link href="https://oliversconsulting.co.uk/articles/why-stock-sync-fails-shopify-amazon-ebay/"/>
+    <updated>2026-08-19T00:00:00Z</updated>
+  </entry>
+</feed>

@@ -6,6 +6,7 @@ on:
       - '**/*.html'
       - 'robots.txt'
       - 'sitemap.xml'
+      - 'feed.xml'
       - 'assets/og-default.jpg'
       - 'assets/images/articles/**'
       - 'assets/images/core/**'
@@ -21,6 +22,7 @@ on:
       - 'assets/seo-images.css'
       - 'docs/seo/image-manifest.csv'
       - 'docs/seo/article-ledger.csv'
+      - 'docs/seo/ai-crawler-policy.md'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
@@ -34,6 +36,7 @@ on:
       - '**/*.html'
       - 'robots.txt'
       - 'sitemap.xml'
+      - 'feed.xml'
       - 'assets/og-default.jpg'
       - 'assets/images/articles/**'
       - 'assets/images/core/**'
@@ -49,6 +52,7 @@ on:
       - 'assets/seo-images.css'
       - 'docs/seo/image-manifest.csv'
       - 'docs/seo/article-ledger.csv'
+      - 'docs/seo/ai-crawler-policy.md'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
@@ -97,6 +101,12 @@ jobs:
 
       - name: Check trust, authorship and conversion quality
         run: node scripts/check-seo-trust.mjs
+
+      - name: Check article Atom feed
+        run: node scripts/generate-seo-feed.mjs --check
+
+      - name: Check AI and answer-engine discoverability
+        run: node scripts/check-seo-ai-discoverability.mjs
 
       - name: Check performance and accessibility safeguards
         run: node scripts/check-seo-accessibility.mjs
