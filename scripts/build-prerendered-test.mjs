@@ -7,6 +7,8 @@ import { applyStructuredDataToHtml, structuredDataForRoute } from './seo-structu
 const production = process.env.OC_PRODUCTION === '1';
 const outputPath = production ? 'index.html' : 'pre-rendered-test/index.html';
 const sourceUrl = 'http://127.0.0.1:8000/new-homepage/';
+const homepageStyleHref = '/assets/homepage-performance.css?v=20260818-mobile-alignment';
+const homepageScriptSrc = '/assets/homepage.js?v=20260818-price-previews-v2';
 let capturedHtml = '';
 
 const launchOptions = { headless: true };
@@ -36,17 +38,31 @@ function prepareStaticProduction(html) {
     /(<div\b[^>]*style=["'][^"']*position:\s*fixed;\s*inset:\s*0px;[^"']*mix-blend-mode:\s*multiply;[^"']*["'])/i,
     '$1 class="oc-grain"',
   );
+
   output = output.replace(
-    /<img([^>]*src=["']\/new-homepage\/image3\.png["'][^>]*)>/i,
-    '<img$1 loading="lazy" decoding="async" fetchpriority="low">',
+    /<img\b[^>]*src=["'](?:https?:\/\/[^"']+)?(?:\/new-homepage\/|\.\/)?image3\.png["'][^>]*>/i,
+    (tag) => {
+      const dataTpl = tag.match(/\bdata-dc-tpl=["'][^"']+["']/i)?.[0] ?? '';
+      const tpl = dataTpl ? ` ${dataTpl}` : '';
+      return `<picture><source type="image/webp" srcset="/assets/images/core/henry-oliver-founder-480.webp 480w, /assets/images/core/henry-oliver-founder-746.webp 746w" sizes="(max-width: 900px) calc(100vw - 44px), 38vw"><img${tpl} src="/assets/images/core/henry-oliver-founder-746.jpg" alt="Henry Oliver, founder of Olivers Consulting" width="746" height="952" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" loading="lazy" decoding="async" fetchpriority="low"></picture>`;
+    },
+  );
+
+  output = output.replace(
+    /\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/homepage-performance\.css(?:\?[^"']*)?["']\s*\/?>(?:\s*)/gi,
+    '',
+  );
+  output = output.replace(
+    /\s*<script\s+src=["']\/assets\/homepage\.js(?:\?[^"']*)?["'][^>]*><\/script>(?:\s*)/gi,
+    '',
   );
   output = output.replace(
     /<\/head>/i,
-    '<link rel="stylesheet" href="/assets/homepage-performance.css">\n</head>',
+    `<link rel="stylesheet" href="${homepageStyleHref}">\n</head>`,
   );
   return output.replace(
     /<\/body>/i,
-    '<script src="/assets/homepage.js" defer></script>\n</body>',
+    `<script src="${homepageScriptSrc}" defer></script>\n</body>`,
   );
 }
 
@@ -128,7 +144,8 @@ try {
   // The initial response contains real rendered content but no active scripts.
   crawlerHtml = stripScripts(crawlerHtml);
   if (production) {
-    // Preserve the production canonical and indexability from the rendered homepage.
+    // Preserve production indexability and apply the same performance/image
+    // contract that is tested on the checked-in homepage.
     crawlerHtml = crawlerHtml.replace(/<meta\s+name=["']robots["'][^>]*>/gi, '');
     crawlerHtml = crawlerHtml.replace(/\sdata-oc-prerendered-(?:shell|runtime)=["'][^"']*["']/gi, '');
   } else {
@@ -142,7 +159,7 @@ try {
   let output;
   if (production) {
     // Production uses the rendered static DOM and a small, purpose-built behaviour
-    // layer. It must not restore the React runtime or the historical support chain.
+    // layer. It must not restore the React runtime or historical support chain.
     output = prepareStaticProduction(crawlerHtml);
     output = applyMetadataToHtml(output, metadataForRoute('/', output));
     output = applyStructuredDataToHtml(output, structuredDataForRoute('/', output));

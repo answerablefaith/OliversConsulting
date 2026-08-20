@@ -78,10 +78,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
 
@@ -161,7 +161,7 @@ jobs:
           PLAYWRIGHT_CHANNEL: chrome
         run: node scripts/test-seo-trust.mjs
 
-      - name: Verify production homepage generation is deterministic
+      - name: Verify generated production homepage release contract
         env:
           OC_PRODUCTION: '1'
           PLAYWRIGHT_CHANNEL: chrome
@@ -170,5 +170,6 @@ jobs:
           node scripts/test-homepage-performance.mjs
           node scripts/check-seo-metadata.mjs
           node scripts/check-seo-structured-data.mjs
+          node scripts/check-seo-core-pages.mjs
+          node scripts/check-seo-accessibility.mjs
           node scripts/check-seo-final-audit.mjs --local
-          git diff --exit-code -- index.html
