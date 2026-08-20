@@ -24,6 +24,7 @@ on:
       - 'docs/seo/image-manifest.csv'
       - 'docs/seo/article-ledger.csv'
       - 'docs/seo/ai-crawler-policy.md'
+      - 'docs/seo/search-platform-handoff.md'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
@@ -55,6 +56,7 @@ on:
       - 'docs/seo/image-manifest.csv'
       - 'docs/seo/article-ledger.csv'
       - 'docs/seo/ai-crawler-policy.md'
+      - 'docs/seo/search-platform-handoff.md'
       - 'scripts/image-assignments.mjs'
       - 'scripts/*seo*.mjs'
       - 'scripts/*image*.mjs'
@@ -109,6 +111,9 @@ jobs:
 
       - name: Check AI and answer-engine discoverability
         run: node scripts/check-seo-ai-discoverability.mjs
+
+      - name: Check search-platform handoff and live sitemap
+        run: node scripts/check-seo-platform-handoff.mjs --live
 
       - name: Check performance and accessibility safeguards
         run: node scripts/check-seo-accessibility.mjs
