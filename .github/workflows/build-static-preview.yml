@@ -1,17 +1,10 @@
 name: Build static homepage preview
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/capture-static-preview.mjs'
-      - 'scripts/test-static-preview.mjs'
-      - 'static-preview/behavior.js'
-      - '.github/workflows/build-static-preview.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   capture:
@@ -52,14 +45,7 @@ jobs:
       - name: Test static interactions and animations
         run: node scripts/test-static-preview.mjs
 
-      - name: Commit generated preview
+      - name: Confirm preview remains read-only
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add static-preview/index.html
-          if git diff --cached --quiet; then
-            echo 'Static preview already up to date.'
-          else
-            git commit -m 'Generate standalone static homepage preview'
-            git push
-          fi
+          git diff -- static-preview/index.html || true
+          echo 'Static preview is a manual parity tool only; this workflow never commits or pushes generated output.'
