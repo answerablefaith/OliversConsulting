@@ -44,7 +44,9 @@ Because those two Gemini uses are not separately controllable, the site keeps `G
 
 ## `llms.txt` decision
 
-No `llms.txt` is added in Milestone 12. It remains experimental and low priority. Google's current generative-AI Search guidance explicitly says Google Search does not use `llms.txt` and that adding one neither helps nor hurts Google Search visibility or rankings. If another provider later documents a concrete use that benefits this site, it can be reconsidered without describing it as a ranking factor or guarantee.
+An `llms.txt` file already existed before Milestone 12. It is retained only as an experimental convenience index, not as a ranking tactic or a separate source of claims. Milestone 12 removes duplicated proof/biography/article copy from that file and limits it to canonical page/discovery links plus a brief service description already visible on the normal site.
+
+Google's current generative-AI Search guidance says Google Search does not use `llms.txt` and that maintaining one neither helps nor hurts Google Search visibility or rankings. The validator therefore treats the file as optional/experimental and requires it not to carry factual claims that are intentionally absent from the human-visible canonical pages.
 
 ## Human-visible and machine-readable content
 
@@ -52,7 +54,7 @@ No `llms.txt` is added in Milestone 12. It remains experimental and low priority
 - The About page visibly identifies Henry Oliver and explains authorship, sourcing and corrections.
 - Article pages visibly show Henry Oliver as author plus publication/update dates, and their managed JSON-LD contains the corresponding `Person` and `Article` nodes.
 - Services content is visible in HTML and its managed `WebPage`/`Organization` graph uses the same canonical entity name.
-- No separate text is served only to AI crawlers.
+- No separate factual claim is intentionally served only to AI crawlers.
 
 ## Primary guidance checked
 
@@ -60,6 +62,7 @@ No `llms.txt` is added in Milestone 12. It remains experimental and low priority
 - Anthropic crawlers: https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
 - Google common crawlers / Google-Extended: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
 - Google generative-AI Search guidance: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- Google sitemap/feed guidance: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 - Bing crawler guidance: https://www.bing.com/webmasters/help/how-to-report-an-issue-with-bingbot-25c19802
 - Bing webmaster guidelines: https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a
 - Perplexity robots guidance: https://www.perplexity.ai/help-center/en/articles/10354969-how-does-perplexity-follow-robots-txt

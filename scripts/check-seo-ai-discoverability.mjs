@@ -1,5 +1,4 @@
-import { access, readFile } from 'node:fs/promises';
-import { constants } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import { fileForRoute, siteMetadata } from './seo-metadata.mjs';
 import { visibleText } from './seo-structured-data.mjs';
 import { buildAtomFeed } from './generate-seo-feed.mjs';
@@ -7,7 +6,7 @@ import { buildAtomFeed } from './generate-seo-feed.mjs';
 const failures = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
 
-const [robots, sitemap, hub, about, services, policy, committedFeed] = await Promise.all([
+const [robots, sitemap, hub, about, services, policy, committedFeed, llms] = await Promise.all([
   readFile('robots.txt', 'utf8'),
   readFile('sitemap.xml', 'utf8'),
   readFile('articles/index.html', 'utf8'),
@@ -15,6 +14,7 @@ const [robots, sitemap, hub, about, services, policy, committedFeed] = await Pro
   readFile('services/index.html', 'utf8'),
   readFile('docs/seo/ai-crawler-policy.md', 'utf8'),
   readFile('feed.xml', 'utf8'),
+  readFile('llms.txt', 'utf8'),
 ]);
 
 const articleRoutes = [...sitemap.matchAll(/<loc>https:\/\/oliversconsulting\.co\.uk(\/articles\/[^<]+\/)<\/loc>/g)]
@@ -25,7 +25,8 @@ check(new Set(articleRoutes).size === articleRoutes.length, 'Article sitemap rou
 
 const groups = robots.split(/\n\s*\n/).map((block) => block.trim()).filter(Boolean);
 const directivesFor = (agent) => {
-  const block = groups.find((candidate) => new RegExp(`^User-agent:\\s*${agent.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`, 'im').test(candidate));
+  const escaped = agent.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const block = groups.find((candidate) => new RegExp(`^User-agent:\\s*${escaped}\\s*$`, 'im').test(candidate));
   return block ? block.split(/\r?\n/).map((line) => line.trim()).filter((line) => line && !line.startsWith('#')) : [];
 };
 const allowsRoot = (agent) => directivesFor(agent).some((line) => /^Allow:\s*\/$/i.test(line));
@@ -42,7 +43,7 @@ for (const agent of ['GPTBot', 'ClaudeBot']) {
   check(blocksRoot(agent), `${agent} is not blocked as a separable training crawler.`);
   check(!allowsRoot(agent), `${agent} has conflicting root Allow and Disallow directives.`);
 }
-check(allowsRoot('\\*') || allowsRoot('*'), 'Wildcard crawler group is not allowed.');
+check(allowsRoot('*'), 'Wildcard crawler group is not allowed.');
 check(robots.includes(`Sitemap: ${siteMetadata.origin}/sitemap.xml`), 'Canonical XML sitemap is not advertised in robots.txt.');
 check(robots.includes(`Sitemap: ${siteMetadata.origin}/feed.xml`), 'Atom feed is not advertised in robots.txt.');
 
@@ -86,12 +87,17 @@ for (const required of [
   'PerplexityBot', 'Google-Extended', 'Googlebot', 'Bingbot', 'llms.txt', 'feed.xml',
 ]) check(policy.includes(required), `Crawler policy does not document ${required}.`);
 
-let llmsTxtPresent = true;
-try { await access('llms.txt', constants.F_OK); } catch { llmsTxtPresent = false; }
-check(!llmsTxtPresent, 'llms.txt was added despite the recorded Milestone 12 decision to keep it experimental/low priority.');
+for (const url of ['/', '/services/', '/about/', '/contact/', '/articles/', '/feed.xml', '/sitemap.xml']) {
+  check(llms.includes(`${siteMetadata.origin}${url}`), `llms.txt does not point to canonical ${url}.`);
+}
+check(llms.includes('Experimental convenience index only'), 'llms.txt does not declare its experimental/non-authoritative role.');
+for (const uniqueClaim of ['11 years', '8 hours', '2 minutes', 'Key proof point', '£15k']) {
+  check(!llms.includes(uniqueClaim), `llms.txt contains a duplicated or AI-only proof/biography claim: ${uniqueClaim}.`);
+}
+check(!/\/articles\/[^)\s]+\//.test(llms), 'llms.txt duplicates individual article URLs instead of delegating discovery to the canonical hub/feed.');
 
 if (failures.length) {
   throw new Error(`AI/answer-engine discoverability checks failed:\n- ${failures.join('\n- ')}`);
 }
 
-console.log(`AI_DISCOVERABILITY_CHECK_OK|articles=${articleRoutes.length}|feed_entries=${entries.length}|feed_updated=${updated.slice(0, 10)}|indexing_agents=5|user_fetch_agents=2|mixed_google=1|training_agents_blocked=2|raw_html_routes=${rawHtmlRoutes}|llms_txt=absent`);
+console.log(`AI_DISCOVERABILITY_CHECK_OK|articles=${articleRoutes.length}|feed_entries=${entries.length}|feed_updated=${updated.slice(0, 10)}|indexing_agents=5|user_fetch_agents=2|mixed_google=1|training_agents_blocked=2|raw_html_routes=${rawHtmlRoutes}|llms_txt=experimental_index`);
