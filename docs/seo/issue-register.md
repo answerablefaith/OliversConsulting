@@ -1,8 +1,9 @@
 # SEO issue register
 
 Baseline date: 2026-08-19
+Final programme audit: 2026-08-20
 
-Detailed issue history through Milestone 9 is preserved in `docs/seo/history/issue-register-through-m9.md`. This file is the current authoritative issue state.
+Detailed issue history through Milestone 9 is preserved in `docs/seo/history/issue-register-through-m9.md`. This file is the current authoritative release issue state.
 
 ## P0 — prevents access, building, crawling or indexation
 
@@ -27,12 +28,12 @@ None confirmed.
 ### SEO-003 — Articles had no content images
 - Status: DONE_VERIFIED
 - Milestones: 5 and 8
-- Resolution: all 20 articles use relevant responsive images with dimensions, alt text, social metadata and ImageObject data.
+- Resolution: all 20 articles use relevant responsive images with dimensions/reservation, alt text, social metadata and ImageObject data.
 
 ### SEO-004 — Raw image collection unoptimised/publicly deployable
 - Status: DONE_VERIFIED
 - Milestone: 5
-- Resolution: 49 originals accounted for; 20 selected sources generated into 60 stripped derivatives; originals preserved and not referenced by production HTML.
+- Resolution: 49 originals accounted for; 20 selected sources generated into 60 stripped article derivatives; originals preserved and not referenced by production article HTML.
 
 ### SEO-005 — Homepage entity schema absent
 - Status: DONE_VERIFIED
@@ -49,7 +50,7 @@ None confirmed.
 - Milestones: 7–9
 - Resolution: one intent/overlap guard per article, five clusters, five completed batches and a task-led `/articles/` hub exposing all 20 routes with commercial paths and responsive keyboard navigation.
 
-### SEO-015 — Trust and policy wording did not fully match current implementation
+### SEO-015 — Trust and policy wording did not fully match implementation
 - Status: DONE_VERIFIED
 - Milestone: 10
 - Resolution: verifiable operator/authorship/service-boundary/privacy/cookie/terms improvements; unsupported ICO placeholder removed; canonical legal navigation and meaningful `lastmod` dates updated.
@@ -67,17 +68,31 @@ None confirmed.
 ### SEO-018 — Search-platform submission and measurement handoff absent
 - Status: DONE_VERIFIED
 - Milestone: 13
-- Evidence before fix: no durable Search Console/Bing setup instructions, no defined dashboard, no owner-action boundary and no automated guard against fake verification/tracking additions.
-- Resolution: added `docs/seo/search-platform-handoff.md` with Google/Bing property/verification/sitemap steps, exact submission targets, eight required measurement definitions, a manual qualified-enquiry path, post-launch checklist and owner/code responsibility table; added `scripts/check-seo-platform-handoff.mjs` with no-token/no-tracker/runtime/live accessibility checks.
-- Verification: `PLATFORM_HANDOFF_CHECK_OK|sitemap=28|dashboard_metrics=8|owner_actions=7|tracking=absent|verification_tokens=absent`; `LIVE_PLATFORM_HANDOFF_CHECK_OK|homepage_status=200|robots_status=200|sitemap_status=200|live_sitemap_urls=25`; full run `32340365912` passed.
+- Resolution: Google/Bing handoff, eight-metric dashboard, owner/code boundary and no-token/no-tracker/live sitemap guard added.
 
-## P3 — optional refinement, external action or measurement gap
+### SEO-021 — Final release workflow used unsupported runtime and could overwrite the verified homepage
+- Status: DONE_VERIFIED
+- Milestone: 14
+- Evidence: Node workflows still used Node 20; the historical `/new-homepage/` promotion path was capable of regenerating an older homepage. Final release tests proved that generated output would revert the Milestone 6 search-intent H1, core-page navigation and customer-problem copy.
+- Risk: an owner-approved merge could be followed by automation that replaced validated SEO content with historical source output.
+- Resolution: Node workflows now use Node 24 with `actions/checkout@v6` and `actions/setup-node@v6`; the historical homepage builder is manual/read-only/noindex-parity-only; checked-in `index.html` is the release source; `scripts/check-seo-release-workflows.mjs` prevents legacy auto-promotion from returning.
+- Verification: `RELEASE_WORKFLOW_CHECK_OK|node=24|checkout=6|setup_node=6|legacy_promotion=disabled|parity=manual_noindex`; final run `32342660021` passed.
+
+### SEO-022 — Broken Government Data Quality Framework citation
+- Status: DONE_VERIFIED
+- Milestone: 14
+- Evidence: final external-link audit found the old GOV.UK URL in `/articles/monday-report-automation/` returned 404.
+- Resolution: link updated to the current GOV.UK Government Data Quality Framework publication. Article `dateModified` was not changed for link-only maintenance.
+- Verification: final external audit reported `explicit_broken=0` across 50 unique external HTTP(S) links.
+
+## P3 — optional refinement, external action or accepted tooling
 
 ### SEO-007 — Preview and test routes remain publicly accessible
-- Status: OPEN
-- Milestone: 2 / reassess at 14
-- Evidence: nine preview/test routes are public, excluded from sitemap and `noindex`.
-- Risk: avoidable crawl surface; current workflow tooling still depends on them.
+- Status: DONE_VERIFIED_RETAINED
+- Milestone: 2 / final reassessment at 14
+- Evidence: nine preview/test routes remain public, all `noindex` and excluded from the sitemap. Some remain part of parity/static-preview/debug tooling.
+- Final decision: retain rather than destructively delete unknown tooling surfaces during release. The final audit confirms no indexable page links into them; release workflow checks confirm the historical homepage parity path is manual/read-only and cannot promote itself to production.
+- Residual risk: a small non-indexable crawl surface remains public by design.
 
 ### SEO-008 — robots.txt formatting debt
 - Status: DONE_VERIFIED
@@ -85,16 +100,15 @@ None confirmed.
 - Resolution: canonical crawler/sitemap directives are explicit and deterministic checks cover them.
 
 ### SEO-009 — Core Web Vitals field baseline unavailable
-- Status: OPEN_EXTERNAL
-- Milestone: 11 / handoff prepared at 13 / reassess at 14
-- Evidence: synthetic Playwright before/after evidence exists, but no connected Search Console/CrUX/RUM field dataset is available. Milestone 13 now documents how Search Console field data should be recorded after owner verification/deployment.
-- Risk: real-user LCP/INP/CLS remain unknown; synthetic results cannot establish field CWV status.
-- Current handling: do not claim field CWV or INP. Use synthetic CI only for regression evidence; record Search Console/CrUX field metrics when genuinely available.
+- Status: OPEN_EXTERNAL_NON_BLOCKING
+- Milestone: 11 / handoff at 13 / final reassessment at 14
+- Evidence: controlled synthetic before/after and final regression evidence exists, but no connected Search Console/CrUX/RUM field dataset exists.
+- Final handling: does not block code release. Do not claim field CWV or INP. Record real Search Console/CrUX results when genuinely available after verification/deployment.
 
 ### SEO-010 — No site-owned custom 404
 - Status: DONE_VERIFIED
 - Milestone: 2
-- Resolution: branded `404.html` with `noindex` and recovery links; live replacement awaits owner-approved deployment.
+- Resolution: branded `404.html` with `noindex` and recovery links. Final live audit confirms missing production route returns 404; branch custom 404 is ready for deployment.
 
 ### SEO-011 — Metadata generation inconsistent
 - Status: DONE_VERIFIED
@@ -109,22 +123,25 @@ None confirmed.
 ### SEO-013 — Core commercial intents confined to homepage fragments
 - Status: DONE_VERIFIED
 - Milestone: 6
-- Resolution: dedicated Services/About/Contact routes with distinct intents, metadata, schema and CTAs.
+- Resolution: dedicated Services/About/Contact routes plus verified homepage search intent, metadata, schema and CTAs.
 
-### SEO-019 — Search-platform account verification/submission not yet owner-completed
-- Status: OPEN_EXTERNAL
+### SEO-019 — Search-platform account verification/submission not owner-completed
+- Status: OPEN_EXTERNAL_NON_BLOCKING
 - Milestone: 13 / owner action after approved deployment
-- Evidence: no real Google/Bing verification token is in the repository and no account connection is claimed. The handoff is ready, but account/DNS actions require the site owner.
-- Risk: without verified webmaster properties, the owner cannot yet use platform indexing/performance reports for the new release.
-- Current handling: follow `docs/seo/search-platform-handoff.md` after deployment. Do not add guessed tokens or trackers.
+- Evidence: no real Google/Bing verification token is committed and no account connection is claimed.
+- Final handling: follow `docs/seo/search-platform-handoff.md` after deployment. Never add guessed verification values.
 
-### SEO-020 — Live sitemap is still the pre-draft release
-- Status: OPEN_EXPECTED_DEPLOYMENT
-- Milestone: 13 / resolve through owner-approved deployment and verify at 14
-- Evidence: accepted M13 run measured production homepage/robots/sitemap all at 200, but the live sitemap contained 25 URLs while the SEO branch contains 28 intended canonical URLs.
-- Risk: branch-only core pages/policies/discovery work cannot be treated as live until deployment.
-- Current handling: no defect claim against the branch; verify production count after owner-approved release.
+### SEO-020 — Live sitemap remains pre-draft release
+- Status: OPEN_EXPECTED_DEPLOYMENT_NON_BLOCKING
+- Milestone: 13 / final reassessment at 14
+- Evidence: final live audit measured 25 sitemap URLs, all 25 at 200 and self-canonical, including 20 articles. The branch contains 28 intended canonical URLs.
+- Final handling: expected until PR #26 is owner-approved and deployed. After deployment, confirm the live sitemap reflects the released branch and inspect representative URLs.
 
-## Current next issue focus
+## Final issue conclusion
 
-Milestone 14 must run the complete final audit, reassess the nine public `noindex` preview/test routes, verify unresolved external/deployment items are accurately documented, and prepare release readiness without merging or deploying automatically.
+- Unresolved P0: **0**
+- Confirmed unresolved P1: **0**
+- Open P2: **0**
+- Remaining open items are external owner/field-data/deployment actions or controlled noindex tooling and do not block repository release readiness.
+
+See `docs/seo/final-release-audit.md` for the complete final evidence.
