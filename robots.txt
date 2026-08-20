@@ -1,5 +1,42 @@
+# Conventional search/indexing crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Answer/search discovery crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# User-requested retrieval agents
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Google-Extended covers both Gemini grounding and future Gemini model training.
+# Explicit Allow preserves the site's existing open posture for this mixed-use token.
+User-agent: Google-Extended
+Allow: /
+
+# Separable model-training crawlers are not required for answer/search discoverability.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Other standards-compliant public web crawlers
 User-agent: *
 Allow: /
 
 Sitemap: https://oliversconsulting.co.uk/sitemap.xml
-# Article discovery checked 2026-08-19
+Sitemap: https://oliversconsulting.co.uk/feed.xml

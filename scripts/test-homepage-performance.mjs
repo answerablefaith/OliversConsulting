@@ -13,16 +13,20 @@ check(html.includes('data-oc-static-production="true"'), 'Static production mark
 check(!html.includes('id="oc-runtime-handoff"'), 'Legacy document.write runtime handoff remains.');
 check(!html.includes('cdn.jsdelivr.net'), 'Homepage still loads chained historical support scripts.');
 check(!html.includes('unpkg.com/react'), 'Homepage still loads React for static markup.');
+const homepageScriptVersion = html.match(/src="\/assets\/homepage\.js\?v=([^"]+)"/)?.[1];
+const optimizerScriptVersion = (await readFile('scripts/optimize-homepage.mjs', 'utf8'))
+  .match(/\/assets\/homepage\.js\?v=([^"']+)/)?.[1];
+check(Boolean(homepageScriptVersion), 'Optimized homepage behaviour is not loaded with a cache key.');
 check(
-  html.includes('src="/assets/homepage.js?v=20260818-smooth-hours"'),
-  'Optimized homepage behaviour is not loaded with the smooth-hours cache key.',
+  homepageScriptVersion === optimizerScriptVersion,
+  'Homepage behaviour cache key does not match scripts/optimize-homepage.mjs.',
 );
 check(
   html.includes('href="/assets/homepage-performance.css?v=20260818-mobile-alignment"'),
   'Performance stylesheet is not loaded with the mobile-alignment cache key.',
 );
 check(html.includes('class="oc-grain"'), 'The grain overlay is not marked for mobile removal.');
-check(/image3\.png[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not lazy-loaded.');
+check(/henry-oliver-founder-746\.jpg[^>]*width="746"[^>]*height="952"[^>]*loading="lazy"/.test(html), 'Below-the-fold founder image is not dimensioned and lazy-loaded.');
 check(!behaviour.includes('MutationObserver'), 'Homepage behaviour contains a broad mutation observer.');
 check(!behaviour.includes('setInterval'), 'Homepage behaviour contains a perpetual interval.');
 check(

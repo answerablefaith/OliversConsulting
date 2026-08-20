@@ -12,6 +12,13 @@
     document.head.appendChild(localFonts);
   }
 
+  if (!document.getElementById('oc-m11-static-style')) {
+    var m11Style = document.createElement('style');
+    m11Style.id = 'oc-m11-static-style';
+    m11Style.textContent = '.oc-site-brand img{aspect-ratio:930/264}.eyebrow,.read{color:#805315!important}.meta{color:#685f50!important}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #805315!important;outline-offset:3px!important}.oc-skip-link{position:fixed;left:16px;top:-80px;z-index:20000;padding:10px 14px;border-radius:7px;background:#17130b;color:#fff;font-weight:800;text-decoration:none}.oc-skip-link:focus{top:12px}';
+    document.head.appendChild(m11Style);
+  }
+
   try { localStorage.removeItem('oc_font_privacy_choice'); } catch (e) {}
 
   function cleanOldControls(){
@@ -66,6 +73,29 @@
       if (parent && parent.closest('script,style,noscript,textarea')) continue;
       node.nodeValue = node.nodeValue.replace(/\u2014/g, '-');
     }
+  }
+
+  function ensureSkipLink(){
+    var main = document.querySelector('main');
+    if (!main) return;
+    if (!main.id) main.id = 'main';
+    if (document.querySelector('.oc-skip-link')) return;
+    var skip = document.createElement('a');
+    skip.className = 'oc-skip-link';
+    skip.href = '#' + main.id;
+    skip.textContent = 'Skip to content';
+    document.body.insertBefore(skip, document.body.firstChild);
+  }
+
+  function ensureImageDimensions(){
+    Array.prototype.slice.call(document.querySelectorAll('img[src*="oc-logo.png"]')).forEach(function(image){
+      if (!image.hasAttribute('width')) image.setAttribute('width', '930');
+      if (!image.hasAttribute('height')) image.setAttribute('height', '264');
+    });
+    Array.prototype.slice.call(document.querySelectorAll('#oc-site-footer img[src$="favicon.svg"]')).forEach(function(image){
+      if (!image.hasAttribute('width')) image.setAttribute('width', '44');
+      if (!image.hasAttribute('height')) image.setAttribute('height', '44');
+    });
   }
 
   function ensureFounderCaption(){
@@ -257,6 +287,8 @@
     cleanOldControls();
     cleanHeadingPunctuation();
     cleanEmDashes();
+    ensureSkipLink();
+    ensureImageDimensions();
     ensureFounderCaption();
     ensureEmailLabel();
     ensureMobileHoursDedup();

@@ -1,58 +1,39 @@
-name: Promote no-loader homepage
+name: Build noindex homepage parity test
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/build-prerendered-test.mjs'
-      - 'scripts/test-homepage-performance.mjs'
-      - 'assets/homepage.js'
-      - 'assets/homepage-performance.css'
-      - '.github/workflows/build-prerendered-test.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  promote:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install Playwright
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
 
-      - name: Start current live homepage locally
+      - name: Start local site
         run: |
           python3 -m http.server 8000 >/tmp/oc-homepage-server.log 2>&1 &
-          echo $! > /tmp/oc-homepage-server.pid
           sleep 2
 
-      - name: Generate production no-loader homepage
-        env:
-          OC_PRODUCTION: '1'
+      - name: Generate noindex parity page only
         run: node scripts/build-prerendered-test.mjs
 
-      - name: Test homepage performance safeguards
-        run: node scripts/test-homepage-performance.mjs
-
-      - name: Commit production homepage
+      - name: Verify parity output cannot be indexed or promoted
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html
-          if git diff --cached --quiet; then
-            echo 'Production homepage already up to date.'
-          else
-            git commit -m 'Replace homepage with no-loader crawler-ready build'
-            git push
-          fi
+          test -s pre-rendered-test/index.html
+          grep -q 'name="robots" content="noindex,nofollow"' pre-rendered-test/index.html
+          grep -q 'id="oc-runtime-handoff"' pre-rendered-test/index.html
+          ! grep -q 'data-oc-static-production="true"' pre-rendered-test/index.html

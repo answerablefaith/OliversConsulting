@@ -4,6 +4,43 @@
   opacity: .025 !important;
 }
 
+/* Milestone 11: keyboard focus, skip navigation and stable intrinsic image space. */
+.oc-skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 20000;
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: #17130b;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+.oc-skip-link:focus { top: 12px; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #805315 !important;
+  outline-offset: 3px !important;
+}
+.oc-site-brand img { aspect-ratio: 930 / 264; }
+#oc-site-footer img[src$="favicon.svg"] { aspect-ratio: 1 / 1; }
+
+/* Preserve the warm brand palette while meeting normal-text contrast on light surfaces. */
+body [style*="color: rgb(181, 121, 31)"],
+body [style*="color:#b5791f"],
+body [style*="color: #b5791f"] {
+  color: #805315 !important;
+}
+body [style*="color: rgb(164, 157, 139)"],
+body [style*="color: rgb(138, 130, 113)"],
+body [style*="color:#8a8271"],
+body [style*="color: #8a8271"] {
+  color: #685f50 !important;
+}
+
 .oc-animation-paused,
 .oc-animation-paused * {
   animation-play-state: paused !important;
@@ -54,13 +91,13 @@ html.oc-page-hidden *::after {
 
 .scp3 .oc-service-tier-wrap:hover .oc-service-tier,
 .scp3 .oc-service-tier-wrap:focus-within .oc-service-tier {
-  border-color: #b5791f !important;
+  border-color: #805315 !important;
   color: #17130b !important;
   background: #efe4d1 !important;
 }
 
 .scp3 .oc-service-price-preview:focus-visible {
-  outline: 2px solid #b5791f !important;
+  outline: 3px solid #805315 !important;
   outline-offset: 3px !important;
   border-radius: 999px !important;
 }

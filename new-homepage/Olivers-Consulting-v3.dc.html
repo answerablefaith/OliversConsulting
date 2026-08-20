@@ -18,6 +18,8 @@
     html=html.replace(/<link\b[^>]*href=["']\/assets\/fonts\.css["'][^>]*>\s*/gi,'');
     html=html.replace('</head>','<script src="/assets/privacy-fonts.js"><\/script></head>');
     html=html.replaceAll('src="./support.js"','src="/new-homepage/support.js"');
+    html=html.replace(/https:\/\/media\.licdn\.com\/[^"']+/g,'/new-homepage/image3.png');
+    html=html.replaceAll('./Henry Oliver - Professional Photo.png','/new-homepage/image3.png');
     html=html.replace('Then I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.','I ran my own ecommerce and wholesale business - feeling every one of those manual hours myself.');
     document.open();
     document.write(html);

@@ -1,0 +1,174 @@
+name: SEO static checks
+
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'feed.xml'
+      - 'llms.txt'
+      - 'assets/og-default.jpg'
+      - 'assets/images/articles/**'
+      - 'assets/images/core/**'
+      - 'assets/fonts.css'
+      - 'assets/homepage.js'
+      - 'assets/homepage-performance.css'
+      - 'assets/shared-header.js'
+      - 'assets/shared-header.css'
+      - 'assets/privacy-fonts.js'
+      - 'assets/mobile-fixes.css'
+      - 'assets/oc-site.css'
+      - 'assets/core-pages.css'
+      - 'assets/seo-images.css'
+      - 'docs/seo/*.md'
+      - 'docs/seo/image-manifest.csv'
+      - 'docs/seo/article-ledger.csv'
+      - 'docs/seo/page-inventory.csv'
+      - 'scripts/build-prerendered-test.mjs'
+      - 'scripts/image-assignments.mjs'
+      - 'scripts/*seo*.mjs'
+      - 'scripts/*image*.mjs'
+      - 'scripts/test-homepage-performance.mjs'
+      - '.github/workflows/build-prerendered-test.yml'
+      - '.github/workflows/build-static-preview.yml'
+      - '.github/workflows/seo-static-checks.yml'
+  push:
+    branches:
+      - main
+      - seo/organic-ai-discoverability
+    paths:
+      - '**/*.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'feed.xml'
+      - 'llms.txt'
+      - 'assets/og-default.jpg'
+      - 'assets/images/articles/**'
+      - 'assets/images/core/**'
+      - 'assets/fonts.css'
+      - 'assets/homepage.js'
+      - 'assets/homepage-performance.css'
+      - 'assets/shared-header.js'
+      - 'assets/shared-header.css'
+      - 'assets/privacy-fonts.js'
+      - 'assets/mobile-fixes.css'
+      - 'assets/oc-site.css'
+      - 'assets/core-pages.css'
+      - 'assets/seo-images.css'
+      - 'docs/seo/*.md'
+      - 'docs/seo/image-manifest.csv'
+      - 'docs/seo/article-ledger.csv'
+      - 'docs/seo/page-inventory.csv'
+      - 'scripts/build-prerendered-test.mjs'
+      - 'scripts/image-assignments.mjs'
+      - 'scripts/*seo*.mjs'
+      - 'scripts/*image*.mjs'
+      - 'scripts/test-homepage-performance.mjs'
+      - '.github/workflows/build-prerendered-test.yml'
+      - '.github/workflows/build-static-preview.yml'
+      - '.github/workflows/seo-static-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Check crawlability and indexation
+        run: node scripts/check-seo-indexation.mjs
+
+      - name: Check metadata and social presentation
+        run: node scripts/check-seo-metadata.mjs
+
+      - name: Check structured data and entity clarity
+        run: node scripts/check-seo-structured-data.mjs
+
+      - name: Check image inventory and published derivatives
+        run: node scripts/check-seo-images.mjs
+
+      - name: Check core commercial pages
+        run: node scripts/check-seo-core-pages.mjs
+
+      - name: Check content architecture and article ledger
+        run: node scripts/check-seo-content-map.mjs
+
+      - name: Check completed article optimisation batches
+        run: node scripts/check-seo-article-batch.mjs
+
+      - name: Check internal linking, hubs and navigation
+        run: node scripts/check-seo-internal-linking.mjs
+
+      - name: Check trust, authorship and conversion quality
+        run: node scripts/check-seo-trust.mjs
+
+      - name: Check article Atom feed
+        run: node scripts/generate-seo-feed.mjs --check
+
+      - name: Check AI and answer-engine discoverability
+        run: node scripts/check-seo-ai-discoverability.mjs
+
+      - name: Check search-platform handoff and live sitemap
+        run: node scripts/check-seo-platform-handoff.mjs --live
+
+      - name: Check release workflow safety
+        run: node scripts/check-seo-release-workflows.mjs
+
+      - name: Run final static, external-link and live release audit
+        run: node scripts/check-seo-final-audit.mjs --external --live
+
+      - name: Check performance and accessibility safeguards
+        run: node scripts/check-seo-accessibility.mjs
+
+      - name: Check homepage safeguards
+        run: node scripts/test-homepage-performance.mjs
+
+      - name: Install browser test library
+        run: npm install --no-save playwright
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 8000 >/tmp/oc-seo-server.log 2>&1 &
+          sleep 2
+
+      - name: Check all local release routes
+        run: node scripts/check-seo-final-audit.mjs --local
+
+      - name: Measure representative performance and accessibility
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/audit-seo-performance-a11y.mjs
+
+      - name: Check article rendering on mobile and desktop
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/test-seo-article-batch.mjs
+
+      - name: Check article hub and navigation rendering
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/test-seo-navigation.mjs
+
+      - name: Check trust pages and conversion routes
+        env:
+          PLAYWRIGHT_CHANNEL: chrome
+        run: node scripts/test-seo-trust.mjs
+
+      - name: Verify checked-in production homepage release contract
+        run: |
+          node scripts/test-homepage-performance.mjs
+          node scripts/check-seo-metadata.mjs
+          node scripts/check-seo-structured-data.mjs
+          node scripts/check-seo-core-pages.mjs
+          node scripts/check-seo-accessibility.mjs
+          node scripts/check-seo-final-audit.mjs --local

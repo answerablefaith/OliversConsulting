@@ -17,6 +17,42 @@
       all('section,header').find((element) => text(element).includes(needle)) || null;
   }
 
+  function initAccessibilityStructure() {
+    const hero = document.querySelector('header#top');
+    const landmark = hero?.parentElement || null;
+    if (landmark) {
+      landmark.id = 'main';
+      landmark.setAttribute('role', 'main');
+      landmark.setAttribute('aria-label', 'Main content');
+      landmark.setAttribute('tabindex', '-1');
+    }
+
+    if (!document.querySelector('.oc-skip-link') && landmark) {
+      const skip = document.createElement('a');
+      skip.className = 'oc-skip-link';
+      skip.href = '#main';
+      skip.textContent = 'Skip to content';
+      document.body.insertBefore(skip, document.body.firstChild);
+    }
+
+    const headerLogo = document.querySelector('.oc-site-brand img[src*="oc-logo.png"]');
+    if (headerLogo) {
+      headerLogo.setAttribute('width', '930');
+      headerLogo.setAttribute('height', '264');
+    }
+    const footerImage = document.querySelector('#oc-site-footer img');
+    if (footerImage) {
+      const src = footerImage.getAttribute('src') || '';
+      if (src.includes('favicon.svg')) {
+        footerImage.setAttribute('width', '44');
+        footerImage.setAttribute('height', '44');
+      } else if (src.includes('oc-logo.png')) {
+        footerImage.setAttribute('width', '930');
+        footerImage.setAttribute('height', '264');
+      }
+    }
+  }
+
   function initHeroCalculator() {
     const slider = all('input[type="range"]').find(
       (element) => String(element.min) === '2' && String(element.max) === '20',
@@ -25,6 +61,13 @@
     slider.dataset.ocHomepageBound = '1';
 
     const hero = slider.closest('header#top') || slider.closest('header') || document;
+    const hoursHeading = hero.querySelector('.oc-hours-control-heading > span:first-child');
+    if (hoursHeading) {
+      hoursHeading.id = hoursHeading.id || 'oc-hours-admin-label';
+      slider.setAttribute('aria-labelledby', hoursHeading.id);
+    } else {
+      slider.setAttribute('aria-label', 'Hours a week lost to admin');
+    }
     const proof = hero.querySelector('.oc-proof-card');
     const hoursLabel = hero.querySelector('.oc-hours-control-heading > span:last-child');
     const hoursNumber = hoursLabel?.firstElementChild || null;
@@ -195,6 +238,8 @@
     );
     const button = section.querySelector('button');
     if (!scrubber || !button) return;
+    scrubber.setAttribute('aria-label', 'Order automation progress');
+    button.setAttribute('aria-label', 'Play order automation demo');
 
     const labels = ['Read PDF', 'Match SKUs', 'Invoice', 'Sync stock', 'Report'];
     const nodes = labels.map((label) => {
@@ -252,6 +297,10 @@
         if (node.labelElement) node.labelElement.style.color = done ? '#eee6d5' : '#7f978a';
       });
       button.textContent = playing ? '❚❚' : '▶';
+      button.setAttribute(
+        'aria-label',
+        playing ? 'Pause order automation demo' : value >= 100 ? 'Replay order automation demo' : 'Play order automation demo',
+      );
     }
 
     function stop() {
@@ -379,9 +428,9 @@
         .oc-service-tier-wrap{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap}
         .oc-service-price-preview{display:inline-flex;align-items:center;gap:5px;color:#1e3b2f;font-family:'Saira Condensed',sans-serif;font-size:16px;font-weight:800;line-height:1;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(30,59,47,.35);padding:4px 0 3px;transition:color .16s,border-color .16s,transform .16s}
         .oc-service-price-preview::after{content:'→';font-size:14px;line-height:1;transition:transform .16s}
-        .oc-service-price-preview:hover,.oc-service-price-preview:focus-visible{color:#b5791f;border-color:#b5791f}
+        .oc-service-price-preview:hover,.oc-service-price-preview:focus-visible{color:#805315;border-color:#805315}
         .oc-service-price-preview:hover::after,.oc-service-price-preview:focus-visible::after{transform:translateX(2px)}
-        .oc-service-price-preview:focus-visible{outline:2px solid #b5791f;outline-offset:4px;border-radius:2px}
+        .oc-service-price-preview:focus-visible{outline:3px solid #805315;outline-offset:4px;border-radius:2px}
         @media(max-width:900px){
           .oc-service-tier-wrap{justify-content:flex-start!important;gap:12px!important}
           .oc-service-price-preview{font-size:15px}
@@ -411,6 +460,7 @@
   }
 
   function boot() {
+    initAccessibilityStructure();
     initHeroCalculator();
     initSwitchPipeline();
     initScrollProgress();
