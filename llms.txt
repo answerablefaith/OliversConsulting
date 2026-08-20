@@ -2,7 +2,7 @@
 
 > Experimental convenience index only. The canonical website HTML is the source of truth for service scope, authorship, article text, dates and business claims. This file is not a ranking signal or a promise of AI visibility.
 
-Olivers Consulting provides operational automation services for UK ecommerce and wholesale teams.
+Olivers Consulting provides operational automation services for UK ecommerce, wholesale and operationally complex SME teams.
 
 ## Canonical pages
 
@@ -11,6 +11,11 @@ Olivers Consulting provides operational automation services for UK ecommerce and
 - [About Henry Oliver and the editorial approach](https://oliversconsulting.co.uk/about/)
 - [Contact](https://oliversconsulting.co.uk/contact/)
 - [Articles](https://oliversconsulting.co.uk/articles/)
+
+## Current industry-specific workflow coverage
+
+- [Mortgage broker document collection automation](https://oliversconsulting.co.uk/articles/automate-mortgage-broker-document-collection/)
+- [CIS subcontractor onboarding automation](https://oliversconsulting.co.uk/articles/automate-cis-subcontractor-onboarding/)
 
 ## Discovery files
 
