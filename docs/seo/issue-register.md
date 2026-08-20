@@ -2,7 +2,7 @@
 
 Baseline date: 2026-08-19
 
-> Detailed issue history through Milestone 9 is preserved in `docs/seo/history/issue-register-through-m9.md`. This file is the current authoritative issue state.
+Detailed issue history through Milestone 9 is preserved in `docs/seo/history/issue-register-through-m9.md`. This file is the current authoritative issue state.
 
 ## P0 — prevents access, building, crawling or indexation
 
@@ -42,36 +42,36 @@ None confirmed.
 ### SEO-006 — Homepage performance guard stale
 - Status: DONE_VERIFIED
 - Milestone: 2
-- Resolution: guard now validates the actual cache-key relationship rather than a stale literal.
+- Resolution: guard validates the current cache-key relationship.
 
 ### SEO-014 — Article architecture chronological rather than task-led
 - Status: DONE_VERIFIED
 - Milestones: 7–9
-- Resolution: one intent/overlap guard per article, five clusters, five completed optimisation batches and a task-led `/articles/` hub exposing all 20 routes with commercial paths and responsive keyboard navigation.
+- Resolution: one intent/overlap guard per article, five clusters, five completed batches and a task-led `/articles/` hub exposing all 20 routes with commercial paths and responsive keyboard navigation.
 
 ### SEO-015 — Trust and policy wording did not fully match current implementation
 - Status: DONE_VERIFIED
 - Milestone: 10
-- Resolution: About identifies the operator and explains authorship, primary-source use and corrections; Services aligns ownership with Terms and states the professional-advice/no-guarantee boundary; Contact exposes direct email plus separate Cal.eu/privacy context; Privacy/Cookie/Terms match the checked implementation; unsupported ICO-registration wording was removed; canonical legal navigation and legal `lastmod` dates were updated.
-- Verification: `TRUST_CHECK_OK|core_pages=3|legal_pages=3|contact_methods=2|forms=0|tracking_writes=0|legal_lastmod=2026-08-19`; `TRUST_RENDER_CHECK_OK|routes=4|viewports=2|pages=8`.
+- Resolution: verifiable operator/authorship/service-boundary/privacy/cookie/terms improvements; unsupported ICO placeholder removed; canonical legal navigation and meaningful `lastmod` dates updated.
 
-### SEO-016 — Measured layout instability and accessibility gaps on representative pages
+### SEO-016 — Measured layout instability and accessibility gaps
 - Status: DONE_VERIFIED
 - Milestone: 11
-- Evidence before fix: synthetic baseline run `32313005214` recorded mobile representative-article CLS `0.1688`, desktop article-hub CLS `0.1089`, desktop representative-article CLS `0.1085`; homepage had no main landmark, two unnamed range controls, two UI images without reserved dimensions and one tested mobile focus-indicator miss.
-- Resolution: reproducible synthetic performance/a11y audit; stable optional font loading; header/logo layout reservation; lightweight main/skip navigation; programmatic control labels; stronger focus visibility; contrast tokens; article/index skip navigation/dimensions; deterministic a11y guard.
-- Repair evidence: initial `font-display: swap` was rejected after run `32313787934` worsened CLS.
-- Final verification: repeated M11/M12 regression runs remain within synthetic LCP/CLS goals and the accessibility guard remains green.
+- Resolution: reproducible performance/a11y audit; stable optional font loading; header/logo reservation; lightweight main/skip navigation; accessible controls; stronger focus/contrast; deterministic guard. Initial `font-display: swap` regression was rejected.
 
-### SEO-017 — AI/search crawler roles and article-feed discovery were not documented or tested
+### SEO-017 — AI/search crawler roles and article-feed discovery undocumented
 - Status: DONE_VERIFIED
 - Milestone: 12
-- Evidence before fix: `robots.txt` contained only a wildcard `Allow: /` plus the XML sitemap; no RSS/Atom feed existed; there was no durable record distinguishing conventional indexing crawlers, answer/search crawlers, user-requested retrieval agents, mixed-use crawler tokens and model-training crawlers. A pre-existing `llms.txt` duplicated biography/proof/article material without clearly stating its experimental/non-authoritative status.
-- Risk: crawler permissions could be changed later without understanding search-vs-training trade-offs; article discovery relied only on the hub/XML sitemap; the auxiliary `llms.txt` could drift from human-visible canonical content.
-- Resolution: added `docs/seo/ai-crawler-policy.md`; explicitly allowed Googlebot/Bingbot/OAI-SearchBot/Claude-SearchBot/PerplexityBot plus ChatGPT-User/Claude-User; retained `Google-Extended` Allow with its documented grounding/future-training trade-off; disallowed separable training crawlers GPTBot and ClaudeBot; preserved wildcard public crawling; added a deterministic 20-entry Atom feed; reduced the pre-existing `llms.txt` to an experimental canonical index; added deterministic feed/raw-HTML/crawler-policy checks.
-- Verification: `ATOM_FEED_CHECK_OK|entries=20|updated=2026-08-19`; `AI_DISCOVERABILITY_CHECK_OK|articles=20|feed_entries=20|feed_updated=2026-08-19|indexing_agents=5|user_fetch_agents=2|mixed_google=1|training_agents_blocked=2|raw_html_routes=23|llms_txt=experimental_index`; full GitHub Actions run `32339126934` passed.
+- Resolution: documented crawler policy, selective search/training handling, deterministic 20-entry Atom feed, raw-HTML/entity checks and experimental/non-authoritative `llms.txt` treatment.
 
-## P3 — optional refinement or measurement gap
+### SEO-018 — Search-platform submission and measurement handoff absent
+- Status: DONE_VERIFIED
+- Milestone: 13
+- Evidence before fix: no durable Search Console/Bing setup instructions, no defined dashboard, no owner-action boundary and no automated guard against fake verification/tracking additions.
+- Resolution: added `docs/seo/search-platform-handoff.md` with Google/Bing property/verification/sitemap steps, exact submission targets, eight required measurement definitions, a manual qualified-enquiry path, post-launch checklist and owner/code responsibility table; added `scripts/check-seo-platform-handoff.mjs` with no-token/no-tracker/runtime/live accessibility checks.
+- Verification: `PLATFORM_HANDOFF_CHECK_OK|sitemap=28|dashboard_metrics=8|owner_actions=7|tracking=absent|verification_tokens=absent`; `LIVE_PLATFORM_HANDOFF_CHECK_OK|homepage_status=200|robots_status=200|sitemap_status=200|live_sitemap_urls=25`; full run `32340365912` passed.
+
+## P3 — optional refinement, external action or measurement gap
 
 ### SEO-007 — Preview and test routes remain publicly accessible
 - Status: OPEN
@@ -81,20 +81,20 @@ None confirmed.
 
 ### SEO-008 — robots.txt formatting debt
 - Status: DONE_VERIFIED
-- Milestone: 2
-- Resolution: canonical crawler/sitemap directives are now explicit and deterministic checks cover them.
+- Milestone: 2 / 12
+- Resolution: canonical crawler/sitemap directives are explicit and deterministic checks cover them.
 
 ### SEO-009 — Core Web Vitals field baseline unavailable
-- Status: OPEN
-- Milestone: 11 / measurement handoff at 13
-- Evidence: Milestone 11 has a controlled synthetic Playwright before/after baseline, but no connected CrUX/Search Console/RUM or other real-user field-data source has been recorded.
-- Risk: real-user LCP/INP/CLS remain unknown; synthetic results cannot establish field Core Web Vitals status.
-- Current handling: do not claim field CWV or INP. Use the synthetic audit only for controlled regression evidence until owner/platform field data is available.
+- Status: OPEN_EXTERNAL
+- Milestone: 11 / handoff prepared at 13 / reassess at 14
+- Evidence: synthetic Playwright before/after evidence exists, but no connected Search Console/CrUX/RUM field dataset is available. Milestone 13 now documents how Search Console field data should be recorded after owner verification/deployment.
+- Risk: real-user LCP/INP/CLS remain unknown; synthetic results cannot establish field CWV status.
+- Current handling: do not claim field CWV or INP. Use synthetic CI only for regression evidence; record Search Console/CrUX field metrics when genuinely available.
 
 ### SEO-010 — No site-owned custom 404
 - Status: DONE_VERIFIED
 - Milestone: 2
-- Resolution: branded `404.html` added with `noindex` and recovery links; live replacement awaits owner-approved deployment.
+- Resolution: branded `404.html` with `noindex` and recovery links; live replacement awaits owner-approved deployment.
 
 ### SEO-011 — Metadata generation inconsistent
 - Status: DONE_VERIFIED
@@ -111,6 +111,20 @@ None confirmed.
 - Milestone: 6
 - Resolution: dedicated Services/About/Contact routes with distinct intents, metadata, schema and CTAs.
 
+### SEO-019 — Search-platform account verification/submission not yet owner-completed
+- Status: OPEN_EXTERNAL
+- Milestone: 13 / owner action after approved deployment
+- Evidence: no real Google/Bing verification token is in the repository and no account connection is claimed. The handoff is ready, but account/DNS actions require the site owner.
+- Risk: without verified webmaster properties, the owner cannot yet use platform indexing/performance reports for the new release.
+- Current handling: follow `docs/seo/search-platform-handoff.md` after deployment. Do not add guessed tokens or trackers.
+
+### SEO-020 — Live sitemap is still the pre-draft release
+- Status: OPEN_EXPECTED_DEPLOYMENT
+- Milestone: 13 / resolve through owner-approved deployment and verify at 14
+- Evidence: accepted M13 run measured production homepage/robots/sitemap all at 200, but the live sitemap contained 25 URLs while the SEO branch contains 28 intended canonical URLs.
+- Risk: branch-only core pages/policies/discovery work cannot be treated as live until deployment.
+- Current handling: no defect claim against the branch; verify production count after owner-approved release.
+
 ## Current next issue focus
 
-Milestone 13 should prepare Search Console/Bing submission and measurement handoff, including owner-only verification actions and the unresolved field-CWV measurement gap, without adding fake verification tokens or trackers.
+Milestone 14 must run the complete final audit, reassess the nine public `noindex` preview/test routes, verify unresolved external/deployment items are accurately documented, and prepare release readiness without merging or deploying automatically.

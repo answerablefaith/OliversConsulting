@@ -2,36 +2,24 @@
 
 Last audited: 2026-08-20
 
-> Detailed records through Milestone 9 are preserved in `docs/seo/history/SEO_MASTER_PLAN-through-m9.md`. Detailed Milestone 10–12 validation history is recorded in `docs/seo/validation-log.md`; earlier M10–M11 detail remains in Git history before the M12 checkpoint.
+Detailed history through Milestone 9 remains in `docs/seo/history/`. Milestone 10 onward is summarised here and evidenced in `docs/seo/validation-log.md` plus Git history.
 
 ## Confirmed project facts
 
 - Repository: `answerablefaith/OliversConsulting`
 - Default branch: `main`
-- SEO working branch: `seo/organic-ai-discoverability`
-- Draft pull request: #26, base `main`, still draft, not merged or deployed
+- Working SEO branch: `seo/organic-ai-discoverability`
+- Draft PR: #26, targets `main`, still draft, unmerged and undeployed
 - Live site: `https://oliversconsulting.co.uk/`
-- Hosting: static GitHub Pages with custom domain from `CNAME`
-- Architecture: static HTML/CSS/JavaScript plus Node validation scripts; no framework migration and no persistent `package.json`
-- Primary article source: `articles/*/index.html`; article hub: `articles/index.html`
+- Architecture: static GitHub Pages HTML/CSS/JavaScript plus Node validation scripts; no framework migration and no persistent package manifest
 - Repository articles: 20
 - Verified baseline live crawlable/indexable articles: 20
-- Current branch sitemap URLs: 28
-- Raw uploaded images: 49 JPEG files; 0 exact duplicates; 0 corrupt files
-- Published article image derivatives: 60 (40 WebP, 20 JPEG)
-- User-reported Unsplash provenance is retained in `image-manifest.csv`; expected ID `EeyPwy7x2Fo` was not present in the uploaded set
-- Article discovery on the SEO branch now includes the task-led `/articles/` hub, canonical XML sitemap and a generated 20-entry Atom feed at `/feed.xml`
-
-## Current implementation summary
-
-- Milestones 1–5: inventories, crawl/indexation integrity, deterministic metadata/schema and responsive image pipeline.
-- Milestone 6: dedicated Services, About and Contact routes with clearer commercial intent and CTAs.
-- Milestone 7: one principal intent and overlap guard for each of 20 articles; five four-article clusters.
-- Milestone 8: five verified four-article optimisation batches with answer-first copy, primary citations where required, internal links, responsive images and verified Article schema.
-- Milestone 9: task-led five-cluster article hub, breadcrumbs, commercial pathways and responsive keyboard navigation.
-- Milestone 10: verifiable trust/authorship/service-boundary/policy improvements with no unsupported E-E-A-T signals.
-- Milestone 11: reproducible synthetic performance/accessibility audit, measured CLS repairs, stable font strategy, landmarks/skip navigation, accessible controls, focus/contrast improvements and CI guards. No field CWV or INP result is claimed.
-- Milestone 12: raw-HTML answer visibility and authorship were reverified; a deterministic Atom feed and AI-discoverability checker were added; crawler roles are documented and selectively controlled; the pre-existing `llms.txt` was reduced to a non-authoritative experimental index rather than a crawler-only source of claims.
+- Current branch sitemap: 28 intended canonical URLs
+- Current live production sitemap measured in Milestone 13: 25 URLs; this reflects the undeployed pre-draft release and is not treated as the branch count
+- Raw uploaded images: 49 JPEGs; 0 exact duplicates; 0 corrupt
+- Published article derivatives: 60 (40 WebP, 20 JPEG)
+- Branch article discovery: task-led `/articles/` hub, `/sitemap.xml` and 20-entry `/feed.xml`
+- No Google Analytics/Tag Manager, Clarity, Plausible, Matomo, advertising pixel, Google Search Console verification tag or Bing verification tag is present in the checked public runtime
 
 ## Milestone status
 
@@ -41,63 +29,51 @@ Last audited: 2026-08-20
 | 2 | Crawlability, indexation and URL integrity | DONE_VERIFIED | canonical/sitemap/robots/link/404 checks pass |
 | 3 | Metadata and social presentation | DONE_VERIFIED | deterministic titles/descriptions/canonicals/OG/Twitter pass |
 | 4 | Structured data and entity clarity | DONE_VERIFIED | managed site graph plus 20 Article/Person/Breadcrumb graphs pass |
-| 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals, 60 optimised outputs, no corrupt/duplicate sources |
+| 5 | Image inventory and optimisation pipeline | DONE_VERIFIED | 49 originals; 60 optimised outputs; no corrupt/duplicate sources |
 | 6 | Core commercial pages | DONE_VERIFIED | Home/Services/About/Contact distinct intents and responsive checks |
-| 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 intents, five clusters, five four-article batches |
-| 8 | Article optimisation batches | DONE_VERIFIED | 5 of 5 batches; all 20 articles verified |
-| 8.1 | Supplier, product and inventory operations | DONE_VERIFIED | four articles |
-| 8.2 | Orders, finance and reconciliation | DONE_VERIFIED | four articles |
-| 8.3 | Reporting, investment and resilience | DONE_VERIFIED | four articles |
-| 8.4 | Process design and controlled hand-offs | DONE_VERIFIED | four articles |
-| 8.5 | Onboarding, CRM and returns | DONE_VERIFIED | four articles |
-| 9 | Internal linking, hubs and navigation | DONE_VERIFIED | five-cluster hub, 20 routes, breadcrumbs, mobile/keyboard navigation |
-| 10 | Trust, authorship and conversion quality | DONE_VERIFIED | trust static contract plus 8 trust-page renders |
-| 11 | Performance, Core Web Vitals and accessibility | DONE_VERIFIED | before/after synthetic audit, deterministic a11y guard and full browser regressions pass |
-| 12 | AI and answer-engine discoverability | DONE_VERIFIED | 20-entry Atom feed, raw-HTML/entity/authorship checks, documented crawler policy and full CI regression pass |
-| 13 | Search-platform and measurement handoff | NOT_STARTED | |
+| 7 | Search-intent and content architecture map | DONE_VERIFIED | 20 intents; five clusters; five four-article batches |
+| 8 | Article optimisation batches | DONE_VERIFIED | all five batches; all 20 articles verified |
+| 9 | Internal linking, hubs and navigation | DONE_VERIFIED | five-cluster hub; breadcrumbs; commercial paths; mobile/keyboard navigation |
+| 10 | Trust, authorship and conversion quality | DONE_VERIFIED | operator/authorship/service/policy checks and trust renders pass |
+| 11 | Performance, Core Web Vitals and accessibility | DONE_VERIFIED | measured synthetic before/after, a11y guard and browser regressions pass; no field INP claim |
+| 12 | AI and answer-engine discoverability | DONE_VERIFIED | Atom feed, raw-HTML/entity/authorship checks and documented crawler policy pass |
+| 13 | Search-platform and measurement handoff | DONE_VERIFIED | submission/owner-action handoff, eight-metric dashboard, no-token/no-tracker guard and live sitemap accessibility check pass |
 | 14 | Final audit and release readiness | NOT_STARTED | |
 
-## Milestone 12 acceptance criteria
+Top-level progress: **13 of 14 DONE_VERIFIED (92.9%)**.
 
-- [x] Important answers remain in normal crawlable HTML; all 20 article files expose `<main>`, `<article>`, H1, substantial visible text, canonical URL, visible author and genuine visible publication/update dates without depending entirely on client-side execution.
-- [x] The task-led article hub exposes all 20 canonical article routes in raw HTML.
-- [x] About visibly identifies Henry Oliver and explains article authorship, sourcing and corrections; Services visibly explains the service scope.
-- [x] Managed structured data still ties all 20 articles to the visible Henry Oliver `Person` author and canonical `Article`/`WebPage` entities.
-- [x] A deterministic Atom 1.0 feed at `/feed.xml` exposes all 20 canonical article URLs using existing managed titles and genuine `dateModified` values; no artificial freshness dates were introduced.
-- [x] `robots.txt` distinguishes conventional indexing, answer/search discovery, user-requested retrieval, mixed-use Google-Extended and separable training crawlers.
-- [x] `Googlebot`, `Bingbot`, `OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `ChatGPT-User` and `Claude-User` are allowed.
-- [x] `GPTBot` and `ClaudeBot` are disallowed while their providers' separate search/user-retrieval paths remain allowed.
-- [x] `Google-Extended` remains allowed because Google's current token combines Gemini grounding and future Gemini training; this preserves the pre-M12 wildcard-open posture and its trade-off is explicitly documented.
-- [x] Other REP-compliant public crawlers retain the pre-existing wildcard Allow posture.
-- [x] The crawler choices and their implications are documented in `docs/seo/ai-crawler-policy.md` against current provider guidance.
-- [x] The pre-existing `llms.txt` is retained only as an experimental convenience index, is explicitly non-authoritative/non-ranking, and no longer duplicates biography/proof claims or all individual article URLs.
-- [x] No crawler-only or AI-only factual claim is intentionally served.
-- [x] Existing metadata, schema, article dates and page copy were not rewritten simply to attract AI systems.
-- [x] Full static, performance/accessibility and browser regression suites pass.
+## Milestone 13 implementation
 
-## Milestone 12 crawler decisions
+- Added `docs/seo/search-platform-handoff.md` with exact canonical submission targets and current official Google/Bing guidance reviewed on 2026-08-20.
+- Prepared Google Search Console owner steps for Domain-property/DNS verification or URL-prefix alternative, XML sitemap submission and representative URL inspection without inventing any verification value.
+- Prepared Bing Webmaster Tools owner steps for importing the verified Search Console property or using Bing's actual manual verification methods, plus XML sitemap confirmation/submission.
+- Defined an eight-metric measurement dashboard: indexed canonical pages, non-branded impressions, relevant queries, organic search clicks, qualified enquiries, top landing pages, crawl/indexing errors and field Core Web Vitals.
+- Qualified enquiries remain a conservative manual business metric because no site analytics has been authorised. Unknown attribution remains valid.
+- Search Console Core Web Vitals/CrUX is explicitly field data; CI Playwright remains synthetic regression evidence. No field INP value is invented.
+- Added an optional Bing AI Performance review signal but do not treat it as general AI authority or a guaranteed outcome.
+- Added a first-release/weekly/monthly post-launch inspection cadence and a clear `OWNER_ACTION` versus `READY_IN_CODE` table.
+- Added `scripts/check-seo-platform-handoff.mjs`, including a runtime scan that fails on unauthorised search-verification tags or common client-side analytics/tracking patterns.
+- The same checker verifies production homepage, robots and sitemap accessibility in CI. On 2026-08-20 production returned 200 for all three and the live sitemap contained 25 URLs.
+- Workflow triggers/checks now cover the M13 handoff file and live platform-handoff validation.
 
-- OpenAI: allow `OAI-SearchBot` and `ChatGPT-User`; disallow the separately controlled `GPTBot` training crawler.
-- Anthropic: allow `Claude-SearchBot` and `Claude-User`; disallow the separately controlled `ClaudeBot` training crawler.
-- Google: allow `Googlebot`. Explicitly allow `Google-Extended`; Google documents it as one robots token controlling both Gemini grounding and future Gemini training, while ordinary Google Search inclusion/ranking is unaffected by the token. Because grounding and future training are not separately controllable through that token, an owner preference to block future Gemini training would also reduce the documented grounding use and should be an explicit future policy decision.
-- Microsoft/Bing: allow `Bingbot` for conventional search discovery.
-- Perplexity: allow `PerplexityBot`; current Perplexity guidance describes it as a robots-respecting search/index crawler rather than foundation-model pre-training.
-- `llms.txt`: retain experimentally because it already existed, but do not treat it as a ranking or Google AI visibility mechanism. Current Google guidance says it is not used by Google Search and neither helps nor hurts rankings/visibility.
-- Feed: use standards-based Atom discovery because Google documents RSS/Atom feeds as supported sitemap formats; feed submission/discovery is a hint, not an indexing guarantee.
+## Milestone 13 acceptance criteria
 
-## Milestone 12 validation sequence
-
-1. Implementation commit `0512056884be6b603921bff03143ac5813ed5f33` — run `32338937145`:
-   - all pre-existing dependency-free SEO checks passed;
-   - `ATOM_FEED_CHECK_OK|entries=20|updated=2026-08-19` passed;
-   - the new AI checker failed because it incorrectly assumed `llms.txt` was absent.
-2. Repository inspection then confirmed a pre-existing `llms.txt` (blob `dd33c51b0ef40c35b95d92df6f4160c341c67c43`) that the earlier code search had missed. It contained duplicated biography/proof/article material.
-3. Correction commit `9cb56f9d800f5dbbbd2dd443fa00ee5621b70a87` preserved the file but reduced it to an experimental canonical index and adjusted the policy/checker accordingly.
-4. Final GitHub Actions run `32339126934`: PASS.
+- [x] Canonical sitemap location is explicitly documented as `https://oliversconsulting.co.uk/sitemap.xml`.
+- [x] Production homepage, robots and sitemap accessibility are checked from CI; all returned 200 in the accepted run.
+- [x] Google Search Console submission and verification instructions are ready.
+- [x] Bing Webmaster Tools import/manual verification and sitemap instructions are ready.
+- [x] No fake Google/Bing verification value is committed.
+- [x] No analytics or advertising tracker is added without owner authority.
+- [x] Eight required measurement definitions are documented.
+- [x] Owner-only actions are clearly separated from completed repository work.
+- [x] Qualified-enquiry measurement has an honest no-analytics/manual path.
+- [x] Field Core Web Vitals are kept separate from synthetic CI performance data.
+- [x] A post-launch inspection checklist is documented.
+- [x] Existing SEO, performance/accessibility and browser regression suites still pass.
 
 ## Latest validation
 
-GitHub Actions run `32339126934` — PASS.
+GitHub Actions run `32340365912` — PASS.
 
 - `INDEXATION_CHECK_OK|sitemap=28|indexable=28|noindex=9|internal_targets=28|custom_404=1`
 - `METADATA_CHECK_OK|pages=28|titles=28|descriptions=28|og=28|twitter=28|h1=28`
@@ -110,10 +86,12 @@ GitHub Actions run `32339126934` — PASS.
 - `TRUST_CHECK_OK|core_pages=3|legal_pages=3|contact_methods=2|forms=0|tracking_writes=0|legal_lastmod=2026-08-19`
 - `ATOM_FEED_CHECK_OK|entries=20|updated=2026-08-19`
 - `AI_DISCOVERABILITY_CHECK_OK|articles=20|feed_entries=20|feed_updated=2026-08-19|indexing_agents=5|user_fetch_agents=2|mixed_google=1|training_agents_blocked=2|raw_html_routes=23|llms_txt=experimental_index`
+- `PLATFORM_HANDOFF_CHECK_OK|sitemap=28|dashboard_metrics=8|owner_actions=7|tracking=absent|verification_tokens=absent`
+- `LIVE_PLATFORM_HANDOFF_CHECK_OK|homepage_status=200|robots_status=200|sitemap_status=200|live_sitemap_urls=25`
 - `ACCESSIBILITY_STATIC_CHECK_OK|font_display=optional|homepage_labels=3|skip_navigation=2|image_reservation=1|contrast_pairs=5|reduced_motion=1|lightweight_landmark=1`
-- Homepage performance safeguards — PASS
-- mobile synthetic regression summary: `PERF_A11Y_SUMMARY|mobile|routes=4|median_lcp_ms=722|max_lcp_ms=1128|max_cls=0.0972|median_bytes=178944|total_focus_missing=0|total_unnamed=0|total_small_targets=46`
-- desktop synthetic regression summary: `PERF_A11Y_SUMMARY|desktop|routes=4|median_lcp_ms=242|max_lcp_ms=296|max_cls=0.0766|median_bytes=185842|total_focus_missing=0|total_unnamed=0|total_small_targets=51`
+- Homepage safeguards — PASS
+- `PERF_A11Y_SUMMARY|mobile|routes=4|median_lcp_ms=688|max_lcp_ms=1220|max_cls=0.0972|median_bytes=178944|total_focus_missing=0|total_unnamed=0|total_small_targets=46`
+- `PERF_A11Y_SUMMARY|desktop|routes=4|median_lcp_ms=208|max_lcp_ms=260|max_cls=0.0766|median_bytes=185842|total_focus_missing=0|total_unnamed=0|total_small_targets=51`
 - `ARTICLE_RENDER_CHECK_OK|articles=20|viewports=2|pages=40`
 - `NAVIGATION_RENDER_CHECK_OK|routes=2|viewports=2|pages=4|clusters=5|articles=20`
 - `TRUST_RENDER_CHECK_OK|routes=4|viewports=2|pages=8`
@@ -121,46 +99,42 @@ GitHub Actions run `32339126934` — PASS.
 ## GitHub record
 
 - Baseline main: `7f087a1`
-- M1 `1058ff736bd91eca25cf216ad4f326cc75e7c609`
-- M2 `a4ae72af5963dbea0887332c7a80c693ec15c43a`
-- M3 `3129490884c0efd42c3b13831c013f9bf17700a1`
-- M4 `158101a54c629e0c3efb044f40d97ba314316eb3`
-- M5 `09a3e4d79c03323cc2d0031ff82e219ad25da69b`
-- M6 `fafcf5aff10c33a65c630c9cd1f8908b0bbc9b45`
-- M7 `4a889408a44f5e93cd28b793015a77c1bd338644`
-- M8.1 `82b2b1f55e0d1ea98b3f72fb3f656d01997b3f75`
-- M8.2 `d64ddb46d0b5df3dea352dc9af9afc6fafd6f674`
-- M8.3 `0f5625b2b3b088373df0c9a6a57bed28ce13a420`
-- M8.4 `9e7359cc252db721cf0ba4772874e5236177b2be`
-- M8.5 `31df632bc9913544a06f0e368112dfeffcf8708e`
-- M9 implementation `4683974118317cfcffc0970530965e3054ec1148`
-- M10 implementation `996048ef80cc96a283c58b29a664bfbc8d723393`
-- M11 final recorded head before M12: `48e53bdbaaafc8cd54a4b88b988d755f8652c37a`
-- M12 implementation `0512056884be6b603921bff03143ac5813ed5f33`; existing-`llms.txt` policy correction `9cb56f9d800f5dbbbd2dd443fa00ee5621b70a87`
-- Draft PR #26: target `main`, still draft, unmerged and undeployed.
+- Milestones 1–9: preserved in detailed SEO history and commit history
+- M10 implementation: `996048ef80cc96a283c58b29a664bfbc8d723393`
+- M11 recorded head before M12: `48e53bdbaaafc8cd54a4b88b988d755f8652c37a`
+- M12 implementation/correction: `0512056884be6b603921bff03143ac5813ed5f33`, `9cb56f9d800f5dbbbd2dd443fa00ee5621b70a87`
+- M12 record head: `447eca44a3b70d2bf3f3eeb1ca4e4210ddcdee34`
+- M13 implementation: `23bfed719a588fea10015e3b1e0de4e5a93b0559`
+- Draft PR #26 remains the single programme PR, targeting `main`.
+
+## Owner actions after approved deployment
+
+See `docs/seo/search-platform-handoff.md` for exact steps. In summary:
+
+1. Verify Search Console with a real platform-supplied method/value.
+2. Submit the XML sitemap and inspect representative URLs.
+3. Import into or independently verify Bing Webmaster Tools and confirm the XML sitemap.
+4. Record the date usable platform data begins.
+5. Maintain the small measurement dashboard using real platform/business observations only.
+
+These account/DNS actions are intentionally **not** treated as code blockers for Milestone 13.
 
 ## Business facts requiring confirmation before expansion
 
-Preserve existing published wording but do not expand without owner evidence:
-- Henry Oliver is the founder/operator and trades as a sole trader.
-- Published address and London base.
-- Previous PwC and Citibank experience.
-- Operation of a 200,000-SKU ecommerce/wholesale business.
-- Published service prices/delivery statements and specific process-time/capacity examples.
+Preserve existing published wording but do not expand without evidence: Henry Oliver founder/operator/sole trader status; London base/published address; PwC/Citibank experience; 200,000-SKU operation; published prices/delivery statements; specific process-time/capacity examples.
 
-No unverified qualification, membership, award, testimonial, client endorsement, social profile or ICO registration number has been added.
+No unverified qualification, membership, award, testimonial, client endorsement, social profile, ICO registration or search-platform verification value has been added.
 
-## Known risks and regressions
+## Known risks and remaining items
 
-- Live production remains on the pre-draft release until PR #26 is approved and deployed; the new robots/feed/AI-discovery policy is not claimed as live.
-- Crawler names and provider policies can change; `docs/seo/ai-crawler-policy.md` records a review date and primary sources and should be rechecked before future policy changes.
-- `Google-Extended` is intentionally allowed, which preserves Gemini grounding but also permits the future-training use covered by the same Google token. Those uses cannot currently be separated through Google-Extended.
-- `llms.txt` remains experimental and is not treated as a ranking signal, Google Search requirement or substitute for canonical HTML/feed/sitemap discovery.
-- Nine preview/test routes remain public but `noindex`; reassess at Milestone 14.
-- No field Core Web Vitals dataset is connected. Synthetic results are regression evidence, not real-user CWV; INP remains unknown and is a Milestone 13 handoff item.
+- Live production remains the pre-draft release until PR #26 is approved/deployed. Its sitemap currently has 25 URLs versus 28 on the SEO branch; do not claim branch-only pages/policies are live.
+- Search Console/Bing account ownership and submission are owner actions after deployment. This milestone prepares but does not fabricate completion of those external account actions.
+- No field Core Web Vitals dataset is connected; Search Console/CrUX may also have insufficient data after verification. Synthetic CI results are not field CWV and INP remains unknown until real-user data exists.
+- Nine preview/test routes remain public but `noindex`; reassess in Milestone 14.
+- Crawler/provider policies can change and require periodic review.
 - Raw image originals remain tracked because they are the only uploaded copies; production HTML uses derivatives.
-- Local Git checkout was unavailable in this environment; remote branch/commit/PR state plus GitHub Actions checkout/test evidence are authoritative. No clean local `git status` is claimed.
+- Local Git checkout remains unavailable in this environment because `github.com` could not be resolved. Remote branch/PR/commit evidence and GitHub Actions checkout/testing are used; no clean local `git status` is claimed.
 
 ## Exact next milestone
 
-Milestone 13 — Search-platform and measurement handoff.
+Milestone 14 — Final end-to-end audit and release readiness.
