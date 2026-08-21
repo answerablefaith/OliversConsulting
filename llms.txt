@@ -12,8 +12,9 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 - [Contact](https://oliversconsulting.co.uk/contact/)
 - [Articles](https://oliversconsulting.co.uk/articles/)
 
-## Current industry-specific workflow coverage
+## Current workflow coverage
 
+- [Invoice chasing automation](https://oliversconsulting.co.uk/articles/automate-invoice-chasing-without-damaging-customer-relationships/)
 - [Mortgage broker document collection automation](https://oliversconsulting.co.uk/articles/automate-mortgage-broker-document-collection/)
 - [CIS subcontractor onboarding automation](https://oliversconsulting.co.uk/articles/automate-cis-subcontractor-onboarding/)
 
