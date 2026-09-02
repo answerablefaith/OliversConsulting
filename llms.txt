@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [Management reporting automation from spreadsheets](https://oliversconsulting.co.uk/articles/automate-management-reporting-from-spreadsheets/)
 - [Lead follow-up automation without spam](https://oliversconsulting.co.uk/articles/automate-lead-follow-up-without-spam/)
 - [Expense claim automation and approval routing](https://oliversconsulting.co.uk/articles/automate-expense-claims-approval/)
 - [Order fulfilment automation with exception routing](https://oliversconsulting.co.uk/articles/automate-order-fulfilment-exception-routing/)
