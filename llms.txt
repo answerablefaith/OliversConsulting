@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [What a small business should automate first](https://oliversconsulting.co.uk/articles/what-should-small-business-automate-first/)
 - [Business automation cost for UK SMEs](https://oliversconsulting.co.uk/articles/business-automation-cost-uk-sme/)
 - [Data entry automation between business systems](https://oliversconsulting.co.uk/articles/automate-data-entry-between-business-systems/)
 - [Customer service ticket triage automation](https://oliversconsulting.co.uk/articles/automate-customer-service-ticket-triage/)
