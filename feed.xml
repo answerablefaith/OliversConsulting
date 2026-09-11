@@ -4,11 +4,9 @@
   <id>https://oliversconsulting.co.uk/articles/</id>
   <link rel="alternate" href="https://oliversconsulting.co.uk/articles/"/>
   <link rel="self" href="https://oliversconsulting.co.uk/feed.xml" type="application/atom+xml"/>
-  <updated>2026-09-09T00:00:00Z</updated>
-  <author>
-    <name>Henry Oliver</name>
-    <uri>https://oliversconsulting.co.uk/about/</uri>
-  </author>
+  <updated>2026-09-11T00:00:00Z</updated>
+  <author><name>Henry Oliver</name><uri>https://oliversconsulting.co.uk/about/</uri></author>
+  <entry><title>What Should a Small Business Automate First? | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/what-should-small-business-automate-first/</id><link href="https://oliversconsulting.co.uk/articles/what-should-small-business-automate-first/"/><updated>2026-09-11T00:00:00Z</updated></entry>
   <entry><title>Business Automation Cost for UK SMEs | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/business-automation-cost-uk-sme/</id><link href="https://oliversconsulting.co.uk/articles/business-automation-cost-uk-sme/"/><updated>2026-09-09T00:00:00Z</updated></entry>
   <entry><title>How to Automate Data Entry Between Business Systems | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/automate-data-entry-between-business-systems/</id><link href="https://oliversconsulting.co.uk/articles/automate-data-entry-between-business-systems/"/><updated>2026-09-07T00:00:00Z</updated></entry>
   <entry><title>How to Automate Customer Service Ticket Triage | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/automate-customer-service-ticket-triage/</id><link href="https://oliversconsulting.co.uk/articles/automate-customer-service-ticket-triage/"/><updated>2026-09-04T00:00:00Z</updated></entry>
