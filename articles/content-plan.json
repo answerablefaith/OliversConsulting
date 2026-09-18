@@ -3,62 +3,192 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led automation strategy and readiness expansion",
-    "article_format": "Practical automation-readiness checklist with seven-point assessment and controlled-pilot guidance",
-    "title": "Automation readiness checklist for small businesses",
-    "slug": "automation-readiness-checklist-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automation-readiness-checklist-small-business/",
+    "scheduled_day": "Friday manual one-off",
+    "editorial_role": "SEO-led AI and workflow architecture expansion",
+    "article_format": "AI-versus-rule-based automation decision guide with certainty test and hybrid workflow model",
+    "title": "AI automation vs rule-based automation: what should a small business use?",
+    "slug": "ai-vs-rule-based-automation-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/ai-vs-rule-based-automation-small-business/",
     "topic_pillar": "Automation strategy and decision content",
     "parent_topic_cluster": "Automation strategy and investment",
-    "target_client_type": "UK SME owners and operations leaders who have identified a candidate process and need to know whether it is defined well enough to automate safely",
-    "industry_or_operating_context": "Process readiness, ownership, triggers, business rules, data quality, exception handling, controls and success measures",
+    "target_client_type": "UK SME owners and operations leaders deciding whether a workflow needs AI, deterministic rules or a hybrid design",
+    "industry_or_operating_context": "AI-assisted workflows, deterministic automation, unstructured inputs, validation, controls, exception routing and human review",
     "portfolio_classification": "broader SME-led",
-    "rolling_12_portfolio_mix_after_publication": {"ecommerce_wholesale_distribution_led": 1, "broader_sme_led": 11},
-    "primary_buyer_problem": "Teams often move from identifying an automation opportunity straight into tooling or development before clarifying ownership, triggers, data, exception rules, controls and how success will be measured.",
-    "primary_search_intent": "Use a practical automation readiness checklist to decide whether a specific small-business process is ready to automate before investing in implementation.",
-    "buyer_stage": "Solution evaluation / pre-implementation",
-    "primary_query": "automation readiness checklist small business",
-    "related_query_family": ["business process automation readiness checklist", "is my process ready for automation", "automation project checklist small business", "workflow automation readiness", "process automation checklist"],
-    "trend_or_durable_demand": "Durable implementation-stage demand. The repository already identified an automation project brief/readiness checklist as a new-content candidate, and current 2026 small-business automation search results repeatedly emphasise readiness factors such as frequency, rules, data, risk and measurable outcomes.",
-    "evidence_source_and_date": "Repository content architecture, recent article library and live web search reviewed 14 September 2026. The adjacent 'what should a small business automate first?' intent is already owned, so this article deliberately targets the next-stage readiness question rather than process prioritisation.",
-    "existing_article_gap": "The library now helps readers choose a process and understand likely cost, but did not provide a dedicated implementation-readiness checklist covering ownership, trigger, normal rules, data, exceptions, controls and success measures.",
-    "existing_supporting_articles": ["/articles/what-should-small-business-automate-first/", "/articles/business-automation-cost-uk-sme/", "/articles/automate-data-entry-between-business-systems/", "/articles/manual-admin-interruption-cost/", "/articles/email-attachments-shared-folders-or-forms/"],
+    "rolling_12_portfolio_mix_after_publication": {
+      "ecommerce_wholesale_distribution_led": 1,
+      "broader_sme_led": 11
+    },
+    "primary_buyer_problem": "SMEs are increasingly considering AI automation but often lack a practical method for deciding which workflow steps genuinely need model-based interpretation and which should remain explicit, deterministic rules.",
+    "primary_search_intent": "Compare AI automation with rule-based workflow automation and decide when a small business should use rules, bounded AI or a hybrid design.",
+    "buyer_stage": "Solution evaluation / architecture selection",
+    "primary_query": "AI automation vs rule-based automation small business",
+    "related_query_family": [
+      "AI automation vs traditional automation",
+      "AI vs workflow automation",
+      "when to use AI in business automation",
+      "deterministic vs AI automation",
+      "AI agent vs workflow automation small business"
+    ],
+    "trend_or_durable_demand": "Active 2026 comparison demand. Live search results reviewed 18 September 2026 contain multiple recent guides comparing deterministic workflows, AI agents and hybrid automation, while UK workplace AI adoption is also receiving current mainstream coverage.",
+    "evidence_source_and_date": "Repository article library and live web search reviewed 18 September 2026. Current results include recent 2026 comparisons of deterministic workflow automation, AI agents and hybrid designs; the repository had no dedicated page targeting this comparison intent.",
+    "existing_article_gap": "The library discusses AI within individual articles and covers custom architecture, but did not have a dedicated page explaining when a workflow step should use deterministic rules versus AI interpretation.",
+    "existing_supporting_articles": [
+      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/automation-readiness-checklist-small-business/",
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/business-automation-cost-uk-sme/"
+    ],
     "comparison_against_previous_12": {
       "status": "Passed",
-      "overlapping_titles_or_sections_considered": ["What should a small business automate first?", "How much does business automation cost for a UK SME?", "How to automate data entry between business systems", "Your spreadsheet is not the problem. The missing operating rules are."],
-      "meaningfully_different_dimensions": ["pre-implementation readiness rather than process selection", "owner and trigger clarity", "exception mapping", "control retention", "success measurement", "pilot readiness", "seven-point checklist"],
-      "why_meaningfully_distinct": "The prioritisation article answers which process deserves attention; this page answers whether a chosen process is defined enough to build. The cost article answers what drives price, while data-entry and spreadsheet articles address specific implementation patterns."
+      "overlapping_titles_or_sections_considered": [
+        "When is custom automation worth it for a small business?",
+        "Automation readiness checklist for small businesses",
+        "What should a small business automate first?",
+        "How to automate customer service ticket triage"
+      ],
+      "meaningfully_different_dimensions": [
+        "technology-choice intent inside a workflow",
+        "deterministic versus probabilistic logic",
+        "bounded AI interpretation",
+        "hybrid workflow design",
+        "certainty test",
+        "AI agent scope"
+      ],
+      "why_meaningfully_distinct": "The custom-automation article decides how bespoke the architecture should be. This page decides whether individual workflow steps need model-based interpretation at all, versus explicit deterministic rules. Readiness and prioritisation pages address earlier decisions."
     },
-    "original_editorial_asset": "The Olivers Consulting seven-point automation readiness checklist: Owner, Trigger, Normal rules, Data, Exceptions, Controls and Success measure, with a 0-2 scoring method used only as a practical decision aid.",
-    "first_hand_contribution_or_limits": "Uses practical business-analysis, data-quality, governance and control-design judgement. The 11-14 readiness range is explicitly framed as an Olivers Consulting decision aid rather than an empirical industry benchmark.",
+    "original_editorial_asset": "The Olivers Consulting certainty test: define whether the answer is exact, whether inputs are too variable for rules, whether AI output can be checked before consequential action, and whether the workflow can stop safely when confidence is low. The article also provides a six-stage hybrid workflow model.",
+    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and control-design judgement. The certainty test is explicitly framed as an Olivers Consulting decision aid rather than an empirical industry standard.",
     "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
-    "quality_scores": {"usefulness":5,"originality":5,"distinct_search_intent":5,"authority_added":5,"first_hand_or_expert_value":5,"credibility_for_selected_client_type":5,"workflow_specificity":5,"commercial_relevance":5,"accuracy_and_sourcing":5,"original_asset_quality":5,"lack_of_overlap_with_previous_12":5,"portfolio_balance":5,"lack_of_filler_and_repeated_reasoning":5,"natural_keyword_use":5,"writing_quality":5,"readability":5,"format_variety":5,"trend_or_durable_demand_evidence":4,"fit_with_henry_experience":5,"visual_consistency":5,"mobile_usability":5,"conversion_relevance":5},
-    "quality_average": 4.95,
+    "quality_scores": {
+      "usefulness": 5,
+      "originality": 5,
+      "distinct_search_intent": 5,
+      "authority_added": 5,
+      "first_hand_or_expert_value": 5,
+      "credibility_for_selected_client_type": 5,
+      "workflow_specificity": 5,
+      "commercial_relevance": 5,
+      "accuracy_and_sourcing": 5,
+      "original_asset_quality": 5,
+      "lack_of_overlap_with_previous_12": 5,
+      "portfolio_balance": 5,
+      "lack_of_filler_and_repeated_reasoning": 5,
+      "natural_keyword_use": 5,
+      "writing_quality": 5,
+      "readability": 5,
+      "format_variety": 5,
+      "trend_or_durable_demand_evidence": 5,
+      "fit_with_henry_experience": 5,
+      "visual_consistency": 5,
+      "mobile_usability": 5,
+      "conversion_relevance": 5
+    },
+    "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for immediate answer, checklist-led structure, question-based implementation guidance, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid, headings wrap, CTA can span lines and the readiness table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. The article remains process-led and does not force AI into readiness criteria.",
-    "internal_links": ["/articles/email-attachments-shared-folders-or-forms/", "/articles/what-should-small-business-automate-first/", "/articles/automate-data-entry-between-business-systems/", "/articles/manual-admin-interruption-cost/", "/articles/business-automation-cost-uk-sme/", "/contact/"],
-    "bidirectional_link_targets": ["/articles/what-should-small-business-automate-first/", "/articles/business-automation-cost-uk-sme/"],
+    "readability_check": "Passed editorial review for immediate answer, comparison-led structure, practical examples, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid, headings wrap, CTA can span lines and the comparison table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI is the subject of the article but is framed as a bounded capability within controlled workflows rather than a default replacement for deterministic automation.",
+    "internal_links": [
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/business-automation-cost-uk-sme/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/automation-readiness-checklist-small-business/",
+      "/contact/"
+    ],
+    "bidirectional_link_targets": [
+      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/automation-readiness-checklist-small-business/"
+    ],
     "external_sources": [],
-    "schema": ["Article", "BreadcrumbList", "FAQPage"],
-    "discovery_file_updates": ["articles/index.html", "sitemap.xml", "llms.txt", "feed.xml", "articles/content-plan.json"],
+    "schema": [
+      "Article",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "discovery_file_updates": [
+      "articles/index.html",
+      "sitemap.xml",
+      "llms.txt",
+      "feed.xml",
+      "articles/content-plan.json"
+    ],
     "robots_inspection": "Passed; intended indexing remains allowed for Googlebot, Bingbot and supported search/answer crawlers, with sitemap and feed discovery present. No robots.txt change was necessary."
   },
   "recent_articles": [
-    {"title":"Automation readiness checklist for small businesses","slug":"automation-readiness-checklist-small-business","date_published":"2026-09-14","portfolio_classification":"broader SME-led"},
-    {"title":"What should a small business automate first?","slug":"what-should-small-business-automate-first","date_published":"2026-09-11","portfolio_classification":"broader SME-led"},
-    {"title":"How much does business automation cost for a UK SME?","slug":"business-automation-cost-uk-sme","date_published":"2026-09-09","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate data entry between business systems","slug":"automate-data-entry-between-business-systems","date_published":"2026-09-07","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate customer service ticket triage","slug":"automate-customer-service-ticket-triage","date_published":"2026-09-04","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate management reporting from spreadsheets","slug":"automate-management-reporting-from-spreadsheets","date_published":"2026-09-02","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate lead follow-up without sounding like spam","slug":"automate-lead-follow-up-without-spam","date_published":"2026-08-31","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate expense claims without losing approval control","slug":"automate-expense-claims-approval","date_published":"2026-08-28","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate order fulfilment without shipping the wrong orders","slug":"automate-order-fulfilment-exception-routing","date_published":"2026-08-26","portfolio_classification":"ecommerce/wholesale/distribution-led"},
-    {"title":"How to automate quote creation without losing pricing control","slug":"automate-quote-creation-approval","date_published":"2026-08-24","portfolio_classification":"broader SME-led"},
-    {"title":"How to automate invoice chasing without damaging customer relationships","slug":"automate-invoice-chasing-without-damaging-customer-relationships","date_published":"2026-08-21","portfolio_classification":"broader SME-led"},
-    {"title":"How mortgage brokers can automate document collection without weakening the advice file","slug":"automate-mortgage-broker-document-collection","date_published":"2026-08-20","portfolio_classification":"broader SME-led"}
+    {
+      "title": "AI automation vs rule-based automation: what should a small business use?",
+      "slug": "ai-vs-rule-based-automation-small-business",
+      "date_published": "2026-09-18",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "Automation readiness checklist for small businesses",
+      "slug": "automation-readiness-checklist-small-business",
+      "date_published": "2026-09-14",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "What should a small business automate first?",
+      "slug": "what-should-small-business-automate-first",
+      "date_published": "2026-09-11",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How much does business automation cost for a UK SME?",
+      "slug": "business-automation-cost-uk-sme",
+      "date_published": "2026-09-09",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate data entry between business systems",
+      "slug": "automate-data-entry-between-business-systems",
+      "date_published": "2026-09-07",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate customer service ticket triage",
+      "slug": "automate-customer-service-ticket-triage",
+      "date_published": "2026-09-04",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate management reporting from spreadsheets",
+      "slug": "automate-management-reporting-from-spreadsheets",
+      "date_published": "2026-09-02",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate lead follow-up without sounding like spam",
+      "slug": "automate-lead-follow-up-without-spam",
+      "date_published": "2026-08-31",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate expense claims without losing approval control",
+      "slug": "automate-expense-claims-approval",
+      "date_published": "2026-08-28",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate order fulfilment without shipping the wrong orders",
+      "slug": "automate-order-fulfilment-exception-routing",
+      "date_published": "2026-08-26",
+      "portfolio_classification": "ecommerce/wholesale/distribution-led"
+    },
+    {
+      "title": "How to automate quote creation without losing pricing control",
+      "slug": "automate-quote-creation-approval",
+      "date_published": "2026-08-24",
+      "portfolio_classification": "broader SME-led"
+    },
+    {
+      "title": "How to automate invoice chasing without damaging customer relationships",
+      "slug": "automate-invoice-chasing-without-damaging-customer-relationships",
+      "date_published": "2026-08-21",
+      "portfolio_classification": "broader SME-led"
+    }
   ]
 }
