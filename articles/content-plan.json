@@ -3,62 +3,59 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Friday manual one-off",
-    "editorial_role": "SEO-led AI and workflow architecture expansion",
-    "article_format": "AI-versus-rule-based automation decision guide with certainty test and hybrid workflow model",
-    "title": "AI automation vs rule-based automation: what should a small business use?",
-    "slug": "ai-vs-rule-based-automation-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/ai-vs-rule-based-automation-small-business/",
+    "scheduled_day": "Monday manual one-off",
+    "editorial_role": "SEO-led automation implementation and failure-prevention expansion",
+    "article_format": "Mistakes and recovery guide with seven failure patterns and failure-chain framework",
+    "title": "7 common automation mistakes small businesses make",
+    "slug": "common-automation-mistakes-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/common-automation-mistakes-small-business/",
     "topic_pillar": "Automation strategy and decision content",
     "parent_topic_cluster": "Automation strategy and investment",
-    "target_client_type": "UK SME owners and operations leaders deciding whether a workflow needs AI, deterministic rules or a hybrid design",
-    "industry_or_operating_context": "AI-assisted workflows, deterministic automation, unstructured inputs, validation, controls, exception routing and human review",
+    "target_client_type": "UK SME owners and operations leaders planning, reviewing or recovering business automation",
+    "industry_or_operating_context": "Process clarity, tool selection, exceptions, data quality, controls, testing, monitoring and ownership",
     "portfolio_classification": "broader SME-led",
-    "rolling_12_portfolio_mix_after_publication": {
-      "ecommerce_wholesale_distribution_led": 1,
-      "broader_sme_led": 11
-    },
-    "primary_buyer_problem": "SMEs are increasingly considering AI automation but often lack a practical method for deciding which workflow steps genuinely need model-based interpretation and which should remain explicit, deterministic rules.",
-    "primary_search_intent": "Compare AI automation with rule-based workflow automation and decide when a small business should use rules, bounded AI or a hybrid design.",
-    "buyer_stage": "Solution evaluation / architecture selection",
-    "primary_query": "AI automation vs rule-based automation small business",
+    "primary_buyer_problem": "Small businesses often encounter weak automation outcomes because process design, exception handling, testing and ownership are treated as secondary to tooling.",
+    "primary_search_intent": "Understand the most common automation mistakes small businesses make and how to prevent or recover from them.",
+    "buyer_stage": "Solution evaluation / implementation / post-launch review",
+    "primary_query": "common automation mistakes small business",
     "related_query_family": [
-      "AI automation vs traditional automation",
-      "AI vs workflow automation",
-      "when to use AI in business automation",
-      "deterministic vs AI automation",
-      "AI agent vs workflow automation small business"
+      "workflow automation mistakes",
+      "business automation mistakes",
+      "automation implementation mistakes",
+      "why automation fails small business",
+      "how to avoid automation mistakes"
     ],
-    "trend_or_durable_demand": "Active 2026 comparison demand. Live search results reviewed 18 September 2026 contain multiple recent guides comparing deterministic workflows, AI agents and hybrid automation, while UK workplace AI adoption is also receiving current mainstream coverage.",
-    "evidence_source_and_date": "Repository article library and live web search reviewed 18 September 2026. Current results include recent 2026 comparisons of deterministic workflow automation, AI agents and hybrid designs; the repository had no dedicated page targeting this comparison intent.",
-    "existing_article_gap": "The library discusses AI within individual articles and covers custom architecture, but did not have a dedicated page explaining when a workflow step should use deterministic rules versus AI interpretation.",
+    "trend_or_durable_demand": "Durable implementation-stage demand. Live September 2026 results contain several current guides focused on workflow automation failure patterns and SME implementation mistakes.",
+    "evidence_source_and_date": "Repository library and live web search reviewed 21 September 2026. Current results repeatedly cover automating broken processes, tool-first implementation, exception handling, testing and ownership; the Olivers Consulting library did not yet have a dedicated mistakes/recovery page.",
+    "existing_article_gap": "The library covers prioritisation, readiness, cost, architecture and AI-versus-rules, but lacked one page focused on cross-cutting implementation mistakes and post-launch recovery.",
     "existing_supporting_articles": [
-      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/articles/automation-readiness-checklist-small-business/",
-      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/what-should-small-business-automate-first/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/articles/automate-data-entry-between-business-systems/",
-      "/articles/business-automation-cost-uk-sme/"
+      "/articles/ai-vs-rule-based-automation-small-business/",
+      "/articles/manual-admin-interruption-cost/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "When is custom automation worth it for a small business?",
         "Automation readiness checklist for small businesses",
         "What should a small business automate first?",
-        "How to automate customer service ticket triage"
+        "When is custom automation worth it for a small business?",
+        "AI automation vs rule-based automation: what should a small business use?"
       ],
       "meaningfully_different_dimensions": [
-        "technology-choice intent inside a workflow",
-        "deterministic versus probabilistic logic",
-        "bounded AI interpretation",
-        "hybrid workflow design",
-        "certainty test",
-        "AI agent scope"
+        "failure patterns across the lifecycle",
+        "post-launch ownership",
+        "testing failures",
+        "recovery from weak automation",
+        "tool-first design",
+        "automation failure chain"
       ],
-      "why_meaningfully_distinct": "The custom-automation article decides how bespoke the architecture should be. This page decides whether individual workflow steps need model-based interpretation at all, versus explicit deterministic rules. Readiness and prioritisation pages address earlier decisions."
+      "why_meaningfully_distinct": "The adjacent pages answer selection, readiness and architecture questions. This page targets why implementations underperform and how to prevent or recover from those failure patterns."
     },
-    "original_editorial_asset": "The Olivers Consulting certainty test: define whether the answer is exact, whether inputs are too variable for rules, whether AI output can be checked before consequential action, and whether the workflow can stop safely when confidence is low. The article also provides a six-stage hybrid workflow model.",
-    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and control-design judgement. The certainty test is explicitly framed as an Olivers Consulting decision aid rather than an empirical industry standard.",
+    "original_editorial_asset": "The Olivers Consulting failure chain: unclear process → fragile build → hidden exception → manual workaround → loss of trust → abandonment, paired with a seven-mistake prevention table.",
+    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and control-design judgement. The failure chain is presented as an editorial framework, not empirical research.",
     "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
     "quality_scores": {
       "usefulness": 5,
@@ -87,20 +84,20 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for immediate answer, comparison-led structure, practical examples, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid, headings wrap, CTA can span lines and the comparison table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI is the subject of the article but is framed as a bounded capability within controlled workflows rather than a default replacement for deterministic automation.",
+    "readability_check": "Passed editorial review for direct answer, mistakes-led structure, practical recovery guidance, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the comparison table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI is covered only as one implementation case and does not dominate the broader automation guidance.",
     "internal_links": [
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-customer-service-ticket-triage/",
-      "/articles/business-automation-cost-uk-sme/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/articles/automation-readiness-checklist-small-business/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/manual-admin-interruption-cost/",
+      "/articles/ai-vs-rule-based-automation-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/when-custom-automation-is-worth-it-small-business/",
-      "/articles/automation-readiness-checklist-small-business/"
+      "/articles/automation-readiness-checklist-small-business/",
+      "/articles/what-should-small-business-automate-first/"
     ],
     "external_sources": [],
     "schema": [
@@ -115,9 +112,15 @@
       "feed.xml",
       "articles/content-plan.json"
     ],
-    "robots_inspection": "Passed; intended indexing remains allowed for Googlebot, Bingbot and supported search/answer crawlers, with sitemap and feed discovery present. No robots.txt change was necessary."
+    "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
   },
   "recent_articles": [
+    {
+      "title": "7 common automation mistakes small businesses make",
+      "slug": "common-automation-mistakes-small-business",
+      "date_published": "2026-09-21",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "AI automation vs rule-based automation: what should a small business use?",
       "slug": "ai-vs-rule-based-automation-small-business",
@@ -182,12 +185,6 @@
       "title": "How to automate quote creation without losing pricing control",
       "slug": "automate-quote-creation-approval",
       "date_published": "2026-08-24",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate invoice chasing without damaging customer relationships",
-      "slug": "automate-invoice-chasing-without-damaging-customer-relationships",
-      "date_published": "2026-08-21",
       "portfolio_classification": "broader SME-led"
     }
   ]
