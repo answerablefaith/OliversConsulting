@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [When a small business should not automate a process](https://oliversconsulting.co.uk/articles/when-not-to-automate-business-process/)
 - [Common automation mistakes small businesses make](https://oliversconsulting.co.uk/articles/common-automation-mistakes-small-business/)
 - [AI automation vs rule-based automation for small businesses](https://oliversconsulting.co.uk/articles/ai-vs-rule-based-automation-small-business/)
 - [Automation readiness checklist for small businesses](https://oliversconsulting.co.uk/articles/automation-readiness-checklist-small-business/)
