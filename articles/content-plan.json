@@ -3,59 +3,59 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led automation implementation and failure-prevention expansion",
-    "article_format": "Mistakes and recovery guide with seven failure patterns and failure-chain framework",
-    "title": "7 common automation mistakes small businesses make",
-    "slug": "common-automation-mistakes-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/common-automation-mistakes-small-business/",
+    "scheduled_day": "Wednesday manual one-off",
+    "editorial_role": "SEO-led automation go/no-go decision expansion",
+    "article_format": "Decision guide with six no-go conditions and three-outcome assessment framework",
+    "title": "When should a small business not automate a process?",
+    "slug": "when-not-to-automate-business-process",
+    "url": "https://oliversconsulting.co.uk/articles/when-not-to-automate-business-process/",
     "topic_pillar": "Automation strategy and decision content",
     "parent_topic_cluster": "Automation strategy and investment",
-    "target_client_type": "UK SME owners and operations leaders planning, reviewing or recovering business automation",
-    "industry_or_operating_context": "Process clarity, tool selection, exceptions, data quality, controls, testing, monitoring and ownership",
+    "target_client_type": "UK SME owners and operations leaders deciding whether a specific process should be automated now, improved first or kept human-led",
+    "industry_or_operating_context": "Process stability, judgement, data quality, downside control, workload economics and operational ownership",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Small businesses often encounter weak automation outcomes because process design, exception handling, testing and ownership are treated as secondary to tooling.",
-    "primary_search_intent": "Understand the most common automation mistakes small businesses make and how to prevent or recover from them.",
-    "buyer_stage": "Solution evaluation / implementation / post-launch review",
-    "primary_query": "common automation mistakes small business",
+    "primary_buyer_problem": "Businesses often know a process is painful but lack a practical way to decide when automation should be delayed, narrowed or rejected in favour of process improvement or human judgement.",
+    "primary_search_intent": "Understand when a small business should not automate a process and what to improve before reassessing it.",
+    "buyer_stage": "Problem evaluation / solution evaluation",
+    "primary_query": "when not to automate a business process",
     "related_query_family": [
-      "workflow automation mistakes",
-      "business automation mistakes",
-      "automation implementation mistakes",
-      "why automation fails small business",
-      "how to avoid automation mistakes"
+      "what processes should not be automated",
+      "when should a business process not be automated",
+      "manual vs automated process small business",
+      "when automation is not worth it",
+      "what not to automate small business"
     ],
-    "trend_or_durable_demand": "Durable implementation-stage demand. Live September 2026 results contain several current guides focused on workflow automation failure patterns and SME implementation mistakes.",
-    "evidence_source_and_date": "Repository library and live web search reviewed 21 September 2026. Current results repeatedly cover automating broken processes, tool-first implementation, exception handling, testing and ownership; the Olivers Consulting library did not yet have a dedicated mistakes/recovery page.",
-    "existing_article_gap": "The library covers prioritisation, readiness, cost, architecture and AI-versus-rules, but lacked one page focused on cross-cutting implementation mistakes and post-launch recovery.",
+    "trend_or_durable_demand": "Active September 2026 decision-stage demand. Current search results include fresh guides specifically targeting when not to automate, manual-versus-automated decisions and human-led exceptions.",
+    "evidence_source_and_date": "Repository library and live web search reviewed 23 September 2026. Current results repeatedly cover unstable processes, low-volume work, judgement-heavy work, unreliable data, fallback design and ownership. The Olivers Consulting library had no dedicated no-go decision page.",
+    "existing_article_gap": "The library covers what to automate first, readiness, cost, architecture and mistakes, but lacked a dedicated page for rejecting, delaying or narrowing an automation candidate.",
     "existing_supporting_articles": [
       "/articles/automation-readiness-checklist-small-business/",
       "/articles/what-should-small-business-automate-first/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/common-automation-mistakes-small-business/",
+      "/articles/business-automation-cost-uk-sme/",
       "/articles/automate-data-entry-between-business-systems/",
-      "/articles/ai-vs-rule-based-automation-small-business/",
-      "/articles/manual-admin-interruption-cost/"
+      "/articles/ai-vs-rule-based-automation-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "Automation readiness checklist for small businesses",
         "What should a small business automate first?",
-        "When is custom automation worth it for a small business?",
+        "Automation readiness checklist for small businesses",
+        "7 common automation mistakes small businesses make",
         "AI automation vs rule-based automation: what should a small business use?"
       ],
       "meaningfully_different_dimensions": [
-        "failure patterns across the lifecycle",
-        "post-launch ownership",
-        "testing failures",
-        "recovery from weak automation",
-        "tool-first design",
-        "automation failure chain"
+        "explicit no-go intent",
+        "reject/delay/narrow decision",
+        "human-led work",
+        "low-value automation",
+        "uncontrolled downside",
+        "temporary versus permanent no-go conditions"
       ],
-      "why_meaningfully_distinct": "The adjacent pages answer selection, readiness and architecture questions. This page targets why implementations underperform and how to prevent or recover from those failure patterns."
+      "why_meaningfully_distinct": "The prioritisation page ranks good candidates, readiness checks whether a chosen process is buildable, and the mistakes page covers implementation failure. This page answers whether the candidate should be automated at all in its current form."
     },
-    "original_editorial_asset": "The Olivers Consulting failure chain: unclear process → fragile build → hidden exception → manual workaround → loss of trust → abandonment, paired with a seven-mistake prevention table.",
-    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and control-design judgement. The failure chain is presented as an editorial framework, not empirical research.",
+    "original_editorial_asset": "The Olivers Consulting three-outcome test: automate now, improve first, or keep the decision human-led, supported by six no-go conditions.",
+    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and control-design reasoning. The three-outcome test is explicitly an editorial decision framework, not empirical research.",
     "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
     "quality_scores": {
       "usefulness": 5,
@@ -84,20 +84,23 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for direct answer, mistakes-led structure, practical recovery guidance, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the comparison table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI is covered only as one implementation case and does not dominate the broader automation guidance.",
+    "readability_check": "Passed editorial review for direct answer, decision-led structure, practical no-go conditions, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the decision table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI appears only where relevant to partial automation and is not the dominant frame.",
     "internal_links": [
       "/articles/automation-readiness-checklist-small-business/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/articles/automate-data-entry-between-business-systems/",
+      "/articles/business-automation-cost-uk-sme/",
       "/articles/manual-admin-interruption-cost/",
       "/articles/ai-vs-rule-based-automation-small-business/",
+      "/articles/what-should-small-business-automate-first/",
+      "/articles/common-automation-mistakes-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
       "/articles/automation-readiness-checklist-small-business/",
-      "/articles/what-should-small-business-automate-first/"
+      "/articles/what-should-small-business-automate-first/",
+      "/articles/common-automation-mistakes-small-business/"
     ],
     "external_sources": [],
     "schema": [
@@ -110,11 +113,19 @@
       "sitemap.xml",
       "llms.txt",
       "feed.xml",
-      "articles/content-plan.json"
+      "articles/content-plan.json",
+      "docs/seo/article-ledger.csv",
+      "docs/seo/page-inventory.csv"
     ],
     "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
   },
   "recent_articles": [
+    {
+      "title": "When should a small business not automate a process?",
+      "slug": "when-not-to-automate-business-process",
+      "date_published": "2026-09-23",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "7 common automation mistakes small businesses make",
       "slug": "common-automation-mistakes-small-business",
@@ -180,12 +191,6 @@
       "slug": "automate-order-fulfilment-exception-routing",
       "date_published": "2026-08-26",
       "portfolio_classification": "ecommerce/wholesale/distribution-led"
-    },
-    {
-      "title": "How to automate quote creation without losing pricing control",
-      "slug": "automate-quote-creation-approval",
-      "date_published": "2026-08-24",
-      "portfolio_classification": "broader SME-led"
     }
   ]
 }
