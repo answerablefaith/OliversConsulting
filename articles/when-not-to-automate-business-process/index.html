@@ -32,30 +32,37 @@
 <tr><td><strong>6. Nobody owns it</strong></td><td>No one monitors exceptions or decides when rules change</td><td>Assign an operational owner before launch</td></tr>
 </tbody></table></div>
 <div class="framework"><strong>The Olivers Consulting three-outcome test</strong><p>Every automation assessment should end with one of three outcomes: <strong>automate now</strong>, <strong>improve first</strong>, or <strong>keep the decision human-led</strong>. The middle outcome matters most because many weak candidates become strong ones after the process is narrowed or clarified.</p></div>
+<p>I would not treat those outcomes as a ladder from “good” to “bad”. A narrow, reliable automation with a clear human decision point is often a better design than an end-to-end workflow that pretends every case is standard.</p>
 <h2>1. Do not automate a process that is still changing</h2>
 <p>If the team is still deciding how the process should work, automation will lock one version of an unstable workflow into software.</p>
 <p>That creates avoidable maintenance because every operating change becomes a build change. Standardise the normal route first, then automate the parts that survive those changes.</p>
+<p>I would also separate normal change from unresolved design. A process can evolve over time and still be automatable. The warning sign is when two people cannot agree what should happen today.</p>
 <p>The <a href="/articles/automation-readiness-checklist-small-business/">automation readiness checklist</a> helps identify whether the trigger, owner, rules, data and exceptions are defined well enough to build.</p>
 <h2>2. Do not automate the part where judgement creates the value</h2>
 <p>Some work looks repetitive but the real value sits in interpretation, negotiation, relationship context or a material decision.</p>
 <p>A customer complaint may follow a standard intake process, but the response to an unusual or sensitive case may still require a person. A pricing workflow may gather data automatically, while a non-standard commercial decision remains human-led.</p>
 <p>The better design is often to automate the preparation around judgement: collect the information, validate required fields, summarise context and route the case to the right person.</p>
+<p>My preference is to automate the evidence before the authority. Let software assemble the case, calculate the standard position and flag what is unusual. Keep the irreversible or relationship-sensitive decision with the person who owns it.</p>
 <h2>3. Do not automate unreliable inputs without a control layer</h2>
 <p>A workflow cannot make unreliable data trustworthy by moving it faster.</p>
 <p>If customer records duplicate easily, product identifiers conflict or required fields are frequently absent, solve the source and validation problem before allowing the automation to write into more systems.</p>
 <p>Our guide to <a href="/articles/automate-data-entry-between-business-systems/">automating data entry between business systems</a> shows how field ownership, stable identifiers and visible exception states protect cross-system workflows.</p>
+<p>I think businesses sometimes call this an automation problem because the manual work is visible. The deeper problem may be that nobody owns the field definition, identifier or source record. A new workflow can expose that problem, but it cannot decide ownership for you.</p>
 <h2>4. Do not automate a high-impact action without recovery</h2>
 <p>The higher the downside of a wrong action, the more important it is to define the stop condition.</p>
 <p>Examples include releasing money, overriding approval limits, changing important customer entitlements, deleting records or submitting material information externally.</p>
 <p>Automation can still prepare these actions. It can gather evidence, calculate thresholds, detect missing information and queue the case. But if failure cannot be reversed cleanly, keep an approval or control point until the workflow has proved itself.</p>
+<div class="callout"><p>Reversibility is an underrated design test. If the workflow can make a consequential change in seconds but recovery takes hours, the control point belongs before the action, not after it.</p></div>
 <h2>5. Do not automate work that does not justify the build</h2>
 <p>Not every manual task deserves software.</p>
 <p>If a process happens a few times a year, takes little effort and changes frequently, the build and support burden may outweigh the value. A documented manual checklist can be the better operating design.</p>
 <p>Compare the cost of the current work with the expected build, support and review effort. The <a href="/articles/business-automation-cost-uk-sme/">business automation cost guide</a> and <a href="/articles/manual-admin-interruption-cost/">manual-admin cost guide</a> provide the two sides of that comparison.</p>
+<p>I would count maintenance as part of the decision from the start. A five-minute monthly task is not improved if the business creates a workflow that needs specialist attention every time a source system changes.</p>
 <h2>6. Do not launch automation without an operational owner</h2>
 <p>Somebody must own what the workflow does after launch.</p>
 <p>That person or role should know what normal volume looks like, which exceptions require attention, when an upstream change affects the workflow and when the automation needs review.</p>
 <p>Without ownership, failures become invisible until staff create workarounds and trust drops.</p>
+<p>The less visible the automation is, the more important ownership becomes. A manual problem is often obvious because somebody is doing the work. An automated problem can fail quietly unless somebody owns the exception queue, alerts and change decisions.</p>
 <h2>What should stay manual permanently?</h2>
 <p>Very little routine work needs to remain entirely manual forever, but some decisions should remain human-led because the judgement itself is the point.</p>
 <p>Relationship-sensitive conversations, negotiations, unusual complaints, strategic prioritisation and material exceptions often benefit from automation around the edges rather than full straight-through processing.</p>
@@ -64,6 +71,7 @@
 <p>Automate the bounded part.</p>
 <p>A workflow does not need to be end-to-end to create value. Capture the input, check required fields, move trusted data, calculate standard values and route the exception to a person.</p>
 <p>This is also where the <a href="/articles/ai-vs-rule-based-automation-small-business/">AI versus rule-based automation guide</a> is useful: interpretation can be bounded to one step while permissions and consequential actions remain explicit.</p>
+<p>I expect this partial-automation pattern to become more common as AI improves. More messy inputs will become machine-readable, but the useful boundary will still be the same: interpretation can expand faster than authority. Businesses will still need to decide which actions a system is allowed to take on its own.</p>
 <h2>How is this different from choosing what to automate first?</h2>
 <p>The question “what should I automate first?” ranks good candidates. This page answers a different question: when should a candidate be rejected, delayed or narrowed?</p>
 <p>A process can be frequent and painful yet still be the wrong project today because the rules are unstable or the data cannot support safe execution. The <a href="/articles/what-should-small-business-automate-first/">first-automation guide</a> helps prioritise the candidates that remain after those no-go conditions are removed.</p>
@@ -73,6 +81,7 @@
 <h2>How can a no-go process become automatable?</h2>
 <ul><li>Stabilise the normal route.</li><li>Remove unnecessary steps.</li><li>Define the owner and trigger.</li><li>Improve the minimum data required.</li><li>Separate standard cases from exceptions.</li><li>Add approval or recovery where failure matters.</li><li>Narrow the scope to a dependable subset.</li><li>Measure whether the remaining workload is worth automating.</li></ul>
 <p>A smaller scope is often the fastest route from “not yet” to a reliable automation.</p>
+<p>That is why I would rarely ask, “Can this whole process be automated?” The more useful question is, “Which part is already stable enough to automate without making the rest harder to control?”</p>
 <h2>What is the best next step?</h2>
 <p>Take one recurring process and classify it as automate now, improve first or keep the decision human-led.</p>
 <p>If it lands in the middle, write down the exact condition preventing automation. That turns “we are not ready” into a finite improvement task rather than a permanent objection.</p>
