@@ -3,60 +3,60 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Wednesday manual one-off",
-    "editorial_role": "SEO-led automation go/no-go decision expansion",
-    "article_format": "Decision guide with six no-go conditions and three-outcome assessment framework",
-    "title": "When should a small business not automate a process?",
-    "slug": "when-not-to-automate-business-process",
-    "url": "https://oliversconsulting.co.uk/articles/when-not-to-automate-business-process/",
+    "scheduled_day": "Friday manual one-off",
+    "editorial_role": "SEO-led automation ROI and investment decision expansion",
+    "article_format": "ROI decision guide with four-value model, worked example and payback framework",
+    "title": "How to calculate automation ROI for a small business",
+    "slug": "calculate-automation-roi-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/calculate-automation-roi-small-business/",
     "topic_pillar": "Automation strategy and decision content",
     "parent_topic_cluster": "Automation strategy and investment",
-    "target_client_type": "UK SME owners and operations leaders deciding whether a specific process should be automated now, improved first or kept human-led",
-    "industry_or_operating_context": "Process stability, judgement, data quality, downside control, workload economics and operational ownership",
+    "target_client_type": "UK SME owners and operations leaders building a financial case for a defined automation project",
+    "industry_or_operating_context": "Manual workload, released capacity, cash impact, rework, delay, build cost, support cost and payback",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Businesses often know a process is painful but lack a practical way to decide when automation should be delayed, narrowed or rejected in favour of process improvement or human judgement.",
-    "primary_search_intent": "Understand when a small business should not automate a process and what to improve before reassessing it.",
-    "buyer_stage": "Problem evaluation / solution evaluation",
-    "primary_query": "when not to automate a business process",
+    "primary_buyer_problem": "SMEs often struggle to distinguish genuine financial return from released staff capacity when evaluating automation investments.",
+    "primary_search_intent": "Calculate automation ROI for a small business and build a credible payback case using defensible operational inputs.",
+    "buyer_stage": "Business case / solution evaluation",
+    "primary_query": "how to calculate automation ROI for a small business",
     "related_query_family": [
-      "what processes should not be automated",
-      "when should a business process not be automated",
-      "manual vs automated process small business",
-      "when automation is not worth it",
-      "what not to automate small business"
+      "automation ROI formula small business",
+      "business process automation ROI",
+      "workflow automation ROI UK SME",
+      "automation payback period small business",
+      "is automation worth it ROI"
     ],
-    "trend_or_durable_demand": "Active September 2026 decision-stage demand. Current search results include fresh guides specifically targeting when not to automate, manual-versus-automated decisions and human-led exceptions.",
-    "evidence_source_and_date": "Repository library and live web search reviewed 23 September 2026. Current results repeatedly cover unstable processes, low-volume work, judgement-heavy work, unreliable data, fallback design and ownership. The Olivers Consulting library had no dedicated no-go decision page.",
-    "existing_article_gap": "The library covers what to automate first, readiness, cost, architecture and mistakes, but lacked a dedicated page for rejecting, delaying or narrowing an automation candidate.",
+    "trend_or_durable_demand": "Strong decision-stage demand in current September 2026 search results, with several recent UK SME and workflow-automation pages specifically targeting ROI calculations and payback.",
+    "evidence_source_and_date": "Repository library and live web search reviewed 25 September 2026. Current search results consistently use hours saved and cost formulas, but many blur released capacity with cash savings or omit continuing review and support.",
+    "existing_article_gap": "The library has a cost page, a manual-admin baseline page and an ecommerce-specific AI ROI article, but lacked a broad UK SME ROI page separating capacity value from cash impact.",
     "existing_supporting_articles": [
-      "/articles/automation-readiness-checklist-small-business/",
+      "/articles/business-automation-cost-uk-sme/",
+      "/articles/manual-admin-interruption-cost/",
       "/articles/what-should-small-business-automate-first/",
       "/articles/common-automation-mistakes-small-business/",
-      "/articles/business-automation-cost-uk-sme/",
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/ai-vs-rule-based-automation-small-business/"
+      "/articles/when-not-to-automate-business-process/",
+      "/articles/automate-data-entry-between-business-systems/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
+        "How much does business automation cost for a UK SME?",
+        "How to measure the true cost of manual admin",
         "What should a small business automate first?",
-        "Automation readiness checklist for small businesses",
-        "7 common automation mistakes small businesses make",
-        "AI automation vs rule-based automation: what should a small business use?"
+        "When should a small business not automate a process?"
       ],
       "meaningfully_different_dimensions": [
-        "explicit no-go intent",
-        "reject/delay/narrow decision",
-        "human-led work",
-        "low-value automation",
-        "uncontrolled downside",
-        "temporary versus permanent no-go conditions"
+        "ROI calculation",
+        "capacity versus cash",
+        "avoided rework",
+        "delay value",
+        "payback period",
+        "post-launch tracking against business-case assumptions"
       ],
-      "why_meaningfully_distinct": "The prioritisation page ranks good candidates, readiness checks whether a chosen process is buildable, and the mistakes page covers implementation failure. This page answers whether the candidate should be automated at all in its current form."
+      "why_meaningfully_distinct": "The cost article explains what automation costs; the manual-admin page measures the current problem; the prioritisation and no-go pages assess suitability. This page combines cost and value inputs into a financial return and payback model."
     },
-    "original_editorial_asset": "The Olivers Consulting three-outcome test: automate now, improve first, or keep the decision human-led, supported by six no-go conditions.",
-    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and control-design reasoning. The three-outcome test is explicitly an editorial decision framework, not empirical research.",
-    "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
+    "original_editorial_asset": "The Olivers Consulting four-value ROI model: capacity value, cash impact, avoided rework and delay value, combined with a base/downside/upside scenario framework.",
+    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis and control-design reasoning. The four-value model is an editorial framework, not proprietary research.",
+    "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used. The worked example is explicitly illustrative.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -84,23 +84,22 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for direct answer, decision-led structure, practical no-go conditions, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the decision table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI appears only where relevant to partial automation and is not the dominant frame.",
+    "readability_check": "Passed editorial review for direct answer, finance-led structure, worked example, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the ROI table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI is not the main framing.",
     "internal_links": [
-      "/articles/automation-readiness-checklist-small-business/",
+      "/articles/manual-admin-interruption-cost/",
       "/articles/automate-data-entry-between-business-systems/",
       "/articles/business-automation-cost-uk-sme/",
-      "/articles/manual-admin-interruption-cost/",
-      "/articles/ai-vs-rule-based-automation-small-business/",
-      "/articles/what-should-small-business-automate-first/",
       "/articles/common-automation-mistakes-small-business/",
+      "/articles/when-not-to-automate-business-process/",
+      "/articles/what-should-small-business-automate-first/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automation-readiness-checklist-small-business/",
-      "/articles/what-should-small-business-automate-first/",
-      "/articles/common-automation-mistakes-small-business/"
+      "/articles/business-automation-cost-uk-sme/",
+      "/articles/manual-admin-interruption-cost/",
+      "/articles/what-should-small-business-automate-first/"
     ],
     "external_sources": [],
     "schema": [
@@ -120,6 +119,12 @@
     "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
   },
   "recent_articles": [
+    {
+      "title": "How to calculate automation ROI for a small business",
+      "slug": "calculate-automation-roi-small-business",
+      "date_published": "2026-09-25",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "When should a small business not automate a process?",
       "slug": "when-not-to-automate-business-process",
@@ -185,12 +190,6 @@
       "slug": "automate-expense-claims-approval",
       "date_published": "2026-08-28",
       "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate order fulfilment without shipping the wrong orders",
-      "slug": "automate-order-fulfilment-exception-routing",
-      "date_published": "2026-08-26",
-      "portfolio_classification": "ecommerce/wholesale/distribution-led"
     }
   ]
 }
