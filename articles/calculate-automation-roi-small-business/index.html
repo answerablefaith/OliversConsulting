@@ -26,6 +26,7 @@
 <p>A practical annual formula is:</p>
 <div class="framework"><strong>Automation ROI</strong><p><strong>ROI % = (Annual value created − Annual automation cost) ÷ Annual automation cost × 100</strong></p><p>The formula is straightforward. The harder part is defining annual value honestly.</p></div>
 <p>Annual value can include released capacity, real cash savings, avoided rework and measurable delay value. Annual cost should include the build, licences or usage, internal testing, support and the human review that remains.</p>
+<p>I would calculate two versions if capacity is a large part of the case: an <strong>operational ROI</strong> that includes released capacity, and a <strong>cash ROI</strong> that includes only benefits with a direct financial effect. That prevents a useful project from looking weaker than it is without pretending that every saved hour hits the bank account.</p>
 <h2>The four-value model</h2>
 <div class="table-wrap"><table class="roi-table"><thead><tr><th>Value type</th><th>What it means</th><th>How to treat it</th></tr></thead><tbody>
 <tr><td><strong>1. Capacity value</strong></td><td>Hours returned to the existing team</td><td>Track separately unless it produces a real cash effect</td></tr>
@@ -37,6 +38,7 @@
 <p>Start with one defined process. Measure how often it happens, how long the normal route takes and how much additional time is spent on setup, checking, corrections and restarting interrupted work.</p>
 <p>The <a href="/articles/manual-admin-interruption-cost/">manual-admin cost guide</a> is useful here because repeated work is often more expensive than the task time alone suggests.</p>
 <p>Use a realistic loaded hourly cost for the people doing the work. If you do not have a finance-approved loaded cost, keep the calculation transparent and label the assumption.</p>
+<p>I would rather use a slightly rough number everyone understands than a precise-looking figure nobody can explain. The model should be auditable by the people who actually run the process.</p>
 <h2>2. Estimate capacity released by automation</h2>
 <p>Do not assume all current time disappears.</p>
 <p>Some work will remain: reviewing exceptions, checking uncertain matches, approving material decisions and maintaining the process. Estimate the hours the automation can remove reliably, then subtract the human work that remains.</p>
@@ -47,34 +49,41 @@
 <p>If automation releases eight hours a week but payroll does not change, the business has created capacity rather than an immediate cash saving.</p>
 <p>A direct cash effect may exist where the workflow reduces overtime, contractor use, agency spend, temporary staffing, transaction charges or the need for an additional hire that would otherwise be required.</p>
 <div class="callout"><p>Do not call released time a payroll saving unless payroll will actually change. Say what the time will be used for instead.</p></div>
+<p>There is also a useful middle category: <strong>cost avoidance</strong>. If the business can defer a hire because the same team can handle more volume, that is financially relevant even though no current salary has disappeared. I would show that separately from an immediate cash saving so the timing is clear.</p>
 <h2>4. Add avoided rework where you can measure it</h2>
 <p>Manual processes often generate duplicate entry, mismatches, missing fields and correction work.</p>
 <p>Estimate the average time spent fixing those issues and how much of that rework the new workflow can realistically prevent. Keep the assumption conservative.</p>
 <p>Our article on <a href="/articles/automate-data-entry-between-business-systems/">automating data entry between business systems</a> explains why stable identifiers, validation and source ownership matter if the business case depends on reducing duplicate or conflicting records.</p>
+<p>I would not count “fewer errors” twice. If the rework hours are already included in the manual baseline, do not add the same time again as a separate benefit.</p>
 <h2>5. Add delay value only when it is real</h2>
 <p>Faster processing can matter commercially, but delay value is often overstated.</p>
 <p>A shorter invoice cycle may improve cash collection. Faster lead routing may reduce response delay. Faster fulfilment may protect customer service. Those benefits are real only when the business can connect the workflow change to a measurable operating outcome.</p>
 <p>If the link is uncertain, leave the benefit out of the base case and show it as an upside scenario instead.</p>
+<p>My preference is to make the base case deliberately boring. If the project still makes sense without speculative revenue uplift or perfect adoption, the decision is much easier to defend.</p>
 <h2>6. Calculate the full first-year automation cost</h2>
 <p>Use more than the software fee.</p>
 <ul><li><strong>Discovery and scoping:</strong> mapping the process, rules and exceptions.</li><li><strong>Build:</strong> configuration, integration, code and testing.</li><li><strong>Licences or usage:</strong> workflow platforms, APIs, model usage or other recurring tools.</li><li><strong>Internal time:</strong> subject-matter review, test cases, approvals and training.</li><li><strong>Support:</strong> monitoring failures and updating rules when upstream systems change.</li><li><strong>Remaining review:</strong> the human work that still happens after launch.</li></ul>
 <p>The <a href="/articles/business-automation-cost-uk-sme/">business automation cost guide</a> covers these cost drivers in more detail.</p>
+<p>I would also separate one-off implementation cost from recurring annual cost. Otherwise a first-year ROI can look artificially weak for a workflow that is cheap to run after launch, or artificially strong if future support is ignored.</p>
 <h2>A worked example</h2>
 <p>Suppose an operations team spends 10 hours each week compiling, checking and re-keying a recurring report. The loaded staff cost used for the business case is £28 per hour.</p>
 <p>Across 48 working weeks, the current labour value is £13,440 a year.</p>
 <p>A proposed automation is expected to remove 7 of the 10 weekly hours, leaving 3 hours for review and commentary. That releases 336 hours a year, worth £9,408 as capacity at the same loaded cost.</p>
 <p>The automation costs £3,000 to build, £600 a year in tools and £1,200 of internal review and support time in year one. Total first-year cost is £4,800.</p>
-<p>If there is no direct payroll reduction, do not present £9,408 as cash saved. Present it as released capacity. The operational value-to-cost ratio is still useful: £9,408 of annual capacity value against £4,800 of first-year cost.</p>
-<p>If the released capacity genuinely avoids £4,000 of planned contractor spend, then that £4,000 can be shown separately as a cash impact.</p>
+<p>If there is no direct payroll reduction, do not present £9,408 as cash saved. Present it as released capacity. On that basis, the first-year operational ROI is <strong>96%</strong>: (£9,408 − £4,800) ÷ £4,800. That does not mean £4,608 has appeared as cash. It means the estimated value of released capacity exceeds first-year cost by that amount.</p>
+<p>If the released capacity genuinely avoids £4,000 of planned contractor spend, show that £4,000 separately as a cash effect. The cash-only case is then much more conservative than the operational case, which is exactly why keeping the two views separate is useful.</p>
+<div class="callout"><p>I would never use one headline ROI number to hide the mix underneath it. Owners need to know whether the return is cash, capacity, quality or speed because each one changes the business in a different way.</p></div>
 <h2>What should the base case include?</h2>
 <p>I would use three scenarios:</p>
 <ul><li><strong>Base case:</strong> only benefits you can defend with current process evidence.</li><li><strong>Downside case:</strong> lower automation coverage, more exceptions and higher support effort.</li><li><strong>Upside case:</strong> credible additional value such as deferred hiring or reduced delay.</li></ul>
 <p>If the project only looks attractive in the upside case, the business case is weak.</p>
+<p>I would also make one assumption visibly pessimistic. For example, use lower automation coverage than the technical team expects or higher support effort than the initial estimate. A business case that survives that test is more useful than one optimised to win approval.</p>
 <h2>How do you calculate payback period?</h2>
-<p>Payback tells you how long it takes for annualised value to recover the implementation cost.</p>
+<p>Payback tells you how long it takes for value to recover the implementation cost.</p>
 <p>A practical calculation is:</p>
 <div class="framework"><strong>Payback period</strong><p><strong>Payback months = Initial implementation cost ÷ Monthly net value</strong></p><p>Monthly net value should reflect the value created after ongoing monthly running and review costs.</p></div>
 <p>Payback is often easier for an SME owner to interpret than a large ROI percentage because it answers a direct question: how long until this investment earns back its cost?</p>
+<p>Be careful if the “monthly net value” is mostly capacity rather than cash. The formula can still be useful operationally, but call it capacity-value payback rather than implying the investment has literally repaid itself in cash.</p>
 <h2>What ROI assumptions should make you cautious?</h2>
 <ul><li>Every saved hour is counted as cash.</li><li>Exception handling is assumed to disappear.</li><li>Support and maintenance are excluded.</li><li>The current process has not been measured.</li><li>Revenue uplift is claimed without a clear causal link.</li><li>The model assumes full adoption immediately.</li><li>The workflow only works financially if everything goes right.</li></ul>
 <p>The article on <a href="/articles/common-automation-mistakes-small-business/">common automation mistakes</a> explains how weak scoping, hidden exceptions and unclear ownership can undermine the return after launch.</p>
@@ -85,6 +94,7 @@
 <p>Compare the live process with the baseline used in the business case.</p>
 <ul><li>Hours removed from the normal route.</li><li>Hours still spent on exceptions.</li><li>Correction and rework volume.</li><li>Support effort.</li><li>Backlog or response delay.</li><li>Any real cash effect such as avoided overtime or contractor spend.</li></ul>
 <p>If the automation is releasing less capacity than expected, find out whether the issue is adoption, exception volume, data quality or a changed upstream process.</p>
+<p>My preference is to review the original assumptions, not invent a new success measure after launch. If the business case said the workflow would remove six hours a week, measure whether it actually did.</p>
 <h2>How should a small business use ROI to prioritise automation?</h2>
 <p>Compare projects on more than headline percentage.</p>
 <p>A high-return project with fragile data and uncontrolled downside may be less attractive than a slightly lower-return workflow with stable rules and clear ownership.</p>
