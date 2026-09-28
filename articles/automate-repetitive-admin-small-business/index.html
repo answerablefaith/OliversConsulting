@@ -39,6 +39,7 @@
 <figure class="article-image"><picture><source srcset="/assets/images/articles/business-process-review-640.webp 640w, /assets/images/articles/business-process-review-1200.webp 1200w" type="image/webp"><img src="/assets/images/articles/business-process-review-1200.jpg" width="1200" height="630" loading="eager" decoding="async" alt="Small-business team reviewing a repetitive admin workflow before automation"></picture><figcaption>Map the recurring admin chain before choosing which steps to automate.</figcaption></figure>
 <h2>What counts as repetitive admin worth automating?</h2>
 <p>Look for work that repeats frequently, follows a recognisable pattern and mostly exists to move information, confirm status or trigger the next action.</p>
+<p>I would also look for hidden coordination work. If staff spend more time checking whether something happened than doing the underlying task, that is often a stronger automation signal than the task itself.</p>
 <div class="table-wrap"><table class="admin-table"><thead><tr><th>Admin pattern</th><th>Manual version</th><th>Automation opportunity</th></tr></thead><tbody>
 <tr><td><strong>Data movement</strong></td><td>Copying customer, order or supplier data between tools</td><td>Validate once and move approved fields automatically</td></tr>
 <tr><td><strong>Document handling</strong></td><td>Saving, renaming, checking and routing files</td><td>Capture, classify, validate and route by defined rules</td></tr>
@@ -53,6 +54,7 @@
 <ul><li>What event started the work?</li><li>Which systems or files were touched?</li><li>Where was information copied or reformatted?</li><li>Which checks happened every time?</li><li>Which cases needed judgement?</li><li>What caused waiting or chasing?</li><li>How did the next person know the work was ready?</li><li>What proved the process was finished?</li></ul>
 <p>This turns “admin” into an observable workflow rather than a collection of frustrations.</p>
 <div class="framework"><strong>The Olivers Consulting admin chain model</strong><p><strong>Trigger → Capture → Validate → Act → Confirm → Exception</strong></p><p>Every recurring admin process should be mapped through these six states. If a step cannot be placed clearly, the workflow is probably still relying on private knowledge or manual memory.</p></div>
+<p>I would be suspicious of any admin process that has an action but no confirmation. “We sent it” is not the same as “the next system accepted it” or “the next person received a complete case”. That gap is where a lot of checking work comes from.</p>
 <h2>1. Define the trigger</h2>
 <p>The trigger is the event that makes the work real: a form submission, customer email, order, payment, uploaded file, new lead, scheduled date or status change.</p>
 <p>A clear trigger prevents the process depending on somebody remembering to begin it.</p>
@@ -63,6 +65,7 @@
 <h2>3. Validate before moving the work on</h2>
 <p>Automation should check the information needed for the next step.</p>
 <p>Required fields, identifiers, totals, dates and known statuses can often be validated deterministically. If something is missing or ambiguous, stop the normal route and create an exception rather than passing uncertainty downstream.</p>
+<p>My preference is to fail early and visibly. A missing reference caught at intake is a small problem. The same missing reference discovered after three systems have been updated is an operational clean-up job.</p>
 <h2>4. Automate the repeatable action</h2>
 <p>Once the inputs are trusted, the workflow can carry out the predictable work: create a record, update a status, prepare a document, send a reminder, move a file, calculate a value or notify the next owner.</p>
 <p>Use the least complex design that reliably completes the job. The article on <a href="/articles/when-custom-automation-is-worth-it-small-business/">when custom automation is worth it</a> helps decide whether a native feature, workflow platform or bespoke logic is appropriate.</p>
@@ -70,20 +73,24 @@
 <p>An admin workflow is not finished because a step ran. It is finished when the intended outcome exists.</p>
 <p>If the workflow creates an invoice, confirm that the record was created. If it sends data to another system, capture the success or failure response. If it sends a reminder, update the state so the same reminder does not fire indefinitely.</p>
 <p>This is the difference between automation that performs actions and automation that manages work.</p>
+<div class="callout"><p>I think this is where small automations often look successful in a demo and still disappoint in daily use. The happy path runs, but somebody remains responsible for checking whether it actually completed.</p></div>
 <h2>6. Make exceptions visible</h2>
 <p>Every useful workflow needs an explicit exception route.</p>
 <p>Examples include a missing customer reference, duplicate record, unexpected total, unknown product code, unavailable system or a case outside normal policy.</p>
 <p>An exception should show what failed, which item is affected and who owns the next decision.</p>
 <p>The <a href="/articles/common-automation-mistakes-small-business/">common automation mistakes guide</a> explains why hidden exceptions create manual workarounds and loss of trust.</p>
+<p>I would treat an exception queue with no named owner as unfinished automation. The software may have stopped safely, but the business process has not.</p>
 <h2>Which admin tasks should stay with people?</h2>
 <p>Keep the parts where judgement, relationship context or material decisions create the value.</p>
 <p>For example, automate the collection and routing of a customer complaint, but keep the response to an unusual or sensitive case with a person. Automate the preparation of a pricing request, but keep a non-standard commercial decision under review.</p>
 <p>The guide on <a href="/articles/when-not-to-automate-business-process/">when not to automate a process</a> covers the conditions that should delay, narrow or stop a build.</p>
+<p>The practical dividing line is usually authority. Software can prepare, validate and route much more than it should necessarily be allowed to approve, overwrite or commit.</p>
 <h2>Do you need AI to automate repetitive admin?</h2>
 <p>Not always.</p>
 <p>Exact calculations, field validation, reminders, status updates and known system hand-offs are usually better handled with deterministic rules.</p>
 <p>AI becomes useful when the input itself is messy or variable, such as free-text emails, inconsistent documents or unstructured notes.</p>
 <p>The <a href="/articles/ai-vs-rule-based-automation-small-business/">AI versus rule-based automation guide</a> shows how to keep interpretation bounded while explicit rules control permissions and consequential actions.</p>
+<p>I expect AI to expand the amount of admin that can be prepared automatically. The important shift will not be that every workflow becomes autonomous. It will be that messy inputs become easier to turn into structured cases, while approval, overwrite and exception rules remain explicit.</p>
 <h2>How do you choose the first admin workflow?</h2>
 <p>Pick a process that is frequent, stable enough to describe, measurable and low enough risk to test safely.</p>
 <p>The best first candidate is often not the task people complain about most. It is the workflow where repeated handling is obvious and the normal path is already well understood.</p>
@@ -91,16 +98,19 @@
 <h2>How much of the workflow should be automated?</h2>
 <p>Automate as much of the dependable route as creates value.</p>
 <p>There is no prize for forcing every case through automatically. A workflow that handles the normal route end to end and presents the exceptions clearly can be more useful than one that tries to eliminate every human touch.</p>
+<p>I would rather automate 80% of a process cleanly than automate 100% by burying the difficult 20% inside fragile rules. The remaining human work should be the work that genuinely needs a person, not the work the automation failed to design for.</p>
 <h2>How should a small business measure the result?</h2>
 <p>Measure the admin chain before and after launch.</p>
 <ul><li>Manual touches per item.</li><li>Time spent on the normal route.</li><li>Exception volume.</li><li>Rework or correction effort.</li><li>Backlog or response delay.</li><li>How often staff still need to check whether the workflow finished.</li></ul>
 <p>The <a href="/articles/manual-admin-interruption-cost/">manual-admin cost guide</a> can help establish the current baseline, while the <a href="/articles/calculate-automation-roi-small-business/">automation ROI guide</a> shows how to translate released capacity and avoided rework into a defensible business case.</p>
+<p>I would add one non-financial measure: trust. If staff still re-check every automated result manually, the workflow has not yet released the work it was meant to remove.</p>
 <h2>A practical example: incoming client documents</h2>
 <p>Consider a service business that receives client documents by email.</p>
 <p>The manual process may involve opening the message, saving attachments, naming files, checking required documents, updating a tracker, asking for missing items and notifying the delivery team when the pack is complete.</p>
 <p>A better workflow could:</p>
 <ul><li>capture the incoming email and attachments;</li><li>link them to the correct client using a known reference;</li><li>check which required document types are present;</li><li>store approved files in the correct location;</li><li>update the tracker automatically;</li><li>send a reminder for missing items;</li><li>notify the team only when the pack is complete;</li><li>route unmatched or unusual cases to review.</li></ul>
 <p>The value comes from removing the repeated chain, not from automating “save attachment”.</p>
+<p>I would start with the dependable document types and known client references first. Let the unusual cases go to review. That gives the business a useful workflow without redesigning every possible document scenario on day one.</p>
 <h2>What should you document before building?</h2>
 <p>For one admin workflow, write down:</p>
 <ul><li>the trigger;</li><li>the systems involved;</li><li>the required inputs;</li><li>the normal rules;</li><li>the output that proves completion;</li><li>the exceptions;</li><li>the owner of each exception;</li><li>the measure of success.</li></ul>
