@@ -3,60 +3,59 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Friday manual one-off",
-    "editorial_role": "SEO-led automation ROI and investment decision expansion",
-    "article_format": "ROI decision guide with four-value model, worked example and payback framework",
-    "title": "How to calculate automation ROI for a small business",
-    "slug": "calculate-automation-roi-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/calculate-automation-roi-small-business/",
-    "topic_pillar": "Automation strategy and decision content",
-    "parent_topic_cluster": "Automation strategy and investment",
-    "target_client_type": "UK SME owners and operations leaders building a financial case for a defined automation project",
-    "industry_or_operating_context": "Manual workload, released capacity, cash impact, rework, delay, build cost, support cost and payback",
+    "scheduled_day": "Monday manual one-off",
+    "editorial_role": "SEO-led business-process automation expansion",
+    "article_format": "End-to-end repetitive-admin implementation guide with six-state admin chain model",
+    "title": "How to automate repetitive admin in a small business",
+    "slug": "automate-repetitive-admin-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-repetitive-admin-small-business/",
+    "topic_pillar": "Business process automation",
+    "parent_topic_cluster": "Business process and data",
+    "target_client_type": "UK SME owners and operations leaders dealing with recurring administrative work across email, spreadsheets and business systems",
+    "industry_or_operating_context": "Data movement, document handling, chasing, status updates, reporting, routing and cross-system hand-offs",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "SMEs often struggle to distinguish genuine financial return from released staff capacity when evaluating automation investments.",
-    "primary_search_intent": "Calculate automation ROI for a small business and build a credible payback case using defensible operational inputs.",
-    "buyer_stage": "Business case / solution evaluation",
-    "primary_query": "how to calculate automation ROI for a small business",
+    "primary_buyer_problem": "Small businesses often automate isolated clicks rather than the recurring admin chain, leaving the checking, chasing and hand-off burden intact.",
+    "primary_search_intent": "Learn how to automate repetitive admin in a small business from trigger to outcome, including exceptions and hand-offs.",
+    "buyer_stage": "Problem evaluation / implementation",
+    "primary_query": "how to automate repetitive admin in a small business",
     "related_query_family": [
-      "automation ROI formula small business",
-      "business process automation ROI",
-      "workflow automation ROI UK SME",
-      "automation payback period small business",
-      "is automation worth it ROI"
+      "automate repetitive tasks small business",
+      "small business admin automation",
+      "how to automate admin work",
+      "workflow automation repetitive admin",
+      "automate office admin small business"
     ],
-    "trend_or_durable_demand": "Strong decision-stage demand in current September 2026 search results, with several recent UK SME and workflow-automation pages specifically targeting ROI calculations and payback.",
-    "evidence_source_and_date": "Repository library and live web search reviewed 25 September 2026. Current search results consistently use hours saved and cost formulas, but many blur released capacity with cash savings or omit continuing review and support.",
-    "existing_article_gap": "The library has a cost page, a manual-admin baseline page and an ecommerce-specific AI ROI article, but lacked a broad UK SME ROI page separating capacity value from cash impact.",
+    "trend_or_durable_demand": "Strong current September 2026 demand. Live results include multiple recent UK and small-business guides targeting repetitive admin, task automation and workflow automation.",
+    "evidence_source_and_date": "Repository library and live web search reviewed 28 September 2026. Current results often provide lists of tasks and tool suggestions; Olivers Consulting can differentiate with an end-to-end hand-off model, validation and explicit exceptions.",
+    "existing_article_gap": "The library had workflow-specific pages and strategic decision content but no broad operational guide showing how to turn recurring admin into an end-to-end controlled workflow.",
     "existing_supporting_articles": [
-      "/articles/business-automation-cost-uk-sme/",
       "/articles/manual-admin-interruption-cost/",
+      "/articles/automate-data-entry-between-business-systems/",
       "/articles/what-should-small-business-automate-first/",
       "/articles/common-automation-mistakes-small-business/",
       "/articles/when-not-to-automate-business-process/",
-      "/articles/automate-data-entry-between-business-systems/"
+      "/articles/automation-readiness-checklist-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How much does business automation cost for a UK SME?",
-        "How to measure the true cost of manual admin",
         "What should a small business automate first?",
-        "When should a small business not automate a process?"
+        "How to measure the true cost of manual admin",
+        "How to automate data entry between business systems",
+        "7 common automation mistakes small businesses make"
       ],
       "meaningfully_different_dimensions": [
-        "ROI calculation",
-        "capacity versus cash",
-        "avoided rework",
-        "delay value",
-        "payback period",
-        "post-launch tracking against business-case assumptions"
+        "end-to-end admin-chain mapping",
+        "handoff-level automation",
+        "confirmation of outcome",
+        "cross-functional admin patterns",
+        "trigger-to-exception implementation path"
       ],
-      "why_meaningfully_distinct": "The cost article explains what automation costs; the manual-admin page measures the current problem; the prioritisation and no-go pages assess suitability. This page combines cost and value inputs into a financial return and payback model."
+      "why_meaningfully_distinct": "The prioritisation page chooses candidates, the manual-admin page measures the burden, and specific workflow pages solve narrower cases. This page teaches the full implementation method for recurring admin across functions."
     },
-    "original_editorial_asset": "The Olivers Consulting four-value ROI model: capacity value, cash impact, avoided rework and delay value, combined with a base/downside/upside scenario framework.",
-    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis and control-design reasoning. The four-value model is an editorial framework, not proprietary research.",
-    "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used. The worked example is explicitly illustrative.",
+    "original_editorial_asset": "The Olivers Consulting admin chain model: Trigger → Capture → Validate → Act → Confirm → Exception.",
+    "first_hand_contribution_or_limits": "Uses practical automation, operations, business-analysis, data-quality and control-design reasoning. The admin chain model is an editorial framework, not proprietary research.",
+    "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -84,22 +83,25 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for direct answer, finance-led structure, worked example, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the ROI table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI is not the main framing.",
+    "readability_check": "Passed editorial review for direct answer, implementation-led structure, practical examples, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the admin table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI appears only where variable input genuinely warrants it.",
     "internal_links": [
-      "/articles/manual-admin-interruption-cost/",
       "/articles/automate-data-entry-between-business-systems/",
-      "/articles/business-automation-cost-uk-sme/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/articles/common-automation-mistakes-small-business/",
       "/articles/when-not-to-automate-business-process/",
+      "/articles/ai-vs-rule-based-automation-small-business/",
       "/articles/what-should-small-business-automate-first/",
+      "/articles/manual-admin-interruption-cost/",
+      "/articles/calculate-automation-roi-small-business/",
+      "/articles/automation-readiness-checklist-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/business-automation-cost-uk-sme/",
       "/articles/manual-admin-interruption-cost/",
-      "/articles/what-should-small-business-automate-first/"
+      "/articles/what-should-small-business-automate-first/",
+      "/articles/common-automation-mistakes-small-business/"
     ],
     "external_sources": [],
     "schema": [
@@ -119,6 +121,12 @@
     "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
   },
   "recent_articles": [
+    {
+      "title": "How to automate repetitive admin in a small business",
+      "slug": "automate-repetitive-admin-small-business",
+      "date_published": "2026-09-28",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to calculate automation ROI for a small business",
       "slug": "calculate-automation-roi-small-business",
@@ -183,12 +191,6 @@
       "title": "How to automate lead follow-up without sounding like spam",
       "slug": "automate-lead-follow-up-without-spam",
       "date_published": "2026-08-31",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate expense claims without losing approval control",
-      "slug": "automate-expense-claims-approval",
-      "date_published": "2026-08-28",
       "portfolio_classification": "broader SME-led"
     }
   ]
