@@ -46,47 +46,58 @@
 <tr><td><strong>Statements and reports</strong></td><td>Capture balances, identifiers or recurring measures</td><td>Unmatched item or changed layout</td></tr>
 <tr><td><strong>Receipts and delivery notes</strong></td><td>Extract dates, values, references and supporting evidence</td><td>Unreadable image, missing reference or duplicate submission</td></tr>
 </tbody></table></div>
+<p>I would start with the document type that has the clearest required fields and the most stable downstream action. A business does not need to solve every PDF, scan and email attachment at once to get useful value from document automation.</p>
 <h2>The document processing pipeline</h2>
 <div class="framework"><strong>The Olivers Consulting six-stage document pipeline</strong><p><strong>Receive → Identify → Extract → Validate → Route → Confirm</strong></p><p>Any stage can send the document to an exception queue. The original file should remain linked to the record so a reviewer can see the evidence behind the extracted data.</p></div>
+<p>I would treat the source document as evidence, not disposable input. If a value is later challenged, the reviewer should be able to see exactly which file produced it and which rule allowed it through.</p>
 <h2>1. Control how documents enter the process</h2>
 <p>Document automation starts before extraction.</p>
 <p>Decide whether documents arrive through a dedicated email address, uploaded form, shared folder, customer portal or system export. Too many uncontrolled intake routes make deduplication and ownership harder.</p>
 <p>If the business is deciding between inboxes, shared storage and forms, the guide to <a href="/articles/email-attachments-shared-folders-or-forms/">choosing a data-intake route</a> explains the trade-offs around validation, access and evidence.</p>
+<p>My preference is to reduce the number of intake routes before adding more extraction logic. Every extra route creates another place to solve naming, duplication, permissions and “has this already been processed?”</p>
 <h2>2. Identify the document before extracting data</h2>
 <p>Do not assume every attachment is the document you expect.</p>
 <p>An inbox may contain invoices, statements, credit notes, screenshots and supporting files in the same thread. The workflow should identify the document type before deciding which fields to extract or which route to follow.</p>
 <p>For predictable filenames or dedicated submission forms, explicit rules may be enough. For variable PDFs and mixed email attachments, classification may require OCR or bounded AI.</p>
+<p>I would separate classification confidence from action authority. A model can be confident that a file looks like an invoice and still be wrong about the supplier, total or account it should affect.</p>
 <h2>3. Extract only the fields the process needs</h2>
 <p>More extraction is not automatically better.</p>
 <p>Define the minimum field set required for the next decision. A supplier invoice workflow may need supplier identity, invoice number, date, purchase-order reference, net amount, VAT and total. A client pack may only need document type, customer reference and whether the required evidence is present.</p>
 <p>Every additional field creates another value to test, maintain and potentially review.</p>
+<p>I would rather extract seven fields that drive a reliable decision than thirty because the software can. Unused fields increase maintenance without improving the workflow.</p>
 <h2>4. Validate extracted data against trusted rules</h2>
 <p>Extraction says what the document appears to contain. Validation decides whether the business should trust it.</p>
 <p>Useful checks include:</p>
 <ul><li>whether required fields are present;</li><li>whether the supplier or customer exists;</li><li>whether an identifier matches a known record;</li><li>whether totals reconcile;</li><li>whether the document has already been processed;</li><li>whether dates and values fall within expected ranges;</li><li>whether an approval threshold has been crossed.</li></ul>
 <p>This is where data-quality controls matter most. The guide to <a href="/articles/automate-data-entry-between-business-systems/">automating data entry between business systems</a> explains why source ownership and stable identifiers should be defined before downstream updates.</p>
+<p>Duplicate prevention deserves its own rule. A workflow that extracts the same invoice perfectly twice has still failed if it creates two downstream records.</p>
 <h2>5. Route valid documents and hold uncertain ones</h2>
 <p>A valid document can move to the next system, queue or owner. An uncertain document should stop.</p>
 <p>The exception should show the original document, the extracted values, the failed check and the next required decision.</p>
 <p>A useful workflow does not send every document to review. It sends only the cases that fall outside the dependable route.</p>
 <div class="callout"><p>The automation should never hide uncertainty by filling a field with its best guess and continuing as though the value were confirmed.</p></div>
+<p>I think the important threshold is not “was something extracted?” but “is there enough evidence to allow the next action?” A document can be readable and still be unsafe to post, approve or match automatically.</p>
 <h2>6. Confirm the downstream outcome</h2>
 <p>Uploading a file or creating a record is not enough if the workflow cannot confirm that the action succeeded.</p>
 <p>If the document creates an accounting record, capture the resulting record ID. If it is filed, save the storage location. If it creates a task, retain the task reference. If it is rejected, record why.</p>
 <p>This prevents documents disappearing between systems and gives the business an audit trail of what happened.</p>
+<p>I would also make retries idempotent where possible. If a system times out after receiving the document, the workflow should check whether the record already exists before trying the write again.</p>
 <h2>Do you need OCR, AI or fixed rules?</h2>
 <p>Use the least complex method that handles the input reliably.</p>
 <ul><li><strong>Structured form:</strong> map fields directly.</li><li><strong>Consistent spreadsheet or CSV:</strong> use fixed columns and validation.</li><li><strong>Consistent digital PDF:</strong> fixed extraction may be enough.</li><li><strong>Scanned image:</strong> OCR may be needed before field extraction.</li><li><strong>Variable document layouts or free text:</strong> AI may help interpret fields or classify the document.</li></ul>
 <p>The <a href="/articles/ai-vs-rule-based-automation-small-business/">AI versus rule-based automation guide</a> covers where model-based interpretation adds value and where deterministic controls should remain in charge.</p>
+<p>My expectation is that AI will make document interpretation cheaper and more flexible. That will shift the harder design problem towards permissions: what happens after the system thinks it understands the document, and which actions still require deterministic checks or a person?</p>
 <h2>What should stay under human review?</h2>
 <p>Keep review where the consequence of a wrong interpretation is material or the context cannot be reduced to dependable rules.</p>
 <p>Examples include unusual invoices, contractual wording, high-value approvals, ambiguous identity matches, exceptions to standard pricing or compliance decisions.</p>
 <p>Automation can still prepare those cases by extracting the information, linking the evidence and highlighting the rule that failed.</p>
+<p>The useful boundary is usually between interpretation and authority. Software can read and prepare far more than it should necessarily be allowed to approve, overwrite or commit.</p>
 <h2>A practical example: supplier invoice intake</h2>
 <p>Imagine invoices arrive in a finance inbox as PDF attachments.</p>
 <p>A controlled workflow could:</p>
 <ul><li>detect a new attachment;</li><li>identify whether it is an invoice, credit note or statement;</li><li>extract supplier, invoice number, date, purchase-order reference and totals;</li><li>match the supplier against the accounting system;</li><li>check for duplicate invoice numbers;</li><li>compare the total with expected tolerances;</li><li>create a review task for mismatches;</li><li>create or prepare the accounting record for valid cases;</li><li>attach the original PDF;</li><li>record the downstream ID and mark the source email as processed.</li></ul>
 <p>The dedicated guide to <a href="/articles/automate-invoice-processing-approval-control/">automating supplier invoice processing</a> goes further into approval controls and finance-specific exceptions.</p>
+<p>I would pilot this on known suppliers with consistent invoices before adding unusual layouts and new-supplier cases. That proves the route, controls and recovery process before the difficult edge cases are included.</p>
 <h2>How is this different from automating repetitive admin?</h2>
 <p>The repetitive-admin guide covers whole operational chains across many task types. This page owns the narrower document-processing problem: turning files and attachments into trusted structured inputs and downstream actions.</p>
 <p>If document handling is only one part of a larger process, the <a href="/articles/automate-repetitive-admin-small-business/">repetitive-admin automation guide</a> helps map the wider hand-off from trigger to completion.</p>
@@ -94,6 +105,7 @@
 <p>Track measures that show whether the document workflow is reducing handling without hiding problems:</p>
 <ul><li>documents processed through the normal route;</li><li>exception rate;</li><li>duplicate submissions;</li><li>average review time;</li><li>rework caused by wrong or missing fields;</li><li>documents waiting unassigned;</li><li>failures to create the downstream record.</li></ul>
 <p>If exception rates remain high, improve the intake route, document type rules or data checks before trying to automate more.</p>
+<p>I would add one measure that is easy to miss: how often staff reopen the original document after automation. If they still re-check every field manually, the workflow may be extracting data without actually reducing the control burden.</p>
 <h2>When is a document workflow ready to automate?</h2>
 <p>It is ready when the business can define the expected document types, required fields, trusted reference data, normal route, exceptions and owner.</p>
 <p>The <a href="/articles/automation-readiness-checklist-small-business/">automation readiness checklist</a> provides a broader seven-point test before implementation.</p>
