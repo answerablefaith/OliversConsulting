@@ -3,58 +3,59 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led business-process automation expansion",
-    "article_format": "End-to-end repetitive-admin implementation guide with six-state admin chain model",
-    "title": "How to automate repetitive admin in a small business",
-    "slug": "automate-repetitive-admin-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-repetitive-admin-small-business/",
-    "topic_pillar": "Business process automation",
+    "scheduled_day": "Friday manual one-off",
+    "editorial_role": "SEO-led operations and document workflow expansion",
+    "article_format": "Document-processing implementation guide with six-stage pipeline, exception routing and validation controls",
+    "title": "How to automate document processing for a small business",
+    "slug": "automate-document-processing-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-document-processing-small-business/",
+    "topic_pillar": "Operations automation",
     "parent_topic_cluster": "Business process and data",
-    "target_client_type": "UK SME owners and operations leaders dealing with recurring administrative work across email, spreadsheets and business systems",
-    "industry_or_operating_context": "Data movement, document handling, chasing, status updates, reporting, routing and cross-system hand-offs",
+    "target_client_type": "UK SME owners and operations leaders handling recurring emailed PDFs, forms, attachments, statements and other business documents",
+    "industry_or_operating_context": "Document intake, identification, extraction, OCR/AI interpretation, validation, filing, downstream system updates and exception review",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Small businesses often automate isolated clicks rather than the recurring admin chain, leaving the checking, chasing and hand-off burden intact.",
-    "primary_search_intent": "Learn how to automate repetitive admin in a small business from trigger to outcome, including exceptions and hand-offs.",
+    "primary_buyer_problem": "Small businesses spend recurring time opening documents, extracting fields, checking completeness, filing attachments and re-keying data into downstream systems.",
+    "primary_search_intent": "Learn how to automate document processing for a small business across PDFs, forms and email attachments while keeping validation and exceptions controlled.",
     "buyer_stage": "Problem evaluation / implementation",
-    "primary_query": "how to automate repetitive admin in a small business",
+    "primary_query": "how to automate document processing for a small business",
     "related_query_family": [
-      "automate repetitive tasks small business",
-      "small business admin automation",
-      "how to automate admin work",
-      "workflow automation repetitive admin",
-      "automate office admin small business"
+      "document processing automation small business",
+      "PDF data extraction workflow small business",
+      "automate email attachments workflow",
+      "document intake automation SME",
+      "automate PDF processing business"
     ],
-    "trend_or_durable_demand": "Strong current September 2026 demand. Live results include multiple recent UK and small-business guides targeting repetitive admin, task automation and workflow automation.",
-    "evidence_source_and_date": "Repository library and live web search reviewed 28 September 2026. Current results often provide lists of tasks and tool suggestions; Olivers Consulting can differentiate with an end-to-end hand-off model, validation and explicit exceptions.",
-    "existing_article_gap": "The library had workflow-specific pages and strategic decision content but no broad operational guide showing how to turn recurring admin into an end-to-end controlled workflow.",
+    "trend_or_durable_demand": "Strong current October 2026 demand. Live results include recent workflow pages for email/PDF intake, SME invoice processing and small-business document intake automation.",
+    "evidence_source_and_date": "Repository library and live web search reviewed 2 October 2026. Current results frequently emphasise extraction or one document class; Olivers Consulting can differentiate with an end-to-end pipeline covering intake, identification, validation, explicit exceptions and confirmation.",
+    "existing_article_gap": "The library covers invoice processing, client onboarding, intake-channel choice and broad repetitive admin, but lacked a general page for converting mixed business documents into trusted structured workflow inputs.",
     "existing_supporting_articles": [
-      "/articles/manual-admin-interruption-cost/",
+      "/articles/email-attachments-shared-folders-or-forms/",
+      "/articles/automate-invoice-processing-approval-control/",
       "/articles/automate-data-entry-between-business-systems/",
-      "/articles/what-should-small-business-automate-first/",
-      "/articles/common-automation-mistakes-small-business/",
-      "/articles/when-not-to-automate-business-process/",
+      "/articles/automate-repetitive-admin-small-business/",
+      "/articles/ai-vs-rule-based-automation-small-business/",
       "/articles/automation-readiness-checklist-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "What should a small business automate first?",
-        "How to measure the true cost of manual admin",
-        "How to automate data entry between business systems",
-        "7 common automation mistakes small businesses make"
+        "How to automate repetitive admin in a small business",
+        "Email attachments, shared folders or forms: which should your business use?",
+        "How to automate invoice processing without losing approval control",
+        "How to automate data entry between business systems"
       ],
       "meaningfully_different_dimensions": [
-        "end-to-end admin-chain mapping",
-        "handoff-level automation",
-        "confirmation of outcome",
-        "cross-functional admin patterns",
-        "trigger-to-exception implementation path"
+        "mixed-document processing",
+        "document identification",
+        "field extraction",
+        "OCR/AI role",
+        "original-document evidence",
+        "validation before downstream action"
       ],
-      "why_meaningfully_distinct": "The prioritisation page chooses candidates, the manual-admin page measures the burden, and specific workflow pages solve narrower cases. This page teaches the full implementation method for recurring admin across functions."
+      "why_meaningfully_distinct": "The repetitive-admin page maps full admin chains, the intake page chooses a submission route, the invoice page owns finance-specific processing, and the data-entry page owns cross-system field movement. This page owns the general document-to-trusted-data workflow."
     },
-    "original_editorial_asset": "The Olivers Consulting admin chain model: Trigger → Capture → Validate → Act → Confirm → Exception.",
-    "first_hand_contribution_or_limits": "Uses practical automation, operations, business-analysis, data-quality and control-design reasoning. The admin chain model is an editorial framework, not proprietary research.",
+    "original_editorial_asset": "The Olivers Consulting six-stage document pipeline: Receive → Identify → Extract → Validate → Route → Confirm, with an exception route available at every stage.",
+    "first_hand_contribution_or_limits": "Uses practical automation, operations, business-analysis, data-quality and control-design reasoning. The six-stage pipeline is an editorial framework, not proprietary research.",
     "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
     "quality_scores": {
       "usefulness": 5,
@@ -83,25 +84,22 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for direct answer, implementation-led structure, practical examples, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the admin table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI appears only where variable input genuinely warrants it.",
+    "readability_check": "Passed editorial review for immediate answer, process-led structure, practical examples, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the document table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI is treated as an optional interpretation layer rather than a default.",
     "internal_links": [
+      "/articles/email-attachments-shared-folders-or-forms/",
       "/articles/automate-data-entry-between-business-systems/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
-      "/articles/common-automation-mistakes-small-business/",
-      "/articles/when-not-to-automate-business-process/",
       "/articles/ai-vs-rule-based-automation-small-business/",
-      "/articles/what-should-small-business-automate-first/",
-      "/articles/manual-admin-interruption-cost/",
-      "/articles/calculate-automation-roi-small-business/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-repetitive-admin-small-business/",
       "/articles/automation-readiness-checklist-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/manual-admin-interruption-cost/",
-      "/articles/what-should-small-business-automate-first/",
-      "/articles/common-automation-mistakes-small-business/"
+      "/articles/email-attachments-shared-folders-or-forms/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-repetitive-admin-small-business/"
     ],
     "external_sources": [],
     "schema": [
@@ -121,6 +119,12 @@
     "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
   },
   "recent_articles": [
+    {
+      "title": "How to automate document processing for a small business",
+      "slug": "automate-document-processing-small-business",
+      "date_published": "2026-10-02",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate repetitive admin in a small business",
       "slug": "automate-repetitive-admin-small-business",
@@ -185,12 +189,6 @@
       "title": "How to automate management reporting from spreadsheets",
       "slug": "automate-management-reporting-from-spreadsheets",
       "date_published": "2026-09-02",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate lead follow-up without sounding like spam",
-      "slug": "automate-lead-follow-up-without-spam",
-      "date_published": "2026-08-31",
       "portfolio_classification": "broader SME-led"
     }
   ]
