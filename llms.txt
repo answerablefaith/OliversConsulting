@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [How to automate approval workflows in a small business](https://oliversconsulting.co.uk/articles/automate-approval-workflows-small-business/)
 - [How to automate a spreadsheet-based business process](https://oliversconsulting.co.uk/articles/automate-spreadsheet-business-process-small-business/)
 - [How to automate document processing for a small business](https://oliversconsulting.co.uk/articles/automate-document-processing-small-business/)
 - [How to automate repetitive admin in a small business](https://oliversconsulting.co.uk/articles/automate-repetitive-admin-small-business/)
