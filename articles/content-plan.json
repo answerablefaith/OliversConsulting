@@ -3,58 +3,57 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led spreadsheet and reporting automation expansion",
-    "article_format": "Spreadsheet-process implementation guide with five-layer model and keep-versus-replace decision criteria",
-    "title": "How to automate a spreadsheet-based business process",
-    "slug": "automate-spreadsheet-business-process-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-spreadsheet-business-process-small-business/",
-    "topic_pillar": "Data, spreadsheet and reporting automation",
-    "parent_topic_cluster": "Data, spreadsheets and reporting",
-    "target_client_type": "UK SME owners and operations leaders running recurring business processes through Excel or Google Sheets",
-    "industry_or_operating_context": "Spreadsheet inputs, data preparation, validation, calculations, reporting, system hand-offs and exception management",
+    "scheduled_day": "Wednesday manual one-off",
+    "editorial_role": "SEO-led operations and approval-workflow expansion",
+    "article_format": "Approval workflow implementation guide with six-state model, threshold routing, escalation and audit evidence",
+    "title": "How to automate approval workflows in a small business",
+    "slug": "automate-approval-workflows-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-approval-workflows-small-business/",
+    "topic_pillar": "Operations automation",
+    "parent_topic_cluster": "Customer service and operations",
+    "target_client_type": "UK SME owners and operations leaders managing recurring approvals across purchases, expenses, pricing, documents and operational changes",
+    "industry_or_operating_context": "Approval requests, validation, value thresholds, role-based routing, delegated authority, reminders, escalation and downstream system updates",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Small businesses often want to reduce recurring spreadsheet work but do not know whether to automate around the workbook, automate inside it or replace it.",
-    "primary_search_intent": "Learn how to automate a spreadsheet-based business process while deciding what should remain in the workbook and what should move into automated inputs, checks and hand-offs.",
+    "primary_buyer_problem": "Small businesses often manage approvals through inboxes, chat and verbal agreement, creating unclear ownership, delays, repeated chasing and weak evidence of what was decided.",
+    "primary_search_intent": "Learn how to automate approval workflows in a small business while preserving accountable human decisions and clear exception handling.",
     "buyer_stage": "Problem evaluation / implementation",
-    "primary_query": "how to automate a spreadsheet-based business process",
+    "primary_query": "how to automate approval workflows in a small business",
     "related_query_family": [
-      "spreadsheet workflow automation small business",
-      "Excel process automation SME",
-      "automate spreadsheet workflow",
-      "when to automate a spreadsheet process",
-      "Google Sheets workflow automation small business"
+      "approval workflow automation small business",
+      "automate approval process SME",
+      "purchase approval workflow automation UK",
+      "expense approval automation small business",
+      "workflow approval automation UK"
     ],
-    "trend_or_durable_demand": "Strong current October 2026 demand. Live results include recent UK spreadsheet-automation pages, recurring-report automation services and small-business workflow guides.",
-    "evidence_source_and_date": "Repository library and live web search reviewed 5 October 2026. Current results often focus on Excel features, tool lists or isolated spreadsheet tasks; Olivers Consulting can differentiate with a process architecture that separates the workbook from inputs, validation and downstream hand-offs.",
-    "existing_article_gap": "The library has a spreadsheet operating-rules page and management-reporting guide but lacked a general implementation page for automating spreadsheet-heavy processes while deciding when the workbook should remain.",
+    "trend_or_durable_demand": "Strong current October 2026 demand. Live UK results include recent approval-workflow guides and service pages focused on SME purchase, expense and document approvals.",
+    "evidence_source_and_date": "Repository library and live web search reviewed 7 October 2026. Current results commonly emphasise approval tools and generic speed benefits; Olivers Consulting can differentiate with a reusable process-state model, decision ownership, escalation and explicit downstream hand-offs.",
+    "existing_article_gap": "The library has finance-specific invoice approval content but no broader page for approval workflow design across purchases, expenses, pricing, document sign-off and operational change.",
     "existing_supporting_articles": [
-      "/articles/spreadsheet-not-the-problem-operating-rules/",
-      "/articles/automate-management-reporting-from-spreadsheets/",
-      "/articles/automate-repetitive-admin-small-business/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-document-processing-small-business/",
       "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/automation-readiness-checklist-small-business/",
-      "/articles/when-custom-automation-is-worth-it-small-business/"
+      "/articles/common-automation-mistakes-small-business/",
+      "/articles/automation-readiness-checklist-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "Fix the operating rules before replacing your spreadsheet",
-        "How to automate management reporting from spreadsheets",
+        "How to automate invoice processing without losing approval control",
+        "How to automate document processing for a small business",
         "How to automate repetitive admin in a small business"
       ],
       "meaningfully_different_dimensions": [
-        "spreadsheet-process architecture",
-        "keep-versus-replace decision",
-        "automated preparation around workbook",
-        "input contracts",
-        "downstream hand-offs",
-        "tool placement by workflow layer"
+        "generic approval-state design",
+        "threshold-based routing",
+        "delegated authority",
+        "reminder and escalation logic",
+        "parallel versus sequential approval",
+        "post-decision downstream action"
       ],
-      "why_meaningfully_distinct": "The operating-rules page fixes ownership and definitions before automation; the reporting page targets recurring management reporting; the repetitive-admin page covers broad hand-offs. This page owns the general implementation pattern for spreadsheet-based business processes."
+      "why_meaningfully_distinct": "The invoice page owns finance-specific invoice capture and approval control, the document page owns document-to-data processing, and the repetitive-admin page owns broad hand-offs. This page owns the approval mechanism itself across multiple business functions."
     },
-    "original_editorial_asset": "The Olivers Consulting five-layer spreadsheet automation model: Source → Prepare → Validate → Use → Hand off.",
-    "first_hand_contribution_or_limits": "Uses practical automation, business-analysis, data-quality and reporting-process reasoning. The five-layer model is an editorial framework, not proprietary research.",
+    "original_editorial_asset": "The Olivers Consulting six-state approval model: Request → Validate → Route → Decide → Escalate → Record.",
+    "first_hand_contribution_or_limits": "Uses practical automation, operations, business-analysis and control-design reasoning. The six-state model is an editorial framework, not proprietary research.",
     "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
     "quality_scores": {
       "usefulness": 5,
@@ -83,22 +82,21 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for immediate answer, implementation-led structure, practical examples, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the comparison table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI is not the main framing.",
+    "readability_check": "Passed editorial review for direct answer, workflow-state structure, practical examples, UK English and low filler.",
+    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the approval table uses an overflow-safe wrapper.",
+    "ai_mention_check": "Passed. AI is not the primary framing.",
     "internal_links": [
-      "/articles/spreadsheet-not-the-problem-operating-rules/",
-      "/articles/automate-management-reporting-from-spreadsheets/",
-      "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
-      "/articles/automate-repetitive-admin-small-business/",
       "/articles/automation-readiness-checklist-small-business/",
+      "/articles/integrate-systems-or-automate-hand-off/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/common-automation-mistakes-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/spreadsheet-not-the-problem-operating-rules/",
-      "/articles/automate-management-reporting-from-spreadsheets/",
-      "/articles/automate-repetitive-admin-small-business/"
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/common-automation-mistakes-small-business/"
     ],
     "external_sources": [],
     "schema": [
@@ -118,6 +116,12 @@
     "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
   },
   "recent_articles": [
+    {
+      "title": "How to automate approval workflows in a small business",
+      "slug": "automate-approval-workflows-small-business",
+      "date_published": "2026-10-07",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate a spreadsheet-based business process",
       "slug": "automate-spreadsheet-business-process-small-business",
@@ -182,12 +186,6 @@
       "title": "How to automate data entry between business systems",
       "slug": "automate-data-entry-between-business-systems",
       "date_published": "2026-09-07",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate customer service ticket triage",
-      "slug": "automate-customer-service-ticket-triage",
-      "date_published": "2026-09-04",
       "portfolio_classification": "broader SME-led"
     }
   ]
