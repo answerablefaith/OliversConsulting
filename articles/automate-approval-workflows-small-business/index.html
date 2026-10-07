@@ -31,52 +31,66 @@
 <tr><td><strong>Supplier onboarding</strong></td><td>Completeness checks and staged review</td><td>Material due-diligence judgement</td></tr>
 <tr><td><strong>Operational change</strong></td><td>Impact fields, owner routing and approval record</td><td>Decision on risk or priority</td></tr>
 </tbody></table></div>
+<p>I would prioritise approvals where the decision itself is simple but the coordination around it is expensive. If staff spend more time finding the approver, chasing context and checking status than considering the request, automation has a clear job to do.</p>
 <h2>The six-state approval model</h2>
 <div class="framework"><strong>The Olivers Consulting approval-state model</strong><p><strong>Request → Validate → Route → Decide → Escalate → Record</strong></p><p>The request should always be in a visible state. A stalled approval is not “pending somewhere”; it has an owner, a clock and a next action.</p></div>
+<p>I would add one rule to that model: every state needs an exit condition. “Waiting for approval” is not a process design if nobody has defined when the request is reminded, delegated, escalated or cancelled.</p>
 <h2>1. Define the request before the approver sees it</h2>
 <p>An approver should not need to chase basic context.</p>
 <p>Define the minimum information required to make the decision: requester, amount, category, business reason, supporting document, deadline, related customer or supplier and any previous approval.</p>
 <p>If required fields are missing, stop the request before it reaches the approver.</p>
+<p>The less complete the request, the more the approval workflow turns into an information-gathering workflow. Fix that at intake rather than making every approver do the same detective work.</p>
 <h2>2. Validate what can be checked automatically</h2>
 <p>Validation should happen before the human decision where possible.</p>
 <p>Examples include checking whether the requester exists, whether the amount is numeric, whether supporting evidence is attached, whether a cost centre is valid or whether the request exceeds a defined threshold.</p>
 <p>The broader <a href="/articles/automation-readiness-checklist-small-business/">automation readiness checklist</a> is useful if the approval rules are still disputed or unclear.</p>
+<p>I would separate a failed validation from a rejected approval. A missing field means the request is incomplete. A rejection means an authorised person considered a complete request and said no. Those states should not be mixed.</p>
 <h2>3. Route by role and threshold, not by memory</h2>
 <p>Approval routing should follow explicit ownership rules.</p>
 <p>A £500 purchase may go to a line manager, while a £20,000 purchase may require finance and a director. A pricing exception may route by margin band. A policy document may require sequential sign-off from operations and compliance.</p>
 <p>The point is not to make the route complicated. It is to make the route predictable.</p>
+<p>Use roles where possible rather than hard-coding one person's name. People move teams, go on leave and change responsibilities. The approval rule should survive that without becoming a support ticket.</p>
 <h2>4. Keep the decision with the right person</h2>
 <p>Most approval automation should not make the material decision automatically.</p>
 <p>The workflow can present the request, evidence and relevant thresholds clearly so the approver can decide quickly. The decision can then be recorded as approved, rejected or returned for more information.</p>
 <p>For bounded low-risk cases, auto-approval may be appropriate where the business has explicitly agreed deterministic rules.</p>
+<p>The useful boundary is authority. Software can collect evidence, calculate thresholds and route a request far more broadly than it should be allowed to commit money, change customer terms or approve an exception on its own.</p>
+<div class="callout"><p>A notification says “please look at this”. An approval says “this person had authority to decide and made a recorded decision”. Do not treat the two as equivalent just because both arrive by email or Teams.</p></div>
 <h2>5. Escalate stalled approvals visibly</h2>
 <p>A workflow should define what happens when the approver does nothing.</p>
 <p>Useful escalation rules include:</p>
 <ul><li>remind the approver after a defined period;</li><li>send a second reminder before the deadline;</li><li>route to a named deputy during planned absence;</li><li>escalate to a manager after a longer delay;</li><li>pause the process if no authorised substitute exists.</li></ul>
 <p>Escalation is a business rule, not an emergency workaround.</p>
+<p>I would be careful with automatic escalation across authority levels. A manager's manager is not automatically authorised to approve every request the first manager could approve. Delegation needs to preserve the actual approval limits.</p>
 <h2>6. Record the decision and trigger the next action</h2>
 <p>Once a decision is made, record who decided, when, the outcome and any reason or note that matters.</p>
 <p>Then trigger the downstream action: create the purchase order, update the expense status, release the document, notify the requester, update the CRM or move the work to the next stage.</p>
 <p>The approval itself should not become another manual hand-off.</p>
+<p>I would also preserve the evidence the approver saw at the time of the decision. If the request changes afterwards, the record should make clear whether the approval still applies or whether the change requires a new decision.</p>
 <h2>When should approvals be multi-stage?</h2>
 <p>Use multiple stages only when different people genuinely own different decisions.</p>
 <p>For example, a purchase may need a budget owner and then finance. A policy may need subject-matter review and then final sign-off.</p>
 <p>Avoid adding stages purely because “someone should probably see it”. Notification and approval are different things.</p>
+<p>Extra approval stages are not free controls. Each one adds delay and another place for ownership to become unclear. If a person only needs visibility, notify them. Do not make them an approver by default.</p>
 <h2>Parallel or sequential approval?</h2>
 <p>Use sequential approval when one decision depends on the previous one.</p>
 <p>Use parallel approval when several independent reviewers can assess the request at the same time.</p>
 <p>Parallel routes can reduce delay, but the final rule must be clear: does every reviewer need to approve, is a majority enough, or is one role the final authority?</p>
+<p>I would avoid majority voting unless the business genuinely governs decisions that way. Most SME approvals are clearer when specific roles own specific questions.</p>
 <h2>What should happen when an approval is rejected?</h2>
 <p>Rejection should have a defined outcome.</p>
 <p>The request might close, return to the requester for amendment or move to an exception route. Record the reason where it is operationally useful.</p>
 <p>A rejected request should not sit in the same queue as a pending one.</p>
+<p>If the requester can amend and resubmit, define which changes invalidate the previous decision. A corrected typo may not matter. A higher amount, different supplier or changed commercial term probably does.</p>
 <h2>How do you handle delegated authority?</h2>
 <p>Delegation needs explicit rules.</p>
 <p>Define who can act for whom, for what period and within which limits. If somebody is away, the workflow should know the approved deputy rather than relying on forwarding an email manually.</p>
+<p>I would make delegation time-bound by default. Permanent informal deputies are easy to create and difficult to govern later.</p>
 <h2>How do approval workflows connect to other systems?</h2>
 <p>The approval process often sits between systems rather than inside one application.</p>
 <p>A request may begin in a form, use data from a spreadsheet or CRM, notify an approver in email or Teams, and then write the decision into a finance or operations system.</p>
 <p>The article on <a href="/articles/integrate-systems-or-automate-hand-off/">full integration versus an automated hand-off</a> helps decide how tightly those systems need to connect.</p>
+<p>My preference is to store the decision in the system that owns the process, not leave the only evidence inside an inbox. Email can be a notification surface. It should not be the system of record for a material approval.</p>
 <h2>What if the approval starts from a document?</h2>
 <p>Many approval workflows begin with an invoice, form, contract or supporting PDF.</p>
 <p>The <a href="/articles/automate-document-processing-small-business/">document-processing automation guide</a> explains how to capture, identify, extract and validate the document before it enters the approval state.</p>
@@ -91,9 +105,11 @@
 <p>A controlled workflow could:</p>
 <ul><li>capture supplier, amount, business reason and cost centre;</li><li>check required fields and whether the supplier already exists;</li><li>route requests under £1,000 to the line manager;</li><li>route higher-value requests to the line manager and finance;</li><li>send reminders if the request stalls;</li><li>delegate to a named deputy during absence;</li><li>record the decision and reason;</li><li>notify the requester;</li><li>create the downstream purchasing task only after approval.</li></ul>
 <p>The decision remains accountable. The chasing and routing disappear.</p>
+<p>I would pilot the workflow with one request type and a small number of approval bands first. That exposes ambiguous rules quickly without rebuilding the whole purchasing process around assumptions.</p>
 <h2>How should a small business measure approval automation?</h2>
 <ul><li>median time from request to decision;</li><li>requests returned for missing information;</li><li>stalled approvals;</li><li>number of manual chasers;</li><li>exceptions by approval type;</li><li>requests completed without a recorded decision;</li><li>time from approval to downstream action.</li></ul>
 <p>These measures show whether the workflow is improving the process rather than merely digitising it.</p>
+<p>I would add one trust measure: how often staff still ask “has this actually been approved?” If that question survives the automation, status and evidence are still too hard to see.</p>
 <h2>When should external help be useful?</h2>
 <p>External help is useful when approval rules span several systems, value thresholds are complex, delegation needs to be controlled, the workflow requires reliable audit evidence or the downstream action must update another system automatically.</p>
 <p>The goal should be a process that moves quickly between decisions while keeping the decisions themselves clear and accountable.</p>
