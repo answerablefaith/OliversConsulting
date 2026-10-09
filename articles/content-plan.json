@@ -3,58 +3,58 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Wednesday manual one-off",
-    "editorial_role": "SEO-led operations and approval-workflow expansion",
-    "article_format": "Approval workflow implementation guide with six-state model, threshold routing, escalation and audit evidence",
-    "title": "How to automate approval workflows in a small business",
-    "slug": "automate-approval-workflows-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-approval-workflows-small-business/",
-    "topic_pillar": "Operations automation",
-    "parent_topic_cluster": "Customer service and operations",
-    "target_client_type": "UK SME owners and operations leaders managing recurring approvals across purchases, expenses, pricing, documents and operational changes",
-    "industry_or_operating_context": "Approval requests, validation, value thresholds, role-based routing, delegated authority, reminders, escalation and downstream system updates",
+    "scheduled_day": "Friday manual one-off",
+    "editorial_role": "SEO-led sales and CRM data-quality expansion",
+    "article_format": "CRM record-matching implementation guide with four-state match gate, evidence matrix and safe-write controls",
+    "title": "How to automate CRM duplicate detection and record matching",
+    "slug": "automate-crm-duplicate-detection-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-crm-duplicate-detection-small-business/",
+    "topic_pillar": "Sales and CRM automation",
+    "parent_topic_cluster": "Sales and CRM",
+    "target_client_type": "UK SME sales and operations teams dealing with duplicate CRM leads, contacts and companies across forms, imports and integrations",
+    "industry_or_operating_context": "Contact identity, company matching, CRM imports, field ownership, duplicate prevention, review queues, idempotency and safe record updates",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Small businesses often manage approvals through inboxes, chat and verbal agreement, creating unclear ownership, delays, repeated chasing and weak evidence of what was decided.",
-    "primary_search_intent": "Learn how to automate approval workflows in a small business while preserving accountable human decisions and clear exception handling.",
-    "buyer_stage": "Problem evaluation / implementation",
-    "primary_query": "how to automate approval workflows in a small business",
+    "primary_buyer_problem": "Duplicate and ambiguous CRM records create competing customer histories, repeated outreach and unreliable downstream updates.",
+    "primary_search_intent": "Implement automated CRM duplicate detection, safe record matching and controlled merge/review decisions.",
+    "buyer_stage": "Implementation and solution evaluation",
+    "primary_query": "automate CRM duplicate detection",
     "related_query_family": [
-      "approval workflow automation small business",
-      "automate approval process SME",
-      "purchase approval workflow automation UK",
-      "expense approval automation small business",
-      "workflow approval automation UK"
+      "CRM record matching automation",
+      "prevent duplicate contacts CRM",
+      "automated CRM deduplication small business",
+      "CRM duplicate detection rules",
+      "CRM duplicate prevention workflow"
     ],
-    "trend_or_durable_demand": "Strong current October 2026 demand. Live UK results include recent approval-workflow guides and service pages focused on SME purchase, expense and document approvals.",
-    "evidence_source_and_date": "Repository library and live web search reviewed 7 October 2026. Current results commonly emphasise approval tools and generic speed benefits; Olivers Consulting can differentiate with a reusable process-state model, decision ownership, escalation and explicit downstream hand-offs.",
-    "existing_article_gap": "The library has finance-specific invoice approval content but no broader page for approval workflow design across purchases, expenses, pricing, document sign-off and operational change.",
+    "trend_or_durable_demand": "Durable sales-operations demand evidenced by active vendor documentation and current automation solution pages. No search volume or traffic estimate asserted.",
+    "evidence_source_and_date": "Repository content reviewed and live web searched 9 October 2026. HubSpot, Salesforce and Microsoft documentation describe duplicate-detection approaches; most vendor pages focus on features, leaving a practical cross-system matching and field-ownership decision gap.",
+    "existing_article_gap": "Existing onboarding and CRM post-call articles reference duplicates but do not provide a dedicated matching policy, four-state decision matrix, safe update design and import/retry testing method.",
     "existing_supporting_articles": [
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/common-automation-mistakes-small-business/",
-      "/articles/automation-readiness-checklist-small-business/"
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-crm-updates-after-sales-calls/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/when-custom-automation-is-worth-it-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate invoice processing without losing approval control",
-        "How to automate document processing for a small business",
-        "How to automate repetitive admin in a small business"
+        "How to automate client onboarding without creating duplicate data",
+        "Automate CRM updates after sales calls without spreading bad data",
+        "How to automate data entry between business systems"
       ],
       "meaningfully_different_dimensions": [
-        "generic approval-state design",
-        "threshold-based routing",
-        "delegated authority",
-        "reminder and escalation logic",
-        "parallel versus sequential approval",
-        "post-decision downstream action"
+        "entity-matching criteria",
+        "duplicate candidate states",
+        "confirmed versus fuzzy match",
+        "field authority during merge",
+        "concurrent imports",
+        "idempotent retry",
+        "false positive testing"
       ],
-      "why_meaningfully_distinct": "The invoice page owns finance-specific invoice capture and approval control, the document page owns document-to-data processing, and the repetitive-admin page owns broad hand-offs. This page owns the approval mechanism itself across multiple business functions."
+      "why_meaningfully_distinct": "Onboarding owns trusted client record creation, post-call CRM owns note/next-action updates, and data-entry owns cross-system movement. This page owns the identity matching and duplicate-prevention process itself."
     },
-    "original_editorial_asset": "The Olivers Consulting six-state approval model: Request → Validate → Route → Decide → Escalate → Record.",
-    "first_hand_contribution_or_limits": "Uses practical automation, operations, business-analysis and control-design reasoning. The six-state model is an editorial framework, not proprietary research.",
-    "proof_points_used_recently": "No fabricated client result, savings claim, search-volume figure or unsupported market statistic is used.",
+    "original_editorial_asset": "Olivers Consulting four-state match gate (confirmed, possible, no match, conflicting), with evidence/action table and safe-write sequence.",
+    "first_hand_contribution_or_limits": "Operational data-quality and CRM workflow design reasoning. Framework is editorial practice, not proprietary measured research.",
+    "proof_points_used_recently": "No fabricated customers, savings, search metrics or case-study results. Worked business example explicitly hypothetical.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -82,23 +82,25 @@
     "quality_average": 5,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Passed editorial review for direct answer, workflow-state structure, practical examples, UK English and low filler.",
-    "mobile_check": "Passed conceptual checks at about 390px and 768px. Content width is fluid and the approval table uses an overflow-safe wrapper.",
-    "ai_mention_check": "Passed. AI is not the primary framing.",
+    "readability_check": "Reviewed for clear direct answer, practical matching cases, human-readable exceptions and UK English.",
+    "mobile_check": "Fluid article layout and overflow-safe comparison table; responsive CSS breakpoints for narrow screens.",
+    "ai_mention_check": "AI mentioned only as optional candidate matching assistance; not used for automatic consequential merges.",
     "internal_links": [
-      "/articles/automation-readiness-checklist-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/common-automation-mistakes-small-business/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-crm-updates-after-sales-calls/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/common-automation-mistakes-small-business/"
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-crm-updates-after-sales-calls/",
+      "/articles/automate-data-entry-between-business-systems/"
     ],
-    "external_sources": [],
+    "external_sources": [
+      "https://knowledge.hubspot.com/records/deduplication-of-records",
+      "https://trailhead.salesforce.com/content/learn/modules/sales_admin_duplicate_management/sales_admin_duplicate_management_unit_2"
+    ],
     "schema": [
       "Article",
       "BreadcrumbList",
@@ -113,9 +115,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Passed; intended indexing remains allowed and no robots.txt change was necessary."
+    "robots_inspection": "Reviewed; Googlebot and public user agents permitted. No robots.txt change needed."
   },
   "recent_articles": [
+    {
+      "title": "How to automate CRM duplicate detection and record matching",
+      "slug": "automate-crm-duplicate-detection-small-business",
+      "date_published": "2026-10-09",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate approval workflows in a small business",
       "slug": "automate-approval-workflows-small-business",
@@ -180,12 +188,6 @@
       "title": "How much does business automation cost for a UK SME?",
       "slug": "business-automation-cost-uk-sme",
       "date_published": "2026-09-09",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate data entry between business systems",
-      "slug": "automate-data-entry-between-business-systems",
-      "date_published": "2026-09-07",
       "portfolio_classification": "broader SME-led"
     }
   ]
