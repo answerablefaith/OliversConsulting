@@ -3,58 +3,57 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Friday manual one-off",
-    "editorial_role": "SEO-led sales and CRM data-quality expansion",
-    "article_format": "CRM record-matching implementation guide with four-state match gate, evidence matrix and safe-write controls",
-    "title": "How to automate CRM duplicate detection and record matching",
-    "slug": "automate-crm-duplicate-detection-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-crm-duplicate-detection-small-business/",
-    "topic_pillar": "Sales and CRM automation",
-    "parent_topic_cluster": "Sales and CRM",
-    "target_client_type": "UK SME sales and operations teams dealing with duplicate CRM leads, contacts and companies across forms, imports and integrations",
-    "industry_or_operating_context": "Contact identity, company matching, CRM imports, field ownership, duplicate prevention, review queues, idempotency and safe record updates",
+    "scheduled_day": "Monday manual one-off",
+    "editorial_role": "SEO-led UK SME operations automation and complaint-handling controls",
+    "article_format": "Regulatory-triggered workflow implementation guide with seven-stage complaint case model",
+    "title": "How to automate data protection complaint handling for a UK small business",
+    "slug": "automate-data-protection-complaints-uk-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-data-protection-complaints-uk-small-business/",
+    "topic_pillar": "Operations automation",
+    "parent_topic_cluster": "Customer service and operations",
+    "target_client_type": "UK SME owners, operations managers and customer-service leaders who receive data protection complaints",
+    "industry_or_operating_context": "Privacy complaint intake, acknowledgement, assignment, investigation evidence, deadlines, final response and closure",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Duplicate and ambiguous CRM records create competing customer histories, repeated outreach and unreliable downstream updates.",
-    "primary_search_intent": "Implement automated CRM duplicate detection, safe record matching and controlled merge/review decisions.",
-    "buyer_stage": "Implementation and solution evaluation",
-    "primary_query": "automate CRM duplicate detection",
+    "primary_buyer_problem": "Small businesses must handle UK data protection complaints reliably even when messages arrive through ordinary support channels; email forwarding and ad-hoc chasing can lose ownership, evidence and deadlines.",
+    "primary_search_intent": "Build and automate the operational handling of UK data protection complaints while retaining accountable human decisions.",
+    "buyer_stage": "Problem evaluation / implementation",
+    "primary_query": "automate data protection complaints handling UK business",
     "related_query_family": [
-      "CRM record matching automation",
-      "prevent duplicate contacts CRM",
-      "automated CRM deduplication small business",
-      "CRM duplicate detection rules",
-      "CRM duplicate prevention workflow"
+      "UK data protection complaints process automation",
+      "data protection complaint acknowledgement workflow",
+      "UK SME privacy complaint handling checklist",
+      "data protection complaint case management automation",
+      "ICO complaints process automation"
     ],
-    "trend_or_durable_demand": "Durable sales-operations demand evidenced by active vendor documentation and current automation solution pages. No search volume or traffic estimate asserted.",
-    "evidence_source_and_date": "Repository content reviewed and live web searched 9 October 2026. HubSpot, Salesforce and Microsoft documentation describe duplicate-detection approaches; most vendor pages focus on features, leaving a practical cross-system matching and field-ownership decision gap.",
-    "existing_article_gap": "Existing onboarding and CRM post-call articles reference duplicates but do not provide a dedicated matching policy, four-state decision matrix, safe update design and import/retry testing method.",
+    "trend_or_durable_demand": "The Data (Use and Access) Act 2025 complaints provisions came into force 19 June 2026, according to the ICO; current ICO guidance creates durable business need for a traceable complaints process. No search volume or ranking probability asserted.",
+    "evidence_source_and_date": "Repository audit and live web search 12 October 2026, with primary ICO guidance from June 2026 and the ICO receiving-complaints page updated February 2026.",
+    "existing_article_gap": "Customer-service triage covers general support ticket routing, document processing covers extraction and intake, and approval automation covers sign-off. The library did not have a page owning the UK data protection complaints process, its acknowledgement duty and accountable investigation workflow.",
     "existing_supporting_articles": [
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/automate-crm-updates-after-sales-calls/",
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/when-custom-automation-is-worth-it-small-business/"
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-approval-workflows-small-business/",
+      "/articles/automation-readiness-checklist-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate client onboarding without creating duplicate data",
-        "Automate CRM updates after sales calls without spreading bad data",
-        "How to automate data entry between business systems"
+        "How to automate customer service ticket triage",
+        "How to automate document processing for a small business",
+        "How to automate approval workflows in a small business"
       ],
       "meaningfully_different_dimensions": [
-        "entity-matching criteria",
-        "duplicate candidate states",
-        "confirmed versus fuzzy match",
-        "field authority during merge",
-        "concurrent imports",
-        "idempotent retry",
-        "false positive testing"
+        "UK data protection complaints process",
+        "statutory acknowledgement timer",
+        "possible breach/escalation",
+        "confidential evidence record",
+        "substantive response sign-off",
+        "case closure and reopen"
       ],
-      "why_meaningfully_distinct": "Onboarding owns trusted client record creation, post-call CRM owns note/next-action updates, and data-entry owns cross-system movement. This page owns the identity matching and duplicate-prevention process itself."
+      "why_meaningfully_distinct": "The new page owns the UK privacy complaints operational requirement, not general ticket priority, document extraction or approvals. The searcher needs a specific process tied to ICO requirements and human investigation responsibility."
     },
-    "original_editorial_asset": "Olivers Consulting four-state match gate (confirmed, possible, no match, conflicting), with evidence/action table and safe-write sequence.",
-    "first_hand_contribution_or_limits": "Operational data-quality and CRM workflow design reasoning. Framework is editorial practice, not proprietary measured research.",
-    "proof_points_used_recently": "No fabricated customers, savings, search metrics or case-study results. Worked business example explicitly hypothetical.",
+    "original_editorial_asset": "Olivers Consulting seven-stage complaint case workflow: Capture → Classify → Acknowledge → Assign → Investigate → Respond → Close, with stage-specific automation and human decision matrix.",
+    "first_hand_contribution_or_limits": "Practical business-analysis, governance and control-design reasoning; editorial framework only, not proprietary measured research. Regulatory statements attributed to ICO primary guidance.",
+    "proof_points_used_recently": "No invented customers, results, legal compliance claims, rankings or search-volume statistics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -79,27 +78,26 @@
       "mobile_usability": 5,
       "conversion_relevance": 5
     },
-    "quality_average": 5,
+    "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Reviewed for clear direct answer, practical matching cases, human-readable exceptions and UK English.",
-    "mobile_check": "Fluid article layout and overflow-safe comparison table; responsive CSS breakpoints for narrow screens.",
-    "ai_mention_check": "AI mentioned only as optional candidate matching assistance; not used for automatic consequential merges.",
+    "readability_check": "Direct answer, scenario, stage-by-stage operational controls and UK English.",
+    "mobile_check": "Fluid layout with overflow-safe table and narrow-screen CSS breakpoint.",
+    "ai_mention_check": "AI-assisted triage presented only as optional classification assistance, not autonomous legal determination.",
     "internal_links": [
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/automate-crm-updates-after-sales-calls/",
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-approval-workflows-small-business/",
+      "/articles/automate-document-processing-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/automate-crm-updates-after-sales-calls/",
-      "/articles/automate-data-entry-between-business-systems/"
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-approval-workflows-small-business/"
     ],
     "external_sources": [
-      "https://knowledge.hubspot.com/records/deduplication-of-records",
-      "https://trailhead.salesforce.com/content/learn/modules/sales_admin_duplicate_management/sales_admin_duplicate_management_unit_2"
+      "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/06/new-data-protection-complaints-law-now-in-force/",
+      "https://ico.org.uk/for-organisations/how-to-deal-with-data-protection-complaints/what-do-we-do-when-we-receive-a-complaint/"
     ],
     "schema": [
       "Article",
@@ -115,9 +113,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Reviewed; Googlebot and public user agents permitted. No robots.txt change needed."
+    "robots_inspection": "Reviewed, no blocking rule for Googlebot; no change warranted."
   },
   "recent_articles": [
+    {
+      "title": "How to automate data protection complaint handling for a UK small business",
+      "slug": "automate-data-protection-complaints-uk-small-business",
+      "date_published": "2026-10-12",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate CRM duplicate detection and record matching",
       "slug": "automate-crm-duplicate-detection-small-business",
@@ -182,12 +186,6 @@
       "title": "What should a small business automate first?",
       "slug": "what-should-small-business-automate-first",
       "date_published": "2026-09-11",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How much does business automation cost for a UK SME?",
-      "slug": "business-automation-cost-uk-sme",
-      "date_published": "2026-09-09",
       "portfolio_classification": "broader SME-led"
     }
   ]
