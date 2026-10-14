@@ -3,57 +3,58 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led UK SME operations automation and complaint-handling controls",
-    "article_format": "Regulatory-triggered workflow implementation guide with seven-stage complaint case model",
-    "title": "How to automate data protection complaint handling for a UK small business",
-    "slug": "automate-data-protection-complaints-uk-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-data-protection-complaints-uk-small-business/",
-    "topic_pillar": "Operations automation",
-    "parent_topic_cluster": "Customer service and operations",
-    "target_client_type": "UK SME owners, operations managers and customer-service leaders who receive data protection complaints",
-    "industry_or_operating_context": "Privacy complaint intake, acknowledgement, assignment, investigation evidence, deadlines, final response and closure",
+    "scheduled_day": "Wednesday manual one-off",
+    "editorial_role": "SEO-led finance and back-office workflow expansion",
+    "article_format": "Bank-to-ledger reconciliation guide with original five-gate model and worked split-payment example",
+    "title": "How to automate bank reconciliation for a UK small business",
+    "slug": "automate-bank-reconciliation-uk-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-bank-reconciliation-uk-small-business/",
+    "topic_pillar": "Finance and back-office automation",
+    "parent_topic_cluster": "Finance and operations",
+    "target_client_type": "UK SME owners and finance/operations teams handling bank feeds and manual bank-to-ledger exceptions",
+    "industry_or_operating_context": "Bank reconciliation, accounting ledger entries, transaction matching, grouped receipts, card settlement fees, import quality and month-end review",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Small businesses must handle UK data protection complaints reliably even when messages arrive through ordinary support channels; email forwarding and ad-hoc chasing can lose ownership, evidence and deadlines.",
-    "primary_search_intent": "Build and automate the operational handling of UK data protection complaints while retaining accountable human decisions.",
+    "primary_buyer_problem": "UK small businesses often import bank transactions automatically but still spend time matching split or batched payments, researching fees and chasing reconciliation exceptions.",
+    "primary_search_intent": "Learn to automate bank reconciliation using accounting software plus controlled matching and exception workflows.",
     "buyer_stage": "Problem evaluation / implementation",
-    "primary_query": "automate data protection complaints handling UK business",
+    "primary_query": "how to automate bank reconciliation small business UK",
     "related_query_family": [
-      "UK data protection complaints process automation",
-      "data protection complaint acknowledgement workflow",
-      "UK SME privacy complaint handling checklist",
-      "data protection complaint case management automation",
-      "ICO complaints process automation"
+      "automated bank reconciliation UK SMEs",
+      "how to match bank transactions to invoices automatically",
+      "bank feed reconciliation automation",
+      "automate bank-to-ledger matching",
+      "automate bank reconciliation exceptions"
     ],
-    "trend_or_durable_demand": "The Data (Use and Access) Act 2025 complaints provisions came into force 19 June 2026, according to the ICO; current ICO guidance creates durable business need for a traceable complaints process. No search volume or ranking probability asserted.",
-    "evidence_source_and_date": "Repository audit and live web search 12 October 2026, with primary ICO guidance from June 2026 and the ICO receiving-complaints page updated February 2026.",
-    "existing_article_gap": "Customer-service triage covers general support ticket routing, document processing covers extraction and intake, and approval automation covers sign-off. The library did not have a page owning the UK data protection complaints process, its acknowledgement duty and accountable investigation workflow.",
+    "trend_or_durable_demand": "Current October 2026 vendor guides and UK SME finance-automation results show durable intent; no keyword volume, traffic or ranking probability claimed.",
+    "evidence_source_and_date": "Repository review and live web research on 14 October 2026; official Xero, Sage and QuickBooks bank reconciliation resources consulted.",
+    "existing_article_gap": "Existing supplier statement reconciliation and Shopify payout reconciliation pages address separate evidence sets, while the library lacked a broad bank-to-ledger reconciliation implementation guide for UK SMEs.",
     "existing_supporting_articles": [
-      "/articles/automate-customer-service-ticket-triage/",
-      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-supplier-statement-reconciliation/",
+      "/articles/reconcile-shopify-payouts-orders-fees/",
       "/articles/automate-approval-workflows-small-business/",
-      "/articles/automation-readiness-checklist-small-business/"
+      "/articles/calculate-automation-roi-small-business/",
+      "/articles/automate-management-reporting-from-spreadsheets/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate customer service ticket triage",
-        "How to automate document processing for a small business",
-        "How to automate approval workflows in a small business"
+        "How to automate supplier statement reconciliation without hiding exceptions",
+        "How to reconcile Shopify payouts, orders, refunds and fees",
+        "How to automate management reporting from spreadsheets"
       ],
       "meaningfully_different_dimensions": [
-        "UK data protection complaints process",
-        "statutory acknowledgement timer",
-        "possible breach/escalation",
-        "confidential evidence record",
-        "substantive response sign-off",
-        "case closure and reopen"
+        "bank-to-ledger evidence",
+        "statement period completeness",
+        "bank feed import controls",
+        "exact and split matching",
+        "period-end balance sign-off",
+        "unmatched payment handling"
       ],
-      "why_meaningfully_distinct": "The new page owns the UK privacy complaints operational requirement, not general ticket priority, document extraction or approvals. The searcher needs a specific process tied to ICO requirements and human investigation responsibility."
+      "why_meaningfully_distinct": "Supplier statement reconciliation focuses on invoices and supplier balances; Shopify payout reconciliation focuses on provider settlement components; reporting focuses on management reports. This article owns bank statement versus ledger evidence and close sign-off."
     },
-    "original_editorial_asset": "Olivers Consulting seven-stage complaint case workflow: Capture → Classify → Acknowledge → Assign → Investigate → Respond → Close, with stage-specific automation and human decision matrix.",
-    "first_hand_contribution_or_limits": "Practical business-analysis, governance and control-design reasoning; editorial framework only, not proprietary measured research. Regulatory statements attributed to ICO primary guidance.",
-    "proof_points_used_recently": "No invented customers, results, legal compliance claims, rankings or search-volume statistics.",
+    "original_editorial_asset": "Olivers Consulting five reconciliation gates: Complete feed → Valid source → Defensible match → Explained difference → Signed-off balance, with gate failure conditions.",
+    "first_hand_contribution_or_limits": "Practical workflow, data-quality and risk-control design reasoning, not a claimed independent financial research study.",
+    "proof_points_used_recently": "Hypothetical numbers in worked example only. No fabricated client results, savings, traffic or market metrics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -81,23 +82,26 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Direct answer, scenario, stage-by-stage operational controls and UK English.",
-    "mobile_check": "Fluid layout with overflow-safe table and narrow-screen CSS breakpoint.",
-    "ai_mention_check": "AI-assisted triage presented only as optional classification assistance, not autonomous legal determination.",
+    "readability_check": "Direct answer, distinct process guide, relevant worked scenario and UK English.",
+    "mobile_check": "Fluid article width, 620px breakpoint and horizontal scroll for wide table; visual rendering not independently measured.",
+    "ai_mention_check": "No unnecessary AI hype.",
     "internal_links": [
-      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/reconcile-shopify-payouts-orders-fees/",
       "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-supplier-statement-reconciliation/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/calculate-automation-roi-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-customer-service-ticket-triage/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/automate-approval-workflows-small-business/"
+      "/articles/automate-supplier-statement-reconciliation/",
+      "/articles/reconcile-shopify-payouts-orders-fees/",
+      "/articles/automate-management-reporting-from-spreadsheets/"
     ],
     "external_sources": [
-      "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/06/new-data-protection-complaints-law-now-in-force/",
-      "https://ico.org.uk/for-organisations/how-to-deal-with-data-protection-complaints/what-do-we-do-when-we-receive-a-complaint/"
+      "https://www.xero.com/uk/guides/what-is-bank-reconciliation/",
+      "https://www.sage.com/en-gb/integrated-payment-solutions/bank-reconciliation-software/",
+      "https://quickbooks.intuit.com/learn-support/en-uk/help-article/bank-transactions/add-match-downloaded-bank-transactions-video/L6h7FvFeU_GB_en_GB"
     ],
     "schema": [
       "Article",
@@ -113,9 +117,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Reviewed, no blocking rule for Googlebot; no change warranted."
+    "robots_inspection": "Googlebot and general crawler access inspected and unchanged."
   },
   "recent_articles": [
+    {
+      "title": "How to automate bank reconciliation for a UK small business",
+      "slug": "automate-bank-reconciliation-uk-small-business",
+      "date_published": "2026-10-14",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate data protection complaint handling for a UK small business",
       "slug": "automate-data-protection-complaints-uk-small-business",
@@ -180,12 +190,6 @@
       "title": "Automation readiness checklist for small businesses",
       "slug": "automation-readiness-checklist-small-business",
       "date_published": "2026-09-14",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "What should a small business automate first?",
-      "slug": "what-should-small-business-automate-first",
-      "date_published": "2026-09-11",
       "portfolio_classification": "broader SME-led"
     }
   ]
