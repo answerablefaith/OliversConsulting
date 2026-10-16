@@ -3,58 +3,58 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Wednesday manual one-off",
-    "editorial_role": "SEO-led finance and back-office workflow expansion",
-    "article_format": "Bank-to-ledger reconciliation guide with original five-gate model and worked split-payment example",
-    "title": "How to automate bank reconciliation for a UK small business",
-    "slug": "automate-bank-reconciliation-uk-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-bank-reconciliation-uk-small-business/",
+    "scheduled_day": "Friday manual one-off",
+    "editorial_role": "SEO-led UK SME supplier master data and finance operations coverage",
+    "article_format": "Supplier activation decision guide with six-gate workflow, review matrix and payment-details verification",
+    "title": "How to automate supplier onboarding for a UK small business",
+    "slug": "automate-supplier-onboarding-uk-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-supplier-onboarding-uk-small-business/",
     "topic_pillar": "Finance and back-office automation",
     "parent_topic_cluster": "Finance and operations",
-    "target_client_type": "UK SME owners and finance/operations teams handling bank feeds and manual bank-to-ledger exceptions",
-    "industry_or_operating_context": "Bank reconciliation, accounting ledger entries, transaction matching, grouped receipts, card settlement fees, import quality and month-end review",
+    "target_client_type": "UK SME operations, procurement and finance teams registering new suppliers and managing payment information",
+    "industry_or_operating_context": "Supplier master data, initial registration, duplicate detection, evidence, bank-detail verification, approval and payee activation",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "UK small businesses often import bank transactions automatically but still spend time matching split or batched payments, researching fees and chasing reconciliation exceptions.",
-    "primary_search_intent": "Learn to automate bank reconciliation using accounting software plus controlled matching and exception workflows.",
-    "buyer_stage": "Problem evaluation / implementation",
-    "primary_query": "how to automate bank reconciliation small business UK",
+    "primary_buyer_problem": "Disconnected intake and finance processes cause duplicate suppliers, repeated data entry, uncertain approvals and payment details activated without clear verification.",
+    "primary_search_intent": "Learn how to automate supplier onboarding for a UK SME while controlling supplier identity, approval and payment-detail verification.",
+    "buyer_stage": "Implementation and solution evaluation",
+    "primary_query": "how to automate supplier onboarding UK small business",
     "related_query_family": [
-      "automated bank reconciliation UK SMEs",
-      "how to match bank transactions to invoices automatically",
-      "bank feed reconciliation automation",
-      "automate bank-to-ledger matching",
-      "automate bank reconciliation exceptions"
+      "supplier onboarding automation UK SME",
+      "new supplier setup workflow",
+      "automate supplier registration approval",
+      "supplier master data duplicate checks",
+      "supplier bank details change verification"
     ],
-    "trend_or_durable_demand": "Current October 2026 vendor guides and UK SME finance-automation results show durable intent; no keyword volume, traffic or ranking probability claimed.",
-    "evidence_source_and_date": "Repository review and live web research on 14 October 2026; official Xero, Sage and QuickBooks bank reconciliation resources consulted.",
-    "existing_article_gap": "Existing supplier statement reconciliation and Shopify payout reconciliation pages address separate evidence sets, while the library lacked a broad bank-to-ledger reconciliation implementation guide for UK SMEs.",
+    "trend_or_durable_demand": "Durable operational demand and current supplier onboarding research in October 2026. No search volume or traffic prediction asserted.",
+    "evidence_source_and_date": "Repository audit and live web search 16 October 2026. Reviewed Bank of England supplier portal primary documentation and current UK supplier onboarding guides.",
+    "existing_article_gap": "The site covers construction-specific CIS subcontractors, invoice capture and approvals but lacks a broad supplier registration-to-payment activation guide for UK SMEs.",
     "existing_supporting_articles": [
-      "/articles/automate-supplier-statement-reconciliation/",
-      "/articles/reconcile-shopify-payouts-orders-fees/",
+      "/articles/automate-cis-subcontractor-onboarding/",
       "/articles/automate-approval-workflows-small-business/",
-      "/articles/calculate-automation-roi-small-business/",
-      "/articles/automate-management-reporting-from-spreadsheets/"
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-crm-duplicate-detection-small-business/",
+      "/articles/automate-data-entry-between-business-systems/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate supplier statement reconciliation without hiding exceptions",
-        "How to reconcile Shopify payouts, orders, refunds and fees",
-        "How to automate management reporting from spreadsheets"
+        "CIS subcontractor onboarding: automate the admin, keep the controls",
+        "How to automate approval workflows in a small business",
+        "How to automate invoice processing without losing approval control"
       ],
       "meaningfully_different_dimensions": [
-        "bank-to-ledger evidence",
-        "statement period completeness",
-        "bank feed import controls",
-        "exact and split matching",
-        "period-end balance sign-off",
-        "unmatched payment handling"
+        "general supplier record creation",
+        "supplier identity verification",
+        "supplier duplicate matching",
+        "bank details change verification",
+        "prospective vs payable status",
+        "cross-system supplier master record"
       ],
-      "why_meaningfully_distinct": "Supplier statement reconciliation focuses on invoices and supplier balances; Shopify payout reconciliation focuses on provider settlement components; reporting focuses on management reports. This article owns bank statement versus ledger evidence and close sign-off."
+      "why_meaningfully_distinct": "CIS covers HMRC-specific subcontractor checks, invoice processing covers transaction-level checks, and approval workflows cover general decisions. This page owns the supplier onboarding lifecycle and approval for payment activation."
     },
-    "original_editorial_asset": "Olivers Consulting five reconciliation gates: Complete feed → Valid source → Defensible match → Explained difference → Signed-off balance, with gate failure conditions.",
-    "first_hand_contribution_or_limits": "Practical workflow, data-quality and risk-control design reasoning, not a claimed independent financial research study.",
-    "proof_points_used_recently": "Hypothetical numbers in worked example only. No fabricated client results, savings, traffic or market metrics.",
+    "original_editorial_asset": "Olivers Consulting six-gate supplier activation model: Request → Identify → Check → Verify payment → Approve → Activate, with exception and ownership table.",
+    "first_hand_contribution_or_limits": "Practical business-analysis, operational data-quality and finance controls reasoning; the framework is an editorial tool, not proprietary measured research.",
+    "proof_points_used_recently": "Illustrative supplier example only; no fabricated clients, results, savings or traffic metrics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -82,26 +82,25 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Direct answer, distinct process guide, relevant worked scenario and UK English.",
-    "mobile_check": "Fluid article width, 620px breakpoint and horizontal scroll for wide table; visual rendering not independently measured.",
-    "ai_mention_check": "No unnecessary AI hype.",
+    "readability_check": "Early direct answer, practical supplier example, concise workflow and UK English.",
+    "mobile_check": "Fluid content width, narrow-screen CSS and horizontally scrolling wide comparison table; live screenshot test not available.",
+    "ai_mention_check": "No unsupported autonomous AI claims.",
     "internal_links": [
-      "/articles/reconcile-shopify-payouts-orders-fees/",
+      "/articles/email-attachments-shared-folders-or-forms/",
+      "/articles/automate-crm-duplicate-detection-small-business/",
       "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-supplier-statement-reconciliation/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
-      "/articles/calculate-automation-roi-small-business/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-cis-subcontractor-onboarding/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-supplier-statement-reconciliation/",
-      "/articles/reconcile-shopify-payouts-orders-fees/",
-      "/articles/automate-management-reporting-from-spreadsheets/"
+      "/articles/automate-cis-subcontractor-onboarding/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-approval-workflows-small-business/"
     ],
     "external_sources": [
-      "https://www.xero.com/uk/guides/what-is-bank-reconciliation/",
-      "https://www.sage.com/en-gb/integrated-payment-solutions/bank-reconciliation-software/",
-      "https://quickbooks.intuit.com/learn-support/en-uk/help-article/bank-transactions/add-match-downloaded-bank-transactions-video/L6h7FvFeU_GB_en_GB"
+      "https://www.bankofengland.co.uk/contact/supplying-goods-and-services/how-to-become-a-supplier"
     ],
     "schema": [
       "Article",
@@ -117,9 +116,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and general crawler access inspected and unchanged."
+    "robots_inspection": "Reviewed; Googlebot and public discovery crawlers allowed, no change needed."
   },
   "recent_articles": [
+    {
+      "title": "How to automate supplier onboarding for a UK small business",
+      "slug": "automate-supplier-onboarding-uk-small-business",
+      "date_published": "2026-10-16",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate bank reconciliation for a UK small business",
       "slug": "automate-bank-reconciliation-uk-small-business",
@@ -184,12 +189,6 @@
       "title": "AI automation vs rule-based automation: what should a small business use?",
       "slug": "ai-vs-rule-based-automation-small-business",
       "date_published": "2026-09-18",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "Automation readiness checklist for small businesses",
-      "slug": "automation-readiness-checklist-small-business",
-      "date_published": "2026-09-14",
       "portfolio_classification": "broader SME-led"
     }
   ]
