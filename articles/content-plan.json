@@ -3,58 +3,57 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Friday manual one-off",
-    "editorial_role": "SEO-led UK SME supplier master data and finance operations coverage",
-    "article_format": "Supplier activation decision guide with six-gate workflow, review matrix and payment-details verification",
-    "title": "How to automate supplier onboarding for a UK small business",
-    "slug": "automate-supplier-onboarding-uk-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-supplier-onboarding-uk-small-business/",
-    "topic_pillar": "Finance and back-office automation",
-    "parent_topic_cluster": "Finance and operations",
-    "target_client_type": "UK SME operations, procurement and finance teams registering new suppliers and managing payment information",
-    "industry_or_operating_context": "Supplier master data, initial registration, duplicate detection, evidence, bank-detail verification, approval and payee activation",
+    "scheduled_day": "Monday manual one-off",
+    "editorial_role": "SEO-led broad UK SME professional-services administration",
+    "article_format": "Recurring document-request and reminder implementation guide with six-state request lifecycle",
+    "title": "How to automate recurring client document requests and reminders",
+    "slug": "automate-client-document-requests-reminders",
+    "url": "https://oliversconsulting.co.uk/articles/automate-client-document-requests-reminders/",
+    "topic_pillar": "Business process automation",
+    "parent_topic_cluster": "Business process and data",
+    "target_client_type": "UK SME professional-services and operations teams chasing repeat client documents for projects or recurring work",
+    "industry_or_operating_context": "Client and period-specific document checklists, secure intake, missing-file reminders, evidence acceptance and downstream handover",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Disconnected intake and finance processes cause duplicate suppliers, repeated data entry, uncertain approvals and payment details activated without clear verification.",
-    "primary_search_intent": "Learn how to automate supplier onboarding for a UK SME while controlling supplier identity, approval and payment-detail verification.",
+    "primary_buyer_problem": "Repeatedly chasing client documents across email and shared folders creates unnecessary manual follow-ups and delayed downstream work because staff cannot confidently see which requested items have arrived and been accepted.",
+    "primary_search_intent": "Learn how to automate recurring client document requests, receipt recognition, reminders and complete-pack handoff.",
     "buyer_stage": "Implementation and solution evaluation",
-    "primary_query": "how to automate supplier onboarding UK small business",
+    "primary_query": "automate client document requests and reminders",
     "related_query_family": [
-      "supplier onboarding automation UK SME",
-      "new supplier setup workflow",
-      "automate supplier registration approval",
-      "supplier master data duplicate checks",
-      "supplier bank details change verification"
+      "automate client document chasing",
+      "automated document collection reminders",
+      "recurring client file requests",
+      "track outstanding client documents",
+      "stop reminders after document upload"
     ],
-    "trend_or_durable_demand": "Durable operational demand and current supplier onboarding research in October 2026. No search volume or traffic prediction asserted.",
-    "evidence_source_and_date": "Repository audit and live web search 16 October 2026. Reviewed Bank of England supplier portal primary documentation and current UK supplier onboarding guides.",
-    "existing_article_gap": "The site covers construction-specific CIS subcontractors, invoice capture and approvals but lacks a broad supplier registration-to-payment activation guide for UK SMEs.",
+    "trend_or_durable_demand": "Current October 2026 search results show UK-specific document chasing workflow tools and active professional services demand; no keyword volume or ranking probability asserted.",
+    "evidence_source_and_date": "Repository audit and live web research on 19 October 2026, comparing UK client document request workflow software and approaches plus ICO security guidance.",
+    "existing_article_gap": "Existing document-processing content owns extraction and validation after a document arrives; client onboarding owns the trusted client record; intake-channel comparison owns the route choice. No current article owns recurring multi-document request state, targeted reminders and accepted-pack handoff.",
     "existing_supporting_articles": [
-      "/articles/automate-cis-subcontractor-onboarding/",
-      "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-crm-duplicate-detection-small-business/",
-      "/articles/automate-data-entry-between-business-systems/"
+      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/email-attachments-shared-folders-or-forms/",
+      "/articles/integrate-systems-or-automate-hand-off/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "CIS subcontractor onboarding: automate the admin, keep the controls",
-        "How to automate approval workflows in a small business",
-        "How to automate invoice processing without losing approval control"
+        "How to automate document processing for a small business",
+        "Automate client onboarding without creating duplicate data",
+        "Email attachments, shared folders or forms: which should your business use?"
       ],
       "meaningfully_different_dimensions": [
-        "general supplier record creation",
-        "supplier identity verification",
-        "supplier duplicate matching",
-        "bank details change verification",
-        "prospective vs payable status",
-        "cross-system supplier master record"
+        "request-per-client-per-period register",
+        "outstanding item tracking",
+        "receipt versus acceptance",
+        "reminder suppression on receipt",
+        "wrong document correction",
+        "complete pack handover"
       ],
-      "why_meaningfully_distinct": "CIS covers HMRC-specific subcontractor checks, invoice processing covers transaction-level checks, and approval workflows cover general decisions. This page owns the supplier onboarding lifecycle and approval for payment activation."
+      "why_meaningfully_distinct": "New article owns the upstream repeated request and chasing lifecycle; document processing handles downstream extraction, onboarding owns client record creation, and intake-channel article compares communication methods."
     },
-    "original_editorial_asset": "Olivers Consulting six-gate supplier activation model: Request → Identify → Check → Verify payment → Approve → Activate, with exception and ownership table.",
-    "first_hand_contribution_or_limits": "Practical business-analysis, operational data-quality and finance controls reasoning; the framework is an editorial tool, not proprietary measured research.",
-    "proof_points_used_recently": "Illustrative supplier example only; no fabricated clients, results, savings or traffic metrics.",
+    "original_editorial_asset": "Olivers Consulting six-state document request model: Not requested → Requested → Received → Needs correction → Accepted → Handed over, with stage-action and ownership table.",
+    "first_hand_contribution_or_limits": "Operational and data-quality reasoning around reminders, state, idempotency and client handoffs; editorial model, not proprietary measured research.",
+    "proof_points_used_recently": "Hypothetical worked scenario only; no unsupported savings, clients or SEO metrics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -82,25 +81,23 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Early direct answer, practical supplier example, concise workflow and UK English.",
-    "mobile_check": "Fluid content width, narrow-screen CSS and horizontally scrolling wide comparison table; live screenshot test not available.",
-    "ai_mention_check": "No unsupported autonomous AI claims.",
+    "readability_check": "Early direct answer, practical request lifecycle, worked scenario, concise sections and UK English.",
+    "mobile_check": "Fluid content with horizontal scroll for wide table, responsive breakpoints; screenshot test not performed.",
+    "ai_mention_check": "Avoided unnecessary AI speculation.",
     "internal_links": [
       "/articles/email-attachments-shared-folders-or-forms/",
-      "/articles/automate-crm-duplicate-detection-small-business/",
-      "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-cis-subcontractor-onboarding/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/integrate-systems-or-automate-hand-off/",
+      "/articles/automate-client-onboarding-no-duplicate-data/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-cis-subcontractor-onboarding/",
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-approval-workflows-small-business/"
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/email-attachments-shared-folders-or-forms/"
     ],
     "external_sources": [
-      "https://www.bankofengland.co.uk/contact/supplying-goods-and-services/how-to-become-a-supplier"
+      "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/"
     ],
     "schema": [
       "Article",
@@ -116,9 +113,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Reviewed; Googlebot and public discovery crawlers allowed, no change needed."
+    "robots_inspection": "Googlebot and public discovery crawlers remain allowed; no change necessary."
   },
   "recent_articles": [
+    {
+      "title": "How to automate recurring client document requests and reminders",
+      "slug": "automate-client-document-requests-reminders",
+      "date_published": "2026-10-19",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate supplier onboarding for a UK small business",
       "slug": "automate-supplier-onboarding-uk-small-business",
@@ -183,12 +186,6 @@
       "title": "7 common automation mistakes small businesses make",
       "slug": "common-automation-mistakes-small-business",
       "date_published": "2026-09-21",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "AI automation vs rule-based automation: what should a small business use?",
-      "slug": "ai-vs-rule-based-automation-small-business",
-      "date_published": "2026-09-18",
       "portfolio_classification": "broader SME-led"
     }
   ]
