@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [Recurring client document requests and reminders](https://oliversconsulting.co.uk/articles/automate-client-document-requests-reminders/)
 - [Supplier onboarding automation for UK small businesses](https://oliversconsulting.co.uk/articles/automate-supplier-onboarding-uk-small-business/)
 - [Bank reconciliation automation for UK small businesses](https://oliversconsulting.co.uk/articles/automate-bank-reconciliation-uk-small-business/)
 - [Data protection complaint handling automation for UK small businesses](https://oliversconsulting.co.uk/articles/automate-data-protection-complaints-uk-small-business/)
