@@ -4,56 +4,57 @@
   "latest_publication": {
     "created_new_article": true,
     "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led broad UK SME professional-services administration",
-    "article_format": "Recurring document-request and reminder implementation guide with six-state request lifecycle",
-    "title": "How to automate recurring client document requests and reminders",
-    "slug": "automate-client-document-requests-reminders",
-    "url": "https://oliversconsulting.co.uk/articles/automate-client-document-requests-reminders/",
-    "topic_pillar": "Business process automation",
-    "parent_topic_cluster": "Business process and data",
-    "target_client_type": "UK SME professional-services and operations teams chasing repeat client documents for projects or recurring work",
-    "industry_or_operating_context": "Client and period-specific document checklists, secure intake, missing-file reminders, evidence acceptance and downstream handover",
+    "editorial_role": "SEO-led finance purchase-to-pay process expansion",
+    "article_format": "Line-level three-way match implementation guide and six-state discrepancy matrix",
+    "title": "How to automate three-way invoice matching for a UK small business",
+    "slug": "automate-three-way-invoice-matching-uk-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/automate-three-way-invoice-matching-uk-small-business/",
+    "topic_pillar": "Finance and back-office automation",
+    "parent_topic_cluster": "Finance and operations",
+    "target_client_type": "UK SME finance, procurement and operations teams comparing supplier invoices with orders and goods received",
+    "industry_or_operating_context": "Purchase orders, goods receipt confirmation, supplier invoices, partial delivery, price differences, duplicate bills and accounts payable exceptions",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Repeatedly chasing client documents across email and shared folders creates unnecessary manual follow-ups and delayed downstream work because staff cannot confidently see which requested items have arrived and been accepted.",
-    "primary_search_intent": "Learn how to automate recurring client document requests, receipt recognition, reminders and complete-pack handoff.",
+    "primary_buyer_problem": "Manual matching of invoice lines to orders and receipt evidence causes repeated checking and can conceal undelivered goods, unexpected prices or duplicate invoices.",
+    "primary_search_intent": "Learn how to automate three-way supplier invoice matching between purchase orders, receipts and bills.",
     "buyer_stage": "Implementation and solution evaluation",
-    "primary_query": "automate client document requests and reminders",
+    "primary_query": "automate three way invoice matching small business",
     "related_query_family": [
-      "automate client document chasing",
-      "automated document collection reminders",
-      "recurring client file requests",
-      "track outstanding client documents",
-      "stop reminders after document upload"
+      "automated three-way matching UK SMEs",
+      "match supplier invoice purchase order goods receipt",
+      "automate PO invoice goods received matching",
+      "partial delivery invoice matching automation",
+      "three way invoice matching exception workflow"
     ],
-    "trend_or_durable_demand": "Current October 2026 search results show UK-specific document chasing workflow tools and active professional services demand; no keyword volume or ranking probability asserted.",
-    "evidence_source_and_date": "Repository audit and live web research on 19 October 2026, comparing UK client document request workflow software and approaches plus ICO security guidance.",
-    "existing_article_gap": "Existing document-processing content owns extraction and validation after a document arrives; client onboarding owns the trusted client record; intake-channel comparison owns the route choice. No current article owns recurring multi-document request state, targeted reminders and accepted-pack handoff.",
+    "trend_or_durable_demand": "Current vendor product documentation and active search results from Amazon Business, SAP Concur and accounts payable workflow providers confirm enduring demand; no quantitative keyword estimates asserted.",
+    "evidence_source_and_date": "Repository audit and live web research 26 October 2026; primary official vendor pages for Amazon Business 3-Way Match and SAP Concur three-way matching reviewed.",
+    "existing_article_gap": "Existing PO automation covers ordering decisions and replenishment; invoice processing covers intake and approval; supplier onboarding covers identity. No standalone guide currently owns line-level purchase-order, receipt and supplier-invoice matching.",
     "existing_supporting_articles": [
-      "/articles/automate-document-processing-small-business/",
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/email-attachments-shared-folders-or-forms/",
+      "/articles/automate-purchase-orders-reorder-rules/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-approval-workflows-small-business/",
+      "/articles/automate-supplier-onboarding-uk-small-business/",
       "/articles/integrate-systems-or-automate-hand-off/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate document processing for a small business",
-        "Automate client onboarding without creating duplicate data",
-        "Email attachments, shared folders or forms: which should your business use?"
+        "Purchase order automation",
+        "How to automate invoice processing without losing approval control",
+        "How to automate supplier onboarding for a UK small business"
       ],
       "meaningfully_different_dimensions": [
-        "request-per-client-per-period register",
-        "outstanding item tracking",
-        "receipt versus acceptance",
-        "reminder suppression on receipt",
-        "wrong document correction",
-        "complete pack handover"
+        "goods receipt as third evidence",
+        "line-level matching",
+        "partial receipt cumulative quantities",
+        "price variance resolution",
+        "duplicate invoice retry checks",
+        "posting eligibility"
       ],
-      "why_meaningfully_distinct": "New article owns the upstream repeated request and chasing lifecycle; document processing handles downstream extraction, onboarding owns client record creation, and intake-channel article compares communication methods."
+      "why_meaningfully_distinct": "Other articles own creating orders, extracting and approving invoices, or verifying supplier identity. The new guide owns whether supplier invoice quantities and prices agree with ordered and received evidence."
     },
-    "original_editorial_asset": "Olivers Consulting six-state document request model: Not requested → Requested → Received → Needs correction → Accepted → Handed over, with stage-action and ownership table.",
-    "first_hand_contribution_or_limits": "Operational and data-quality reasoning around reminders, state, idempotency and client handoffs; editorial model, not proprietary measured research.",
-    "proof_points_used_recently": "Hypothetical worked scenario only; no unsupported savings, clients or SEO metrics.",
+    "original_editorial_asset": "Olivers Consulting three-evidence match gate and six-state discrepancy decision matrix: Matched, Partial receipt, Price variance, Missing evidence, Identity conflict, Duplicate risk.",
+    "first_hand_contribution_or_limits": "Practical finance workflow, business-analysis and data-quality judgement. The editorial framework is not presented as measured research.",
+    "proof_points_used_recently": "Hypothetical partial-receipt scenario only, no invented client results or numerical search metrics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -81,23 +82,25 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Early direct answer, practical request lifecycle, worked scenario, concise sections and UK English.",
-    "mobile_check": "Fluid content with horizontal scroll for wide table, responsive breakpoints; screenshot test not performed.",
-    "ai_mention_check": "Avoided unnecessary AI speculation.",
+    "readability_check": "Direct answer, practical three-record distinction, worked example, discrepancy table and UK English.",
+    "mobile_check": "Fluid article content, horizontal overflow for wide decision table and narrow-screen responsive styling; no live screenshot test completed.",
+    "ai_mention_check": "No ungrounded AI claims.",
     "internal_links": [
-      "/articles/email-attachments-shared-folders-or-forms/",
-      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-purchase-orders-reorder-rules/",
+      "/articles/automate-approval-workflows-small-business/",
       "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/email-attachments-shared-folders-or-forms/"
+      "/articles/automate-purchase-orders-reorder-rules/",
+      "/articles/automate-invoice-processing-approval-control/",
+      "/articles/automate-approval-workflows-small-business/"
     ],
     "external_sources": [
-      "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/"
+      "https://business.amazon.co.uk/en/solutions/streamlined-purchasing/3-way-match",
+      "https://www.concur.co.uk/products/three-way-match"
     ],
     "schema": [
       "Article",
@@ -113,9 +116,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and public discovery crawlers remain allowed; no change necessary."
+    "robots_inspection": "Googlebot and public discovery crawlers allowed. No robots.txt change necessary."
   },
   "recent_articles": [
+    {
+      "title": "How to automate three-way invoice matching for a UK small business",
+      "slug": "automate-three-way-invoice-matching-uk-small-business",
+      "date_published": "2026-10-26",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate recurring client document requests and reminders",
       "slug": "automate-client-document-requests-reminders",
@@ -180,12 +189,6 @@
       "title": "When should a small business not automate a process?",
       "slug": "when-not-to-automate-business-process",
       "date_published": "2026-09-23",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "7 common automation mistakes small businesses make",
-      "slug": "common-automation-mistakes-small-business",
-      "date_published": "2026-09-21",
       "portfolio_classification": "broader SME-led"
     }
   ]
