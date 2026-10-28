@@ -3,58 +3,58 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led finance purchase-to-pay process expansion",
-    "article_format": "Line-level three-way match implementation guide and six-state discrepancy matrix",
-    "title": "How to automate three-way invoice matching for a UK small business",
-    "slug": "automate-three-way-invoice-matching-uk-small-business",
-    "url": "https://oliversconsulting.co.uk/articles/automate-three-way-invoice-matching-uk-small-business/",
-    "topic_pillar": "Finance and back-office automation",
-    "parent_topic_cluster": "Finance and operations",
-    "target_client_type": "UK SME finance, procurement and operations teams comparing supplier invoices with orders and goods received",
-    "industry_or_operating_context": "Purchase orders, goods receipt confirmation, supplier invoices, partial delivery, price differences, duplicate bills and accounts payable exceptions",
+    "scheduled_day": "Wednesday manual one-off",
+    "editorial_role": "SEO-led import data-quality controls and system integration cluster expansion",
+    "article_format": "Pre-import validation implementation guide featuring a five-layer quality gate and exception matrix",
+    "title": "How to automate spreadsheet data validation before importing into business systems",
+    "slug": "automate-spreadsheet-import-validation",
+    "url": "https://oliversconsulting.co.uk/articles/automate-spreadsheet-import-validation/",
+    "topic_pillar": "Data quality, spreadsheets and reporting",
+    "parent_topic_cluster": "Data, spreadsheets and reporting",
+    "target_client_type": "UK SME owners and operations or data-quality leads importing supplier, customer, inventory and finance records from CSV or Excel into business systems",
+    "industry_or_operating_context": "Excel and CSV import validation, required fields, identifiers, relationship lookups, data mapping, duplicate prevention and failed import recovery",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Manual matching of invoice lines to orders and receipt evidence causes repeated checking and can conceal undelivered goods, unexpected prices or duplicate invoices.",
-    "primary_search_intent": "Learn how to automate three-way supplier invoice matching between purchase orders, receipts and bills.",
+    "primary_buyer_problem": "Recurring spreadsheet imports contain malformed or conflicting rows that can create incorrect operational records and repeated corrective work.",
+    "primary_search_intent": "Learn to validate spreadsheets automatically before importing records into CRM, stock, finance or other business systems.",
     "buyer_stage": "Implementation and solution evaluation",
-    "primary_query": "automate three way invoice matching small business",
+    "primary_query": "automate spreadsheet data validation before import",
     "related_query_family": [
-      "automated three-way matching UK SMEs",
-      "match supplier invoice purchase order goods receipt",
-      "automate PO invoice goods received matching",
-      "partial delivery invoice matching automation",
-      "three way invoice matching exception workflow"
+      "automated excel import validation",
+      "validate csv before uploading to crm",
+      "spreadsheet quality checks before system import",
+      "import error report row-level excel",
+      "prevent duplicate spreadsheet imports"
     ],
-    "trend_or_durable_demand": "Current vendor product documentation and active search results from Amazon Business, SAP Concur and accounts payable workflow providers confirm enduring demand; no quantitative keyword estimates asserted.",
-    "evidence_source_and_date": "Repository audit and live web research 26 October 2026; primary official vendor pages for Amazon Business 3-Way Match and SAP Concur three-way matching reviewed.",
-    "existing_article_gap": "Existing PO automation covers ordering decisions and replenishment; invoice processing covers intake and approval; supplier onboarding covers identity. No standalone guide currently owns line-level purchase-order, receipt and supplier-invoice matching.",
+    "trend_or_durable_demand": "Current October 2026 search results include spreadsheet pre-import validation projects and live official Microsoft guidance; no keyword difficulty, traffic or volume numbers claimed.",
+    "evidence_source_and_date": "Repository audit and current web research 28 October 2026; official Microsoft Excel Data Validation and Microsoft Power Query data-type documentation.",
+    "existing_article_gap": "Existing spreadsheet-process guide covers end-to-end workbook work; system data-entry guide covers transfer architecture; CRM duplicate guide owns identity matching. No page focuses on batch pre-import field, record and reference validation with clear row-level exception and retry rules.",
     "existing_supporting_articles": [
-      "/articles/automate-purchase-orders-reorder-rules/",
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-supplier-onboarding-uk-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/"
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-spreadsheet-business-process-small-business/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-crm-duplicate-detection-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "Purchase order automation",
-        "How to automate invoice processing without losing approval control",
-        "How to automate supplier onboarding for a UK small business"
+        "How to automate a spreadsheet-based business process",
+        "How to automate data entry between business systems",
+        "How to automate CRM duplicate detection and record matching"
       ],
       "meaningfully_different_dimensions": [
-        "goods receipt as third evidence",
-        "line-level matching",
-        "partial receipt cumulative quantities",
-        "price variance resolution",
-        "duplicate invoice retry checks",
-        "posting eligibility"
+        "pre-import boundary",
+        "file schema verification",
+        "field type validation",
+        "record-level uniqueness",
+        "reference lookup",
+        "batch-level reconciliation",
+        "row-level correction report"
       ],
-      "why_meaningfully_distinct": "Other articles own creating orders, extracting and approving invoices, or verifying supplier identity. The new guide owns whether supplier invoice quantities and prices agree with ordered and received evidence."
+      "why_meaningfully_distinct": "The existing pages own end-to-end spreadsheet operations, cross-system data movement or CRM identity. This article owns the validation gate before an Excel or CSV file is allowed to write operational records."
     },
-    "original_editorial_asset": "Olivers Consulting three-evidence match gate and six-state discrepancy decision matrix: Matched, Partial receipt, Price variance, Missing evidence, Identity conflict, Duplicate risk.",
-    "first_hand_contribution_or_limits": "Practical finance workflow, business-analysis and data-quality judgement. The editorial framework is not presented as measured research.",
-    "proof_points_used_recently": "Hypothetical partial-receipt scenario only, no invented client results or numerical search metrics.",
+    "original_editorial_asset": "Olivers Consulting five-layer import gate: File → Field → Record → Relationship → Write, with sample checks and failure actions.",
+    "first_hand_contribution_or_limits": "Practical data-quality, business-analysis and exception-control design; illustrative material only, not claimed proprietary research.",
+    "proof_points_used_recently": "Hypothetical monthly product-price example, with no invented clients, savings, SEO estimates or performance claims.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -82,25 +82,24 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Direct answer, practical three-record distinction, worked example, discrepancy table and UK English.",
-    "mobile_check": "Fluid article content, horizontal overflow for wide decision table and narrow-screen responsive styling; no live screenshot test completed.",
+    "readability_check": "Direct answer, layer-by-layer checks, sample exception handling and UK English.",
+    "mobile_check": "Fluid article width and horizontally scrollable control table; live visual test not performed.",
     "ai_mention_check": "No ungrounded AI claims.",
     "internal_links": [
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-purchase-orders-reorder-rules/",
-      "/articles/automate-approval-workflows-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/when-custom-automation-is-worth-it-small-business/",
+      "/articles/automate-crm-duplicate-detection-small-business/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-spreadsheet-business-process-small-business/",
+      "/articles/automate-document-processing-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-purchase-orders-reorder-rules/",
-      "/articles/automate-invoice-processing-approval-control/",
-      "/articles/automate-approval-workflows-small-business/"
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-spreadsheet-business-process-small-business/",
+      "/articles/automate-document-processing-small-business/"
     ],
     "external_sources": [
-      "https://business.amazon.co.uk/en/solutions/streamlined-purchasing/3-way-match",
-      "https://www.concur.co.uk/products/three-way-match"
+      "https://support.microsoft.com/en-gb/office/apply-data-validation-to-cells-29e307e3-5ca6-4e1e-bc89-5e0f3dcd9f79",
+      "https://learn.microsoft.com/en-us/power-query/data-types"
     ],
     "schema": [
       "Article",
@@ -116,9 +115,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and public discovery crawlers allowed. No robots.txt change necessary."
+    "robots_inspection": "Googlebot and intended crawlers permitted; robots.txt unchanged."
   },
   "recent_articles": [
+    {
+      "title": "How to automate spreadsheet data validation before importing into business systems",
+      "slug": "automate-spreadsheet-import-validation",
+      "date_published": "2026-10-28",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate three-way invoice matching for a UK small business",
       "slug": "automate-three-way-invoice-matching-uk-small-business",
@@ -183,12 +188,6 @@
       "title": "How to calculate automation ROI for a small business",
       "slug": "calculate-automation-roi-small-business",
       "date_published": "2026-09-25",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "When should a small business not automate a process?",
-      "slug": "when-not-to-automate-business-process",
-      "date_published": "2026-09-23",
       "portfolio_classification": "broader SME-led"
     }
   ]
