@@ -3,58 +3,57 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Wednesday manual one-off",
-    "editorial_role": "SEO-led import data-quality controls and system integration cluster expansion",
-    "article_format": "Pre-import validation implementation guide featuring a five-layer quality gate and exception matrix",
-    "title": "How to automate spreadsheet data validation before importing into business systems",
-    "slug": "automate-spreadsheet-import-validation",
-    "url": "https://oliversconsulting.co.uk/articles/automate-spreadsheet-import-validation/",
-    "topic_pillar": "Data quality, spreadsheets and reporting",
-    "parent_topic_cluster": "Data, spreadsheets and reporting",
-    "target_client_type": "UK SME owners and operations or data-quality leads importing supplier, customer, inventory and finance records from CSV or Excel into business systems",
-    "industry_or_operating_context": "Excel and CSV import validation, required fields, identifiers, relationship lookups, data mapping, duplicate prevention and failed import recovery",
+    "scheduled_day": "Friday manual one-off",
+    "editorial_role": "Sales, CRM and operations automation cluster bridge",
+    "article_format": "Commercial-to-delivery decision guide with two-decision handover model and six-state acceptance matrix",
+    "title": "How to automate sales-to-operations handover after a deal closes",
+    "slug": "automate-sales-to-operations-handover",
+    "url": "https://oliversconsulting.co.uk/articles/automate-sales-to-operations-handover/",
+    "topic_pillar": "Sales and CRM automation",
+    "parent_topic_cluster": "Sales and CRM; operations handoffs",
+    "target_client_type": "UK SME owners, sales managers and operations/delivery leads who transfer won deals into projects or fulfilment",
+    "industry_or_operating_context": "Closed-won CRM records, approved quotes, signed scope, delivery capacity, start dates, handover acceptance and project creation",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Recurring spreadsheet imports contain malformed or conflicting rows that can create incorrect operational records and repeated corrective work.",
-    "primary_search_intent": "Learn to validate spreadsheets automatically before importing records into CRM, stock, finance or other business systems.",
-    "buyer_stage": "Implementation and solution evaluation",
-    "primary_query": "automate spreadsheet data validation before import",
+    "primary_buyer_problem": "A deal can close successfully while operations lacks the signed scope, owner, delivery prerequisites or accepted start date, causing repeated re-entry and rework.",
+    "primary_search_intent": "Learn how to automate a closed-won sales deal handover into operations or project delivery with readiness checks and clear ownership.",
+    "buyer_stage": "Process improvement and implementation",
+    "primary_query": "automate sales to operations handover closed won",
     "related_query_family": [
-      "automated excel import validation",
-      "validate csv before uploading to crm",
-      "spreadsheet quality checks before system import",
-      "import error report row-level excel",
-      "prevent duplicate spreadsheet imports"
+      "closed won CRM project handover automation",
+      "sales to delivery handover checklist",
+      "automate deal won project creation",
+      "CRM to operations handover workflow",
+      "prevent missing information sales handoff"
     ],
-    "trend_or_durable_demand": "Current October 2026 search results include spreadsheet pre-import validation projects and live official Microsoft guidance; no keyword difficulty, traffic or volume numbers claimed.",
-    "evidence_source_and_date": "Repository audit and current web research 28 October 2026; official Microsoft Excel Data Validation and Microsoft Power Query data-type documentation.",
-    "existing_article_gap": "Existing spreadsheet-process guide covers end-to-end workbook work; system data-entry guide covers transfer architecture; CRM duplicate guide owns identity matching. No page focuses on batch pre-import field, record and reference validation with clear row-level exception and retry rules.",
+    "trend_or_durable_demand": "Live October 2026 SERP includes operations handover specialists and current official HubSpot/Salesforce/ Microsoft documentation for won-deal workflows. No invented keyword or ranking data.",
+    "evidence_source_and_date": "Repository audit and live web research 30 October 2026; HubSpot projects guidance and Microsoft Dynamics 365 sales-process documentation.",
+    "existing_article_gap": "Quote creation handles approval before a sale, CRM post-call guides handle sales record upkeep, and client onboarding handles customer setup; no page owns commercial-to-operational acceptance and readiness after a sale is marked won.",
     "existing_supporting_articles": [
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-spreadsheet-business-process-small-business/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/automate-crm-duplicate-detection-small-business/"
+      "/articles/automate-quote-creation-approval/",
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-crm-updates-after-sales-calls/",
+      "/articles/automate-approval-workflows-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate a spreadsheet-based business process",
-        "How to automate data entry between business systems",
-        "How to automate CRM duplicate detection and record matching"
+        "How to automate quote creation without losing pricing control",
+        "Automate client onboarding without creating duplicate data",
+        "How to automate CRM updates after sales calls without bad data"
       ],
       "meaningfully_different_dimensions": [
-        "pre-import boundary",
-        "file schema verification",
-        "field type validation",
-        "record-level uniqueness",
-        "reference lookup",
-        "batch-level reconciliation",
-        "row-level correction report"
+        "closed-won trigger",
+        "approved scope handover",
+        "operational readiness",
+        "delivery-owner acceptance",
+        "prevent repeated project creation",
+        "start conditional upon evidence"
       ],
-      "why_meaningfully_distinct": "The existing pages own end-to-end spreadsheet operations, cross-system data movement or CRM identity. This article owns the validation gate before an Excel or CSV file is allowed to write operational records."
+      "why_meaningfully_distinct": "The new article owns the transition of commercial scope and accountable delivery acceptance, not generating a quote, updating sales call notes or client onboarding setup."
     },
-    "original_editorial_asset": "Olivers Consulting five-layer import gate: File → Field → Record → Relationship → Write, with sample checks and failure actions.",
-    "first_hand_contribution_or_limits": "Practical data-quality, business-analysis and exception-control design; illustrative material only, not claimed proprietary research.",
-    "proof_points_used_recently": "Hypothetical monthly product-price example, with no invented clients, savings, SEO estimates or performance claims.",
+    "original_editorial_asset": "Olivers Consulting two-decision handover model: commercially won versus operationally accepted, with six distinct workflow states.",
+    "first_hand_contribution_or_limits": "Practical business analysis, cross-functional controls and automation design reasoning, with hypothetical example only.",
+    "proof_points_used_recently": "Hypothetical consultancy deal only; no fabricated customers, outcomes or search metrics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -82,24 +81,24 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Direct answer, layer-by-layer checks, sample exception handling and UK English.",
-    "mobile_check": "Fluid article width and horizontally scrollable control table; live visual test not performed.",
+    "readability_check": "Early direct answer, operational fields, six-state matrix and UK English.",
+    "mobile_check": "Fluid article width and responsive overflow-safe table; no live browser visual test.",
     "ai_mention_check": "No ungrounded AI claims.",
     "internal_links": [
-      "/articles/automate-crm-duplicate-detection-small-business/",
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-spreadsheet-business-process-small-business/",
-      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-approval-workflows-small-business/",
+      "/articles/automate-quote-creation-approval/",
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/integrate-systems-or-automate-hand-off/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-spreadsheet-business-process-small-business/",
-      "/articles/automate-document-processing-small-business/"
+      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-quote-creation-approval/",
+      "/articles/automate-crm-updates-after-sales-calls/"
     ],
     "external_sources": [
-      "https://support.microsoft.com/en-gb/office/apply-data-validation-to-cells-29e307e3-5ca6-4e1e-bc89-5e0f3dcd9f79",
-      "https://learn.microsoft.com/en-us/power-query/data-types"
+      "https://knowledge.hubspot.com/records/understand-and-use-projects-object",
+      "https://learn.microsoft.com/en-us/dynamics365/sales/nurture-sales-from-lead-order-sales"
     ],
     "schema": [
       "Article",
@@ -115,9 +114,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and intended crawlers permitted; robots.txt unchanged."
+    "robots_inspection": "Googlebot and relevant discovery crawlers remain permitted; no robots.txt change."
   },
   "recent_articles": [
+    {
+      "title": "How to automate sales-to-operations handover after a deal closes",
+      "slug": "automate-sales-to-operations-handover",
+      "date_published": "2026-10-30",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate spreadsheet data validation before importing into business systems",
       "slug": "automate-spreadsheet-import-validation",
@@ -182,12 +187,6 @@
       "title": "How to automate repetitive admin in a small business",
       "slug": "automate-repetitive-admin-small-business",
       "date_published": "2026-09-28",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to calculate automation ROI for a small business",
-      "slug": "calculate-automation-roi-small-business",
-      "date_published": "2026-09-25",
       "portfolio_classification": "broader SME-led"
     }
   ]
