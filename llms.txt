@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [Sales-to-operations handover for closed-won CRM deals](https://oliversconsulting.co.uk/articles/automate-sales-to-operations-handover/)
 - [Spreadsheet import data validation for business systems](https://oliversconsulting.co.uk/articles/automate-spreadsheet-import-validation/)
 - [Three-way supplier invoice matching against purchase orders and receipts](https://oliversconsulting.co.uk/articles/automate-three-way-invoice-matching-uk-small-business/)
 - [Recurring client document requests and reminders](https://oliversconsulting.co.uk/articles/automate-client-document-requests-reminders/)
