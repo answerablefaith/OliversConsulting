@@ -3,57 +3,58 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Friday manual one-off",
-    "editorial_role": "Sales, CRM and operations automation cluster bridge",
-    "article_format": "Commercial-to-delivery decision guide with two-decision handover model and six-state acceptance matrix",
-    "title": "How to automate sales-to-operations handover after a deal closes",
-    "slug": "automate-sales-to-operations-handover",
-    "url": "https://oliversconsulting.co.uk/articles/automate-sales-to-operations-handover/",
-    "topic_pillar": "Sales and CRM automation",
-    "parent_topic_cluster": "Sales and CRM; operations handoffs",
-    "target_client_type": "UK SME owners, sales managers and operations/delivery leads who transfer won deals into projects or fulfilment",
-    "industry_or_operating_context": "Closed-won CRM records, approved quotes, signed scope, delivery capacity, start dates, handover acceptance and project creation",
+    "scheduled_day": "Monday manual one-off",
+    "editorial_role": "SEO-led contract management, operations and decision workflow content",
+    "article_format": "Contract renewal decision guide with two-clock model and six-state action matrix",
+    "title": "How to automate contract renewal tracking for a UK small business",
+    "slug": "automate-contract-renewal-tracking-uk-sme",
+    "url": "https://oliversconsulting.co.uk/articles/automate-contract-renewal-tracking-uk-sme/",
+    "topic_pillar": "Operations and back-office automation",
+    "parent_topic_cluster": "Finance and operations",
+    "target_client_type": "UK SME operations, procurement and finance teams tracking supplier, customer, service and software agreement renewals",
+    "industry_or_operating_context": "Renewal terms, notice deadlines, contract registers, owner reviews, formal notices, internal approval and system updates",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "A deal can close successfully while operations lacks the signed scope, owner, delivery prerequisites or accepted start date, causing repeated re-entry and rework.",
-    "primary_search_intent": "Learn how to automate a closed-won sales deal handover into operations or project delivery with readiness checks and clear ownership.",
-    "buyer_stage": "Process improvement and implementation",
-    "primary_query": "automate sales to operations handover closed won",
+    "primary_buyer_problem": "Businesses can miss economically significant notice windows when contracts are tracked by expiry date alone, with no owner for the earlier review and decision.",
+    "primary_search_intent": "Learn how to automate contract renewal dates and notice-deadline reviews for a UK small business.",
+    "buyer_stage": "Problem evaluation and implementation",
+    "primary_query": "automate contract renewal tracking small business UK",
     "related_query_family": [
-      "closed won CRM project handover automation",
-      "sales to delivery handover checklist",
-      "automate deal won project creation",
-      "CRM to operations handover workflow",
-      "prevent missing information sales handoff"
+      "contract renewal reminder automation UK",
+      "track contract notice periods automatically",
+      "supplier agreement renewal alerts",
+      "contract expiry and notice tracking",
+      "automate contract renewal approval workflow"
     ],
-    "trend_or_durable_demand": "Live October 2026 SERP includes operations handover specialists and current official HubSpot/Salesforce/ Microsoft documentation for won-deal workflows. No invented keyword or ranking data.",
-    "evidence_source_and_date": "Repository audit and live web research 30 October 2026; HubSpot projects guidance and Microsoft Dynamics 365 sales-process documentation.",
-    "existing_article_gap": "Quote creation handles approval before a sale, CRM post-call guides handle sales record upkeep, and client onboarding handles customer setup; no page owns commercial-to-operational acceptance and readiness after a sale is marked won.",
+    "trend_or_durable_demand": "Current November 2026 search results feature supplier-contract renewal tools and current contract lifecycle workflow guidance; no keyword volume or ranking probability asserted.",
+    "evidence_source_and_date": "Repository audit and live SERP research 2 November 2026; vendor documentation from Gatekeeper and PandaDoc consulted.",
+    "existing_article_gap": "The site covers supplier onboarding, general approvals, document extraction and finance automation but lacks a page on proactive contract renewal tracking and notice versus end-date decisions.",
     "existing_supporting_articles": [
-      "/articles/automate-quote-creation-approval/",
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/automate-crm-updates-after-sales-calls/",
-      "/articles/automate-approval-workflows-small-business/"
+      "/articles/automate-supplier-onboarding-uk-small-business/",
+      "/articles/automate-approval-workflows-small-business/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/integrate-systems-or-automate-hand-off/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate quote creation without losing pricing control",
-        "Automate client onboarding without creating duplicate data",
-        "How to automate CRM updates after sales calls without bad data"
+        "Supplier onboarding automation",
+        "Approval workflow automation",
+        "Document processing automation",
+        "Sales-to-operations handover automation"
       ],
       "meaningfully_different_dimensions": [
-        "closed-won trigger",
-        "approved scope handover",
-        "operational readiness",
-        "delivery-owner acceptance",
-        "prevent repeated project creation",
-        "start conditional upon evidence"
+        "renewal end versus notice deadline",
+        "contract term verification",
+        "decision lead time",
+        "deadline-based owner escalation",
+        "authorised external notice",
+        "next-cycle renewal update"
       ],
-      "why_meaningfully_distinct": "The new article owns the transition of commercial scope and accountable delivery acceptance, not generating a quote, updating sales call notes or client onboarding setup."
+      "why_meaningfully_distinct": "Those pages address supplier identity, generic approvals, document handling and sale handover. This guide specifically owns long-term contract term, notice window and renewal decision management."
     },
-    "original_editorial_asset": "Olivers Consulting two-decision handover model: commercially won versus operationally accepted, with six distinct workflow states.",
-    "first_hand_contribution_or_limits": "Practical business analysis, cross-functional controls and automation design reasoning, with hypothetical example only.",
-    "proof_points_used_recently": "Hypothetical consultancy deal only; no fabricated customers, outcomes or search metrics.",
+    "original_editorial_asset": "Olivers Consulting two-clock renewal model distinguishing contract term and decision deadlines, with action-and-owner matrix.",
+    "first_hand_contribution_or_limits": "Operational business-analysis and governance reasoning; illustrative contract scenario only and no legal conclusion or claimed customer outcome.",
+    "proof_points_used_recently": "Hypothetical deadline example only; no fabricated statistics or client results.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -81,24 +82,23 @@
     "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Early direct answer, operational fields, six-state matrix and UK English.",
-    "mobile_check": "Fluid article width and responsive overflow-safe table; no live browser visual test.",
-    "ai_mention_check": "No ungrounded AI claims.",
+    "readability_check": "Immediate direct answer, original two-clock distinction, worked contract example and UK English.",
+    "mobile_check": "Fluid layout and horizontal overflow for wide decision table; no live mobile render test.",
+    "ai_mention_check": "Cautious distinction between extracted fields and verified contract terms.",
     "internal_links": [
       "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-quote-creation-approval/",
-      "/articles/automate-client-onboarding-no-duplicate-data/",
+      "/articles/automate-document-processing-small-business/",
+      "/articles/automate-supplier-onboarding-uk-small-business/",
       "/articles/integrate-systems-or-automate-hand-off/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-client-onboarding-no-duplicate-data/",
-      "/articles/automate-quote-creation-approval/",
-      "/articles/automate-crm-updates-after-sales-calls/"
+      "/articles/automate-supplier-onboarding-uk-small-business/",
+      "/articles/automate-approval-workflows-small-business/"
     ],
     "external_sources": [
-      "https://knowledge.hubspot.com/records/understand-and-use-projects-object",
-      "https://learn.microsoft.com/en-us/dynamics365/sales/nurture-sales-from-lead-order-sales"
+      "https://knowledge.gatekeeperhq.com/en/docs/create-your-own-contract-renewal-assessment-workflow",
+      "https://www.pandadoc.com/blog/how-to-automate-your-contract-renewal-process/"
     ],
     "schema": [
       "Article",
@@ -114,9 +114,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and relevant discovery crawlers remain permitted; no robots.txt change."
+    "robots_inspection": "Googlebot and intended public crawlers permitted; robots.txt unchanged."
   },
   "recent_articles": [
+    {
+      "title": "How to automate contract renewal tracking for a UK small business",
+      "slug": "automate-contract-renewal-tracking-uk-sme",
+      "date_published": "2026-11-02",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate sales-to-operations handover after a deal closes",
       "slug": "automate-sales-to-operations-handover",
@@ -181,12 +187,6 @@
       "title": "How to automate document processing for a small business",
       "slug": "automate-document-processing-small-business",
       "date_published": "2026-10-02",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate repetitive admin in a small business",
-      "slug": "automate-repetitive-admin-small-business",
-      "date_published": "2026-09-28",
       "portfolio_classification": "broader SME-led"
     }
   ]
