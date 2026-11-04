@@ -3,58 +3,57 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led contract management, operations and decision workflow content",
-    "article_format": "Contract renewal decision guide with two-clock model and six-state action matrix",
-    "title": "How to automate contract renewal tracking for a UK small business",
-    "slug": "automate-contract-renewal-tracking-uk-sme",
-    "url": "https://oliversconsulting.co.uk/articles/automate-contract-renewal-tracking-uk-sme/",
-    "topic_pillar": "Operations and back-office automation",
+    "scheduled_day": "Wednesday manual one-off",
+    "editorial_role": "Finance, recurring-revenue and customer-service automation topic-cluster expansion",
+    "article_format": "Failed-payment recovery implementation guide with a six-state decision matrix",
+    "title": "How to automate failed subscription payment recovery for a UK small business",
+    "slug": "automate-failed-subscription-payment-recovery",
+    "url": "https://oliversconsulting.co.uk/articles/automate-failed-subscription-payment-recovery/",
+    "topic_pillar": "Finance and back-office automation",
     "parent_topic_cluster": "Finance and operations",
-    "target_client_type": "UK SME operations, procurement and finance teams tracking supplier, customer, service and software agreement renewals",
-    "industry_or_operating_context": "Renewal terms, notice deadlines, contract registers, owner reviews, formal notices, internal approval and system updates",
+    "target_client_type": "UK SME membership, SaaS and subscription-based service businesses with recurring charges and customer communication",
+    "industry_or_operating_context": "Subscription failed payments, card retry eligibility, provider notifications, secure payment-method update, service access status, and financial reconciliation",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Businesses can miss economically significant notice windows when contracts are tracked by expiry date alone, with no owner for the earlier review and decision.",
-    "primary_search_intent": "Learn how to automate contract renewal dates and notice-deadline reviews for a UK small business.",
-    "buyer_stage": "Problem evaluation and implementation",
-    "primary_query": "automate contract renewal tracking small business UK",
+    "primary_buyer_problem": "Failed recurring collections create extra revenue-recovery work and customer friction when provider retry status, billing notices, subscriptions and accounting records are unsynchronised.",
+    "primary_search_intent": "Find a practical way to automate failed recurring subscription payment recovery and stop reminders after payment.",
+    "buyer_stage": "Implementation and process improvement",
+    "primary_query": "automate failed subscription payment recovery UK small business",
     "related_query_family": [
-      "contract renewal reminder automation UK",
-      "track contract notice periods automatically",
-      "supplier agreement renewal alerts",
-      "contract expiry and notice tracking",
-      "automate contract renewal approval workflow"
+      "automatic failed subscription payment retries",
+      "failed card payment recovery workflow",
+      "subscription payment dunning automation",
+      "stop failed payment reminders after retry succeeds",
+      "connect Stripe failed payment CRM accounting"
     ],
-    "trend_or_durable_demand": "Current November 2026 search results feature supplier-contract renewal tools and current contract lifecycle workflow guidance; no keyword volume or ranking probability asserted.",
-    "evidence_source_and_date": "Repository audit and live SERP research 2 November 2026; vendor documentation from Gatekeeper and PandaDoc consulted.",
-    "existing_article_gap": "The site covers supplier onboarding, general approvals, document extraction and finance automation but lacks a page on proactive contract renewal tracking and notice versus end-date decisions.",
+    "trend_or_durable_demand": "Current November 2026 search results include official Stripe and Zoho recovery documentation and active UK membership payment-provider help pages. No keyword volume or rankings asserted.",
+    "evidence_source_and_date": "Repository audit and current live search 4 November 2026; Stripe Billing Smart Retries and Zoho Subscriptions retry-settings documentation verified.",
+    "existing_article_gap": "Invoice chasing covers general overdue receivables; bank reconciliation covers payments and statements; no current article owns payment-provider retry eligibility, subscription state and failed-collection communications.",
     "existing_supporting_articles": [
-      "/articles/automate-supplier-onboarding-uk-small-business/",
-      "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/"
+      "/articles/automate-invoice-chasing-without-damaging-customer-relationships/",
+      "/articles/automate-bank-reconciliation-uk-small-business/",
+      "/articles/integrate-systems-or-automate-hand-off/",
+      "/articles/when-custom-automation-is-worth-it-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "Supplier onboarding automation",
-        "Approval workflow automation",
-        "Document processing automation",
-        "Sales-to-operations handover automation"
+        "How to automate invoice chasing without damaging customer relationships",
+        "How to automate bank reconciliation for a UK small business",
+        "How to automate contract renewal tracking for a UK small business"
       ],
       "meaningfully_different_dimensions": [
-        "renewal end versus notice deadline",
-        "contract term verification",
-        "decision lead time",
-        "deadline-based owner escalation",
-        "authorised external notice",
-        "next-cycle renewal update"
+        "provider-managed payment retries",
+        "hard declines versus temporary failures",
+        "subscription status management",
+        "recovery state and duplicate events",
+        "retry suppression after success",
+        "reconciliation of recovered collection"
       ],
-      "why_meaningfully_distinct": "Those pages address supplier identity, generic approvals, document handling and sale handover. This guide specifically owns long-term contract term, notice window and renewal decision management."
+      "why_meaningfully_distinct": "Invoice chasing concerns outstanding invoices rather than a rejected recurring charge, while bank reconciliation concerns settlement records and contract renewal concerns agreement expiry. This page owns event-driven subscription collection recovery."
     },
-    "original_editorial_asset": "Olivers Consulting two-clock renewal model distinguishing contract term and decision deadlines, with action-and-owner matrix.",
-    "first_hand_contribution_or_limits": "Operational business-analysis and governance reasoning; illustrative contract scenario only and no legal conclusion or claimed customer outcome.",
-    "proof_points_used_recently": "Hypothetical deadline example only; no fabricated statistics or client results.",
+    "original_editorial_asset": "Olivers Consulting five-stage payment-recovery model with six-state action and stop-rule decision matrix.",
+    "first_hand_contribution_or_limits": "Practical operational data-quality and control design for billing exceptions and cross-system state. Example is hypothetical and not a measured client result.",
+    "proof_points_used_recently": "Illustrative failed-card scenario; no invented savings or client metrics.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -79,26 +78,26 @@
       "mobile_usability": 5,
       "conversion_relevance": 5
     },
-    "quality_average": 4.8,
+    "quality_average": 4.7,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Immediate direct answer, original two-clock distinction, worked contract example and UK English.",
-    "mobile_check": "Fluid layout and horizontal overflow for wide decision table; no live mobile render test.",
-    "ai_mention_check": "Cautious distinction between extracted fields and verified contract terms.",
+    "readability_check": "Direct answer, provider distinction, actionable matrix and UK English.",
+    "mobile_check": "Responsive article layout and horizontally scrollable decision table. Live screenshot not completed.",
+    "ai_mention_check": "No unsupported autonomous AI promise.",
     "internal_links": [
-      "/articles/automate-approval-workflows-small-business/",
-      "/articles/automate-document-processing-small-business/",
-      "/articles/automate-supplier-onboarding-uk-small-business/",
+      "/articles/automate-invoice-chasing-without-damaging-customer-relationships/",
+      "/articles/automate-bank-reconciliation-uk-small-business/",
+      "/articles/when-custom-automation-is-worth-it-small-business/",
       "/articles/integrate-systems-or-automate-hand-off/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-supplier-onboarding-uk-small-business/",
-      "/articles/automate-approval-workflows-small-business/"
+      "/articles/automate-invoice-chasing-without-damaging-customer-relationships/",
+      "/articles/automate-bank-reconciliation-uk-small-business/"
     ],
     "external_sources": [
-      "https://knowledge.gatekeeperhq.com/en/docs/create-your-own-contract-renewal-assessment-workflow",
-      "https://www.pandadoc.com/blog/how-to-automate-your-contract-renewal-process/"
+      "https://docs.stripe.com/billing/revenue-recovery/smart-retries",
+      "https://www.zoho.com/uk/subscriptions/help/retry-settings.html"
     ],
     "schema": [
       "Article",
@@ -114,9 +113,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and intended public crawlers permitted; robots.txt unchanged."
+    "robots_inspection": "Googlebot and public search crawlers permitted. robots.txt not changed."
   },
   "recent_articles": [
+    {
+      "title": "How to automate failed subscription payment recovery for a UK small business",
+      "slug": "automate-failed-subscription-payment-recovery",
+      "date_published": "2026-11-04",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate contract renewal tracking for a UK small business",
       "slug": "automate-contract-renewal-tracking-uk-sme",
@@ -181,12 +186,6 @@
       "title": "How to automate a spreadsheet-based business process",
       "slug": "automate-spreadsheet-business-process-small-business",
       "date_published": "2026-10-05",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate document processing for a small business",
-      "slug": "automate-document-processing-small-business",
-      "date_published": "2026-10-02",
       "portfolio_classification": "broader SME-led"
     }
   ]
