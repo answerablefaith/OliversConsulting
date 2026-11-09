@@ -4,8 +4,9 @@
   <id>https://oliversconsulting.co.uk/articles/</id>
   <link rel="alternate" href="https://oliversconsulting.co.uk/articles/"/>
   <link rel="self" href="https://oliversconsulting.co.uk/feed.xml" type="application/atom+xml"/>
-  <updated>2026-11-06T00:00:00Z</updated>
+  <updated>2026-11-09T00:00:00Z</updated>
   <author><name>Henry Oliver</name><uri>https://oliversconsulting.co.uk/about/</uri></author>
+  <entry><title>When Business Automation Fails: How to Monitor, Retry and Recover | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/failed-business-automation-recovery/</id><link href="https://oliversconsulting.co.uk/articles/failed-business-automation-recovery/"/><updated>2026-11-09T00:00:00Z</updated></entry>
   <entry><title>How to Automate Sales Pipeline Reporting for a UK Small Business | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/automate-sales-pipeline-reporting-uk-sme/</id><link href="https://oliversconsulting.co.uk/articles/automate-sales-pipeline-reporting-uk-sme/"/><updated>2026-11-06T00:00:00Z</updated></entry>
   <entry><title>How to Automate Failed Subscription Payment Recovery for a UK Small Business | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/automate-failed-subscription-payment-recovery/</id><link href="https://oliversconsulting.co.uk/articles/automate-failed-subscription-payment-recovery/"/><updated>2026-11-04T00:00:00Z</updated></entry>
   <entry><title>How to Automate Contract Renewal Tracking for a UK Small Business | Olivers Consulting</title><id>https://oliversconsulting.co.uk/articles/automate-contract-renewal-tracking-uk-sme/</id><link href="https://oliversconsulting.co.uk/articles/automate-contract-renewal-tracking-uk-sme/"/><updated>2026-11-02T00:00:00Z</updated></entry>
