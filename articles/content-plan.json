@@ -3,57 +3,58 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Friday manual one-off",
-    "editorial_role": "Sales and CRM reporting automation cluster development",
-    "article_format": "Reporting implementation guide with current-versus-snapshot model and six-signal review matrix",
-    "title": "How to automate sales pipeline reporting for a UK small business",
-    "slug": "automate-sales-pipeline-reporting-uk-sme",
-    "url": "https://oliversconsulting.co.uk/articles/automate-sales-pipeline-reporting-uk-sme/",
-    "topic_pillar": "Sales and CRM automation",
-    "parent_topic_cluster": "Sales and CRM; data and reporting",
-    "target_client_type": "UK SME founders, sales managers and commercial operations teams manually building pipeline reports from CRM data",
-    "industry_or_operating_context": "CRM reporting, open opportunity stage, expected close date, sales forecast, period snapshots, stale deal alerts and weekly management reviews",
+    "scheduled_day": "Monday manual one-off",
+    "editorial_role": "SEO-led troubleshooting and operations automation authority",
+    "article_format": "Troubleshooting and recovery guide with four-lane decision matrix and source-to-destination completeness check",
+    "title": "When business automation fails: how to monitor, retry and recover",
+    "slug": "failed-business-automation-recovery",
+    "url": "https://oliversconsulting.co.uk/articles/failed-business-automation-recovery/",
+    "topic_pillar": "Business process and system-to-system workflow automation",
+    "parent_topic_cluster": "Business process and data",
+    "target_client_type": "UK SME operations managers, owners and business analysts running Zapier, Power Automate or other cross-system workflows",
+    "industry_or_operating_context": "Failed automation runs, missing trigger events, partial writes, retry eligibility, idempotency, exception routing and source-to-destination reconciliation",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Repeated CRM exports and spreadsheet consolidation make pipeline reports slow and obscure historical changes in expected deal values and close dates.",
-    "primary_search_intent": "Learn how to automate CRM sales pipeline reporting and track weekly changes without manually rebuilding spreadsheets.",
-    "buyer_stage": "Implementation and process improvement",
-    "primary_query": "automate sales pipeline reporting small business",
+    "primary_buyer_problem": "Automated hand-offs sometimes fail, duplicate records or silently miss events, while operators cannot see which transactions completed and whether replay will cause more harm.",
+    "primary_search_intent": "Troubleshoot and recover failed business automation workflows, including when to retry, reconcile or escalate.",
+    "buyer_stage": "Troubleshooting and implementation",
+    "primary_query": "what to do when business automation fails",
     "related_query_family": [
-      "automate CRM pipeline reports",
-      "weekly sales forecast reporting automation",
-      "pipeline snapshot reporting CRM spreadsheet",
-      "automate pipeline stage changes dashboard",
-      "track slipped deals week on week"
+      "business automation error handling",
+      "failed workflow retry safely",
+      "Power Automate failed runs recovery",
+      "Zapier failed tasks replay duplicates",
+      "monitor missing workflow triggers",
+      "automated integration exception handling"
     ],
-    "trend_or_durable_demand": "Current search results on 6 November 2026 show practical CRM-to-spreadsheet reporting automations and sales forecasting workflow guides; no keyword-volume, traffic or rank estimates claimed.",
-    "evidence_source_and_date": "Current repository library audit and live search 6 November 2026; Zapier pipeline reporting and sales forecasting pages reviewed.",
-    "existing_article_gap": "CRM update guidance addresses capturing post-call details; management-reporting guidance covers general spreadsheet reports; no dedicated page owns commercial pipeline stage changes, weekly deal snapshots and forecast exceptions.",
+    "trend_or_durable_demand": "November 2026 results show active primary vendor guidance for failed runs and retries from Microsoft Power Automate and Zapier; generic guides focus on platform errors while this article focuses on business-state reconciliation.",
+    "evidence_source_and_date": "GitHub full-library audit and live search 9 November 2026; current Zapier troubleshooting and run-status guidance and Microsoft Power Automate flow error guidance.",
+    "existing_article_gap": "Generic automation mistakes describes failure prevention; cross-system data entry briefly addresses retry rules; approval workflows covers human decisions. No dedicated article owns incident classification, unknown write outcomes, missed triggers and safe recovery after a production automation fails.",
     "existing_supporting_articles": [
-      "/articles/automate-crm-updates-after-sales-calls/",
-      "/articles/automate-management-reporting-from-spreadsheets/",
-      "/articles/automate-crm-duplicate-detection-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/"
+      "/articles/common-automation-mistakes-small-business/",
+      "/articles/integrate-systems-or-automate-hand-off/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-approval-workflows-small-business/"
     ],
     "comparison_against_previous_12": {
       "status": "Passed",
       "overlapping_titles_or_sections_considered": [
-        "How to automate CRM updates after sales calls without bad data",
-        "How to automate management reporting from spreadsheets",
-        "How to automate CRM duplicate detection and record matching"
+        "7 common automation mistakes small businesses make",
+        "How to automate data entry between business systems",
+        "Full system integration or automated hand-off: which fits?"
       ],
       "meaningfully_different_dimensions": [
-        "pipeline stage definitions",
-        "open-deal population",
-        "weekly forecast snapshots",
-        "slipped close dates",
-        "deal movement versus current total",
-        "sales manager exception queue"
+        "production incident response",
+        "transient versus permanent error classification",
+        "unknown write state",
+        "partial workflow replay safety",
+        "missed trigger population reconciliation",
+        "operational alert ownership"
       ],
-      "why_meaningfully_distinct": "This guide owns recurring CRM sales pipeline forecasting and historic movement, not CRM note entry, generic management-report production or contact deduplication."
+      "why_meaningfully_distinct": "The existing pages address planning pitfalls, moving data between systems and architecture selection. This guide owns diagnosing and safely recovering an already failed or silently missing production workflow."
     },
-    "original_editorial_asset": "Olivers Consulting two-view pipeline reporting model: current CRM state and immutable dated snapshot, with six-signal decision matrix.",
-    "first_hand_contribution_or_limits": "Practical sales operations, data quality and reporting design reasoning. Worked scenario is hypothetical, not client evidence.",
-    "proof_points_used_recently": "Hypothetical sales pipeline example only; no fabricated client performance or SEO data.",
+    "original_editorial_asset": "Olivers Consulting four-lane recovery framework: Retry, Repair, Reconcile, Escalate, with decision table, side-effect checks and source-to-destination population monitoring.",
+    "first_hand_contribution_or_limits": "Operational and data-quality reasoning about failure recovery and idempotent workflows; illustrative example only, not proprietary data or measured case outcomes.",
+    "proof_points_used_recently": "Hypothetical order-to-CRM-to-accounting failure; no invented clients or numerical claims.",
     "quality_scores": {
       "usefulness": 5,
       "originality": 5,
@@ -78,27 +79,29 @@
       "mobile_usability": 5,
       "conversion_relevance": 5
     },
-    "quality_average": 4.7,
+    "quality_average": 4.8,
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Direct answer, current-versus-historical distinction, practical snapshot implementation and British English.",
-    "mobile_check": "Responsive CSS and horizontally scrollable signal matrix; not browser-render verified.",
-    "ai_mention_check": "No unsupported AI forecasting assertions.",
+    "readability_check": "Early direct answer, four-lane framework, worked recovery example and UK English.",
+    "mobile_check": "Fluid layout and horizontal scroll for wide matrix; no live screenshot test completed.",
+    "ai_mention_check": "No unsupported autonomous AI claims.",
     "internal_links": [
-      "/articles/automate-crm-updates-after-sales-calls/",
-      "/articles/automate-management-reporting-from-spreadsheets/",
-      "/articles/automate-crm-duplicate-detection-small-business/",
+      "/articles/automate-data-entry-between-business-systems/",
+      "/articles/automate-approval-workflows-small-business/",
       "/articles/integrate-systems-or-automate-hand-off/",
+      "/articles/common-automation-mistakes-small-business/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/automate-crm-updates-after-sales-calls/",
-      "/articles/automate-management-reporting-from-spreadsheets/",
-      "/articles/automate-crm-duplicate-detection-small-business/"
+      "/articles/common-automation-mistakes-small-business/",
+      "/articles/integrate-systems-or-automate-hand-off/",
+      "/articles/automate-data-entry-between-business-systems/"
     ],
     "external_sources": [
-      "https://zapier.com/automations/sales/sales-reporting/pipeline-reporting",
-      "https://zapier.com/automations/sales/pipeline-management/sales-forecasting"
+      "https://help.zapier.com/hc/en-us/articles/20505304170637-Review-run-statuses-in-Zap-workflows",
+      "https://help.zapier.com/hc/en-us/articles/8496037690637-How-to-troubleshoot-errors-in-Zap-workflows",
+      "https://learn.microsoft.com/en-us/power-automate/troubleshoot-flow-errors",
+      "https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/error-handling"
     ],
     "schema": [
       "Article",
@@ -114,9 +117,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Public crawling allowed; robots.txt unchanged."
+    "robots_inspection": "Googlebot and public crawling remain allowed; no changes to robots.txt."
   },
   "recent_articles": [
+    {
+      "title": "When business automation fails: how to monitor, retry and recover",
+      "slug": "failed-business-automation-recovery",
+      "date_published": "2026-11-09",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "How to automate sales pipeline reporting for a UK small business",
       "slug": "automate-sales-pipeline-reporting-uk-sme",
@@ -181,12 +190,6 @@
       "title": "How to automate CRM duplicate detection and record matching",
       "slug": "automate-crm-duplicate-detection-small-business",
       "date_published": "2026-10-09",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate approval workflows in a small business",
-      "slug": "automate-approval-workflows-small-business",
-      "date_published": "2026-10-07",
       "portfolio_classification": "broader SME-led"
     }
   ]
