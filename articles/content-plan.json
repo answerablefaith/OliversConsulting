@@ -3,105 +3,54 @@
   "domain": "https://oliversconsulting.co.uk",
   "latest_publication": {
     "created_new_article": true,
-    "scheduled_day": "Monday manual one-off",
-    "editorial_role": "SEO-led troubleshooting and operations automation authority",
-    "article_format": "Troubleshooting and recovery guide with four-lane decision matrix and source-to-destination completeness check",
-    "title": "When business automation fails: how to monitor, retry and recover",
-    "slug": "failed-business-automation-recovery",
-    "url": "https://oliversconsulting.co.uk/articles/failed-business-automation-recovery/",
-    "topic_pillar": "Business process and system-to-system workflow automation",
-    "parent_topic_cluster": "Business process and data",
-    "target_client_type": "UK SME operations managers, owners and business analysts running Zapier, Power Automate or other cross-system workflows",
-    "industry_or_operating_context": "Failed automation runs, missing trigger events, partial writes, retry eligibility, idempotency, exception routing and source-to-destination reconciliation",
+    "scheduled_day": "Wednesday manual one-off",
+    "editorial_role": "Customer service and operations implementation guide",
+    "article_format": "Implementation and shared-inbox ownership state matrix",
+    "title": "How to automate a shared email inbox for a small business",
+    "slug": "shared-inbox-email-automation-small-business",
+    "url": "https://oliversconsulting.co.uk/articles/shared-inbox-email-automation-small-business/",
+    "topic_pillar": "Customer service and operations automation",
+    "parent_topic_cluster": "Shared inbox and customer service workflow",
+    "target_client_type": "UK SME owners and operations managers handling shared business email",
+    "industry_or_operating_context": "Shared Outlook inbox, assignment, unanswered emails, sent-reply tracking and overdue escalation",
     "portfolio_classification": "broader SME-led",
-    "primary_buyer_problem": "Automated hand-offs sometimes fail, duplicate records or silently miss events, while operators cannot see which transactions completed and whether replay will cause more harm.",
-    "primary_search_intent": "Troubleshoot and recover failed business automation workflows, including when to retry, reconcile or escalate.",
-    "buyer_stage": "Troubleshooting and implementation",
-    "primary_query": "what to do when business automation fails",
+    "primary_buyer_problem": "No ownership of customer email enquiries produces duplicate replies and unanswered cases.",
+    "primary_search_intent": "Implement shared inbox automation and track unanswered enquiries.",
+    "buyer_stage": "Implementation",
+    "primary_query": "how to automate shared email inbox small business",
     "related_query_family": [
-      "business automation error handling",
-      "failed workflow retry safely",
-      "Power Automate failed runs recovery",
-      "Zapier failed tasks replay duplicates",
-      "monitor missing workflow triggers",
-      "automated integration exception handling"
+      "shared inbox automation Outlook",
+      "track unanswered shared mailbox email",
+      "shared inbox assignment",
+      "shared inbox or helpdesk"
     ],
-    "trend_or_durable_demand": "November 2026 results show active primary vendor guidance for failed runs and retries from Microsoft Power Automate and Zapier; generic guides focus on platform errors while this article focuses on business-state reconciliation.",
-    "evidence_source_and_date": "GitHub full-library audit and live search 9 November 2026; current Zapier troubleshooting and run-status guidance and Microsoft Power Automate flow error guidance.",
-    "existing_article_gap": "Generic automation mistakes describes failure prevention; cross-system data entry briefly addresses retry rules; approval workflows covers human decisions. No dedicated article owns incident classification, unknown write outcomes, missed triggers and safe recovery after a production automation fails.",
+    "trend_or_durable_demand": "November 2026 search results feature shared inbox ownership, assignment and tool comparisons; this article adds an operational ownership and response-evidence approach.",
+    "evidence_source_and_date": "Live search review and GitHub article library audit 18 November 2026; Microsoft official shared-mailbox and connector guidance.",
+    "existing_article_gap": "Customer service ticket triage focuses on classification and priority; lead follow-up focuses on sequences. Neither details tracking answered versus unanswered conversations in a shared mailbox.",
     "existing_supporting_articles": [
-      "/articles/common-automation-mistakes-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-approval-workflows-small-business/"
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-lead-follow-up-without-spam/",
+      "/articles/failed-business-automation-recovery/"
     ],
-    "comparison_against_previous_12": {
-      "status": "Passed",
-      "overlapping_titles_or_sections_considered": [
-        "7 common automation mistakes small businesses make",
-        "How to automate data entry between business systems",
-        "Full system integration or automated hand-off: which fits?"
-      ],
-      "meaningfully_different_dimensions": [
-        "production incident response",
-        "transient versus permanent error classification",
-        "unknown write state",
-        "partial workflow replay safety",
-        "missed trigger population reconciliation",
-        "operational alert ownership"
-      ],
-      "why_meaningfully_distinct": "The existing pages address planning pitfalls, moving data between systems and architecture selection. This guide owns diagnosing and safely recovering an already failed or silently missing production workflow."
-    },
-    "original_editorial_asset": "Olivers Consulting four-lane recovery framework: Retry, Repair, Reconcile, Escalate, with decision table, side-effect checks and source-to-destination population monitoring.",
-    "first_hand_contribution_or_limits": "Operational and data-quality reasoning about failure recovery and idempotent workflows; illustrative example only, not proprietary data or measured case outcomes.",
-    "proof_points_used_recently": "Hypothetical order-to-CRM-to-accounting failure; no invented clients or numerical claims.",
-    "quality_scores": {
-      "usefulness": 5,
-      "originality": 5,
-      "distinct_search_intent": 5,
-      "authority_added": 5,
-      "first_hand_or_expert_value": 5,
-      "credibility_for_selected_client_type": 5,
-      "workflow_specificity": 5,
-      "commercial_relevance": 5,
-      "accuracy_and_sourcing": 5,
-      "original_asset_quality": 5,
-      "lack_of_overlap_with_previous_12": 5,
-      "portfolio_balance": 5,
-      "lack_of_filler_and_repeated_reasoning": 5,
-      "natural_keyword_use": 5,
-      "writing_quality": 5,
-      "readability": 5,
-      "format_variety": 5,
-      "trend_or_durable_demand_evidence": 5,
-      "fit_with_henry_experience": 5,
-      "visual_consistency": 5,
-      "mobile_usability": 5,
-      "conversion_relevance": 5
-    },
-    "quality_average": 4.8,
+    "original_editorial_asset": "Six-state shared inbox ownership matrix: state, automated action, human responsibility and evidence of progress.",
+    "first_hand_contribution_or_limits": "Operational logic and illustrative scenarios; no client outcomes or invented measurements.",
     "publication_decision": "Published",
     "rejection_reason": null,
-    "readability_check": "Early direct answer, four-lane framework, worked recovery example and UK English.",
-    "mobile_check": "Fluid layout and horizontal scroll for wide matrix; no live screenshot test completed.",
-    "ai_mention_check": "No unsupported autonomous AI claims.",
     "internal_links": [
-      "/articles/automate-data-entry-between-business-systems/",
-      "/articles/automate-approval-workflows-small-business/",
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-crm-duplicate-detection-small-business/",
+      "/articles/automate-lead-follow-up-without-spam/",
       "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/common-automation-mistakes-small-business/",
+      "/articles/failed-business-automation-recovery/",
       "/contact/"
     ],
     "bidirectional_link_targets": [
-      "/articles/common-automation-mistakes-small-business/",
-      "/articles/integrate-systems-or-automate-hand-off/",
-      "/articles/automate-data-entry-between-business-systems/"
+      "/articles/automate-customer-service-ticket-triage/",
+      "/articles/automate-lead-follow-up-without-spam/"
     ],
     "external_sources": [
-      "https://help.zapier.com/hc/en-us/articles/20505304170637-Review-run-statuses-in-Zap-workflows",
-      "https://help.zapier.com/hc/en-us/articles/8496037690637-How-to-troubleshoot-errors-in-Zap-workflows",
-      "https://learn.microsoft.com/en-us/power-automate/troubleshoot-flow-errors",
-      "https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/error-handling"
+      "https://learn.microsoft.com/en-us/connectors/office365connector/",
+      "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide"
     ],
     "schema": [
       "Article",
@@ -117,9 +66,15 @@
       "docs/seo/article-ledger.csv",
       "docs/seo/page-inventory.csv"
     ],
-    "robots_inspection": "Googlebot and public crawling remain allowed; no changes to robots.txt."
+    "robots_inspection": "Indexable; robots.txt unchanged."
   },
   "recent_articles": [
+    {
+      "title": "How to automate a shared email inbox for a small business",
+      "slug": "shared-inbox-email-automation-small-business",
+      "date_published": "2026-11-18",
+      "portfolio_classification": "broader SME-led"
+    },
     {
       "title": "When business automation fails: how to monitor, retry and recover",
       "slug": "failed-business-automation-recovery",
@@ -184,12 +139,6 @@
       "title": "How to automate data protection complaint handling for a UK small business",
       "slug": "automate-data-protection-complaints-uk-small-business",
       "date_published": "2026-10-12",
-      "portfolio_classification": "broader SME-led"
-    },
-    {
-      "title": "How to automate CRM duplicate detection and record matching",
-      "slug": "automate-crm-duplicate-detection-small-business",
-      "date_published": "2026-10-09",
       "portfolio_classification": "broader SME-led"
     }
   ]

@@ -14,6 +14,7 @@ Olivers Consulting provides operational automation services for UK ecommerce, wh
 
 ## Current workflow coverage
 
+- [Shared inbox email automation, clear ownership and unanswered-email tracking](https://oliversconsulting.co.uk/articles/shared-inbox-email-automation-small-business/)
 - [Failed business automation monitoring, safe retries and recovery](https://oliversconsulting.co.uk/articles/failed-business-automation-recovery/)
 - [Sales pipeline reporting with CRM snapshots and forecast changes](https://oliversconsulting.co.uk/articles/automate-sales-pipeline-reporting-uk-sme/)
 - [Failed subscription payment recovery and retry coordination for UK SMEs](https://oliversconsulting.co.uk/articles/automate-failed-subscription-payment-recovery/)
